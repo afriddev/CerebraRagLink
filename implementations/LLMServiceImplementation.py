@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
-from models.LLMModels import LLMChatModel, LLMChatResponseModel
+from models.LLMServiceModels import LLMChatModel, LLMChatResponseModel
 
 
-class LLMImpl(ABC):
+class LLMServiceImpl(ABC):
 
     @abstractmethod
     async def Chat(self, modelParams: LLMChatModel) -> LLMChatResponseModel:

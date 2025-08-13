@@ -1,0 +1,243 @@
+[
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatModel",
+        "importPath": "models.LLMModels",
+        "description": "models.LLMModels",
+        "isExtraImport": true,
+        "detail": "models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatResponseModel",
+        "importPath": "models.LLMModels",
+        "description": "models.LLMModels",
+        "isExtraImport": true,
+        "detail": "models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatModel",
+        "importPath": "models.LLMModels",
+        "description": "models.LLMModels",
+        "isExtraImport": true,
+        "detail": "models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatResponseModel",
+        "importPath": "models.LLMModels",
+        "description": "models.LLMModels",
+        "isExtraImport": true,
+        "detail": "models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatMessageRoleEnum",
+        "importPath": "enums.LLMEnums",
+        "description": "enums.LLMEnums",
+        "isExtraImport": true,
+        "detail": "enums.LLMEnums",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatReasoningEffortEnum",
+        "importPath": "enums.LLMEnums",
+        "description": "enums.LLMEnums",
+        "isExtraImport": true,
+        "detail": "enums.LLMEnums",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatResponseStatusEnum",
+        "importPath": "enums.LLMEnums",
+        "description": "enums.LLMEnums",
+        "isExtraImport": true,
+        "detail": "enums.LLMEnums",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatResponseStatusEnum",
+        "importPath": "enums.LLMEnums",
+        "description": "enums.LLMEnums",
+        "isExtraImport": true,
+        "detail": "enums.LLMEnums",
+        "documentation": {}
+    },
+    {
+        "label": "cerebras.cloud.sdk",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cerebras.cloud.sdk",
+        "description": "cerebras.cloud.sdk",
+        "detail": "cerebras.cloud.sdk",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncCerebras",
+        "importPath": "cerebras.cloud.sdk",
+        "description": "cerebras.cloud.sdk",
+        "isExtraImport": true,
+        "detail": "cerebras.cloud.sdk",
+        "documentation": {}
+    },
+    {
+        "label": "DefaultAioHttpClient",
+        "importPath": "cerebras.cloud.sdk",
+        "description": "cerebras.cloud.sdk",
+        "isExtraImport": true,
+        "detail": "cerebras.cloud.sdk",
+        "documentation": {}
+    },
+    {
+        "label": "LLMImpl",
+        "importPath": "implementations.LLMImplementation",
+        "description": "implementations.LLMImplementation",
+        "isExtraImport": true,
+        "detail": "implementations.LLMImplementation",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatMessageRoleEnum",
+        "kind": 6,
+        "importPath": "enums.LLMEnums",
+        "description": "enums.LLMEnums",
+        "peekOfCode": "class LLMChatMessageRoleEnum(Enum):\n    USER = \"user\"\n    SYSTEM = \"system\"\nclass LLMChatReasoningEffortEnum(Enum):\n    LOW = \"low\"\n    MEDIUM = \"medium\"\n    HIGH = \"high\"\nclass LLMChatResponseStatusEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")",
+        "detail": "enums.LLMEnums",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatReasoningEffortEnum",
+        "kind": 6,
+        "importPath": "enums.LLMEnums",
+        "description": "enums.LLMEnums",
+        "peekOfCode": "class LLMChatReasoningEffortEnum(Enum):\n    LOW = \"low\"\n    MEDIUM = \"medium\"\n    HIGH = \"high\"\nclass LLMChatResponseStatusEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")",
+        "detail": "enums.LLMEnums",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatResponseStatusEnum",
+        "kind": 6,
+        "importPath": "enums.LLMEnums",
+        "description": "enums.LLMEnums",
+        "peekOfCode": "class LLMChatResponseStatusEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")\n    REQUEST_TIMEOUT = (408, \"REQUEST_TIMEOUT\")\n    CONFLICT = (409, \"CONFLICT\")\n    ENTITY_ERROR = (422, \"ENTITY_ERROR\")\n    RATE_LIMIT = (429, \"RATE_LIMIT\")",
+        "detail": "enums.LLMEnums",
+        "documentation": {}
+    },
+    {
+        "label": "LLMImpl",
+        "kind": 6,
+        "importPath": "implementations.LLMImplementation",
+        "description": "implementations.LLMImplementation",
+        "peekOfCode": "class LLMImpl(ABC):\n    @abstractmethod\n    async def Chat(self, modelParams: LLMChatModel) -> LLMChatResponseModel:\n        pass\n    @abstractmethod\n    def HandleApiStatusError(self, statusCode: int) -> LLMChatResponseModel:\n        pass",
+        "detail": "implementations.LLMImplementation",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatMessageModel",
+        "kind": 6,
+        "importPath": "models.LLMModels",
+        "description": "models.LLMModels",
+        "peekOfCode": "class LLMChatMessageModel(BaseModel):\n    role: Optional[LLMChatMessageRoleEnum] = LLMChatMessageRoleEnum.USER\n    content: str\nclass LLMChatModel(BaseModel):\n    model: str = \"llama3.1-8b\"\n    messages: List[LLMChatMessageModel]\n    maxCompletionTokens: Optional[int] = 100\n    reasoningEffort: LLMChatReasoningEffortEnum = LLMChatReasoningEffortEnum.MEDIUM\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7",
+        "detail": "models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatModel",
+        "kind": 6,
+        "importPath": "models.LLMModels",
+        "description": "models.LLMModels",
+        "peekOfCode": "class LLMChatModel(BaseModel):\n    model: str = \"llama3.1-8b\"\n    messages: List[LLMChatMessageModel]\n    maxCompletionTokens: Optional[int] = 100\n    reasoningEffort: LLMChatReasoningEffortEnum = LLMChatReasoningEffortEnum.MEDIUM\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7\n    apiKey: str\nclass LLMChatResponseModel(BaseModel):\n    status: LLMChatResponseStatusEnum = LLMChatResponseStatusEnum.SUCCESS",
+        "detail": "models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatResponseModel",
+        "kind": 6,
+        "importPath": "models.LLMModels",
+        "description": "models.LLMModels",
+        "peekOfCode": "class LLMChatResponseModel(BaseModel):\n    status: LLMChatResponseStatusEnum = LLMChatResponseStatusEnum.SUCCESS",
+        "detail": "models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "LLM",
+        "kind": 6,
+        "importPath": "services.LLM",
+        "description": "services.LLM",
+        "peekOfCode": "class LLM(LLMImpl):\n    def HandleApiStatusError(self,statusCode:int) -> LLMChatResponseModel:\n        errorCodes = {\n            400 : LLMChatResponseStatusEnum.BAD_REQUEST,\n            401 : LLMChatResponseStatusEnum.UNAUTHROZIED,\n            403 : LLMChatResponseStatusEnum.PERMISSION_DENIED,\n            404 : LLMChatResponseStatusEnum.NOT_FOUND\n        }\n        message = errorCodes.get(statusCode,LLMChatResponseStatusEnum.SERVER_ERROR)\n        return LLMChatResponseModel(",
+        "detail": "services.LLM",
+        "documentation": {}
+    }
+]

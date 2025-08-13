@@ -1,6 +1,12 @@
-from abc import ABC,abstractmethod
+from abc import ABC, abstractmethod
+
+from models import ConvertTextToEmbeddingResponseErrorModel, ConvertTextToEmbeddingResponseModel
 
 
+class EmbeddingServiceImpl(ABC):
 
-class EmbeddignServceiImpl(ABC):
-    
+    @abstractmethod
+    async def ConvertTextToEmbedding(
+        self, text: list[str]
+    ) -> ConvertTextToEmbeddingResponseModel | ConvertTextToEmbeddingResponseErrorModel:
+        pass

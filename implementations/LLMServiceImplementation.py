@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from models.LLMServiceModels import LLMChatModel, LLMChatResponseModel
+from models import LLMChatModel, LLMChatResponseModel
 
 
 class LLMServiceImpl(ABC):

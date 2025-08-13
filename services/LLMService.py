@@ -1,15 +1,15 @@
 import cerebras.cloud.sdk
 from cerebras.cloud.sdk import AsyncCerebras
-from enums.LLMEnums import LLMChatResponseStatusEnum
-from implementations.LLMImplementation import LLMImpl
-from models.LLMModels import LLMChatModel, LLMChatResponseModel
+from enums.LLMServiceEnums import LLMChatResponseStatusEnum
+from implementations.LLMServiceImplementation import  LLMServiceImpl
+from models.LLMServiceModels import LLMChatModel, LLMChatResponseModel
 from cerebras.cloud.sdk import DefaultAioHttpClient
 from typing import Any,cast
 
 
 #os.environ.get("CEREBRAS_API_KEY")
 
-class LLM(LLMImpl):
+class LLM(LLMServiceImpl):
     
     def HandleApiStatusError(self,statusCode:int) -> LLMChatResponseModel:
         errorCodes = {

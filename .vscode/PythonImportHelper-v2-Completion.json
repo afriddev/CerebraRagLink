@@ -24,35 +24,51 @@
         "documentation": {}
     },
     {
-        "label": "LLMChatModel",
-        "importPath": "models.LLMModels",
-        "description": "models.LLMModels",
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
         "isExtraImport": true,
-        "detail": "models.LLMModels",
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChatModel",
+        "importPath": "models.LLMServiceModels",
+        "description": "models.LLMServiceModels",
+        "isExtraImport": true,
+        "detail": "models.LLMServiceModels",
         "documentation": {}
     },
     {
         "label": "LLMChatResponseModel",
-        "importPath": "models.LLMModels",
-        "description": "models.LLMModels",
+        "importPath": "models.LLMServiceModels",
+        "description": "models.LLMServiceModels",
         "isExtraImport": true,
-        "detail": "models.LLMModels",
+        "detail": "models.LLMServiceModels",
         "documentation": {}
     },
     {
         "label": "LLMChatModel",
-        "importPath": "models.LLMModels",
-        "description": "models.LLMModels",
+        "importPath": "models.LLMServiceModels",
+        "description": "models.LLMServiceModels",
         "isExtraImport": true,
-        "detail": "models.LLMModels",
+        "detail": "models.LLMServiceModels",
         "documentation": {}
     },
     {
         "label": "LLMChatResponseModel",
-        "importPath": "models.LLMModels",
-        "description": "models.LLMModels",
+        "importPath": "models.LLMServiceModels",
+        "description": "models.LLMServiceModels",
         "isExtraImport": true,
-        "detail": "models.LLMModels",
+        "detail": "models.LLMServiceModels",
         "documentation": {}
     },
     {
@@ -97,34 +113,34 @@
     },
     {
         "label": "LLMChatMessageRoleEnum",
-        "importPath": "enums.LLMEnums",
-        "description": "enums.LLMEnums",
+        "importPath": "enums.LLMServiceEnums",
+        "description": "enums.LLMServiceEnums",
         "isExtraImport": true,
-        "detail": "enums.LLMEnums",
+        "detail": "enums.LLMServiceEnums",
         "documentation": {}
     },
     {
         "label": "LLMChatReasoningEffortEnum",
-        "importPath": "enums.LLMEnums",
-        "description": "enums.LLMEnums",
+        "importPath": "enums.LLMServiceEnums",
+        "description": "enums.LLMServiceEnums",
         "isExtraImport": true,
-        "detail": "enums.LLMEnums",
+        "detail": "enums.LLMServiceEnums",
         "documentation": {}
     },
     {
         "label": "LLMChatResponseStatusEnum",
-        "importPath": "enums.LLMEnums",
-        "description": "enums.LLMEnums",
+        "importPath": "enums.LLMServiceEnums",
+        "description": "enums.LLMServiceEnums",
         "isExtraImport": true,
-        "detail": "enums.LLMEnums",
+        "detail": "enums.LLMServiceEnums",
         "documentation": {}
     },
     {
         "label": "LLMChatResponseStatusEnum",
-        "importPath": "enums.LLMEnums",
-        "description": "enums.LLMEnums",
+        "importPath": "enums.LLMServiceEnums",
+        "description": "enums.LLMServiceEnums",
         "isExtraImport": true,
-        "detail": "enums.LLMEnums",
+        "detail": "enums.LLMServiceEnums",
         "documentation": {}
     },
     {
@@ -153,91 +169,206 @@
         "documentation": {}
     },
     {
-        "label": "LLMImpl",
-        "importPath": "implementations.LLMImplementation",
-        "description": "implementations.LLMImplementation",
+        "label": "LLMServiceImpl",
+        "importPath": "implementations.LLMServiceImplementation",
+        "description": "implementations.LLMServiceImplementation",
         "isExtraImport": true,
-        "detail": "implementations.LLMImplementation",
+        "detail": "implementations.LLMServiceImplementation",
         "documentation": {}
     },
     {
-        "label": "FastAPI",
-        "importPath": "fastapi",
-        "description": "fastapi",
+        "label": "asyncio",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "fastapi",
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncEngineArray",
+        "importPath": "infinity_emb",
+        "description": "infinity_emb",
+        "isExtraImport": true,
+        "detail": "infinity_emb",
+        "documentation": {}
+    },
+    {
+        "label": "EngineArgs",
+        "importPath": "infinity_emb",
+        "description": "infinity_emb",
+        "isExtraImport": true,
+        "detail": "infinity_emb",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncEmbeddingEngine",
+        "importPath": "infinity_emb",
+        "description": "infinity_emb",
+        "isExtraImport": true,
+        "detail": "infinity_emb",
         "documentation": {}
     },
     {
         "label": "LLMChatMessageRoleEnum",
         "kind": 6,
-        "importPath": "enums.LLMEnums",
-        "description": "enums.LLMEnums",
+        "importPath": "enums.LLMServiceEnums",
+        "description": "enums.LLMServiceEnums",
         "peekOfCode": "class LLMChatMessageRoleEnum(Enum):\n    USER = \"user\"\n    SYSTEM = \"system\"\nclass LLMChatReasoningEffortEnum(Enum):\n    LOW = \"low\"\n    MEDIUM = \"medium\"\n    HIGH = \"high\"\nclass LLMChatResponseStatusEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")",
-        "detail": "enums.LLMEnums",
+        "detail": "enums.LLMServiceEnums",
         "documentation": {}
     },
     {
         "label": "LLMChatReasoningEffortEnum",
         "kind": 6,
-        "importPath": "enums.LLMEnums",
-        "description": "enums.LLMEnums",
+        "importPath": "enums.LLMServiceEnums",
+        "description": "enums.LLMServiceEnums",
         "peekOfCode": "class LLMChatReasoningEffortEnum(Enum):\n    LOW = \"low\"\n    MEDIUM = \"medium\"\n    HIGH = \"high\"\nclass LLMChatResponseStatusEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")",
-        "detail": "enums.LLMEnums",
+        "detail": "enums.LLMServiceEnums",
         "documentation": {}
     },
     {
         "label": "LLMChatResponseStatusEnum",
         "kind": 6,
-        "importPath": "enums.LLMEnums",
-        "description": "enums.LLMEnums",
+        "importPath": "enums.LLMServiceEnums",
+        "description": "enums.LLMServiceEnums",
         "peekOfCode": "class LLMChatResponseStatusEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")\n    REQUEST_TIMEOUT = (408, \"REQUEST_TIMEOUT\")\n    CONFLICT = (409, \"CONFLICT\")\n    ENTITY_ERROR = (422, \"ENTITY_ERROR\")\n    RATE_LIMIT = (429, \"RATE_LIMIT\")",
-        "detail": "enums.LLMEnums",
+        "detail": "enums.LLMServiceEnums",
         "documentation": {}
     },
     {
-        "label": "LLMImpl",
+        "label": "EmbeddignServceiImpl",
         "kind": 6,
-        "importPath": "implementations.LLMImplementation",
-        "description": "implementations.LLMImplementation",
-        "peekOfCode": "class LLMImpl(ABC):\n    @abstractmethod\n    async def Chat(self, modelParams: LLMChatModel) -> LLMChatResponseModel:\n        pass\n    @abstractmethod\n    def HandleApiStatusError(self, statusCode: int) -> LLMChatResponseModel:\n        pass",
-        "detail": "implementations.LLMImplementation",
+        "importPath": "implementations.EmbeddingServiceimplementation",
+        "description": "implementations.EmbeddingServiceimplementation",
+        "peekOfCode": "class EmbeddignServceiImpl(ABC):",
+        "detail": "implementations.EmbeddingServiceimplementation",
+        "documentation": {}
+    },
+    {
+        "label": "LLMServiceImpl",
+        "kind": 6,
+        "importPath": "implementations.LLMServiceImplementation",
+        "description": "implementations.LLMServiceImplementation",
+        "peekOfCode": "class LLMServiceImpl(ABC):\n    @abstractmethod\n    async def Chat(self, modelParams: LLMChatModel) -> LLMChatResponseModel:\n        pass\n    @abstractmethod\n    def HandleApiStatusError(self, statusCode: int) -> LLMChatResponseModel:\n        pass",
+        "detail": "implementations.LLMServiceImplementation",
         "documentation": {}
     },
     {
         "label": "LLMChatMessageModel",
         "kind": 6,
-        "importPath": "models.LLMModels",
-        "description": "models.LLMModels",
+        "importPath": "models.LLMServiceModels",
+        "description": "models.LLMServiceModels",
         "peekOfCode": "class LLMChatMessageModel(BaseModel):\n    role: Optional[LLMChatMessageRoleEnum] = LLMChatMessageRoleEnum.USER\n    content: str\nclass LLMChatModel(BaseModel):\n    model: str = \"llama3.1-8b\"\n    messages: List[LLMChatMessageModel]\n    maxCompletionTokens: Optional[int] = 100\n    reasoningEffort: LLMChatReasoningEffortEnum = LLMChatReasoningEffortEnum.MEDIUM\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7",
-        "detail": "models.LLMModels",
+        "detail": "models.LLMServiceModels",
         "documentation": {}
     },
     {
         "label": "LLMChatModel",
         "kind": 6,
-        "importPath": "models.LLMModels",
-        "description": "models.LLMModels",
+        "importPath": "models.LLMServiceModels",
+        "description": "models.LLMServiceModels",
         "peekOfCode": "class LLMChatModel(BaseModel):\n    model: str = \"llama3.1-8b\"\n    messages: List[LLMChatMessageModel]\n    maxCompletionTokens: Optional[int] = 100\n    reasoningEffort: LLMChatReasoningEffortEnum = LLMChatReasoningEffortEnum.MEDIUM\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7\n    apiKey: str\nclass LLMChatResponseModel(BaseModel):\n    status: LLMChatResponseStatusEnum = LLMChatResponseStatusEnum.SUCCESS",
-        "detail": "models.LLMModels",
+        "detail": "models.LLMServiceModels",
         "documentation": {}
     },
     {
         "label": "LLMChatResponseModel",
         "kind": 6,
-        "importPath": "models.LLMModels",
-        "description": "models.LLMModels",
+        "importPath": "models.LLMServiceModels",
+        "description": "models.LLMServiceModels",
         "peekOfCode": "class LLMChatResponseModel(BaseModel):\n    status: LLMChatResponseStatusEnum = LLMChatResponseStatusEnum.SUCCESS",
-        "detail": "models.LLMModels",
+        "detail": "models.LLMServiceModels",
         "documentation": {}
     },
     {
         "label": "LLM",
         "kind": 6,
-        "importPath": "services.LLM",
-        "description": "services.LLM",
-        "peekOfCode": "class LLM(LLMImpl):\n    def HandleApiStatusError(self,statusCode:int) -> LLMChatResponseModel:\n        errorCodes = {\n            400 : LLMChatResponseStatusEnum.BAD_REQUEST,\n            401 : LLMChatResponseStatusEnum.UNAUTHROZIED,\n            403 : LLMChatResponseStatusEnum.PERMISSION_DENIED,\n            404 : LLMChatResponseStatusEnum.NOT_FOUND\n        }\n        message = errorCodes.get(statusCode,LLMChatResponseStatusEnum.SERVER_ERROR)\n        return LLMChatResponseModel(",
-        "detail": "services.LLM",
+        "importPath": "services.LLMService",
+        "description": "services.LLMService",
+        "peekOfCode": "class LLM(LLMServiceImpl):\n    def HandleApiStatusError(self,statusCode:int) -> LLMChatResponseModel:\n        errorCodes = {\n            400 : LLMChatResponseStatusEnum.BAD_REQUEST,\n            401 : LLMChatResponseStatusEnum.UNAUTHROZIED,\n            403 : LLMChatResponseStatusEnum.PERMISSION_DENIED,\n            404 : LLMChatResponseStatusEnum.NOT_FOUND\n        }\n        message = errorCodes.get(statusCode,LLMChatResponseStatusEnum.SERVER_ERROR)\n        return LLMChatResponseModel(",
+        "detail": "services.LLMService",
+        "documentation": {}
+    },
+    {
+        "label": "MODEL_ID",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "MODEL_ID = \"Qwen/Qwen3-Embedding-0.6B\"\nBATCH_SIZE = 32          # safe for 8GB RAM\nEMBED_DIM_TYPE = \"int4\"  # fastest on CPU\nMAX_LENGTH = 256         # adjust for your chunk size\nTOTAL_ROWS = 20000       # number of chunks/texts\n# Generate dummy data\nchunks = [f\"Sample text {i}\" for i in range(TOTAL_ROWS)]\n# Create async Infinity engine\narray = AsyncEngineArray.from_args([\n    EngineArgs(",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "BATCH_SIZE",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "BATCH_SIZE = 32          # safe for 8GB RAM\nEMBED_DIM_TYPE = \"int4\"  # fastest on CPU\nMAX_LENGTH = 256         # adjust for your chunk size\nTOTAL_ROWS = 20000       # number of chunks/texts\n# Generate dummy data\nchunks = [f\"Sample text {i}\" for i in range(TOTAL_ROWS)]\n# Create async Infinity engine\narray = AsyncEngineArray.from_args([\n    EngineArgs(\n        model_name_or_path=MODEL_ID,",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "EMBED_DIM_TYPE",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "EMBED_DIM_TYPE = \"int4\"  # fastest on CPU\nMAX_LENGTH = 256         # adjust for your chunk size\nTOTAL_ROWS = 20000       # number of chunks/texts\n# Generate dummy data\nchunks = [f\"Sample text {i}\" for i in range(TOTAL_ROWS)]\n# Create async Infinity engine\narray = AsyncEngineArray.from_args([\n    EngineArgs(\n        model_name_or_path=MODEL_ID,\n        engine=\"torch\",",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_LENGTH",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "MAX_LENGTH = 256         # adjust for your chunk size\nTOTAL_ROWS = 20000       # number of chunks/texts\n# Generate dummy data\nchunks = [f\"Sample text {i}\" for i in range(TOTAL_ROWS)]\n# Create async Infinity engine\narray = AsyncEngineArray.from_args([\n    EngineArgs(\n        model_name_or_path=MODEL_ID,\n        engine=\"torch\",\n        embedding_dtype=EMBED_DIM_TYPE,",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "TOTAL_ROWS",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "TOTAL_ROWS = 20000       # number of chunks/texts\n# Generate dummy data\nchunks = [f\"Sample text {i}\" for i in range(TOTAL_ROWS)]\n# Create async Infinity engine\narray = AsyncEngineArray.from_args([\n    EngineArgs(\n        model_name_or_path=MODEL_ID,\n        engine=\"torch\",\n        embedding_dtype=EMBED_DIM_TYPE,\n        dtype=\"auto\",",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "chunks",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "chunks = [f\"Sample text {i}\" for i in range(TOTAL_ROWS)]\n# Create async Infinity engine\narray = AsyncEngineArray.from_args([\n    EngineArgs(\n        model_name_or_path=MODEL_ID,\n        engine=\"torch\",\n        embedding_dtype=EMBED_DIM_TYPE,\n        dtype=\"auto\",\n        max_length=MAX_LENGTH\n    )",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "array",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "array = AsyncEngineArray.from_args([\n    EngineArgs(\n        model_name_or_path=MODEL_ID,\n        engine=\"torch\",\n        embedding_dtype=EMBED_DIM_TYPE,\n        dtype=\"auto\",\n        max_length=MAX_LENGTH\n    )\n])\nasync def embed_all(engine: AsyncEmbeddingEngine):",
+        "detail": "main",
         "documentation": {}
     }
 ]

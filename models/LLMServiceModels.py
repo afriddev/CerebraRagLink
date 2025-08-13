@@ -1,7 +1,6 @@
 from typing import List, Optional
 from pydantic import BaseModel
-
-from enums.LLMServiceEnums import (
+from enums import (
     LLMChatMessageRoleEnum,
     LLMChatReasoningEffortEnum,
     LLMChatResponseStatusEnum,

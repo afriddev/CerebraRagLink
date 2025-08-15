@@ -1,4 +1,4 @@
-from .QaRagContoller import QaRag
+from .QaRagController import QaRag
 
 
 

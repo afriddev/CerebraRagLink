@@ -16,7 +16,7 @@ async def getDb() -> PsqlDb:
 
 @QaRag.get("/rag/extarct")
 async def HandleQaRag():
-    response = await QaRaServices.QaRagExtarct(await getDb())
+    response = await QaRaServices.QaRagExtract(await getDb())
     return response
 
 

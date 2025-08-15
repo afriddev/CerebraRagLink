@@ -9,7 +9,7 @@ from server.models import EmbeddingVectorModel, EmbeddingTextModel
 
 class QaRagControllerServices(QaRagContollerImpl):
 
-    async def QaRagExtarct(self, db: Any) -> JSONResponse:
+    async def QaRagExtract(self, db: Any) -> JSONResponse:
         textChunkService = TextChunkService()
         result = await textChunkService.HandleQuestionAndAnswersProcessForRag("a.pdf")
         embeddingTexts: list[EmbeddingTextModel] = []

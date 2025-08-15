@@ -160,7 +160,7 @@ class TextChunkService(TextChunkServiceImpl):
                             answer=q.answer,
                             embeddingText=q.embeddingText,
                             id=embeddingId,
-                            vectorid=vectorId,
+                            vectorId=vectorId,
                         )
                     )
                     vectorslist.append(
@@ -178,3 +178,4 @@ class TextChunkService(TextChunkServiceImpl):
                     questionAndAnsers=embeddingTexts,
                     vectors=vectorslist,
                 )
+            

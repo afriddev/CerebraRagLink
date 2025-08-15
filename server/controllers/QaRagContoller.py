@@ -1,9 +1,11 @@
 from fastapi import APIRouter
-from fastapi.responses import JSONResponse
 from server.psqldb import PsqlDb
-from rag import TextChunkService
+from server.services import QaRagControllerServices
+from server.models import QaRagAskRequestModel
+
 
 QaRag = APIRouter()
+QaRaServices = QaRagControllerServices()
 
 
 async def getDb() -> PsqlDb:
@@ -13,10 +15,15 @@ async def getDb() -> PsqlDb:
 
 
 @QaRag.get("/rag/extarct")
-async def handleQaRag():
-    textChunkService = TextChunkService()
-    result = await textChunkService.HandleQuestionAndAnswersProcessForRag("a.pdf")
+async def HandleQaRag():
+    response = await QaRaServices.QaRagExtarct(await getDb())
+    return response
 
-    return JSONResponse(
-        status_code=result.status.value[0], content={"data": result.status.value[1]}
+
+@QaRag.post("/rag/ask")
+async def HandleQaRagAsk(request: QaRagAskRequestModel):
+    response = await QaRaServices.QaRagAsk(
+        request.query,
+        await getDb(),
     )
+    return response

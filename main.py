@@ -10,7 +10,7 @@ from server import CustomMidlleware
 load_dotenv()
 
 DATABASE_CONNECTION_STRING = os.getenv("DATABASE_CONNECTION_STRING", "")
-psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)
+psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)     
 
 
 @asynccontextmanager

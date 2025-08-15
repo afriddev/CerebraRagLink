@@ -1,6 +1,9 @@
 from uuid import UUID
 from pydantic import BaseModel
-from rag.enums import LLMChatResponseStatusEnum,ConvertTextToEmbeddingResponseErrorEnums
+from rag.enums import (
+    LLMChatResponseStatusEnum,
+    ConvertTextToEmbeddingResponseErrorEnums,
+)
 
 
 class TextChunkServiceQuestionAndAnswerForRagModel(BaseModel):
@@ -29,11 +32,10 @@ class TextChunkServiceQuestionAndAnswerWithIdModel(
     TextChunkServiceQuestionAndAnswerForRagModel
 ):
     id: UUID
-    vectorid: UUID 
+    vectorId: UUID
 
 
 class HandleQuestionAndAnswersProcessForRagResponseModel(BaseModel):
     questionAndAnsers: list[TextChunkServiceQuestionAndAnswerWithIdModel] | None = None
     status: LLMChatResponseStatusEnum | ConvertTextToEmbeddingResponseErrorEnums
-    vectors:list[ExtractQuestionAndAnswersVectorModel] | None = None
-
+    vectors: list[ExtractQuestionAndAnswersVectorModel] | None = None

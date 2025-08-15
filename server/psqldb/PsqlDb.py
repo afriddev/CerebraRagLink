@@ -11,7 +11,7 @@ class PsqlDb:
         self.pool:Any = None
 
     async def connect(self) -> None:
-        self.pool = await asyncpg.create_pool(self.db_url)
+        self.pool = await asyncpg.create_pool(self.db_url,statement_cache_size=0)
 
     async def close(self) -> None:
         if self.pool is not None:

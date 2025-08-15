@@ -1,6 +1,6 @@
-from .QaRagContoller import QaRagControllerRouter
+from .QaRagContoller import QaRag
 
 
 __all__ = [
-    "QaRagControllerRouter",
+    "QaRag",
 ]

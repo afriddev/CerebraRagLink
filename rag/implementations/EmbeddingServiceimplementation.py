@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from models import ConvertTextToEmbeddingResponseErrorModel, ConvertTextToEmbeddingResponseModel
+from rag.models import ConvertTextToEmbeddingResponseErrorModel, ConvertTextToEmbeddingResponseModel
 
 
 class EmbeddingServiceImpl(ABC):

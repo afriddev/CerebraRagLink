@@ -1,6 +1,7 @@
-from .services import TextChunkService
+from .services import TextChunkService,EmbeddingService
 
 
 __all__ = [
     "TextChunkService",
+    "EmbeddingService"
 ]

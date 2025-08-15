@@ -3,24 +3,24 @@ from rag.implementations import EmbeddingServiceImpl
 from mistralai import EmbeddingResponse, Mistral, models
 from rag.models import (
     ConvertTextToEmbeddingResponseErrorModel,
-    ConvertTextToEmbeddingResponseModel,
     ConvertTextToEmbeddingResponseDataModel,
     ConvertTextToEmbeddingResponseUsageModel,
 )
 from rag.enums import ConvertTextToEmbeddingResponseErrorEnums
 from dotenv import load_dotenv
+
 load_dotenv()
 
 
-MISTRA_API_KEY =  os.getenv("MISTRAL_API_KEY", "")
+MISTRA_API_KEY = os.getenv("MISTRAL_API_KEY", "")
 
 
 class EmbeddingService(EmbeddingServiceImpl):
     async def ConvertTextToEmbedding(
         self, text: list[str]
-    ) -> ConvertTextToEmbeddingResponseModel | ConvertTextToEmbeddingResponseErrorModel:
+    ) -> ConvertTextToEmbeddingResponseErrorModel:
         async with Mistral(
-            api_key= MISTRA_API_KEY,
+            api_key=MISTRA_API_KEY,
         ) as mistral:
             try:
                 res: EmbeddingResponse = await mistral.embeddings.create_async(
@@ -42,12 +42,15 @@ class EmbeddingService(EmbeddingServiceImpl):
                         totalTokens=res.usage.total_tokens,
                     )
                 )
-                return ConvertTextToEmbeddingResponseModel(
-                    data=data, usage=usage, id=res.id
+                return ConvertTextToEmbeddingResponseErrorModel(
+                    data=data,
+                    usage=usage,
+                    id=res.id,
+                    status=ConvertTextToEmbeddingResponseErrorEnums.SUCCESS,
                 )
             except models.HTTPValidationError as e:
                 print(e)
-                
+
                 return ConvertTextToEmbeddingResponseErrorModel(
                     status=ConvertTextToEmbeddingResponseErrorEnums.VALIDATION_ERROR
                 )

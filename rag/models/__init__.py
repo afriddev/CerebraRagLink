@@ -13,7 +13,6 @@ from .LLMServiceModels import (
 )
 
 from .EmbeddingServiceModels import (
-    ConvertTextToEmbeddingResponseModel,
     ConvertTextToEmbeddingResponseErrorModel,
     ConvertTextToEmbeddingResponseDataModel,
     ConvertTextToEmbeddingResponseUsageModel,
@@ -22,6 +21,9 @@ from .EmbeddingServiceModels import (
 from .TextChunkServiceModel import (
     ExtarctQuestionAndAnswersFromTextForRagResponseModel,
     ExtractQuestionAndAnswersResponseModel,
+    HandleQuestionAndAnswersProcessForRagResponseModel,
+    TextChunkServiceQuestionAndAnswerWithIdModel,
+    ExtractQuestionAndAnswersVectorModel
 )
 
 __all__ = [
@@ -36,10 +38,12 @@ __all__ = [
     "LLMChatDataUsageModel",
     "LLMChatDataChoiseModel",
     "LLMChatDataChoiseMessageModel",
-    "ConvertTextToEmbeddingResponseModel",
     "ConvertTextToEmbeddingResponseErrorModel",
     "ConvertTextToEmbeddingResponseDataModel",
     "ConvertTextToEmbeddingResponseUsageModel",
     "ExtarctQuestionAndAnswersFromTextForRagResponseModel",
     "ExtractQuestionAndAnswersResponseModel",
+    "HandleQuestionAndAnswersProcessForRagResponseModel",
+    "TextChunkServiceQuestionAndAnswerWithIdModel",
+    "ExtractQuestionAndAnswersVectorModel"
 ]

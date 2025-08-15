@@ -10,20 +10,21 @@ from rag.models import (
     LLMChatModel,
     ExtarctQuestionAndAnswersFromTextForRagResponseModel,
     ExtractQuestionAndAnswersResponseModel,
-    LLMChatResponseModel
-
+    LLMChatResponseModel,
+    HandleQuestionAndAnswersProcessForRagResponseModel,
+    TextChunkServiceQuestionAndAnswerWithIdModel,
+    ExtractQuestionAndAnswersVectorModel,
 )
-from rag.services import LLMService
+from rag.services import LLMService, EmbeddingService
 from rag.enums import LLMChatMessageRoleEnum
 from rag.utils.TextChunkServiceSystemPrompts import (
     ExtarctQuestionAndAnswersFromTextForRagSystemPrompt,
 )
-
+from uuid import uuid4
+import json
 
 import os
 from dotenv import load_dotenv
-
-
 
 
 load_dotenv()
@@ -34,8 +35,8 @@ CEREBRAS_API_KEY = cast(Any, os.getenv("CEREBRAS_API_KEY"))
 
 class TextChunkService(TextChunkServiceImpl):
 
-    def ExtractTextFromPdfFile(self, filePath: str) -> str:
-        loader = PyPDFLoader(filePath)
+    def ExtractTextFromPdfFile(self, file: str) -> str:
+        loader = PyPDFLoader(file)
         documents = loader.load()
         fullText = "\n".join(doc.page_content for doc in documents)
         return fullText
@@ -55,11 +56,11 @@ class TextChunkService(TextChunkServiceImpl):
             ),  # your PDF-extracted text here
         ]
 
-        LLMResponse:LLMChatResponseModel = await llmService.Chat(
+        LLMResponse: LLMChatResponseModel = await llmService.Chat(
             modelParams=LLMChatModel(
                 apiKey=CEREBRAS_API_KEY,
-                model="qwen-3-32b",
-                maxCompletionTokens=30000,
+                model="qwen-3-235b-a22b-instruct-2507",
+                maxCompletionTokens=40000,
                 messages=messages,
                 responseFormat=LLMChatResponseFormatModel(
                     type="json_schema",
@@ -101,10 +102,12 @@ class TextChunkService(TextChunkServiceImpl):
             )
         )
         if LLMResponse.LLMData is not None:
-            response = ExtarctQuestionAndAnswersFromTextForRagResponseModel.model_validate_json(
-                LLMResponse.LLMData.choices[0].message.content
+            data = json.loads(LLMResponse.LLMData.choices[0].message.content)
+            data["status"] = LLMResponse.status
+            response = ExtarctQuestionAndAnswersFromTextForRagResponseModel.model_validate(
+                data
+                
             )
-            response.status = LLMResponse.status
             return response
         else:
             return ExtarctQuestionAndAnswersFromTextForRagResponseModel(
@@ -112,19 +115,66 @@ class TextChunkService(TextChunkServiceImpl):
             )
 
     async def ExtractQuestonAndAnswersForRag(
-        self, filePath: str
+        self, file: str
     ) -> ExtractQuestionAndAnswersResponseModel:
-        text = self.ExtractTextFromPdfFile(filePath)
-        questionAndAnserResponse = await self.ExtractQuestionAndAnswersFromTextForRag(text)
-        if(questionAndAnserResponse.response is None):
+        text = self.ExtractTextFromPdfFile(file)
+        questionAndAnserResponse = await self.ExtractQuestionAndAnswersFromTextForRag(
+            text
+        )
+        if questionAndAnserResponse.response is None:
             return ExtractQuestionAndAnswersResponseModel(
                 response=None, status=questionAndAnserResponse.status
             )
         else:
             return ExtractQuestionAndAnswersResponseModel(
-                response=questionAndAnserResponse.response, status=questionAndAnserResponse.status
+                response=questionAndAnserResponse.response,
+                status=questionAndAnserResponse.status,
             )
-        
 
+    async def HandleQuestionAndAnswersProcessForRag(
+        self, file: str
+    ) -> HandleQuestionAndAnswersProcessForRagResponseModel:
+        questionAndAnsers = await self.ExtractQuestonAndAnswersForRag(file)
+        if questionAndAnsers.response is None:
+            return HandleQuestionAndAnswersProcessForRagResponseModel(
+                questionAndAnsers=None, status=questionAndAnsers.status, vectors=None
+            )
+        else:
+            embeddingService = EmbeddingService()
+            vectors = await embeddingService.ConvertTextToEmbedding(
+                [qa.embeddingText for qa in questionAndAnsers.response]
+            )
+            if vectors.data is None:
+                return HandleQuestionAndAnswersProcessForRagResponseModel(
+                    status=vectors.status
+                )
+            else:
+                embeddingTexts: list[TextChunkServiceQuestionAndAnswerWithIdModel] = []
+                vectorslist: list[ExtractQuestionAndAnswersVectorModel] = []
+                for i, q in enumerate(questionAndAnsers.response):
+                    embeddingId = uuid4()
+                    vectorId = uuid4()
+                    embeddingTexts.append(
+                        TextChunkServiceQuestionAndAnswerWithIdModel(
+                            question=q.question,
+                            answer=q.answer,
+                            embeddingText=q.embeddingText,
+                            id=embeddingId,
+                            vectorid=vectorId,
+                        )
+                    )
+                    vectorslist.append(
+                        ExtractQuestionAndAnswersVectorModel(
+                            embeddingVector=cast(
+                                list[float], vectors.data[i].embedding
+                            ),
+                            id=vectorId,
+                            embeddingId=embeddingId,
+                        )
+                    )
 
-    async def HandleQuestionAndAnswersProcessForRag(self):
+                return HandleQuestionAndAnswersProcessForRagResponseModel(
+                    status=vectors.status,
+                    questionAndAnsers=embeddingTexts,
+                    vectors=vectorslist,
+                )

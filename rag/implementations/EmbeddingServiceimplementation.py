@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from rag.models import ConvertTextToEmbeddingResponseErrorModel, ConvertTextToEmbeddingResponseModel
+from rag.models import ConvertTextToEmbeddingResponseErrorModel
 
 
 class EmbeddingServiceImpl(ABC):
@@ -8,5 +8,5 @@ class EmbeddingServiceImpl(ABC):
     @abstractmethod
     async def ConvertTextToEmbedding(
         self, text: list[str]
-    ) -> ConvertTextToEmbeddingResponseModel | ConvertTextToEmbeddingResponseErrorModel:
+    ) ->  ConvertTextToEmbeddingResponseErrorModel:
         pass

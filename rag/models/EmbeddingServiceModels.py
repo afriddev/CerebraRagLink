@@ -14,14 +14,13 @@ class ConvertTextToEmbeddingResponseDataModel(BaseModel):
     embedding: list[float] | None
 
 
-class ConvertTextToEmbeddingResponseModel(BaseModel):
-    id: str
-    model: str = "mistral-embed"
-    usage: ConvertTextToEmbeddingResponseUsageModel
-    data: list[ConvertTextToEmbeddingResponseDataModel]
 
 
 class ConvertTextToEmbeddingResponseErrorModel(BaseModel):
     status: ConvertTextToEmbeddingResponseErrorEnums = (
         ConvertTextToEmbeddingResponseErrorEnums.VALIDATION_ERROR
     )
+    id: str | None = None
+    model: str  | None = None
+    usage: ConvertTextToEmbeddingResponseUsageModel | None = None
+    data: list[ConvertTextToEmbeddingResponseDataModel] | None = None

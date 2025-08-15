@@ -3,13 +3,14 @@ from abc import ABC, abstractmethod
 from rag.models import (
     ExtarctQuestionAndAnswersFromTextForRagResponseModel,
     ExtractQuestionAndAnswersResponseModel,
+    HandleQuestionAndAnswersProcessForRagResponseModel,
 )
 
 
 class TextChunkServiceImpl(ABC):
 
     @abstractmethod
-    def ExtractTextFromPdfFile(self, filePath: str) -> str:
+    def ExtractTextFromPdfFile(self, file: str) -> str:
         pass
 
     @abstractmethod
@@ -20,6 +21,12 @@ class TextChunkServiceImpl(ABC):
 
     @abstractmethod
     async def ExtractQuestonAndAnswersForRag(
-        self, filePath: str
+        self, file: str
     ) -> ExtractQuestionAndAnswersResponseModel:
+        pass
+
+    @abstractmethod
+    async def HandleQuestionAndAnswersProcessForRag(
+        self,file:str
+    ) -> HandleQuestionAndAnswersProcessForRagResponseModel:
         pass

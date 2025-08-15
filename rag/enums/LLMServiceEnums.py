@@ -4,12 +4,9 @@ from enum import Enum
 class LLMChatMessageRoleEnum(Enum):
     USER = "user"
     SYSTEM = "system"
+    ASSISTANT = "assistant"
 
 
-class LLMChatReasoningEffortEnum(Enum):
-    LOW = "low"
-    MEDIUM = "medium"
-    HIGH = "high"
 
 
 class LLMChatResponseStatusEnum(Enum):

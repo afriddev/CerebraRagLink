@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from enums import ConvertTextToEmbeddingResponseErrorEnums
+from rag.enums import ConvertTextToEmbeddingResponseErrorEnums
 
 
 class ConvertTextToEmbeddingResponseUsageModel(BaseModel):

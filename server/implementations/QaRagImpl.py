@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 class QaRagContollerImpl(ABC):
 
     @abstractmethod
-    async def QaRagExtarct(self,db:Any) -> JSONResponse:
+    async def QaRagExtract(self,db:Any) -> JSONResponse:
         pass
     
     @abstractmethod

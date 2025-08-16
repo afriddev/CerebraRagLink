@@ -1,7 +1,7 @@
 
-from .QaDocServices import TextChunkService
-
+from .QaDocServices import QaDocService
+from .QaAiAnswersImplService import QaAiAnswersService
 
 __all__ = [
-    "QaDocServices",
+    "QaDocService","QaAiAnswersService"
 ]

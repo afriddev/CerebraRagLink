@@ -1,5 +1,5 @@
 from .LLMModels import (
-    LLmMessageModel,
+    LLMMessageModel,
     LLMDataModel,
     LLMDataChoiceMessageModel,
     LLMDataChoiceModel,
@@ -13,7 +13,7 @@ from .LLMModels import (
 )
 
 __all__ = [
-    "LLmMessageModel",
+    "LLMMessageModel",
     "LLMDataModel",
     "LLMDataChoiceMessageModel",
     "LLMDataChoiceModel",

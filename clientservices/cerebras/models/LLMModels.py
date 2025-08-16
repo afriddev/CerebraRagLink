@@ -7,7 +7,7 @@ from clientservices.cerebras.enums import (
 )
 
 
-class LLmMessageModel(BaseModel):
+class LLMMessageModel(BaseModel):
     role: Optional[LLmMessageRoleEnum] = LLmMessageRoleEnum.USER
     content: str
 
@@ -36,8 +36,8 @@ class LLMResponseFormatModel(BaseModel):
 
 
 class LLMRequestModel(BaseModel):
-    model: str = "llama-3.3-70b"
-    messages: List[LLmMessageModel]
+    model: str = "gpt-oss-120b"
+    messages: List[LLMMessageModel]
     maxCompletionTokens: Optional[int] = 20000
     stream: Optional[bool] = False
     temperature: Optional[float] = 0.7

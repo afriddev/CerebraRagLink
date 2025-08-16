@@ -29,7 +29,7 @@ class ExtractQaResponseModel(BaseModel):
     status: LLMResponseEnum
 
 
-class TextChunkServiceQuestionAndAnswerWithIdModel(
+class ExtractQaEmbeddingVectorModel(
     ExtractQaEmbeddingTextModel
 ):
     id: UUID
@@ -37,6 +37,6 @@ class TextChunkServiceQuestionAndAnswerWithIdModel(
 
 
 class HandleQaExtractResponseModel(BaseModel):
-    questionAndAnsers: list[TextChunkServiceQuestionAndAnswerWithIdModel] | None = None
+    questionAndAnsers: list[ExtractQaEmbeddingVectorModel] | None = None
     status: LLMResponseEnum | EmbeddingResponseEnum
     vectors: list[ExtractQaVectorModel] | None = None

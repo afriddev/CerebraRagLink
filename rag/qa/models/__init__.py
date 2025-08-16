@@ -1,17 +1,18 @@
-
-
 from .QaDocModels import (
     ExtarctQaFromTextResponseModel,
     ExtractQaResponseModel,
     HandleQaExtractResponseModel,
-    TextChunkServiceQuestionAndAnswerWithIdModel,
-    ExtractQaVectorModel
+    ExtractQaEmbeddingVectorModel,
+    ExtractQaVectorModel,
 )
+from .QaAiAnswersModels import QaAiAnswersRequestModel, QaAiAnswersResponseModel
 
 __all__ = [
     "ExtarctQaFromTextResponseModel",
     "ExtractQaResponseModel",
     "HandleQaExtractResponseModel",
-    "TextChunkServiceQuestionAndAnswerWithIdModel",
-    "ExtractQaVectorModel"
+    "ExtractQaEmbeddingVectorModel",
+    "ExtractQaVectorModel",
+    "QaAiAnswersRequestModel",
+    "QaAiAnswersResponseModel",
 ]

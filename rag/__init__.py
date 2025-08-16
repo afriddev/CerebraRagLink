@@ -1,4 +1,4 @@
-from .qa import TextChunkService
+from .qa import QaDocService,QaAiAnswersService,QaAiAnswersRequestModel
 
 
-__all__ = ["TextChunkService"]
+__all__ = ["QaDocService","QaAiAnswersService","QaAiAnswersRequestModel"]

@@ -1,15 +1,17 @@
 from typing import Any
 from fastapi.responses import JSONResponse
 from server.implementations import QaRagContollerImpl
-from rag import TextChunkService
+from rag import QaDocService, QaAiAnswersService, QaAiAnswersRequestModel
 from clientservices import EmbeddingService
 from server.models import EmbeddingVectorModel, EmbeddingTextModel
+
+qaDocService = QaDocService()
+qaAiAnswers = QaAiAnswersService()
 
 
 class QaRagControllerServices(QaRagContollerImpl):
     async def QaRagExtract(self, db: Any) -> JSONResponse:
-        textChunkService = TextChunkService()
-        result = await textChunkService.HandleQaExtract("a.pdf")
+        result = await qaDocService.HandleQaExtract("a.pdf")
         embeddingTexts: list[EmbeddingTextModel] = []
         embeddingVectors: list[EmbeddingVectorModel] = []
         if result.questionAndAnsers is not None and result.vectors is not None:
@@ -64,32 +66,30 @@ class QaRagControllerServices(QaRagContollerImpl):
 
     async def QaRagAsk(self, query: str, db: Any) -> JSONResponse:
         vectorResponse = await EmbeddingService().ConvertTextToEmbedding(text=[query])
-        embedding: list[float] = vectorResponse.data[0].embedding
-        conn = await db.get_connection()
-        sql = """
-        SELECT t.id, t.vector_id, t.question, t.answer, t.embedding_text,
-            (v.embedding_vector <-> $1) AS distance
-        FROM qa_embedding_texts t
-        JOIN qa_embedding_vectors v
-        ON t.vector_id = v.id
-        ORDER BY distance
-        LIMIT 5;
-        """
-        rows = await conn.fetch(sql, embedding)
-        await db.release_connection(conn)
-        results = []
-        for r in rows:
-            row_dict = dict(r)
-            # Convert UUIDs to str
-            if "id" in row_dict and row_dict["id"] is not None:
-                row_dict["id"] = str(row_dict["id"])
-            if "vector_id" in row_dict and row_dict["vector_id"] is not None:
-                row_dict["vector_id"] = str(row_dict["vector_id"])
-            results.append(row_dict)
+        searchText = ""
+
+        if vectorResponse.data is not None:
+            embedding: list[float] | None = vectorResponse.data[0].embedding
+            conn = await db.get_connection()
+            sql = """
+            SELECT t.id, t.vector_id, t.question, t.answer, t.embedding_text,
+                (v.embedding_vector <-> $1) AS distance
+            FROM qa_embedding_texts t
+            JOIN qa_embedding_vectors v
+            ON t.vector_id = v.id
+            ORDER BY distance
+            LIMIT 5;
+            """
+            rows = await conn.fetch(sql, embedding)
+            for row in rows:
+                searchText = searchText + row.get("answer")
+            await db.release_connection(conn)
+
+        aiResponse = await qaAiAnswers.QaResponse(
+            request=QaAiAnswersRequestModel(ragResponseText=searchText, query=query)
+        )
+
         return JSONResponse(
-            status_code=200,
-            content={
-                "message": "Ask endpoint executed successfully",
-                "results": results,
-            },
+            status_code=aiResponse.status.value[0],
+            content={"data": aiResponse.status.value[1], "answer": aiResponse.response},
         )

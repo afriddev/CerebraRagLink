@@ -273,11 +273,11 @@
         "documentation": {}
     },
     {
-        "label": "LLmMessageModel",
+        "label": "LLMMessageModel",
         "kind": 6,
         "importPath": "models.LLMServiceModels",
         "description": "models.LLMServiceModels",
-        "peekOfCode": "class LLmMessageModel(BaseModel):\n    role: Optional[LLmMessageRoleEnum] = LLmMessageRoleEnum.USER\n    content: str\nclass LLMRequestModel(BaseModel):\n    model: str = \"llama3.1-8b\"\n    messages: List[LLmMessageModel]\n    maxCompletionTokens: Optional[int] = 100\n    reasoningEffort: LLMChatReasoningEffortEnum = LLMChatReasoningEffortEnum.MEDIUM\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7",
+        "peekOfCode": "class LLMMessageModel(BaseModel):\n    role: Optional[LLmMessageRoleEnum] = LLmMessageRoleEnum.USER\n    content: str\nclass LLMRequestModel(BaseModel):\n    model: str = \"llama3.1-8b\"\n    messages: List[LLMMessageModel]\n    maxCompletionTokens: Optional[int] = 100\n    reasoningEffort: LLMChatReasoningEffortEnum = LLMChatReasoningEffortEnum.MEDIUM\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7",
         "detail": "models.LLMServiceModels",
         "documentation": {}
     },
@@ -286,7 +286,7 @@
         "kind": 6,
         "importPath": "models.LLMServiceModels",
         "description": "models.LLMServiceModels",
-        "peekOfCode": "class LLMRequestModel(BaseModel):\n    model: str = \"llama3.1-8b\"\n    messages: List[LLmMessageModel]\n    maxCompletionTokens: Optional[int] = 100\n    reasoningEffort: LLMChatReasoningEffortEnum = LLMChatReasoningEffortEnum.MEDIUM\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7\n    apiKey: str\nclass LLMResponseModel(BaseModel):\n    status: LLMResponseEnum = LLMResponseEnum.SUCCESS",
+        "peekOfCode": "class LLMRequestModel(BaseModel):\n    model: str = \"llama3.1-8b\"\n    messages: List[LLMMessageModel]\n    maxCompletionTokens: Optional[int] = 100\n    reasoningEffort: LLMChatReasoningEffortEnum = LLMChatReasoningEffortEnum.MEDIUM\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7\n    apiKey: str\nclass LLMResponseModel(BaseModel):\n    status: LLMResponseEnum = LLMResponseEnum.SUCCESS",
         "detail": "models.LLMServiceModels",
         "documentation": {}
     },

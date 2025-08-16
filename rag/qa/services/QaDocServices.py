@@ -2,7 +2,7 @@ from typing import cast
 from rag.qa.implementations import QaDocImpl
 from langchain_community.document_loaders import PyPDFLoader
 from clientservices import (
-    LLmMessageModel,
+    LLMMessageModel,
     LLMResponseFormatModel,
     LLmresponseFormatJsonSchemaModel,
     LLMResponseFormatJsonSchemaSchemaModel,
@@ -15,7 +15,7 @@ from clientservices import (
 )
 from rag.qa.models import (
     HandleQaExtractResponseModel,
-    TextChunkServiceQuestionAndAnswerWithIdModel,
+    ExtractQaEmbeddingVectorModel,
     ExtractQaVectorModel,
     ExtarctQaFromTextResponseModel,
     ExtractQaResponseModel,
@@ -24,10 +24,10 @@ from clientservices import GetCerebrasApiKey
 from uuid import uuid4
 import json
 
-from rag.qa.utils.TextChunkServiceSystemPrompts import ExtractQaPrompt
+from rag.qa.utils.qaSystomPropts import ExtractQaPrompt
 
 
-class TextChunkService(QaDocImpl):
+class QaDocService(QaDocImpl):
 
     def ExtractTextFromDoc(self, file: str) -> str:
         loader = PyPDFLoader(file)
@@ -40,8 +40,8 @@ class TextChunkService(QaDocImpl):
 
         llmService = LLMService()
         messages = [
-            LLmMessageModel(role=LLmMessageRoleEnum.SYSTEM, content=systemPrompt),
-            LLmMessageModel(
+            LLMMessageModel(role=LLmMessageRoleEnum.SYSTEM, content=systemPrompt),
+            LLMMessageModel(
                 role=LLmMessageRoleEnum.USER, content=text
             ),  # your PDF-extracted text here
         ]
@@ -128,13 +128,13 @@ class TextChunkService(QaDocImpl):
             if vectors.data is None:
                 return HandleQaExtractResponseModel(status=vectors.status)
             else:
-                embeddingTexts: list[TextChunkServiceQuestionAndAnswerWithIdModel] = []
+                embeddingTexts: list[ExtractQaEmbeddingVectorModel] = []
                 vectorslist: list[ExtractQaVectorModel] = []
                 for i, q in enumerate(questionAndAnsers.response):
                     embeddingId = uuid4()
                     vectorId = uuid4()
                     embeddingTexts.append(
-                        TextChunkServiceQuestionAndAnswerWithIdModel(
+                        ExtractQaEmbeddingVectorModel(
                             question=q.question,
                             answer=q.answer,
                             embeddingText=q.embeddingText,

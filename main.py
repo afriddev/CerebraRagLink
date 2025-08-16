@@ -17,7 +17,7 @@ psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)
 async def lifespan(app: FastAPI):
     await psqlDb.connect()
     yield
-    await psqlDb.close()
+    # await psqlDb.close()
 
 
 server = FastAPI(lifespan=lifespan)

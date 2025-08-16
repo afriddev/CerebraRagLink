@@ -40,7 +40,7 @@
         "documentation": {}
     },
     {
-        "label": "LLMChatModel",
+        "label": "LLMRequestModel",
         "importPath": "models.LLMServiceModels",
         "description": "models.LLMServiceModels",
         "isExtraImport": true,
@@ -48,7 +48,7 @@
         "documentation": {}
     },
     {
-        "label": "LLMChatResponseModel",
+        "label": "LLMResponseModel",
         "importPath": "models.LLMServiceModels",
         "description": "models.LLMServiceModels",
         "isExtraImport": true,
@@ -56,7 +56,7 @@
         "documentation": {}
     },
     {
-        "label": "LLMChatModel",
+        "label": "LLMRequestModel",
         "importPath": "models.LLMServiceModels",
         "description": "models.LLMServiceModels",
         "isExtraImport": true,
@@ -64,7 +64,7 @@
         "documentation": {}
     },
     {
-        "label": "LLMChatResponseModel",
+        "label": "LLMResponseModel",
         "importPath": "models.LLMServiceModels",
         "description": "models.LLMServiceModels",
         "isExtraImport": true,
@@ -112,7 +112,7 @@
         "documentation": {}
     },
     {
-        "label": "LLMChatMessageRoleEnum",
+        "label": "LLmMessageRoleEnum",
         "importPath": "enums.LLMServiceEnums",
         "description": "enums.LLMServiceEnums",
         "isExtraImport": true,
@@ -128,7 +128,7 @@
         "documentation": {}
     },
     {
-        "label": "LLMChatResponseStatusEnum",
+        "label": "LLMResponseEnum",
         "importPath": "enums.LLMServiceEnums",
         "description": "enums.LLMServiceEnums",
         "isExtraImport": true,
@@ -136,7 +136,7 @@
         "documentation": {}
     },
     {
-        "label": "LLMChatResponseStatusEnum",
+        "label": "LLMResponseEnum",
         "importPath": "enums.LLMServiceEnums",
         "description": "enums.LLMServiceEnums",
         "isExtraImport": true,
@@ -228,11 +228,11 @@
         "documentation": {}
     },
     {
-        "label": "LLMChatMessageRoleEnum",
+        "label": "LLmMessageRoleEnum",
         "kind": 6,
         "importPath": "enums.LLMServiceEnums",
         "description": "enums.LLMServiceEnums",
-        "peekOfCode": "class LLMChatMessageRoleEnum(Enum):\n    USER = \"user\"\n    SYSTEM = \"system\"\nclass LLMChatReasoningEffortEnum(Enum):\n    LOW = \"low\"\n    MEDIUM = \"medium\"\n    HIGH = \"high\"\nclass LLMChatResponseStatusEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")",
+        "peekOfCode": "class LLmMessageRoleEnum(Enum):\n    USER = \"user\"\n    SYSTEM = \"system\"\nclass LLMChatReasoningEffortEnum(Enum):\n    LOW = \"low\"\n    MEDIUM = \"medium\"\n    HIGH = \"high\"\nclass LLMResponseEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")",
         "detail": "enums.LLMServiceEnums",
         "documentation": {}
     },
@@ -241,16 +241,16 @@
         "kind": 6,
         "importPath": "enums.LLMServiceEnums",
         "description": "enums.LLMServiceEnums",
-        "peekOfCode": "class LLMChatReasoningEffortEnum(Enum):\n    LOW = \"low\"\n    MEDIUM = \"medium\"\n    HIGH = \"high\"\nclass LLMChatResponseStatusEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")",
+        "peekOfCode": "class LLMChatReasoningEffortEnum(Enum):\n    LOW = \"low\"\n    MEDIUM = \"medium\"\n    HIGH = \"high\"\nclass LLMResponseEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")",
         "detail": "enums.LLMServiceEnums",
         "documentation": {}
     },
     {
-        "label": "LLMChatResponseStatusEnum",
+        "label": "LLMResponseEnum",
         "kind": 6,
         "importPath": "enums.LLMServiceEnums",
         "description": "enums.LLMServiceEnums",
-        "peekOfCode": "class LLMChatResponseStatusEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")\n    REQUEST_TIMEOUT = (408, \"REQUEST_TIMEOUT\")\n    CONFLICT = (409, \"CONFLICT\")\n    ENTITY_ERROR = (422, \"ENTITY_ERROR\")\n    RATE_LIMIT = (429, \"RATE_LIMIT\")",
+        "peekOfCode": "class LLMResponseEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")\n    REQUEST_TIMEOUT = (408, \"REQUEST_TIMEOUT\")\n    CONFLICT = (409, \"CONFLICT\")\n    ENTITY_ERROR = (422, \"ENTITY_ERROR\")\n    RATE_LIMIT = (429, \"RATE_LIMIT\")",
         "detail": "enums.LLMServiceEnums",
         "documentation": {}
     },
@@ -268,34 +268,34 @@
         "kind": 6,
         "importPath": "implementations.LLMServiceImplementation",
         "description": "implementations.LLMServiceImplementation",
-        "peekOfCode": "class LLMServiceImpl(ABC):\n    @abstractmethod\n    async def Chat(self, modelParams: LLMChatModel) -> LLMChatResponseModel:\n        pass\n    @abstractmethod\n    def HandleApiStatusError(self, statusCode: int) -> LLMChatResponseModel:\n        pass",
+        "peekOfCode": "class LLMServiceImpl(ABC):\n    @abstractmethod\n    async def Chat(self, modelParams: LLMRequestModel) -> LLMResponseModel:\n        pass\n    @abstractmethod\n    def HandleApiStatusError(self, statusCode: int) -> LLMResponseModel:\n        pass",
         "detail": "implementations.LLMServiceImplementation",
         "documentation": {}
     },
     {
-        "label": "LLMChatMessageModel",
+        "label": "LLmMessageModel",
         "kind": 6,
         "importPath": "models.LLMServiceModels",
         "description": "models.LLMServiceModels",
-        "peekOfCode": "class LLMChatMessageModel(BaseModel):\n    role: Optional[LLMChatMessageRoleEnum] = LLMChatMessageRoleEnum.USER\n    content: str\nclass LLMChatModel(BaseModel):\n    model: str = \"llama3.1-8b\"\n    messages: List[LLMChatMessageModel]\n    maxCompletionTokens: Optional[int] = 100\n    reasoningEffort: LLMChatReasoningEffortEnum = LLMChatReasoningEffortEnum.MEDIUM\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7",
+        "peekOfCode": "class LLmMessageModel(BaseModel):\n    role: Optional[LLmMessageRoleEnum] = LLmMessageRoleEnum.USER\n    content: str\nclass LLMRequestModel(BaseModel):\n    model: str = \"llama3.1-8b\"\n    messages: List[LLmMessageModel]\n    maxCompletionTokens: Optional[int] = 100\n    reasoningEffort: LLMChatReasoningEffortEnum = LLMChatReasoningEffortEnum.MEDIUM\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7",
         "detail": "models.LLMServiceModels",
         "documentation": {}
     },
     {
-        "label": "LLMChatModel",
+        "label": "LLMRequestModel",
         "kind": 6,
         "importPath": "models.LLMServiceModels",
         "description": "models.LLMServiceModels",
-        "peekOfCode": "class LLMChatModel(BaseModel):\n    model: str = \"llama3.1-8b\"\n    messages: List[LLMChatMessageModel]\n    maxCompletionTokens: Optional[int] = 100\n    reasoningEffort: LLMChatReasoningEffortEnum = LLMChatReasoningEffortEnum.MEDIUM\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7\n    apiKey: str\nclass LLMChatResponseModel(BaseModel):\n    status: LLMChatResponseStatusEnum = LLMChatResponseStatusEnum.SUCCESS",
+        "peekOfCode": "class LLMRequestModel(BaseModel):\n    model: str = \"llama3.1-8b\"\n    messages: List[LLmMessageModel]\n    maxCompletionTokens: Optional[int] = 100\n    reasoningEffort: LLMChatReasoningEffortEnum = LLMChatReasoningEffortEnum.MEDIUM\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7\n    apiKey: str\nclass LLMResponseModel(BaseModel):\n    status: LLMResponseEnum = LLMResponseEnum.SUCCESS",
         "detail": "models.LLMServiceModels",
         "documentation": {}
     },
     {
-        "label": "LLMChatResponseModel",
+        "label": "LLMResponseModel",
         "kind": 6,
         "importPath": "models.LLMServiceModels",
         "description": "models.LLMServiceModels",
-        "peekOfCode": "class LLMChatResponseModel(BaseModel):\n    status: LLMChatResponseStatusEnum = LLMChatResponseStatusEnum.SUCCESS",
+        "peekOfCode": "class LLMResponseModel(BaseModel):\n    status: LLMResponseEnum = LLMResponseEnum.SUCCESS",
         "detail": "models.LLMServiceModels",
         "documentation": {}
     },
@@ -304,7 +304,7 @@
         "kind": 6,
         "importPath": "services.LLMService",
         "description": "services.LLMService",
-        "peekOfCode": "class LLM(LLMServiceImpl):\n    def HandleApiStatusError(self,statusCode:int) -> LLMChatResponseModel:\n        errorCodes = {\n            400 : LLMChatResponseStatusEnum.BAD_REQUEST,\n            401 : LLMChatResponseStatusEnum.UNAUTHROZIED,\n            403 : LLMChatResponseStatusEnum.PERMISSION_DENIED,\n            404 : LLMChatResponseStatusEnum.NOT_FOUND\n        }\n        message = errorCodes.get(statusCode,LLMChatResponseStatusEnum.SERVER_ERROR)\n        return LLMChatResponseModel(",
+        "peekOfCode": "class LLM(LLMServiceImpl):\n    def HandleApiStatusError(self,statusCode:int) -> LLMResponseModel:\n        errorCodes = {\n            400 : LLMResponseEnum.BAD_REQUEST,\n            401 : LLMResponseEnum.UNAUTHROZIED,\n            403 : LLMResponseEnum.PERMISSION_DENIED,\n            404 : LLMResponseEnum.NOT_FOUND\n        }\n        message = errorCodes.get(statusCode,LLMResponseEnum.SERVER_ERROR)\n        return LLMResponseModel(",
         "detail": "services.LLMService",
         "documentation": {}
     },

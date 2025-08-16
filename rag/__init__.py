@@ -1,7 +1,4 @@
-from .services import TextChunkService,EmbeddingService
+from .qa import TextChunkService
 
 
-__all__ = [
-    "TextChunkService",
-    "EmbeddingService"
-]
+__all__ = ["TextChunkService"]

@@ -1,5 +1,5 @@
 from typing import Any
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, StreamingResponse
 from server.implementations import QaRagContollerImpl
 from rag import QaDocService, QaAiAnswersService, QaAiAnswersRequestModel
 from clientservices import EmbeddingService
@@ -65,7 +65,7 @@ class QaRagControllerServices(QaRagContollerImpl):
             status_code=result.status.value[0], content={"data": result.status.value[1]}
         )
 
-    async def QaRagAsk(self, query: str, db: Any) -> JSONResponse:
+    async def QaRagAsk(self, query: str, db: Any) ->  StreamingResponse:
         vectorResponse = await embeddingService.ConvertTextToEmbedding(text=[query])
         searchText = ""
         if vectorResponse.data is not None:
@@ -87,7 +87,4 @@ class QaRagControllerServices(QaRagContollerImpl):
         aiResponse = await qaAiAnswers.QaResponse(
             request=QaAiAnswersRequestModel(ragResponseText=searchText, query=query)
         )
-        return JSONResponse(
-            status_code=aiResponse.status.value[0],
-            content={"data": aiResponse.status.value[1], "answer": aiResponse.response},
-        )
+        return aiResponse

@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+
+from fastapi.responses import StreamingResponse
 from rag.qa.models import QaAiAnswersResponseModel, QaAiAnswersRequestModel
 
 
@@ -8,5 +10,5 @@ class QaAiAnswersImpl(ABC):
     async def QaResponse(
         self,
         request: QaAiAnswersRequestModel,
-    ) -> QaAiAnswersResponseModel:
+    ) -> StreamingResponse:
         pass

@@ -1,5 +1,5 @@
 from typing import Any
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, StreamingResponse
 from abc import ABC, abstractmethod
 
 
@@ -10,6 +10,6 @@ class QaRagContollerImpl(ABC):
         pass
     
     @abstractmethod
-    async def QaRagAsk(self,query:str,db:Any) -> JSONResponse:
+    async def QaRagAsk(self,query:str,db:Any) -> StreamingResponse:
         pass
 

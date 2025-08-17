@@ -1,4 +1,6 @@
 from typing import Any
+
+from fastapi.responses import StreamingResponse
 from rag.qa.implementations import QaAiAnswersImpl
 from rag.qa.models import QaAiAnswersRequestModel, QaAiAnswersResponseModel
 from clientservices import (
@@ -16,9 +18,7 @@ llmServices = LLMService()
 
 class QaAiAnswersService(QaAiAnswersImpl):
 
-    async def QaResponse(
-        self, request: QaAiAnswersRequestModel
-    ) -> QaAiAnswersResponseModel:
+    async def QaResponse(self, request: QaAiAnswersRequestModel) -> StreamingResponse:
 
         llmMessages: list[LLMMessageModel] = []
         llmMessages.append(
@@ -43,15 +43,11 @@ class QaAiAnswersService(QaAiAnswersImpl):
             modelParams=LLMRequestModel(
                 apiKey=GetCerebrasApiKey(),
                 model="llama-4-scout-17b-16e-instruct",
-                stream=False,
+                stream=True,
                 messages=llmMessages,
                 responseFormat=None,
                 temperature=0.7,
-                maxCompletionTokens=1000
+                maxCompletionTokens=1000,
             )
         )
-
-        return QaAiAnswersResponseModel(
-            status=response.status,
-            response=response.LLMData.choices[0].message.content,
-        )
+        return response

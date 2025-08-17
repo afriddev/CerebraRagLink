@@ -1,5 +1,6 @@
 import cerebras.cloud.sdk
-from cerebras.cloud.sdk import AsyncCerebras, DefaultAioHttpClient
+from cerebras.cloud.sdk import AsyncCerebras
+from fastapi.responses import StreamingResponse
 from clientservices.cerebras.enums import LLMResponseEnum
 from clientservices.cerebras.implementations import LLMServiceImpl
 from clientservices.cerebras.models import (
@@ -10,12 +11,8 @@ from clientservices.cerebras.models import (
     LLMDataChoiceModel,
     LLMDataChoiceMessageModel,
 )
+from cerebras.cloud.sdk import DefaultAioHttpClient
 from typing import Any, cast
-
-cerebrasClient = AsyncCerebras(
-    api_key=None,
-    http_client=DefaultAioHttpClient(),
-)
 
 
 class LLMService(LLMServiceImpl):
@@ -30,10 +27,16 @@ class LLMService(LLMServiceImpl):
         message = errorCodes.get(statusCode, LLMResponseEnum.SERVER_ERROR)
         return LLMResponseModel(status=message)
 
-    async def Chat(self, modelParams: LLMRequestModel) -> LLMResponseModel:
+    async def Chat(
+        self, modelParams: LLMRequestModel
+    ) -> LLMResponseModel | StreamingResponse:
         try:
-            cerebrasClient.api_key = modelParams.apiKey
-            chatCompletion: Any = await cerebrasClient.chat.completions.create(  # type: ignore
+            client = AsyncCerebras(
+                api_key=modelParams.apiKey,
+                http_client=DefaultAioHttpClient(),
+            )
+
+            create_call = client.chat.completions.create(
                 messages=cast(Any, modelParams.messages),
                 model=modelParams.model,
                 max_completion_tokens=modelParams.maxCompletionTokens,
@@ -56,15 +59,31 @@ class LLMService(LLMServiceImpl):
                 ),
             )
 
+            if modelParams.stream:
+                chatCompletion: Any = await create_call
+
+                async def eventGenerator():
+
+                    async for chunk in chatCompletion:
+                        if hasattr(chunk, "choices") and len(chunk.choices) > 0:
+                            delta = chunk.choices[0].delta
+                            if delta and delta.content:
+                                yield f"{delta.content}"
+
+                return StreamingResponse(
+                    eventGenerator(), media_type="text/event-stream"
+                )
+
+            chatCompletion: Any = await create_call
+
             choices: list[LLMDataChoiceModel] = []
             for ch in chatCompletion.choices:
-                choice: Any = ch
                 choices.append(
                     LLMDataChoiceModel(
-                        index=choice.index,
+                        index=ch.index,
                         message=LLMDataChoiceMessageModel(
-                            role=choice.message.role,
-                            content=choice.message.content,
+                            role=ch.message.role,
+                            content=ch.message.content,
                         ),
                     )
                 )
@@ -84,11 +103,12 @@ class LLMService(LLMServiceImpl):
 
             return LLMResponseModel(status=LLMResponseEnum.SUCCESS, LLMData=LLMData)
 
-        except cerebras.cloud.sdk.APIConnectionError:
+        except cerebras.cloud.sdk.APIConnectionError as e:
+            print(e)
             return LLMResponseModel(status=LLMResponseEnum.SERVER_ERROR)
-
-        except cerebras.cloud.sdk.RateLimitError:
+        except cerebras.cloud.sdk.RateLimitError as e:
+            print(e)
             return LLMResponseModel(status=LLMResponseEnum.RATE_LIMIT)
-
         except cerebras.cloud.sdk.APIStatusError as e:
+            print(e)
             return self.HandleApiStatusError(e.status_code)

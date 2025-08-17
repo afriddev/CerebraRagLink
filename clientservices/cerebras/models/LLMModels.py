@@ -61,7 +61,7 @@ class LLMDataUsageModel(BaseModel):
     totalTokens: int | None = None
 
 
-class LLMDataModel(BaseModel):
+class LLMDataModel(BaseModel):  
     id: str
     choices: List[LLMDataChoiceModel] = []
     created: int

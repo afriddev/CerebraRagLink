@@ -26,6 +26,8 @@ import json
 
 from rag.qa.utils.qaSystomPropts import ExtractQaPrompt
 
+llmService = LLMService()
+embeddingService = EmbeddingService()
 
 class QaDocService(QaDocImpl):
 
@@ -38,7 +40,6 @@ class QaDocService(QaDocImpl):
     async def ExtractQaFromText(self, text: str) -> ExtarctQaFromTextResponseModel:
         systemPrompt = ExtractQaPrompt
 
-        llmService = LLMService()
         messages = [
             LLMMessageModel(role=LLmMessageRoleEnum.SYSTEM, content=systemPrompt),
             LLMMessageModel(
@@ -121,7 +122,6 @@ class QaDocService(QaDocImpl):
                 questionAndAnsers=None, status=questionAndAnsers.status, vectors=None
             )
         else:
-            embeddingService = EmbeddingService()
             vectors = await embeddingService.ConvertTextToEmbedding(
                 [qa.embeddingText for qa in questionAndAnsers.response]
             )

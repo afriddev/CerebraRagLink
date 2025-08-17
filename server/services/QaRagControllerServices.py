@@ -7,6 +7,7 @@ from server.models import EmbeddingVectorModel, EmbeddingTextModel
 
 qaDocService = QaDocService()
 qaAiAnswers = QaAiAnswersService()
+embeddingService = EmbeddingService()
 
 
 class QaRagControllerServices(QaRagContollerImpl):
@@ -65,15 +66,14 @@ class QaRagControllerServices(QaRagContollerImpl):
         )
 
     async def QaRagAsk(self, query: str, db: Any) -> JSONResponse:
-        vectorResponse = await EmbeddingService().ConvertTextToEmbedding(text=[query])
+        vectorResponse = await embeddingService.ConvertTextToEmbedding(text=[query])
         searchText = ""
-
         if vectorResponse.data is not None:
             embedding: list[float] | None = vectorResponse.data[0].embedding
             conn = await db.get_connection()
             sql = """
             SELECT t.id, t.vector_id, t.question, t.answer, t.embedding_text,
-                (v.embedding_vector <-> $1) AS distance
+                   (v.embedding_vector <-> $1) AS distance
             FROM qa_embedding_texts t
             JOIN qa_embedding_vectors v
             ON t.vector_id = v.id
@@ -82,13 +82,11 @@ class QaRagControllerServices(QaRagContollerImpl):
             """
             rows = await conn.fetch(sql, embedding)
             for row in rows:
-                searchText = searchText + row.get("answer")
+                searchText += row.get("answer")
             await db.release_connection(conn)
-
         aiResponse = await qaAiAnswers.QaResponse(
             request=QaAiAnswersRequestModel(ragResponseText=searchText, query=query)
         )
-
         return JSONResponse(
             status_code=aiResponse.status.value[0],
             content={"data": aiResponse.status.value[1], "answer": aiResponse.response},

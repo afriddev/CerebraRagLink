@@ -42,11 +42,12 @@ class QaAiAnswersService(QaAiAnswersImpl):
         response: Any = await llmServices.Chat(
             modelParams=LLMRequestModel(
                 apiKey=GetCerebrasApiKey(),
-                model="gpt-oss-120b",
+                model="llama-4-scout-17b-16e-instruct",
                 stream=False,
                 messages=llmMessages,
                 responseFormat=None,
-                temperature=0.4
+                temperature=0.7,
+                maxCompletionTokens=1000
             )
         )
 

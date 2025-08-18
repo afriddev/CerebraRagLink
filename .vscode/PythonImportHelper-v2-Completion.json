@@ -827,22 +827,30 @@
     },
     {
         "label": "QaAiAnswerPromptFromRagText",
-        "importPath": "rag.qa.utils.qaSystomPropts",
-        "description": "rag.qa.utils.qaSystomPropts",
+        "importPath": "rag.qa.utils.qaSystemPropts",
+        "description": "rag.qa.utils.qaSystemPropts",
         "isExtraImport": true,
-        "detail": "rag.qa.utils.qaSystomPropts",
+        "detail": "rag.qa.utils.qaSystemPropts",
         "documentation": {}
     },
     {
         "label": "ExtractQaPrompt",
-        "importPath": "rag.qa.utils.qaSystomPropts",
-        "description": "rag.qa.utils.qaSystomPropts",
+        "importPath": "rag.qa.utils.qaSystemPropts",
+        "description": "rag.qa.utils.qaSystemPropts",
         "isExtraImport": true,
-        "detail": "rag.qa.utils.qaSystomPropts",
+        "detail": "rag.qa.utils.qaSystemPropts",
         "documentation": {}
     },
     {
         "label": "PyPDFLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "UnstructuredExcelLoader",
         "importPath": "langchain_community.document_loaders",
         "description": "langchain_community.document_loaders",
         "isExtraImport": true,
@@ -1025,6 +1033,15 @@
         "description": "server",
         "isExtraImport": true,
         "detail": "server",
+        "documentation": {}
+    },
+    {
+        "label": "fitz",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "fitz",
+        "description": "fitz",
+        "detail": "fitz",
         "documentation": {}
     },
     {
@@ -1383,7 +1400,7 @@
         "kind": 6,
         "importPath": "rag.qa.services.QaDocServices",
         "description": "rag.qa.services.QaDocServices",
-        "peekOfCode": "class QaDocService(QaDocImpl):\n    def ExtractTextFromDoc(self, file: str) -> str:\n        loader = PyPDFLoader(file)\n        documents = loader.load()\n        fullText = \"\\n\".join(doc.page_content for doc in documents)\n        return fullText\n    async def ExtractQaFromText(self, text: str) -> ExtarctQaFromTextResponseModel:\n        systemPrompt = ExtractQaPrompt\n        messages = [\n            LLMMessageModel(role=LLmMessageRoleEnum.SYSTEM, content=systemPrompt),",
+        "peekOfCode": "class QaDocService(QaDocImpl):\n    def ExtractTextFromDoc(self, file: str) -> str:\n        ext = os.path.splitext(file)[1]  \n        loader:Any = \"\"\n        if(ext == \".pdf\"):\n            loader = PyPDFLoader(file)\n        elif(ext == \".xlsx\" or ext == \".xls\"):\n            loader = UnstructuredExcelLoader(file, mode=\"elements\")\n        documents = loader.load()\n        fullText = \"\\n\".join(doc.page_content for doc in documents)",
         "detail": "rag.qa.services.QaDocServices",
         "documentation": {}
     },
@@ -1392,7 +1409,7 @@
         "kind": 5,
         "importPath": "rag.qa.services.QaDocServices",
         "description": "rag.qa.services.QaDocServices",
-        "peekOfCode": "llmService = LLMService()\nembeddingService = EmbeddingService()\nclass QaDocService(QaDocImpl):\n    def ExtractTextFromDoc(self, file: str) -> str:\n        loader = PyPDFLoader(file)\n        documents = loader.load()\n        fullText = \"\\n\".join(doc.page_content for doc in documents)\n        return fullText\n    async def ExtractQaFromText(self, text: str) -> ExtarctQaFromTextResponseModel:\n        systemPrompt = ExtractQaPrompt",
+        "peekOfCode": "llmService = LLMService()\nembeddingService = EmbeddingService()\nclass QaDocService(QaDocImpl):\n    def ExtractTextFromDoc(self, file: str) -> str:\n        ext = os.path.splitext(file)[1]  \n        loader:Any = \"\"\n        if(ext == \".pdf\"):\n            loader = PyPDFLoader(file)\n        elif(ext == \".xlsx\" or ext == \".xls\"):\n            loader = UnstructuredExcelLoader(file, mode=\"elements\")",
         "detail": "rag.qa.services.QaDocServices",
         "documentation": {}
     },
@@ -1401,26 +1418,26 @@
         "kind": 5,
         "importPath": "rag.qa.services.QaDocServices",
         "description": "rag.qa.services.QaDocServices",
-        "peekOfCode": "embeddingService = EmbeddingService()\nclass QaDocService(QaDocImpl):\n    def ExtractTextFromDoc(self, file: str) -> str:\n        loader = PyPDFLoader(file)\n        documents = loader.load()\n        fullText = \"\\n\".join(doc.page_content for doc in documents)\n        return fullText\n    async def ExtractQaFromText(self, text: str) -> ExtarctQaFromTextResponseModel:\n        systemPrompt = ExtractQaPrompt\n        messages = [",
+        "peekOfCode": "embeddingService = EmbeddingService()\nclass QaDocService(QaDocImpl):\n    def ExtractTextFromDoc(self, file: str) -> str:\n        ext = os.path.splitext(file)[1]  \n        loader:Any = \"\"\n        if(ext == \".pdf\"):\n            loader = PyPDFLoader(file)\n        elif(ext == \".xlsx\" or ext == \".xls\"):\n            loader = UnstructuredExcelLoader(file, mode=\"elements\")\n        documents = loader.load()",
         "detail": "rag.qa.services.QaDocServices",
         "documentation": {}
     },
     {
         "label": "ExtractQaPrompt",
         "kind": 5,
-        "importPath": "rag.qa.utils.qaSystomPropts",
-        "description": "rag.qa.utils.qaSystomPropts",
-        "peekOfCode": "ExtractQaPrompt = \"\"\"\n            You are an expert information extraction assistant for building a vector-searchable QA knowledge base.\n            Your task:\n            - Read the given text (FAQ, documentation, or user guide).\n            - For each question-answer pair in the text, extract exactly as written:\n                1. `question`: Use the question text exactly as it appears in the text.\n                2. `answer`: Use the answer text exactly as it appears in the text, without adding or removing information.\n                3. `embeddingText`: A concise, enriched, search-efficient text phrased as a question.\n                    - Start with the original question.\n                    - Include key entities, concepts, or features from the answer, rewritten in question style.",
-        "detail": "rag.qa.utils.qaSystomPropts",
+        "importPath": "rag.qa.utils.qaSystemPropts",
+        "description": "rag.qa.utils.qaSystemPropts",
+        "peekOfCode": "ExtractQaPrompt = \"\"\"\nYou are an expert information extraction assistant for building a vector-searchable QA knowledge base.\nYour task:\n- Read the given text (FAQ, documentation, or user guide).\n- For each question-answer pair in the text, extract:\n    1. `question`: Use the question text exactly as written in the text.\n    2. `answer`: Use the answer text exactly as written (verbatim, do not summarize or alter).\n    3. `embeddingText`: Create a concise, enriched version of the question for vector search.\n        - Start with the original question.\n        - Add related terms, synonyms, and key entities from the answer.",
+        "detail": "rag.qa.utils.qaSystemPropts",
         "documentation": {}
     },
     {
         "label": "QaAiAnswerPromptFromRagText",
         "kind": 5,
-        "importPath": "rag.qa.utils.qaSystomPropts",
-        "description": "rag.qa.utils.qaSystomPropts",
+        "importPath": "rag.qa.utils.qaSystemPropts",
+        "description": "rag.qa.utils.qaSystemPropts",
         "peekOfCode": "QaAiAnswerPromptFromRagText = \"\"\"\nYou are an AI assistant. I will provide you with some context from a database related to the user query.\n- If the context is relevant, answer ONLY based on that context.  \n- If the context does not contain relevant information, you may answer using your own knowledge.  \n- If the user’s query is unrelated to the context, ignore the context and respond normally.  \n⚠️ Important instructions for output:\n- Respond ONLY with the final answer.  \n- Do NOT use Markdown (**bold**, ## headings, bullet points, etc.).  \n- Do NOT add <think>, XML, JSON, or any other tags.  \n- Do NOT include quotes around the text.  ",
-        "detail": "rag.qa.utils.qaSystomPropts",
+        "detail": "rag.qa.utils.qaSystemPropts",
         "documentation": {}
     },
     {
@@ -1518,7 +1535,7 @@
         "kind": 6,
         "importPath": "server.services.QaRagControllerServices",
         "description": "server.services.QaRagControllerServices",
-        "peekOfCode": "class QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.pdf\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):\n                embeddingTexts.append(\n                    EmbeddingTextModel(\n                        vectorId=qa.vectorId,",
+        "peekOfCode": "class QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.xlsx\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):\n                embeddingTexts.append(\n                    EmbeddingTextModel(\n                        vectorId=qa.vectorId,",
         "detail": "server.services.QaRagControllerServices",
         "documentation": {}
     },
@@ -1527,7 +1544,7 @@
         "kind": 5,
         "importPath": "server.services.QaRagControllerServices",
         "description": "server.services.QaRagControllerServices",
-        "peekOfCode": "qaDocService = QaDocService()\nqaAiAnswers = QaAiAnswersService()\nembeddingService = EmbeddingService()\nclass QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.pdf\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):",
+        "peekOfCode": "qaDocService = QaDocService()\nqaAiAnswers = QaAiAnswersService()\nembeddingService = EmbeddingService()\nclass QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.xlsx\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):",
         "detail": "server.services.QaRagControllerServices",
         "documentation": {}
     },
@@ -1536,7 +1553,7 @@
         "kind": 5,
         "importPath": "server.services.QaRagControllerServices",
         "description": "server.services.QaRagControllerServices",
-        "peekOfCode": "qaAiAnswers = QaAiAnswersService()\nembeddingService = EmbeddingService()\nclass QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.pdf\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):\n                embeddingTexts.append(",
+        "peekOfCode": "qaAiAnswers = QaAiAnswersService()\nembeddingService = EmbeddingService()\nclass QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.xlsx\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):\n                embeddingTexts.append(",
         "detail": "server.services.QaRagControllerServices",
         "documentation": {}
     },
@@ -1545,7 +1562,7 @@
         "kind": 5,
         "importPath": "server.services.QaRagControllerServices",
         "description": "server.services.QaRagControllerServices",
-        "peekOfCode": "embeddingService = EmbeddingService()\nclass QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.pdf\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):\n                embeddingTexts.append(\n                    EmbeddingTextModel(",
+        "peekOfCode": "embeddingService = EmbeddingService()\nclass QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.xlsx\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):\n                embeddingTexts.append(\n                    EmbeddingTextModel(",
         "detail": "server.services.QaRagControllerServices",
         "documentation": {}
     },
@@ -1583,6 +1600,15 @@
         "description": "main",
         "peekOfCode": "server = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\nserver.add_middleware(CustomMidlleware)\nserver.include_router(QaRag, prefix=\"/api/v1/qa\")",
         "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "extract_text_with_inline_images",
+        "kind": 2,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "def extract_text_with_inline_images(pdf_path):\n    doc = fitz.open(pdf_path)\n    image_map = {}\n    image_counter = 1\n    final_text = []\n    for page_num, page in enumerate(doc, start=1):\n        blocks = page.get_text(\"dict\")[\"blocks\"]\n        # Collect items with positions\n        page_items = []\n        for block in blocks:",
+        "detail": "test",
         "documentation": {}
     }
 ]

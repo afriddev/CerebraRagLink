@@ -12,7 +12,7 @@ embeddingService = EmbeddingService()
 
 class QaRagControllerServices(QaRagContollerImpl):
     async def QaRagExtract(self, db: Any) -> JSONResponse:
-        result = await qaDocService.HandleQaExtract("a.pdf")
+        result = await qaDocService.HandleQaExtract("a.xlsx")
         embeddingTexts: list[EmbeddingTextModel] = []
         embeddingVectors: list[EmbeddingVectorModel] = []
         if result.questionAndAnsers is not None and result.vectors is not None:

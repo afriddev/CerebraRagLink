@@ -9,7 +9,7 @@ from clientservices import (
     LLMRequestModel,
 )
 from clientservices import GetCerebrasApiKey
-from rag.qa.utils.qaSystomPropts import QaAiAnswerPromptFromRagText
+from rag.qa.utils.qaSystemPropts import QaAiAnswerPromptFromRagText
 
 
 llmServices = LLMService()

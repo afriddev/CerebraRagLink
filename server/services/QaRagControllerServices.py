@@ -73,7 +73,7 @@ class QaRagControllerServices(QaRagContollerImpl):
             conn = await db.get_connection()
             sql = """
             SELECT t.id, t.vector_id, t.question, t.answer, t.embedding_text,
-                   (v.embedding_vector <-> $1) AS distance
+                   (v.embedding_vector <=> $1) AS distance
             FROM qa_embedding_texts t
             JOIN qa_embedding_vectors v
             ON t.vector_id = v.id

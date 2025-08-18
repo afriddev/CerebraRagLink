@@ -1,4 +1,4 @@
-from typing import cast
+from typing import Any, cast
 from rag.qa.implementations import QaDocImpl
 from langchain_community.document_loaders import PyPDFLoader
 from clientservices import (
@@ -8,7 +8,6 @@ from clientservices import (
     LLMResponseFormatJsonSchemaSchemaModel,
     LLMResponseFormatPropertySchemaModel,
     LLMRequestModel,
-    LLMResponseModel,
     LLMService,
     EmbeddingService,
     LLmMessageRoleEnum,
@@ -47,7 +46,7 @@ class QaDocService(QaDocImpl):
             ),  # your PDF-extracted text here
         ]
 
-        LLMResponse: LLMResponseModel = await llmService.Chat(
+        LLMResponse:Any = await llmService.Chat(
             modelParams=LLMRequestModel(
                 apiKey=GetCerebrasApiKey(),
                 model="qwen-3-235b-a22b-instruct-2507",

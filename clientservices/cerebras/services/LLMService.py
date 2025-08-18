@@ -14,6 +14,11 @@ from clientservices.cerebras.models import (
 from cerebras.cloud.sdk import DefaultAioHttpClient
 from typing import Any, cast
 
+client = AsyncCerebras(
+    api_key=None,
+    http_client=DefaultAioHttpClient(),
+)
+
 
 class LLMService(LLMServiceImpl):
 
@@ -31,11 +36,7 @@ class LLMService(LLMServiceImpl):
         self, modelParams: LLMRequestModel
     ) -> LLMResponseModel | StreamingResponse:
         try:
-            client = AsyncCerebras(
-                api_key=modelParams.apiKey,
-                http_client=DefaultAioHttpClient(),
-            )
-
+            client.api_key = modelParams.apiKey
             create_call = client.chat.completions.create(
                 messages=cast(Any, modelParams.messages),
                 model=modelParams.model,

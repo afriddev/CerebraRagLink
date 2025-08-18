@@ -8,6 +8,30 @@
         "documentation": {}
     },
     {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
         "label": "ABC",
         "importPath": "abc",
         "description": "abc",
@@ -40,35 +64,147 @@
         "documentation": {}
     },
     {
-        "label": "LLMRequestModel",
-        "importPath": "models.LLMServiceModels",
-        "description": "models.LLMServiceModels",
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
         "isExtraImport": true,
-        "detail": "models.LLMServiceModels",
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "StreamingResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "StreamingResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "LLMRequestModel",
+        "importPath": "clientservices.cerebras.models",
+        "description": "clientservices.cerebras.models",
+        "isExtraImport": true,
+        "detail": "clientservices.cerebras.models",
         "documentation": {}
     },
     {
         "label": "LLMResponseModel",
-        "importPath": "models.LLMServiceModels",
-        "description": "models.LLMServiceModels",
+        "importPath": "clientservices.cerebras.models",
+        "description": "clientservices.cerebras.models",
         "isExtraImport": true,
-        "detail": "models.LLMServiceModels",
+        "detail": "clientservices.cerebras.models",
         "documentation": {}
     },
     {
         "label": "LLMRequestModel",
-        "importPath": "models.LLMServiceModels",
-        "description": "models.LLMServiceModels",
+        "importPath": "clientservices.cerebras.models",
+        "description": "clientservices.cerebras.models",
         "isExtraImport": true,
-        "detail": "models.LLMServiceModels",
+        "detail": "clientservices.cerebras.models",
         "documentation": {}
     },
     {
         "label": "LLMResponseModel",
-        "importPath": "models.LLMServiceModels",
-        "description": "models.LLMServiceModels",
+        "importPath": "clientservices.cerebras.models",
+        "description": "clientservices.cerebras.models",
         "isExtraImport": true,
-        "detail": "models.LLMServiceModels",
+        "detail": "clientservices.cerebras.models",
+        "documentation": {}
+    },
+    {
+        "label": "LLMDataModel",
+        "importPath": "clientservices.cerebras.models",
+        "description": "clientservices.cerebras.models",
+        "isExtraImport": true,
+        "detail": "clientservices.cerebras.models",
+        "documentation": {}
+    },
+    {
+        "label": "LLMDataUsageModel",
+        "importPath": "clientservices.cerebras.models",
+        "description": "clientservices.cerebras.models",
+        "isExtraImport": true,
+        "detail": "clientservices.cerebras.models",
+        "documentation": {}
+    },
+    {
+        "label": "LLMDataChoiceModel",
+        "importPath": "clientservices.cerebras.models",
+        "description": "clientservices.cerebras.models",
+        "isExtraImport": true,
+        "detail": "clientservices.cerebras.models",
+        "documentation": {}
+    },
+    {
+        "label": "LLMDataChoiceMessageModel",
+        "importPath": "clientservices.cerebras.models",
+        "description": "clientservices.cerebras.models",
+        "isExtraImport": true,
+        "detail": "clientservices.cerebras.models",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
         "documentation": {}
     },
     {
@@ -104,6 +240,110 @@
         "documentation": {}
     },
     {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "BaseModel",
         "importPath": "pydantic",
         "description": "pydantic",
@@ -113,34 +353,26 @@
     },
     {
         "label": "LLmMessageRoleEnum",
-        "importPath": "enums.LLMServiceEnums",
-        "description": "enums.LLMServiceEnums",
+        "importPath": "clientservices.cerebras.enums",
+        "description": "clientservices.cerebras.enums",
         "isExtraImport": true,
-        "detail": "enums.LLMServiceEnums",
-        "documentation": {}
-    },
-    {
-        "label": "LLMChatReasoningEffortEnum",
-        "importPath": "enums.LLMServiceEnums",
-        "description": "enums.LLMServiceEnums",
-        "isExtraImport": true,
-        "detail": "enums.LLMServiceEnums",
+        "detail": "clientservices.cerebras.enums",
         "documentation": {}
     },
     {
         "label": "LLMResponseEnum",
-        "importPath": "enums.LLMServiceEnums",
-        "description": "enums.LLMServiceEnums",
+        "importPath": "clientservices.cerebras.enums",
+        "description": "clientservices.cerebras.enums",
         "isExtraImport": true,
-        "detail": "enums.LLMServiceEnums",
+        "detail": "clientservices.cerebras.enums",
         "documentation": {}
     },
     {
         "label": "LLMResponseEnum",
-        "importPath": "enums.LLMServiceEnums",
-        "description": "enums.LLMServiceEnums",
+        "importPath": "clientservices.cerebras.enums",
+        "description": "clientservices.cerebras.enums",
         "isExtraImport": true,
-        "detail": "enums.LLMServiceEnums",
+        "detail": "clientservices.cerebras.enums",
         "documentation": {}
     },
     {
@@ -170,204 +402,1186 @@
     },
     {
         "label": "LLMServiceImpl",
-        "importPath": "implementations.LLMServiceImplementation",
-        "description": "implementations.LLMServiceImplementation",
+        "importPath": "clientservices.cerebras.implementations",
+        "description": "clientservices.cerebras.implementations",
         "isExtraImport": true,
-        "detail": "implementations.LLMServiceImplementation",
+        "detail": "clientservices.cerebras.implementations",
         "documentation": {}
     },
     {
-        "label": "asyncio",
+        "label": "os",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "asyncio",
-        "description": "asyncio",
-        "detail": "asyncio",
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
         "documentation": {}
     },
     {
-        "label": "time",
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingResponseModel",
+        "importPath": "clientservices.mistral.models",
+        "description": "clientservices.mistral.models",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.models",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingResponseModel",
+        "importPath": "clientservices.mistral.models",
+        "description": "clientservices.mistral.models",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.models",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingDataModel",
+        "importPath": "clientservices.mistral.models",
+        "description": "clientservices.mistral.models",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.models",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingUsageModel",
+        "importPath": "clientservices.mistral.models",
+        "description": "clientservices.mistral.models",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.models",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingResponseEnum",
+        "importPath": "clientservices.mistral.enums",
+        "description": "clientservices.mistral.enums",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.enums",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingResponseEnum",
+        "importPath": "clientservices.mistral.enums",
+        "description": "clientservices.mistral.enums",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.enums",
+        "documentation": {}
+    },
+    {
+        "label": "Mistral",
+        "importPath": "mistralai",
+        "description": "mistralai",
+        "isExtraImport": true,
+        "detail": "mistralai",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "mistralai",
+        "description": "mistralai",
+        "isExtraImport": true,
+        "detail": "mistralai",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingResponse",
+        "importPath": "mistralai",
+        "description": "mistralai",
+        "isExtraImport": true,
+        "detail": "mistralai",
+        "documentation": {}
+    },
+    {
+        "label": "GetMistralApiKey",
+        "importPath": "clientservices.mistral.workers",
+        "description": "clientservices.mistral.workers",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.workers",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersRequestModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtarctQaFromTextResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractQaResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "HandleQaExtractResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersRequestModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "HandleQaExtractResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractQaEmbeddingVectorModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractQaVectorModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtarctQaFromTextResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractQaResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "LLMResponseEnum",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMResponseEnum",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingResponseEnum",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMService",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMMessageModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLmMessageRoleEnum",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMRequestModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "GetCerebrasApiKey",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMMessageModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMResponseFormatModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLmresponseFormatJsonSchemaModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMResponseFormatJsonSchemaSchemaModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMResponseFormatPropertySchemaModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMRequestModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMResponseModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMService",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingService",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLmMessageRoleEnum",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "GetCerebrasApiKey",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingService",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "UUID",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "uuid4",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "UUID",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersImpl",
+        "importPath": "rag.qa.implementations",
+        "description": "rag.qa.implementations",
+        "isExtraImport": true,
+        "detail": "rag.qa.implementations",
+        "documentation": {}
+    },
+    {
+        "label": "QaDocImpl",
+        "importPath": "rag.qa.implementations",
+        "description": "rag.qa.implementations",
+        "isExtraImport": true,
+        "detail": "rag.qa.implementations",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswerPromptFromRagText",
+        "importPath": "rag.qa.utils.qaSystomPropts",
+        "description": "rag.qa.utils.qaSystomPropts",
+        "isExtraImport": true,
+        "detail": "rag.qa.utils.qaSystomPropts",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractQaPrompt",
+        "importPath": "rag.qa.utils.qaSystomPropts",
+        "description": "rag.qa.utils.qaSystomPropts",
+        "isExtraImport": true,
+        "detail": "rag.qa.utils.qaSystomPropts",
+        "documentation": {}
+    },
+    {
+        "label": "PyPDFLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "json",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "time",
-        "description": "time",
-        "detail": "time",
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
         "documentation": {}
     },
     {
-        "label": "math",
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "PsqlDb",
+        "importPath": "server.psqldb",
+        "description": "server.psqldb",
+        "isExtraImport": true,
+        "detail": "server.psqldb",
+        "documentation": {}
+    },
+    {
+        "label": "QaRagControllerServices",
+        "importPath": "server.services",
+        "description": "server.services",
+        "isExtraImport": true,
+        "detail": "server.services",
+        "documentation": {}
+    },
+    {
+        "label": "QaRagAskRequestModel",
+        "importPath": "server.models",
+        "description": "server.models",
+        "isExtraImport": true,
+        "detail": "server.models",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingVectorModel",
+        "importPath": "server.models",
+        "description": "server.models",
+        "isExtraImport": true,
+        "detail": "server.models",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingTextModel",
+        "importPath": "server.models",
+        "description": "server.models",
+        "isExtraImport": true,
+        "detail": "server.models",
+        "documentation": {}
+    },
+    {
+        "label": "asyncpg",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "math",
-        "description": "math",
-        "detail": "math",
+        "importPath": "asyncpg",
+        "description": "asyncpg",
+        "detail": "asyncpg",
         "documentation": {}
     },
     {
-        "label": "AsyncEngineArray",
-        "importPath": "infinity_emb",
-        "description": "infinity_emb",
+        "label": "register_vector",
+        "importPath": "pgvector.asyncpg",
+        "description": "pgvector.asyncpg",
         "isExtraImport": true,
-        "detail": "infinity_emb",
+        "detail": "pgvector.asyncpg",
         "documentation": {}
     },
     {
-        "label": "EngineArgs",
-        "importPath": "infinity_emb",
-        "description": "infinity_emb",
+        "label": "QaRagContollerImpl",
+        "importPath": "server.implementations",
+        "description": "server.implementations",
         "isExtraImport": true,
-        "detail": "infinity_emb",
+        "detail": "server.implementations",
         "documentation": {}
     },
     {
-        "label": "AsyncEmbeddingEngine",
-        "importPath": "infinity_emb",
-        "description": "infinity_emb",
+        "label": "QaDocService",
+        "importPath": "rag",
+        "description": "rag",
         "isExtraImport": true,
-        "detail": "infinity_emb",
+        "detail": "rag",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersService",
+        "importPath": "rag",
+        "description": "rag",
+        "isExtraImport": true,
+        "detail": "rag",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersRequestModel",
+        "importPath": "rag",
+        "description": "rag",
+        "isExtraImport": true,
+        "detail": "rag",
+        "documentation": {}
+    },
+    {
+        "label": "BaseHTTPMiddleware",
+        "importPath": "starlette.middleware.base",
+        "description": "starlette.middleware.base",
+        "isExtraImport": true,
+        "detail": "starlette.middleware.base",
+        "documentation": {}
+    },
+    {
+        "label": "RequestResponseEndpoint",
+        "importPath": "starlette.middleware.base",
+        "description": "starlette.middleware.base",
+        "isExtraImport": true,
+        "detail": "starlette.middleware.base",
+        "documentation": {}
+    },
+    {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "asynccontextmanager",
+        "importPath": "contextlib",
+        "description": "contextlib",
+        "isExtraImport": true,
+        "detail": "contextlib",
+        "documentation": {}
+    },
+    {
+        "label": "PsqlDb",
+        "importPath": "server",
+        "description": "server",
+        "isExtraImport": true,
+        "detail": "server",
+        "documentation": {}
+    },
+    {
+        "label": "QaRag",
+        "importPath": "server",
+        "description": "server",
+        "isExtraImport": true,
+        "detail": "server",
+        "documentation": {}
+    },
+    {
+        "label": "CustomMidlleware",
+        "importPath": "server",
+        "description": "server",
+        "isExtraImport": true,
+        "detail": "server",
         "documentation": {}
     },
     {
         "label": "LLmMessageRoleEnum",
         "kind": 6,
-        "importPath": "enums.LLMServiceEnums",
-        "description": "enums.LLMServiceEnums",
-        "peekOfCode": "class LLmMessageRoleEnum(Enum):\n    USER = \"user\"\n    SYSTEM = \"system\"\nclass LLMChatReasoningEffortEnum(Enum):\n    LOW = \"low\"\n    MEDIUM = \"medium\"\n    HIGH = \"high\"\nclass LLMResponseEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")",
-        "detail": "enums.LLMServiceEnums",
-        "documentation": {}
-    },
-    {
-        "label": "LLMChatReasoningEffortEnum",
-        "kind": 6,
-        "importPath": "enums.LLMServiceEnums",
-        "description": "enums.LLMServiceEnums",
-        "peekOfCode": "class LLMChatReasoningEffortEnum(Enum):\n    LOW = \"low\"\n    MEDIUM = \"medium\"\n    HIGH = \"high\"\nclass LLMResponseEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")",
-        "detail": "enums.LLMServiceEnums",
+        "importPath": "clientservices.cerebras.enums.LLMEnums",
+        "description": "clientservices.cerebras.enums.LLMEnums",
+        "peekOfCode": "class LLmMessageRoleEnum(Enum):\n    USER = \"user\"\n    SYSTEM = \"system\"\n    ASSISTANT = \"assistant\"\nclass LLMResponseEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")",
+        "detail": "clientservices.cerebras.enums.LLMEnums",
         "documentation": {}
     },
     {
         "label": "LLMResponseEnum",
         "kind": 6,
-        "importPath": "enums.LLMServiceEnums",
-        "description": "enums.LLMServiceEnums",
+        "importPath": "clientservices.cerebras.enums.LLMEnums",
+        "description": "clientservices.cerebras.enums.LLMEnums",
         "peekOfCode": "class LLMResponseEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")\n    REQUEST_TIMEOUT = (408, \"REQUEST_TIMEOUT\")\n    CONFLICT = (409, \"CONFLICT\")\n    ENTITY_ERROR = (422, \"ENTITY_ERROR\")\n    RATE_LIMIT = (429, \"RATE_LIMIT\")",
-        "detail": "enums.LLMServiceEnums",
-        "documentation": {}
-    },
-    {
-        "label": "EmbeddignServceiImpl",
-        "kind": 6,
-        "importPath": "implementations.EmbeddingServiceimplementation",
-        "description": "implementations.EmbeddingServiceimplementation",
-        "peekOfCode": "class EmbeddignServceiImpl(ABC):",
-        "detail": "implementations.EmbeddingServiceimplementation",
+        "detail": "clientservices.cerebras.enums.LLMEnums",
         "documentation": {}
     },
     {
         "label": "LLMServiceImpl",
         "kind": 6,
-        "importPath": "implementations.LLMServiceImplementation",
-        "description": "implementations.LLMServiceImplementation",
-        "peekOfCode": "class LLMServiceImpl(ABC):\n    @abstractmethod\n    async def Chat(self, modelParams: LLMRequestModel) -> LLMResponseModel:\n        pass\n    @abstractmethod\n    def HandleApiStatusError(self, statusCode: int) -> LLMResponseModel:\n        pass",
-        "detail": "implementations.LLMServiceImplementation",
+        "importPath": "clientservices.cerebras.implementations.LLMServiceImplementation",
+        "description": "clientservices.cerebras.implementations.LLMServiceImplementation",
+        "peekOfCode": "class LLMServiceImpl(ABC):\n    @abstractmethod\n    async def Chat(self, modelParams: LLMRequestModel) -> LLMResponseModel | StreamingResponse:\n        pass\n    @abstractmethod\n    def HandleApiStatusError(\n        self, statusCode: int\n    ) -> LLMResponseModel :\n        pass",
+        "detail": "clientservices.cerebras.implementations.LLMServiceImplementation",
         "documentation": {}
     },
     {
         "label": "LLMMessageModel",
         "kind": 6,
-        "importPath": "models.LLMServiceModels",
-        "description": "models.LLMServiceModels",
-        "peekOfCode": "class LLMMessageModel(BaseModel):\n    role: Optional[LLmMessageRoleEnum] = LLmMessageRoleEnum.USER\n    content: str\nclass LLMRequestModel(BaseModel):\n    model: str = \"llama3.1-8b\"\n    messages: List[LLMMessageModel]\n    maxCompletionTokens: Optional[int] = 100\n    reasoningEffort: LLMChatReasoningEffortEnum = LLMChatReasoningEffortEnum.MEDIUM\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7",
-        "detail": "models.LLMServiceModels",
+        "importPath": "clientservices.cerebras.models.LLMModels",
+        "description": "clientservices.cerebras.models.LLMModels",
+        "peekOfCode": "class LLMMessageModel(BaseModel):\n    role: Optional[LLmMessageRoleEnum] = LLmMessageRoleEnum.USER\n    content: str\nclass LLMResponseFormatPropertySchemaModel(BaseModel):\n    type: str | int | float | str\n    items: Optional[Any] = None\nclass LLMResponseFormatJsonSchemaSchemaModel(BaseModel):\n    type: str = \"object\"\n    properties: dict[str, LLMResponseFormatPropertySchemaModel] = {}\n    required: List[str] = []",
+        "detail": "clientservices.cerebras.models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "LLMResponseFormatPropertySchemaModel",
+        "kind": 6,
+        "importPath": "clientservices.cerebras.models.LLMModels",
+        "description": "clientservices.cerebras.models.LLMModels",
+        "peekOfCode": "class LLMResponseFormatPropertySchemaModel(BaseModel):\n    type: str | int | float | str\n    items: Optional[Any] = None\nclass LLMResponseFormatJsonSchemaSchemaModel(BaseModel):\n    type: str = \"object\"\n    properties: dict[str, LLMResponseFormatPropertySchemaModel] = {}\n    required: List[str] = []\n    additionalProperties: bool = False\nclass LLmresponseFormatJsonSchemaModel(BaseModel):\n    name: str = \"schema\"",
+        "detail": "clientservices.cerebras.models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "LLMResponseFormatJsonSchemaSchemaModel",
+        "kind": 6,
+        "importPath": "clientservices.cerebras.models.LLMModels",
+        "description": "clientservices.cerebras.models.LLMModels",
+        "peekOfCode": "class LLMResponseFormatJsonSchemaSchemaModel(BaseModel):\n    type: str = \"object\"\n    properties: dict[str, LLMResponseFormatPropertySchemaModel] = {}\n    required: List[str] = []\n    additionalProperties: bool = False\nclass LLmresponseFormatJsonSchemaModel(BaseModel):\n    name: str = \"schema\"\n    strict: bool = True\n    jsonSchema: LLMResponseFormatJsonSchemaSchemaModel\nclass LLMResponseFormatModel(BaseModel):",
+        "detail": "clientservices.cerebras.models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "LLmresponseFormatJsonSchemaModel",
+        "kind": 6,
+        "importPath": "clientservices.cerebras.models.LLMModels",
+        "description": "clientservices.cerebras.models.LLMModels",
+        "peekOfCode": "class LLmresponseFormatJsonSchemaModel(BaseModel):\n    name: str = \"schema\"\n    strict: bool = True\n    jsonSchema: LLMResponseFormatJsonSchemaSchemaModel\nclass LLMResponseFormatModel(BaseModel):\n    type: str = \"json_schema\"\n    jsonSchema: LLmresponseFormatJsonSchemaModel\nclass LLMRequestModel(BaseModel):\n    model: str = \"gpt-oss-120b\"\n    messages: List[LLMMessageModel]",
+        "detail": "clientservices.cerebras.models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "LLMResponseFormatModel",
+        "kind": 6,
+        "importPath": "clientservices.cerebras.models.LLMModels",
+        "description": "clientservices.cerebras.models.LLMModels",
+        "peekOfCode": "class LLMResponseFormatModel(BaseModel):\n    type: str = \"json_schema\"\n    jsonSchema: LLmresponseFormatJsonSchemaModel\nclass LLMRequestModel(BaseModel):\n    model: str = \"gpt-oss-120b\"\n    messages: List[LLMMessageModel]\n    maxCompletionTokens: Optional[int] = 20000\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7\n    apiKey: str",
+        "detail": "clientservices.cerebras.models.LLMModels",
         "documentation": {}
     },
     {
         "label": "LLMRequestModel",
         "kind": 6,
-        "importPath": "models.LLMServiceModels",
-        "description": "models.LLMServiceModels",
-        "peekOfCode": "class LLMRequestModel(BaseModel):\n    model: str = \"llama3.1-8b\"\n    messages: List[LLMMessageModel]\n    maxCompletionTokens: Optional[int] = 100\n    reasoningEffort: LLMChatReasoningEffortEnum = LLMChatReasoningEffortEnum.MEDIUM\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7\n    apiKey: str\nclass LLMResponseModel(BaseModel):\n    status: LLMResponseEnum = LLMResponseEnum.SUCCESS",
-        "detail": "models.LLMServiceModels",
+        "importPath": "clientservices.cerebras.models.LLMModels",
+        "description": "clientservices.cerebras.models.LLMModels",
+        "peekOfCode": "class LLMRequestModel(BaseModel):\n    model: str = \"gpt-oss-120b\"\n    messages: List[LLMMessageModel]\n    maxCompletionTokens: Optional[int] = 20000\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7\n    apiKey: str\n    responseFormat: Optional[LLMResponseFormatModel] = None\nclass LLMDataChoiceMessageModel(BaseModel):\n    role: LLmMessageRoleEnum = LLmMessageRoleEnum.ASSISTANT",
+        "detail": "clientservices.cerebras.models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "LLMDataChoiceMessageModel",
+        "kind": 6,
+        "importPath": "clientservices.cerebras.models.LLMModels",
+        "description": "clientservices.cerebras.models.LLMModels",
+        "peekOfCode": "class LLMDataChoiceMessageModel(BaseModel):\n    role: LLmMessageRoleEnum = LLmMessageRoleEnum.ASSISTANT\n    content: str\nclass LLMDataChoiceModel(BaseModel):\n    index: int = 0\n    message: LLMDataChoiceMessageModel\nclass LLMDataUsageModel(BaseModel):\n    promptTokens: int | None = None\n    completionTokens: int | None = None\n    totalTokens: int | None = None",
+        "detail": "clientservices.cerebras.models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "LLMDataChoiceModel",
+        "kind": 6,
+        "importPath": "clientservices.cerebras.models.LLMModels",
+        "description": "clientservices.cerebras.models.LLMModels",
+        "peekOfCode": "class LLMDataChoiceModel(BaseModel):\n    index: int = 0\n    message: LLMDataChoiceMessageModel\nclass LLMDataUsageModel(BaseModel):\n    promptTokens: int | None = None\n    completionTokens: int | None = None\n    totalTokens: int | None = None\nclass LLMDataModel(BaseModel):  \n    id: str\n    choices: List[LLMDataChoiceModel] = []",
+        "detail": "clientservices.cerebras.models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "LLMDataUsageModel",
+        "kind": 6,
+        "importPath": "clientservices.cerebras.models.LLMModels",
+        "description": "clientservices.cerebras.models.LLMModels",
+        "peekOfCode": "class LLMDataUsageModel(BaseModel):\n    promptTokens: int | None = None\n    completionTokens: int | None = None\n    totalTokens: int | None = None\nclass LLMDataModel(BaseModel):  \n    id: str\n    choices: List[LLMDataChoiceModel] = []\n    created: int\n    model: str = \"llama-3.3-70b\"\n    totalTime: float = 0.0",
+        "detail": "clientservices.cerebras.models.LLMModels",
+        "documentation": {}
+    },
+    {
+        "label": "LLMDataModel",
+        "kind": 6,
+        "importPath": "clientservices.cerebras.models.LLMModels",
+        "description": "clientservices.cerebras.models.LLMModels",
+        "peekOfCode": "class LLMDataModel(BaseModel):  \n    id: str\n    choices: List[LLMDataChoiceModel] = []\n    created: int\n    model: str = \"llama-3.3-70b\"\n    totalTime: float = 0.0\n    usage: LLMDataUsageModel\nclass LLMResponseModel(BaseModel):\n    status: LLMResponseEnum = LLMResponseEnum.SUCCESS\n    LLMData: LLMDataModel | None = None",
+        "detail": "clientservices.cerebras.models.LLMModels",
         "documentation": {}
     },
     {
         "label": "LLMResponseModel",
         "kind": 6,
-        "importPath": "models.LLMServiceModels",
-        "description": "models.LLMServiceModels",
-        "peekOfCode": "class LLMResponseModel(BaseModel):\n    status: LLMResponseEnum = LLMResponseEnum.SUCCESS",
-        "detail": "models.LLMServiceModels",
+        "importPath": "clientservices.cerebras.models.LLMModels",
+        "description": "clientservices.cerebras.models.LLMModels",
+        "peekOfCode": "class LLMResponseModel(BaseModel):\n    status: LLMResponseEnum = LLMResponseEnum.SUCCESS\n    LLMData: LLMDataModel | None = None",
+        "detail": "clientservices.cerebras.models.LLMModels",
         "documentation": {}
     },
     {
-        "label": "LLM",
+        "label": "LLMService",
         "kind": 6,
-        "importPath": "services.LLMService",
-        "description": "services.LLMService",
-        "peekOfCode": "class LLM(LLMServiceImpl):\n    def HandleApiStatusError(self,statusCode:int) -> LLMResponseModel:\n        errorCodes = {\n            400 : LLMResponseEnum.BAD_REQUEST,\n            401 : LLMResponseEnum.UNAUTHROZIED,\n            403 : LLMResponseEnum.PERMISSION_DENIED,\n            404 : LLMResponseEnum.NOT_FOUND\n        }\n        message = errorCodes.get(statusCode,LLMResponseEnum.SERVER_ERROR)\n        return LLMResponseModel(",
-        "detail": "services.LLMService",
+        "importPath": "clientservices.cerebras.services.LLMService",
+        "description": "clientservices.cerebras.services.LLMService",
+        "peekOfCode": "class LLMService(LLMServiceImpl):\n    def HandleApiStatusError(self, statusCode: int) -> LLMResponseModel:\n        errorCodes = {\n            400: LLMResponseEnum.BAD_REQUEST,\n            401: LLMResponseEnum.UNAUTHROZIED,\n            403: LLMResponseEnum.PERMISSION_DENIED,\n            404: LLMResponseEnum.NOT_FOUND,\n        }\n        message = errorCodes.get(statusCode, LLMResponseEnum.SERVER_ERROR)\n        return LLMResponseModel(status=message)",
+        "detail": "clientservices.cerebras.services.LLMService",
         "documentation": {}
     },
     {
-        "label": "MODEL_ID",
+        "label": "client",
+        "kind": 5,
+        "importPath": "clientservices.cerebras.services.LLMService",
+        "description": "clientservices.cerebras.services.LLMService",
+        "peekOfCode": "client = AsyncCerebras(\n    api_key=None,\n    http_client=DefaultAioHttpClient(),\n)\nclass LLMService(LLMServiceImpl):\n    def HandleApiStatusError(self, statusCode: int) -> LLMResponseModel:\n        errorCodes = {\n            400: LLMResponseEnum.BAD_REQUEST,\n            401: LLMResponseEnum.UNAUTHROZIED,\n            403: LLMResponseEnum.PERMISSION_DENIED,",
+        "detail": "clientservices.cerebras.services.LLMService",
+        "documentation": {}
+    },
+    {
+        "label": "GetCerebrasApiKey",
+        "kind": 2,
+        "importPath": "clientservices.cerebras.workers.GetApiKey",
+        "description": "clientservices.cerebras.workers.GetApiKey",
+        "peekOfCode": "def GetCerebrasApiKey() ->str:\n    return CEREBRAS_API_KEY",
+        "detail": "clientservices.cerebras.workers.GetApiKey",
+        "documentation": {}
+    },
+    {
+        "label": "CEREBRAS_API_KEY",
+        "kind": 5,
+        "importPath": "clientservices.cerebras.workers.GetApiKey",
+        "description": "clientservices.cerebras.workers.GetApiKey",
+        "peekOfCode": "CEREBRAS_API_KEY = cast(Any, os.getenv(\"CEREBRAS_API_KEY\"))\ndef GetCerebrasApiKey() ->str:\n    return CEREBRAS_API_KEY",
+        "detail": "clientservices.cerebras.workers.GetApiKey",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingResponseEnum",
+        "kind": 6,
+        "importPath": "clientservices.mistral.enums.EmbeddingEnums",
+        "description": "clientservices.mistral.enums.EmbeddingEnums",
+        "peekOfCode": "class EmbeddingResponseEnum(Enum):\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")",
+        "detail": "clientservices.mistral.enums.EmbeddingEnums",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingServiceImpl",
+        "kind": 6,
+        "importPath": "clientservices.mistral.implementations.EmbeddingServiceimplementation",
+        "description": "clientservices.mistral.implementations.EmbeddingServiceimplementation",
+        "peekOfCode": "class EmbeddingServiceImpl(ABC):\n    @abstractmethod\n    async def ConvertTextToEmbedding(\n        self, text: list[str]\n    ) ->  EmbeddingResponseModel:\n        pass",
+        "detail": "clientservices.mistral.implementations.EmbeddingServiceimplementation",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingUsageModel",
+        "kind": 6,
+        "importPath": "clientservices.mistral.models.EmbeddingModels",
+        "description": "clientservices.mistral.models.EmbeddingModels",
+        "peekOfCode": "class EmbeddingUsageModel(BaseModel):\n    promptTokens: int | None\n    completionTokens: int | None\n    totalTokens: int | None\nclass EmbeddingDataModel(BaseModel):\n    index: int | None\n    embedding: list[float] | None\nclass EmbeddingResponseModel(BaseModel):\n    status: EmbeddingResponseEnum = (\n        EmbeddingResponseEnum.VALIDATION_ERROR",
+        "detail": "clientservices.mistral.models.EmbeddingModels",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingDataModel",
+        "kind": 6,
+        "importPath": "clientservices.mistral.models.EmbeddingModels",
+        "description": "clientservices.mistral.models.EmbeddingModels",
+        "peekOfCode": "class EmbeddingDataModel(BaseModel):\n    index: int | None\n    embedding: list[float] | None\nclass EmbeddingResponseModel(BaseModel):\n    status: EmbeddingResponseEnum = (\n        EmbeddingResponseEnum.VALIDATION_ERROR\n    )\n    id: str | None = None\n    model: str  | None = None\n    usage: EmbeddingUsageModel | None = None",
+        "detail": "clientservices.mistral.models.EmbeddingModels",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingResponseModel",
+        "kind": 6,
+        "importPath": "clientservices.mistral.models.EmbeddingModels",
+        "description": "clientservices.mistral.models.EmbeddingModels",
+        "peekOfCode": "class EmbeddingResponseModel(BaseModel):\n    status: EmbeddingResponseEnum = (\n        EmbeddingResponseEnum.VALIDATION_ERROR\n    )\n    id: str | None = None\n    model: str  | None = None\n    usage: EmbeddingUsageModel | None = None\n    data: list[EmbeddingDataModel] | None = None",
+        "detail": "clientservices.mistral.models.EmbeddingModels",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingService",
+        "kind": 6,
+        "importPath": "clientservices.mistral.services.EmbeddingService",
+        "description": "clientservices.mistral.services.EmbeddingService",
+        "peekOfCode": "class EmbeddingService:\n    async def ConvertTextToEmbedding(self, text: list[str]) -> EmbeddingResponseModel:\n        try:\n            res: EmbeddingResponse = await mistralClient.embeddings.create_async(\n                model=\"mistral-embed\",\n                inputs=text,\n            )\n            data = [\n                EmbeddingDataModel(\n                    embedding=obj.embedding,",
+        "detail": "clientservices.mistral.services.EmbeddingService",
+        "documentation": {}
+    },
+    {
+        "label": "mistralClient",
+        "kind": 5,
+        "importPath": "clientservices.mistral.services.EmbeddingService",
+        "description": "clientservices.mistral.services.EmbeddingService",
+        "peekOfCode": "mistralClient = Mistral(api_key=GetMistralApiKey())\nclass EmbeddingService:\n    async def ConvertTextToEmbedding(self, text: list[str]) -> EmbeddingResponseModel:\n        try:\n            res: EmbeddingResponse = await mistralClient.embeddings.create_async(\n                model=\"mistral-embed\",\n                inputs=text,\n            )\n            data = [\n                EmbeddingDataModel(",
+        "detail": "clientservices.mistral.services.EmbeddingService",
+        "documentation": {}
+    },
+    {
+        "label": "GetMistralApiKey",
+        "kind": 2,
+        "importPath": "clientservices.mistral.workers.GetApiKey",
+        "description": "clientservices.mistral.workers.GetApiKey",
+        "peekOfCode": "def GetMistralApiKey() ->str:\n    return MISRAL_API_KEY",
+        "detail": "clientservices.mistral.workers.GetApiKey",
+        "documentation": {}
+    },
+    {
+        "label": "MISRAL_API_KEY",
+        "kind": 5,
+        "importPath": "clientservices.mistral.workers.GetApiKey",
+        "description": "clientservices.mistral.workers.GetApiKey",
+        "peekOfCode": "MISRAL_API_KEY = cast(Any, os.getenv(\"MISTRAL_API_KEY\"))\ndef GetMistralApiKey() ->str:\n    return MISRAL_API_KEY",
+        "detail": "clientservices.mistral.workers.GetApiKey",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersImpl",
+        "kind": 6,
+        "importPath": "rag.qa.implementations.QaAiAnswersImpl",
+        "description": "rag.qa.implementations.QaAiAnswersImpl",
+        "peekOfCode": "class QaAiAnswersImpl(ABC):\n    @abstractmethod\n    async def QaResponse(\n        self,\n        request: QaAiAnswersRequestModel,\n    ) ->  QaAiAnswersResponseModel:\n        pass",
+        "detail": "rag.qa.implementations.QaAiAnswersImpl",
+        "documentation": {}
+    },
+    {
+        "label": "QaDocImpl",
+        "kind": 6,
+        "importPath": "rag.qa.implementations.QaDocImpl",
+        "description": "rag.qa.implementations.QaDocImpl",
+        "peekOfCode": "class QaDocImpl(ABC):\n    @abstractmethod\n    def ExtractTextFromDoc(self, file: str) -> str:\n        pass\n    @abstractmethod\n    async def ExtractQaFromText(\n        self, text: str\n    ) -> ExtarctQaFromTextResponseModel:\n        pass\n    @abstractmethod",
+        "detail": "rag.qa.implementations.QaDocImpl",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersRequestModel",
+        "kind": 6,
+        "importPath": "rag.qa.models.QaAiAnswersModels",
+        "description": "rag.qa.models.QaAiAnswersModels",
+        "peekOfCode": "class QaAiAnswersRequestModel(BaseModel):\n    ragResponseText: str\n    query: str\nclass QaAiAnswersResponseModel(BaseModel):\n    status: LLMResponseEnum\n    response: str | None",
+        "detail": "rag.qa.models.QaAiAnswersModels",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersResponseModel",
+        "kind": 6,
+        "importPath": "rag.qa.models.QaAiAnswersModels",
+        "description": "rag.qa.models.QaAiAnswersModels",
+        "peekOfCode": "class QaAiAnswersResponseModel(BaseModel):\n    status: LLMResponseEnum\n    response: str | None",
+        "detail": "rag.qa.models.QaAiAnswersModels",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractQaEmbeddingTextModel",
+        "kind": 6,
+        "importPath": "rag.qa.models.QaDocModels",
+        "description": "rag.qa.models.QaDocModels",
+        "peekOfCode": "class ExtractQaEmbeddingTextModel(BaseModel):\n    question: str\n    answer: str\n    embeddingText: str\nclass ExtractQaVectorModel(BaseModel):\n    embeddingVector: list[float]\n    id: UUID\n    embeddingId: UUID\nclass ExtarctQaFromTextResponseModel(BaseModel):\n    response: list[ExtractQaEmbeddingTextModel] | None = None",
+        "detail": "rag.qa.models.QaDocModels",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractQaVectorModel",
+        "kind": 6,
+        "importPath": "rag.qa.models.QaDocModels",
+        "description": "rag.qa.models.QaDocModels",
+        "peekOfCode": "class ExtractQaVectorModel(BaseModel):\n    embeddingVector: list[float]\n    id: UUID\n    embeddingId: UUID\nclass ExtarctQaFromTextResponseModel(BaseModel):\n    response: list[ExtractQaEmbeddingTextModel] | None = None\n    status: LLMResponseEnum\nclass ExtractQaResponseModel(BaseModel):\n    response: list[ExtractQaEmbeddingTextModel] | None = None\n    status: LLMResponseEnum",
+        "detail": "rag.qa.models.QaDocModels",
+        "documentation": {}
+    },
+    {
+        "label": "ExtarctQaFromTextResponseModel",
+        "kind": 6,
+        "importPath": "rag.qa.models.QaDocModels",
+        "description": "rag.qa.models.QaDocModels",
+        "peekOfCode": "class ExtarctQaFromTextResponseModel(BaseModel):\n    response: list[ExtractQaEmbeddingTextModel] | None = None\n    status: LLMResponseEnum\nclass ExtractQaResponseModel(BaseModel):\n    response: list[ExtractQaEmbeddingTextModel] | None = None\n    status: LLMResponseEnum\nclass ExtractQaEmbeddingVectorModel(\n    ExtractQaEmbeddingTextModel\n):\n    id: UUID",
+        "detail": "rag.qa.models.QaDocModels",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractQaResponseModel",
+        "kind": 6,
+        "importPath": "rag.qa.models.QaDocModels",
+        "description": "rag.qa.models.QaDocModels",
+        "peekOfCode": "class ExtractQaResponseModel(BaseModel):\n    response: list[ExtractQaEmbeddingTextModel] | None = None\n    status: LLMResponseEnum\nclass ExtractQaEmbeddingVectorModel(\n    ExtractQaEmbeddingTextModel\n):\n    id: UUID\n    vectorId: UUID\nclass HandleQaExtractResponseModel(BaseModel):\n    questionAndAnsers: list[ExtractQaEmbeddingVectorModel] | None = None",
+        "detail": "rag.qa.models.QaDocModels",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractQaEmbeddingVectorModel",
+        "kind": 6,
+        "importPath": "rag.qa.models.QaDocModels",
+        "description": "rag.qa.models.QaDocModels",
+        "peekOfCode": "class ExtractQaEmbeddingVectorModel(\n    ExtractQaEmbeddingTextModel\n):\n    id: UUID\n    vectorId: UUID\nclass HandleQaExtractResponseModel(BaseModel):\n    questionAndAnsers: list[ExtractQaEmbeddingVectorModel] | None = None\n    status: LLMResponseEnum | EmbeddingResponseEnum\n    vectors: list[ExtractQaVectorModel] | None = None",
+        "detail": "rag.qa.models.QaDocModels",
+        "documentation": {}
+    },
+    {
+        "label": "HandleQaExtractResponseModel",
+        "kind": 6,
+        "importPath": "rag.qa.models.QaDocModels",
+        "description": "rag.qa.models.QaDocModels",
+        "peekOfCode": "class HandleQaExtractResponseModel(BaseModel):\n    questionAndAnsers: list[ExtractQaEmbeddingVectorModel] | None = None\n    status: LLMResponseEnum | EmbeddingResponseEnum\n    vectors: list[ExtractQaVectorModel] | None = None",
+        "detail": "rag.qa.models.QaDocModels",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersService",
+        "kind": 6,
+        "importPath": "rag.qa.services.QaAiAnswersImplService",
+        "description": "rag.qa.services.QaAiAnswersImplService",
+        "peekOfCode": "class QaAiAnswersService(QaAiAnswersImpl):\n    async def QaResponse(\n        self, request: QaAiAnswersRequestModel\n    ) ->  QaAiAnswersResponseModel:\n        llmMessages: list[LLMMessageModel] = []\n        llmMessages.append(\n            LLMMessageModel(\n                role=LLmMessageRoleEnum.SYSTEM,\n                content=QaAiAnswerPromptFromRagText,\n            )",
+        "detail": "rag.qa.services.QaAiAnswersImplService",
+        "documentation": {}
+    },
+    {
+        "label": "llmServices",
+        "kind": 5,
+        "importPath": "rag.qa.services.QaAiAnswersImplService",
+        "description": "rag.qa.services.QaAiAnswersImplService",
+        "peekOfCode": "llmServices = LLMService()\nclass QaAiAnswersService(QaAiAnswersImpl):\n    async def QaResponse(\n        self, request: QaAiAnswersRequestModel\n    ) ->  QaAiAnswersResponseModel:\n        llmMessages: list[LLMMessageModel] = []\n        llmMessages.append(\n            LLMMessageModel(\n                role=LLmMessageRoleEnum.SYSTEM,\n                content=QaAiAnswerPromptFromRagText,",
+        "detail": "rag.qa.services.QaAiAnswersImplService",
+        "documentation": {}
+    },
+    {
+        "label": "QaDocService",
+        "kind": 6,
+        "importPath": "rag.qa.services.QaDocServices",
+        "description": "rag.qa.services.QaDocServices",
+        "peekOfCode": "class QaDocService(QaDocImpl):\n    def ExtractTextFromDoc(self, file: str) -> str:\n        loader = PyPDFLoader(file)\n        documents = loader.load()\n        fullText = \"\\n\".join(doc.page_content for doc in documents)\n        return fullText\n    async def ExtractQaFromText(self, text: str) -> ExtarctQaFromTextResponseModel:\n        systemPrompt = ExtractQaPrompt\n        messages = [\n            LLMMessageModel(role=LLmMessageRoleEnum.SYSTEM, content=systemPrompt),",
+        "detail": "rag.qa.services.QaDocServices",
+        "documentation": {}
+    },
+    {
+        "label": "llmService",
+        "kind": 5,
+        "importPath": "rag.qa.services.QaDocServices",
+        "description": "rag.qa.services.QaDocServices",
+        "peekOfCode": "llmService = LLMService()\nembeddingService = EmbeddingService()\nclass QaDocService(QaDocImpl):\n    def ExtractTextFromDoc(self, file: str) -> str:\n        loader = PyPDFLoader(file)\n        documents = loader.load()\n        fullText = \"\\n\".join(doc.page_content for doc in documents)\n        return fullText\n    async def ExtractQaFromText(self, text: str) -> ExtarctQaFromTextResponseModel:\n        systemPrompt = ExtractQaPrompt",
+        "detail": "rag.qa.services.QaDocServices",
+        "documentation": {}
+    },
+    {
+        "label": "embeddingService",
+        "kind": 5,
+        "importPath": "rag.qa.services.QaDocServices",
+        "description": "rag.qa.services.QaDocServices",
+        "peekOfCode": "embeddingService = EmbeddingService()\nclass QaDocService(QaDocImpl):\n    def ExtractTextFromDoc(self, file: str) -> str:\n        loader = PyPDFLoader(file)\n        documents = loader.load()\n        fullText = \"\\n\".join(doc.page_content for doc in documents)\n        return fullText\n    async def ExtractQaFromText(self, text: str) -> ExtarctQaFromTextResponseModel:\n        systemPrompt = ExtractQaPrompt\n        messages = [",
+        "detail": "rag.qa.services.QaDocServices",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractQaPrompt",
+        "kind": 5,
+        "importPath": "rag.qa.utils.qaSystomPropts",
+        "description": "rag.qa.utils.qaSystomPropts",
+        "peekOfCode": "ExtractQaPrompt = \"\"\"\n            You are an expert information extraction assistant for building a vector-searchable QA knowledge base.\n            Your task:\n            - Read the given text (FAQ, documentation, or user guide).\n            - For each question-answer pair in the text, extract exactly as written:\n                1. `question`: Use the question text exactly as it appears in the text.\n                2. `answer`: Use the answer text exactly as it appears in the text, without adding or removing information.\n                3. `embeddingText`: A concise, enriched, search-efficient text phrased as a question.\n                    - Start with the original question.\n                    - Include key entities, concepts, or features from the answer, rewritten in question style.",
+        "detail": "rag.qa.utils.qaSystomPropts",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswerPromptFromRagText",
+        "kind": 5,
+        "importPath": "rag.qa.utils.qaSystomPropts",
+        "description": "rag.qa.utils.qaSystomPropts",
+        "peekOfCode": "QaAiAnswerPromptFromRagText = \"\"\"\nYou are an AI assistant. I will provide you with some context from a database related to the user query.\n- If the context is relevant, answer ONLY based on that context.  \n- If the context does not contain relevant information, you may answer using your own knowledge.  \n- If the user’s query is unrelated to the context, ignore the context and respond normally.  \n⚠️ Important instructions for output:\n- Respond ONLY with the final answer.  \n- Do NOT use Markdown (**bold**, ## headings, bullet points, etc.).  \n- Do NOT add <think>, XML, JSON, or any other tags.  \n- Do NOT include quotes around the text.  ",
+        "detail": "rag.qa.utils.qaSystomPropts",
+        "documentation": {}
+    },
+    {
+        "label": "QaRag",
+        "kind": 5,
+        "importPath": "server.controllers.QaRagController",
+        "description": "server.controllers.QaRagController",
+        "peekOfCode": "QaRag = APIRouter()\nQaRaServices = QaRagControllerServices()\nasync def getDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@QaRag.get(\"/rag/extarct\")\nasync def HandleQaRag():\n    response = await QaRaServices.QaRagExtract(await getDb())\n    return response\n@QaRag.post(\"/rag/ask\")",
+        "detail": "server.controllers.QaRagController",
+        "documentation": {}
+    },
+    {
+        "label": "QaRaServices",
+        "kind": 5,
+        "importPath": "server.controllers.QaRagController",
+        "description": "server.controllers.QaRagController",
+        "peekOfCode": "QaRaServices = QaRagControllerServices()\nasync def getDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@QaRag.get(\"/rag/extarct\")\nasync def HandleQaRag():\n    response = await QaRaServices.QaRagExtract(await getDb())\n    return response\n@QaRag.post(\"/rag/ask\")\nasync def HandleQaRagAsk(request: QaRagAskRequestModel):",
+        "detail": "server.controllers.QaRagController",
+        "documentation": {}
+    },
+    {
+        "label": "qa_embedding_texts_query",
+        "kind": 5,
+        "importPath": "server.controllers.QaRagQuerys",
+        "description": "server.controllers.QaRagQuerys",
+        "peekOfCode": "qa_embedding_texts_query = \"\"\"\nCREATE TABLE IF NOT EXISTS qa_embedding_texts (\n    id UUID PRIMARY KEY,\n    vector_id UUID NOT NULL,\n    question TEXT NOT NULL,\n    answer TEXT NOT NULL,\n    embedding_text TEXT NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW()\n);\n\"\"\"",
+        "detail": "server.controllers.QaRagQuerys",
+        "documentation": {}
+    },
+    {
+        "label": "qa_embedding_vectors_query",
+        "kind": 5,
+        "importPath": "server.controllers.QaRagQuerys",
+        "description": "server.controllers.QaRagQuerys",
+        "peekOfCode": "qa_embedding_vectors_query = \"\"\"\nCREATE TABLE IF NOT EXISTS qa_embedding_vectors (\n    id UUID PRIMARY KEY,\n    embedding_id UUID NOT NULL,  \n    embedding_vector vector(1024) NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW()\n);\n\"\"\"\nqa_embedding_vector_index_query = \"\"\"\nCREATE INDEX IF NOT EXISTS qa_embedding_vectors_embedding_idx",
+        "detail": "server.controllers.QaRagQuerys",
+        "documentation": {}
+    },
+    {
+        "label": "qa_embedding_vector_index_query",
+        "kind": 5,
+        "importPath": "server.controllers.QaRagQuerys",
+        "description": "server.controllers.QaRagQuerys",
+        "peekOfCode": "qa_embedding_vector_index_query = \"\"\"\nCREATE INDEX IF NOT EXISTS qa_embedding_vectors_embedding_idx\nON qa_embedding_vectors\nUSING hnsw (embedding_vector vector_cosine_ops);\n\"\"\"\n\"\"\"\nCREATE TABLE IF NOT EXISTS qa_embedding_texts (\n    id UUID PRIMARY KEY,\n    vector_id UUID NOT NULL,\n    question TEXT NOT NULL,",
+        "detail": "server.controllers.QaRagQuerys",
+        "documentation": {}
+    },
+    {
+        "label": "QaRagContollerImpl",
+        "kind": 6,
+        "importPath": "server.implementations.QaRagImpl",
+        "description": "server.implementations.QaRagImpl",
+        "peekOfCode": "class QaRagContollerImpl(ABC):\n    @abstractmethod\n    async def QaRagExtract(self,db:Any) -> JSONResponse:\n        pass\n    @abstractmethod\n    async def QaRagAsk(self,query:str,db:Any) -> JSONResponse:\n        pass",
+        "detail": "server.implementations.QaRagImpl",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingTextModel",
+        "kind": 6,
+        "importPath": "server.models.QaRagServicesModels",
+        "description": "server.models.QaRagServicesModels",
+        "peekOfCode": "class EmbeddingTextModel(BaseModel):\n    id: UUID\n    vectorId: UUID\n    question: str\n    answer: str\n    embeddingText: str\nclass EmbeddingVectorModel(BaseModel):\n    id: UUID\n    embeddingId: UUID\n    embeddingVector: list[float]",
+        "detail": "server.models.QaRagServicesModels",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingVectorModel",
+        "kind": 6,
+        "importPath": "server.models.QaRagServicesModels",
+        "description": "server.models.QaRagServicesModels",
+        "peekOfCode": "class EmbeddingVectorModel(BaseModel):\n    id: UUID\n    embeddingId: UUID\n    embeddingVector: list[float]\nclass QaRagAskRequestModel(BaseModel):\n    query: str",
+        "detail": "server.models.QaRagServicesModels",
+        "documentation": {}
+    },
+    {
+        "label": "QaRagAskRequestModel",
+        "kind": 6,
+        "importPath": "server.models.QaRagServicesModels",
+        "description": "server.models.QaRagServicesModels",
+        "peekOfCode": "class QaRagAskRequestModel(BaseModel):\n    query: str",
+        "detail": "server.models.QaRagServicesModels",
+        "documentation": {}
+    },
+    {
+        "label": "PsqlDb",
+        "kind": 6,
+        "importPath": "server.psqldb.PsqlDb",
+        "description": "server.psqldb.PsqlDb",
+        "peekOfCode": "class PsqlDb:\n    def __init__(self, db_url: str):\n        self.db_url: str = db_url\n        self.pool: Any = None\n    async def connect(self) -> None:\n        async def _init(conn):\n            # enable the extension if not already\n            await conn.execute(\"CREATE EXTENSION IF NOT EXISTS vector\")\n            # register pgvector type with asyncpg\n            await register_vector(conn)",
+        "detail": "server.psqldb.PsqlDb",
+        "documentation": {}
+    },
+    {
+        "label": "QaRagControllerServices",
+        "kind": 6,
+        "importPath": "server.services.QaRagControllerServices",
+        "description": "server.services.QaRagControllerServices",
+        "peekOfCode": "class QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.pdf\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):\n                embeddingTexts.append(\n                    EmbeddingTextModel(\n                        vectorId=qa.vectorId,",
+        "detail": "server.services.QaRagControllerServices",
+        "documentation": {}
+    },
+    {
+        "label": "qaDocService",
+        "kind": 5,
+        "importPath": "server.services.QaRagControllerServices",
+        "description": "server.services.QaRagControllerServices",
+        "peekOfCode": "qaDocService = QaDocService()\nqaAiAnswers = QaAiAnswersService()\nembeddingService = EmbeddingService()\nclass QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.pdf\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):",
+        "detail": "server.services.QaRagControllerServices",
+        "documentation": {}
+    },
+    {
+        "label": "qaAiAnswers",
+        "kind": 5,
+        "importPath": "server.services.QaRagControllerServices",
+        "description": "server.services.QaRagControllerServices",
+        "peekOfCode": "qaAiAnswers = QaAiAnswersService()\nembeddingService = EmbeddingService()\nclass QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.pdf\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):\n                embeddingTexts.append(",
+        "detail": "server.services.QaRagControllerServices",
+        "documentation": {}
+    },
+    {
+        "label": "embeddingService",
+        "kind": 5,
+        "importPath": "server.services.QaRagControllerServices",
+        "description": "server.services.QaRagControllerServices",
+        "peekOfCode": "embeddingService = EmbeddingService()\nclass QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.pdf\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):\n                embeddingTexts.append(\n                    EmbeddingTextModel(",
+        "detail": "server.services.QaRagControllerServices",
+        "documentation": {}
+    },
+    {
+        "label": "CustomMidlleware",
+        "kind": 6,
+        "importPath": "server.middleware",
+        "description": "server.middleware",
+        "peekOfCode": "class CustomMidlleware(BaseHTTPMiddleware):\n    async def dispatch(self, request: Request, call_next: RequestResponseEndpoint):\n        try:\n            response = await call_next(request)\n            if response.status_code == 404:\n                return JSONResponse(\n                    status_code=404,\n                    content={\"data\": \"INVALID_URL\"},\n                )\n            return response",
+        "detail": "server.middleware",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_CONNECTION_STRING",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "MODEL_ID = \"Qwen/Qwen3-Embedding-0.6B\"\nBATCH_SIZE = 32          # safe for 8GB RAM\nEMBED_DIM_TYPE = \"int4\"  # fastest on CPU\nMAX_LENGTH = 256         # adjust for your chunk size\nTOTAL_ROWS = 20000       # number of chunks/texts\n# Generate dummy data\nchunks = [f\"Sample text {i}\" for i in range(TOTAL_ROWS)]\n# Create async Infinity engine\narray = AsyncEngineArray.from_args([\n    EngineArgs(",
+        "peekOfCode": "DATABASE_CONNECTION_STRING = os.getenv(\"DATABASE_CONNECTION_STRING\", \"\")\npsqlDb = PsqlDb(DATABASE_CONNECTION_STRING)     \n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    await psqlDb.connect()\n    yield\n    # await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "BATCH_SIZE",
+        "label": "psqlDb",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "BATCH_SIZE = 32          # safe for 8GB RAM\nEMBED_DIM_TYPE = \"int4\"  # fastest on CPU\nMAX_LENGTH = 256         # adjust for your chunk size\nTOTAL_ROWS = 20000       # number of chunks/texts\n# Generate dummy data\nchunks = [f\"Sample text {i}\" for i in range(TOTAL_ROWS)]\n# Create async Infinity engine\narray = AsyncEngineArray.from_args([\n    EngineArgs(\n        model_name_or_path=MODEL_ID,",
+        "peekOfCode": "psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)     \n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    await psqlDb.connect()\n    yield\n    # await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "EMBED_DIM_TYPE",
+        "label": "server",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "EMBED_DIM_TYPE = \"int4\"  # fastest on CPU\nMAX_LENGTH = 256         # adjust for your chunk size\nTOTAL_ROWS = 20000       # number of chunks/texts\n# Generate dummy data\nchunks = [f\"Sample text {i}\" for i in range(TOTAL_ROWS)]\n# Create async Infinity engine\narray = AsyncEngineArray.from_args([\n    EngineArgs(\n        model_name_or_path=MODEL_ID,\n        engine=\"torch\",",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "MAX_LENGTH",
-        "kind": 5,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "MAX_LENGTH = 256         # adjust for your chunk size\nTOTAL_ROWS = 20000       # number of chunks/texts\n# Generate dummy data\nchunks = [f\"Sample text {i}\" for i in range(TOTAL_ROWS)]\n# Create async Infinity engine\narray = AsyncEngineArray.from_args([\n    EngineArgs(\n        model_name_or_path=MODEL_ID,\n        engine=\"torch\",\n        embedding_dtype=EMBED_DIM_TYPE,",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "TOTAL_ROWS",
-        "kind": 5,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "TOTAL_ROWS = 20000       # number of chunks/texts\n# Generate dummy data\nchunks = [f\"Sample text {i}\" for i in range(TOTAL_ROWS)]\n# Create async Infinity engine\narray = AsyncEngineArray.from_args([\n    EngineArgs(\n        model_name_or_path=MODEL_ID,\n        engine=\"torch\",\n        embedding_dtype=EMBED_DIM_TYPE,\n        dtype=\"auto\",",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "chunks",
-        "kind": 5,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "chunks = [f\"Sample text {i}\" for i in range(TOTAL_ROWS)]\n# Create async Infinity engine\narray = AsyncEngineArray.from_args([\n    EngineArgs(\n        model_name_or_path=MODEL_ID,\n        engine=\"torch\",\n        embedding_dtype=EMBED_DIM_TYPE,\n        dtype=\"auto\",\n        max_length=MAX_LENGTH\n    )",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "array",
-        "kind": 5,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "array = AsyncEngineArray.from_args([\n    EngineArgs(\n        model_name_or_path=MODEL_ID,\n        engine=\"torch\",\n        embedding_dtype=EMBED_DIM_TYPE,\n        dtype=\"auto\",\n        max_length=MAX_LENGTH\n    )\n])\nasync def embed_all(engine: AsyncEmbeddingEngine):",
+        "peekOfCode": "server = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\nserver.add_middleware(CustomMidlleware)\nserver.include_router(QaRag, prefix=\"/api/v1/qa\")",
         "detail": "main",
         "documentation": {}
     }

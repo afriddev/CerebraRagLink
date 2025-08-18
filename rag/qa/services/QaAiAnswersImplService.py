@@ -1,6 +1,5 @@
 from typing import Any
 
-from fastapi.responses import StreamingResponse
 from rag.qa.implementations import QaAiAnswersImpl
 from rag.qa.models import QaAiAnswersRequestModel, QaAiAnswersResponseModel
 from clientservices import (
@@ -10,7 +9,7 @@ from clientservices import (
     LLMRequestModel,
 )
 from clientservices import GetCerebrasApiKey
-from rag.qa.utils.qaSystomPropts import QaAiAnswerPromptFromRagText
+from rag.qa.utils.qaSystemPropts import QaAiAnswerPromptFromRagText
 
 
 llmServices = LLMService()
@@ -18,7 +17,9 @@ llmServices = LLMService()
 
 class QaAiAnswersService(QaAiAnswersImpl):
 
-    async def QaResponse(self, request: QaAiAnswersRequestModel) -> StreamingResponse:
+    async def QaResponse(
+        self, request: QaAiAnswersRequestModel
+    ) ->  QaAiAnswersResponseModel:
 
         llmMessages: list[LLMMessageModel] = []
         llmMessages.append(
@@ -34,20 +35,25 @@ class QaAiAnswersService(QaAiAnswersImpl):
                 content=f"Here is the context:\n{request.ragResponseText}",
             )
         )
+        
 
         llmMessages.append(
             LLMMessageModel(role=LLmMessageRoleEnum.USER, content=request.query)
         )
 
-        response: Any = await llmServices.Chat(
+        response:Any = await llmServices.Chat(
             modelParams=LLMRequestModel(
                 apiKey=GetCerebrasApiKey(),
                 model="llama-4-scout-17b-16e-instruct",
-                stream=True,
+                stream=False,
                 messages=llmMessages,
                 responseFormat=None,
-                temperature=0.7,
+                temperature=0.2,
                 maxCompletionTokens=1000,
             )
         )
-        return response
+        return QaAiAnswersResponseModel(
+            status=response.status,
+            response=response.LLMData.choices[0].message.content
+            
+        )

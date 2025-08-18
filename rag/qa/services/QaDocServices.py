@@ -1,6 +1,7 @@
-from typing import cast
+from typing import Any, cast
 from rag.qa.implementations import QaDocImpl
 from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import UnstructuredExcelLoader
 from clientservices import (
     LLMMessageModel,
     LLMResponseFormatModel,
@@ -8,7 +9,6 @@ from clientservices import (
     LLMResponseFormatJsonSchemaSchemaModel,
     LLMResponseFormatPropertySchemaModel,
     LLMRequestModel,
-    LLMResponseModel,
     LLMService,
     EmbeddingService,
     LLmMessageRoleEnum,
@@ -23,8 +23,8 @@ from rag.qa.models import (
 from clientservices import GetCerebrasApiKey
 from uuid import uuid4
 import json
-
-from rag.qa.utils.qaSystomPropts import ExtractQaPrompt
+import os
+from rag.qa.utils.qaSystemPropts import ExtractQaPrompt
 
 llmService = LLMService()
 embeddingService = EmbeddingService()
@@ -32,7 +32,14 @@ embeddingService = EmbeddingService()
 class QaDocService(QaDocImpl):
 
     def ExtractTextFromDoc(self, file: str) -> str:
-        loader = PyPDFLoader(file)
+        ext = os.path.splitext(file)[1]  
+        loader:Any = ""
+        if(ext == ".pdf"):
+            loader = PyPDFLoader(file)
+        elif(ext == ".xlsx" or ext == ".xls"):
+            loader = UnstructuredExcelLoader(file, mode="elements")
+        
+        
         documents = loader.load()
         fullText = "\n".join(doc.page_content for doc in documents)
         return fullText
@@ -47,11 +54,11 @@ class QaDocService(QaDocImpl):
             ),  # your PDF-extracted text here
         ]
 
-        LLMResponse: LLMResponseModel = await llmService.Chat(
+        LLMResponse:Any = await llmService.Chat(
             modelParams=LLMRequestModel(
                 apiKey=GetCerebrasApiKey(),
-                model="qwen-3-235b-a22b-instruct-2507",
-                maxCompletionTokens=40000,
+                model="qwen-3-coder-480b",
+                maxCompletionTokens=30000,
                 messages=messages,
                 responseFormat=LLMResponseFormatModel(
                     type="json_schema",
@@ -92,6 +99,7 @@ class QaDocService(QaDocImpl):
                 ),
             )
         )
+        print(LLMResponse.LLMData.choices[0].message.content)
         if LLMResponse.LLMData is not None:
             data = json.loads(LLMResponse.LLMData.choices[0].message.content)
             data["status"] = LLMResponse.status

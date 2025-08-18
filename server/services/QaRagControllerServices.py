@@ -1,5 +1,5 @@
 from typing import Any
-from fastapi.responses import JSONResponse, StreamingResponse
+from fastapi.responses import JSONResponse
 from server.implementations import QaRagContollerImpl
 from rag import QaDocService, QaAiAnswersService, QaAiAnswersRequestModel
 from clientservices import EmbeddingService
@@ -12,7 +12,7 @@ embeddingService = EmbeddingService()
 
 class QaRagControllerServices(QaRagContollerImpl):
     async def QaRagExtract(self, db: Any) -> JSONResponse:
-        result = await qaDocService.HandleQaExtract("a.pdf")
+        result = await qaDocService.HandleQaExtract("a.xlsx")
         embeddingTexts: list[EmbeddingTextModel] = []
         embeddingVectors: list[EmbeddingVectorModel] = []
         if result.questionAndAnsers is not None and result.vectors is not None:
@@ -65,7 +65,7 @@ class QaRagControllerServices(QaRagContollerImpl):
             status_code=result.status.value[0], content={"data": result.status.value[1]}
         )
 
-    async def QaRagAsk(self, query: str, db: Any) ->  StreamingResponse:
+    async def QaRagAsk(self, query: str, db: Any) -> JSONResponse:
         vectorResponse = await embeddingService.ConvertTextToEmbedding(text=[query])
         searchText = ""
         if vectorResponse.data is not None:
@@ -73,7 +73,7 @@ class QaRagControllerServices(QaRagContollerImpl):
             conn = await db.get_connection()
             sql = """
             SELECT t.id, t.vector_id, t.question, t.answer, t.embedding_text,
-                   (v.embedding_vector <-> $1) AS distance
+                   (v.embedding_vector <=> $1) AS distance
             FROM qa_embedding_texts t
             JOIN qa_embedding_vectors v
             ON t.vector_id = v.id
@@ -82,9 +82,15 @@ class QaRagControllerServices(QaRagContollerImpl):
             """
             rows = await conn.fetch(sql, embedding)
             for row in rows:
-                searchText += row.get("answer")
+                searchText += row.get("question")+row.get("answer")
             await db.release_connection(conn)
         aiResponse = await qaAiAnswers.QaResponse(
             request=QaAiAnswersRequestModel(ragResponseText=searchText, query=query)
         )
-        return aiResponse
+        return JSONResponse(
+            status_code=aiResponse.status.value[0],
+            content={
+                "data":aiResponse.status.value[1],
+                "response": aiResponse.response
+            }
+        )

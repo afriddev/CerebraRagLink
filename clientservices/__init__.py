@@ -21,6 +21,15 @@ from .mistral import (
     EmbeddingResponseModel,
     EmbeddingService,
     EmbeddingUsageModel,
+    MistralChatService,
+    MistralChatResponseStatusEnum,
+    MistralChatMessageRoleEnum,
+    MistralChatRequestMessageModel,
+    MistralChatRequestModel,
+    MistralChatResponseChoiceModel,
+    MistralChatResponseMessageModel,
+    MistralChatResponseModel,
+    MistralChatResponseUsageModel,
 )
 
 
@@ -45,4 +54,13 @@ __all__ = [
     "EmbeddingResponseModel",
     "EmbeddingService",
     "EmbeddingUsageModel",
+    "MistralChatService",
+    "MistralChatResponseStatusEnum",
+    "MistralChatMessageRoleEnum",
+    "MistralChatRequestMessageModel",
+    "MistralChatRequestModel",
+    "MistralChatResponseChoiceModel",
+    "MistralChatResponseMessageModel",
+    "MistralChatResponseModel",
+    "MistralChatResponseUsageModel",
 ]

@@ -16,6 +16,46 @@
         "documentation": {}
     },
     {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
         "label": "ABC",
         "importPath": "abc",
         "description": "abc",
@@ -280,6 +320,22 @@
         "documentation": {}
     },
     {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Any",
         "importPath": "typing",
         "description": "typing",
@@ -317,6 +373,22 @@
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
         "documentation": {}
     },
     {
@@ -466,6 +538,22 @@
         "documentation": {}
     },
     {
+        "label": "MistralChatResponseModel",
+        "importPath": "clientservices.mistral.models",
+        "description": "clientservices.mistral.models",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.models",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatRequestModel",
+        "importPath": "clientservices.mistral.models",
+        "description": "clientservices.mistral.models",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.models",
+        "documentation": {}
+    },
+    {
         "label": "EmbeddingResponseModel",
         "importPath": "clientservices.mistral.models",
         "description": "clientservices.mistral.models",
@@ -490,6 +578,62 @@
         "documentation": {}
     },
     {
+        "label": "MistralChatResponseModel",
+        "importPath": "clientservices.mistral.models",
+        "description": "clientservices.mistral.models",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.models",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatResponseUsageModel",
+        "importPath": "clientservices.mistral.models",
+        "description": "clientservices.mistral.models",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.models",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatResponseChoiceModel",
+        "importPath": "clientservices.mistral.models",
+        "description": "clientservices.mistral.models",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.models",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatResponseMessageModel",
+        "importPath": "clientservices.mistral.models",
+        "description": "clientservices.mistral.models",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.models",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatRequestModel",
+        "importPath": "clientservices.mistral.models",
+        "description": "clientservices.mistral.models",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.models",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatMessageRoleEnum",
+        "importPath": "clientservices.mistral.enums",
+        "description": "clientservices.mistral.enums",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.enums",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatResponseStatusEnum",
+        "importPath": "clientservices.mistral.enums",
+        "description": "clientservices.mistral.enums",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.enums",
+        "documentation": {}
+    },
+    {
         "label": "EmbeddingResponseEnum",
         "importPath": "clientservices.mistral.enums",
         "description": "clientservices.mistral.enums",
@@ -499,6 +643,14 @@
     },
     {
         "label": "EmbeddingResponseEnum",
+        "importPath": "clientservices.mistral.enums",
+        "description": "clientservices.mistral.enums",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.enums",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatResponseStatusEnum",
         "importPath": "clientservices.mistral.enums",
         "description": "clientservices.mistral.enums",
         "isExtraImport": true,
@@ -530,11 +682,67 @@
         "documentation": {}
     },
     {
+        "label": "Mistral",
+        "importPath": "mistralai",
+        "description": "mistralai",
+        "isExtraImport": true,
+        "detail": "mistralai",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "mistralai",
+        "description": "mistralai",
+        "isExtraImport": true,
+        "detail": "mistralai",
+        "documentation": {}
+    },
+    {
         "label": "GetMistralApiKey",
         "importPath": "clientservices.mistral.workers",
         "description": "clientservices.mistral.workers",
         "isExtraImport": true,
         "detail": "clientservices.mistral.workers",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatImpl",
+        "importPath": "clientservices.mistral.implementations",
+        "description": "clientservices.mistral.implementations",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.implementations",
+        "documentation": {}
+    },
+    {
+        "label": "FileChunkGragImpl",
+        "importPath": "graphrag.implementations",
+        "description": "graphrag.implementations",
+        "isExtraImport": true,
+        "detail": "graphrag.implementations",
+        "documentation": {}
+    },
+    {
+        "label": "ExtarctTextFromFile",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractTextFromDoc",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractTextFromDoc",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
         "documentation": {}
     },
     {
@@ -842,22 +1050,6 @@
         "documentation": {}
     },
     {
-        "label": "PyPDFLoader",
-        "importPath": "langchain_community.document_loaders",
-        "description": "langchain_community.document_loaders",
-        "isExtraImport": true,
-        "detail": "langchain_community.document_loaders",
-        "documentation": {}
-    },
-    {
-        "label": "UnstructuredExcelLoader",
-        "importPath": "langchain_community.document_loaders",
-        "description": "langchain_community.document_loaders",
-        "isExtraImport": true,
-        "detail": "langchain_community.document_loaders",
-        "documentation": {}
-    },
-    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -993,6 +1185,22 @@
         "description": "starlette.middleware.base",
         "isExtraImport": true,
         "detail": "starlette.middleware.base",
+        "documentation": {}
+    },
+    {
+        "label": "PyPDFLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "UnstructuredExcelLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
         "documentation": {}
     },
     {
@@ -1207,6 +1415,24 @@
         "documentation": {}
     },
     {
+        "label": "MistralChatMessageRoleEnum",
+        "kind": 6,
+        "importPath": "clientservices.mistral.enums.ChatEnums",
+        "description": "clientservices.mistral.enums.ChatEnums",
+        "peekOfCode": "class MistralChatMessageRoleEnum(Enum):\n    USER = \"user\"\n    SYSTEM = \"system\"\n    ASSISTENT = \"assistant\"\nclass MistralChatResponseStatusEnum(Enum):\n    ERROR  = (500,\"ERROR\")\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")",
+        "detail": "clientservices.mistral.enums.ChatEnums",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatResponseStatusEnum",
+        "kind": 6,
+        "importPath": "clientservices.mistral.enums.ChatEnums",
+        "description": "clientservices.mistral.enums.ChatEnums",
+        "peekOfCode": "class MistralChatResponseStatusEnum(Enum):\n    ERROR  = (500,\"ERROR\")\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")",
+        "detail": "clientservices.mistral.enums.ChatEnums",
+        "documentation": {}
+    },
+    {
         "label": "EmbeddingResponseEnum",
         "kind": 6,
         "importPath": "clientservices.mistral.enums.EmbeddingEnums",
@@ -1222,6 +1448,69 @@
         "description": "clientservices.mistral.implementations.EmbeddingServiceimplementation",
         "peekOfCode": "class EmbeddingServiceImpl(ABC):\n    @abstractmethod\n    async def ConvertTextToEmbedding(\n        self, text: list[str]\n    ) ->  EmbeddingResponseModel:\n        pass",
         "detail": "clientservices.mistral.implementations.EmbeddingServiceimplementation",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatImpl",
+        "kind": 6,
+        "importPath": "clientservices.mistral.implementations.MistralChatImpl",
+        "description": "clientservices.mistral.implementations.MistralChatImpl",
+        "peekOfCode": "class MistralChatImpl(ABC):\n    @abstractmethod\n    async def Chat(\n        self, modelParams: MistralChatRequestModel\n    ) -> MistralChatResponseModel:\n        pass",
+        "detail": "clientservices.mistral.implementations.MistralChatImpl",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatRequestMessageModel",
+        "kind": 6,
+        "importPath": "clientservices.mistral.models.ChatModels",
+        "description": "clientservices.mistral.models.ChatModels",
+        "peekOfCode": "class MistralChatRequestMessageModel(BaseModel):\n    role: MistralChatMessageRoleEnum = MistralChatMessageRoleEnum.USER\n    content: str\nclass MistralChatRequestModel(BaseModel):\n    model: str = \"mistral-small-2506\"\n    temperature: float = 0.7\n    maxTokens: int = 30000\n    stream: bool = False\n    messages: list[MistralChatRequestMessageModel]\n    responseFormat: BaseModel | None = None",
+        "detail": "clientservices.mistral.models.ChatModels",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatRequestModel",
+        "kind": 6,
+        "importPath": "clientservices.mistral.models.ChatModels",
+        "description": "clientservices.mistral.models.ChatModels",
+        "peekOfCode": "class MistralChatRequestModel(BaseModel):\n    model: str = \"mistral-small-2506\"\n    temperature: float = 0.7\n    maxTokens: int = 30000\n    stream: bool = False\n    messages: list[MistralChatRequestMessageModel]\n    responseFormat: BaseModel | None = None\nclass MistralChatResponseUsageModel(BaseModel):\n    promptTokens: int\n    completionToken: int",
+        "detail": "clientservices.mistral.models.ChatModels",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatResponseUsageModel",
+        "kind": 6,
+        "importPath": "clientservices.mistral.models.ChatModels",
+        "description": "clientservices.mistral.models.ChatModels",
+        "peekOfCode": "class MistralChatResponseUsageModel(BaseModel):\n    promptTokens: int\n    completionToken: int\n    totalTokens: int\nclass MistralChatResponseMessageModel(BaseModel):\n    content: str\n    role: str | None = None\nclass MistralChatResponseChoiceModel(BaseModel):\n    index: int\n    message: MistralChatResponseMessageModel",
+        "detail": "clientservices.mistral.models.ChatModels",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatResponseMessageModel",
+        "kind": 6,
+        "importPath": "clientservices.mistral.models.ChatModels",
+        "description": "clientservices.mistral.models.ChatModels",
+        "peekOfCode": "class MistralChatResponseMessageModel(BaseModel):\n    content: str\n    role: str | None = None\nclass MistralChatResponseChoiceModel(BaseModel):\n    index: int\n    message: MistralChatResponseMessageModel\nclass MistralChatResponseModel(BaseModel):\n    id: str | None = None\n    model: str | None = None\n    usgae: MistralChatResponseUsageModel | None = None",
+        "detail": "clientservices.mistral.models.ChatModels",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatResponseChoiceModel",
+        "kind": 6,
+        "importPath": "clientservices.mistral.models.ChatModels",
+        "description": "clientservices.mistral.models.ChatModels",
+        "peekOfCode": "class MistralChatResponseChoiceModel(BaseModel):\n    index: int\n    message: MistralChatResponseMessageModel\nclass MistralChatResponseModel(BaseModel):\n    id: str | None = None\n    model: str | None = None\n    usgae: MistralChatResponseUsageModel | None = None\n    created: int | None = None\n    choices: list[MistralChatResponseChoiceModel] | None = None\n    status:MistralChatResponseStatusEnum",
+        "detail": "clientservices.mistral.models.ChatModels",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatResponseModel",
+        "kind": 6,
+        "importPath": "clientservices.mistral.models.ChatModels",
+        "description": "clientservices.mistral.models.ChatModels",
+        "peekOfCode": "class MistralChatResponseModel(BaseModel):\n    id: str | None = None\n    model: str | None = None\n    usgae: MistralChatResponseUsageModel | None = None\n    created: int | None = None\n    choices: list[MistralChatResponseChoiceModel] | None = None\n    status:MistralChatResponseStatusEnum",
+        "detail": "clientservices.mistral.models.ChatModels",
         "documentation": {}
     },
     {
@@ -1270,21 +1559,57 @@
         "documentation": {}
     },
     {
+        "label": "MistralChatService",
+        "kind": 6,
+        "importPath": "clientservices.mistral.services.MistralChatService",
+        "description": "clientservices.mistral.services.MistralChatService",
+        "peekOfCode": "class MistralChatService(MistralChatImpl):\n    async def Chat( \n        self, modelParams: MistralChatRequestModel\n    ) -> MistralChatResponseModel:\n        try:\n            messages: Any = []\n            for message in modelParams.messages:\n                messages.append(\n                    {\"role\": message.role.value, \"content\": message.content}\n                )",
+        "detail": "clientservices.mistral.services.MistralChatService",
+        "documentation": {}
+    },
+    {
+        "label": "mistral",
+        "kind": 5,
+        "importPath": "clientservices.mistral.services.MistralChatService",
+        "description": "clientservices.mistral.services.MistralChatService",
+        "peekOfCode": "mistral = Mistral()\nclass MistralChatService(MistralChatImpl):\n    async def Chat( \n        self, modelParams: MistralChatRequestModel\n    ) -> MistralChatResponseModel:\n        try:\n            messages: Any = []\n            for message in modelParams.messages:\n                messages.append(\n                    {\"role\": message.role.value, \"content\": message.content}",
+        "detail": "clientservices.mistral.services.MistralChatService",
+        "documentation": {}
+    },
+    {
         "label": "GetMistralApiKey",
         "kind": 2,
         "importPath": "clientservices.mistral.workers.GetApiKey",
         "description": "clientservices.mistral.workers.GetApiKey",
-        "peekOfCode": "def GetMistralApiKey() ->str:\n    return MISRAL_API_KEY",
+        "peekOfCode": "def GetMistralApiKey() ->str:\n    return Mistral_API_KEY",
         "detail": "clientservices.mistral.workers.GetApiKey",
         "documentation": {}
     },
     {
-        "label": "MISRAL_API_KEY",
+        "label": "Mistral_API_KEY",
         "kind": 5,
         "importPath": "clientservices.mistral.workers.GetApiKey",
         "description": "clientservices.mistral.workers.GetApiKey",
-        "peekOfCode": "MISRAL_API_KEY = cast(Any, os.getenv(\"MISTRAL_API_KEY\"))\ndef GetMistralApiKey() ->str:\n    return MISRAL_API_KEY",
+        "peekOfCode": "Mistral_API_KEY = cast(Any, os.getenv(\"MISTRAL_API_KEY\"))\ndef GetMistralApiKey() ->str:\n    return Mistral_API_KEY",
         "detail": "clientservices.mistral.workers.GetApiKey",
+        "documentation": {}
+    },
+    {
+        "label": "FileChunkGragImpl",
+        "kind": 6,
+        "importPath": "graphrag.implementations.FileChunkGragImpl",
+        "description": "graphrag.implementations.FileChunkGragImpl",
+        "peekOfCode": "class FileChunkGragImpl(ABC):\n    @abstractmethod\n    def ExatrctChunkFromText(self, file: str, chunkLength: int) -> list[str]:\n        pass",
+        "detail": "graphrag.implementations.FileChunkGragImpl",
+        "documentation": {}
+    },
+    {
+        "label": "FileChunkGragService",
+        "kind": 6,
+        "importPath": "graphrag.services.FieChunkGrag",
+        "description": "graphrag.services.FieChunkGrag",
+        "peekOfCode": "class FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(self, file: str, chunkLength: int) -> list[str]:\n        text = ExtarctTextFromFile(file)\n        return []",
+        "detail": "graphrag.services.FieChunkGrag",
         "documentation": {}
     },
     {
@@ -1301,7 +1626,7 @@
         "kind": 6,
         "importPath": "rag.qa.implementations.QaDocImpl",
         "description": "rag.qa.implementations.QaDocImpl",
-        "peekOfCode": "class QaDocImpl(ABC):\n    @abstractmethod\n    def ExtractTextFromDoc(self, file: str) -> str:\n        pass\n    @abstractmethod\n    async def ExtractQaFromText(\n        self, text: str\n    ) -> ExtarctQaFromTextResponseModel:\n        pass\n    @abstractmethod",
+        "peekOfCode": "class QaDocImpl(ABC):\n    @abstractmethod\n    async def ExtractQaFromText(\n        self, text: str\n    ) -> ExtarctQaFromTextResponseModel:\n        pass\n    @abstractmethod\n    async def ExtractQa(\n        self, file: str\n    ) -> ExtractQaResponseModel:",
         "detail": "rag.qa.implementations.QaDocImpl",
         "documentation": {}
     },
@@ -1400,7 +1725,7 @@
         "kind": 6,
         "importPath": "rag.qa.services.QaDocServices",
         "description": "rag.qa.services.QaDocServices",
-        "peekOfCode": "class QaDocService(QaDocImpl):\n    def ExtractTextFromDoc(self, file: str) -> str:\n        ext = os.path.splitext(file)[1]  \n        loader:Any = \"\"\n        if(ext == \".pdf\"):\n            loader = PyPDFLoader(file)\n        elif(ext == \".xlsx\" or ext == \".xls\"):\n            loader = UnstructuredExcelLoader(file, mode=\"elements\")\n        documents = loader.load()\n        fullText = \"\\n\".join(doc.page_content for doc in documents)",
+        "peekOfCode": "class QaDocService(QaDocImpl):\n    async def ExtractQaFromText(self, text: str) -> ExtarctQaFromTextResponseModel:\n        systemPrompt = ExtractQaPrompt\n        messages = [\n            LLMMessageModel(role=LLmMessageRoleEnum.SYSTEM, content=systemPrompt),\n            LLMMessageModel(\n                role=LLmMessageRoleEnum.USER, content=text\n            ),  # your PDF-extracted text here\n        ]\n        LLMResponse: Any = await llmService.Chat(",
         "detail": "rag.qa.services.QaDocServices",
         "documentation": {}
     },
@@ -1409,7 +1734,7 @@
         "kind": 5,
         "importPath": "rag.qa.services.QaDocServices",
         "description": "rag.qa.services.QaDocServices",
-        "peekOfCode": "llmService = LLMService()\nembeddingService = EmbeddingService()\nclass QaDocService(QaDocImpl):\n    def ExtractTextFromDoc(self, file: str) -> str:\n        ext = os.path.splitext(file)[1]  \n        loader:Any = \"\"\n        if(ext == \".pdf\"):\n            loader = PyPDFLoader(file)\n        elif(ext == \".xlsx\" or ext == \".xls\"):\n            loader = UnstructuredExcelLoader(file, mode=\"elements\")",
+        "peekOfCode": "llmService = LLMService()\nembeddingService = EmbeddingService()\nclass QaDocService(QaDocImpl):\n    async def ExtractQaFromText(self, text: str) -> ExtarctQaFromTextResponseModel:\n        systemPrompt = ExtractQaPrompt\n        messages = [\n            LLMMessageModel(role=LLmMessageRoleEnum.SYSTEM, content=systemPrompt),\n            LLMMessageModel(\n                role=LLmMessageRoleEnum.USER, content=text\n            ),  # your PDF-extracted text here",
         "detail": "rag.qa.services.QaDocServices",
         "documentation": {}
     },
@@ -1418,7 +1743,7 @@
         "kind": 5,
         "importPath": "rag.qa.services.QaDocServices",
         "description": "rag.qa.services.QaDocServices",
-        "peekOfCode": "embeddingService = EmbeddingService()\nclass QaDocService(QaDocImpl):\n    def ExtractTextFromDoc(self, file: str) -> str:\n        ext = os.path.splitext(file)[1]  \n        loader:Any = \"\"\n        if(ext == \".pdf\"):\n            loader = PyPDFLoader(file)\n        elif(ext == \".xlsx\" or ext == \".xls\"):\n            loader = UnstructuredExcelLoader(file, mode=\"elements\")\n        documents = loader.load()",
+        "peekOfCode": "embeddingService = EmbeddingService()\nclass QaDocService(QaDocImpl):\n    async def ExtractQaFromText(self, text: str) -> ExtarctQaFromTextResponseModel:\n        systemPrompt = ExtractQaPrompt\n        messages = [\n            LLMMessageModel(role=LLmMessageRoleEnum.SYSTEM, content=systemPrompt),\n            LLMMessageModel(\n                role=LLmMessageRoleEnum.USER, content=text\n            ),  # your PDF-extracted text here\n        ]",
         "detail": "rag.qa.services.QaDocServices",
         "documentation": {}
     },
@@ -1573,6 +1898,15 @@
         "description": "server.middleware",
         "peekOfCode": "class CustomMidlleware(BaseHTTPMiddleware):\n    async def dispatch(self, request: Request, call_next: RequestResponseEndpoint):\n        try:\n            response = await call_next(request)\n            if response.status_code == 404:\n                return JSONResponse(\n                    status_code=404,\n                    content={\"data\": \"INVALID_URL\"},\n                )\n            return response",
         "detail": "server.middleware",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractTextFromDoc",
+        "kind": 2,
+        "importPath": "utils.ExtarctTextFromFile",
+        "description": "utils.ExtarctTextFromFile",
+        "peekOfCode": "def ExtractTextFromDoc(file: str) -> str:\n        ext = os.path.splitext(file)[1]  \n        loader:Any = \"\"\n        if(ext == \".pdf\"):\n            loader = PyPDFLoader(file)\n        elif(ext == \".xlsx\" or ext == \".xls\"):\n            loader = UnstructuredExcelLoader(file, mode=\"elements\")\n        documents = loader.load()\n        fullText = \"\\n\".join(doc.page_content for doc in documents)\n        return fullText",
+        "detail": "utils.ExtarctTextFromFile",
         "documentation": {}
     },
     {

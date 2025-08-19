@@ -304,14 +304,6 @@
         "documentation": {}
     },
     {
-        "label": "cast",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "Any",
         "importPath": "typing",
         "description": "typing",
@@ -336,6 +328,22 @@
         "documentation": {}
     },
     {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Any",
         "importPath": "typing",
         "description": "typing",
@@ -381,6 +389,14 @@
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
         "documentation": {}
     },
     {
@@ -706,11 +722,35 @@
         "documentation": {}
     },
     {
+        "label": "GetMistralApiKey",
+        "importPath": "clientservices.mistral.workers",
+        "description": "clientservices.mistral.workers",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.workers",
+        "documentation": {}
+    },
+    {
         "label": "MistralChatImpl",
         "importPath": "clientservices.mistral.implementations",
         "description": "clientservices.mistral.implementations",
         "isExtraImport": true,
         "detail": "clientservices.mistral.implementations",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatMessageRoleEnum",
+        "importPath": "clientservices.mistral.enums.ChatEnums",
+        "description": "clientservices.mistral.enums.ChatEnums",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.enums.ChatEnums",
+        "documentation": {}
+    },
+    {
+        "label": "MistralChatRequestMessageModel",
+        "importPath": "clientservices.mistral.models.ChatModels",
+        "description": "clientservices.mistral.models.ChatModels",
+        "isExtraImport": true,
+        "detail": "clientservices.mistral.models.ChatModels",
         "documentation": {}
     },
     {
@@ -722,14 +762,6 @@
         "documentation": {}
     },
     {
-        "label": "ExtarctTextFromFile",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
         "label": "ExtractTextFromDoc",
         "importPath": "utils",
         "description": "utils",
@@ -746,99 +778,27 @@
         "documentation": {}
     },
     {
-        "label": "QaAiAnswersResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
+        "label": "RecursiveCharacterTextSplitter",
+        "importPath": "langchain.text_splitter",
+        "description": "langchain.text_splitter",
         "isExtraImport": true,
-        "detail": "rag.qa.models",
+        "detail": "langchain.text_splitter",
         "documentation": {}
     },
     {
-        "label": "QaAiAnswersRequestModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
+        "label": "MistralChatService",
+        "importPath": "clientservices",
+        "description": "clientservices",
         "isExtraImport": true,
-        "detail": "rag.qa.models",
+        "detail": "clientservices",
         "documentation": {}
     },
     {
-        "label": "ExtarctQaFromTextResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
+        "label": "MistralChatRequestModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
         "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractQaResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "HandleQaExtractResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "QaAiAnswersRequestModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "QaAiAnswersResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "HandleQaExtractResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractQaEmbeddingVectorModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractQaVectorModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "ExtarctQaFromTextResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractQaResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
+        "detail": "clientservices",
         "documentation": {}
     },
     {
@@ -991,6 +951,118 @@
         "description": "clientservices",
         "isExtraImport": true,
         "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMGragEntityResponseModel",
+        "importPath": "graphrag.models",
+        "description": "graphrag.models",
+        "isExtraImport": true,
+        "detail": "graphrag.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractEntityGragSystemPrompt",
+        "importPath": "graphrag.utils.GragSystemPropts",
+        "description": "graphrag.utils.GragSystemPropts",
+        "isExtraImport": true,
+        "detail": "graphrag.utils.GragSystemPropts",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersRequestModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtarctQaFromTextResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractQaResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "HandleQaExtractResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersRequestModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "QaAiAnswersResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "HandleQaExtractResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractQaEmbeddingVectorModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractQaVectorModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtarctQaFromTextResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractQaResponseModel",
+        "importPath": "rag.qa.models",
+        "description": "rag.qa.models",
+        "isExtraImport": true,
+        "detail": "rag.qa.models",
         "documentation": {}
     },
     {
@@ -1201,6 +1273,14 @@
         "description": "langchain_community.document_loaders",
         "isExtraImport": true,
         "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "FileChunkGragService",
+        "importPath": "graphrag",
+        "description": "graphrag",
+        "isExtraImport": true,
+        "detail": "graphrag",
         "documentation": {}
     },
     {
@@ -1464,7 +1544,7 @@
         "kind": 6,
         "importPath": "clientservices.mistral.models.ChatModels",
         "description": "clientservices.mistral.models.ChatModels",
-        "peekOfCode": "class MistralChatRequestMessageModel(BaseModel):\n    role: MistralChatMessageRoleEnum = MistralChatMessageRoleEnum.USER\n    content: str\nclass MistralChatRequestModel(BaseModel):\n    model: str = \"mistral-small-2506\"\n    temperature: float = 0.7\n    maxTokens: int = 30000\n    stream: bool = False\n    messages: list[MistralChatRequestMessageModel]\n    responseFormat: BaseModel | None = None",
+        "peekOfCode": "class MistralChatRequestMessageModel(BaseModel):\n    role: MistralChatMessageRoleEnum = MistralChatMessageRoleEnum.USER\n    content: str | list[str]\nclass MistralChatRequestModel(BaseModel):\n    model: str = \"mistral-small-2506\"\n    temperature: float = 0.7\n    maxTokens: int = 30000\n    stream: bool = False\n    messages: list[MistralChatRequestMessageModel]\n    responseFormat: Any | None = None",
         "detail": "clientservices.mistral.models.ChatModels",
         "documentation": {}
     },
@@ -1473,7 +1553,7 @@
         "kind": 6,
         "importPath": "clientservices.mistral.models.ChatModels",
         "description": "clientservices.mistral.models.ChatModels",
-        "peekOfCode": "class MistralChatRequestModel(BaseModel):\n    model: str = \"mistral-small-2506\"\n    temperature: float = 0.7\n    maxTokens: int = 30000\n    stream: bool = False\n    messages: list[MistralChatRequestMessageModel]\n    responseFormat: BaseModel | None = None\nclass MistralChatResponseUsageModel(BaseModel):\n    promptTokens: int\n    completionToken: int",
+        "peekOfCode": "class MistralChatRequestModel(BaseModel):\n    model: str = \"mistral-small-2506\"\n    temperature: float = 0.7\n    maxTokens: int = 30000\n    stream: bool = False\n    messages: list[MistralChatRequestMessageModel]\n    responseFormat: Any | None = None\nclass MistralChatResponseUsageModel(BaseModel):\n    promptTokens: int\n    completionToken: int",
         "detail": "clientservices.mistral.models.ChatModels",
         "documentation": {}
     },
@@ -1563,7 +1643,7 @@
         "kind": 6,
         "importPath": "clientservices.mistral.services.MistralChatService",
         "description": "clientservices.mistral.services.MistralChatService",
-        "peekOfCode": "class MistralChatService(MistralChatImpl):\n    async def Chat( \n        self, modelParams: MistralChatRequestModel\n    ) -> MistralChatResponseModel:\n        try:\n            messages: Any = []\n            for message in modelParams.messages:\n                messages.append(\n                    {\"role\": message.role.value, \"content\": message.content}\n                )",
+        "peekOfCode": "class MistralChatService(MistralChatImpl):\n    async def Chat(\n        self, modelParams: MistralChatRequestModel\n    ) -> MistralChatResponseModel:\n        try:\n            messages: Any = []\n            for message in modelParams.messages:\n                messages.append(\n                    {\"role\": message.role.value, \"content\": message.content}\n                )",
         "detail": "clientservices.mistral.services.MistralChatService",
         "documentation": {}
     },
@@ -1572,7 +1652,7 @@
         "kind": 5,
         "importPath": "clientservices.mistral.services.MistralChatService",
         "description": "clientservices.mistral.services.MistralChatService",
-        "peekOfCode": "mistral = Mistral()\nclass MistralChatService(MistralChatImpl):\n    async def Chat( \n        self, modelParams: MistralChatRequestModel\n    ) -> MistralChatResponseModel:\n        try:\n            messages: Any = []\n            for message in modelParams.messages:\n                messages.append(\n                    {\"role\": message.role.value, \"content\": message.content}",
+        "peekOfCode": "mistral = Mistral(api_key=GetMistralApiKey())\nclass MistralChatService(MistralChatImpl):\n    async def Chat(\n        self, modelParams: MistralChatRequestModel\n    ) -> MistralChatResponseModel:\n        try:\n            messages: Any = []\n            for message in modelParams.messages:\n                messages.append(\n                    {\"role\": message.role.value, \"content\": message.content}",
         "detail": "clientservices.mistral.services.MistralChatService",
         "documentation": {}
     },
@@ -1599,8 +1679,17 @@
         "kind": 6,
         "importPath": "graphrag.implementations.FileChunkGragImpl",
         "description": "graphrag.implementations.FileChunkGragImpl",
-        "peekOfCode": "class FileChunkGragImpl(ABC):\n    @abstractmethod\n    def ExatrctChunkFromText(self, file: str, chunkLength: int) -> list[str]:\n        pass",
+        "peekOfCode": "class FileChunkGragImpl(ABC):\n    @abstractmethod\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        pass\n    async def handleEntitiesProcess(self, file: str):\n        pass",
         "detail": "graphrag.implementations.FileChunkGragImpl",
+        "documentation": {}
+    },
+    {
+        "label": "LLMGragEntityResponseModel",
+        "kind": 6,
+        "importPath": "graphrag.models.FileChunkGragModels",
+        "description": "graphrag.models.FileChunkGragModels",
+        "peekOfCode": "class LLMGragEntityResponseModel(BaseModel):\n    entities:list[list[str]]\n    relations:list[list[str]]\n    context:list[list[str]]",
+        "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
     {
@@ -1608,8 +1697,26 @@
         "kind": 6,
         "importPath": "graphrag.services.FieChunkGrag",
         "description": "graphrag.services.FieChunkGrag",
-        "peekOfCode": "class FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(self, file: str, chunkLength: int) -> list[str]:\n        text = ExtarctTextFromFile(file)\n        return []",
+        "peekOfCode": "class FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        text = ExtractTextFromDoc(file)\n        splitter = RecursiveCharacterTextSplitter(\n            chunk_size=chunkSize, chunk_overlap=chunkOLSize\n        )\n        chunks = splitter.split_text(text)\n        return chunks",
         "detail": "graphrag.services.FieChunkGrag",
+        "documentation": {}
+    },
+    {
+        "label": "mistralService",
+        "kind": 5,
+        "importPath": "graphrag.services.FieChunkGrag",
+        "description": "graphrag.services.FieChunkGrag",
+        "peekOfCode": "mistralService = MistralChatService()\nclass FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        text = ExtractTextFromDoc(file)\n        splitter = RecursiveCharacterTextSplitter(\n            chunk_size=chunkSize, chunk_overlap=chunkOLSize\n        )\n        chunks = splitter.split_text(text)",
+        "detail": "graphrag.services.FieChunkGrag",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractEntityGragSystemPrompt",
+        "kind": 5,
+        "importPath": "graphrag.utils.GragSystemPropts",
+        "description": "graphrag.utils.GragSystemPropts",
+        "peekOfCode": "ExtractEntityGragSystemPrompt = \"\"\"\nYou are an expert information extraction assistant for building a knowledge graph.\nInput: an array of text chunks (strings).\nFor each chunk, extract:\n1. entities: list of strings (unique words/phrases from the chunk).\n2. relations: list of strings (subject–predicate–object style).\n3. context: list of strings where each entry describes only the corresponding entity from that chunk, using exact wording from the chunk. Do not add outside knowledge.\nRules:\n- Output strictly valid JSON:\n{",
+        "detail": "graphrag.utils.GragSystemPropts",
         "documentation": {}
     },
     {
@@ -1907,6 +2014,15 @@
         "description": "utils.ExtarctTextFromFile",
         "peekOfCode": "def ExtractTextFromDoc(file: str) -> str:\n        ext = os.path.splitext(file)[1]  \n        loader:Any = \"\"\n        if(ext == \".pdf\"):\n            loader = PyPDFLoader(file)\n        elif(ext == \".xlsx\" or ext == \".xls\"):\n            loader = UnstructuredExcelLoader(file, mode=\"elements\")\n        documents = loader.load()\n        fullText = \"\\n\".join(doc.page_content for doc in documents)\n        return fullText",
         "detail": "utils.ExtarctTextFromFile",
+        "documentation": {}
+    },
+    {
+        "label": "a",
+        "kind": 5,
+        "importPath": "k",
+        "description": "k",
+        "peekOfCode": "a = FileChunkGragService()\nasync def main():\n    await a.handleEntitiesProcess(\"a.pdf\")\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
+        "detail": "k",
         "documentation": {}
     },
     {

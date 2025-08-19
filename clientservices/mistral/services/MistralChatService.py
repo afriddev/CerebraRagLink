@@ -37,7 +37,7 @@ class MistralChatService(MistralChatImpl):
                     {"role": message.role.value, "content": message.content}
                 )
 
-            mistralResponse = await mistral.chat.complete_async(
+            mistralResponse =  await  mistral.chat.parse_async(
                 messages=messages,
                 model=modelParams.model,
                 temperature=modelParams.temperature,

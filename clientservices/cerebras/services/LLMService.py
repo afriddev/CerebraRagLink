@@ -13,9 +13,10 @@ from clientservices.cerebras.models import (
 )
 from cerebras.cloud.sdk import DefaultAioHttpClient
 from typing import Any, cast
+from clientservices.cerebras.workers import GetCerebrasApiKey
 
 client = AsyncCerebras(
-    api_key=None,
+    api_key=GetCerebrasApiKey(),
     http_client=DefaultAioHttpClient(),
 )
 

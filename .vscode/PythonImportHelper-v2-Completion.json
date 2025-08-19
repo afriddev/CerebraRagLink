@@ -344,6 +344,22 @@
         "documentation": {}
     },
     {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Any",
         "importPath": "typing",
         "description": "typing",
@@ -502,6 +518,14 @@
         "description": "clientservices.cerebras.implementations",
         "isExtraImport": true,
         "detail": "clientservices.cerebras.implementations",
+        "documentation": {}
+    },
+    {
+        "label": "GetCerebrasApiKey",
+        "importPath": "clientservices.cerebras.workers",
+        "description": "clientservices.cerebras.workers",
+        "isExtraImport": true,
+        "detail": "clientservices.cerebras.workers",
         "documentation": {}
     },
     {
@@ -970,6 +994,15 @@
         "documentation": {}
     },
     {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
         "label": "QaAiAnswersResponseModel",
         "importPath": "rag.qa.models",
         "description": "rag.qa.models",
@@ -1119,15 +1152,6 @@
         "description": "rag.qa.utils.qaSystemPropts",
         "isExtraImport": true,
         "detail": "rag.qa.utils.qaSystemPropts",
-        "documentation": {}
-    },
-    {
-        "label": "json",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
         "documentation": {}
     },
     {
@@ -1472,7 +1496,7 @@
         "kind": 5,
         "importPath": "clientservices.cerebras.services.LLMService",
         "description": "clientservices.cerebras.services.LLMService",
-        "peekOfCode": "client = AsyncCerebras(\n    api_key=None,\n    http_client=DefaultAioHttpClient(),\n)\nclass LLMService(LLMServiceImpl):\n    def HandleApiStatusError(self, statusCode: int) -> LLMResponseModel:\n        errorCodes = {\n            400: LLMResponseEnum.BAD_REQUEST,\n            401: LLMResponseEnum.UNAUTHROZIED,\n            403: LLMResponseEnum.PERMISSION_DENIED,",
+        "peekOfCode": "client = AsyncCerebras(\n    api_key=GetCerebrasApiKey(),\n    http_client=DefaultAioHttpClient(),\n)\nclass LLMService(LLMServiceImpl):\n    def HandleApiStatusError(self, statusCode: int) -> LLMResponseModel:\n        errorCodes = {\n            400: LLMResponseEnum.BAD_REQUEST,\n            401: LLMResponseEnum.UNAUTHROZIED,\n            403: LLMResponseEnum.PERMISSION_DENIED,",
         "detail": "clientservices.cerebras.services.LLMService",
         "documentation": {}
     },
@@ -1688,7 +1712,7 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class LLMGragEntityResponseModel(BaseModel):\n    entities:list[list[str]]\n    relations:list[list[str]]\n    context:list[list[str]]",
+        "peekOfCode": "class LLMGragEntityResponseModel(BaseModel):\n    entities:list[list[str]]\n    relations:list[list[str]]\n    chunks:list[str]",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
@@ -1715,7 +1739,7 @@
         "kind": 5,
         "importPath": "graphrag.utils.GragSystemPropts",
         "description": "graphrag.utils.GragSystemPropts",
-        "peekOfCode": "ExtractEntityGragSystemPrompt = \"\"\"\nYou are an expert information extraction assistant for building a knowledge graph.\nInput: an array of text chunks (strings).\nFor each chunk, extract:\n1. entities: list of strings (unique words/phrases from the chunk).\n2. relations: list of strings (subject–predicate–object style).\n3. context: list of strings where each entry describes only the corresponding entity from that chunk, using exact wording from the chunk. Do not add outside knowledge.\nRules:\n- Output strictly valid JSON:\n{",
+        "peekOfCode": "ExtractEntityGragSystemPrompt = \"\"\"\nYou are an expert information extraction assistant for building a knowledge graph.\nINPUT\n- A JSON array of text chunks (strings). Example: [\"chunk 0\", \"chunk 1\", \"chunk 2\"]\nTASK (per chunk i)\n1) entities: list of unique, lowercase key terms from THAT chunk (orgs, people, locations, systems, concepts). Deduplicate within the chunk.\n2) relations: list of unique sentences/fragments copied from THAT chunk that mention one or more entities. Verbatim or lightly cleaned only. No invention.\n3) chunks: echo back the original chunk EXACTLY (verbatim).\nRULES\n- If nothing found for a chunk, return [] for entities/relations.",
         "detail": "graphrag.utils.GragSystemPropts",
         "documentation": {}
     },

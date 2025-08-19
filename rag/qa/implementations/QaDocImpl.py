@@ -9,9 +9,7 @@ from rag.qa.models import (
 
 class QaDocImpl(ABC):
 
-    @abstractmethod
-    def ExtractTextFromDoc(self, file: str) -> str:
-        pass
+    
 
     @abstractmethod
     async def ExtractQaFromText(

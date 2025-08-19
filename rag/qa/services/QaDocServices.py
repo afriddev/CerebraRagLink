@@ -1,7 +1,5 @@
 from typing import Any, cast
 from rag.qa.implementations import QaDocImpl
-from langchain_community.document_loaders import PyPDFLoader
-from langchain_community.document_loaders import UnstructuredExcelLoader
 from clientservices import (
     LLMMessageModel,
     LLMResponseFormatModel,
@@ -23,26 +21,14 @@ from rag.qa.models import (
 from clientservices import GetCerebrasApiKey
 from uuid import uuid4
 import json
-import os
 from rag.qa.utils.qaSystemPropts import ExtractQaPrompt
+from utils import ExtractTextFromDoc
 
 llmService = LLMService()
 embeddingService = EmbeddingService()
 
-class QaDocService(QaDocImpl):
 
-    def ExtractTextFromDoc(self, file: str) -> str:
-        ext = os.path.splitext(file)[1]  
-        loader:Any = ""
-        if(ext == ".pdf"):
-            loader = PyPDFLoader(file)
-        elif(ext == ".xlsx" or ext == ".xls"):
-            loader = UnstructuredExcelLoader(file, mode="elements")
-        
-        
-        documents = loader.load()
-        fullText = "\n".join(doc.page_content for doc in documents)
-        return fullText
+class QaDocService(QaDocImpl):
 
     async def ExtractQaFromText(self, text: str) -> ExtarctQaFromTextResponseModel:
         systemPrompt = ExtractQaPrompt
@@ -54,7 +40,7 @@ class QaDocService(QaDocImpl):
             ),  # your PDF-extracted text here
         ]
 
-        LLMResponse:Any = await llmService.Chat(
+        LLMResponse: Any = await llmService.Chat(
             modelParams=LLMRequestModel(
                 apiKey=GetCerebrasApiKey(),
                 model="qwen-3-coder-480b",
@@ -111,7 +97,7 @@ class QaDocService(QaDocImpl):
             )
 
     async def ExtractQa(self, file: str) -> ExtractQaResponseModel:
-        text = self.ExtractTextFromDoc(file)
+        text = ExtractTextFromDoc(file)
         questionAndAnserResponse = await self.ExtractQaFromText(text)
         if questionAndAnserResponse.response is None:
             return ExtractQaResponseModel(

@@ -1,7 +1,22 @@
 from .workers import GetMistralApiKey
-from .services import EmbeddingService
-from .enums import EmbeddingResponseEnum
-from .models import EmbeddingDataModel, EmbeddingResponseModel, EmbeddingUsageModel
+from .services import EmbeddingService, MistralChatService
+from .enums import (
+    EmbeddingResponseEnum,
+    MistralChatMessageRoleEnum,
+    MistralChatResponseStatusEnum,
+)
+from .models import (
+    EmbeddingDataModel,
+    EmbeddingResponseModel,
+    EmbeddingUsageModel,
+    MistralChatMessageRoleEnum,
+    MistralChatRequestMessageModel,
+    MistralChatRequestModel,
+    MistralChatResponseChoiceModel,
+    MistralChatResponseMessageModel,
+    MistralChatResponseModel,
+    MistralChatResponseUsageModel,
+)
 
 
 __all__ = [
@@ -11,4 +26,13 @@ __all__ = [
     "EmbeddingDataModel",
     "EmbeddingResponseModel",
     "EmbeddingUsageModel",
+    "MistralChatService",
+    "MistralChatMessageRoleEnum",
+    "MistralChatRequestMessageModel",
+    "MistralChatRequestModel",
+    "MistralChatResponseChoiceModel",
+    "MistralChatResponseMessageModel",
+    "MistralChatResponseModel",
+    "MistralChatResponseUsageModel",
+    "MistralChatResponseStatusEnum",
 ]

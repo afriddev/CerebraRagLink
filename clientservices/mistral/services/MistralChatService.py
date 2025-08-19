@@ -9,14 +9,23 @@ from clientservices.mistral.models import (
     MistralChatRequestModel,
 )
 from clientservices.mistral.enums import MistralChatResponseStatusEnum
+from clientservices.mistral.workers import GetMistralApiKey
 
 
-mistral = Mistral()
+"""
+--------------------- MISTRAL OEPN MDOELS -------------------------
+Mistral Small 3.2   -> mistral-small-2506 -> 128k context -> 24B
+Mistral Small 3.1   -> mistral-small-2503 -> 128k Context -> 24B
+Mistral Nemo 12B    -> open-mistral-nemo  -> 128k Context -> 12b
+------------------------------------------------------------------
+"""
+
+mistral = Mistral(api_key=GetMistralApiKey())
 
 
 class MistralChatService(MistralChatImpl):
 
-    async def Chat( 
+    async def Chat(
         self, modelParams: MistralChatRequestModel
     ) -> MistralChatResponseModel:
 

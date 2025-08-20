@@ -15,6 +15,9 @@ class LLMMessageModel(BaseModel):
 class LLMResponseFormatPropertySchemaModel(BaseModel):
     type: str | int | float | str
     items: Optional[Any] = None
+    properties: Optional[Any] = None
+    required: Optional[Any] = None
+    additionalProperties: Optional[Any] = None
 
 
 class LLMResponseFormatJsonSchemaSchemaModel(BaseModel):

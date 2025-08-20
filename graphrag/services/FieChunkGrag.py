@@ -1,16 +1,22 @@
-from typing import Any, cast
-from clientservices.mistral.enums.ChatEnums import MistralChatMessageRoleEnum
-from clientservices.mistral.models.ChatModels import MistralChatRequestMessageModel
+from clientservices import (
+    LLMResponseFormatJsonSchemaSchemaModel,
+    LLMService,
+    LLMRequestModel,
+    GetCerebrasApiKey,
+    LLMResponseFormatModel,
+    LLmresponseFormatJsonSchemaModel,
+    LLMResponseFormatPropertySchemaModel,
+    LLMMessageModel,
+    LLmMessageRoleEnum,
+)
 from graphrag.implementations import FileChunkGragImpl
 from utils import ExtractTextFromDoc
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from clientservices import MistralChatService, MistralChatRequestModel
-from graphrag.models import LLMGragEntityResponseModel
 from graphrag.utils.GragSystemPropts import ExtractEntityGragSystemPrompt
 import json
 
 
-mistralService = MistralChatService()
+llmService = LLMService()
 
 
 class FileChunkGragService(FileChunkGragImpl):
@@ -26,31 +32,83 @@ class FileChunkGragService(FileChunkGragImpl):
         return chunks
 
     async def handleEntitiesProcess(self, file: str):
-        chunks = self.ExatrctChunkFromText(file, 1000,100)
+        chunks = self.ExatrctChunkFromText(file, 500)
 
         batch_len = 5
         for start in range(0, len(chunks), batch_len):
             batch = chunks[start : start + batch_len]
-
-            user_payload = json.dumps(batch, ensure_ascii=False)
-
-            chatRequest = MistralChatRequestModel(
-                model="mistral-small-2506",
-                messages=[
-                    MistralChatRequestMessageModel(
-                        role=MistralChatMessageRoleEnum.SYSTEM,
-                        content=ExtractEntityGragSystemPrompt,  # use the prompt above
+            userBatchContent = json.dumps(batch, ensure_ascii=False)
+            messages: list[LLMMessageModel] = [
+                LLMMessageModel(
+                    role=LLmMessageRoleEnum.SYSTEM,
+                    content=ExtractEntityGragSystemPrompt,
+                ),
+                LLMMessageModel(
+                    role=LLmMessageRoleEnum.USER,
+                    content=userBatchContent,
+                ),
+            ]
+            LLMResponse = await llmService.Chat(
+                modelParams=LLMRequestModel(
+                    apiKey=GetCerebrasApiKey(),
+                    model="qwen-3-235b-a22b-thinking-2507",
+                    maxCompletionTokens=30000,
+                    messages=messages,
+                    temperature=0.4,
+                    responseFormat=LLMResponseFormatModel(
+                        type="json_schema",
+                        jsonSchema=LLmresponseFormatJsonSchemaModel(
+                            name="schema",
+                            strict=True,
+                            jsonSchema=LLMResponseFormatJsonSchemaSchemaModel(
+                                type="object",
+                                properties={
+                                    "response": LLMResponseFormatPropertySchemaModel(
+                                        type="object",
+                                        properties={
+                                            "entities": LLMResponseFormatPropertySchemaModel(
+                                                type="array",
+                                                items={
+                                                    "type": "array",
+                                                    "items": {"type": "string"},
+                                                },
+                                            ),
+                                            "relations": LLMResponseFormatPropertySchemaModel(
+                                                type="array",
+                                                items={
+                                                    "type": "array",
+                                                    "items": {"type": "string"},
+                                                },
+                                            ),
+                                            "relationshipsEntities": LLMResponseFormatPropertySchemaModel(
+                                                type="array",
+                                                items={
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "array",
+                                                        "items": {"type": "string"},
+                                                    },
+                                                },
+                                            ),
+                                            "chunks": LLMResponseFormatPropertySchemaModel(
+                                                type="array", items={"type": "string"}
+                                            ),
+                                        },
+                                        required=[
+                                            "entities",
+                                            "relations",
+                                            "chunks",
+                                            "relationshipsEntities",
+                                        ],
+                                        additionalProperties=False,
+                                    )
+                                },
+                                required=["response"],
+                                additionalProperties=False,
+                            ),
+                        ),
                     ),
-                    MistralChatRequestMessageModel(
-                        role=MistralChatMessageRoleEnum.USER,
-                        content=user_payload,  # <-- JSON array of chunk strings
-                    ),
-                ],
-                responseFormat=LLMGragEntityResponseModel,  # matches the model above
-                temperature=0.0,
-                maxTokens=4000,
-                stream=False,
+                )
             )
 
-            chatResponse = await mistralService.Chat(modelParams=chatRequest)
-            print(json.loads(chatResponse.choices[0].message.content))
+            print(LLMResponse.LLMData.choices[0].message.content)

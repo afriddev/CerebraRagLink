@@ -1,3 +1,4 @@
+from typing import Any
 from pydantic import BaseModel
 from clientservices.mistral.enums import (
     MistralChatMessageRoleEnum,
@@ -7,7 +8,7 @@ from clientservices.mistral.enums import (
 
 class MistralChatRequestMessageModel(BaseModel):
     role: MistralChatMessageRoleEnum = MistralChatMessageRoleEnum.USER
-    content: str
+    content: str | list[str]
 
 
 class MistralChatRequestModel(BaseModel):
@@ -16,7 +17,7 @@ class MistralChatRequestModel(BaseModel):
     maxTokens: int = 30000
     stream: bool = False
     messages: list[MistralChatRequestMessageModel]
-    responseFormat: BaseModel | None = None
+    responseFormat: Any | None = None
 
 
 class MistralChatResponseUsageModel(BaseModel):

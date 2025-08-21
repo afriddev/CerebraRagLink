@@ -1,25 +1,81 @@
 ExtractEntityGragSystemPrompt = """
-You are an expert information extraction assistant for building a knowledge graph.
+You build a lightweight knowledge graph from text chunks. Return only valid JSON in the exact shape below.
 
 INPUT
-- A JSON array of text chunks (strings). Example: ["chunk 0", "chunk 1", "chunk 2"]
+- A JSON array of text chunks: ["chunk 0", "chunk 1", "chunk 2", ...]
 
-TASK (per chunk i)
-1) entities: list of unique, lowercase key terms from THAT chunk (orgs, people, locations, systems, concepts). Deduplicate within the chunk.
-2) relations: list of unique sentences/fragments copied from THAT chunk that mention one or more entities. Verbatim or lightly cleaned only. No invention.
-3) chunks: echo back the original chunk EXACTLY (verbatim).
+TASK (per chunk)
+1) Read the chunk.
+2) Create concise KG sentences (3–6 words), using ONLY these templates:
+   - ENTITY_A VERB ENTITY_B
+   - ENTITY_A VERB PREPOSITION ENTITY_B
+   Examples:
+     - "UMID provides Unique Identity"
+     - "system in Indian Railways"
+     - "QR code strengthens Identity"
+3) Entities:
+   - Must be a **single word or very short phrase** (≤ 2 words, ≤ 18 characters).
+   - Prefer **head nouns** or core terms; drop generic modifiers like "system", "features", "process".
+   - Allowed multiword exceptions: "Indian Railways", "Dolo 650", "OPD slips".
+   - Examples:
+     - "smart health card system" → **"smart card"**
+     - "web-enabled QR code" → **"QR code"**
+     - "smart health card features" → **"card features"**
+4) KG sentences must use only these shortened entities.
+5) Derive the entities list as the UNIQUE set of entities used in KG sentences for that chunk.
+6) For each KG sentence, output the exact entities used in it, in order.
 
-RULES
-- If nothing found for a chunk, return [] for entities/relations.
-- Strings must be ≤ 300 characters.
-- Output ONLY strict JSON (no markdown, comments, or extra text).
-- Shape must align with input length N exactly:
-
+OUTPUT SHAPE
 {
-  "entities":  [ [..entities_0..], [..entities_1..], ..., [..entities_N-1..] ],
-  "relations": [ [..relations_0..], [..relations_1..], ..., [..relations_N-1..] ],
-  "chunks":    [ "..chunk_0..",     "..chunk_1..",     ...,  "..chunk_N-1.." ]
+  "response": {
+    "entities": [ [...], [...], ... ],
+    "relationships": [ [...], [...], ... ],
+    "relationshipsEntities": [ [ [...], ... ], [ [...], ... ], ... ],
+    "chunks": ["chunk 0", "chunk 1", ...]
+  }
 }
 
+RULES
+- Each KG sentence MUST include exactly 2 entity mentions from that chunk.
+- Each sentence must use a verb or verb+preposition between entities.
+- Disallowed: standalone relation phrases like "is a", "provides", "helps in".
+- Allowed verbs: is, provides, contains, belongs, located, links, treats, strengthens, supports, generates, uses.
+- Allowed prepositions: of, to, with, in, for, at.
+- Only include entities that appear in KG sentences.
+- Deduplicate entities in each chunk; preserve order of first appearance in KG sentences.
+- relationshipsEntities[i][j] must exactly match the entities in relationships[i][j], in order.
+- If no valid KG sentences in a chunk, return empty arrays for that chunk.
+
+FORMAT
+- Output MUST be valid JSON only.
+- No markdown, code fences, explanations, or newlines inside strings.
+
+EXAMPLE
+Input:
+["UMID is a smart health card system in Indian Railways. It provides Unique Identity to medical beneficiaries."]
+
+Output:
+{
+  "response": {
+    "entities": [
+      ["UMID", "smart card", "Indian Railways", "Unique Identity", "beneficiaries"]
+    ],
+    "relationships": [
+      ["UMID is smart card",
+       "smart card in Indian Railways",
+       "UMID provides Unique Identity",
+       "Identity supports beneficiaries"]
+    ],
+    "relationshipsEntities": [
+      [["UMID","smart card"],
+       ["smart card","Indian Railways"],
+       ["UMID","Unique Identity"],
+       ["Unique Identity","beneficiaries"]]
+    ],
+    "chunks": [
+      "UMID is a smart health card system in Indian Railways. It provides Unique Identity to medical beneficiaries."
+    ]
+  }
+}
 
 """

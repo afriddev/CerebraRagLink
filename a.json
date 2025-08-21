@@ -1,89 +1,39 @@
 {
-  "entities": [
-    [
-      "umid",
-      "smart health card system",
-      "indian railways",
-      "unique identity",
-      "medical beneficiaries",
-      "unique number",
-      "perpetual entity",
-      "web-enabled qr code",
-      "biometric identity",
-      "common database",
-      "web application",
-      "mobile application"
+  "response": {
+    "entities": [
+      [
+        "Pensioner",
+        "readiness",
+        "application",
+        "minutes",
+        "one go"
+      ]
     ],
-    [
-      "smart cards",
-      "medical beneficiaries",
-      "employees",
-      "pensioners",
-      "dependents",
-      "quasi rly. employees",
-      "porters/ coolies",
-      "beneficiary particulars"
+    "relations": [
+      [
+        "Pensioner in readiness",
+        "application in minutes",
+        "application at one go"
+      ]
     ],
-    [
-      "smart card features",
-      "umid",
-      "smart health card system",
-      "indian railways",
-      "unique identity",
-      "medical beneficiaries",
-      "unique number",
-      "perpetual entity",
-      "web-enabled qr code",
-      "biometric identity",
-      "common database",
-      "web application",
-      "mobile application"
+    "relationshipsEntities": [
+      [
+        [
+          "Pensioner",
+          "readiness"
+        ],
+        [
+          "application",
+          "minutes"
+        ],
+        [
+          "application",
+          "one go"
+        ]
+      ]
     ],
-    [
-      "umid",
-      "web application",
-      "mobile application",
-      "health services",
-      "railway hospitals"
-    ],
-    [
-      "health units",
-      "beneficiaries",
-      "particulars",
-      "validation",
-      "conditional eligibility",
-      "rule engine",
-      "automatic rule integration",
-      "manual scrutiny",
-      "smart card features",
-      "automatic authentication",
-      "intelligent hospital interface",
-      "opd slips",
-      "kiosk"
+    "chunks": [
+      "Pensioner) are kept in readiness, the application process will be smooth and can be completed in few minutes at \\\\none go."
     ]
-  ],
-  "relations": [
-    [
-      "UMID is a smart health card system in Indian Railways. It helps in providing Unique Identity to all medical beneficiaries individually through a unique number as a perpetual entity. This Unique Identity is further strengthen with unique smart feature of web-enabled QR code and Biometric identity with common database at all India level, this web and mobile application helps in"
-    ],
-    [
-      "To issue Smart cards to all medical beneficiaries: Employees, Pensioners, Dependents of Employees and Pensioners, Other beneficiaries such as Quasi Rly. Employees, Porters/ Coolies etc. Convenience in applying and revising beneficiary particulars online."
-    ],
-    [
-      "UMID is a smart health card system in Indian Railways. It helps in providing Unique Identity to all medical beneficiaries individually through a unique number as a perpetual entity. This Unique Identity is further strengthen with unique smart feature of web-enabled QR code and Biometric identity with common database at all India level, this web and mobile application helps in identifying medical beneficiaries across all health units spanning all across Indian Railways."
-    ],
-    [
-      "Apply for card from any place through web and mobile application. Ease and convenience in accessing health services of Railway hospitals."
-    ],
-    [
-      "Physical card independent identification of health units. Identification at any health unit at any point of time. Ease to update beneficiaries and their particulars. Built-in validation for automatic invalidation for conditional eligibility. Robust rule engine to power the automatic rule integration without manual scrutiny. Smart card features to ensure automatic authentication. Intelligent Hospital interface to generate OPD slips automatically through kiosk."
-    ]
-  ],
-  "chunks": [
-    "FAQ ABOUT UMID (Source—UMID Web Site) \n1. What is UMID? \nUMID is a smart health card system in Indian Railways. \nIt helps in providing Unique Identity to all medical beneficiaries individually through a unique number as a \nperpetual entity. This Unique Identity is further strengthen with unique smart feature of web-enabled QR code \nand Biometric identity with common database at all India level, this web and mobile application helps in",
-    "identifying medical beneficiaries across all health units spanning all across Indian Railways. \n2. What are the objectives of UMID? \n• > To issue Smart cards to all medical beneficiaries: \n1. >> Employees \n2. >> Pensioners \n3. >> Dependents of Employees and Pensioners \n4. >> Other beneficiaries such as Quasi Rly. Employees, Porters/ Coolies etc. \n• > Convenience in applying and revising beneficiary particulars online.",
-    "• > Ease & convenience in using Health Services with built-in authentication mechanism. \n• > Auto generation of OPD slips through Kiosk in Hospitals. \n• > Identification even without physical card with Smart Identity Features. \n• 3. Understanding Smart card features in UMID \nUMID is a smart health card system in Indian Railways. \nIt helps in providing Unique Identity to all medical beneficiaries individually through a unique number as a",
-    "perpetual entity. This Unique Identity is further strengthen with unique smart feature of web-enabled QR code \nand Biometric identity with common database at all India level, this web and mobile application helps in \nidentifying medical beneficiaries across all health units spanning all across Indian Railways. \n4. Benefits of UMID \n• > Apply for card from any place through web and mobile application. \n• > Ease and convenience in accessing health services of Railway hospitals.",
-    "• > Physical card independent identification of health units. \n• > Identification at any health unit at any point of time. \n• > Ease to update beneficiaries and their particulars. \n• > Built-in validation for automatic invalidation for conditional eligibility. \n• > Robust rule engine to power the automatic rule integration without manual scrutiny. \n• > Smart card features to ensure automatic authentication. \n• > Intelligent Hospital interface to generate OPD slips automatically through kiosk."
-  ]
+  }
 }

@@ -464,6 +464,14 @@
         "documentation": {}
     },
     {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "LLmMessageRoleEnum",
         "importPath": "clientservices.cerebras.enums",
         "description": "clientservices.cerebras.enums",
@@ -978,6 +986,14 @@
         "documentation": {}
     },
     {
+        "label": "EmbeddingService",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
         "label": "LLMGragEntityResponseModel",
         "importPath": "graphrag.models",
         "description": "graphrag.models",
@@ -1216,6 +1232,15 @@
         "description": "server.models",
         "isExtraImport": true,
         "detail": "server.models",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
         "documentation": {}
     },
     {
@@ -1897,6 +1922,24 @@
         "documentation": {}
     },
     {
+        "label": "QaTestModel",
+        "kind": 6,
+        "importPath": "server.controllers.QaRagController",
+        "description": "server.controllers.QaRagController",
+        "peekOfCode": "class QaTestModel(BaseModel):\n    answer:str\n    question:str\nQaRag = APIRouter()\nQaRaServices = QaRagControllerServices()\nasync def getDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@QaRag.get(\"/rag/extarct\")\nasync def HandleQaRag():",
+        "detail": "server.controllers.QaRagController",
+        "documentation": {}
+    },
+    {
+        "label": "embeddingService",
+        "kind": 5,
+        "importPath": "server.controllers.QaRagController",
+        "description": "server.controllers.QaRagController",
+        "peekOfCode": "embeddingService = EmbeddingService()\nclass QaTestModel(BaseModel):\n    answer:str\n    question:str\nQaRag = APIRouter()\nQaRaServices = QaRagControllerServices()\nasync def getDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@QaRag.get(\"/rag/extarct\")",
+        "detail": "server.controllers.QaRagController",
+        "documentation": {}
+    },
+    {
         "label": "QaRag",
         "kind": 5,
         "importPath": "server.controllers.QaRagController",
@@ -2054,7 +2097,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "DATABASE_CONNECTION_STRING = os.getenv(\"DATABASE_CONNECTION_STRING\", \"\")\npsqlDb = PsqlDb(DATABASE_CONNECTION_STRING)     \n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    await psqlDb.connect()\n    yield\n    # await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,",
+        "peekOfCode": "DATABASE_CONNECTION_STRING = os.getenv(\"DATABASE_CONNECTION_STRING\", \"\")\npsqlDb = PsqlDb(DATABASE_CONNECTION_STRING)     \n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    # await psqlDb.connect()\n    yield\n    # await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,",
         "detail": "main",
         "documentation": {}
     },
@@ -2063,7 +2106,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)     \n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    await psqlDb.connect()\n    yield\n    # await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],",
+        "peekOfCode": "psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)     \n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    # await psqlDb.connect()\n    yield\n    # await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],",
         "detail": "main",
         "documentation": {}
     },

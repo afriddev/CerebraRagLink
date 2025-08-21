@@ -15,7 +15,7 @@ psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    await psqlDb.connect()
+    # await psqlDb.connect()
     yield
     # await psqlDb.close()
 
@@ -35,4 +35,4 @@ server.include_router(QaRag, prefix="/api/v1/qa")
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("main:server", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:server", host="192.168.167.114", port=8001, reload=False)

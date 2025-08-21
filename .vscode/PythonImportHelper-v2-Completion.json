@@ -344,14 +344,6 @@
         "documentation": {}
     },
     {
-        "label": "cast",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "Any",
         "importPath": "typing",
         "description": "typing",
@@ -401,6 +393,38 @@
     },
     {
         "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -770,55 +794,25 @@
         "documentation": {}
     },
     {
-        "label": "MistralChatMessageRoleEnum",
-        "importPath": "clientservices.mistral.enums.ChatEnums",
-        "description": "clientservices.mistral.enums.ChatEnums",
+        "label": "re",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "clientservices.mistral.enums.ChatEnums",
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
         "documentation": {}
     },
     {
-        "label": "MistralChatRequestMessageModel",
-        "importPath": "clientservices.mistral.models.ChatModels",
-        "description": "clientservices.mistral.models.ChatModels",
+        "label": "unicodedata",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "clientservices.mistral.models.ChatModels",
+        "importPath": "unicodedata",
+        "description": "unicodedata",
+        "detail": "unicodedata",
         "documentation": {}
     },
     {
-        "label": "FileChunkGragImpl",
-        "importPath": "graphrag.implementations",
-        "description": "graphrag.implementations",
-        "isExtraImport": true,
-        "detail": "graphrag.implementations",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractTextFromDoc",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractTextFromDoc",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "RecursiveCharacterTextSplitter",
-        "importPath": "langchain.text_splitter",
-        "description": "langchain.text_splitter",
-        "isExtraImport": true,
-        "detail": "langchain.text_splitter",
-        "documentation": {}
-    },
-    {
-        "label": "MistralChatService",
+        "label": "LLMResponseFormatJsonSchemaSchemaModel",
         "importPath": "clientservices",
         "description": "clientservices",
         "isExtraImport": true,
@@ -826,7 +820,63 @@
         "documentation": {}
     },
     {
-        "label": "MistralChatRequestModel",
+        "label": "LLMService",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMRequestModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "GetCerebrasApiKey",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMResponseFormatModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLmresponseFormatJsonSchemaModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMResponseFormatPropertySchemaModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLMMessageModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "LLmMessageRoleEnum",
         "importPath": "clientservices",
         "description": "clientservices",
         "isExtraImport": true,
@@ -994,11 +1044,35 @@
         "documentation": {}
     },
     {
-        "label": "LLMGragEntityResponseModel",
-        "importPath": "graphrag.models",
-        "description": "graphrag.models",
+        "label": "FileChunkGragImpl",
+        "importPath": "graphrag.implementations",
+        "description": "graphrag.implementations",
         "isExtraImport": true,
-        "detail": "graphrag.models",
+        "detail": "graphrag.implementations",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractTextFromDoc",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractTextFromDoc",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "RecursiveCharacterTextSplitter",
+        "importPath": "langchain.text_splitter",
+        "description": "langchain.text_splitter",
+        "isExtraImport": true,
+        "detail": "langchain.text_splitter",
         "documentation": {}
     },
     {
@@ -1007,15 +1081,6 @@
         "description": "graphrag.utils.GragSystemPropts",
         "isExtraImport": true,
         "detail": "graphrag.utils.GragSystemPropts",
-        "documentation": {}
-    },
-    {
-        "label": "json",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
         "documentation": {}
     },
     {
@@ -1171,6 +1236,15 @@
         "documentation": {}
     },
     {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
         "label": "APIRouter",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -1309,19 +1383,12 @@
         "documentation": {}
     },
     {
-        "label": "PyPDFLoader",
-        "importPath": "langchain_community.document_loaders",
-        "description": "langchain_community.document_loaders",
+        "label": "fitz",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "langchain_community.document_loaders",
-        "documentation": {}
-    },
-    {
-        "label": "UnstructuredExcelLoader",
-        "importPath": "langchain_community.document_loaders",
-        "description": "langchain_community.document_loaders",
-        "isExtraImport": true,
-        "detail": "langchain_community.document_loaders",
+        "importPath": "fitz",
+        "description": "fitz",
+        "detail": "fitz",
         "documentation": {}
     },
     {
@@ -1373,15 +1440,6 @@
         "documentation": {}
     },
     {
-        "label": "fitz",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "fitz",
-        "description": "fitz",
-        "detail": "fitz",
-        "documentation": {}
-    },
-    {
         "label": "LLmMessageRoleEnum",
         "kind": 6,
         "importPath": "clientservices.cerebras.enums.LLMEnums",
@@ -1413,7 +1471,7 @@
         "kind": 6,
         "importPath": "clientservices.cerebras.models.LLMModels",
         "description": "clientservices.cerebras.models.LLMModels",
-        "peekOfCode": "class LLMMessageModel(BaseModel):\n    role: Optional[LLmMessageRoleEnum] = LLmMessageRoleEnum.USER\n    content: str\nclass LLMResponseFormatPropertySchemaModel(BaseModel):\n    type: str | int | float | str\n    items: Optional[Any] = None\nclass LLMResponseFormatJsonSchemaSchemaModel(BaseModel):\n    type: str = \"object\"\n    properties: dict[str, LLMResponseFormatPropertySchemaModel] = {}\n    required: List[str] = []",
+        "peekOfCode": "class LLMMessageModel(BaseModel):\n    role: Optional[LLmMessageRoleEnum] = LLmMessageRoleEnum.USER\n    content: str\nclass LLMResponseFormatPropertySchemaModel(BaseModel):\n    type: str | int | float | str\n    items: Optional[Any] = None\n    properties: Optional[Any] = None\n    required: Optional[Any] = None\n    additionalProperties: Optional[Any] = None\nclass LLMResponseFormatJsonSchemaSchemaModel(BaseModel):",
         "detail": "clientservices.cerebras.models.LLMModels",
         "documentation": {}
     },
@@ -1422,7 +1480,7 @@
         "kind": 6,
         "importPath": "clientservices.cerebras.models.LLMModels",
         "description": "clientservices.cerebras.models.LLMModels",
-        "peekOfCode": "class LLMResponseFormatPropertySchemaModel(BaseModel):\n    type: str | int | float | str\n    items: Optional[Any] = None\nclass LLMResponseFormatJsonSchemaSchemaModel(BaseModel):\n    type: str = \"object\"\n    properties: dict[str, LLMResponseFormatPropertySchemaModel] = {}\n    required: List[str] = []\n    additionalProperties: bool = False\nclass LLmresponseFormatJsonSchemaModel(BaseModel):\n    name: str = \"schema\"",
+        "peekOfCode": "class LLMResponseFormatPropertySchemaModel(BaseModel):\n    type: str | int | float | str\n    items: Optional[Any] = None\n    properties: Optional[Any] = None\n    required: Optional[Any] = None\n    additionalProperties: Optional[Any] = None\nclass LLMResponseFormatJsonSchemaSchemaModel(BaseModel):\n    type: str = \"object\"\n    properties: dict[str, LLMResponseFormatPropertySchemaModel] = {}\n    required: List[str] = []",
         "detail": "clientservices.cerebras.models.LLMModels",
         "documentation": {}
     },
@@ -1737,7 +1795,7 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class LLMGragEntityResponseModel(BaseModel):\n    entities:list[list[str]]\n    relations:list[list[str]]\n    chunks:list[str]",
+        "peekOfCode": "class LLMGragEntityResponseModel(BaseModel):\n    entities: list[list[str]]\n    relations: list[list[str]]\n    relationshipsEntities: list[list[list[str]]]\n    chunks: list[str]",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
@@ -1746,16 +1804,16 @@
         "kind": 6,
         "importPath": "graphrag.services.FieChunkGrag",
         "description": "graphrag.services.FieChunkGrag",
-        "peekOfCode": "class FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        text = ExtractTextFromDoc(file)\n        splitter = RecursiveCharacterTextSplitter(\n            chunk_size=chunkSize, chunk_overlap=chunkOLSize\n        )\n        chunks = splitter.split_text(text)\n        return chunks",
+        "peekOfCode": "class FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")\n        _MULTI_NL_RE = re.compile(r\"\\n{3,}\")",
         "detail": "graphrag.services.FieChunkGrag",
         "documentation": {}
     },
     {
-        "label": "mistralService",
+        "label": "llmService",
         "kind": 5,
         "importPath": "graphrag.services.FieChunkGrag",
         "description": "graphrag.services.FieChunkGrag",
-        "peekOfCode": "mistralService = MistralChatService()\nclass FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        text = ExtractTextFromDoc(file)\n        splitter = RecursiveCharacterTextSplitter(\n            chunk_size=chunkSize, chunk_overlap=chunkOLSize\n        )\n        chunks = splitter.split_text(text)",
+        "peekOfCode": "llmService = LLMService()\nclass FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")",
         "detail": "graphrag.services.FieChunkGrag",
         "documentation": {}
     },
@@ -1764,7 +1822,7 @@
         "kind": 5,
         "importPath": "graphrag.utils.GragSystemPropts",
         "description": "graphrag.utils.GragSystemPropts",
-        "peekOfCode": "ExtractEntityGragSystemPrompt = \"\"\"\nYou are an expert information extraction assistant for building a knowledge graph.\nINPUT\n- A JSON array of text chunks (strings). Example: [\"chunk 0\", \"chunk 1\", \"chunk 2\"]\nTASK (per chunk i)\n1) entities: list of unique, lowercase key terms from THAT chunk (orgs, people, locations, systems, concepts). Deduplicate within the chunk.\n2) relations: list of unique sentences/fragments copied from THAT chunk that mention one or more entities. Verbatim or lightly cleaned only. No invention.\n3) chunks: echo back the original chunk EXACTLY (verbatim).\nRULES\n- If nothing found for a chunk, return [] for entities/relations.",
+        "peekOfCode": "ExtractEntityGragSystemPrompt = r\"\"\"\nTASK\nReturn ONLY valid JSON per the schema for ONE input chunk.\nINPUT\n{ \"chunk\": \"...\" }\nOUTPUT (conceptual)\n{\n  \"response\": {\n    \"entities\": [\"...\"],\n    \"relations\": [\"...\"],   // short declarative KG-style relations",
         "detail": "graphrag.utils.GragSystemPropts",
         "documentation": {}
     },
@@ -2075,11 +2133,20 @@
         "documentation": {}
     },
     {
+        "label": "extractTextWithMetadata",
+        "kind": 2,
+        "importPath": "utils.ExtarctTextFromFile",
+        "description": "utils.ExtarctTextFromFile",
+        "peekOfCode": "def extractTextWithMetadata(\n    pdfPath: str,\n) -> Tuple[str, Dict[str, Dict[str, Any]]]:\n    doc: Any = fitz.open(pdfPath)\n    imageMap: Dict[str, Dict[str, Any]] = {}\n    imageCounter: int = 1\n    finalText: List[str] = []\n    for pageNum, page in enumerate(doc, start=1):\n        blocks: List[Dict[str, Any]] = page.get_text(\"dict\")[\"blocks\"]\n        pageItems: List[Tuple[str, float, str]] = []",
+        "detail": "utils.ExtarctTextFromFile",
+        "documentation": {}
+    },
+    {
         "label": "ExtractTextFromDoc",
         "kind": 2,
         "importPath": "utils.ExtarctTextFromFile",
         "description": "utils.ExtarctTextFromFile",
-        "peekOfCode": "def ExtractTextFromDoc(file: str) -> str:\n        ext = os.path.splitext(file)[1]  \n        loader:Any = \"\"\n        if(ext == \".pdf\"):\n            loader = PyPDFLoader(file)\n        elif(ext == \".xlsx\" or ext == \".xls\"):\n            loader = UnstructuredExcelLoader(file, mode=\"elements\")\n        documents = loader.load()\n        fullText = \"\\n\".join(doc.page_content for doc in documents)\n        return fullText",
+        "peekOfCode": "def ExtractTextFromDoc(file: str) -> str:\n    textWithImages,images = extractTextWithMetadata(file)\n    return textWithImages",
         "detail": "utils.ExtarctTextFromFile",
         "documentation": {}
     },
@@ -2088,7 +2155,7 @@
         "kind": 5,
         "importPath": "k",
         "description": "k",
-        "peekOfCode": "a = FileChunkGragService()\nasync def main():\n    await a.handleEntitiesProcess(\"a.pdf\")\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
+        "peekOfCode": "a = FileChunkGragService()\nasync def main():\n    await a.handleEntitiesProcess(\"opd_manual.pdf\")\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
         "detail": "k",
         "documentation": {}
     },
@@ -2117,15 +2184,6 @@
         "description": "main",
         "peekOfCode": "server = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\nserver.add_middleware(CustomMidlleware)\nserver.include_router(QaRag, prefix=\"/api/v1/qa\")",
         "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "extract_text_with_inline_images",
-        "kind": 2,
-        "importPath": "test",
-        "description": "test",
-        "peekOfCode": "def extract_text_with_inline_images(pdf_path):\n    doc = fitz.open(pdf_path)\n    image_map = {}\n    image_counter = 1\n    final_text = []\n    for page_num, page in enumerate(doc, start=1):\n        blocks = page.get_text(\"dict\")[\"blocks\"]\n        # Collect items with positions\n        page_items = []\n        for block in blocks:",
-        "detail": "test",
         "documentation": {}
     }
 ]

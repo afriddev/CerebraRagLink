@@ -1,81 +1,59 @@
-ExtractEntityGragSystemPrompt = """
-You build a lightweight knowledge graph from text chunks. Return only valid JSON in the exact shape below.
+ExtractEntityGragSystemPrompt = r"""
+TASK
+Return ONLY valid JSON per the schema for ONE input chunk.
 
 INPUT
-- A JSON array of text chunks: ["chunk 0", "chunk 1", "chunk 2", ...]
+{ "chunk": "..." }
 
-TASK (per chunk)
-1) Read the chunk.
-2) Create concise KG sentences (3–6 words), using ONLY these templates:
-   - ENTITY_A VERB ENTITY_B
-   - ENTITY_A VERB PREPOSITION ENTITY_B
-   Examples:
-     - "UMID provides Unique Identity"
-     - "system in Indian Railways"
-     - "QR code strengthens Identity"
-3) Entities:
-   - Must be a **single word or very short phrase** (≤ 2 words, ≤ 18 characters).
-   - Prefer **head nouns** or core terms; drop generic modifiers like "system", "features", "process".
-   - Allowed multiword exceptions: "Indian Railways", "Dolo 650", "OPD slips".
-   - Examples:
-     - "smart health card system" → **"smart card"**
-     - "web-enabled QR code" → **"QR code"**
-     - "smart health card features" → **"card features"**
-4) KG sentences must use only these shortened entities.
-5) Derive the entities list as the UNIQUE set of entities used in KG sentences for that chunk.
-6) For each KG sentence, output the exact entities used in it, in order.
-
-OUTPUT SHAPE
+OUTPUT (conceptual)
 {
   "response": {
-    "entities": [ [...], [...], ... ],
-    "relationships": [ [...], [...], ... ],
-    "relationshipsEntities": [ [ [...], ... ], [ [...], ... ], ... ],
-    "chunks": ["chunk 0", "chunk 1", ...]
+    "entities": ["..."],
+    "relations": ["..."],   // short declarative KG-style relations
+    "relationshipsEntities": [["A","B"], ...],
+    "chunk": "..."
   }
 }
 
 RULES
-- Each KG sentence MUST include exactly 2 entity mentions from that chunk.
-- Each sentence must use a verb or verb+preposition between entities.
-- Disallowed: standalone relation phrases like "is a", "provides", "helps in".
-- Allowed verbs: is, provides, contains, belongs, located, links, treats, strengthens, supports, generates, uses.
-- Allowed prepositions: of, to, with, in, for, at.
-- Only include entities that appear in KG sentences.
-- Deduplicate entities in each chunk; preserve order of first appearance in KG sentences.
-- relationshipsEntities[i][j] must exactly match the entities in relationships[i][j], in order.
-- If no valid KG sentences in a chunk, return empty arrays for that chunk.
-
-FORMAT
-- Output MUST be valid JSON only.
-- No markdown, code fences, explanations, or newlines inside strings.
+- JSON only. No markdown, no comments, no extra keys.
+- Echo the input "chunk" with whitespace normalized.
+- Do NOT invent entities/links/images.
+- Entities: concise (≤24 chars), lowercase unless proper noun; deduplicate.
+- Relations: 12–15 when possible; deduplicate; must be short factual statements (no questions).
+- Relations should follow a KG-friendly style:
+   • subject → predicate → object
+   • Example: "doctors update patient records"
+   • Not: "How do doctors update patient records?"
+Dont remove any images (<<IMAGE-N>>) or links from the chunk.
+---
 
 EXAMPLE
-Input:
-["UMID is a smart health card system in Indian Railways. It provides Unique Identity to medical beneficiaries."]
 
-Output:
+INPUT
+{ "chunk": "1.2.3 Patient Records <<image-1>> The system allows doctors to update patient history and medications." }
+
+OUTPUT
 {
   "response": {
-    "entities": [
-      ["UMID", "smart card", "Indian Railways", "Unique Identity", "beneficiaries"]
-    ],
-    "relationships": [
-      ["UMID is smart card",
-       "smart card in Indian Railways",
-       "UMID provides Unique Identity",
-       "Identity supports beneficiaries"]
+    "entities": ["patient records", "doctors", "patient history", "medications"],
+    "relations": [
+      "doctors update patient records",
+      "patient records include patient history",
+      "patient records include medications",
+      "patient history belongs to patient records",
+      "medications are stored in patient records",
+      "doctors use patient records for treatment",
+      "patient records support treatment decisions"
     ],
     "relationshipsEntities": [
-      [["UMID","smart card"],
-       ["smart card","Indian Railways"],
-       ["UMID","Unique Identity"],
-       ["Unique Identity","beneficiaries"]]
+      ["doctors", "patient records"],
+      ["patient records", "patient history"],
+      ["patient records", "medications"],
+      ["patient history", "patient records"],
+      ["medications", "patient records"]
     ],
-    "chunks": [
-      "UMID is a smart health card system in Indian Railways. It provides Unique Identity to medical beneficiaries."
-    ]
+    "chunk": "1.2.3 Patient Records <<image-1>> The system allows doctors to update patient history and medications"
   }
 }
-
 """

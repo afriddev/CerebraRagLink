@@ -794,6 +794,54 @@
         "documentation": {}
     },
     {
+        "label": "UUID",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "uuid4",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "UUID",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "uuid4",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "UUID",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "importPath": "pydoc",
+        "description": "pydoc",
+        "isExtraImport": true,
+        "detail": "pydoc",
+        "documentation": {}
+    },
+    {
         "label": "re",
         "kind": 6,
         "isExtraImport": true,
@@ -877,6 +925,14 @@
     },
     {
         "label": "LLmMessageRoleEnum",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingService",
         "importPath": "clientservices",
         "description": "clientservices",
         "isExtraImport": true,
@@ -1084,6 +1140,47 @@
         "documentation": {}
     },
     {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkRelationsModel",
+        "importPath": "graphrag.models",
+        "description": "graphrag.models",
+        "isExtraImport": true,
+        "detail": "graphrag.models",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkTextsModel",
+        "importPath": "graphrag.models",
+        "description": "graphrag.models",
+        "isExtraImport": true,
+        "detail": "graphrag.models",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkEntitiesModel",
+        "importPath": "graphrag.models",
+        "description": "graphrag.models",
+        "isExtraImport": true,
+        "detail": "graphrag.models",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkRelationModel",
+        "importPath": "graphrag.models",
+        "description": "graphrag.models",
+        "isExtraImport": true,
+        "detail": "graphrag.models",
+        "documentation": {}
+    },
+    {
         "label": "QaAiAnswersResponseModel",
         "importPath": "rag.qa.models",
         "description": "rag.qa.models",
@@ -1180,30 +1277,6 @@
         "documentation": {}
     },
     {
-        "label": "UUID",
-        "importPath": "uuid",
-        "description": "uuid",
-        "isExtraImport": true,
-        "detail": "uuid",
-        "documentation": {}
-    },
-    {
-        "label": "uuid4",
-        "importPath": "uuid",
-        "description": "uuid",
-        "isExtraImport": true,
-        "detail": "uuid",
-        "documentation": {}
-    },
-    {
-        "label": "UUID",
-        "importPath": "uuid",
-        "description": "uuid",
-        "isExtraImport": true,
-        "detail": "uuid",
-        "documentation": {}
-    },
-    {
         "label": "QaAiAnswersImpl",
         "importPath": "rag.qa.implementations",
         "description": "rag.qa.implementations",
@@ -1233,15 +1306,6 @@
         "description": "rag.qa.utils.qaSystemPropts",
         "isExtraImport": true,
         "detail": "rag.qa.utils.qaSystemPropts",
-        "documentation": {}
-    },
-    {
-        "label": "json",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
         "documentation": {}
     },
     {
@@ -1786,7 +1850,7 @@
         "kind": 6,
         "importPath": "graphrag.implementations.FileChunkGragImpl",
         "description": "graphrag.implementations.FileChunkGragImpl",
-        "peekOfCode": "class FileChunkGragImpl(ABC):\n    @abstractmethod\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        pass\n    async def handleEntitiesProcess(self, file: str):\n        pass",
+        "peekOfCode": "class FileChunkGragImpl(ABC):\n    @abstractmethod\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        pass\n    async def HandleKgExatrctProcess(self, file: str):\n        pass",
         "detail": "graphrag.implementations.FileChunkGragImpl",
         "documentation": {}
     },
@@ -1795,7 +1859,52 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class LLMGragEntityResponseModel(BaseModel):\n    entities: list[list[str]]\n    relations: list[list[str]]\n    relationshipsEntities: list[list[list[str]]]\n    chunks: list[str]",
+        "peekOfCode": "class LLMGragEntityResponseModel(BaseModel):\n    entities: list[list[str]]\n    relations: list[list[str]]\n    relationshipsEntities: list[list[list[str]]]\n    chunk: list[str]\nclass ChunkTextsModel(BaseModel):\n    id: UUID\n    text: str\n    vector:list[float] | None  = None\nclass ChunkRelationModel(BaseModel):",
+        "detail": "graphrag.models.FileChunkGragModels",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkTextsModel",
+        "kind": 6,
+        "importPath": "graphrag.models.FileChunkGragModels",
+        "description": "graphrag.models.FileChunkGragModels",
+        "peekOfCode": "class ChunkTextsModel(BaseModel):\n    id: UUID\n    text: str\n    vector:list[float] | None  = None\nclass ChunkRelationModel(BaseModel):\n    realtion: str\n    realtionEntites: list[str]\nclass ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]",
+        "detail": "graphrag.models.FileChunkGragModels",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkRelationModel",
+        "kind": 6,
+        "importPath": "graphrag.models.FileChunkGragModels",
+        "description": "graphrag.models.FileChunkGragModels",
+        "peekOfCode": "class ChunkRelationModel(BaseModel):\n    realtion: str\n    realtionEntites: list[str]\nclass ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]\nclass ChunkEntitiesModel(BaseModel):\n    chunkId: UUID\n    chunkEntities: list[str]\nclass ChunkTextVectors",
+        "detail": "graphrag.models.FileChunkGragModels",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkRelationsModel",
+        "kind": 6,
+        "importPath": "graphrag.models.FileChunkGragModels",
+        "description": "graphrag.models.FileChunkGragModels",
+        "peekOfCode": "class ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]\nclass ChunkEntitiesModel(BaseModel):\n    chunkId: UUID\n    chunkEntities: list[str]\nclass ChunkTextVectors",
+        "detail": "graphrag.models.FileChunkGragModels",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkEntitiesModel",
+        "kind": 6,
+        "importPath": "graphrag.models.FileChunkGragModels",
+        "description": "graphrag.models.FileChunkGragModels",
+        "peekOfCode": "class ChunkEntitiesModel(BaseModel):\n    chunkId: UUID\n    chunkEntities: list[str]\nclass ChunkTextVectors",
+        "detail": "graphrag.models.FileChunkGragModels",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkTextVector",
+        "kind": 6,
+        "importPath": "graphrag.models.FileChunkGragModels",
+        "description": "graphrag.models.FileChunkGragModels",
+        "peekOfCode": "class ChunkTextVectors",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
@@ -1813,7 +1922,16 @@
         "kind": 5,
         "importPath": "graphrag.services.FieChunkGrag",
         "description": "graphrag.services.FieChunkGrag",
-        "peekOfCode": "llmService = LLMService()\nclass FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")",
+        "peekOfCode": "llmService = LLMService()\nembeddingService = EmbeddingService()\nclass FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")",
+        "detail": "graphrag.services.FieChunkGrag",
+        "documentation": {}
+    },
+    {
+        "label": "embeddingService",
+        "kind": 5,
+        "importPath": "graphrag.services.FieChunkGrag",
+        "description": "graphrag.services.FieChunkGrag",
+        "peekOfCode": "embeddingService = EmbeddingService()\nclass FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")",
         "detail": "graphrag.services.FieChunkGrag",
         "documentation": {}
     },
@@ -2155,7 +2273,7 @@
         "kind": 5,
         "importPath": "k",
         "description": "k",
-        "peekOfCode": "a = FileChunkGragService()\nasync def main():\n    await a.handleEntitiesProcess(\"opd_manual.pdf\")\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
+        "peekOfCode": "a = FileChunkGragService()\nasync def main():\n    await a.HandleKgExatrctProcess(\"opd_manual.pdf\")\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
         "detail": "k",
         "documentation": {}
     },

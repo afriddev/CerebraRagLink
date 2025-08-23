@@ -5,7 +5,7 @@ a = FileChunkGragService()
 
 
 async def main():
-    await a.handleEntitiesProcess("opd_manual.pdf")
+    await a.HandleKgExatrctProcess("opd_manual.pdf")
     
         
 if __name__ == "__main__":

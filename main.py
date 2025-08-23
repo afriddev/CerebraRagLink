@@ -35,4 +35,4 @@ server.include_router(QaRag, prefix="/api/v1/qa")
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("main:server", host="192.168.167.114", port=8001, reload=False)
+    uvicorn.run("main:server", host="192.168.167.117", port=8001, reload=False)

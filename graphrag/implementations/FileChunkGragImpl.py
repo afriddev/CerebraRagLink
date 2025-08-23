@@ -9,5 +9,5 @@ class FileChunkGragImpl(ABC):
     ) -> list[str]:
         pass
 
-    async def handleEntitiesProcess(self, file: str):
+    async def HandleKgExatrctProcess(self, file: str):
         pass

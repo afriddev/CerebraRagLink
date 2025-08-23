@@ -1,3 +1,4 @@
+from pydoc import text
 import re
 import unicodedata
 from typing import Any
@@ -11,14 +12,23 @@ from clientservices import (
     LLMResponseFormatPropertySchemaModel,
     LLMMessageModel,
     LLmMessageRoleEnum,
+    EmbeddingService,
 )
 from graphrag.implementations import FileChunkGragImpl
 from utils import ExtractTextFromDoc
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from graphrag.utils.GragSystemPropts import ExtractEntityGragSystemPrompt
-
+import json
+from graphrag.models import (
+    ChunkRelationsModel,
+    ChunkTextsModel,
+    ChunkEntitiesModel,
+    ChunkRelationModel,
+)
+from uuid import uuid4
 
 llmService = LLMService()
+embeddingService = EmbeddingService()
 
 
 class FileChunkGragService(FileChunkGragImpl):
@@ -85,27 +95,30 @@ class FileChunkGragService(FileChunkGragImpl):
         chunks = _mergeTinyChunks(chunks, minChars=max(200, chunkSize // 3))
         return chunks
 
-    async def handleEntitiesProcess(self, file: str):
-        chunks = self.ExatrctChunkFromText(file, 1000)
-        for start in range(3, 5):
+    async def HandleKgExatrctProcess(self, file: str):
+        chunks = self.ExatrctChunkFromText(file, 500)
+        chunkTexts: list[ChunkTextsModel] = []
+        chunkKgRealtions: list[ChunkRelationsModel] = []
+        chunkKgEntities: list[ChunkEntitiesModel] = []
+
+        for start in range(0, 1):
             messages: list[LLMMessageModel] = [
-                LLMMessageModel(
-                    role=LLmMessageRoleEnum.SYSTEM,
-                    content=ExtractEntityGragSystemPrompt,
-                ),
                 LLMMessageModel(
                     role=LLmMessageRoleEnum.USER,
                     content=chunks[start],
                 ),
+                LLMMessageModel(
+                    role=LLmMessageRoleEnum.SYSTEM,
+                    content=ExtractEntityGragSystemPrompt,
+                ),
             ]
-
             LLMResponse: Any = await llmService.Chat(
                 modelParams=LLMRequestModel(
                     apiKey=GetCerebrasApiKey(),
-                    model="qwen-3-32b",
-                    maxCompletionTokens=10000,
+                    model="qwen-3-235b-a22b-instruct-2507",
+                    maxCompletionTokens=30000,
                     messages=messages,
-                    temperature=0.7,
+                    temperature=0.4,
                     responseFormat=LLMResponseFormatModel(
                         type="json_schema",
                         jsonSchema=LLmresponseFormatJsonSchemaModel(
@@ -152,5 +165,50 @@ class FileChunkGragService(FileChunkGragImpl):
                     ),
                 )
             )
+            chunkResponse = json.loads(
+                LLMResponse.LLMData.choices[0].message.content
+            ).get("response")
+            chunkId = uuid4()
+            chunkTexts.append(
+                ChunkTextsModel(id=chunkId, text=chunkResponse.get("chunk"))
+            )
+            chunkRelations: list[ChunkRelationModel] = []
+            for relation, relationEntities in zip(
+                chunkResponse.get("relations"),
+                chunkResponse.get("relationshipsEntities"),
+            ):
+                chunkRelations.append(
+                    ChunkRelationModel(
+                        realtion=relation, realtionEntites=relationEntities
+                    )
+                )
+            chunkKgRealtions.append(
+                ChunkRelationsModel(chunkId=chunkId, chunkRelations=chunkRelations)
+            )
+            chunkKgEntities.append(
+                ChunkEntitiesModel(
+                    chunkId=chunkId, chunkEntities=chunkResponse.get("entities")
+                )
+            )
 
-            print(LLMResponse.LLMData.choices[0].message.content)
+        for index in range(0, len(chunkTexts), 1):
+            chunkEmbeddingResponse = await embeddingService.ConvertTextToEmbedding(
+                [chunks[index]]
+            )
+            relationsEmbeddingResponse = await embeddingService.ConvertTextToEmbedding(
+                [
+                    relation.realtion
+                    for relation in chunkKgRealtions[index].chunkRelations
+                ]
+            )
+
+            if chunkEmbeddingResponse.data is not None:
+                chunkTexts[index].vector = chunkEmbeddingResponse.data[0].embedding
+            
+            if relationsEmbeddingResponse.data is not None:
+                for realtion in 
+                
+
+        print(chunkTexts)
+        print(chunkKgEntities)
+        print(chunkKgRealtions)

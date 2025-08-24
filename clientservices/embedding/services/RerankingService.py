@@ -1,5 +1,9 @@
 from together import AsyncTogether
-from clientservices.embedding.models import RerankingRequestModel
+from clientservices.embedding.models import (
+    RerankingRequestModel,
+    RerankingResponseModel,
+    RerankingResponseChoiseModel,
+)
 from clientservices.embedding.implementations import RerankingImpl
 
 rerankerClient = AsyncTogether(
@@ -9,8 +13,9 @@ rerankerClient = AsyncTogether(
 
 class RerankingService(RerankingImpl):
 
-    async def FindRankingScore(self, modelParams: RerankingRequestModel):
-        print(modelParams)
+    async def FindRankingScore(
+        self, modelParams: RerankingRequestModel
+    ) -> RerankingResponseModel:
 
         response = await rerankerClient.rerank.create(
             model=modelParams.model,
@@ -18,4 +23,7 @@ class RerankingService(RerankingImpl):
             documents=modelParams.docs,
             top_n=modelParams.topN,
         )
+        response:list[RerankingResponseChoiseModel] = []
+        for rankResponse in response.results:
+
         print(response)

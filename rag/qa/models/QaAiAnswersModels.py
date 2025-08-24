@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from clientservices import LLMResponseEnum
+from clientservices import ChatServiceResponseStatusEnum
 
 
 class QaAiAnswersRequestModel(BaseModel):
@@ -8,5 +8,5 @@ class QaAiAnswersRequestModel(BaseModel):
 
 
 class QaAiAnswersResponseModel(BaseModel):
-    status: LLMResponseEnum
+    status: ChatServiceResponseStatusEnum
     response: str | None

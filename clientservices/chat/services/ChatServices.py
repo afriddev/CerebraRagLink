@@ -1,19 +1,19 @@
 import cerebras.cloud.sdk
 from cerebras.cloud.sdk import AsyncCerebras
 from fastapi.responses import StreamingResponse
-from clientservices.cerebras.enums import LLMResponseEnum
-from clientservices.cerebras.implementations import LLMServiceImpl
-from clientservices.cerebras.models import (
-    LLMRequestModel,
-    LLMResponseModel,
-    LLMDataModel,
-    LLMDataUsageModel,
-    LLMDataChoiceModel,
-    LLMDataChoiceMessageModel,
+from clientservices.chat.enums import ChatServiceResponseStatusEnum
+from clientservices.chat.implementations import ChatServiceImpl
+from clientservices.chat.models import (
+    ChatServiceRequestModel,
+    ChatServiceResponseModel,
+    ChatServiceDataResponseModel,
+    ChatServiceUsageModel,
+    ChatServiceChoiceModel,
+    ChatServiceChoiceMessageModel,
 )
 from cerebras.cloud.sdk import DefaultAioHttpClient
 from typing import Any, cast
-from clientservices.cerebras.workers import GetCerebrasApiKey
+from clientservices.chat.workers import GetCerebrasApiKey
 
 client = AsyncCerebras(
     api_key=GetCerebrasApiKey(),
@@ -21,21 +21,21 @@ client = AsyncCerebras(
 )
 
 
-class LLMService(LLMServiceImpl):
+class ChatService(ChatServiceImpl):
 
-    def HandleApiStatusError(self, statusCode: int) -> LLMResponseModel:
+    def HandleApiStatusError(self, statusCode: int) -> ChatServiceResponseModel:
         errorCodes = {
-            400: LLMResponseEnum.BAD_REQUEST,
-            401: LLMResponseEnum.UNAUTHROZIED,
-            403: LLMResponseEnum.PERMISSION_DENIED,
-            404: LLMResponseEnum.NOT_FOUND,
+            400: ChatServiceResponseStatusEnum.BAD_REQUEST,
+            401: ChatServiceResponseStatusEnum.UNAUTHROZIED,
+            403: ChatServiceResponseStatusEnum.PERMISSION_DENIED,
+            404: ChatServiceResponseStatusEnum.NOT_FOUND,
         }
-        message = errorCodes.get(statusCode, LLMResponseEnum.SERVER_ERROR)
-        return LLMResponseModel(status=message)
+        message = errorCodes.get(statusCode, ChatServiceResponseStatusEnum.SERVER_ERROR)
+        return ChatServiceResponseModel(status=message)
 
     async def Chat(
-        self, modelParams: LLMRequestModel
-    ) -> LLMResponseModel | StreamingResponse:
+        self, modelParams: ChatServiceRequestModel
+    ) -> ChatServiceResponseModel | StreamingResponse:
         try:
             client.api_key = modelParams.apiKey
             create_call = client.chat.completions.create(
@@ -78,39 +78,39 @@ class LLMService(LLMServiceImpl):
 
             chatCompletion: Any = await create_call
 
-            choices: list[LLMDataChoiceModel] = []
+            choices: list[ChatServiceChoiceModel] = []
             for ch in chatCompletion.choices:
                 choices.append(
-                    LLMDataChoiceModel(
+                    ChatServiceChoiceModel(
                         index=ch.index,
-                        message=LLMDataChoiceMessageModel(
+                        message=ChatServiceChoiceMessageModel(
                             role=ch.message.role,
                             content=ch.message.content,
                         ),
                     )
                 )
 
-            LLMData = LLMDataModel(
+            LLMData = ChatServiceDataResponseModel(
                 id=chatCompletion.id,
                 choices=choices,
                 created=chatCompletion.created,
                 model=chatCompletion.model,
                 totalTime=chatCompletion.time_info.total_time,
-                usage=LLMDataUsageModel(
+                usage=ChatServiceUsageModel(
                     promptTokens=chatCompletion.usage.prompt_tokens,
                     completionTokens=chatCompletion.usage.completion_tokens,
                     totalTokens=chatCompletion.usage.total_tokens,
                 ),
             )
 
-            return LLMResponseModel(status=LLMResponseEnum.SUCCESS, LLMData=LLMData)
+            return ChatServiceResponseModel(status=ChatServiceResponseStatusEnum.SUCCESS, LLMData=LLMData)
 
         except cerebras.cloud.sdk.APIConnectionError as e:
             print(e)
-            return LLMResponseModel(status=LLMResponseEnum.SERVER_ERROR)
+            return ChatServiceResponseModel(status=ChatServiceResponseStatusEnum.SERVER_ERROR)
         except cerebras.cloud.sdk.RateLimitError as e:
             print(e)
-            return LLMResponseModel(status=LLMResponseEnum.RATE_LIMIT)
+            return ChatServiceResponseModel(status=ChatServiceResponseStatusEnum.RATE_LIMIT)
         except cerebras.cloud.sdk.APIStatusError as e:
             print(e)
             return self.HandleApiStatusError(e.status_code)

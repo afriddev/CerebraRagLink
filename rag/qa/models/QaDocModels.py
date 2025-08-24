@@ -2,7 +2,7 @@ from uuid import UUID
 from pydantic import BaseModel
 
 from clientservices import (
-    LLMResponseEnum,
+    ChatServiceResponseStatusEnum,
     EmbeddingResponseEnum,
 )
 
@@ -21,12 +21,12 @@ class ExtractQaVectorModel(BaseModel):
 
 class ExtarctQaFromTextResponseModel(BaseModel):
     response: list[ExtractQaEmbeddingTextModel] | None = None
-    status: LLMResponseEnum
+    status: ChatServiceResponseStatusEnum
 
 
 class ExtractQaResponseModel(BaseModel):
     response: list[ExtractQaEmbeddingTextModel] | None = None
-    status: LLMResponseEnum
+    status: ChatServiceResponseStatusEnum
 
 
 class ExtractQaEmbeddingVectorModel(
@@ -38,5 +38,5 @@ class ExtractQaEmbeddingVectorModel(
 
 class HandleQaExtractResponseModel(BaseModel):
     questionAndAnsers: list[ExtractQaEmbeddingVectorModel] | None = None
-    status: LLMResponseEnum | EmbeddingResponseEnum
+    status: ChatServiceResponseStatusEnum | EmbeddingResponseEnum
     vectors: list[ExtractQaVectorModel] | None = None

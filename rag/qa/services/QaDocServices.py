@@ -1,15 +1,15 @@
 from typing import Any, cast
 from rag.qa.implementations import QaDocImpl
 from clientservices import (
-    LLMMessageModel,
-    LLMResponseFormatModel,
-    LLmresponseFormatJsonSchemaModel,
-    LLMResponseFormatJsonSchemaSchemaModel,
-    LLMResponseFormatPropertySchemaModel,
-    LLMRequestModel,
-    LLMService,
+    ChatServiceMessageModel,
+    ChatServiceCerebrasFormatModel,
+    ChatServiceCerebrasFormatJsonSchemaModel,
+    ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel,
+    ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel,
+    ChatServiceRequestModel,
+    ChatService,
     EmbeddingService,
-    LLmMessageRoleEnum,
+    ChatServiceMessageRoleEnum,
 )
 from rag.qa.models import (
     HandleQaExtractResponseModel,
@@ -24,7 +24,7 @@ import json
 from rag.qa.utils.qaSystemPropts import ExtractQaPrompt
 from utils import ExtractTextFromDoc
 
-llmService = LLMService()
+ChatService = ChatService()
 embeddingService = EmbeddingService()
 
 
@@ -34,38 +34,38 @@ class QaDocService(QaDocImpl):
         systemPrompt = ExtractQaPrompt
 
         messages = [
-            LLMMessageModel(role=LLmMessageRoleEnum.SYSTEM, content=systemPrompt),
-            LLMMessageModel(
-                role=LLmMessageRoleEnum.USER, content=text
+            ChatServiceMessageModel(role=ChatServiceMessageRoleEnum.SYSTEM, content=systemPrompt),
+            ChatServiceMessageModel(
+                role=ChatServiceMessageRoleEnum.USER, content=text
             ),  # your PDF-extracted text here
         ]
 
-        LLMResponse: Any = await llmService.Chat(
-            modelParams=LLMRequestModel(
+        LLMResponse: Any = await ChatService.Chat(
+            modelParams=ChatServiceRequestModel(
                 apiKey=GetCerebrasApiKey(),
                 model="qwen-3-coder-480b",
                 maxCompletionTokens=30000,
                 messages=messages,
-                responseFormat=LLMResponseFormatModel(
+                responseFormat=ChatServiceCerebrasFormatModel(
                     type="json_schema",
-                    jsonSchema=LLmresponseFormatJsonSchemaModel(
+                    jsonSchema=ChatServiceCerebrasFormatJsonSchemaModel(
                         name="schema",
                         strict=True,
-                        jsonSchema=LLMResponseFormatJsonSchemaSchemaModel(
+                        jsonSchema=ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel(
                             type="object",
                             properties={
-                                "response": LLMResponseFormatPropertySchemaModel(
+                                "response": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
                                     type="array",
                                     items={
                                         "type": "object",
                                         "properties": {
-                                            "question": LLMResponseFormatPropertySchemaModel(
+                                            "question": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
                                                 type="string"
                                             ),
-                                            "answer": LLMResponseFormatPropertySchemaModel(
+                                            "answer": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
                                                 type="string"
                                             ),
-                                            "embeddingText": LLMResponseFormatPropertySchemaModel(
+                                            "embeddingText": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
                                                 type="string"
                                             ),
                                         },

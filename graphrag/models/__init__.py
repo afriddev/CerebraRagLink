@@ -2,8 +2,8 @@ from .FileChunkGragModels import (
     LLMGragEntityResponseModel,
     ChunkRelationsModel,
     ChunkTextsModel,
-    ChunkEntitiesModel,
-    ChunkRelationModel
+    ChunkRelationModel,
+    HandleKgExatrctProcessResponseModel
 )
 
 
@@ -11,6 +11,6 @@ __all__ = [
     "LLMGragEntityResponseModel",
     "ChunkTextsModel",
     "ChunkRelationsModel",
-    "ChunkEntitiesModel",
-    "ChunkRelationModel"
+    "ChunkRelationModel",
+    "HandleKgExatrctProcessResponseModel"
 ]

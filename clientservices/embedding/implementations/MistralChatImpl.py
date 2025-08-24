@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from clientservices.mistral.models import (
+from clientservices.embedding.models import (
     MistralChatResponseModel,
     MistralChatRequestModel,
 )

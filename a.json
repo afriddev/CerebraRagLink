@@ -1,54 +1,12 @@
-{
-  "response": {
-    "entities": [
-      "Outpatient Department",
-      "OPD",
-      "HMIS",
-      "Patient Registration",
-      "Consultation Records",
-      "Laboratory",
-      "healthcare facilities",
-      "doctors",
-      "patients",
-      "medical history",
-      "diagnosis",
-      "treatments",
-      "medications"
-    ],
-    "relations": [
-      "Outpatient Department partOf HMIS",
-      "OPD manages outpatient services",
-      "OPD locatedIn healthcare facilities",
-      "Patient Registration captures patient information",
-      "Patient Registration records medical history",
-      "Consultation Records documents patient consultations",
-      "Consultation Records tracks diagnosis",
-      "Consultation Records records treatments",
-      "Consultation Records monitors medications",
-      "doctors use Consultation Records",
-      "patients visit Outpatient Department",
-      "patients provide medical history",
-      "Laboratory supports diagnosis",
-      "Laboratory partOf healthcare facilities",
-      "OPD module enables Patient Registration"
-    ],
-    "relationshipsEntities": [
-      ["Outpatient Department", "HMIS"],
-      ["OPD", "outpatient services"],
-      ["OPD", "healthcare facilities"],
-      ["Patient Registration", "patients"],
-      ["Patient Registration", "medical history"],
-      ["Consultation Records", "patient consultations"],
-      ["Consultation Records", "diagnosis"],
-      ["Consultation Records", "treatments"],
-      ["Consultation Records", "medications"],
-      ["doctors", "Consultation Records"],
-      ["patients", "Outpatient Department"],
-      ["patients", "medical history"],
-      ["Laboratory", "diagnosis"],
-      ["Laboratory", "healthcare facilities"],
-      ["OPD module", "Patient Registration"]
-    ],
-    "chunk": "The Outpatient Department (OPD) module on the HMIS website is designed for management of outpatient services in healthcare facilities. Here are some key features and functions of the OPD module:  Patient Registration : Allows for the quick and efficient registration of patients, capturing essential demographic and medical history information.  Consultation Records : Enables doctors to document and track patient consultations, diagnosis, and prescribed treatments or medications.  Laboratory"
-  }
-}
+[
+    "The Outpatient Department (OPD) module on the HMIS website is designed for management of outpatient services in healthcare facilities. Here are some key features and functions of the OPD module: \uf046 Patient Registration : Allows for the quick and efficient registration of patients, capturing essential demographic and medical history information. \uf046 Consultation Records : Enables doctors to document and track patient consultations, diagnosis, and prescribed treatments or medications. \uf046 Laboratory and Diagnostic Integration : Order laboratory and diagnostic services to Laboratories and retrieve",
+    "test results, helping in the timely diagnosis and treatment of patients. \uf046 Inventory Integration : Order drugs and items to pharmacy directly from doctor desk current stock details can be viewed by doctor helping to raising indent for drugs form OPD desk. \uf046 Reporting and Analytics : Provides tools for generating various reports and analytics, helping Doctors monitor service delivery and identify areas for improvement. \uf046 Ordering to other services: Ordering other services in Hospital directly from OPD doctor desk like, Surgeries, Procedures, Services, referral to other departments / Hospitals,",
+    "etc. These features help improve the efficiency and quality of outpatient care, reduce wait times, and enhance patient satisfaction. Benefits of the OPD Doctor Desk \uf046 Improved Efficiency: Streamlines various administrative and clinical tasks, allowing doctors to focus more on patient care. \uf046 Enhanced Patient Care: Provides comprehensive patient information at the point of care, supporting better clinical decisions. \uf046 Reduced Errors: Minimizes errors associated with manual data entry and paper records. \uf046 Patient Satisfaction: Enhances patient satisfaction through timely services, reduced wait",
+    "times, and better communication. OPD Desk lite page The OPD Doctor Desk is a vital component of the HMIS, aiming to improve the overall quality of outpatient services and ensure a seamless experience for both healthcare providers and patients. <<IMAGE-1>> 1.1 View Total Registered and Attended Patients: View real-time data on the total number of patients registered in the current Department / Unit. Additionally, it provides information on how many of those patients have been attended to. 1.2. Responsive View Button: Clicking on this button opens a new tab in the browser, allowing the user to",
+    "view a separate list for same or another department simultaneously. This facilitates parallel management and provides a full-page view of the OPD desk for better visibility on PC and mobile browsers. 1.3. Dept/Unit Dropdown: The dropdown menu lists the Departments/Units based on the access assigned by the administrator. or adding or removing Departments/Units, users should contact the Hospital Administration to update access permissions. This dropdown allows doctors to switch between departments and rooms according to their assigned access. The list is alphabetically ordered, with the first",
+    "department selected by default upon loading. 1.4. View Teleconsultation Registrants: Clicking on this button displays a list of patients registered for teleconsultation for the current date. The doctor can approve consultation requests either all at once or individually. Upon approval, the patient's registration will be stamped for the department/unit, and their name will appear in the list of patients to attend. 1.5. View Referral Patients: <<IMAGE-2>> Clicking on this button displays a list of patients referred from other departments of same hospital or from other hospitals to the current",
+    "Department/Unit being viewed by the doctor. Doctors can accept all patients at once or select individual patients for acceptance. Upon acceptance, the patient registration will be stamped for the department/unit, and their name will appear in the list of patients to attend. Additionally, a search function is included within the list of referral patients, allowing doctors to quickly find patients by name, CR number, or UMID card number while accepting individual patient. 1.6. View Appointments: Clicking on this button displays a list of patients who have booked their appointments for the",
+    "current date through the mobile app. The doctor can approve consultation requests either all at once or individually. Upon approval, the patient registration will be stamped for the department/unit, and their name will appear in the list of patients to attend. 1.7. Date of Patient Registration / Revisit: This date column allows the doctor to view patients registered or who registered the OPD on a selected date. Only the current day's and previous day's lists are accessible. The current day's list is available for issuing prescriptions, while the previous day's list is displayed for viewing",
+    "purposes only. 1.8. Patient Acceptance (Registration) through OPD Desk: <<IMAGE-3>> Clicking on this button opens a window for registering a patient into the department/unit by entering their CR number or using any of the patient demographics such as UMID, PAN, mobile number, Emp No., PPO No., etc. This option works only for patients who are already registered at the current hospital. For new registrations, patients must visit the registration counter. or registration through this process, there is no restriction on OPD roster timings. Doctors can register patients at any time, making this",
+    "option available to cater to emergency visits. 1.9. Refresh OPD List Button: Clicking on this button refreshes the list of patients in the OPD list to include any patients who have registered for the current department/unit. The list of patients loads onto the screen manually; it does not update automatically as new registrations occur. This button allows doctors to manually refresh the list of patients as needed. 1.10. Refresh OPD Desk button: Clicking on this button allows doctors to completely refresh the OPD Doctor Desk screen and interface is updated to display the list of patients in"
+]

@@ -1,13 +1,13 @@
 from graphrag import FileChunkGragService
+
 a = FileChunkGragService()
 
 
-
-
 async def main():
-    await a.HandleKgExatrctProcess("opd_manual.pdf")
-    
-        
+    await a.HandleGraphBuildingProcess("opd_manual.pdf")
+
+
 if __name__ == "__main__":
     import asyncio
-    asyncio.run(main()) 
+
+    asyncio.run(main())

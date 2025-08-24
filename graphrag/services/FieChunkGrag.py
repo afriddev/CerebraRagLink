@@ -1,18 +1,19 @@
-from pydoc import text
 import re
 import unicodedata
-from typing import Any
+from typing import Any, cast
 from clientservices import (
-    LLMResponseFormatJsonSchemaSchemaModel,
-    LLMService,
-    LLMRequestModel,
+    ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel,
+    ChatService,
+    ChatServiceRequestModel,
     GetCerebrasApiKey,
-    LLMResponseFormatModel,
-    LLmresponseFormatJsonSchemaModel,
-    LLMResponseFormatPropertySchemaModel,
-    LLMMessageModel,
-    LLmMessageRoleEnum,
+    ChatServiceCerebrasFormatModel,
+    ChatServiceCerebrasFormatJsonSchemaModel,
+    ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel,
+    ChatServiceMessageModel,
+    ChatServiceMessageRoleEnum,
     EmbeddingService,
+    RerankingService,
+    RerankingRequestModel,
 )
 from graphrag.implementations import FileChunkGragImpl
 from utils import ExtractTextFromDoc
@@ -22,13 +23,14 @@ import json
 from graphrag.models import (
     ChunkRelationsModel,
     ChunkTextsModel,
-    ChunkEntitiesModel,
     ChunkRelationModel,
+    HandleKgExatrctProcessResponseModel,
 )
 from uuid import uuid4
 
-llmService = LLMService()
+chatService = ChatService()
 embeddingService = EmbeddingService()
+rerankingService = RerankingService()
 
 
 class FileChunkGragService(FileChunkGragImpl):
@@ -95,57 +97,56 @@ class FileChunkGragService(FileChunkGragImpl):
         chunks = _mergeTinyChunks(chunks, minChars=max(200, chunkSize // 3))
         return chunks
 
-    async def HandleKgExatrctProcess(self, file: str):
-        chunks = self.ExatrctChunkFromText(file, 500)
+    async def HandleRelationExtarctProcess(self, file: str):
+        chunks = self.ExatrctChunkFromText(file, 600)
         chunkTexts: list[ChunkTextsModel] = []
-        chunkKgRealtions: list[ChunkRelationsModel] = []
-        chunkKgEntities: list[ChunkEntitiesModel] = []
+        chunkRealtions: list[ChunkRelationsModel] = []
 
-        for start in range(0, 1):
-            messages: list[LLMMessageModel] = [
-                LLMMessageModel(
-                    role=LLmMessageRoleEnum.USER,
+        for start in range(0, 10, 1):
+            messages: list[ChatServiceMessageModel] = [
+                ChatServiceMessageModel(
+                    role=ChatServiceMessageRoleEnum.USER,
                     content=chunks[start],
                 ),
-                LLMMessageModel(
-                    role=LLmMessageRoleEnum.SYSTEM,
+                ChatServiceMessageModel(
+                    role=ChatServiceMessageRoleEnum.SYSTEM,
                     content=ExtractEntityGragSystemPrompt,
                 ),
             ]
-            LLMResponse: Any = await llmService.Chat(
-                modelParams=LLMRequestModel(
+            LLMResponse: Any = await chatService.Chat(
+                modelParams=ChatServiceRequestModel(
                     apiKey=GetCerebrasApiKey(),
                     model="qwen-3-235b-a22b-instruct-2507",
                     maxCompletionTokens=30000,
                     messages=messages,
                     temperature=0.4,
-                    responseFormat=LLMResponseFormatModel(
+                    responseFormat=ChatServiceCerebrasFormatModel(
                         type="json_schema",
-                        jsonSchema=LLmresponseFormatJsonSchemaModel(
+                        jsonSchema=ChatServiceCerebrasFormatJsonSchemaModel(
                             name="schema",
                             strict=True,
-                            jsonSchema=LLMResponseFormatJsonSchemaSchemaModel(
+                            jsonSchema=ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel(
                                 type="object",
                                 properties={
-                                    "response": LLMResponseFormatPropertySchemaModel(
+                                    "response": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
                                         type="object",
                                         properties={
-                                            "entities": LLMResponseFormatPropertySchemaModel(
+                                            "entities": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
                                                 type="array",
                                                 items={"type": "string"},
                                             ),
-                                            "relations": LLMResponseFormatPropertySchemaModel(
+                                            "relations": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
                                                 type="array",
                                                 items={"type": "string"},
                                             ),
-                                            "relationshipsEntities": LLMResponseFormatPropertySchemaModel(
+                                            "relationshipsEntities": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
                                                 type="array",
                                                 items={
                                                     "type": "array",
                                                     "items": {"type": "string"},
                                                 },
                                             ),
-                                            "chunk": LLMResponseFormatPropertySchemaModel(
+                                            "chunk": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
                                                 type="string"
                                             ),
                                         },
@@ -170,7 +171,11 @@ class FileChunkGragService(FileChunkGragImpl):
             ).get("response")
             chunkId = uuid4()
             chunkTexts.append(
-                ChunkTextsModel(id=chunkId, text=chunkResponse.get("chunk"))
+                ChunkTextsModel(
+                    id=chunkId,
+                    text=chunkResponse.get("chunk"),
+                    entities=chunkResponse.get("entities"),
+                )
             )
             chunkRelations: list[ChunkRelationModel] = []
             for relation, relationEntities in zip(
@@ -179,36 +184,62 @@ class FileChunkGragService(FileChunkGragImpl):
             ):
                 chunkRelations.append(
                     ChunkRelationModel(
-                        realtion=relation, realtionEntites=relationEntities
+                        realtion=relation,
+                        realtionEntites=relationEntities,
+                        id=uuid4(),
                     )
                 )
-            chunkKgRealtions.append(
+            chunkRealtions.append(
                 ChunkRelationsModel(chunkId=chunkId, chunkRelations=chunkRelations)
             )
-            chunkKgEntities.append(
-                ChunkEntitiesModel(
-                    chunkId=chunkId, chunkEntities=chunkResponse.get("entities")
-                )
-            )
 
-        for index in range(0, len(chunkTexts), 1):
-            chunkEmbeddingResponse = await embeddingService.ConvertTextToEmbedding(
-                [chunks[index]]
+        batchSize = 5
+        for index in range(0, len(chunkTexts), batchSize):
+            chunkTextsBatch = [
+                chunk.text for chunk in chunkTexts[index : index + batchSize]
+            ]
+            chunkRelationsBatch = [
+                relation.realtion
+                for relations in chunkRealtions[index : index + batchSize]
+                for relation in relations.chunkRelations
+            ]
+            chunkTextsEmbeddingResponse = await embeddingService.ConvertTextToEmbedding(
+                chunkTextsBatch
             )
             relationsEmbeddingResponse = await embeddingService.ConvertTextToEmbedding(
-                [
-                    relation.realtion
-                    for relation in chunkKgRealtions[index].chunkRelations
-                ]
+                chunkRelationsBatch
             )
-
-            if chunkEmbeddingResponse.data is not None:
-                chunkTexts[index].vector = chunkEmbeddingResponse.data[0].embedding
-            
+            if chunkTextsEmbeddingResponse.data is not None:
+                for index2, vector in enumerate(chunkTextsEmbeddingResponse.data):
+                    chunkTexts[cast(int, vector.index) + index2].vector = (
+                        vector.embedding
+                    )
             if relationsEmbeddingResponse.data is not None:
-                for realtion in 
-                
+                for index3, chunkRelation in enumerate(
+                    chunkRealtions[index : index + batchSize]
+                ):
+                    for index4, _ in enumerate(chunkRelation.chunkRelations):
+                        chunkRealtions[index + index3].chunkRelations[
+                            index4
+                        ].relationVector = relationsEmbeddingResponse.data[
+                            index3 + index4
+                        ].embedding
 
-        print(chunkTexts)
-        print(chunkKgEntities)
-        print(chunkKgRealtions)
+        return HandleKgExatrctProcessResponseModel(
+            chunkTexts=chunkTexts, chunkRelations=chunkRealtions
+        )
+
+    async def HandleGraphBuildingProcess(self, file: str):
+        relations: HandleKgExatrctProcessResponseModel = (
+            await self.HandleRelationExtarctProcess(file)
+        )
+
+        for index in range(0, 1):
+            await rerankingService.FindRankingScore(
+                RerankingRequestModel(
+                    model="Salesforce/Llama-Rank-v1",
+                    query=relations.chunkTexts[index].text,
+                    docs=[chunk.text for chunk in relations.chunkTexts],
+                    topN=len(relations.chunkTexts),
+                )
+            )

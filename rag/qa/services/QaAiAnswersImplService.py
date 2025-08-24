@@ -3,16 +3,16 @@ from typing import Any
 from rag.qa.implementations import QaAiAnswersImpl
 from rag.qa.models import QaAiAnswersRequestModel, QaAiAnswersResponseModel
 from clientservices import (
-    LLMService,
-    LLMMessageModel,
-    LLmMessageRoleEnum,
-    LLMRequestModel,
+    ChatService,
+    ChatServiceMessageModel,
+    ChatServiceMessageRoleEnum,
+    ChatServiceRequestModel,
 )
 from clientservices import GetCerebrasApiKey
 from rag.qa.utils.qaSystemPropts import QaAiAnswerPromptFromRagText
 
 
-llmServices = LLMService()
+ChatServices = ChatService()
 
 
 class QaAiAnswersService(QaAiAnswersImpl):
@@ -21,28 +21,28 @@ class QaAiAnswersService(QaAiAnswersImpl):
         self, request: QaAiAnswersRequestModel
     ) ->  QaAiAnswersResponseModel:
 
-        llmMessages: list[LLMMessageModel] = []
+        llmMessages: list[ChatServiceMessageModel] = []
         llmMessages.append(
-            LLMMessageModel(
-                role=LLmMessageRoleEnum.SYSTEM,
+            ChatServiceMessageModel(
+                role=ChatServiceMessageRoleEnum.SYSTEM,
                 content=QaAiAnswerPromptFromRagText,
             )
         )
 
         llmMessages.append(
-            LLMMessageModel(
-                role=LLmMessageRoleEnum.SYSTEM,
+            ChatServiceMessageModel(
+                role=ChatServiceMessageRoleEnum.SYSTEM,
                 content=f"Here is the context:\n{request.ragResponseText}",
             )
         )
         
 
         llmMessages.append(
-            LLMMessageModel(role=LLmMessageRoleEnum.USER, content=request.query)
+            ChatServiceMessageModel(role=ChatServiceMessageRoleEnum.USER, content=request.query)
         )
 
-        response:Any = await llmServices.Chat(
-            modelParams=LLMRequestModel(
+        response:Any = await ChatServices.Chat(
+            modelParams=ChatServiceRequestModel(
                 apiKey=GetCerebrasApiKey(),
                 model="llama-4-scout-17b-16e-instruct",
                 stream=False,

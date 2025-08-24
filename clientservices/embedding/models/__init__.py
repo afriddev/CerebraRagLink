@@ -12,6 +12,7 @@ from .ChatModels import (
     MistralChatResponseUsageModel,
     MistralChatResponseModel,
 )
+from .RerankingModels import RerankingRequestModel
 
 __all__ = [
     "EmbeddingResponseModel",
@@ -24,4 +25,5 @@ __all__ = [
     "MistralChatResponseMessageModel",
     "MistralChatResponseUsageModel",
     "MistralChatResponseModel",
+    "RerankingRequestModel"
 ]

@@ -1,17 +1,17 @@
 from mistralai import Mistral, models, EmbeddingResponse
-from clientservices.mistral.models import (
+from clientservices.embedding.implementations import EmbeddingServiceImpl
+from clientservices.embedding.models import (
     EmbeddingResponseModel,
     EmbeddingDataModel,
-    EmbeddingUsageModel,
-)
-from clientservices.mistral.enums import EmbeddingResponseEnum
-from clientservices.mistral.workers import GetMistralApiKey
+    EmbeddingUsageModel)
+from clientservices.embedding.enums import EmbeddingResponseEnum
+from clientservices.embedding.workers import GetMistralApiKey
+import numpy as np
 
 
 mistralClient = Mistral(api_key=GetMistralApiKey())
 
-
-class EmbeddingService:
+class EmbeddingService(EmbeddingServiceImpl):
     async def ConvertTextToEmbedding(self, text: list[str]) -> EmbeddingResponseModel:
         try:
             res: EmbeddingResponse = await mistralClient.embeddings.create_async(
@@ -43,3 +43,13 @@ class EmbeddingService:
             return EmbeddingResponseModel(status=EmbeddingResponseEnum.VALIDATION_ERROR)
         except models.SDKError:
             return EmbeddingResponseModel(status=EmbeddingResponseEnum.SERVER_ERROR)
+
+    def FindSimilarity(self, vec1: list[float], vec2: list[float]) -> float:
+        if len(vec1) != len(vec2):
+            return 0.0
+        else:
+            a = np.array(vec1)
+            b = np.array(vec2)
+            return float(np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b)))
+
+    

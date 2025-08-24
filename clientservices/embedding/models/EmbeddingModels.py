@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from clientservices.mistral.enums import EmbeddingResponseEnum
+from clientservices.embedding.enums import EmbeddingResponseEnum
 
 
 class EmbeddingUsageModel(BaseModel):

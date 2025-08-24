@@ -1,6 +1,6 @@
 from typing import Any
 from pydantic import BaseModel
-from clientservices.mistral.enums import (
+from clientservices.embedding.enums import (
     MistralChatMessageRoleEnum,
     MistralChatResponseStatusEnum
 )

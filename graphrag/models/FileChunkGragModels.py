@@ -3,7 +3,6 @@ from uuid import UUID
 
 
 class LLMGragEntityResponseModel(BaseModel):
-    entities: list[list[str]]
     relations: list[list[str]]
     relationshipsEntities: list[list[list[str]]]
     chunk: list[str]
@@ -12,12 +11,16 @@ class LLMGragEntityResponseModel(BaseModel):
 class ChunkTextsModel(BaseModel):
     id: UUID
     text: str
-    vector:list[float] | None  = None
+    vector: list[float] | None = None
+    entities: list[str]
+
 
 
 class ChunkRelationModel(BaseModel):
+    id: UUID
     realtion: str
     realtionEntites: list[str]
+    relationVector: list[float] | None = None
 
 
 class ChunkRelationsModel(BaseModel):
@@ -25,9 +28,8 @@ class ChunkRelationsModel(BaseModel):
     chunkRelations: list[ChunkRelationModel]
 
 
-class ChunkEntitiesModel(BaseModel):
-    chunkId: UUID
-    chunkEntities: list[str]
+    
 
-
-class ChunkTextVectors
+class HandleKgExatrctProcessResponseModel(BaseModel):
+    chunkTexts: list[ChunkTextsModel]
+    chunkRelations: list[ChunkRelationsModel]

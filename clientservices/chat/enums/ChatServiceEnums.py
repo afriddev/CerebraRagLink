@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class LLmMessageRoleEnum(Enum):
+class ChatServiceMessageRoleEnum(Enum):
     USER = "user"
     SYSTEM = "system"
     ASSISTANT = "assistant"
@@ -9,7 +9,7 @@ class LLmMessageRoleEnum(Enum):
 
 
 
-class LLMResponseEnum(Enum):
+class ChatServiceResponseStatusEnum(Enum):
     SUCCESS = (200, "SUCCESS")
     BAD_REQUEST = (400, "BAD_REQUEST")
     UNAUTHROZIED = (401, "UNAUTHROZIED")

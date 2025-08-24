@@ -1,5 +1,5 @@
 from .workers import GetMistralApiKey
-from .services import EmbeddingService, MistralChatService
+from .services import EmbeddingService, MistralChatService, RerankingService
 from .enums import (
     EmbeddingResponseEnum,
     MistralChatMessageRoleEnum,
@@ -16,6 +16,7 @@ from .models import (
     MistralChatResponseMessageModel,
     MistralChatResponseModel,
     MistralChatResponseUsageModel,
+    RerankingRequestModel,
 )
 
 
@@ -35,4 +36,6 @@ __all__ = [
     "MistralChatResponseModel",
     "MistralChatResponseUsageModel",
     "MistralChatResponseStatusEnum",
+    "RerankingService",
+    "RerankingRequestModel",
 ]

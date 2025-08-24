@@ -1,15 +1,15 @@
 from typing import Any, cast
-from clientservices.mistral.implementations import MistralChatImpl
+from clientservices.embedding.implementations import MistralChatImpl
 from mistralai import Mistral, models
-from clientservices.mistral.models import (
+from clientservices.embedding.models import (
     MistralChatResponseModel,
     MistralChatResponseUsageModel,
     MistralChatResponseChoiceModel,
     MistralChatResponseMessageModel,
     MistralChatRequestModel,
 )
-from clientservices.mistral.enums import MistralChatResponseStatusEnum
-from clientservices.mistral.workers import GetMistralApiKey
+from clientservices.embedding.enums import MistralChatResponseStatusEnum
+from clientservices.embedding.workers import GetMistralApiKey
 
 
 """

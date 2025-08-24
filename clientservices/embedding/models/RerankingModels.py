@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from clientservices.chat.enums import ChatServiceResponseStatusEnum
 
 
 class RerankingRequestModel(BaseModel):
@@ -13,5 +14,11 @@ class RerankingResponseChoiseModel(BaseModel):
     score: float
 
 
+class RerankingUsageModel(BaseModel):
+    totalTokens: int
+
+
 class RerankingResponseModel(BaseModel):
-    response: list[RerankingResponseChoiseModel]
+    response: list[RerankingResponseChoiseModel] | None = None
+    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS
+    usage: RerankingUsageModel | None = None

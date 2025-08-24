@@ -14,6 +14,7 @@ from clientservices import (
     EmbeddingService,
     RerankingService,
     RerankingRequestModel,
+    RerankingResponseModel,
 )
 from graphrag.implementations import FileChunkGragImpl
 from utils import ExtractTextFromDoc
@@ -102,7 +103,7 @@ class FileChunkGragService(FileChunkGragImpl):
         chunkTexts: list[ChunkTextsModel] = []
         chunkRealtions: list[ChunkRelationsModel] = []
 
-        for start in range(0, 10, 1):
+        for start in range(0, 20, 1):
             messages: list[ChatServiceMessageModel] = [
                 ChatServiceMessageModel(
                     role=ChatServiceMessageRoleEnum.USER,
@@ -234,12 +235,26 @@ class FileChunkGragService(FileChunkGragImpl):
             await self.HandleRelationExtarctProcess(file)
         )
 
-        for index in range(0, 1):
-            await rerankingService.FindRankingScore(
-                RerankingRequestModel(
-                    model="Salesforce/Llama-Rank-v1",
-                    query=relations.chunkTexts[index].text,
-                    docs=[chunk.text for chunk in relations.chunkTexts],
-                    topN=len(relations.chunkTexts),
+        for chunk in relations.chunkTexts:
+            batchSize = 3
+            r = []
+            for index in range(1, len(relations.chunkTexts), batchSize):
+                response: RerankingResponseModel = (
+                    await rerankingService.FindRankingScore(
+                        RerankingRequestModel(
+                            model="Salesforce/Llama-Rank-v1",
+                            query=chunk.text,
+                            docs=[
+                                chunk.text
+                                for chunk in relations.chunkTexts[
+                                    index : index + batchSize
+                                ]
+                            ],
+                            topN=3,
+                        )
+                    )
                 )
-            )
+                if response.response is not None:
+                    r.append(response.response)
+            print(chunk.text)
+            print(r)

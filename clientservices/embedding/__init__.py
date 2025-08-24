@@ -17,6 +17,9 @@ from .models import (
     MistralChatResponseModel,
     MistralChatResponseUsageModel,
     RerankingRequestModel,
+    RerankingResponseChoiseModel,
+    RerankingResponseModel,
+    RerankingUsageModel
 )
 
 
@@ -38,4 +41,7 @@ __all__ = [
     "MistralChatResponseStatusEnum",
     "RerankingService",
     "RerankingRequestModel",
+    "RerankingResponseChoiseModel",
+    "RerankingResponseModel",
+    "RerankingUsageModel"
 ]

@@ -20,3 +20,4 @@ class ChatServiceResponseStatusEnum(Enum):
     ENTITY_ERROR = (422, "ENTITY_ERROR")
     RATE_LIMIT = (429, "RATE_LIMIT")
     SERVER_ERROR = (500, "SERVER_ERROR")
+    ERROR = (200, "ERROR")

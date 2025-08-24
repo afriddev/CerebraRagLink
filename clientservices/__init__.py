@@ -31,7 +31,10 @@ from .embedding import (
     MistralChatResponseModel,
     MistralChatResponseUsageModel,
     RerankingService,
-    RerankingRequestModel
+    RerankingRequestModel,
+    RerankingResponseChoiseModel,
+    RerankingResponseModel,
+    RerankingUsageModel,
 )
 
 
@@ -66,5 +69,8 @@ __all__ = [
     "MistralChatResponseModel",
     "MistralChatResponseUsageModel",
     "RerankingService",
-    "RerankingRequestModel"
+    "RerankingRequestModel",
+    "RerankingResponseChoiseModel",
+    "RerankingResponseModel",
+    "RerankingUsageModel",
 ]

@@ -16,6 +16,7 @@ from .RerankingModels import (
     RerankingRequestModel,
     RerankingResponseChoiseModel,
     RerankingResponseModel,
+    RerankingUsageModel
 )
 
 __all__ = [
@@ -32,4 +33,5 @@ __all__ = [
     "RerankingRequestModel",
     "RerankingResponseChoiseModel",
     "RerankingResponseModel",
+    "RerankingUsageModel"
 ]

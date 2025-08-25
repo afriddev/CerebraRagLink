@@ -6,11 +6,12 @@ from contextlib import asynccontextmanager
 from server import PsqlDb
 from server import QaRag
 from server import CustomMidlleware
+from clientservices import RerankingService
 
 load_dotenv()
 
 DATABASE_CONNECTION_STRING = os.getenv("DATABASE_CONNECTION_STRING", "")
-psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)     
+psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)
 
 
 @asynccontextmanager
@@ -31,6 +32,7 @@ server.add_middleware(
 )
 server.add_middleware(CustomMidlleware)
 server.include_router(QaRag, prefix="/api/v1/qa")
+RerankingService()
 
 if __name__ == "__main__":
     import uvicorn

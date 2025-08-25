@@ -1,9 +1,11 @@
 from graphrag import FileChunkGragService
+import time
 
 a = FileChunkGragService()
 
 
 async def main():
+
     await a.HandleGraphBuildingProcess("opd_manual.pdf")
 
 

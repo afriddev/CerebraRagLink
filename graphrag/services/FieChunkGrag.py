@@ -19,15 +19,17 @@ from clientservices import (
 from graphrag.implementations import FileChunkGragImpl
 from utils import ExtractTextFromDoc
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from graphrag.utils.GragSystemPropts import ExtractEntityGragSystemPrompt
+from graphrag.utils.FileGragSystemPropts import ExtractEntityGragSystemPrompt
 import json
 from graphrag.models import (
     ChunkRelationsModel,
     ChunkTextsModel,
     ChunkRelationModel,
-    HandleKgExatrctProcessResponseModel,
+    HandleChunkRelationExtractResponseModel,
+    ChunkNodeModel,
+    AllRelationsModel,
 )
-from uuid import uuid4
+from uuid import UUID, uuid4
 
 chatService = ChatService()
 embeddingService = EmbeddingService()
@@ -98,12 +100,12 @@ class FileChunkGragService(FileChunkGragImpl):
         chunks = _mergeTinyChunks(chunks, minChars=max(200, chunkSize // 3))
         return chunks
 
-    async def HandleRelationExtarctProcess(self, file: str):
+    async def handleKgChunkRelationExtarctProcess(self, file: str):
         chunks = self.ExatrctChunkFromText(file, 600)
         chunkTexts: list[ChunkTextsModel] = []
         chunkRealtions: list[ChunkRelationsModel] = []
 
-        for start in range(0, 20, 1):
+        for start in range(0, 5, 1):
             messages: list[ChatServiceMessageModel] = [
                 ChatServiceMessageModel(
                     role=ChatServiceMessageRoleEnum.USER,
@@ -140,6 +142,10 @@ class FileChunkGragService(FileChunkGragImpl):
                                                 type="array",
                                                 items={"type": "string"},
                                             ),
+                                            "questions": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
+                                                type="array",
+                                                items={"type": "string"},
+                                            ),
                                             "relationshipsEntities": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
                                                 type="array",
                                                 items={
@@ -156,6 +162,7 @@ class FileChunkGragService(FileChunkGragImpl):
                                             "relations",
                                             "relationshipsEntities",
                                             "chunk",
+                                            "questions",
                                         ],
                                         additionalProperties=False,
                                     )
@@ -176,6 +183,7 @@ class FileChunkGragService(FileChunkGragImpl):
                     id=chunkId,
                     text=chunkResponse.get("chunk"),
                     entities=chunkResponse.get("entities"),
+                    questions=chunkResponse.get("questions"),
                 )
             )
             chunkRelations: list[ChunkRelationModel] = []
@@ -194,11 +202,18 @@ class FileChunkGragService(FileChunkGragImpl):
                 ChunkRelationsModel(chunkId=chunkId, chunkRelations=chunkRelations)
             )
 
-        batchSize = 5
+        batchSize = 15
         for index in range(0, len(chunkTexts), batchSize):
             chunkTextsBatch = [
                 chunk.text for chunk in chunkTexts[index : index + batchSize]
             ]
+
+            chunkQuestionsBatch = [
+                question
+                for chunkQuestions in chunkTexts[index : index + batchSize]
+                for question in chunkQuestions.questions
+            ]
+
             chunkRelationsBatch = [
                 relation.realtion
                 for relations in chunkRealtions[index : index + batchSize]
@@ -207,14 +222,32 @@ class FileChunkGragService(FileChunkGragImpl):
             chunkTextsEmbeddingResponse = await embeddingService.ConvertTextToEmbedding(
                 chunkTextsBatch
             )
+
+            chunkQuestionsEmbeddingResponse = (
+                await embeddingService.ConvertTextToEmbedding(chunkQuestionsBatch)
+            )
+
             relationsEmbeddingResponse = await embeddingService.ConvertTextToEmbedding(
                 chunkRelationsBatch
             )
             if chunkTextsEmbeddingResponse.data is not None:
-                for index2, vector in enumerate(chunkTextsEmbeddingResponse.data):
-                    chunkTexts[cast(int, vector.index) + index2].vector = (
+                for _, vector in enumerate(chunkTextsEmbeddingResponse.data):
+                    chunkTexts[index + cast(int, vector.index)].vector = (
                         vector.embedding
                     )
+
+            if chunkQuestionsEmbeddingResponse.data is not None:
+                for index4, _ in enumerate(chunkTexts[index : index + batchSize]):
+                    for index5, _ in enumerate(chunkTexts[index4].questions):
+                        cast(Any, chunkTexts[index + index4].questionVectors).append(
+                            cast(
+                                Any,
+                                chunkQuestionsEmbeddingResponse.data[
+                                    index4 + index5
+                                ].embedding,
+                            )
+                        )
+
             if relationsEmbeddingResponse.data is not None:
                 for index3, chunkRelation in enumerate(
                     chunkRealtions[index : index + batchSize]
@@ -226,35 +259,94 @@ class FileChunkGragService(FileChunkGragImpl):
                             index3 + index4
                         ].embedding
 
-        return HandleKgExatrctProcessResponseModel(
+        return HandleChunkRelationExtractResponseModel(
             chunkTexts=chunkTexts, chunkRelations=chunkRealtions
         )
 
     async def HandleGraphBuildingProcess(self, file: str):
-        relations: HandleKgExatrctProcessResponseModel = (
-            await self.HandleRelationExtarctProcess(file)
+        chunksRelations: HandleChunkRelationExtractResponseModel = (
+            await self.handleKgChunkRelationExtarctProcess(file)
         )
 
-        for chunk in relations.chunkTexts:
-            batchSize = 3
-            r = []
-            for index in range(1, len(relations.chunkTexts), batchSize):
+        batchSize = 20
+        for index, chunk in enumerate(chunksRelations.chunkTexts):
+            matchedNodes: list[ChunkNodeModel] = []
+            for index1 in range(0, len(chunksRelations.chunkTexts), batchSize):
+
+                docs: list[str] = []
+                docsIds: list[UUID] = []
+                for _, chunk1 in enumerate(
+                    chunksRelations.chunkTexts[index1 : index1 + batchSize]
+                ):
+                    if chunk.id != chunk1.id:
+                        docs.append(chunk1.text)
+                        docsIds.append(chunk1.id)
+
                 response: RerankingResponseModel = (
                     await rerankingService.FindRankingScore(
                         RerankingRequestModel(
-                            model="Salesforce/Llama-Rank-v1",
+                            model="jina-reranker-m0",
                             query=chunk.text,
-                            docs=[
-                                chunk.text
-                                for chunk in relations.chunkTexts[
-                                    index : index + batchSize
-                                ]
-                            ],
-                            topN=3,
+                            docs=docs,
+                            topN=10,
                         )
                     )
                 )
                 if response.response is not None:
-                    r.append(response.response)
-            print(chunk.text)
-            print(r)
+                    for res in response.response:
+                        if res.score > 0.9:
+                            matchedNodes.append(
+                                ChunkNodeModel(
+                                    chunkId=docsIds[res.index],
+                                    score=res.score,
+                                )
+                            )
+
+            chunksRelations.chunkTexts[index].matchedNodes = matchedNodes
+            matchedNodes = []
+
+        allRelations: list[AllRelationsModel] = []
+        for relation in chunksRelations.chunkRelations:
+            for rel in relation.chunkRelations:
+                allRelations.append(
+                    AllRelationsModel(
+                        id=rel.id, text=rel.realtion, chunkId=relation.chunkId
+                    )
+                )
+
+        # realtionBatchSize = 500
+        # for index, rel in enumerate(allRelations):
+        #     matchedRelationNodes: list[RelationNodeModel] = []
+        #     for index1 in range(1, len(allRelations), realtionBatchSize):
+        #         response: RerankingResponseModel = (
+        #             await rerankingService.FindRankingScore(
+        #                 RerankingRequestModel(
+        #                     model="jina-reranker-m0",
+        #                     query=allRelations[index1].text,  
+        
+        #                     docs=[
+        #                         rel.text
+        #                         for rel in allRelations[
+        #                             index1 : index1 + realtionBatchSize
+        #                         ]
+        #                     ],
+        #                     topN=20,
+        #                 )
+        #             )
+        #         )
+        #         if response.response is not None:
+        #             for res in response.response:
+        #                 if res.score > 0.9:
+        #                     matchedRelationNodes.append(
+        #                         RelationNodeModel(
+        #                             realtionId=allRelations[index1 + res.index].id,
+        #                             score=res.score,
+        #                         )
+        #                     )
+        #     allRelations[index].matchedRelationNodes = matchedRelationNodes
+
+        for i in chunksRelations.chunkTexts:
+            print(i.matchedNodes)
+
+        # for i in allRelations:
+        #     print(i.matchedRelationNodes)

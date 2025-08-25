@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from graphrag.models import HandleKgExatrctProcessResponseModel
+from graphrag.models import HandleChunkRelationExtractResponseModel
 
 
 class FileChunkGragImpl(ABC):
@@ -11,9 +11,9 @@ class FileChunkGragImpl(ABC):
         pass
 
     @abstractmethod
-    async def HandleRelationExtarctProcess(
+    async def handleKgChunkRelationExtarctProcess(
         self, file: str
-    ) -> HandleKgExatrctProcessResponseModel:
+    ) -> HandleChunkRelationExtractResponseModel:
         pass
 
     @abstractmethod

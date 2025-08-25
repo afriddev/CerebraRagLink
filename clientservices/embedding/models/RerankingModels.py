@@ -3,10 +3,11 @@ from clientservices.chat.enums import ChatServiceResponseStatusEnum
 
 
 class RerankingRequestModel(BaseModel):
-    model: str = "Salesforce/Llama-Rank-v1"
+    model: str = "jina-reranker-m0"
     query: str
     docs: list[str]
     topN: int = 5
+    returnDocuments: bool = False
 
 
 class RerankingResponseChoiseModel(BaseModel):

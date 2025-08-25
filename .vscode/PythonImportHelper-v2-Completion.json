@@ -136,6 +136,22 @@
         "documentation": {}
     },
     {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
         "label": "StreamingResponse",
         "importPath": "fastapi.responses",
         "description": "fastapi.responses",
@@ -177,66 +193,66 @@
     },
     {
         "label": "ChatServiceRequestModel",
-        "importPath": "clientservices.cerebras.models",
-        "description": "clientservices.cerebras.models",
+        "importPath": "clientservices.chat.models",
+        "description": "clientservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.cerebras.models",
+        "detail": "clientservices.chat.models",
         "documentation": {}
     },
     {
         "label": "ChatServiceResponseModel",
-        "importPath": "clientservices.cerebras.models",
-        "description": "clientservices.cerebras.models",
+        "importPath": "clientservices.chat.models",
+        "description": "clientservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.cerebras.models",
+        "detail": "clientservices.chat.models",
         "documentation": {}
     },
     {
         "label": "ChatServiceRequestModel",
-        "importPath": "clientservices.cerebras.models",
-        "description": "clientservices.cerebras.models",
+        "importPath": "clientservices.chat.models",
+        "description": "clientservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.cerebras.models",
+        "detail": "clientservices.chat.models",
         "documentation": {}
     },
     {
         "label": "ChatServiceResponseModel",
-        "importPath": "clientservices.cerebras.models",
-        "description": "clientservices.cerebras.models",
+        "importPath": "clientservices.chat.models",
+        "description": "clientservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.cerebras.models",
+        "detail": "clientservices.chat.models",
         "documentation": {}
     },
     {
         "label": "ChatServiceDataResponseModel",
-        "importPath": "clientservices.cerebras.models",
-        "description": "clientservices.cerebras.models",
+        "importPath": "clientservices.chat.models",
+        "description": "clientservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.cerebras.models",
+        "detail": "clientservices.chat.models",
         "documentation": {}
     },
     {
         "label": "ChatServiceUsageModel",
-        "importPath": "clientservices.cerebras.models",
-        "description": "clientservices.cerebras.models",
+        "importPath": "clientservices.chat.models",
+        "description": "clientservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.cerebras.models",
+        "detail": "clientservices.chat.models",
         "documentation": {}
     },
     {
         "label": "ChatServiceChoiceModel",
-        "importPath": "clientservices.cerebras.models",
-        "description": "clientservices.cerebras.models",
+        "importPath": "clientservices.chat.models",
+        "description": "clientservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.cerebras.models",
+        "detail": "clientservices.chat.models",
         "documentation": {}
     },
     {
         "label": "ChatServiceChoiceMessageModel",
-        "importPath": "clientservices.cerebras.models",
-        "description": "clientservices.cerebras.models",
+        "importPath": "clientservices.chat.models",
+        "description": "clientservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.cerebras.models",
+        "detail": "clientservices.chat.models",
         "documentation": {}
     },
     {
@@ -328,6 +344,14 @@
         "documentation": {}
     },
     {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "cast",
         "importPath": "typing",
         "description": "typing",
@@ -337,6 +361,14 @@
     },
     {
         "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "cast",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -496,27 +528,51 @@
         "documentation": {}
     },
     {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "ChatServiceMessageRoleEnum",
-        "importPath": "clientservices.cerebras.enums",
-        "description": "clientservices.cerebras.enums",
+        "importPath": "clientservices.chat.enums",
+        "description": "clientservices.chat.enums",
         "isExtraImport": true,
-        "detail": "clientservices.cerebras.enums",
+        "detail": "clientservices.chat.enums",
         "documentation": {}
     },
     {
         "label": "ChatServiceResponseStatusEnum",
-        "importPath": "clientservices.cerebras.enums",
-        "description": "clientservices.cerebras.enums",
+        "importPath": "clientservices.chat.enums",
+        "description": "clientservices.chat.enums",
         "isExtraImport": true,
-        "detail": "clientservices.cerebras.enums",
+        "detail": "clientservices.chat.enums",
         "documentation": {}
     },
     {
         "label": "ChatServiceResponseStatusEnum",
-        "importPath": "clientservices.cerebras.enums",
-        "description": "clientservices.cerebras.enums",
+        "importPath": "clientservices.chat.enums",
+        "description": "clientservices.chat.enums",
         "isExtraImport": true,
-        "detail": "clientservices.cerebras.enums",
+        "detail": "clientservices.chat.enums",
+        "documentation": {}
+    },
+    {
+        "label": "ChatServiceResponseStatusEnum",
+        "importPath": "clientservices.chat.enums",
+        "description": "clientservices.chat.enums",
+        "isExtraImport": true,
+        "detail": "clientservices.chat.enums",
+        "documentation": {}
+    },
+    {
+        "label": "ChatServiceResponseStatusEnum",
+        "importPath": "clientservices.chat.enums",
+        "description": "clientservices.chat.enums",
+        "isExtraImport": true,
+        "detail": "clientservices.chat.enums",
         "documentation": {}
     },
     {
@@ -546,18 +602,18 @@
     },
     {
         "label": "ChatServiceImpl",
-        "importPath": "clientservices.cerebras.implementations",
-        "description": "clientservices.cerebras.implementations",
+        "importPath": "clientservices.chat.implementations",
+        "description": "clientservices.chat.implementations",
         "isExtraImport": true,
-        "detail": "clientservices.cerebras.implementations",
+        "detail": "clientservices.chat.implementations",
         "documentation": {}
     },
     {
         "label": "GetCerebrasApiKey",
-        "importPath": "clientservices.cerebras.workers",
-        "description": "clientservices.cerebras.workers",
+        "importPath": "clientservices.chat.workers",
+        "description": "clientservices.chat.workers",
         "isExtraImport": true,
-        "detail": "clientservices.cerebras.workers",
+        "detail": "clientservices.chat.workers",
         "documentation": {}
     },
     {
@@ -603,130 +659,178 @@
     },
     {
         "label": "EmbeddingResponseModel",
-        "importPath": "clientservices.mistral.models",
-        "description": "clientservices.mistral.models",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.models",
+        "detail": "clientservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseModel",
-        "importPath": "clientservices.mistral.models",
-        "description": "clientservices.mistral.models",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.models",
+        "detail": "clientservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatRequestModel",
-        "importPath": "clientservices.mistral.models",
-        "description": "clientservices.mistral.models",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.models",
+        "detail": "clientservices.embedding.models",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingRequestModel",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
+        "isExtraImport": true,
+        "detail": "clientservices.embedding.models",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingResponseModel",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
+        "isExtraImport": true,
+        "detail": "clientservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "EmbeddingResponseModel",
-        "importPath": "clientservices.mistral.models",
-        "description": "clientservices.mistral.models",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.models",
+        "detail": "clientservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "EmbeddingDataModel",
-        "importPath": "clientservices.mistral.models",
-        "description": "clientservices.mistral.models",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.models",
+        "detail": "clientservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "EmbeddingUsageModel",
-        "importPath": "clientservices.mistral.models",
-        "description": "clientservices.mistral.models",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.models",
+        "detail": "clientservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseModel",
-        "importPath": "clientservices.mistral.models",
-        "description": "clientservices.mistral.models",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.models",
+        "detail": "clientservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseUsageModel",
-        "importPath": "clientservices.mistral.models",
-        "description": "clientservices.mistral.models",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.models",
+        "detail": "clientservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseChoiceModel",
-        "importPath": "clientservices.mistral.models",
-        "description": "clientservices.mistral.models",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.models",
+        "detail": "clientservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseMessageModel",
-        "importPath": "clientservices.mistral.models",
-        "description": "clientservices.mistral.models",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.models",
+        "detail": "clientservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatRequestModel",
-        "importPath": "clientservices.mistral.models",
-        "description": "clientservices.mistral.models",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.models",
+        "detail": "clientservices.embedding.models",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingRequestModel",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
+        "isExtraImport": true,
+        "detail": "clientservices.embedding.models",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingResponseModel",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
+        "isExtraImport": true,
+        "detail": "clientservices.embedding.models",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingResponseChoiseModel",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
+        "isExtraImport": true,
+        "detail": "clientservices.embedding.models",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingUsageModel",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
+        "isExtraImport": true,
+        "detail": "clientservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatMessageRoleEnum",
-        "importPath": "clientservices.mistral.enums",
-        "description": "clientservices.mistral.enums",
+        "importPath": "clientservices.embedding.enums",
+        "description": "clientservices.embedding.enums",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.enums",
+        "detail": "clientservices.embedding.enums",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseStatusEnum",
-        "importPath": "clientservices.mistral.enums",
-        "description": "clientservices.mistral.enums",
+        "importPath": "clientservices.embedding.enums",
+        "description": "clientservices.embedding.enums",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.enums",
+        "detail": "clientservices.embedding.enums",
         "documentation": {}
     },
     {
         "label": "EmbeddingResponseEnum",
-        "importPath": "clientservices.mistral.enums",
-        "description": "clientservices.mistral.enums",
+        "importPath": "clientservices.embedding.enums",
+        "description": "clientservices.embedding.enums",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.enums",
+        "detail": "clientservices.embedding.enums",
         "documentation": {}
     },
     {
         "label": "EmbeddingResponseEnum",
-        "importPath": "clientservices.mistral.enums",
-        "description": "clientservices.mistral.enums",
+        "importPath": "clientservices.embedding.enums",
+        "description": "clientservices.embedding.enums",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.enums",
+        "detail": "clientservices.embedding.enums",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseStatusEnum",
-        "importPath": "clientservices.mistral.enums",
-        "description": "clientservices.mistral.enums",
+        "importPath": "clientservices.embedding.enums",
+        "description": "clientservices.embedding.enums",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.enums",
+        "detail": "clientservices.embedding.enums",
         "documentation": {}
     },
     {
@@ -770,27 +874,133 @@
         "documentation": {}
     },
     {
-        "label": "GetMistralApiKey",
-        "importPath": "clientservices.mistral.workers",
-        "description": "clientservices.mistral.workers",
+        "label": "EmbeddingServiceImpl",
+        "importPath": "clientservices.embedding.implementations",
+        "description": "clientservices.embedding.implementations",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.workers",
-        "documentation": {}
-    },
-    {
-        "label": "GetMistralApiKey",
-        "importPath": "clientservices.mistral.workers",
-        "description": "clientservices.mistral.workers",
-        "isExtraImport": true,
-        "detail": "clientservices.mistral.workers",
+        "detail": "clientservices.embedding.implementations",
         "documentation": {}
     },
     {
         "label": "MistralChatImpl",
-        "importPath": "clientservices.mistral.implementations",
-        "description": "clientservices.mistral.implementations",
+        "importPath": "clientservices.embedding.implementations",
+        "description": "clientservices.embedding.implementations",
         "isExtraImport": true,
-        "detail": "clientservices.mistral.implementations",
+        "detail": "clientservices.embedding.implementations",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingImpl",
+        "importPath": "clientservices.embedding.implementations",
+        "description": "clientservices.embedding.implementations",
+        "isExtraImport": true,
+        "detail": "clientservices.embedding.implementations",
+        "documentation": {}
+    },
+    {
+        "label": "GetMistralApiKey",
+        "importPath": "clientservices.embedding.workers",
+        "description": "clientservices.embedding.workers",
+        "isExtraImport": true,
+        "detail": "clientservices.embedding.workers",
+        "documentation": {}
+    },
+    {
+        "label": "GetMistralApiKey",
+        "importPath": "clientservices.embedding.workers",
+        "description": "clientservices.embedding.workers",
+        "isExtraImport": true,
+        "detail": "clientservices.embedding.workers",
+        "documentation": {}
+    },
+    {
+        "label": "GetJinaApiKey",
+        "importPath": "clientservices.embedding.workers",
+        "description": "clientservices.embedding.workers",
+        "isExtraImport": true,
+        "detail": "clientservices.embedding.workers",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "HandleChunkRelationExtractResponseModel",
+        "importPath": "graphrag.models",
+        "description": "graphrag.models",
+        "isExtraImport": true,
+        "detail": "graphrag.models",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkRelationsModel",
+        "importPath": "graphrag.models",
+        "description": "graphrag.models",
+        "isExtraImport": true,
+        "detail": "graphrag.models",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkTextsModel",
+        "importPath": "graphrag.models",
+        "description": "graphrag.models",
+        "isExtraImport": true,
+        "detail": "graphrag.models",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkRelationModel",
+        "importPath": "graphrag.models",
+        "description": "graphrag.models",
+        "isExtraImport": true,
+        "detail": "graphrag.models",
+        "documentation": {}
+    },
+    {
+        "label": "HandleChunkRelationExtractResponseModel",
+        "importPath": "graphrag.models",
+        "description": "graphrag.models",
+        "isExtraImport": true,
+        "detail": "graphrag.models",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkNodeModel",
+        "importPath": "graphrag.models",
+        "description": "graphrag.models",
+        "isExtraImport": true,
+        "detail": "graphrag.models",
+        "documentation": {}
+    },
+    {
+        "label": "AllRelationsModel",
+        "importPath": "graphrag.models",
+        "description": "graphrag.models",
+        "isExtraImport": true,
+        "detail": "graphrag.models",
+        "documentation": {}
+    },
+    {
+        "label": "UUID",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
         "documentation": {}
     },
     {
@@ -831,14 +1041,6 @@
         "description": "uuid",
         "isExtraImport": true,
         "detail": "uuid",
-        "documentation": {}
-    },
-    {
-        "label": "text",
-        "importPath": "pydoc",
-        "description": "pydoc",
-        "isExtraImport": true,
-        "detail": "pydoc",
         "documentation": {}
     },
     {
@@ -940,6 +1142,30 @@
         "documentation": {}
     },
     {
+        "label": "RerankingService",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingRequestModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingResponseModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
         "label": "ChatServiceResponseStatusEnum",
         "importPath": "clientservices",
         "description": "clientservices",
@@ -1100,6 +1326,14 @@
         "documentation": {}
     },
     {
+        "label": "RerankingService",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
         "label": "FileChunkGragImpl",
         "importPath": "graphrag.implementations",
         "description": "graphrag.implementations",
@@ -1133,10 +1367,10 @@
     },
     {
         "label": "ExtractEntityGragSystemPrompt",
-        "importPath": "graphrag.utils.GragSystemPropts",
-        "description": "graphrag.utils.GragSystemPropts",
+        "importPath": "graphrag.utils.FileGragSystemPropts",
+        "description": "graphrag.utils.FileGragSystemPropts",
         "isExtraImport": true,
-        "detail": "graphrag.utils.GragSystemPropts",
+        "detail": "graphrag.utils.FileGragSystemPropts",
         "documentation": {}
     },
     {
@@ -1146,38 +1380,6 @@
         "importPath": "json",
         "description": "json",
         "detail": "json",
-        "documentation": {}
-    },
-    {
-        "label": "ChunkRelationsModel",
-        "importPath": "graphrag.models",
-        "description": "graphrag.models",
-        "isExtraImport": true,
-        "detail": "graphrag.models",
-        "documentation": {}
-    },
-    {
-        "label": "ChunkTextsModel",
-        "importPath": "graphrag.models",
-        "description": "graphrag.models",
-        "isExtraImport": true,
-        "detail": "graphrag.models",
-        "documentation": {}
-    },
-    {
-        "label": "ChunkEntitiesModel",
-        "importPath": "graphrag.models",
-        "description": "graphrag.models",
-        "isExtraImport": true,
-        "detail": "graphrag.models",
-        "documentation": {}
-    },
-    {
-        "label": "ChunkRelationModel",
-        "importPath": "graphrag.models",
-        "description": "graphrag.models",
-        "isExtraImport": true,
-        "detail": "graphrag.models",
         "documentation": {}
     },
     {
@@ -1373,15 +1575,6 @@
         "documentation": {}
     },
     {
-        "label": "numpy",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "numpy",
-        "description": "numpy",
-        "detail": "numpy",
-        "documentation": {}
-    },
-    {
         "label": "asyncpg",
         "kind": 6,
         "isExtraImport": true,
@@ -1464,6 +1657,15 @@
         "documentation": {}
     },
     {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
         "label": "CORSMiddleware",
         "importPath": "fastapi.middleware.cors",
         "description": "fastapi.middleware.cors",
@@ -1506,343 +1708,424 @@
     {
         "label": "ChatServiceMessageRoleEnum",
         "kind": 6,
-        "importPath": "clientservices.cerebras.enums.LLMEnums",
-        "description": "clientservices.cerebras.enums.LLMEnums",
+        "importPath": "clientservices.chat.enums.ChatServiceEnums",
+        "description": "clientservices.chat.enums.ChatServiceEnums",
         "peekOfCode": "class ChatServiceMessageRoleEnum(Enum):\n    USER = \"user\"\n    SYSTEM = \"system\"\n    ASSISTANT = \"assistant\"\nclass ChatServiceResponseStatusEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")",
-        "detail": "clientservices.cerebras.enums.LLMEnums",
+        "detail": "clientservices.chat.enums.ChatServiceEnums",
         "documentation": {}
     },
     {
         "label": "ChatServiceResponseStatusEnum",
         "kind": 6,
-        "importPath": "clientservices.cerebras.enums.LLMEnums",
-        "description": "clientservices.cerebras.enums.LLMEnums",
+        "importPath": "clientservices.chat.enums.ChatServiceEnums",
+        "description": "clientservices.chat.enums.ChatServiceEnums",
         "peekOfCode": "class ChatServiceResponseStatusEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")\n    REQUEST_TIMEOUT = (408, \"REQUEST_TIMEOUT\")\n    CONFLICT = (409, \"CONFLICT\")\n    ENTITY_ERROR = (422, \"ENTITY_ERROR\")\n    RATE_LIMIT = (429, \"RATE_LIMIT\")",
-        "detail": "clientservices.cerebras.enums.LLMEnums",
+        "detail": "clientservices.chat.enums.ChatServiceEnums",
         "documentation": {}
     },
     {
         "label": "ChatServiceImpl",
         "kind": 6,
-        "importPath": "clientservices.cerebras.implementations.ChatServiceImplementation",
-        "description": "clientservices.cerebras.implementations.ChatServiceImplementation",
+        "importPath": "clientservices.chat.implementations.ChatServiceImplementation",
+        "description": "clientservices.chat.implementations.ChatServiceImplementation",
         "peekOfCode": "class ChatServiceImpl(ABC):\n    @abstractmethod\n    async def Chat(self, modelParams: ChatServiceRequestModel) -> ChatServiceResponseModel | StreamingResponse:\n        pass\n    @abstractmethod\n    def HandleApiStatusError(\n        self, statusCode: int\n    ) -> ChatServiceResponseModel :\n        pass",
-        "detail": "clientservices.cerebras.implementations.ChatServiceImplementation",
+        "detail": "clientservices.chat.implementations.ChatServiceImplementation",
         "documentation": {}
     },
     {
         "label": "ChatServiceMessageModel",
         "kind": 6,
-        "importPath": "clientservices.cerebras.models.LLMModels",
-        "description": "clientservices.cerebras.models.LLMModels",
+        "importPath": "clientservices.chat.models.ChatServiceModels",
+        "description": "clientservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceMessageModel(BaseModel):\n    role: Optional[ChatServiceMessageRoleEnum] = ChatServiceMessageRoleEnum.USER\n    content: str\nclass ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(BaseModel):\n    type: str | int | float | str\n    items: Optional[Any] = None\n    properties: Optional[Any] = None\n    required: Optional[Any] = None\n    additionalProperties: Optional[Any] = None\nclass ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel(BaseModel):",
-        "detail": "clientservices.cerebras.models.LLMModels",
+        "detail": "clientservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel",
         "kind": 6,
-        "importPath": "clientservices.cerebras.models.LLMModels",
-        "description": "clientservices.cerebras.models.LLMModels",
+        "importPath": "clientservices.chat.models.ChatServiceModels",
+        "description": "clientservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(BaseModel):\n    type: str | int | float | str\n    items: Optional[Any] = None\n    properties: Optional[Any] = None\n    required: Optional[Any] = None\n    additionalProperties: Optional[Any] = None\nclass ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel(BaseModel):\n    type: str = \"object\"\n    properties: dict[str, ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel] = {}\n    required: List[str] = []",
-        "detail": "clientservices.cerebras.models.LLMModels",
+        "detail": "clientservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel",
         "kind": 6,
-        "importPath": "clientservices.cerebras.models.LLMModels",
-        "description": "clientservices.cerebras.models.LLMModels",
+        "importPath": "clientservices.chat.models.ChatServiceModels",
+        "description": "clientservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel(BaseModel):\n    type: str = \"object\"\n    properties: dict[str, ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel] = {}\n    required: List[str] = []\n    additionalProperties: bool = False\nclass ChatServiceCerebrasFormatJsonSchemaModel(BaseModel):\n    name: str = \"schema\"\n    strict: bool = True\n    jsonSchema: ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel\nclass ChatServiceCerebrasFormatModel(BaseModel):",
-        "detail": "clientservices.cerebras.models.LLMModels",
+        "detail": "clientservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceCerebrasFormatJsonSchemaModel",
         "kind": 6,
-        "importPath": "clientservices.cerebras.models.LLMModels",
-        "description": "clientservices.cerebras.models.LLMModels",
+        "importPath": "clientservices.chat.models.ChatServiceModels",
+        "description": "clientservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceCerebrasFormatJsonSchemaModel(BaseModel):\n    name: str = \"schema\"\n    strict: bool = True\n    jsonSchema: ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel\nclass ChatServiceCerebrasFormatModel(BaseModel):\n    type: str = \"json_schema\"\n    jsonSchema: ChatServiceCerebrasFormatJsonSchemaModel\nclass ChatServiceRequestModel(BaseModel):\n    model: str = \"gpt-oss-120b\"\n    messages: List[ChatServiceMessageModel]",
-        "detail": "clientservices.cerebras.models.LLMModels",
+        "detail": "clientservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceCerebrasFormatModel",
         "kind": 6,
-        "importPath": "clientservices.cerebras.models.LLMModels",
-        "description": "clientservices.cerebras.models.LLMModels",
+        "importPath": "clientservices.chat.models.ChatServiceModels",
+        "description": "clientservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceCerebrasFormatModel(BaseModel):\n    type: str = \"json_schema\"\n    jsonSchema: ChatServiceCerebrasFormatJsonSchemaModel\nclass ChatServiceRequestModel(BaseModel):\n    model: str = \"gpt-oss-120b\"\n    messages: List[ChatServiceMessageModel]\n    maxCompletionTokens: Optional[int] = 20000\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7\n    apiKey: str",
-        "detail": "clientservices.cerebras.models.LLMModels",
+        "detail": "clientservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceRequestModel",
         "kind": 6,
-        "importPath": "clientservices.cerebras.models.LLMModels",
-        "description": "clientservices.cerebras.models.LLMModels",
+        "importPath": "clientservices.chat.models.ChatServiceModels",
+        "description": "clientservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceRequestModel(BaseModel):\n    model: str = \"gpt-oss-120b\"\n    messages: List[ChatServiceMessageModel]\n    maxCompletionTokens: Optional[int] = 20000\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7\n    apiKey: str\n    responseFormat: Optional[ChatServiceCerebrasFormatModel] = None\nclass ChatServiceChoiceMessageModel(BaseModel):\n    role: ChatServiceMessageRoleEnum = ChatServiceMessageRoleEnum.ASSISTANT",
-        "detail": "clientservices.cerebras.models.LLMModels",
+        "detail": "clientservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceChoiceMessageModel",
         "kind": 6,
-        "importPath": "clientservices.cerebras.models.LLMModels",
-        "description": "clientservices.cerebras.models.LLMModels",
+        "importPath": "clientservices.chat.models.ChatServiceModels",
+        "description": "clientservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceChoiceMessageModel(BaseModel):\n    role: ChatServiceMessageRoleEnum = ChatServiceMessageRoleEnum.ASSISTANT\n    content: str\nclass ChatServiceChoiceModel(BaseModel):\n    index: int = 0\n    message: ChatServiceChoiceMessageModel\nclass ChatServiceUsageModel(BaseModel):\n    promptTokens: int | None = None\n    completionTokens: int | None = None\n    totalTokens: int | None = None",
-        "detail": "clientservices.cerebras.models.LLMModels",
+        "detail": "clientservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceChoiceModel",
         "kind": 6,
-        "importPath": "clientservices.cerebras.models.LLMModels",
-        "description": "clientservices.cerebras.models.LLMModels",
+        "importPath": "clientservices.chat.models.ChatServiceModels",
+        "description": "clientservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceChoiceModel(BaseModel):\n    index: int = 0\n    message: ChatServiceChoiceMessageModel\nclass ChatServiceUsageModel(BaseModel):\n    promptTokens: int | None = None\n    completionTokens: int | None = None\n    totalTokens: int | None = None\nclass ChatServiceDataResponseModel(BaseModel):  \n    id: str\n    choices: List[ChatServiceChoiceModel] = []",
-        "detail": "clientservices.cerebras.models.LLMModels",
+        "detail": "clientservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceUsageModel",
         "kind": 6,
-        "importPath": "clientservices.cerebras.models.LLMModels",
-        "description": "clientservices.cerebras.models.LLMModels",
+        "importPath": "clientservices.chat.models.ChatServiceModels",
+        "description": "clientservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceUsageModel(BaseModel):\n    promptTokens: int | None = None\n    completionTokens: int | None = None\n    totalTokens: int | None = None\nclass ChatServiceDataResponseModel(BaseModel):  \n    id: str\n    choices: List[ChatServiceChoiceModel] = []\n    created: int\n    model: str = \"llama-3.3-70b\"\n    totalTime: float = 0.0",
-        "detail": "clientservices.cerebras.models.LLMModels",
+        "detail": "clientservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceDataResponseModel",
         "kind": 6,
-        "importPath": "clientservices.cerebras.models.LLMModels",
-        "description": "clientservices.cerebras.models.LLMModels",
+        "importPath": "clientservices.chat.models.ChatServiceModels",
+        "description": "clientservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceDataResponseModel(BaseModel):  \n    id: str\n    choices: List[ChatServiceChoiceModel] = []\n    created: int\n    model: str = \"llama-3.3-70b\"\n    totalTime: float = 0.0\n    usage: ChatServiceUsageModel\nclass ChatServiceResponseModel(BaseModel):\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    LLMData: ChatServiceDataResponseModel | None = None",
-        "detail": "clientservices.cerebras.models.LLMModels",
+        "detail": "clientservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceResponseModel",
         "kind": 6,
-        "importPath": "clientservices.cerebras.models.LLMModels",
-        "description": "clientservices.cerebras.models.LLMModels",
+        "importPath": "clientservices.chat.models.ChatServiceModels",
+        "description": "clientservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceResponseModel(BaseModel):\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    LLMData: ChatServiceDataResponseModel | None = None",
-        "detail": "clientservices.cerebras.models.LLMModels",
+        "detail": "clientservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatService",
         "kind": 6,
-        "importPath": "clientservices.cerebras.services.ChatService",
-        "description": "clientservices.cerebras.services.ChatService",
+        "importPath": "clientservices.chat.services.ChatServices",
+        "description": "clientservices.chat.services.ChatServices",
         "peekOfCode": "class ChatService(ChatServiceImpl):\n    def HandleApiStatusError(self, statusCode: int) -> ChatServiceResponseModel:\n        errorCodes = {\n            400: ChatServiceResponseStatusEnum.BAD_REQUEST,\n            401: ChatServiceResponseStatusEnum.UNAUTHROZIED,\n            403: ChatServiceResponseStatusEnum.PERMISSION_DENIED,\n            404: ChatServiceResponseStatusEnum.NOT_FOUND,\n        }\n        message = errorCodes.get(statusCode, ChatServiceResponseStatusEnum.SERVER_ERROR)\n        return ChatServiceResponseModel(status=message)",
-        "detail": "clientservices.cerebras.services.ChatService",
+        "detail": "clientservices.chat.services.ChatServices",
         "documentation": {}
     },
     {
         "label": "client",
         "kind": 5,
-        "importPath": "clientservices.cerebras.services.ChatService",
-        "description": "clientservices.cerebras.services.ChatService",
+        "importPath": "clientservices.chat.services.ChatServices",
+        "description": "clientservices.chat.services.ChatServices",
         "peekOfCode": "client = AsyncCerebras(\n    api_key=GetCerebrasApiKey(),\n    http_client=DefaultAioHttpClient(),\n)\nclass ChatService(ChatServiceImpl):\n    def HandleApiStatusError(self, statusCode: int) -> ChatServiceResponseModel:\n        errorCodes = {\n            400: ChatServiceResponseStatusEnum.BAD_REQUEST,\n            401: ChatServiceResponseStatusEnum.UNAUTHROZIED,\n            403: ChatServiceResponseStatusEnum.PERMISSION_DENIED,",
-        "detail": "clientservices.cerebras.services.ChatService",
+        "detail": "clientservices.chat.services.ChatServices",
         "documentation": {}
     },
     {
         "label": "GetCerebrasApiKey",
         "kind": 2,
-        "importPath": "clientservices.cerebras.workers.GetApiKey",
-        "description": "clientservices.cerebras.workers.GetApiKey",
+        "importPath": "clientservices.chat.workers.GetApiKey",
+        "description": "clientservices.chat.workers.GetApiKey",
         "peekOfCode": "def GetCerebrasApiKey() ->str:\n    return CEREBRAS_API_KEY",
-        "detail": "clientservices.cerebras.workers.GetApiKey",
+        "detail": "clientservices.chat.workers.GetApiKey",
         "documentation": {}
     },
     {
         "label": "CEREBRAS_API_KEY",
         "kind": 5,
-        "importPath": "clientservices.cerebras.workers.GetApiKey",
-        "description": "clientservices.cerebras.workers.GetApiKey",
+        "importPath": "clientservices.chat.workers.GetApiKey",
+        "description": "clientservices.chat.workers.GetApiKey",
         "peekOfCode": "CEREBRAS_API_KEY = cast(Any, os.getenv(\"CEREBRAS_API_KEY\"))\ndef GetCerebrasApiKey() ->str:\n    return CEREBRAS_API_KEY",
-        "detail": "clientservices.cerebras.workers.GetApiKey",
+        "detail": "clientservices.chat.workers.GetApiKey",
         "documentation": {}
     },
     {
         "label": "MistralChatMessageRoleEnum",
         "kind": 6,
-        "importPath": "clientservices.mistral.enums.ChatEnums",
-        "description": "clientservices.mistral.enums.ChatEnums",
+        "importPath": "clientservices.embedding.enums.ChatEnums",
+        "description": "clientservices.embedding.enums.ChatEnums",
         "peekOfCode": "class MistralChatMessageRoleEnum(Enum):\n    USER = \"user\"\n    SYSTEM = \"system\"\n    ASSISTENT = \"assistant\"\nclass MistralChatResponseStatusEnum(Enum):\n    ERROR  = (500,\"ERROR\")\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")",
-        "detail": "clientservices.mistral.enums.ChatEnums",
+        "detail": "clientservices.embedding.enums.ChatEnums",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseStatusEnum",
         "kind": 6,
-        "importPath": "clientservices.mistral.enums.ChatEnums",
-        "description": "clientservices.mistral.enums.ChatEnums",
+        "importPath": "clientservices.embedding.enums.ChatEnums",
+        "description": "clientservices.embedding.enums.ChatEnums",
         "peekOfCode": "class MistralChatResponseStatusEnum(Enum):\n    ERROR  = (500,\"ERROR\")\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")",
-        "detail": "clientservices.mistral.enums.ChatEnums",
+        "detail": "clientservices.embedding.enums.ChatEnums",
         "documentation": {}
     },
     {
         "label": "EmbeddingResponseEnum",
         "kind": 6,
-        "importPath": "clientservices.mistral.enums.EmbeddingEnums",
-        "description": "clientservices.mistral.enums.EmbeddingEnums",
+        "importPath": "clientservices.embedding.enums.EmbeddingEnums",
+        "description": "clientservices.embedding.enums.EmbeddingEnums",
         "peekOfCode": "class EmbeddingResponseEnum(Enum):\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")",
-        "detail": "clientservices.mistral.enums.EmbeddingEnums",
+        "detail": "clientservices.embedding.enums.EmbeddingEnums",
         "documentation": {}
     },
     {
         "label": "EmbeddingServiceImpl",
         "kind": 6,
-        "importPath": "clientservices.mistral.implementations.EmbeddingServiceimplementation",
-        "description": "clientservices.mistral.implementations.EmbeddingServiceimplementation",
-        "peekOfCode": "class EmbeddingServiceImpl(ABC):\n    @abstractmethod\n    async def ConvertTextToEmbedding(\n        self, text: list[str]\n    ) ->  EmbeddingResponseModel:\n        pass",
-        "detail": "clientservices.mistral.implementations.EmbeddingServiceimplementation",
+        "importPath": "clientservices.embedding.implementations.EmbeddingServiceimplementation",
+        "description": "clientservices.embedding.implementations.EmbeddingServiceimplementation",
+        "peekOfCode": "class EmbeddingServiceImpl(ABC):\n    @abstractmethod\n    async def ConvertTextToEmbedding(self, text: list[str]) -> EmbeddingResponseModel:\n        pass\n    @abstractmethod\n    def FindSimilarity(self, vec1: list[float], vec2: list[float]) -> float:\n        pass",
+        "detail": "clientservices.embedding.implementations.EmbeddingServiceimplementation",
         "documentation": {}
     },
     {
         "label": "MistralChatImpl",
         "kind": 6,
-        "importPath": "clientservices.mistral.implementations.MistralChatImpl",
-        "description": "clientservices.mistral.implementations.MistralChatImpl",
+        "importPath": "clientservices.embedding.implementations.MistralChatImpl",
+        "description": "clientservices.embedding.implementations.MistralChatImpl",
         "peekOfCode": "class MistralChatImpl(ABC):\n    @abstractmethod\n    async def Chat(\n        self, modelParams: MistralChatRequestModel\n    ) -> MistralChatResponseModel:\n        pass",
-        "detail": "clientservices.mistral.implementations.MistralChatImpl",
+        "detail": "clientservices.embedding.implementations.MistralChatImpl",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingImpl",
+        "kind": 6,
+        "importPath": "clientservices.embedding.implementations.RerankingImplementation",
+        "description": "clientservices.embedding.implementations.RerankingImplementation",
+        "peekOfCode": "class RerankingImpl(ABC):\n    @abstractmethod\n    async def FindRankingScore(\n        self, modelParams: RerankingRequestModel\n    ) -> RerankingResponseModel:\n        pass",
+        "detail": "clientservices.embedding.implementations.RerankingImplementation",
         "documentation": {}
     },
     {
         "label": "MistralChatRequestMessageModel",
         "kind": 6,
-        "importPath": "clientservices.mistral.models.ChatModels",
-        "description": "clientservices.mistral.models.ChatModels",
+        "importPath": "clientservices.embedding.models.ChatModels",
+        "description": "clientservices.embedding.models.ChatModels",
         "peekOfCode": "class MistralChatRequestMessageModel(BaseModel):\n    role: MistralChatMessageRoleEnum = MistralChatMessageRoleEnum.USER\n    content: str | list[str]\nclass MistralChatRequestModel(BaseModel):\n    model: str = \"mistral-small-2506\"\n    temperature: float = 0.7\n    maxTokens: int = 30000\n    stream: bool = False\n    messages: list[MistralChatRequestMessageModel]\n    responseFormat: Any | None = None",
-        "detail": "clientservices.mistral.models.ChatModels",
+        "detail": "clientservices.embedding.models.ChatModels",
         "documentation": {}
     },
     {
         "label": "MistralChatRequestModel",
         "kind": 6,
-        "importPath": "clientservices.mistral.models.ChatModels",
-        "description": "clientservices.mistral.models.ChatModels",
+        "importPath": "clientservices.embedding.models.ChatModels",
+        "description": "clientservices.embedding.models.ChatModels",
         "peekOfCode": "class MistralChatRequestModel(BaseModel):\n    model: str = \"mistral-small-2506\"\n    temperature: float = 0.7\n    maxTokens: int = 30000\n    stream: bool = False\n    messages: list[MistralChatRequestMessageModel]\n    responseFormat: Any | None = None\nclass MistralChatResponseUsageModel(BaseModel):\n    promptTokens: int\n    completionToken: int",
-        "detail": "clientservices.mistral.models.ChatModels",
+        "detail": "clientservices.embedding.models.ChatModels",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseUsageModel",
         "kind": 6,
-        "importPath": "clientservices.mistral.models.ChatModels",
-        "description": "clientservices.mistral.models.ChatModels",
+        "importPath": "clientservices.embedding.models.ChatModels",
+        "description": "clientservices.embedding.models.ChatModels",
         "peekOfCode": "class MistralChatResponseUsageModel(BaseModel):\n    promptTokens: int\n    completionToken: int\n    totalTokens: int\nclass MistralChatResponseMessageModel(BaseModel):\n    content: str\n    role: str | None = None\nclass MistralChatResponseChoiceModel(BaseModel):\n    index: int\n    message: MistralChatResponseMessageModel",
-        "detail": "clientservices.mistral.models.ChatModels",
+        "detail": "clientservices.embedding.models.ChatModels",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseMessageModel",
         "kind": 6,
-        "importPath": "clientservices.mistral.models.ChatModels",
-        "description": "clientservices.mistral.models.ChatModels",
+        "importPath": "clientservices.embedding.models.ChatModels",
+        "description": "clientservices.embedding.models.ChatModels",
         "peekOfCode": "class MistralChatResponseMessageModel(BaseModel):\n    content: str\n    role: str | None = None\nclass MistralChatResponseChoiceModel(BaseModel):\n    index: int\n    message: MistralChatResponseMessageModel\nclass MistralChatResponseModel(BaseModel):\n    id: str | None = None\n    model: str | None = None\n    usgae: MistralChatResponseUsageModel | None = None",
-        "detail": "clientservices.mistral.models.ChatModels",
+        "detail": "clientservices.embedding.models.ChatModels",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseChoiceModel",
         "kind": 6,
-        "importPath": "clientservices.mistral.models.ChatModels",
-        "description": "clientservices.mistral.models.ChatModels",
+        "importPath": "clientservices.embedding.models.ChatModels",
+        "description": "clientservices.embedding.models.ChatModels",
         "peekOfCode": "class MistralChatResponseChoiceModel(BaseModel):\n    index: int\n    message: MistralChatResponseMessageModel\nclass MistralChatResponseModel(BaseModel):\n    id: str | None = None\n    model: str | None = None\n    usgae: MistralChatResponseUsageModel | None = None\n    created: int | None = None\n    choices: list[MistralChatResponseChoiceModel] | None = None\n    status:MistralChatResponseStatusEnum",
-        "detail": "clientservices.mistral.models.ChatModels",
+        "detail": "clientservices.embedding.models.ChatModels",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseModel",
         "kind": 6,
-        "importPath": "clientservices.mistral.models.ChatModels",
-        "description": "clientservices.mistral.models.ChatModels",
+        "importPath": "clientservices.embedding.models.ChatModels",
+        "description": "clientservices.embedding.models.ChatModels",
         "peekOfCode": "class MistralChatResponseModel(BaseModel):\n    id: str | None = None\n    model: str | None = None\n    usgae: MistralChatResponseUsageModel | None = None\n    created: int | None = None\n    choices: list[MistralChatResponseChoiceModel] | None = None\n    status:MistralChatResponseStatusEnum",
-        "detail": "clientservices.mistral.models.ChatModels",
+        "detail": "clientservices.embedding.models.ChatModels",
         "documentation": {}
     },
     {
         "label": "EmbeddingUsageModel",
         "kind": 6,
-        "importPath": "clientservices.mistral.models.EmbeddingModels",
-        "description": "clientservices.mistral.models.EmbeddingModels",
+        "importPath": "clientservices.embedding.models.EmbeddingModels",
+        "description": "clientservices.embedding.models.EmbeddingModels",
         "peekOfCode": "class EmbeddingUsageModel(BaseModel):\n    promptTokens: int | None\n    completionTokens: int | None\n    totalTokens: int | None\nclass EmbeddingDataModel(BaseModel):\n    index: int | None\n    embedding: list[float] | None\nclass EmbeddingResponseModel(BaseModel):\n    status: EmbeddingResponseEnum = (\n        EmbeddingResponseEnum.VALIDATION_ERROR",
-        "detail": "clientservices.mistral.models.EmbeddingModels",
+        "detail": "clientservices.embedding.models.EmbeddingModels",
         "documentation": {}
     },
     {
         "label": "EmbeddingDataModel",
         "kind": 6,
-        "importPath": "clientservices.mistral.models.EmbeddingModels",
-        "description": "clientservices.mistral.models.EmbeddingModels",
+        "importPath": "clientservices.embedding.models.EmbeddingModels",
+        "description": "clientservices.embedding.models.EmbeddingModels",
         "peekOfCode": "class EmbeddingDataModel(BaseModel):\n    index: int | None\n    embedding: list[float] | None\nclass EmbeddingResponseModel(BaseModel):\n    status: EmbeddingResponseEnum = (\n        EmbeddingResponseEnum.VALIDATION_ERROR\n    )\n    id: str | None = None\n    model: str  | None = None\n    usage: EmbeddingUsageModel | None = None",
-        "detail": "clientservices.mistral.models.EmbeddingModels",
+        "detail": "clientservices.embedding.models.EmbeddingModels",
         "documentation": {}
     },
     {
         "label": "EmbeddingResponseModel",
         "kind": 6,
-        "importPath": "clientservices.mistral.models.EmbeddingModels",
-        "description": "clientservices.mistral.models.EmbeddingModels",
+        "importPath": "clientservices.embedding.models.EmbeddingModels",
+        "description": "clientservices.embedding.models.EmbeddingModels",
         "peekOfCode": "class EmbeddingResponseModel(BaseModel):\n    status: EmbeddingResponseEnum = (\n        EmbeddingResponseEnum.VALIDATION_ERROR\n    )\n    id: str | None = None\n    model: str  | None = None\n    usage: EmbeddingUsageModel | None = None\n    data: list[EmbeddingDataModel] | None = None",
-        "detail": "clientservices.mistral.models.EmbeddingModels",
+        "detail": "clientservices.embedding.models.EmbeddingModels",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingRequestModel",
+        "kind": 6,
+        "importPath": "clientservices.embedding.models.RerankingModels",
+        "description": "clientservices.embedding.models.RerankingModels",
+        "peekOfCode": "class RerankingRequestModel(BaseModel):\n    model: str = \"jina-reranker-m0\"\n    query: str\n    docs: list[str]\n    topN: int = 5\n    returnDocuments: bool = False\nclass RerankingResponseChoiseModel(BaseModel):\n    index: int\n    score: float\nclass RerankingUsageModel(BaseModel):",
+        "detail": "clientservices.embedding.models.RerankingModels",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingResponseChoiseModel",
+        "kind": 6,
+        "importPath": "clientservices.embedding.models.RerankingModels",
+        "description": "clientservices.embedding.models.RerankingModels",
+        "peekOfCode": "class RerankingResponseChoiseModel(BaseModel):\n    index: int\n    score: float\nclass RerankingUsageModel(BaseModel):\n    totalTokens: int\nclass RerankingResponseModel(BaseModel):\n    response: list[RerankingResponseChoiseModel] | None = None\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    usage: RerankingUsageModel | None = None",
+        "detail": "clientservices.embedding.models.RerankingModels",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingUsageModel",
+        "kind": 6,
+        "importPath": "clientservices.embedding.models.RerankingModels",
+        "description": "clientservices.embedding.models.RerankingModels",
+        "peekOfCode": "class RerankingUsageModel(BaseModel):\n    totalTokens: int\nclass RerankingResponseModel(BaseModel):\n    response: list[RerankingResponseChoiseModel] | None = None\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    usage: RerankingUsageModel | None = None",
+        "detail": "clientservices.embedding.models.RerankingModels",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingResponseModel",
+        "kind": 6,
+        "importPath": "clientservices.embedding.models.RerankingModels",
+        "description": "clientservices.embedding.models.RerankingModels",
+        "peekOfCode": "class RerankingResponseModel(BaseModel):\n    response: list[RerankingResponseChoiseModel] | None = None\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    usage: RerankingUsageModel | None = None",
+        "detail": "clientservices.embedding.models.RerankingModels",
         "documentation": {}
     },
     {
         "label": "EmbeddingService",
         "kind": 6,
-        "importPath": "clientservices.mistral.services.EmbeddingService",
-        "description": "clientservices.mistral.services.EmbeddingService",
-        "peekOfCode": "class EmbeddingService:\n    async def ConvertTextToEmbedding(self, text: list[str]) -> EmbeddingResponseModel:\n        try:\n            res: EmbeddingResponse = await mistralClient.embeddings.create_async(\n                model=\"mistral-embed\",\n                inputs=text,\n            )\n            data = [\n                EmbeddingDataModel(\n                    embedding=obj.embedding,",
-        "detail": "clientservices.mistral.services.EmbeddingService",
+        "importPath": "clientservices.embedding.services.EmbeddingService",
+        "description": "clientservices.embedding.services.EmbeddingService",
+        "peekOfCode": "class EmbeddingService(EmbeddingServiceImpl):\n    async def ConvertTextToEmbedding(self, text: list[str]) -> EmbeddingResponseModel:\n        try:\n            res: EmbeddingResponse = await mistralClient.embeddings.create_async(\n                model=\"mistral-embed\",\n                inputs=text,\n            )\n            data = [\n                EmbeddingDataModel(\n                    embedding=obj.embedding,",
+        "detail": "clientservices.embedding.services.EmbeddingService",
         "documentation": {}
     },
     {
         "label": "mistralClient",
         "kind": 5,
-        "importPath": "clientservices.mistral.services.EmbeddingService",
-        "description": "clientservices.mistral.services.EmbeddingService",
-        "peekOfCode": "mistralClient = Mistral(api_key=GetMistralApiKey())\nclass EmbeddingService:\n    async def ConvertTextToEmbedding(self, text: list[str]) -> EmbeddingResponseModel:\n        try:\n            res: EmbeddingResponse = await mistralClient.embeddings.create_async(\n                model=\"mistral-embed\",\n                inputs=text,\n            )\n            data = [\n                EmbeddingDataModel(",
-        "detail": "clientservices.mistral.services.EmbeddingService",
+        "importPath": "clientservices.embedding.services.EmbeddingService",
+        "description": "clientservices.embedding.services.EmbeddingService",
+        "peekOfCode": "mistralClient = Mistral(api_key=GetMistralApiKey())\nclass EmbeddingService(EmbeddingServiceImpl):\n    async def ConvertTextToEmbedding(self, text: list[str]) -> EmbeddingResponseModel:\n        try:\n            res: EmbeddingResponse = await mistralClient.embeddings.create_async(\n                model=\"mistral-embed\",\n                inputs=text,\n            )\n            data = [\n                EmbeddingDataModel(",
+        "detail": "clientservices.embedding.services.EmbeddingService",
         "documentation": {}
     },
     {
         "label": "MistralChatService",
         "kind": 6,
-        "importPath": "clientservices.mistral.services.MistralChatService",
-        "description": "clientservices.mistral.services.MistralChatService",
+        "importPath": "clientservices.embedding.services.MistralChatService",
+        "description": "clientservices.embedding.services.MistralChatService",
         "peekOfCode": "class MistralChatService(MistralChatImpl):\n    async def Chat(\n        self, modelParams: MistralChatRequestModel\n    ) -> MistralChatResponseModel:\n        try:\n            messages: Any = []\n            for message in modelParams.messages:\n                messages.append(\n                    {\"role\": message.role.value, \"content\": message.content}\n                )",
-        "detail": "clientservices.mistral.services.MistralChatService",
+        "detail": "clientservices.embedding.services.MistralChatService",
         "documentation": {}
     },
     {
         "label": "mistral",
         "kind": 5,
-        "importPath": "clientservices.mistral.services.MistralChatService",
-        "description": "clientservices.mistral.services.MistralChatService",
+        "importPath": "clientservices.embedding.services.MistralChatService",
+        "description": "clientservices.embedding.services.MistralChatService",
         "peekOfCode": "mistral = Mistral(api_key=GetMistralApiKey())\nclass MistralChatService(MistralChatImpl):\n    async def Chat(\n        self, modelParams: MistralChatRequestModel\n    ) -> MistralChatResponseModel:\n        try:\n            messages: Any = []\n            for message in modelParams.messages:\n                messages.append(\n                    {\"role\": message.role.value, \"content\": message.content}",
-        "detail": "clientservices.mistral.services.MistralChatService",
+        "detail": "clientservices.embedding.services.MistralChatService",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingService",
+        "kind": 6,
+        "importPath": "clientservices.embedding.services.RerankingService",
+        "description": "clientservices.embedding.services.RerankingService",
+        "peekOfCode": "class RerankingService(RerankingImpl):\n    async def FindRankingScore(\n        self, modelParams: RerankingRequestModel\n    ) -> RerankingResponseModel:\n        try:\n            data: Any = {\n                \"model\": modelParams.model,\n                \"query\": modelParams.query,\n                \"documents\": modelParams.docs,\n                \"top_n\": modelParams.topN,",
+        "detail": "clientservices.embedding.services.RerankingService",
+        "documentation": {}
+    },
+    {
+        "label": "jinaClient",
+        "kind": 5,
+        "importPath": "clientservices.embedding.services.RerankingService",
+        "description": "clientservices.embedding.services.RerankingService",
+        "peekOfCode": "jinaClient = requests.Session()\njinaClient.headers.update(\n    {\n        \"Authorization\": f\"Bearer {GetJinaApiKey()}\",\n        \"Content-Type\": \"application/json\",\n    }\n)\nclass RerankingService(RerankingImpl):\n    async def FindRankingScore(\n        self, modelParams: RerankingRequestModel",
+        "detail": "clientservices.embedding.services.RerankingService",
         "documentation": {}
     },
     {
         "label": "GetMistralApiKey",
         "kind": 2,
-        "importPath": "clientservices.mistral.workers.GetApiKey",
-        "description": "clientservices.mistral.workers.GetApiKey",
-        "peekOfCode": "def GetMistralApiKey() ->str:\n    return Mistral_API_KEY",
-        "detail": "clientservices.mistral.workers.GetApiKey",
+        "importPath": "clientservices.embedding.workers.GetApiKey",
+        "description": "clientservices.embedding.workers.GetApiKey",
+        "peekOfCode": "def GetMistralApiKey() -> str:\n    return MISTARL_API_KEY\ndef GetJinaApiKey() -> str:\n    return JINA_API_KEY",
+        "detail": "clientservices.embedding.workers.GetApiKey",
         "documentation": {}
     },
     {
-        "label": "Mistral_API_KEY",
+        "label": "GetJinaApiKey",
+        "kind": 2,
+        "importPath": "clientservices.embedding.workers.GetApiKey",
+        "description": "clientservices.embedding.workers.GetApiKey",
+        "peekOfCode": "def GetJinaApiKey() -> str:\n    return JINA_API_KEY",
+        "detail": "clientservices.embedding.workers.GetApiKey",
+        "documentation": {}
+    },
+    {
+        "label": "MISTARL_API_KEY",
         "kind": 5,
-        "importPath": "clientservices.mistral.workers.GetApiKey",
-        "description": "clientservices.mistral.workers.GetApiKey",
-        "peekOfCode": "Mistral_API_KEY = cast(Any, os.getenv(\"MISTRAL_API_KEY\"))\ndef GetMistralApiKey() ->str:\n    return Mistral_API_KEY",
-        "detail": "clientservices.mistral.workers.GetApiKey",
+        "importPath": "clientservices.embedding.workers.GetApiKey",
+        "description": "clientservices.embedding.workers.GetApiKey",
+        "peekOfCode": "MISTARL_API_KEY = cast(Any, os.getenv(\"MISTRAL_API_KEY\"))\nJINA_API_KEY = cast(Any, os.getenv(\"JINA_API_KEY\"))\ndef GetMistralApiKey() -> str:\n    return MISTARL_API_KEY\ndef GetJinaApiKey() -> str:\n    return JINA_API_KEY",
+        "detail": "clientservices.embedding.workers.GetApiKey",
+        "documentation": {}
+    },
+    {
+        "label": "JINA_API_KEY",
+        "kind": 5,
+        "importPath": "clientservices.embedding.workers.GetApiKey",
+        "description": "clientservices.embedding.workers.GetApiKey",
+        "peekOfCode": "JINA_API_KEY = cast(Any, os.getenv(\"JINA_API_KEY\"))\ndef GetMistralApiKey() -> str:\n    return MISTARL_API_KEY\ndef GetJinaApiKey() -> str:\n    return JINA_API_KEY",
+        "detail": "clientservices.embedding.workers.GetApiKey",
         "documentation": {}
     },
     {
@@ -1850,7 +2133,7 @@
         "kind": 6,
         "importPath": "graphrag.implementations.FileChunkGragImpl",
         "description": "graphrag.implementations.FileChunkGragImpl",
-        "peekOfCode": "class FileChunkGragImpl(ABC):\n    @abstractmethod\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        pass\n    async def HandleKgExatrctProcess(self, file: str):\n        pass",
+        "peekOfCode": "class FileChunkGragImpl(ABC):\n    @abstractmethod\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        pass\n    @abstractmethod\n    async def handleKgChunkRelationExtarctProcess(\n        self, file: str\n    ) -> HandleChunkRelationExtractResponseModel:",
         "detail": "graphrag.implementations.FileChunkGragImpl",
         "documentation": {}
     },
@@ -1859,7 +2142,16 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class LLMGragEntityResponseModel(BaseModel):\n    entities: list[list[str]]\n    relations: list[list[str]]\n    relationshipsEntities: list[list[list[str]]]\n    chunk: list[str]\nclass ChunkTextsModel(BaseModel):\n    id: UUID\n    text: str\n    vector:list[float] | None  = None\nclass ChunkRelationModel(BaseModel):",
+        "peekOfCode": "class LLMGragEntityResponseModel(BaseModel):\n    relations: list[list[str]]\n    relationshipsEntities: list[list[list[str]]]\n    chunk: list[str]\nclass ChunkNodeModel(BaseModel):\n    score: float\n    chunkId: UUID\nclass ChunkTextsModel(BaseModel):\n    id: UUID\n    text: str",
+        "detail": "graphrag.models.FileChunkGragModels",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkNodeModel",
+        "kind": 6,
+        "importPath": "graphrag.models.FileChunkGragModels",
+        "description": "graphrag.models.FileChunkGragModels",
+        "peekOfCode": "class ChunkNodeModel(BaseModel):\n    score: float\n    chunkId: UUID\nclass ChunkTextsModel(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None\n    entities: list[str]\n    questions: list[str]\n    questionVectors: list[list[float]] | None = []",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
@@ -1868,7 +2160,16 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkTextsModel(BaseModel):\n    id: UUID\n    text: str\n    vector:list[float] | None  = None\nclass ChunkRelationModel(BaseModel):\n    realtion: str\n    realtionEntites: list[str]\nclass ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]",
+        "peekOfCode": "class ChunkTextsModel(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None\n    entities: list[str]\n    questions: list[str]\n    questionVectors: list[list[float]] | None = []\n    matchedNodes: list[ChunkNodeModel] | None = None\nclass RelationNodeModel(BaseModel):\n    realtionId: UUID",
+        "detail": "graphrag.models.FileChunkGragModels",
+        "documentation": {}
+    },
+    {
+        "label": "RelationNodeModel",
+        "kind": 6,
+        "importPath": "graphrag.models.FileChunkGragModels",
+        "description": "graphrag.models.FileChunkGragModels",
+        "peekOfCode": "class RelationNodeModel(BaseModel):\n    realtionId: UUID\n    score: float\nclass ChunkRelationModel(BaseModel):\n    id: UUID\n    realtion: str\n    realtionEntites: list[str]\n    relationVector: list[float] | None = None\n    matchedRelationNodes: list[RelationNodeModel] | None = None\nclass ChunkRelationsModel(BaseModel):",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
@@ -1877,7 +2178,7 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkRelationModel(BaseModel):\n    realtion: str\n    realtionEntites: list[str]\nclass ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]\nclass ChunkEntitiesModel(BaseModel):\n    chunkId: UUID\n    chunkEntities: list[str]\nclass ChunkTextVectors",
+        "peekOfCode": "class ChunkRelationModel(BaseModel):\n    id: UUID\n    realtion: str\n    realtionEntites: list[str]\n    relationVector: list[float] | None = None\n    matchedRelationNodes: list[RelationNodeModel] | None = None\nclass ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]\nclass HandleChunkRelationExtractResponseModel(BaseModel):",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
@@ -1886,25 +2187,25 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]\nclass ChunkEntitiesModel(BaseModel):\n    chunkId: UUID\n    chunkEntities: list[str]\nclass ChunkTextVectors",
+        "peekOfCode": "class ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]\nclass HandleChunkRelationExtractResponseModel(BaseModel):\n    chunkTexts: list[ChunkTextsModel]\n    chunkRelations: list[ChunkRelationsModel]\nclass AllRelationsModel(BaseModel):\n    id: UUID\n    text: str\n    chunkId: UUID",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
     {
-        "label": "ChunkEntitiesModel",
+        "label": "HandleChunkRelationExtractResponseModel",
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkEntitiesModel(BaseModel):\n    chunkId: UUID\n    chunkEntities: list[str]\nclass ChunkTextVectors",
+        "peekOfCode": "class HandleChunkRelationExtractResponseModel(BaseModel):\n    chunkTexts: list[ChunkTextsModel]\n    chunkRelations: list[ChunkRelationsModel]\nclass AllRelationsModel(BaseModel):\n    id: UUID\n    text: str\n    chunkId: UUID\n    matchedRelationNodes: list[RelationNodeModel] | None = None",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
     {
-        "label": "ChunkTextVector",
+        "label": "AllRelationsModel",
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkTextVectors",
+        "peekOfCode": "class AllRelationsModel(BaseModel):\n    id: UUID\n    text: str\n    chunkId: UUID\n    matchedRelationNodes: list[RelationNodeModel] | None = None",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
@@ -1918,11 +2219,11 @@
         "documentation": {}
     },
     {
-        "label": "ChatService",
+        "label": "chatService",
         "kind": 5,
         "importPath": "graphrag.services.FieChunkGrag",
         "description": "graphrag.services.FieChunkGrag",
-        "peekOfCode": "ChatService = ChatService()\nembeddingService = EmbeddingService()\nclass FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")",
+        "peekOfCode": "chatService = ChatService()\nembeddingService = EmbeddingService()\nrerankingService = RerankingService()\nclass FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)",
         "detail": "graphrag.services.FieChunkGrag",
         "documentation": {}
     },
@@ -1931,17 +2232,26 @@
         "kind": 5,
         "importPath": "graphrag.services.FieChunkGrag",
         "description": "graphrag.services.FieChunkGrag",
-        "peekOfCode": "embeddingService = EmbeddingService()\nclass FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")",
+        "peekOfCode": "embeddingService = EmbeddingService()\nrerankingService = RerankingService()\nclass FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")",
+        "detail": "graphrag.services.FieChunkGrag",
+        "documentation": {}
+    },
+    {
+        "label": "rerankingService",
+        "kind": 5,
+        "importPath": "graphrag.services.FieChunkGrag",
+        "description": "graphrag.services.FieChunkGrag",
+        "peekOfCode": "rerankingService = RerankingService()\nclass FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> list[str]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")",
         "detail": "graphrag.services.FieChunkGrag",
         "documentation": {}
     },
     {
         "label": "ExtractEntityGragSystemPrompt",
         "kind": 5,
-        "importPath": "graphrag.utils.GragSystemPropts",
-        "description": "graphrag.utils.GragSystemPropts",
+        "importPath": "graphrag.utils.FileGragSystemPropts",
+        "description": "graphrag.utils.FileGragSystemPropts",
         "peekOfCode": "ExtractEntityGragSystemPrompt = r\"\"\"\nTASK\nReturn ONLY valid JSON per the schema for ONE input chunk.\nINPUT\n{ \"chunk\": \"...\" }\nOUTPUT (conceptual)\n{\n  \"response\": {\n    \"entities\": [\"...\"],\n    \"relations\": [\"...\"],   // short declarative KG-style relations",
-        "detail": "graphrag.utils.GragSystemPropts",
+        "detail": "graphrag.utils.FileGragSystemPropts",
         "documentation": {}
     },
     {
@@ -2273,7 +2583,7 @@
         "kind": 5,
         "importPath": "k",
         "description": "k",
-        "peekOfCode": "a = FileChunkGragService()\nasync def main():\n    await a.HandleKgExatrctProcess(\"opd_manual.pdf\")\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
+        "peekOfCode": "a = FileChunkGragService()\nasync def main():\n    await a.HandleGraphBuildingProcess(\"opd_manual.pdf\")\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
         "detail": "k",
         "documentation": {}
     },
@@ -2282,7 +2592,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "DATABASE_CONNECTION_STRING = os.getenv(\"DATABASE_CONNECTION_STRING\", \"\")\npsqlDb = PsqlDb(DATABASE_CONNECTION_STRING)     \n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    # await psqlDb.connect()\n    yield\n    # await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,",
+        "peekOfCode": "DATABASE_CONNECTION_STRING = os.getenv(\"DATABASE_CONNECTION_STRING\", \"\")\npsqlDb = PsqlDb(DATABASE_CONNECTION_STRING)\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    # await psqlDb.connect()\n    yield\n    # await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,",
         "detail": "main",
         "documentation": {}
     },
@@ -2291,7 +2601,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)     \n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    # await psqlDb.connect()\n    yield\n    # await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],",
+        "peekOfCode": "psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    # await psqlDb.connect()\n    yield\n    # await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],",
         "detail": "main",
         "documentation": {}
     },

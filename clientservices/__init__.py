@@ -35,6 +35,7 @@ from .embedding import (
     RerankingResponseChoiseModel,
     RerankingResponseModel,
     RerankingUsageModel,
+    GetJinaApiKey
 )
 
 
@@ -73,4 +74,5 @@ __all__ = [
     "RerankingResponseChoiseModel",
     "RerankingResponseModel",
     "RerankingUsageModel",
+    "GetJinaApiKey"
 ]

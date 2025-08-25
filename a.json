@@ -1,2 +1,21 @@
-The Outpatient Department (OPD) module on the HMIS website is designed for management of outpatient services in healthcare facilities. Here are some key features and functions of the OPD module:  Patient Registration : Allows for the quick and efficient registration of patients, capturing essential demographic and medical history information.  Consultation Records : Enables doctors to document and track patient consultations, diagnosis, and prescribed treatments or medications.  Laboratory and Diagnostic Integration : Order laboratory and diagnostic services to Laboratories and retrieve
-[[RerankingResponseChoiseModel(index=2, score=0.9406621404432519), RerankingResponseChoiseModel(index=3, score=0.8960290325536018), RerankingResponseChoiseModel(index=1, score=0.8881584157331672)], [RerankingResponseChoiseModel(index=4, score=0.8907504577496148), RerankingResponseChoiseModel(index=1, score=0.8894381535472538), RerankingResponseChoiseModel(index=2, score=0.885458723352741)], [RerankingResponseChoiseModel(index=3, score=0.8731272714133471), RerankingResponseChoiseModel(index=1, score=0.8699424496788684), RerankingResponseChoiseModel(index=2, score=0.8601715154502759)]]
+[{'id': UUID('97678b5c-716b-46c8-9285-17352fa24ecf'), 'text': 'The Outpatient Department (OPD) module on the HMIS website is designed for management of outpatient services in healthcare facilities. Here are some key features and functions of the OPD module: \uf046 Patient Registration : Allows for the quick and efficient registration of patients, capturing essential demographic and medical history information. \uf046 Consultation Records : Enables doctors to document and track patient consultations, diagnosis, and prescribed treatments or medications. \uf046 Laboratory and Diagnostic Integration : Order laboratory and diagnostic services to Laboratories and retrieve'}, 
+
+
+
+
+
+{'id': UUID('f9d66bb5-9265-40a0-bf52-b15ca4b63164'), 'text': 'test results, helping in the timely diagnosis and treatment of patients. \uf046 Inventory Integration : Order drugs and items to pharmacy directly from doctor desk current stock details can be viewed by doctor helping to raising indent for drugs form OPD desk. \uf046 Reporting and Analytics : Provides tools for generating various reports and analytics, helping Doctors monitor service delivery and identify areas for improvement. \uf046 Ordering to other services: Ordering other services in Hospital directly from OPD doctor desk like, Surgeries, Procedures, Services, referral to other departments / Hospitals,'}, 
+
+
+
+{'id': UUID('f2f8463e-26e5-4a39-acdf-54415ae0f059'), 'text': 'etc. These fea
+tures help improve the efficiency and quality of outpatient care, reduce wait times, and enhance patient satisfaction. Benefits of the OPD Doctor Desk \uf046 Improved Efficiency: Streamlines various administrative and clinical tasks, allowing doctors to focus more on patient care. \uf046 Enhanced Patient Care: Provides comprehensive patient information at the point of care, supporting better clinical decisions. \uf046 Reduced Errors: Minimizes errors associated with manual data entry and paper records. \uf046 Patient Satisfaction: Enhances patient satisfaction through timely services, reduced wait'},
+
+
+
+{'id': UUID('55ded55e-5565-4676-bc32-004074691724'), 'text': 'times, and better communication. OPD Desk lite page The OPD Doctor Desk is a vital component of the HMIS, aiming to improve the overall quality of outpatient services and ensure a seamless experience for both healthcare providers and patients. <<IMAGE-1>> 1.1 View Total Registered and Attended Patients: View real-time data on the total number of patients registered in the current Department / Unit. Additionally, it provides information on how many of those patients have been attended to. 1.2. Responsive View Button: Clicking on this button opens a new tab in the browser, allowing the user to'}, 
+
+
+
+
+{'id': UUID('bf5f21c4-72ea-4f8b-aca3-26c3046cb93b'), 'text': 'view a separate list for same or another department simultaneously. This facilitates parallel management and provides a full-page view of the OPD desk for better visibility on PC and mobile browsers. 1.3. Dept/Unit Dropdown: The dropdown menu lists the Departments/Units based on the access assigned by the administrator. or adding or removing Departments/Units, users should contact the Hospital Administration to update access permissions. This dropdown allows doctors to switch between departments and rooms according to their assigned access. The list is alphabetically ordered, with the first'}]

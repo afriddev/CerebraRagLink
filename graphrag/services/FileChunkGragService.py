@@ -1,7 +1,7 @@
 import re
 import unicodedata
 from typing import Any, Tuple, cast
-from clientservices import (
+from aiservices import (
     ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel,
     ChatService,
     ChatServiceRequestModel,

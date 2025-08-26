@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from contextlib import asynccontextmanager
 from dbservices import PsqlDb
-from clientservices import RerankingService
+from aiservices import RerankingService
 
 load_dotenv()
 

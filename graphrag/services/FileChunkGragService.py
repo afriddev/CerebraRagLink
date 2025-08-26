@@ -1,6 +1,6 @@
 import re
 import unicodedata
-from typing import Any, cast
+from typing import Any, Tuple, cast
 from clientservices import (
     ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel,
     ChatService,
@@ -28,8 +28,10 @@ from graphrag.models import (
     ChunkRelationModel,
     HandleChunkRelationExtractResponseModel,
     ChunkNodeModel,
+    ChunkImagesData,
 )
 from uuid import UUID, uuid4
+
 
 chatService = ChatService()
 embeddingService = EmbeddingService()
@@ -40,7 +42,7 @@ class FileChunkGragService(FileChunkGragImpl):
 
     def ExatrctChunkFromText(
         self, file: str, chunkSize: int, chunkOLSize: int | None = 0
-    ) -> list[str]:
+    ) -> Tuple[list[str], list[str]]:
         _PAGE_RE = re.compile(r"\bpage\s+\d+\s+of\s+\d+\b", re.IGNORECASE)
         _IMAGE_RE = re.compile(r"\s*(<<IMAGE-\d+>>)\s*", re.IGNORECASE)
         _BULLET_LINE_RE = re.compile(r"^[\s•\-\*\u2022\uf0b7FÞ]+(?=\S)", re.MULTILINE)
@@ -87,7 +89,7 @@ class FileChunkGragService(FileChunkGragImpl):
                     merged = [carry]
             return merged
 
-        text = ExtractTextFromDoc(file)
+        text, images = ExtractTextFromDoc(file)
         text = _normalizeText(text)
         splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunkSize,
@@ -98,10 +100,13 @@ class FileChunkGragService(FileChunkGragImpl):
         )
         chunks = splitter.split_text(text)
         chunks = _mergeTinyChunks(chunks, minChars=max(200, chunkSize // 3))
-        return chunks
+        return (
+            chunks,
+            images,
+        )
 
     async def handleKgChunkRelationExtarctProcess(self, file: str):
-        chunks = self.ExatrctChunkFromText(file, 600)
+        chunks, images = self.ExatrctChunkFromText(file, 600)
         chunkTexts: list[ChunkTextsModel] = []
         chunkRealtions: list[ChunkRelationsModel] = []
 
@@ -122,7 +127,7 @@ class FileChunkGragService(FileChunkGragImpl):
                     model="qwen-3-235b-a22b-instruct-2507",
                     maxCompletionTokens=30000,
                     messages=messages,
-                    temperature=0.4,
+                    temperature=0.2,
                     responseFormat=ChatServiceCerebrasFormatModel(
                         type="json_schema",
                         jsonSchema=ChatServiceCerebrasFormatJsonSchemaModel(
@@ -156,6 +161,25 @@ class FileChunkGragService(FileChunkGragImpl):
                                             "chunk": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
                                                 type="string"
                                             ),
+                                            "sections": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "number": {"type": "string"},
+                                                        "title": {"type": "string"},
+                                                        "image": {"type": "string"},
+                                                        "description": {
+                                                            "type": "string"
+                                                        },
+                                                    },
+                                                    "required": [
+                                                        "number",
+                                                        "title",
+                                                        "description",
+                                                    ],
+                                                },
+                                            },
                                         },
                                         required=[
                                             "entities",
@@ -163,6 +187,7 @@ class FileChunkGragService(FileChunkGragImpl):
                                             "relationshipsEntities",
                                             "chunk",
                                             "questions",
+                                            "sections",
                                         ],
                                         additionalProperties=False,
                                     )
@@ -186,6 +211,25 @@ class FileChunkGragService(FileChunkGragImpl):
                     questions=chunkResponse.get("questions"),
                 )
             )
+
+            imageData: list[ChunkImagesData] = []
+
+            for imgData in chunkResponse.get("sections"):
+                image = ""
+                imagePlaceholder = imgData.get("image")
+                if imagePlaceholder != "":
+                    imageIndex = int(re.sub(r"\D", "", imagePlaceholder)) - 1
+                    image = images[imageIndex]
+                imageData.append(
+                    ChunkImagesData(
+                        description=imgData.get("description"),
+                        image=image,
+                        sectionNumber=imgData.get("number"),
+                        title=imgData.get("title"),
+                    )
+                )
+            chunkTexts[start].images = imageData
+
             chunkRelations: list[ChunkRelationModel] = []
             for relation, relationEntities in zip(
                 chunkResponse.get("relations"),
@@ -289,7 +333,7 @@ class FileChunkGragService(FileChunkGragImpl):
             docsIds: list[UUID] = []
             if topResultsFromFaiss.indeces is not None:
                 for index2 in topResultsFromFaiss.indeces:
-                    if index2 != -1 and index2 != index: 
+                    if index2 != -1 and index2 != index:
                         docs.append(chunksRelations.chunkTexts[index2].text)
                         docsIds.append(chunksRelations.chunkTexts[index2].id)
 

@@ -7,10 +7,8 @@ async def main():
 
     response = await a.HandleChunksGraphBuildingProcess("opd_manual.pdf")
     for i in response.chunkTexts:
-        print(i.id)
         print(i.text)
-        print(i.questions)
-        print(i.matchedNodes)
+        print(i.images)
 
 
 if __name__ == "__main__":

@@ -2,12 +2,6 @@ from pydantic import BaseModel
 from uuid import UUID
 
 
-class LLMGragEntityResponseModel(BaseModel):
-    relations: list[list[str]]
-    relationshipsEntities: list[list[list[str]]]
-    chunk: list[str]
-
-
 class ChunkNodeModel(BaseModel):
     score: float
     chunkId: UUID
@@ -43,6 +37,6 @@ class ChunkRelationsModel(BaseModel):
     chunkRelations: list[ChunkRelationModel]
 
 
-class HandleChunkRelationExtractResponseModel(BaseModel):
+class BuildGragFromDocResponseModel(BaseModel):
     chunkTexts: list[ChunkTextsModel]
     chunkRelations: list[ChunkRelationsModel]

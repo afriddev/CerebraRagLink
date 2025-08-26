@@ -1,11 +1,11 @@
-from graphragservices import FileChunkGragService
+from graphragservices import BuildGragFromDocService
 
-a = FileChunkGragService()
+a = BuildGragFromDocService()
 
 
 async def main():
 
-    response = await a.HandleChunksGraphBuildingProcess("./others/opd_manual.pdf")
+    response = await a.BuildGragFromDocProcess("./others/opd_manual.pdf")
     for i in response.chunkTexts:
         print(i.text)
         print(i.images)

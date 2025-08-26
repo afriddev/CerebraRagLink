@@ -17,16 +17,18 @@ from aiservices import (
     RerankingResponseModel,
     FindTopKresultsFromVectorsRequestModel,
 )
-from graphragservices.implementations import FileChunkGragImpl
+from graphragservices.implementations import BuildGragFromDocServiceImpl
 from utils import ExtractTextFromDoc
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from graphragservices.utils.FileGragSystemPropts import ExtractEntityGragSystemPrompt
+from graphragservices.utils.FileGragServiceSystemPropts import (
+    ExtractEntityGragSystemPrompt,
+)
 import json
 from graphragservices.models import (
     ChunkRelationsModel,
     ChunkTextsModel,
     ChunkRelationModel,
-    HandleChunkRelationExtractResponseModel,
+    BuildGragFromDocResponseModel,
     ChunkNodeModel,
     ChunkImagesData,
 )
@@ -45,7 +47,7 @@ cred = credentials.Certificate("./others/firebaseCred.json")
 firebase_admin.initialize_app(cred, {"storageBucket": "testproject-b1efd.appspot.com"})
 
 
-class FileChunkGragService(FileChunkGragImpl):
+class BuildGragFromDocService(BuildGragFromDocServiceImpl):
 
     def ExatrctChunkFromText(
         self, file: str, chunkSize: int, chunkOLSize: int | None = 0
@@ -190,11 +192,6 @@ class FileChunkGragService(FileChunkGragImpl):
                                                             "type": "string"
                                                         },
                                                     },
-                                                    "required": [
-                                                        "number",
-                                                        "title",
-                                                        "description",
-                                                    ],
                                                 },
                                             },
                                         },
@@ -234,7 +231,7 @@ class FileChunkGragService(FileChunkGragImpl):
             for imgData in chunkResponse.get("sections"):
                 image = ""
                 imagePlaceholder = imgData.get("image")
-                if imagePlaceholder != "":
+                if imagePlaceholder is not None and imagePlaceholder != "":
                     imageIndex = int(re.sub(r"\D", "", imagePlaceholder)) - 1
 
                     image = images[imageIndex]
@@ -242,14 +239,15 @@ class FileChunkGragService(FileChunkGragImpl):
                         base64Str=image, folder="opdImages"
                     )
                     image = imageUrl
-                imageData.append(
-                    ChunkImagesData(
-                        description=imgData.get("description"),
-                        image=image,
-                        sectionNumber=float(imgData.get("number")),
-                        title=imgData.get("title"),
+                    imageData.append(
+                        ChunkImagesData(
+                            description=imgData.get("description"),
+                            image=image,
+                            sectionNumber=float(imgData.get("number")),
+                            title=imgData.get("title"),
+                        )
                     )
-                )
+
             chunkTexts[start].images = imageData
 
             chunkRelations: list[ChunkRelationModel] = []
@@ -264,6 +262,8 @@ class FileChunkGragService(FileChunkGragImpl):
                         id=uuid4(),
                     )
                 )
+
+
             chunkRealtions.append(
                 ChunkRelationsModel(chunkId=chunkId, chunkRelations=chunkRelations)
             )
@@ -325,14 +325,12 @@ class FileChunkGragService(FileChunkGragImpl):
                             index3 + index4
                         ].embedding
 
-        return HandleChunkRelationExtractResponseModel(
+        return BuildGragFromDocResponseModel(
             chunkTexts=chunkTexts, chunkRelations=chunkRealtions
         )
 
-    async def HandleChunksGraphBuildingProcess(
-        self, file: str
-    ) -> HandleChunkRelationExtractResponseModel:
-        chunksRelations: HandleChunkRelationExtractResponseModel = (
+    async def BuildGragFromDocProcess(self, file: str) -> BuildGragFromDocResponseModel:
+        chunksRelations: BuildGragFromDocResponseModel = (
             await self.HandleKgChunkRelationExtarctProcess(file)
         )
 

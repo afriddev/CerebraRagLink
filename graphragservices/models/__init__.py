@@ -1,20 +1,18 @@
-from .FileChunkGragModels import (
-    LLMGragEntityResponseModel,
+from .BuildGragFromDocServiceModels import (
     ChunkRelationsModel,
     ChunkTextsModel,
     ChunkRelationModel,
-    HandleChunkRelationExtractResponseModel,
+    BuildGragFromDocResponseModel,
     ChunkNodeModel,
     ChunkImagesData
 )
 
 
 __all__ = [
-    "LLMGragEntityResponseModel",
     "ChunkTextsModel",
     "ChunkRelationsModel",
     "ChunkRelationModel",
-    "HandleChunkRelationExtractResponseModel",
+    "BuildGragFromDocResponseModel",
     "ChunkNodeModel",
     "ChunkImagesData"
 ]

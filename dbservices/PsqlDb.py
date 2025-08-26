@@ -19,9 +19,7 @@ class PsqlDb:
             await register_vector(conn)
 
         self.pool = await asyncpg.create_pool(
-            dsn=self.db_url,
-            statement_cache_size=0,
-            init=_init
+            dsn=self.db_url, statement_cache_size=0, init=_init
         )
 
     async def close(self) -> None:
@@ -30,10 +28,14 @@ class PsqlDb:
 
     async def get_connection(self) -> asyncpg.Connection:
         if self.pool is None:
-            raise RuntimeError("Connection pool is not initialized. Call connect() first.")
+            raise RuntimeError(
+                "Connection pool is not initialized. Call connect() first."
+            )
         return await self.pool.acquire()
 
     async def release_connection(self, conn: asyncpg.Connection) -> None:
         if self.pool is None:
-            raise RuntimeError("Connection pool is not initialized. Call connect() first.")
+            raise RuntimeError(
+                "Connection pool is not initialized. Call connect() first."
+            )
         await self.pool.release(conn)

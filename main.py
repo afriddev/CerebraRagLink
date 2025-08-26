@@ -5,6 +5,8 @@ from dotenv import load_dotenv
 from contextlib import asynccontextmanager
 from dbservices import PsqlDb
 from aiservices import RerankingService
+from server import GragDocRouter
+
 
 load_dotenv()
 
@@ -14,9 +16,9 @@ psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # await psqlDb.connect()
+    await psqlDb.connect()
     yield
-    # await psqlDb.close()
+    await psqlDb.close()
 
 
 server = FastAPI(lifespan=lifespan)
@@ -28,9 +30,10 @@ server.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+server.include_router(GragDocRouter, prefix="/api/v1")
 RerankingService()
 
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("main:server", host="192.168.167.117", port=8001, reload=False)
+    uvicorn.run("main:server", host="0.0.0.0", port=8001, reload=False)

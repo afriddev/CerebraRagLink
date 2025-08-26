@@ -1,6 +1,6 @@
-from .FileChunkGragService import FileChunkGragService
+from .BuildGragFromDocService import BuildGragFromDocService
 
 
 __all__ =  [
-    "FileChunkGragService"
+    "BuildGragFromDocService"
 ]

@@ -31,6 +31,7 @@ class EmbeddingService(EmbeddingServiceImpl):
                 promptTokens=res.usage.prompt_tokens,
                 totalTokens=res.usage.total_tokens,
             )
+            print(data)
 
             return EmbeddingResponseModel(
                 data=data,
@@ -39,9 +40,12 @@ class EmbeddingService(EmbeddingServiceImpl):
                 status=EmbeddingResponseEnum.SUCCESS,
             )
 
-        except models.HTTPValidationError:
+        except models.HTTPValidationError as e:
+            print(e)
             return EmbeddingResponseModel(status=EmbeddingResponseEnum.VALIDATION_ERROR)
-        except models.SDKError:
+        except models.SDKError as e:
+            print(e)
+
             return EmbeddingResponseModel(status=EmbeddingResponseEnum.SERVER_ERROR)
 
     def FindSimilarity(self, vec1: list[float], vec2: list[float]) -> float:

@@ -989,7 +989,7 @@
         "documentation": {}
     },
     {
-        "label": "HandleChunkRelationExtractResponseModel",
+        "label": "BuildGragFromDocResponseModel",
         "importPath": "graphrag.models",
         "description": "graphrag.models",
         "isExtraImport": true,
@@ -1021,7 +1021,7 @@
         "documentation": {}
     },
     {
-        "label": "HandleChunkRelationExtractResponseModel",
+        "label": "BuildGragFromDocResponseModel",
         "importPath": "graphrag.models",
         "description": "graphrag.models",
         "isExtraImport": true,
@@ -1715,7 +1715,7 @@
         "documentation": {}
     },
     {
-        "label": "FileChunkGragService",
+        "label": "BuildGragFromDocService",
         "importPath": "graphrag",
         "description": "graphrag",
         "isExtraImport": true,
@@ -2208,7 +2208,7 @@
         "kind": 6,
         "importPath": "graphrag.implementations.FileChunkGragImpl",
         "description": "graphrag.implementations.FileChunkGragImpl",
-        "peekOfCode": "class FileChunkGragImpl(ABC):\n    @abstractmethod\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        pass\n    @abstractmethod\n    async def handleKgChunkRelationExtarctProcess(\n        self, file: str\n    ) -> HandleChunkRelationExtractResponseModel:",
+        "peekOfCode": "class FileChunkGragImpl(ABC):\n    @abstractmethod\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        pass\n    @abstractmethod\n    async def handleKgChunkRelationExtarctProcess(\n        self, file: str\n    ) -> BuildGragFromDocResponseModel:",
         "detail": "graphrag.implementations.FileChunkGragImpl",
         "documentation": {}
     },
@@ -2253,7 +2253,7 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkRelationModel(BaseModel):\n    id: UUID\n    realtion: str\n    realtionEntites: list[str]\n    relationVector: list[float] | None = None\nclass ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]\nclass HandleChunkRelationExtractResponseModel(BaseModel):\n    chunkTexts: list[ChunkTextsModel]",
+        "peekOfCode": "class ChunkRelationModel(BaseModel):\n    id: UUID\n    realtion: str\n    realtionEntites: list[str]\n    relationVector: list[float] | None = None\nclass ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]\nclass BuildGragFromDocResponseModel(BaseModel):\n    chunkTexts: list[ChunkTextsModel]",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
@@ -2262,53 +2262,53 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]\nclass HandleChunkRelationExtractResponseModel(BaseModel):\n    chunkTexts: list[ChunkTextsModel]\n    chunkRelations: list[ChunkRelationsModel]",
+        "peekOfCode": "class ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]\nclass BuildGragFromDocResponseModel(BaseModel):\n    chunkTexts: list[ChunkTextsModel]\n    chunkRelations: list[ChunkRelationsModel]",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
     {
-        "label": "HandleChunkRelationExtractResponseModel",
+        "label": "BuildGragFromDocResponseModel",
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class HandleChunkRelationExtractResponseModel(BaseModel):\n    chunkTexts: list[ChunkTextsModel]\n    chunkRelations: list[ChunkRelationsModel]",
+        "peekOfCode": "class BuildGragFromDocResponseModel(BaseModel):\n    chunkTexts: list[ChunkTextsModel]\n    chunkRelations: list[ChunkRelationsModel]",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
     {
-        "label": "FileChunkGragService",
+        "label": "BuildGragFromDocService",
         "kind": 6,
-        "importPath": "graphrag.services.FileChunkGragService",
-        "description": "graphrag.services.FileChunkGragService",
-        "peekOfCode": "class FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")\n        _MULTI_NL_RE = re.compile(r\"\\n{3,}\")",
-        "detail": "graphrag.services.FileChunkGragService",
+        "importPath": "graphrag.services.BuildGragFromDocService",
+        "description": "graphrag.services.BuildGragFromDocService",
+        "peekOfCode": "class BuildGragFromDocService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")\n        _MULTI_NL_RE = re.compile(r\"\\n{3,}\")",
+        "detail": "graphrag.services.BuildGragFromDocService",
         "documentation": {}
     },
     {
         "label": "chatService",
         "kind": 5,
-        "importPath": "graphrag.services.FileChunkGragService",
-        "description": "graphrag.services.FileChunkGragService",
-        "peekOfCode": "chatService = ChatService()\nembeddingService = EmbeddingService()\nrerankingService = RerankingService()\nclass FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)",
-        "detail": "graphrag.services.FileChunkGragService",
+        "importPath": "graphrag.services.BuildGragFromDocService",
+        "description": "graphrag.services.BuildGragFromDocService",
+        "peekOfCode": "chatService = ChatService()\nembeddingService = EmbeddingService()\nrerankingService = RerankingService()\nclass BuildGragFromDocService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)",
+        "detail": "graphrag.services.BuildGragFromDocService",
         "documentation": {}
     },
     {
         "label": "embeddingService",
         "kind": 5,
-        "importPath": "graphrag.services.FileChunkGragService",
-        "description": "graphrag.services.FileChunkGragService",
-        "peekOfCode": "embeddingService = EmbeddingService()\nrerankingService = RerankingService()\nclass FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")",
-        "detail": "graphrag.services.FileChunkGragService",
+        "importPath": "graphrag.services.BuildGragFromDocService",
+        "description": "graphrag.services.BuildGragFromDocService",
+        "peekOfCode": "embeddingService = EmbeddingService()\nrerankingService = RerankingService()\nclass BuildGragFromDocService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")",
+        "detail": "graphrag.services.BuildGragFromDocService",
         "documentation": {}
     },
     {
         "label": "rerankingService",
         "kind": 5,
-        "importPath": "graphrag.services.FileChunkGragService",
-        "description": "graphrag.services.FileChunkGragService",
-        "peekOfCode": "rerankingService = RerankingService()\nclass FileChunkGragService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")",
-        "detail": "graphrag.services.FileChunkGragService",
+        "importPath": "graphrag.services.BuildGragFromDocService",
+        "description": "graphrag.services.BuildGragFromDocService",
+        "peekOfCode": "rerankingService = RerankingService()\nclass BuildGragFromDocService(FileChunkGragImpl):\n    def ExatrctChunkFromText(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")",
+        "detail": "graphrag.services.BuildGragFromDocService",
         "documentation": {}
     },
     {
@@ -2649,7 +2649,7 @@
         "kind": 5,
         "importPath": "k",
         "description": "k",
-        "peekOfCode": "a = FileChunkGragService()\nasync def main():\n    response = await a.HandleChunksGraphBuildingProcess(\"opd_manual.pdf\")\n    for i in response.chunkTexts:\n        print(i.text)\n        print(i.images)\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
+        "peekOfCode": "a = BuildGragFromDocService()\nasync def main():\n    response = await a.BuildGragFromDocProcess(\"opd_manual.pdf\")\n    for i in response.chunkTexts:\n        print(i.text)\n        print(i.images)\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
         "detail": "k",
         "documentation": {}
     },

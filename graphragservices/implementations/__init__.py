@@ -1,4 +1,4 @@
-from .FileChunkGragImpl import FileChunkGragImpl
+from .BuildGragFromDocServiceImpl import BuildGragFromDocServiceImpl
 
 
-__all__ = ["FileChunkGragImpl"]
+__all__ = ["BuildGragFromDocServiceImpl"]

@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 from typing import Tuple
-from graphragservices.models import HandleChunkRelationExtractResponseModel
+from graphragservices.models import BuildGragFromDocResponseModel
 
 
-class FileChunkGragImpl(ABC):
+class BuildGragFromDocServiceImpl(ABC):
 
     @abstractmethod
     def ExatrctChunkFromText(
@@ -18,13 +18,13 @@ class FileChunkGragImpl(ABC):
     @abstractmethod
     async def HandleKgChunkRelationExtarctProcess(
         self, file: str
-    ) -> HandleChunkRelationExtractResponseModel:
+    ) -> BuildGragFromDocResponseModel:
         pass
 
     @abstractmethod
-    async def HandleChunksGraphBuildingProcess(
+    async def BuildGragFromDocProcess(
         self, file: str
-    ) -> HandleChunkRelationExtractResponseModel:
+    ) -> BuildGragFromDocResponseModel:
         pass
 
     

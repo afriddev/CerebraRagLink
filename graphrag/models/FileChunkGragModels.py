@@ -14,10 +14,12 @@ class ChunkNodeModel(BaseModel):
 
 
 class ChunkImagesData(BaseModel):
-    sectionNumber: str
+    sectionNumber: float
     title: str
     image: str
     description: str
+
+
 class ChunkTextsModel(BaseModel):
     id: UUID
     text: str

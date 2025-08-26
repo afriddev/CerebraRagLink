@@ -224,7 +224,7 @@ class FileChunkGragService(FileChunkGragImpl):
                     ChunkImagesData(
                         description=imgData.get("description"),
                         image=image,
-                        sectionNumber=imgData.get("number"),
+                        sectionNumber=float(imgData.get("number")),
                         title=imgData.get("title"),
                     )
                 )

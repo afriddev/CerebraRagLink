@@ -2217,7 +2217,7 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class LLMGragEntityResponseModel(BaseModel):\n    relations: list[list[str]]\n    relationshipsEntities: list[list[list[str]]]\n    chunk: list[str]\nclass ChunkNodeModel(BaseModel):\n    score: float\n    chunkId: UUID\nclass ChunkImagesData(BaseModel):\n    sectionNumber: str\n    title: str",
+        "peekOfCode": "class LLMGragEntityResponseModel(BaseModel):\n    relations: list[list[str]]\n    relationshipsEntities: list[list[list[str]]]\n    chunk: list[str]\nclass ChunkNodeModel(BaseModel):\n    score: float\n    chunkId: UUID\nclass ChunkImagesData(BaseModel):\n    sectionNumber: float\n    title: str",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
@@ -2226,7 +2226,7 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkNodeModel(BaseModel):\n    score: float\n    chunkId: UUID\nclass ChunkImagesData(BaseModel):\n    sectionNumber: str\n    title: str\n    image: str\n    description: str\nclass ChunkTextsModel(BaseModel):\n    id: UUID",
+        "peekOfCode": "class ChunkNodeModel(BaseModel):\n    score: float\n    chunkId: UUID\nclass ChunkImagesData(BaseModel):\n    sectionNumber: float\n    title: str\n    image: str\n    description: str\nclass ChunkTextsModel(BaseModel):\n    id: UUID",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
@@ -2235,7 +2235,7 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkImagesData(BaseModel):\n    sectionNumber: str\n    title: str\n    image: str\n    description: str\nclass ChunkTextsModel(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None\n    entities: list[str]",
+        "peekOfCode": "class ChunkImagesData(BaseModel):\n    sectionNumber: float\n    title: str\n    image: str\n    description: str\nclass ChunkTextsModel(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None\n    entities: list[str]",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },

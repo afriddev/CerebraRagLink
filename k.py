@@ -5,7 +5,7 @@ a = FileChunkGragService()
 
 async def main():
 
-    response = await a.HandleChunksGraphBuildingProcess("opd_manual.pdf")
+    response = await a.HandleChunksGraphBuildingProcess("./others/opd_manual.pdf")
     for i in response.chunkTexts:
         print(i.text)
         print(i.images)

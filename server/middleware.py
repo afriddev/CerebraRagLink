@@ -14,7 +14,6 @@ class CustomMidlleware(BaseHTTPMiddleware):
                 )
             return response
         except Exception as e:
-            print(e)
             return JSONResponse(
                 status_code=500,
                 content={"data": "SERVER_ERROR"},

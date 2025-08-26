@@ -32,10 +32,17 @@ from graphrag.models import (
 )
 from uuid import UUID, uuid4
 
+import base64
+import firebase_admin
+from firebase_admin import credentials, storage
+
 
 chatService = ChatService()
 embeddingService = EmbeddingService()
 rerankingService = RerankingService()
+
+cred = credentials.Certificate("./others/firebaseCred.json")
+firebase_admin.initialize_app(cred, {"storageBucket": "testproject-b1efd.appspot.com"})
 
 
 class FileChunkGragService(FileChunkGragImpl):
@@ -105,7 +112,17 @@ class FileChunkGragService(FileChunkGragImpl):
             images,
         )
 
-    async def handleKgChunkRelationExtarctProcess(self, file: str):
+    async def UplaodFileToFirebaseStorage(self, base64Str: str, folder: str) -> str:
+        imageBytes: bytes = base64.b64decode(base64Str)
+        filename: str = f"{folder}/{uuid4()}.png"
+        bucket: Any = cast(Any, storage.bucket())
+        blob: Any = bucket.blob(filename)
+        blob.upload_from_string(imageBytes, content_type="image/png")
+        blob.make_public()
+        publicUrl: str = cast(str, blob.public_url)
+        return publicUrl
+
+    async def HandleKgChunkRelationExtarctProcess(self, file: str):
         chunks, images = self.ExatrctChunkFromText(file, 600)
         chunkTexts: list[ChunkTextsModel] = []
         chunkRealtions: list[ChunkRelationsModel] = []
@@ -219,7 +236,12 @@ class FileChunkGragService(FileChunkGragImpl):
                 imagePlaceholder = imgData.get("image")
                 if imagePlaceholder != "":
                     imageIndex = int(re.sub(r"\D", "", imagePlaceholder)) - 1
+
                     image = images[imageIndex]
+                    imageUrl = await self.UplaodFileToFirebaseStorage(
+                        base64Str=image, folder="opdImages"
+                    )
+                    image = imageUrl
                 imageData.append(
                     ChunkImagesData(
                         description=imgData.get("description"),
@@ -311,7 +333,7 @@ class FileChunkGragService(FileChunkGragImpl):
         self, file: str
     ) -> HandleChunkRelationExtractResponseModel:
         chunksRelations: HandleChunkRelationExtractResponseModel = (
-            await self.handleKgChunkRelationExtarctProcess(file)
+            await self.HandleKgChunkRelationExtarctProcess(file)
         )
 
         chunkVectors = [chunk.vector for chunk in chunksRelations.chunkTexts]

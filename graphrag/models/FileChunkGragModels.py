@@ -13,6 +13,13 @@ class ChunkNodeModel(BaseModel):
     chunkId: UUID
 
 
+class ChunkImagesData(BaseModel):
+    sectionNumber: float
+    title: str
+    image: str
+    description: str
+
+
 class ChunkTextsModel(BaseModel):
     id: UUID
     text: str
@@ -21,11 +28,7 @@ class ChunkTextsModel(BaseModel):
     questions: list[str]
     questionVectors: list[list[float]] | None = []
     matchedNodes: list[ChunkNodeModel] | None = None
-
-
-class RelationNodeModel(BaseModel):
-    realtionId: UUID
-    score: float
+    images: list[ChunkImagesData] | None = None
 
 
 class ChunkRelationModel(BaseModel):
@@ -33,7 +36,6 @@ class ChunkRelationModel(BaseModel):
     realtion: str
     realtionEntites: list[str]
     relationVector: list[float] | None = None
-    matchedRelationNodes: list[RelationNodeModel] | None = None
 
 
 class ChunkRelationsModel(BaseModel):
@@ -44,12 +46,3 @@ class ChunkRelationsModel(BaseModel):
 class HandleChunkRelationExtractResponseModel(BaseModel):
     chunkTexts: list[ChunkTextsModel]
     chunkRelations: list[ChunkRelationsModel]
-
-
-
-
-class AllRelationsModel(BaseModel):
-    id: UUID
-    text: str
-    chunkId: UUID
-    matchedRelationNodes: list[RelationNodeModel] | None = None

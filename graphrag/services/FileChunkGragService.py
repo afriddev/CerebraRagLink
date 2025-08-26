@@ -1,6 +1,6 @@
 import re
 import unicodedata
-from typing import Any, cast
+from typing import Any, Tuple, cast
 from clientservices import (
     ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel,
     ChatService,
@@ -15,6 +15,7 @@ from clientservices import (
     RerankingService,
     RerankingRequestModel,
     RerankingResponseModel,
+    FindTopKresultsFromVectorsRequestModel,
 )
 from graphrag.implementations import FileChunkGragImpl
 from utils import ExtractTextFromDoc
@@ -27,9 +28,10 @@ from graphrag.models import (
     ChunkRelationModel,
     HandleChunkRelationExtractResponseModel,
     ChunkNodeModel,
-    AllRelationsModel,
+    ChunkImagesData,
 )
 from uuid import UUID, uuid4
+
 
 chatService = ChatService()
 embeddingService = EmbeddingService()
@@ -40,7 +42,7 @@ class FileChunkGragService(FileChunkGragImpl):
 
     def ExatrctChunkFromText(
         self, file: str, chunkSize: int, chunkOLSize: int | None = 0
-    ) -> list[str]:
+    ) -> Tuple[list[str], list[str]]:
         _PAGE_RE = re.compile(r"\bpage\s+\d+\s+of\s+\d+\b", re.IGNORECASE)
         _IMAGE_RE = re.compile(r"\s*(<<IMAGE-\d+>>)\s*", re.IGNORECASE)
         _BULLET_LINE_RE = re.compile(r"^[\s•\-\*\u2022\uf0b7FÞ]+(?=\S)", re.MULTILINE)
@@ -87,7 +89,7 @@ class FileChunkGragService(FileChunkGragImpl):
                     merged = [carry]
             return merged
 
-        text = ExtractTextFromDoc(file)
+        text, images = ExtractTextFromDoc(file)
         text = _normalizeText(text)
         splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunkSize,
@@ -98,14 +100,17 @@ class FileChunkGragService(FileChunkGragImpl):
         )
         chunks = splitter.split_text(text)
         chunks = _mergeTinyChunks(chunks, minChars=max(200, chunkSize // 3))
-        return chunks
+        return (
+            chunks,
+            images,
+        )
 
     async def handleKgChunkRelationExtarctProcess(self, file: str):
-        chunks = self.ExatrctChunkFromText(file, 600)
+        chunks, images = self.ExatrctChunkFromText(file, 600)
         chunkTexts: list[ChunkTextsModel] = []
         chunkRealtions: list[ChunkRelationsModel] = []
 
-        for start in range(0, 5, 1):
+        for start in range(0, 10, 1):
             messages: list[ChatServiceMessageModel] = [
                 ChatServiceMessageModel(
                     role=ChatServiceMessageRoleEnum.USER,
@@ -122,7 +127,7 @@ class FileChunkGragService(FileChunkGragImpl):
                     model="qwen-3-235b-a22b-instruct-2507",
                     maxCompletionTokens=30000,
                     messages=messages,
-                    temperature=0.4,
+                    temperature=0.2,
                     responseFormat=ChatServiceCerebrasFormatModel(
                         type="json_schema",
                         jsonSchema=ChatServiceCerebrasFormatJsonSchemaModel(
@@ -156,6 +161,25 @@ class FileChunkGragService(FileChunkGragImpl):
                                             "chunk": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
                                                 type="string"
                                             ),
+                                            "sections": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "number": {"type": "string"},
+                                                        "title": {"type": "string"},
+                                                        "image": {"type": "string"},
+                                                        "description": {
+                                                            "type": "string"
+                                                        },
+                                                    },
+                                                    "required": [
+                                                        "number",
+                                                        "title",
+                                                        "description",
+                                                    ],
+                                                },
+                                            },
                                         },
                                         required=[
                                             "entities",
@@ -163,6 +187,7 @@ class FileChunkGragService(FileChunkGragImpl):
                                             "relationshipsEntities",
                                             "chunk",
                                             "questions",
+                                            "sections",
                                         ],
                                         additionalProperties=False,
                                     )
@@ -186,6 +211,25 @@ class FileChunkGragService(FileChunkGragImpl):
                     questions=chunkResponse.get("questions"),
                 )
             )
+
+            imageData: list[ChunkImagesData] = []
+
+            for imgData in chunkResponse.get("sections"):
+                image = ""
+                imagePlaceholder = imgData.get("image")
+                if imagePlaceholder != "":
+                    imageIndex = int(re.sub(r"\D", "", imagePlaceholder)) - 1
+                    image = images[imageIndex]
+                imageData.append(
+                    ChunkImagesData(
+                        description=imgData.get("description"),
+                        image=image,
+                        sectionNumber=float(imgData.get("number")),
+                        title=imgData.get("title"),
+                    )
+                )
+            chunkTexts[start].images = imageData
+
             chunkRelations: list[ChunkRelationModel] = []
             for relation, relationEntities in zip(
                 chunkResponse.get("relations"),
@@ -263,90 +307,54 @@ class FileChunkGragService(FileChunkGragImpl):
             chunkTexts=chunkTexts, chunkRelations=chunkRealtions
         )
 
-    async def HandleGraphBuildingProcess(self, file: str):
+    async def HandleChunksGraphBuildingProcess(
+        self, file: str
+    ) -> HandleChunkRelationExtractResponseModel:
         chunksRelations: HandleChunkRelationExtractResponseModel = (
             await self.handleKgChunkRelationExtarctProcess(file)
         )
 
-        batchSize = 20
-        for index, chunk in enumerate(chunksRelations.chunkTexts):
+        chunkVectors = [chunk.vector for chunk in chunksRelations.chunkTexts]
+
+        for index, vector in enumerate(chunkVectors):
+            sourceVectors: list[list[float]] = []
+            for index1, vec in enumerate(chunkVectors):
+                if index != index1:
+                    sourceVectors.append(cast(list[float], vec))
+
+            topResultsFromFaiss = rerankingService.FindTopKResultsFromVectors(
+                request=FindTopKresultsFromVectorsRequestModel(
+                    queryVector=cast(list[float], vector),
+                    topK=20,
+                    sourceVectors=sourceVectors,
+                )
+            )
+            docs: list[str] = []
+            docsIds: list[UUID] = []
+            if topResultsFromFaiss.indeces is not None:
+                for index2 in topResultsFromFaiss.indeces:
+                    if index2 != -1 and index2 != index:
+                        docs.append(chunksRelations.chunkTexts[index2].text)
+                        docsIds.append(chunksRelations.chunkTexts[index2].id)
+
+            response: RerankingResponseModel = await rerankingService.FindRankingScore(
+                RerankingRequestModel(
+                    model="jina-reranker-m0",
+                    query=chunksRelations.chunkTexts[index].text,
+                    docs=docs,
+                    topN=10,
+                )
+            )
             matchedNodes: list[ChunkNodeModel] = []
-            for index1 in range(0, len(chunksRelations.chunkTexts), batchSize):
-
-                docs: list[str] = []
-                docsIds: list[UUID] = []
-                for _, chunk1 in enumerate(
-                    chunksRelations.chunkTexts[index1 : index1 + batchSize]
-                ):
-                    if chunk.id != chunk1.id:
-                        docs.append(chunk1.text)
-                        docsIds.append(chunk1.id)
-
-                response: RerankingResponseModel = (
-                    await rerankingService.FindRankingScore(
-                        RerankingRequestModel(
-                            model="jina-reranker-m0",
-                            query=chunk.text,
-                            docs=docs,
-                            topN=10,
-                        )
-                    )
-                )
-                if response.response is not None:
-                    for res in response.response:
-                        if res.score > 0.9:
-                            matchedNodes.append(
-                                ChunkNodeModel(
-                                    chunkId=docsIds[res.index],
-                                    score=res.score,
-                                )
+            if response.response is not None:
+                for res in response.response:
+                    if res.score > 0.9:
+                        matchedNodes.append(
+                            ChunkNodeModel(
+                                chunkId=docsIds[res.index],
+                                score=res.score,
                             )
-
-            chunksRelations.chunkTexts[index].matchedNodes = matchedNodes
-            matchedNodes = []
-
-        allRelations: list[AllRelationsModel] = []
-        for relation in chunksRelations.chunkRelations:
-            for rel in relation.chunkRelations:
-                allRelations.append(
-                    AllRelationsModel(
-                        id=rel.id, text=rel.realtion, chunkId=relation.chunkId
-                    )
-                )
-
-        # realtionBatchSize = 500
-        # for index, rel in enumerate(allRelations):
-        #     matchedRelationNodes: list[RelationNodeModel] = []
-        #     for index1 in range(1, len(allRelations), realtionBatchSize):
-        #         response: RerankingResponseModel = (
-        #             await rerankingService.FindRankingScore(
-        #                 RerankingRequestModel(
-        #                     model="jina-reranker-m0",
-        #                     query=allRelations[index1].text,  
-        
-        #                     docs=[
-        #                         rel.text
-        #                         for rel in allRelations[
-        #                             index1 : index1 + realtionBatchSize
-        #                         ]
-        #                     ],
-        #                     topN=20,
-        #                 )
-        #             )
-        #         )
-        #         if response.response is not None:
-        #             for res in response.response:
-        #                 if res.score > 0.9:
-        #                     matchedRelationNodes.append(
-        #                         RelationNodeModel(
-        #                             realtionId=allRelations[index1 + res.index].id,
-        #                             score=res.score,
-        #                         )
-        #                     )
-        #     allRelations[index].matchedRelationNodes = matchedRelationNodes
-
-        for i in chunksRelations.chunkTexts:
-            print(i.matchedNodes)
-
-        # for i in allRelations:
-        #     print(i.matchedRelationNodes)
+                        )
+            if len(matchedNodes) > 0:
+                chunksRelations.chunkTexts[index].matchedNodes = matchedNodes
+        return chunksRelations

@@ -1,24 +1,22 @@
+import base64
 import fitz
-from typing import Any, Dict, List, Tuple, Optional
+from typing import Any, List, Tuple, Optional
 
-
-def extractTextWithMetadata(
-    pdfPath: str,
-) -> Tuple[str, Dict[str, Dict[str, Any]]]:
+def extractTextWithMetadata(pdfPath: str) -> Tuple[str, List[str]]:
     doc: Any = fitz.open(pdfPath)
-    imageMap: Dict[str, Dict[str, Any]] = {}
+    imagesB64: List[str] = []
     imageCounter: int = 1
-    finalText: List[str] = []
+    finalTextParts: List[str] = []
 
-    for pageNum, page in enumerate(doc, start=1):
-        blocks: List[Dict[str, Any]] = page.get_text("dict")["blocks"]
-
+    for _, page in enumerate(doc, start=1):
+        blocks = page.get_text("dict")["blocks"]
         pageItems: List[Tuple[str, float, str]] = []
+
         for block in blocks:
             if block["type"] == 0:
                 for line in block.get("lines", []):
-                    y0: float = line["bbox"][1]
-                    lineText: str = " ".join(
+                    y0 = line["bbox"][1]
+                    lineText = " ".join(
                         span.get("text", "")
                         for span in line.get("spans", [])
                         if "text" in span
@@ -26,40 +24,43 @@ def extractTextWithMetadata(
                     if lineText:
                         pageItems.append(("text", y0, lineText))
             elif block["type"] == 1:
-                y0: float = block["bbox"][1]
-                placeholder: str = f"<<IMAGE-{imageCounter}>>"
+                y0 = block["bbox"][1]
+                imgId = f"image-{imageCounter}"
+                placeholder = f"<<{imgId}>>"
 
-                xref: Optional[int] = block.get("number")
-                baseImage: Optional[Dict[str, Any]] = None
-                if xref:
+                xref: Optional[int] = block.get("image") or block.get("number")
+                baseImage = None
+                if isinstance(xref, int) and xref > 0:
                     try:
                         baseImage = doc.extract_image(xref)
                     except Exception:
                         baseImage = None
 
-                imageMap[placeholder] = {
-                    "page": pageNum,
-                    "bbox": block["bbox"],
-                    "ext": baseImage["ext"] if baseImage else None,
-                    "imageBytes": baseImage["image"] if baseImage else None,
-                }
+                if baseImage and baseImage.get("image"):
+                    data = baseImage["image"]
+                else:
+                    try:
+                        rect = fitz.Rect(block["bbox"])
+                        pix = page.get_pixmap(matrix=fitz.Matrix(2, 2), clip=rect, alpha=False)
+                        data = pix.tobytes("png")
+                    except Exception:
+                        data = b""
 
+                b64Str = base64.b64encode(data).decode("utf-8") if data else ""
+                imagesB64.append(b64Str)
                 pageItems.append(("image", y0, placeholder))
                 imageCounter += 1
 
         pageItems.sort(key=lambda x: x[1])
-
         for itemType, _, content in pageItems:
             if itemType == "text":
-                finalText.append(content)
+                finalTextParts.append(content)
             else:
-                finalText.append(f"\n{content}\n")
+                finalTextParts.append(f"\n{content}\n")
 
-    return "\n".join(finalText), imageMap
+    return "\n".join(finalTextParts), imagesB64
 
 
-def ExtractTextFromDoc(file: str) -> str:
-    textWithImages,images = extractTextWithMetadata(file)
-    
-    return textWithImages
-
+def ExtractTextFromDoc(file: str) -> Tuple[str, List[str]]:
+    textWithImages, imagesB64 = extractTextWithMetadata(file)
+    return textWithImages, imagesB64

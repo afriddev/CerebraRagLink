@@ -5,8 +5,7 @@ from .FileChunkGragModels import (
     ChunkRelationModel,
     HandleChunkRelationExtractResponseModel,
     ChunkNodeModel,
-    RelationNodeModel,
-    AllRelationsModel,
+    ChunkImagesData
 )
 
 
@@ -17,6 +16,5 @@ __all__ = [
     "ChunkRelationModel",
     "HandleChunkRelationExtractResponseModel",
     "ChunkNodeModel",
-    "AllRelationsModel",
-    "RelationNodeModel",
+    "ChunkImagesData"
 ]

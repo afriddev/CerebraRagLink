@@ -12,4 +12,3 @@ class EmbeddingServiceImpl(ABC):
     @abstractmethod
     def FindSimilarity(self, vec1: list[float], vec2: list[float]) -> float:
         pass
-    

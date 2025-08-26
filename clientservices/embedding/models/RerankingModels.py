@@ -23,3 +23,13 @@ class RerankingResponseModel(BaseModel):
     response: list[RerankingResponseChoiseModel] | None = None
     status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS
     usage: RerankingUsageModel | None = None
+
+
+class FindTopKresultsFromVectorsRequestModel(BaseModel):
+    sourceVectors: list[list[float]]
+    queryVector: list[float]
+    topK: int = 20
+    
+class FindTopKresultsFromVectorsResponseModel(BaseModel):
+    distances:list[float] | None = None
+    indeces:list[int] | None = None

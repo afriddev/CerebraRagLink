@@ -16,7 +16,9 @@ from .RerankingModels import (
     RerankingRequestModel,
     RerankingResponseChoiseModel,
     RerankingResponseModel,
-    RerankingUsageModel
+    RerankingUsageModel,
+    FindTopKresultsFromVectorsRequestModel,
+    FindTopKresultsFromVectorsResponseModel
 )
 
 __all__ = [
@@ -33,5 +35,8 @@ __all__ = [
     "RerankingRequestModel",
     "RerankingResponseChoiseModel",
     "RerankingResponseModel",
-    "RerankingUsageModel"
+    "RerankingUsageModel",
+    "FindTopKresultsFromVectorsRequestModel",
+    "FindTopKresultsFromVectorsResponseModel"
+    
 ]

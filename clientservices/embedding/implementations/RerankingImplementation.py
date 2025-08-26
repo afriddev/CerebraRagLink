@@ -2,6 +2,8 @@ from abc import ABC, abstractmethod
 from clientservices.embedding.models import (
     RerankingRequestModel,
     RerankingResponseModel,
+    FindTopKresultsFromVectorsRequestModel,
+    FindTopKresultsFromVectorsResponseModel
 )
 
 
@@ -11,4 +13,8 @@ class RerankingImpl(ABC):
     async def FindRankingScore(
         self, modelParams: RerankingRequestModel
     ) -> RerankingResponseModel:
+        pass
+
+    @abstractmethod
+    def FindTopKResultsFromVectors(self,request:FindTopKresultsFromVectorsRequestModel) -> FindTopKresultsFromVectorsResponseModel:
         pass

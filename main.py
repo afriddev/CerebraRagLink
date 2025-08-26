@@ -3,9 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from contextlib import asynccontextmanager
-from server import PsqlDb
-from server import QaRag
-from server import CustomMidlleware
+from dbservices import PsqlDb
 from clientservices import RerankingService
 
 load_dotenv()
@@ -30,8 +28,6 @@ server.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-server.add_middleware(CustomMidlleware)
-server.include_router(QaRag, prefix="/api/v1/qa")
 RerankingService()
 
 if __name__ == "__main__":

@@ -15,14 +15,13 @@ Key capabilities include:
 - High-performance vector storage & search using PostgreSQL + pgvector  
 - Graph-based linking between entities, queries, and knowledge nodes  
 - Automatic query-to-database mapping with contextual updates  
-- Support for claims processing and master data integration  
 ---
 
 
 
 
 ## 📝 Important Notes  
-- This repository is currently **private** and will be open-sourced after the first stable release.  
+- This repository is currently in **Development** and will be open-sourced after the first stable release.  
 - API designs and database schemas may change during development.  
 - Planned integrations include Cerebras API for LLMs and advanced graph-based retrieval.  
 - The goal is to provide both **API-first** and **graph-visualization** interfaces for enterprise knowledge systems.  

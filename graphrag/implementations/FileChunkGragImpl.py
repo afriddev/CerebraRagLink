@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing import Tuple
 from graphrag.models import HandleChunkRelationExtractResponseModel
 
 
@@ -7,7 +8,7 @@ class FileChunkGragImpl(ABC):
     @abstractmethod
     def ExatrctChunkFromText(
         self, file: str, chunkSize: int, chunkOLSize: int | None = 0
-    ) -> list[str]:
+    ) -> Tuple[list[str], list[str]]:
         pass
 
     @abstractmethod

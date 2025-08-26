@@ -17,5 +17,5 @@ class FileChunkGragImpl(ABC):
         pass
 
     @abstractmethod
-    async def HandleGraphBuildingProcess(self,file:str):
+    async def HandleChunksGraphBuildingProcess(self,file:str) -> HandleChunkRelationExtractResponseModel:
         pass

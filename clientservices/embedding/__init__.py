@@ -19,7 +19,8 @@ from .models import (
     RerankingRequestModel,
     RerankingResponseChoiseModel,
     RerankingResponseModel,
-    RerankingUsageModel
+    RerankingUsageModel,
+    FindTopKresultsFromVectorsRequestModel
 )
 
 
@@ -45,4 +46,5 @@ __all__ = [
     "RerankingResponseModel",
     "RerankingUsageModel",
     "GetJinaApiKey",
+    "FindTopKresultsFromVectorsRequestModel"
 ]

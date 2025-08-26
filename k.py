@@ -1,12 +1,16 @@
 from graphrag import FileChunkGragService
-import time
 
 a = FileChunkGragService()
 
 
 async def main():
 
-    await a.HandleGraphBuildingProcess("opd_manual.pdf")
+    response = await a.HandleChunksGraphBuildingProcess("opd_manual.pdf")
+    for i in response.chunkTexts:
+        print(i.id)
+        print(i.text)
+        print(i.questions)
+        print(i.matchedNodes)
 
 
 if __name__ == "__main__":

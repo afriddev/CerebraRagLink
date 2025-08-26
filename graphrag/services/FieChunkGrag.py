@@ -15,6 +15,7 @@ from clientservices import (
     RerankingService,
     RerankingRequestModel,
     RerankingResponseModel,
+    FindTopKresultsFromVectorsRequestModel,
 )
 from graphrag.implementations import FileChunkGragImpl
 from utils import ExtractTextFromDoc
@@ -27,7 +28,6 @@ from graphrag.models import (
     ChunkRelationModel,
     HandleChunkRelationExtractResponseModel,
     ChunkNodeModel,
-    AllRelationsModel,
 )
 from uuid import UUID, uuid4
 
@@ -105,7 +105,7 @@ class FileChunkGragService(FileChunkGragImpl):
         chunkTexts: list[ChunkTextsModel] = []
         chunkRealtions: list[ChunkRelationsModel] = []
 
-        for start in range(0, 5, 1):
+        for start in range(0, 10, 1):
             messages: list[ChatServiceMessageModel] = [
                 ChatServiceMessageModel(
                     role=ChatServiceMessageRoleEnum.USER,
@@ -263,90 +263,54 @@ class FileChunkGragService(FileChunkGragImpl):
             chunkTexts=chunkTexts, chunkRelations=chunkRealtions
         )
 
-    async def HandleGraphBuildingProcess(self, file: str):
+    async def HandleChunksGraphBuildingProcess(
+        self, file: str
+    ) -> HandleChunkRelationExtractResponseModel:
         chunksRelations: HandleChunkRelationExtractResponseModel = (
             await self.handleKgChunkRelationExtarctProcess(file)
         )
 
-        batchSize = 20
-        for index, chunk in enumerate(chunksRelations.chunkTexts):
+        chunkVectors = [chunk.vector for chunk in chunksRelations.chunkTexts]
+
+        for index, vector in enumerate(chunkVectors):
+            sourceVectors: list[list[float]] = []
+            for index1, vec in enumerate(chunkVectors):
+                if index != index1:
+                    sourceVectors.append(cast(list[float], vec))
+
+            topResultsFromFaiss = rerankingService.FindTopKResultsFromVectors(
+                request=FindTopKresultsFromVectorsRequestModel(
+                    queryVector=cast(list[float], vector),
+                    topK=20,
+                    sourceVectors=sourceVectors,
+                )
+            )
+            docs: list[str] = []
+            docsIds: list[UUID] = []
+            if topResultsFromFaiss.indeces is not None:
+                for index2 in topResultsFromFaiss.indeces:
+                    if index2 != -1 and index2 != index: 
+                        docs.append(chunksRelations.chunkTexts[index2].text)
+                        docsIds.append(chunksRelations.chunkTexts[index2].id)
+
+            response: RerankingResponseModel = await rerankingService.FindRankingScore(
+                RerankingRequestModel(
+                    model="jina-reranker-m0",
+                    query=chunksRelations.chunkTexts[index].text,
+                    docs=docs,
+                    topN=10,
+                )
+            )
             matchedNodes: list[ChunkNodeModel] = []
-            for index1 in range(0, len(chunksRelations.chunkTexts), batchSize):
-
-                docs: list[str] = []
-                docsIds: list[UUID] = []
-                for _, chunk1 in enumerate(
-                    chunksRelations.chunkTexts[index1 : index1 + batchSize]
-                ):
-                    if chunk.id != chunk1.id:
-                        docs.append(chunk1.text)
-                        docsIds.append(chunk1.id)
-
-                response: RerankingResponseModel = (
-                    await rerankingService.FindRankingScore(
-                        RerankingRequestModel(
-                            model="jina-reranker-m0",
-                            query=chunk.text,
-                            docs=docs,
-                            topN=10,
-                        )
-                    )
-                )
-                if response.response is not None:
-                    for res in response.response:
-                        if res.score > 0.9:
-                            matchedNodes.append(
-                                ChunkNodeModel(
-                                    chunkId=docsIds[res.index],
-                                    score=res.score,
-                                )
+            if response.response is not None:
+                for res in response.response:
+                    if res.score > 0.9:
+                        matchedNodes.append(
+                            ChunkNodeModel(
+                                chunkId=docsIds[res.index],
+                                score=res.score,
                             )
-
-            chunksRelations.chunkTexts[index].matchedNodes = matchedNodes
-            matchedNodes = []
-
-        allRelations: list[AllRelationsModel] = []
-        for relation in chunksRelations.chunkRelations:
-            for rel in relation.chunkRelations:
-                allRelations.append(
-                    AllRelationsModel(
-                        id=rel.id, text=rel.realtion, chunkId=relation.chunkId
-                    )
-                )
-
-        # realtionBatchSize = 500
-        # for index, rel in enumerate(allRelations):
-        #     matchedRelationNodes: list[RelationNodeModel] = []
-        #     for index1 in range(1, len(allRelations), realtionBatchSize):
-        #         response: RerankingResponseModel = (
-        #             await rerankingService.FindRankingScore(
-        #                 RerankingRequestModel(
-        #                     model="jina-reranker-m0",
-        #                     query=allRelations[index1].text,  
-        
-        #                     docs=[
-        #                         rel.text
-        #                         for rel in allRelations[
-        #                             index1 : index1 + realtionBatchSize
-        #                         ]
-        #                     ],
-        #                     topN=20,
-        #                 )
-        #             )
-        #         )
-        #         if response.response is not None:
-        #             for res in response.response:
-        #                 if res.score > 0.9:
-        #                     matchedRelationNodes.append(
-        #                         RelationNodeModel(
-        #                             realtionId=allRelations[index1 + res.index].id,
-        #                             score=res.score,
-        #                         )
-        #                     )
-        #     allRelations[index].matchedRelationNodes = matchedRelationNodes
-
-        for i in chunksRelations.chunkTexts:
-            print(i.matchedNodes)
-
-        # for i in allRelations:
-        #     print(i.matchedRelationNodes)
+                        )
+            if len(matchedNodes) > 0:
+                chunksRelations.chunkTexts[index].matchedNodes = matchedNodes
+        return chunksRelations

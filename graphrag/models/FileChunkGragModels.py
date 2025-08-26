@@ -23,17 +23,12 @@ class ChunkTextsModel(BaseModel):
     matchedNodes: list[ChunkNodeModel] | None = None
 
 
-class RelationNodeModel(BaseModel):
-    realtionId: UUID
-    score: float
-
 
 class ChunkRelationModel(BaseModel):
     id: UUID
     realtion: str
     realtionEntites: list[str]
     relationVector: list[float] | None = None
-    matchedRelationNodes: list[RelationNodeModel] | None = None
 
 
 class ChunkRelationsModel(BaseModel):
@@ -45,11 +40,3 @@ class HandleChunkRelationExtractResponseModel(BaseModel):
     chunkTexts: list[ChunkTextsModel]
     chunkRelations: list[ChunkRelationsModel]
 
-
-
-
-class AllRelationsModel(BaseModel):
-    id: UUID
-    text: str
-    chunkId: UUID
-    matchedRelationNodes: list[RelationNodeModel] | None = None

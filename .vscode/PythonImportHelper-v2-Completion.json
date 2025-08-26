@@ -698,6 +698,22 @@
         "documentation": {}
     },
     {
+        "label": "FindTopKresultsFromVectorsRequestModel",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
+        "isExtraImport": true,
+        "detail": "clientservices.embedding.models",
+        "documentation": {}
+    },
+    {
+        "label": "FindTopKresultsFromVectorsResponseModel",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
+        "isExtraImport": true,
+        "detail": "clientservices.embedding.models",
+        "documentation": {}
+    },
+    {
         "label": "EmbeddingResponseModel",
         "importPath": "clientservices.embedding.models",
         "description": "clientservices.embedding.models",
@@ -787,6 +803,22 @@
     },
     {
         "label": "RerankingUsageModel",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
+        "isExtraImport": true,
+        "detail": "clientservices.embedding.models",
+        "documentation": {}
+    },
+    {
+        "label": "FindTopKresultsFromVectorsRequestModel",
+        "importPath": "clientservices.embedding.models",
+        "description": "clientservices.embedding.models",
+        "isExtraImport": true,
+        "detail": "clientservices.embedding.models",
+        "documentation": {}
+    },
+    {
+        "label": "FindTopKresultsFromVectorsResponseModel",
         "importPath": "clientservices.embedding.models",
         "description": "clientservices.embedding.models",
         "isExtraImport": true,
@@ -940,6 +972,15 @@
         "documentation": {}
     },
     {
+        "label": "faiss",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "faiss",
+        "description": "faiss",
+        "detail": "faiss",
+        "documentation": {}
+    },
+    {
         "label": "HandleChunkRelationExtractResponseModel",
         "importPath": "graphrag.models",
         "description": "graphrag.models",
@@ -981,14 +1022,6 @@
     },
     {
         "label": "ChunkNodeModel",
-        "importPath": "graphrag.models",
-        "description": "graphrag.models",
-        "isExtraImport": true,
-        "detail": "graphrag.models",
-        "documentation": {}
-    },
-    {
-        "label": "AllRelationsModel",
         "importPath": "graphrag.models",
         "description": "graphrag.models",
         "isExtraImport": true,
@@ -1159,6 +1192,14 @@
     },
     {
         "label": "RerankingResponseModel",
+        "importPath": "clientservices",
+        "description": "clientservices",
+        "isExtraImport": true,
+        "detail": "clientservices",
+        "documentation": {}
+    },
+    {
+        "label": "FindTopKresultsFromVectorsRequestModel",
         "importPath": "clientservices",
         "description": "clientservices",
         "isExtraImport": true,
@@ -1657,15 +1698,6 @@
         "documentation": {}
     },
     {
-        "label": "time",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "time",
-        "description": "time",
-        "detail": "time",
-        "documentation": {}
-    },
-    {
         "label": "CORSMiddleware",
         "importPath": "fastapi.middleware.cors",
         "description": "fastapi.middleware.cors",
@@ -1917,7 +1949,7 @@
         "kind": 6,
         "importPath": "clientservices.embedding.implementations.RerankingImplementation",
         "description": "clientservices.embedding.implementations.RerankingImplementation",
-        "peekOfCode": "class RerankingImpl(ABC):\n    @abstractmethod\n    async def FindRankingScore(\n        self, modelParams: RerankingRequestModel\n    ) -> RerankingResponseModel:\n        pass",
+        "peekOfCode": "class RerankingImpl(ABC):\n    @abstractmethod\n    async def FindRankingScore(\n        self, modelParams: RerankingRequestModel\n    ) -> RerankingResponseModel:\n        pass\n    @abstractmethod\n    def FindTopKResultsFromVectors(self,request:FindTopKresultsFromVectorsRequestModel) -> FindTopKresultsFromVectorsResponseModel:\n        pass",
         "detail": "clientservices.embedding.implementations.RerankingImplementation",
         "documentation": {}
     },
@@ -2016,7 +2048,7 @@
         "kind": 6,
         "importPath": "clientservices.embedding.models.RerankingModels",
         "description": "clientservices.embedding.models.RerankingModels",
-        "peekOfCode": "class RerankingResponseChoiseModel(BaseModel):\n    index: int\n    score: float\nclass RerankingUsageModel(BaseModel):\n    totalTokens: int\nclass RerankingResponseModel(BaseModel):\n    response: list[RerankingResponseChoiseModel] | None = None\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    usage: RerankingUsageModel | None = None",
+        "peekOfCode": "class RerankingResponseChoiseModel(BaseModel):\n    index: int\n    score: float\nclass RerankingUsageModel(BaseModel):\n    totalTokens: int\nclass RerankingResponseModel(BaseModel):\n    response: list[RerankingResponseChoiseModel] | None = None\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    usage: RerankingUsageModel | None = None\nclass FindTopKresultsFromVectorsRequestModel(BaseModel):",
         "detail": "clientservices.embedding.models.RerankingModels",
         "documentation": {}
     },
@@ -2025,7 +2057,7 @@
         "kind": 6,
         "importPath": "clientservices.embedding.models.RerankingModels",
         "description": "clientservices.embedding.models.RerankingModels",
-        "peekOfCode": "class RerankingUsageModel(BaseModel):\n    totalTokens: int\nclass RerankingResponseModel(BaseModel):\n    response: list[RerankingResponseChoiseModel] | None = None\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    usage: RerankingUsageModel | None = None",
+        "peekOfCode": "class RerankingUsageModel(BaseModel):\n    totalTokens: int\nclass RerankingResponseModel(BaseModel):\n    response: list[RerankingResponseChoiseModel] | None = None\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    usage: RerankingUsageModel | None = None\nclass FindTopKresultsFromVectorsRequestModel(BaseModel):\n    sourceVectors: list[list[float]]\n    queryVector: list[float]\n    topK: int = 20",
         "detail": "clientservices.embedding.models.RerankingModels",
         "documentation": {}
     },
@@ -2034,7 +2066,25 @@
         "kind": 6,
         "importPath": "clientservices.embedding.models.RerankingModels",
         "description": "clientservices.embedding.models.RerankingModels",
-        "peekOfCode": "class RerankingResponseModel(BaseModel):\n    response: list[RerankingResponseChoiseModel] | None = None\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    usage: RerankingUsageModel | None = None",
+        "peekOfCode": "class RerankingResponseModel(BaseModel):\n    response: list[RerankingResponseChoiseModel] | None = None\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    usage: RerankingUsageModel | None = None\nclass FindTopKresultsFromVectorsRequestModel(BaseModel):\n    sourceVectors: list[list[float]]\n    queryVector: list[float]\n    topK: int = 20\nclass FindTopKresultsFromVectorsResponseModel(BaseModel):\n    distances:list[float] | None = None",
+        "detail": "clientservices.embedding.models.RerankingModels",
+        "documentation": {}
+    },
+    {
+        "label": "FindTopKresultsFromVectorsRequestModel",
+        "kind": 6,
+        "importPath": "clientservices.embedding.models.RerankingModels",
+        "description": "clientservices.embedding.models.RerankingModels",
+        "peekOfCode": "class FindTopKresultsFromVectorsRequestModel(BaseModel):\n    sourceVectors: list[list[float]]\n    queryVector: list[float]\n    topK: int = 20\nclass FindTopKresultsFromVectorsResponseModel(BaseModel):\n    distances:list[float] | None = None\n    indeces:list[int] | None = None",
+        "detail": "clientservices.embedding.models.RerankingModels",
+        "documentation": {}
+    },
+    {
+        "label": "FindTopKresultsFromVectorsResponseModel",
+        "kind": 6,
+        "importPath": "clientservices.embedding.models.RerankingModels",
+        "description": "clientservices.embedding.models.RerankingModels",
+        "peekOfCode": "class FindTopKresultsFromVectorsResponseModel(BaseModel):\n    distances:list[float] | None = None\n    indeces:list[int] | None = None",
         "detail": "clientservices.embedding.models.RerankingModels",
         "documentation": {}
     },
@@ -2160,16 +2210,7 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkTextsModel(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None\n    entities: list[str]\n    questions: list[str]\n    questionVectors: list[list[float]] | None = []\n    matchedNodes: list[ChunkNodeModel] | None = None\nclass RelationNodeModel(BaseModel):\n    realtionId: UUID",
-        "detail": "graphrag.models.FileChunkGragModels",
-        "documentation": {}
-    },
-    {
-        "label": "RelationNodeModel",
-        "kind": 6,
-        "importPath": "graphrag.models.FileChunkGragModels",
-        "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class RelationNodeModel(BaseModel):\n    realtionId: UUID\n    score: float\nclass ChunkRelationModel(BaseModel):\n    id: UUID\n    realtion: str\n    realtionEntites: list[str]\n    relationVector: list[float] | None = None\n    matchedRelationNodes: list[RelationNodeModel] | None = None\nclass ChunkRelationsModel(BaseModel):",
+        "peekOfCode": "class ChunkTextsModel(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None\n    entities: list[str]\n    questions: list[str]\n    questionVectors: list[list[float]] | None = []\n    matchedNodes: list[ChunkNodeModel] | None = None\nclass ChunkRelationModel(BaseModel):\n    id: UUID",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
@@ -2178,7 +2219,7 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkRelationModel(BaseModel):\n    id: UUID\n    realtion: str\n    realtionEntites: list[str]\n    relationVector: list[float] | None = None\n    matchedRelationNodes: list[RelationNodeModel] | None = None\nclass ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]\nclass HandleChunkRelationExtractResponseModel(BaseModel):",
+        "peekOfCode": "class ChunkRelationModel(BaseModel):\n    id: UUID\n    realtion: str\n    realtionEntites: list[str]\n    relationVector: list[float] | None = None\nclass ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]\nclass HandleChunkRelationExtractResponseModel(BaseModel):\n    chunkTexts: list[ChunkTextsModel]",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
@@ -2187,7 +2228,7 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]\nclass HandleChunkRelationExtractResponseModel(BaseModel):\n    chunkTexts: list[ChunkTextsModel]\n    chunkRelations: list[ChunkRelationsModel]\nclass AllRelationsModel(BaseModel):\n    id: UUID\n    text: str\n    chunkId: UUID",
+        "peekOfCode": "class ChunkRelationsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel]\nclass HandleChunkRelationExtractResponseModel(BaseModel):\n    chunkTexts: list[ChunkTextsModel]\n    chunkRelations: list[ChunkRelationsModel]",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
@@ -2196,16 +2237,7 @@
         "kind": 6,
         "importPath": "graphrag.models.FileChunkGragModels",
         "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class HandleChunkRelationExtractResponseModel(BaseModel):\n    chunkTexts: list[ChunkTextsModel]\n    chunkRelations: list[ChunkRelationsModel]\nclass AllRelationsModel(BaseModel):\n    id: UUID\n    text: str\n    chunkId: UUID\n    matchedRelationNodes: list[RelationNodeModel] | None = None",
-        "detail": "graphrag.models.FileChunkGragModels",
-        "documentation": {}
-    },
-    {
-        "label": "AllRelationsModel",
-        "kind": 6,
-        "importPath": "graphrag.models.FileChunkGragModels",
-        "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class AllRelationsModel(BaseModel):\n    id: UUID\n    text: str\n    chunkId: UUID\n    matchedRelationNodes: list[RelationNodeModel] | None = None",
+        "peekOfCode": "class HandleChunkRelationExtractResponseModel(BaseModel):\n    chunkTexts: list[ChunkTextsModel]\n    chunkRelations: list[ChunkRelationsModel]",
         "detail": "graphrag.models.FileChunkGragModels",
         "documentation": {}
     },
@@ -2583,7 +2615,7 @@
         "kind": 5,
         "importPath": "k",
         "description": "k",
-        "peekOfCode": "a = FileChunkGragService()\nasync def main():\n    await a.HandleGraphBuildingProcess(\"opd_manual.pdf\")\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
+        "peekOfCode": "a = FileChunkGragService()\nasync def main():\n    response = await a.HandleChunksGraphBuildingProcess(\"opd_manual.pdf\")\n    for i in response.chunkTexts:\n        print(i.id)\n        print(i.text)\n        print(i.questions)\n        print(i.matchedNodes)\nif __name__ == \"__main__\":\n    import asyncio",
         "detail": "k",
         "documentation": {}
     },

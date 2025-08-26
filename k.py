@@ -1,4 +1,4 @@
-from graphrag import FileChunkGragService
+from graphragservices import FileChunkGragService
 
 a = FileChunkGragService()
 

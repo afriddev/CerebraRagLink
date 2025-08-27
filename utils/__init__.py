@@ -1,6 +1,6 @@
-from .ExtarctTextFromFile import ExtractTextFromDoc
+from .ExtarctTextFromDoc_Rag import ExtractTextFromDoc_Rag
 
 
 
 
-__all__ = ["ExtractTextFromDoc"]
+__all__ = ["ExtractTextFromDoc_Rag"]

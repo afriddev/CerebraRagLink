@@ -17,20 +17,20 @@ from aiservices import (
     RerankingResponseModel,
     FindTopKresultsFromVectorsRequestModel,
 )
-from graphragservices.implementations import BuildGragFromDocServiceImpl
-from utils import ExtractTextFromDoc
+from ragservices.implementations import BuildGraphFromDocServiceImpl_Rag
+from utils import ExtractTextFromDoc_Rag
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from graphragservices.utils.FileGragServiceSystemPropts import (
+from ragservices.utils.BuildGraphFromDocSystemPrompts_Rag import (
     ExtractEntityGragSystemPrompt,
 )
 import json
-from graphragservices.models import (
-    ChunkRelationsModel,
-    ChunkTextsModel,
-    ChunkRelationModel,
-    BuildGragFromDocResponseModel,
-    ChunkNodeModel,
-    ChunkImagesData,
+from ragservices.models import (
+    ChunkRelationsModel_Rag,
+    CHunkTextsModel_Rag,
+    ChunkRelationModel_Rag,
+    GetGraphFromDocResponseModel_Rag,
+    ChunkMatchedNodeModel_Rag,
+    ChunkImagesModel_Rag,
 )
 from uuid import UUID, uuid4
 
@@ -47,9 +47,9 @@ cred = credentials.Certificate("./others/firebaseCred.json")
 firebase_admin.initialize_app(cred, {"storageBucket": "testproject-b1efd.appspot.com"})
 
 
-class BuildGragFromDocService(BuildGragFromDocServiceImpl):
+class BuildGragFromDocService(BuildGraphFromDocServiceImpl_Rag):
 
-    def ExatrctChunkFromText(
+    def ExtractChunksFromDoc_Rag(
         self, file: str, chunkSize: int, chunkOLSize: int | None = 0
     ) -> Tuple[list[str], list[str]]:
         _PAGE_RE = re.compile(r"\bpage\s+\d+\s+of\s+\d+\b", re.IGNORECASE)
@@ -98,7 +98,7 @@ class BuildGragFromDocService(BuildGragFromDocServiceImpl):
                     merged = [carry]
             return merged
 
-        text, images = ExtractTextFromDoc(file)
+        text, images = ExtractTextFromDoc_Rag(file)
         text = _normalizeText(text)
         splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunkSize,
@@ -114,7 +114,7 @@ class BuildGragFromDocService(BuildGragFromDocServiceImpl):
             images,
         )
 
-    async def UplaodFileToFirebaseStorage(self, base64Str: str, folder: str) -> str:
+    async def UploadImagesFromDocToFirebase_Rag(self, base64Str: str, folder: str) -> str:
         imageBytes: bytes = base64.b64decode(base64Str)
         filename: str = f"{folder}/{uuid4()}.png"
         bucket: Any = cast(Any, storage.bucket())
@@ -124,10 +124,10 @@ class BuildGragFromDocService(BuildGragFromDocServiceImpl):
         publicUrl: str = cast(str, blob.public_url)
         return publicUrl
 
-    async def HandleKgChunkRelationExtarctProcess(self, file: str):
-        chunks, images = self.ExatrctChunkFromText(file, 600)
-        chunkTexts: list[ChunkTextsModel] = []
-        chunkRealtions: list[ChunkRelationsModel] = []
+    async def ExtractChunksAndRelationsFromDoc_Rag(self, file: str):
+        chunks, images = self.ExtractChunksFromDoc_Rag(file, 600)
+        chunkTexts: list[CHunkTextsModel_Rag] = []
+        chunkRealtions: list[ChunkRelationsModel_Rag] = []
 
         for start in range(0, 10, 1):
             messages: list[ChatServiceMessageModel] = [
@@ -218,7 +218,7 @@ class BuildGragFromDocService(BuildGragFromDocServiceImpl):
             ).get("response")
             chunkId = uuid4()
             chunkTexts.append(
-                ChunkTextsModel(
+                CHunkTextsModel_Rag(
                     id=chunkId,
                     text=chunkResponse.get("chunk"),
                     entities=chunkResponse.get("entities"),
@@ -226,7 +226,7 @@ class BuildGragFromDocService(BuildGragFromDocServiceImpl):
                 )
             )
 
-            imageData: list[ChunkImagesData] = []
+            imageData: list[ChunkImagesModel_Rag] = []
 
             for imgData in chunkResponse.get("sections"):
                 image = ""
@@ -235,12 +235,12 @@ class BuildGragFromDocService(BuildGragFromDocServiceImpl):
                     imageIndex = int(re.sub(r"\D", "", imagePlaceholder)) - 1
 
                     image = images[imageIndex]
-                    imageUrl = await self.UplaodFileToFirebaseStorage(
+                    imageUrl = await self.UploadImagesFromDocToFirebase_Rag(
                         base64Str=image, folder="opdImages"
                     )
                     image = imageUrl
                     imageData.append(
-                        ChunkImagesData(
+                        ChunkImagesModel_Rag(
                             description=imgData.get("description"),
                             image=image,
                             sectionNumber=float(imgData.get("number")),
@@ -250,13 +250,13 @@ class BuildGragFromDocService(BuildGragFromDocServiceImpl):
 
             chunkTexts[start].images = imageData
 
-            chunkRelations: list[ChunkRelationModel] = []
+            chunkRelations: list[ChunkRelationModel_Rag] = []
             for relation, relationEntities in zip(
                 chunkResponse.get("relations"),
                 chunkResponse.get("relationshipsEntities"),
             ):
                 chunkRelations.append(
-                    ChunkRelationModel(
+                    ChunkRelationModel_Rag(
                         realtion=relation,
                         realtionEntites=relationEntities,
                         id=uuid4(),
@@ -265,7 +265,7 @@ class BuildGragFromDocService(BuildGragFromDocServiceImpl):
 
 
             chunkRealtions.append(
-                ChunkRelationsModel(chunkId=chunkId, chunkRelations=chunkRelations)
+                ChunkRelationsModel_Rag(chunkId=chunkId, chunkRelations=chunkRelations)
             )
 
         batchSize = 15
@@ -325,13 +325,13 @@ class BuildGragFromDocService(BuildGragFromDocServiceImpl):
                             index3 + index4
                         ].embedding
 
-        return BuildGragFromDocResponseModel(
+        return GetGraphFromDocResponseModel_Rag(
             chunkTexts=chunkTexts, chunkRelations=chunkRealtions
         )
 
-    async def BuildGragFromDocProcess(self, file: str) -> BuildGragFromDocResponseModel:
-        chunksRelations: BuildGragFromDocResponseModel = (
-            await self.HandleKgChunkRelationExtarctProcess(file)
+    async def BuildGraphFromDoc_Rag(self, file: str) -> GetGraphFromDocResponseModel_Rag:
+        chunksRelations: GetGraphFromDocResponseModel_Rag = (
+            await self.ExtractChunksAndRelationsFromDoc_Rag(file)
         )
 
         chunkVectors = [chunk.vector for chunk in chunksRelations.chunkTexts]
@@ -365,12 +365,12 @@ class BuildGragFromDocService(BuildGragFromDocServiceImpl):
                     topN=10,
                 )
             )
-            matchedNodes: list[ChunkNodeModel] = []
+            matchedNodes: list[ChunkMatchedNodeModel_Rag] = []
             if response.response is not None:
                 for res in response.response:
                     if res.score > 0.9:
                         matchedNodes.append(
-                            ChunkNodeModel(
+                            ChunkMatchedNodeModel_Rag(
                                 chunkId=docsIds[res.index],
                                 score=res.score,
                             )

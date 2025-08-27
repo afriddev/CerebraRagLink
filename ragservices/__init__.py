@@ -1,10 +1,10 @@
 from .services import BuildGragFromDocService
 from .models import (
-    BuildGragFromDocResponseModel,
+    GetGraphFromDocResponseModel_Rag,
 )
 
 
 __all__ = [
     "BuildGragFromDocService",
-    "BuildGragFromDocResponseModel",
+    "GetGraphFromDocResponseModel_Rag",
 ]

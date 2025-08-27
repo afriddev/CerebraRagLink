@@ -37,7 +37,7 @@ from uuid import UUID, uuid4
 import base64
 import firebase_admin
 from firebase_admin import credentials, storage
-
+import time
 
 chatService = ChatService()
 embeddingService = EmbeddingService()
@@ -47,7 +47,7 @@ cred = credentials.Certificate("./others/firebaseCred.json")
 firebase_admin.initialize_app(cred, {"storageBucket": "testproject-b1efd.appspot.com"})
 
 
-class BuildGragFromDocService(BuildGraphFromDocServiceImpl_Rag):
+class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
 
     def ExtractChunksFromDoc_Rag(
         self, file: str, chunkSize: int, chunkOLSize: int | None = 0
@@ -114,7 +114,9 @@ class BuildGragFromDocService(BuildGraphFromDocServiceImpl_Rag):
             images,
         )
 
-    async def UploadImagesFromDocToFirebase_Rag(self, base64Str: str, folder: str) -> str:
+    async def UploadImagesFromDocToFirebase_Rag(
+        self, base64Str: str, folder: str
+    ) -> str:
         imageBytes: bytes = base64.b64decode(base64Str)
         filename: str = f"{folder}/{uuid4()}.png"
         bucket: Any = cast(Any, storage.bucket())
@@ -124,29 +126,45 @@ class BuildGragFromDocService(BuildGraphFromDocServiceImpl_Rag):
         publicUrl: str = cast(str, blob.public_url)
         return publicUrl
 
+    def StrToFloat(self, numberText: Any):
+        if numberText is None:
+            return None
+        rawNumber = str(numberText).strip()
+        cleanedNumber = re.sub(r"[^0-9.]", "", rawNumber)
+        if not cleanedNumber:
+            return None
+        if not re.fullmatch(r"\d+(?:\.\d+)*", cleanedNumber):
+            return None
+        normalizedNumber = re.sub(r"\.(?=.*\.)", "", cleanedNumber)
+        try:
+            return float(normalizedNumber)
+        except Exception:
+            return None
+
     async def ExtractChunksAndRelationsFromDoc_Rag(self, file: str):
         chunks, images = self.ExtractChunksFromDoc_Rag(file, 600)
         chunkTexts: list[CHunkTextsModel_Rag] = []
         chunkRealtions: list[ChunkRelationsModel_Rag] = []
 
-        for start in range(0, 10, 1):
+        for start in range(0, len(chunks), 1):
             messages: list[ChatServiceMessageModel] = [
-                ChatServiceMessageModel(
-                    role=ChatServiceMessageRoleEnum.USER,
-                    content=chunks[start],
-                ),
                 ChatServiceMessageModel(
                     role=ChatServiceMessageRoleEnum.SYSTEM,
                     content=ExtractEntityGragSystemPrompt,
                 ),
+                ChatServiceMessageModel(
+                    role=ChatServiceMessageRoleEnum.USER,
+                    content=chunks[start],
+                ),
             ]
+            time.sleep(1)
             LLMResponse: Any = await chatService.Chat(
                 modelParams=ChatServiceRequestModel(
                     apiKey=GetCerebrasApiKey(),
-                    model="qwen-3-235b-a22b-instruct-2507",
+                    model="qwen-3-32b",
                     maxCompletionTokens=30000,
                     messages=messages,
-                    temperature=0.2,
+                    temperature=0.0,
                     responseFormat=ChatServiceCerebrasFormatModel(
                         type="json_schema",
                         jsonSchema=ChatServiceCerebrasFormatJsonSchemaModel(
@@ -231,22 +249,42 @@ class BuildGragFromDocService(BuildGraphFromDocServiceImpl_Rag):
             for imgData in chunkResponse.get("sections"):
                 image = ""
                 imagePlaceholder = imgData.get("image")
-                if imagePlaceholder is not None and imagePlaceholder != "":
+                imageTagRegex = re.compile(r"^<<\s*image-(\d+)\s*>>$", re.IGNORECASE)
+                m = None
+                if imagePlaceholder is not None:
+                    m = imageTagRegex.match(imagePlaceholder)
+                print(imgData.get("image"),imgData.get("number"))
+                if (
+                    imagePlaceholder is not None
+                    and imagePlaceholder != ""
+                    and self.StrToFloat(imgData.get("number")) is not None
+                    and m
+                    and imgData.get("title") is not None
+                    and imgData.get("description") is not None
+                    and imgData.get("description") != ""
+                    and imgData.get("title") != ""
+                ):
                     imageIndex = int(re.sub(r"\D", "", imagePlaceholder)) - 1
 
-                    image = images[imageIndex]
-                    imageUrl = await self.UploadImagesFromDocToFirebase_Rag(
-                        base64Str=image, folder="opdImages"
-                    )
-                    image = imageUrl
-                    imageData.append(
-                        ChunkImagesModel_Rag(
-                            description=imgData.get("description"),
-                            image=image,
-                            sectionNumber=float(imgData.get("number")),
-                            title=imgData.get("title"),
+                    try:
+                        image = images[imageIndex]
+                        imageUrl = await self.UploadImagesFromDocToFirebase_Rag(
+                            base64Str=image, folder="opdImages"
                         )
-                    )
+                        image = imageUrl
+                        imageData.append(
+                            ChunkImagesModel_Rag(
+                                description=imgData.get("description"),
+                                image=image,
+                                sectionNumber=cast(
+                                    Any, self.StrToFloat(imgData.get("number"))
+                                ),
+                                title=imgData.get("title"),
+                            )
+                        )
+                    except Exception as e:
+                        print(imgData.get("number"))
+                        print(f"Error parsing section number: {e}")
 
             chunkTexts[start].images = imageData
 
@@ -262,7 +300,6 @@ class BuildGragFromDocService(BuildGraphFromDocServiceImpl_Rag):
                         id=uuid4(),
                     )
                 )
-
 
             chunkRealtions.append(
                 ChunkRelationsModel_Rag(chunkId=chunkId, chunkRelations=chunkRelations)
@@ -329,7 +366,9 @@ class BuildGragFromDocService(BuildGraphFromDocServiceImpl_Rag):
             chunkTexts=chunkTexts, chunkRelations=chunkRealtions
         )
 
-    async def BuildGraphFromDoc_Rag(self, file: str) -> GetGraphFromDocResponseModel_Rag:
+    async def BuildGraphFromDoc_Rag(
+        self, file: str
+    ) -> GetGraphFromDocResponseModel_Rag:
         chunksRelations: GetGraphFromDocResponseModel_Rag = (
             await self.ExtractChunksAndRelationsFromDoc_Rag(file)
         )

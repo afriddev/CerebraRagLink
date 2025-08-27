@@ -13,8 +13,7 @@ OUTPUT (conceptual)
     "questions": ["..."],
     "relationshipsEntities": [["A","B"], ...],
     "chunk": "...",
-    "sections": [
-    ]
+    "sections": []
   }
 }
 
@@ -28,15 +27,20 @@ RULES
 - Questions: Form 3–7 questions per chunk, all answerable from chunk.
 - Don’t drop any images (<<IMAGE-N>>) or links from the chunk.
 
+SECTION NUMBER RULES
+- Section number must come from the text.
+- Allowed: float-like strings ("1.0", "1.2", "2.9").
+- If input is dotted deeper than 2 levels (e.g., "2.2.1", "3.4.5"):
+  • Collapse extra dots after the first: "2.2.1" → "2.21", "3.4.5" → "3.45".
+- Disallowed: "0", "null", "None", non-digits, strings like "d", "f", "]...".
+- Must always parse as a valid float string ("1.2", "2.9"), never "1.2.3".
+
 SECTION RULES (STRICT)
-- Output an "image" ONLY if the exact token <<IMAGE-N>> appears in THIS chunk.
-- If no image appears in this chunk  token <<IMAGE-N>> , set sections = [].
+- Output "sections" = [] if no <<IMAGE-N>> tokens in the chunk.
+- An "image" value must exactly match a token in the chunk (e.g., "<<IMAGE-2>>").
 - If an image appears on the SAME line as a section header → attach to that section.
 - If an image appears AFTER a section header but BEFORE the next header → attach to that section.
-- If an image appears BEFORE the FIRST subsection header (e.g., before "1.1") → attach it to the PARENT major section (e.g., "1.0"), NOT to "1.1".
+- If an image appears BEFORE the FIRST subsection header (e.g., before "1.1") → attach to its parent major section (e.g., "1.0").
 - If multiple images appear, assign each to the closest correct section; no duplication.
 - Never invent, move, or reassign images across chunks.
-
-
-
 """

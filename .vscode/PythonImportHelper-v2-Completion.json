@@ -1715,7 +1715,7 @@
         "documentation": {}
     },
     {
-        "label": "BuildGragFromDocService",
+        "label": "BuildGraphFromDocService_Rag",
         "importPath": "graphrag",
         "description": "graphrag",
         "isExtraImport": true,
@@ -2276,39 +2276,39 @@
         "documentation": {}
     },
     {
-        "label": "BuildGragFromDocService",
+        "label": "BuildGraphFromDocService_Rag",
         "kind": 6,
-        "importPath": "graphrag.services.BuildGragFromDocService",
-        "description": "graphrag.services.BuildGragFromDocService",
-        "peekOfCode": "class BuildGragFromDocService(FileChunkGragImpl):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")\n        _MULTI_NL_RE = re.compile(r\"\\n{3,}\")",
-        "detail": "graphrag.services.BuildGragFromDocService",
+        "importPath": "graphrag.services.BuildGraphFromDocService_Rag",
+        "description": "graphrag.services.BuildGraphFromDocService_Rag",
+        "peekOfCode": "class BuildGraphFromDocService_Rag(FileChunkGragImpl):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")\n        _MULTI_NL_RE = re.compile(r\"\\n{3,}\")",
+        "detail": "graphrag.services.BuildGraphFromDocService_Rag",
         "documentation": {}
     },
     {
         "label": "chatService",
         "kind": 5,
-        "importPath": "graphrag.services.BuildGragFromDocService",
-        "description": "graphrag.services.BuildGragFromDocService",
-        "peekOfCode": "chatService = ChatService()\nembeddingService = EmbeddingService()\nrerankingService = RerankingService()\nclass BuildGragFromDocService(FileChunkGragImpl):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)",
-        "detail": "graphrag.services.BuildGragFromDocService",
+        "importPath": "graphrag.services.BuildGraphFromDocService_Rag",
+        "description": "graphrag.services.BuildGraphFromDocService_Rag",
+        "peekOfCode": "chatService = ChatService()\nembeddingService = EmbeddingService()\nrerankingService = RerankingService()\nclass BuildGraphFromDocService_Rag(FileChunkGragImpl):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)",
+        "detail": "graphrag.services.BuildGraphFromDocService_Rag",
         "documentation": {}
     },
     {
         "label": "embeddingService",
         "kind": 5,
-        "importPath": "graphrag.services.BuildGragFromDocService",
-        "description": "graphrag.services.BuildGragFromDocService",
-        "peekOfCode": "embeddingService = EmbeddingService()\nrerankingService = RerankingService()\nclass BuildGragFromDocService(FileChunkGragImpl):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")",
-        "detail": "graphrag.services.BuildGragFromDocService",
+        "importPath": "graphrag.services.BuildGraphFromDocService_Rag",
+        "description": "graphrag.services.BuildGraphFromDocService_Rag",
+        "peekOfCode": "embeddingService = EmbeddingService()\nrerankingService = RerankingService()\nclass BuildGraphFromDocService_Rag(FileChunkGragImpl):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")",
+        "detail": "graphrag.services.BuildGraphFromDocService_Rag",
         "documentation": {}
     },
     {
         "label": "rerankingService",
         "kind": 5,
-        "importPath": "graphrag.services.BuildGragFromDocService",
-        "description": "graphrag.services.BuildGragFromDocService",
-        "peekOfCode": "rerankingService = RerankingService()\nclass BuildGragFromDocService(FileChunkGragImpl):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")",
-        "detail": "graphrag.services.BuildGragFromDocService",
+        "importPath": "graphrag.services.BuildGraphFromDocService_Rag",
+        "description": "graphrag.services.BuildGraphFromDocService_Rag",
+        "peekOfCode": "rerankingService = RerankingService()\nclass BuildGraphFromDocService_Rag(FileChunkGragImpl):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")",
+        "detail": "graphrag.services.BuildGraphFromDocService_Rag",
         "documentation": {}
     },
     {
@@ -2649,7 +2649,7 @@
         "kind": 5,
         "importPath": "k",
         "description": "k",
-        "peekOfCode": "a = BuildGragFromDocService()\nasync def main():\n    response = await a.BuildGraphFromDoc_Rag(\"opd_manual.pdf\")\n    for i in response.chunkTexts:\n        print(i.text)\n        print(i.images)\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
+        "peekOfCode": "a = BuildGraphFromDocService_Rag()\nasync def main():\n    response = await a.BuildGraphFromDoc_Rag(\"opd_manual.pdf\")\n    for i in response.chunkTexts:\n        print(i.text)\n        print(i.images)\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
         "detail": "k",
         "documentation": {}
     },

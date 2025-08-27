@@ -31,7 +31,6 @@ class EmbeddingService(EmbeddingServiceImpl):
                 promptTokens=res.usage.prompt_tokens,
                 totalTokens=res.usage.total_tokens,
             )
-            print(data)
 
             return EmbeddingResponseModel(
                 data=data,

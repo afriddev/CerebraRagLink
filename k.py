@@ -1,6 +1,6 @@
-from ragservices import BuildGragFromDocService
+from ragservices import BuildGraphFromDocService_Rag
 
-a = BuildGragFromDocService()
+a = BuildGraphFromDocService_Rag()
 
 
 async def main():

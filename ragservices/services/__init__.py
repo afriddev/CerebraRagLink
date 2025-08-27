@@ -1,4 +1,4 @@
-from .BuildGraphFromDocService_Rag import BuildGragFromDocService
+from .BuildGraphFromDocService_Rag import BuildGraphFromDocService_Rag
 
 
 __all__ =  [

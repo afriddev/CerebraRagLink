@@ -44,6 +44,8 @@ class ChatService(ChatServiceImpl):
                 max_completion_tokens=modelParams.maxCompletionTokens,
                 stream=modelParams.stream,
                 temperature=modelParams.temperature,
+                top_p=1.0,
+                seed=42,
                 response_format=cast(
                     Any,
                     (

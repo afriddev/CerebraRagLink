@@ -8,7 +8,7 @@ class ChunkMatchedNodeModel_Rag(BaseModel):
 
 
 class ChunkImagesModel_Rag(BaseModel):
-    sectionNumber: float
+    sectionNumber: float 
     title: str
     image: str
     description: str

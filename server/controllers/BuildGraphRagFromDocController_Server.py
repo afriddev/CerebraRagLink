@@ -1,9 +1,19 @@
 from fastapi import APIRouter
-
+from dbservices import PsqlDb
+from server.services import BuildGraphRagFromDocService_Server
 
 GragDocRouter = APIRouter()
+BuildGraphRagFromDocServiceServer = BuildGraphRagFromDocService_Server()
 
 
-@GragDocRouter.get("/health")
-async def health_check():
-    return {"status": "ok"}
+async def GetDb() -> PsqlDb:
+    from main import psqlDb
+
+    return psqlDb
+
+
+@GragDocRouter.get("/bgrfd")
+async def BuildGraphFromDoc():
+    return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(
+        "./others/opd_manual.pdf", await GetDb()
+    )

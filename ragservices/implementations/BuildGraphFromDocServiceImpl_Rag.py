@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Tuple
+from typing import Any, Tuple
 from ragservices.models import GetGraphFromDocResponseModel_Rag
 
 
@@ -9,6 +9,10 @@ class BuildGraphFromDocServiceImpl_Rag(ABC):
     def ExtractChunksFromDoc_Rag(
         self, file: str, chunkSize: int, chunkOLSize: int | None = 0
     ) -> Tuple[list[str], list[str]]:
+        pass
+
+    @abstractmethod
+    def StrToFloat(self, numberText: Any) -> float | None:
         pass
 
     @abstractmethod
@@ -24,5 +28,7 @@ class BuildGraphFromDocServiceImpl_Rag(ABC):
         pass
 
     @abstractmethod
-    async def BuildGraphFromDoc_Rag(self, file: str) -> GetGraphFromDocResponseModel_Rag:
+    async def BuildGraphFromDoc_Rag(
+        self, file: str
+    ) -> GetGraphFromDocResponseModel_Rag:
         pass

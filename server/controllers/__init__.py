@@ -1,4 +1,4 @@
-from .BuildGraphRagFromDocController import GragDocRouter
+from .BuildGraphRagFromDocController_Server import GragDocRouter
 
 
 __all__ = ["GragDocRouter"]

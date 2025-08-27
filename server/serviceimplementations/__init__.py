@@ -1,4 +1,6 @@
-from .BuildGraphRagFromDocServiceImpl import BuildGraphRagFromDocServiceImpl
+from .BuildGraphRagFromDocServiceImpl_Server import (
+    BuildGraphRagFromDocServiceImpl_Server,
+)
 
 
-__all__ = ["BuildGraphRagFromDocServiceImpl"]
+__all__ = ["BuildGraphRagFromDocServiceImpl_Server"]

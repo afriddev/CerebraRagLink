@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class BuildGraphRagFromDocServiceImpl(ABC):
+class BuildGraphRagFromDocServiceImpl_Server(ABC):
 
     @abstractmethod
     async def BuildGraphFromDoc(self, file:str):

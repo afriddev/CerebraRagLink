@@ -4,7 +4,10 @@ from .BuildGraphFromDocModels_Rag import (
     ChunkRelationModel_Rag,
     GetGraphFromDocResponseModel_Rag,
     ChunkMatchedNodeModel_Rag,
-    ChunkImagesModel_Rag
+    ChunkImagesModel_Rag,
+    ExtarctRelationsAndQuestionFromChunkResponseModel_Rag,
+    ExatrctImageIndexFromChunkResponseModel_Rag,
+    ExatrctImageIndexFromChunkSectionModel_Rag
 )
 
 
@@ -14,5 +17,8 @@ __all__ = [
     "ChunkRelationModel_Rag",
     "GetGraphFromDocResponseModel_Rag",
     "ChunkMatchedNodeModel_Rag",
-    "ChunkImagesModel_Rag"
+    "ChunkImagesModel_Rag",
+    "ExtarctRelationsAndQuestionFromChunkResponseModel_Rag",
+    "ExatrctImageIndexFromChunkResponseModel_Rag",
+    "ExatrctImageIndexFromChunkSectionModel_Rag"
 ]

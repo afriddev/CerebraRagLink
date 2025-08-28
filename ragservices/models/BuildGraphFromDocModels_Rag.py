@@ -8,8 +8,6 @@ class ChunkMatchedNodeModel_Rag(BaseModel):
 
 
 class ChunkImagesModel_Rag(BaseModel):
-    sectionNumber: float 
-    title: str
     image: str
     description: str
 
@@ -40,3 +38,20 @@ class ChunkRelationsModel_Rag(BaseModel):
 class GetGraphFromDocResponseModel_Rag(BaseModel):
     chunkTexts: list[CHunkTextsModel_Rag]
     chunkRelations: list[ChunkRelationsModel_Rag]
+
+
+class ExtarctRelationsAndQuestionFromChunkResponseModel_Rag(BaseModel):
+    entities: list[str]
+    realtions: list[str]
+    questions: list[str]
+    chunk: str
+    relationshipsEntities: list[list[str]]
+
+
+class ExatrctImageIndexFromChunkSectionModel_Rag(BaseModel):
+    imageindex: int | None
+    description: str
+
+
+class ExatrctImageIndexFromChunkResponseModel_Rag(BaseModel):
+    sections: list[ExatrctImageIndexFromChunkSectionModel_Rag]

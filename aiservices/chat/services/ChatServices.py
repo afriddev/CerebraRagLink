@@ -44,8 +44,8 @@ class ChatService(ChatServiceImpl):
                 max_completion_tokens=modelParams.maxCompletionTokens,
                 stream=modelParams.stream,
                 temperature=modelParams.temperature,
-                top_p=1.0,
-                seed=42,
+                top_p=modelParams.topP,
+                seed=modelParams.seed,
                 response_format=cast(
                     Any,
                     (
@@ -105,14 +105,20 @@ class ChatService(ChatServiceImpl):
                 ),
             )
 
-            return ChatServiceResponseModel(status=ChatServiceResponseStatusEnum.SUCCESS, LLMData=LLMData)
+            return ChatServiceResponseModel(
+                status=ChatServiceResponseStatusEnum.SUCCESS, LLMData=LLMData
+            )
 
         except cerebras.cloud.sdk.APIConnectionError as e:
             print(e)
-            return ChatServiceResponseModel(status=ChatServiceResponseStatusEnum.SERVER_ERROR)
+            return ChatServiceResponseModel(
+                status=ChatServiceResponseStatusEnum.SERVER_ERROR
+            )
         except cerebras.cloud.sdk.RateLimitError as e:
             print(e)
-            return ChatServiceResponseModel(status=ChatServiceResponseStatusEnum.RATE_LIMIT)
+            return ChatServiceResponseModel(
+                status=ChatServiceResponseStatusEnum.RATE_LIMIT
+            )
         except cerebras.cloud.sdk.APIStatusError as e:
             print(e)
             return self.HandleApiStatusError(e.status_code)

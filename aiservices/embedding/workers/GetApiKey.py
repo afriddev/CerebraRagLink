@@ -5,12 +5,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-MISTARL_API_KEY = cast(Any, os.getenv("MISTRAL_API_KEY"))
+MISTRAL_API_KEY = cast(Any, os.getenv("MISTRAL_API_KEY"))
 JINA_API_KEY = cast(Any, os.getenv("JINA_API_KEY"))
 
 
 def GetMistralApiKey() -> str:
-    return MISTARL_API_KEY
+    return MISTRAL_API_KEY
 
 
 def GetJinaApiKey() -> str:

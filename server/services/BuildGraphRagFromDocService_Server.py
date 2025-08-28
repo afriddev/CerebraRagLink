@@ -28,13 +28,10 @@ class BuildGraphRagFromDocService_Server(BuildGraphRagFromDocServiceImpl_Server)
                     print(f"Error processing question for chunk {ct.id}: {q}")
                     print(ex)
 
-
             for img in ct.images or []:
                 chunkImages.append(
                     (
                         ct.id,
-                        img.sectionNumber,
-                        img.title,
                         img.image,
                         img.description,
                     )
@@ -58,8 +55,8 @@ class BuildGraphRagFromDocService_Server(BuildGraphRagFromDocServiceImpl_Server)
 
         await conn.executemany(
             """
-            INSERT INTO grag.chunk_images (chunk_id, section_number, title, image_url, description)
-            VALUES ($1, $2, $3, $4, $5)
+            INSERT INTO grag.chunk_images (chunk_id, image_url, description)
+            VALUES ($1, $2, $3)
             """,
             chunkImages,
         )

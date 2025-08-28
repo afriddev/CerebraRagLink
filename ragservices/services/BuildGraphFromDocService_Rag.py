@@ -16,12 +16,14 @@ from aiservices import (
     RerankingRequestModel,
     RerankingResponseModel,
     FindTopKresultsFromVectorsRequestModel,
+    EmbeddingResponseModel,
 )
 from ragservices.implementations import BuildGraphFromDocServiceImpl_Rag
 from utils import ExtractTextFromDoc_Rag
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from ragservices.utils.BuildGraphFromDocSystemPrompts_Rag import (
-    ExtractEntityGragSystemPrompt,
+    ExtractRealtionsAndQuestionsFromChunkSystemPrompt_Rag,
+    ExtractImageIndexFromChunkSystemPrompt_Rag,
 )
 import json
 from ragservices.models import (
@@ -31,6 +33,9 @@ from ragservices.models import (
     GetGraphFromDocResponseModel_Rag,
     ChunkMatchedNodeModel_Rag,
     ChunkImagesModel_Rag,
+    ExtarctRelationsAndQuestionFromChunkResponseModel_Rag,
+    ExatrctImageIndexFromChunkSectionModel_Rag,
+    ExatrctImageIndexFromChunkResponseModel_Rag,
 )
 from uuid import UUID, uuid4
 
@@ -44,7 +49,12 @@ embeddingService = EmbeddingService()
 rerankingService = RerankingService()
 
 cred = credentials.Certificate("./others/firebaseCred.json")
-firebase_admin.initialize_app(cred, {"storageBucket": "testproject-b1efd.appspot.com"})
+cast(Any, firebase_admin).initialize_app(
+    cred, {"storageBucket": "testproject-b1efd.appspot.com"}
+)
+
+
+RetryLoopIndexLimit = 3
 
 
 class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
@@ -119,152 +129,289 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
     ) -> str:
         imageBytes: bytes = base64.b64decode(base64Str)
         filename: str = f"{folder}/{uuid4()}.png"
-        bucket: Any = cast(Any, storage.bucket())
+        bucket: Any = cast(Any, storage).bucket()
         blob: Any = bucket.blob(filename)
         blob.upload_from_string(imageBytes, content_type="image/png")
         blob.make_public()
         publicUrl: str = cast(str, blob.public_url)
         return publicUrl
 
-    def StrToFloat(self, numberText: Any):
-        if numberText is None:
-            return None
-        rawNumber = str(numberText).strip()
-        cleanedNumber = re.sub(r"[^0-9.]", "", rawNumber)
-        if not cleanedNumber:
-            return None
-        if not re.fullmatch(r"\d+(?:\.\d+)*", cleanedNumber):
-            return None
-        normalizedNumber = re.sub(r"\.(?=.*\.)", "", cleanedNumber)
+    async def ConvertTextsToVectorsFromChunk_Rag(
+        self, texts: list[str], retryLoopIndex: int
+    ) -> EmbeddingResponseModel:
+        if retryLoopIndex > RetryLoopIndexLimit:
+            raise Exception("Exception while converting texts to vector")
+
+        embeddingResponse = await embeddingService.ConvertTextToEmbedding(text=texts)
+        if embeddingResponse.data is None:
+            await self.ConvertTextsToVectorsFromChunk_Rag(
+                texts=texts, retryLoopIndex=retryLoopIndex + 1
+            )
+        return embeddingResponse
+
+    async def ExtarctRelationsAndQuestionFromChunk_Rag(
+        self,
+        messages: list[ChatServiceMessageModel],
+        retryLoopIndex: int,
+    ) -> ExtarctRelationsAndQuestionFromChunkResponseModel_Rag:
+        if retryLoopIndex > RetryLoopIndexLimit:
+            raise Exception(
+                "Exception while extarcting relation and questions from chunk"
+            )
+
+        LLMChunksRelationsExtractResponse: Any = await chatService.Chat(
+            modelParams=ChatServiceRequestModel(
+                apiKey=GetCerebrasApiKey(),
+                model="qwen-3-235b-a22b-instruct-2507",
+                maxCompletionTokens=30000,
+                messages=messages,
+                temperature=0.0,
+                responseFormat=ChatServiceCerebrasFormatModel(
+                    type="json_schema",
+                    jsonSchema=ChatServiceCerebrasFormatJsonSchemaModel(
+                        name="schema",
+                        strict=True,
+                        jsonSchema=ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel(
+                            type="object",
+                            properties={
+                                "response": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
+                                    type="object",
+                                    properties={
+                                        "entities": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
+                                            type="array",
+                                            items={"type": "string"},
+                                        ),
+                                        "relations": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
+                                            type="array",
+                                            items={"type": "string"},
+                                        ),
+                                        "questions": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
+                                            type="array",
+                                            items={"type": "string"},
+                                        ),
+                                        "relationshipsEntities": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
+                                            type="array",
+                                            items={
+                                                "type": "array",
+                                                "items": {"type": "string"},
+                                            },
+                                        ),
+                                        "chunk": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
+                                            type="string"
+                                        ),
+                                    },
+                                    required=[
+                                        "entities",
+                                        "relations",
+                                        "relationshipsEntities",
+                                        "chunk",
+                                        "questions",
+                                    ],
+                                    additionalProperties=False,
+                                )
+                            },
+                            required=["response"],
+                            additionalProperties=False,
+                        ),
+                    ),
+                ),
+            )
+        )
+        LLMResponse: Any = {}
         try:
-            return float(normalizedNumber)
-        except Exception:
-            return None
+
+            LLMResponse = json.loads(
+                LLMChunksRelationsExtractResponse.LLMData.choices[0].message.content
+            ).get("response")
+            if len(LLMResponse.get("relations")) != len(
+                LLMResponse.get("relationshipsEntities")
+            ):
+                messages.append(
+                    ChatServiceMessageModel(
+                        role=ChatServiceMessageRoleEnum.USER,
+                        content="relations and relationshipsEntities length must be same ",
+                    )
+                )
+
+                await self.ExtarctRelationsAndQuestionFromChunk_Rag(
+                    messages=messages,
+                    retryLoopIndex=0,
+                )
+
+        except Exception as e:
+            print("Error occured while extracting realtions from chunk retrying ...")
+            print(e)
+            messages.append(
+                ChatServiceMessageModel(
+                    role=ChatServiceMessageRoleEnum.USER,
+                    content="Please generate a valid json object",
+                )
+            )
+
+            await self.ExtarctRelationsAndQuestionFromChunk_Rag(
+                messages=messages,
+                retryLoopIndex=retryLoopIndex + 1,
+            )
+        response = ExtarctRelationsAndQuestionFromChunkResponseModel_Rag(
+            chunk=LLMResponse.get("chunk"),
+            entities=LLMResponse.get("entities"),
+            questions=LLMResponse.get("questions"),
+            realtions=LLMResponse.get("relations"),
+            relationshipsEntities=LLMResponse.get("relationshipsEntities"),
+        )
+        return response
+
+    async def ExatrctImageIndexFromChunk_Rag(
+        self,
+        messages: list[ChatServiceMessageModel],
+        chunkText: str,
+        retryLoopIndex: int,
+    ) -> ExatrctImageIndexFromChunkResponseModel_Rag:
+        if retryLoopIndex > RetryLoopIndexLimit:
+            raise Exception("Exception while extarcting image index from chunk")
+
+        if not (re.search(r"<<\s*image-\d+\s*>>", chunkText, flags=re.IGNORECASE)):
+            return ExatrctImageIndexFromChunkResponseModel_Rag(sections=[])
+
+        LLMImageExtractResponse: Any = await chatService.Chat(
+            modelParams=ChatServiceRequestModel(
+                apiKey=GetCerebrasApiKey(),
+                model="qwen-3-32b",
+                maxCompletionTokens=3000,
+                messages=messages,
+                temperature=0.0,
+                responseFormat=ChatServiceCerebrasFormatModel(
+                    type="json_schema",
+                    jsonSchema=ChatServiceCerebrasFormatJsonSchemaModel(
+                        name="schema",
+                        strict=True,
+                        jsonSchema=ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel(
+                            type="object",
+                            properties={
+                                "response": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
+                                    type="object",
+                                    properties={
+                                        "sections": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "imageindex": {"type": "string"},
+                                                    "description": {"type": "string"},
+                                                },
+                                            },
+                                        },
+                                    },
+                                    required=[
+                                        "sections",
+                                    ],
+                                    additionalProperties=False,
+                                )
+                            },
+                            required=["response"],
+                            additionalProperties=False,
+                        ),
+                    ),
+                ),
+            )
+        )
+        LLMResponse: Any = {}
+        try:
+            LLMResponse = json.loads(
+                LLMImageExtractResponse.LLMData.choices[0].message.content
+            ).get("response")
+        except Exception as e:
+            print("Error occured while extracting image index from chunk retrying ...")
+            print(e)
+            messages.append(
+                ChatServiceMessageModel(
+                    role=ChatServiceMessageRoleEnum.USER,
+                    content="Please generate a valid json object",
+                )
+            )
+            await self.ExatrctImageIndexFromChunk_Rag(
+                messages=messages,
+                chunkText=chunkText,
+                retryLoopIndex=retryLoopIndex + 1,
+            )
+        imageSections: list[ExatrctImageIndexFromChunkSectionModel_Rag] = []
+
+        if LLMResponse.get("sections") is not None:
+            for section in LLMResponse.get("sections"):
+                try:
+                    imageSections.append(
+                        ExatrctImageIndexFromChunkSectionModel_Rag(
+                            description=section.get("description"),
+                            imageindex=int(re.sub(r"\D", "", section.get("imageindex")))
+                            - 1,
+                        )
+                    )
+                except:
+                    imageSections.append(
+                        ExatrctImageIndexFromChunkSectionModel_Rag(
+                            description=section.get("description"),
+                            imageindex=None,
+                        )
+                    )
+
+        return ExatrctImageIndexFromChunkResponseModel_Rag(sections=imageSections)
 
     async def ExtractChunksAndRelationsFromDoc_Rag(self, file: str):
         chunks, images = self.ExtractChunksFromDoc_Rag(file, 600)
         chunkTexts: list[CHunkTextsModel_Rag] = []
-        chunkRealtions: list[ChunkRelationsModel_Rag] = []
+        chunksRealtions: list[ChunkRelationsModel_Rag] = []
 
         for start in range(0, len(chunks), 1):
-            messages: list[ChatServiceMessageModel] = [
+            time.sleep(1)
+            LLMChunkRelationMessages: list[ChatServiceMessageModel] = [
                 ChatServiceMessageModel(
                     role=ChatServiceMessageRoleEnum.SYSTEM,
-                    content=ExtractEntityGragSystemPrompt,
+                    content=ExtractRealtionsAndQuestionsFromChunkSystemPrompt_Rag,
                 ),
                 ChatServiceMessageModel(
                     role=ChatServiceMessageRoleEnum.USER,
                     content=chunks[start],
                 ),
             ]
-            time.sleep(1)
-            LLMResponse: Any = await chatService.Chat(
-                modelParams=ChatServiceRequestModel(
-                    apiKey=GetCerebrasApiKey(),
-                    model="qwen-3-32b",
-                    maxCompletionTokens=30000,
-                    messages=messages,
-                    temperature=0.0,
-                    responseFormat=ChatServiceCerebrasFormatModel(
-                        type="json_schema",
-                        jsonSchema=ChatServiceCerebrasFormatJsonSchemaModel(
-                            name="schema",
-                            strict=True,
-                            jsonSchema=ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel(
-                                type="object",
-                                properties={
-                                    "response": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
-                                        type="object",
-                                        properties={
-                                            "entities": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
-                                                type="array",
-                                                items={"type": "string"},
-                                            ),
-                                            "relations": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
-                                                type="array",
-                                                items={"type": "string"},
-                                            ),
-                                            "questions": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
-                                                type="array",
-                                                items={"type": "string"},
-                                            ),
-                                            "relationshipsEntities": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
-                                                type="array",
-                                                items={
-                                                    "type": "array",
-                                                    "items": {"type": "string"},
-                                                },
-                                            ),
-                                            "chunk": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
-                                                type="string"
-                                            ),
-                                            "sections": {
-                                                "type": "array",
-                                                "items": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "number": {"type": "string"},
-                                                        "title": {"type": "string"},
-                                                        "image": {"type": "string"},
-                                                        "description": {
-                                                            "type": "string"
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                        required=[
-                                            "entities",
-                                            "relations",
-                                            "relationshipsEntities",
-                                            "chunk",
-                                            "questions",
-                                            "sections",
-                                        ],
-                                        additionalProperties=False,
-                                    )
-                                },
-                                required=["response"],
-                                additionalProperties=False,
-                            ),
-                        ),
-                    ),
+            chunksRelationsResponse = (
+                await self.ExtarctRelationsAndQuestionFromChunk_Rag(
+                    messages=LLMChunkRelationMessages,
+                    retryLoopIndex=0,
                 )
             )
-            chunkResponse = json.loads(
-                LLMResponse.LLMData.choices[0].message.content
-            ).get("response")
+            time.sleep(1)
+            LLMChunkImagesMessages: list[ChatServiceMessageModel] = [
+                ChatServiceMessageModel(
+                    role=ChatServiceMessageRoleEnum.SYSTEM,
+                    content=ExtractImageIndexFromChunkSystemPrompt_Rag,
+                ),
+                ChatServiceMessageModel(
+                    role=ChatServiceMessageRoleEnum.USER,
+                    content=chunks[start],
+                ),
+            ]
+            chunkImageResponse = await self.ExatrctImageIndexFromChunk_Rag(
+                retryLoopIndex=0,
+                messages=LLMChunkImagesMessages,
+                chunkText=chunks[start],
+            )
+
             chunkId = uuid4()
             chunkTexts.append(
                 CHunkTextsModel_Rag(
                     id=chunkId,
-                    text=chunkResponse.get("chunk"),
-                    entities=chunkResponse.get("entities"),
-                    questions=chunkResponse.get("questions"),
+                    text=chunksRelationsResponse.chunk,
+                    entities=chunksRelationsResponse.entities,
+                    questions=chunksRelationsResponse.questions,
                 )
             )
 
             imageData: list[ChunkImagesModel_Rag] = []
 
-            for imgData in chunkResponse.get("sections"):
+            for imgData in chunkImageResponse.sections:
                 image = ""
-                imagePlaceholder = imgData.get("image")
-                imageTagRegex = re.compile(r"^<<\s*image-(\d+)\s*>>$", re.IGNORECASE)
-                m = None
-                if imagePlaceholder is not None:
-                    m = imageTagRegex.match(imagePlaceholder)
-                print(imgData.get("image"),imgData.get("number"))
-                if (
-                    imagePlaceholder is not None
-                    and imagePlaceholder != ""
-                    and self.StrToFloat(imgData.get("number")) is not None
-                    and m
-                    and imgData.get("title") is not None
-                    and imgData.get("description") is not None
-                    and imgData.get("description") != ""
-                    and imgData.get("title") != ""
-                ):
-                    imageIndex = int(re.sub(r"\D", "", imagePlaceholder)) - 1
+                imageIndex = imgData.imageindex
+                if imageIndex is not None:
 
                     try:
                         image = images[imageIndex]
@@ -274,24 +421,19 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                         image = imageUrl
                         imageData.append(
                             ChunkImagesModel_Rag(
-                                description=imgData.get("description"),
+                                description=imgData.description,
                                 image=image,
-                                sectionNumber=cast(
-                                    Any, self.StrToFloat(imgData.get("number"))
-                                ),
-                                title=imgData.get("title"),
                             )
                         )
                     except Exception as e:
-                        print(imgData.get("number"))
-                        print(f"Error parsing section number: {e}")
+                        print(f"Error parsing section: {e}")
 
             chunkTexts[start].images = imageData
 
             chunkRelations: list[ChunkRelationModel_Rag] = []
             for relation, relationEntities in zip(
-                chunkResponse.get("relations"),
-                chunkResponse.get("relationshipsEntities"),
+                chunksRelationsResponse.realtions,
+                chunksRelationsResponse.relationshipsEntities,
             ):
                 chunkRelations.append(
                     ChunkRelationModel_Rag(
@@ -301,69 +443,46 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                     )
                 )
 
-            chunkRealtions.append(
+            texts: list[str] = []
+            texts.append(chunksRelationsResponse.chunk)
+            for _, question in enumerate(chunksRelationsResponse.questions):
+                texts.append(question)
+            for _, relation in enumerate(chunksRelationsResponse.realtions):
+                texts.append(relation)
+
+            textVectors = await self.ConvertTextsToVectorsFromChunk_Rag(
+                texts=texts, retryLoopIndex=0
+            )
+            c = 1
+            qLen = len(chunksRelationsResponse.questions)
+            zipped = list(
+                zip(
+                    chunksRelationsResponse.realtions,
+                    chunksRelationsResponse.relationshipsEntities,
+                )
+            )
+            rLen = len(zipped)
+            if textVectors.data is not None:
+                chunkTexts[start].vector = textVectors.data[0].embedding
+                qVectors: list[list[float]] = []
+                for qIndex in range(c, c + qLen):
+                    qVectors.append(cast(Any, textVectors).data[qIndex].embedding)
+                chunkTexts[start].questionVectors = qVectors
+
+                for rIndex in range(
+                    c + qLen,
+                    c + qLen + rLen,
+                ):
+                    chunkRelations[rIndex - (c + qLen)].relationVector = (
+                        textVectors.data[rIndex].embedding
+                    )
+
+            chunksRealtions.append(
                 ChunkRelationsModel_Rag(chunkId=chunkId, chunkRelations=chunkRelations)
             )
 
-        batchSize = 15
-        for index in range(0, len(chunkTexts), batchSize):
-            chunkTextsBatch = [
-                chunk.text for chunk in chunkTexts[index : index + batchSize]
-            ]
-
-            chunkQuestionsBatch = [
-                question
-                for chunkQuestions in chunkTexts[index : index + batchSize]
-                for question in chunkQuestions.questions
-            ]
-
-            chunkRelationsBatch = [
-                relation.realtion
-                for relations in chunkRealtions[index : index + batchSize]
-                for relation in relations.chunkRelations
-            ]
-            chunkTextsEmbeddingResponse = await embeddingService.ConvertTextToEmbedding(
-                chunkTextsBatch
-            )
-
-            chunkQuestionsEmbeddingResponse = (
-                await embeddingService.ConvertTextToEmbedding(chunkQuestionsBatch)
-            )
-
-            relationsEmbeddingResponse = await embeddingService.ConvertTextToEmbedding(
-                chunkRelationsBatch
-            )
-            if chunkTextsEmbeddingResponse.data is not None:
-                for _, vector in enumerate(chunkTextsEmbeddingResponse.data):
-                    chunkTexts[index + cast(int, vector.index)].vector = (
-                        vector.embedding
-                    )
-
-            if chunkQuestionsEmbeddingResponse.data is not None:
-                for index4, _ in enumerate(chunkTexts[index : index + batchSize]):
-                    for index5, _ in enumerate(chunkTexts[index4].questions):
-                        cast(Any, chunkTexts[index + index4].questionVectors).append(
-                            cast(
-                                Any,
-                                chunkQuestionsEmbeddingResponse.data[
-                                    index4 + index5
-                                ].embedding,
-                            )
-                        )
-
-            if relationsEmbeddingResponse.data is not None:
-                for index3, chunkRelation in enumerate(
-                    chunkRealtions[index : index + batchSize]
-                ):
-                    for index4, _ in enumerate(chunkRelation.chunkRelations):
-                        chunkRealtions[index + index3].chunkRelations[
-                            index4
-                        ].relationVector = relationsEmbeddingResponse.data[
-                            index3 + index4
-                        ].embedding
-
         return GetGraphFromDocResponseModel_Rag(
-            chunkTexts=chunkTexts, chunkRelations=chunkRealtions
+            chunkTexts=chunkTexts, chunkRelations=chunksRealtions
         )
 
     async def BuildGraphFromDoc_Rag(

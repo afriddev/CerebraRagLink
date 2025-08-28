@@ -46,6 +46,9 @@ class ChatServiceRequestModel(BaseModel):
     temperature: Optional[float] = 0.7
     apiKey: str
     responseFormat: Optional[ChatServiceCerebrasFormatModel] = None
+    topP:float = 1.0
+    seed:int = 42
+    
 
 
 class ChatServiceChoiceMessageModel(BaseModel):

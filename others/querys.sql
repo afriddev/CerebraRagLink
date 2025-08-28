@@ -19,8 +19,6 @@ CREATE TABLE grag.chunk_questions (
 CREATE TABLE grag.chunk_images (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   chunk_id UUID NOT NULL,
-  section_number DOUBLE PRECISION,
-  title TEXT NOT NULL,
   image_url TEXT DEFAULT NULL,
   description TEXT NOT NULL
 );

@@ -1,4 +1,5 @@
-ExtractEntityGragSystemPrompt = r"""
+
+ExtractRealtionsAndQuestionsFromChunkSystemPrompt_Rag = r"""
 TASK
 Return ONLY valid JSON per the schema for ONE input chunk.
 
@@ -12,35 +13,50 @@ OUTPUT (conceptual)
     "relations": ["..."],
     "questions": ["..."],
     "relationshipsEntities": [["A","B"], ...],
-    "chunk": "...",
-    "sections": []
+    "chunk": "..."
   }
 }
 
 RULES
 - JSON only. No markdown, no comments, no extra keys.
+- Use DOUBLE QUOTES " for all keys and string values (never single quotes).
+- Output must be a valid JSON object without line breaks \n or escape sequences.
+- No special characters outside valid JSON.
 - Echo the input "chunk" with whitespace normalized.
-- Do NOT invent entities/links/images.
+- Do NOT invent entities.
 - Entities: concise (≤15 chars), lowercase unless proper noun; deduplicate.
-- Relations: Form ≥12 relations between entities. KG-friendly style:
-   • subject → predicate → object
+- Relations: Form ≥12 natural language sentences that clearly express how the entities are related. Each relation must read as a proper sentence including the entities.
+- relationshipsEntities MUST be the same length as relations; for the i-th relation, relationshipsEntities[i] MUST be a two-item array [subject, object] using exact strings from entities.
+- If a relation cannot be mapped to a [subject, object], DROP that relation so lengths stay equal.
 - Questions: Form 3–7 questions per chunk, all answerable from chunk.
-- Don’t drop any images (<<IMAGE-N>>) or links from the chunk.
+- relations length and relationshipsEntities must be equal 
 
-SECTION NUMBER RULES
-- Section number must come from the text.
-- Allowed: float-like strings ("1.0", "1.2", "2.9").
-- If input is dotted deeper than 2 levels (e.g., "2.2.1", "3.4.5"):
-  • Collapse extra dots after the first: "2.2.1" → "2.21", "3.4.5" → "3.45".
-- Disallowed: "0", "null", "None", non-digits, strings like "d", "f", "]...".
-- Must always parse as a valid float string ("1.2", "2.9"), never "1.2.3".
+"""
 
-SECTION RULES (STRICT)
-- Output "sections" = [] if no <<IMAGE-N>> tokens in the chunk.
-- An "image" value must exactly match a token in the chunk (e.g., "<<IMAGE-2>>").
-- If an image appears on the SAME line as a section header → attach to that section.
-- If an image appears AFTER a section header but BEFORE the next header → attach to that section.
-- If an image appears BEFORE the FIRST subsection header (e.g., before "1.1") → attach to its parent major section (e.g., "1.0").
-- If multiple images appear, assign each to the closest correct section; no duplication.
-- Never invent, move, or reassign images across chunks.
+
+
+ExtractImageIndexFromChunkSystemPrompt_Rag = r"""
+TASK
+Return ONLY valid JSON per the schema for ONE input chunk.
+
+INPUT
+{ "chunk": "..." }
+
+OUTPUT (conceptual)
+{
+  "response": {
+    "sections": [
+      { "imageindex": "7", "description": "One clear sentence (8–25 words) explaining why/how the image is used." }
+    ]
+  }
+}
+
+RULES
+- JSON only. Double quotes only. No markdown, no extra text, no \n or escapes.
+- Detect tokens STRICTLY by regex: (?i)<<\s*image-(\d+)\s*>> . Extract only the digit group as imageindex.
+- Do NOT infer from words like "image", "figure", bullets/icons (e.g., ), headings (e.g., 1.1), or any numbers near text.
+- If multiple tokens exist, output one item per token in original order; no duplicates, no inventions.
+- If NO token matches, return exactly: {"response":{"sections":[{"imageindex":"","description":""}]}} .
+- Description: one grammatical sentence (15–25 words), start with capital, end with period; allowed chars: letters, digits, spaces, . , ( ) - ; .
+- Never output null, None, or "null".
 """

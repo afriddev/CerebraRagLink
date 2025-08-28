@@ -17,6 +17,7 @@ from aiservices import (
     RerankingResponseModel,
     FindTopKresultsFromVectorsRequestModel,
     EmbeddingResponseModel,
+    EmbeddingResponseEnum,
 )
 from ragservices.implementations import BuildGraphFromDocServiceImpl_Rag
 from utils import ExtractTextFromDoc_Rag
@@ -140,7 +141,7 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
         self, texts: list[str], retryLoopIndex: int
     ) -> EmbeddingResponseModel:
         if retryLoopIndex > RetryLoopIndexLimit:
-            raise Exception("Exception while converting texts to vector")
+            return EmbeddingResponseModel(status=EmbeddingResponseEnum.ERROR)
 
         embeddingResponse = await embeddingService.ConvertTextToEmbedding(text=texts)
         if embeddingResponse.data is None:
@@ -360,41 +361,54 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
         chunks, images = self.ExtractChunksFromDoc_Rag(file, 600)
         chunkTexts: list[CHunkTextsModel_Rag] = []
         chunksRealtions: list[ChunkRelationsModel_Rag] = []
+        start = 0
 
-        for start in range(0, len(chunks), 1):
-            time.sleep(1)
-            LLMChunkRelationMessages: list[ChatServiceMessageModel] = [
-                ChatServiceMessageModel(
-                    role=ChatServiceMessageRoleEnum.SYSTEM,
-                    content=ExtractRealtionsAndQuestionsFromChunkSystemPrompt_Rag,
-                ),
-                ChatServiceMessageModel(
-                    role=ChatServiceMessageRoleEnum.USER,
-                    content=chunks[start],
-                ),
-            ]
-            chunksRelationsResponse = (
-                await self.ExtarctRelationsAndQuestionFromChunk_Rag(
-                    messages=LLMChunkRelationMessages,
-                    retryLoopIndex=0,
+        while start < len(chunks):
+            chunksRelationsResponse: (
+                ExtarctRelationsAndQuestionFromChunkResponseModel_Rag | None
+            ) = None
+            chunkImageResponse: ExatrctImageIndexFromChunkResponseModel_Rag | None = (
+                None
+            )
+
+            try:
+                time.sleep(1)
+                LLMChunkRelationMessages: list[ChatServiceMessageModel] = [
+                    ChatServiceMessageModel(
+                        role=ChatServiceMessageRoleEnum.SYSTEM,
+                        content=ExtractRealtionsAndQuestionsFromChunkSystemPrompt_Rag,
+                    ),
+                    ChatServiceMessageModel(
+                        role=ChatServiceMessageRoleEnum.USER,
+                        content=chunks[start],
+                    ),
+                ]
+                chunksRelationsResponse = (
+                    await self.ExtarctRelationsAndQuestionFromChunk_Rag(
+                        messages=LLMChunkRelationMessages,
+                        retryLoopIndex=0,
+                    )
                 )
-            )
-            time.sleep(1)
-            LLMChunkImagesMessages: list[ChatServiceMessageModel] = [
-                ChatServiceMessageModel(
-                    role=ChatServiceMessageRoleEnum.SYSTEM,
-                    content=ExtractImageIndexFromChunkSystemPrompt_Rag,
-                ),
-                ChatServiceMessageModel(
-                    role=ChatServiceMessageRoleEnum.USER,
-                    content=chunks[start],
-                ),
-            ]
-            chunkImageResponse = await self.ExatrctImageIndexFromChunk_Rag(
-                retryLoopIndex=0,
-                messages=LLMChunkImagesMessages,
-                chunkText=chunks[start],
-            )
+                time.sleep(1)
+                LLMChunkImagesMessages: list[ChatServiceMessageModel] = [
+                    ChatServiceMessageModel(
+                        role=ChatServiceMessageRoleEnum.SYSTEM,
+                        content=ExtractImageIndexFromChunkSystemPrompt_Rag,
+                    ),
+                    ChatServiceMessageModel(
+                        role=ChatServiceMessageRoleEnum.USER,
+                        content=chunks[start],
+                    ),
+                ]
+                chunkImageResponse = await self.ExatrctImageIndexFromChunk_Rag(
+                    retryLoopIndex=0,
+                    messages=LLMChunkImagesMessages,
+                    chunkText=chunks[start],
+                )
+            except Exception as e:
+                print(f"Error processing chunk at index {start}: {e}")
+                start = start
+                continue
 
             chunkId = uuid4()
             chunkTexts.append(
@@ -480,6 +494,7 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
             chunksRealtions.append(
                 ChunkRelationsModel_Rag(chunkId=chunkId, chunkRelations=chunkRelations)
             )
+            start += 1
 
         return GetGraphFromDocResponseModel_Rag(
             chunkTexts=chunkTexts, chunkRelations=chunksRealtions

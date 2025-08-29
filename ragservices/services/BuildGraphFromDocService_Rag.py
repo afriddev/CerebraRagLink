@@ -361,40 +361,54 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
         chunkTexts: list[CHunkTextsModel_Rag] = []
         chunksRealtions: list[ChunkRelationsModel_Rag] = []
 
-        for start in range(0, len(chunks), 1):
-            time.sleep(1)
-            LLMChunkRelationMessages: list[ChatServiceMessageModel] = [
-                ChatServiceMessageModel(
-                    role=ChatServiceMessageRoleEnum.SYSTEM,
-                    content=ExtractRealtionsAndQuestionsFromChunkSystemPrompt_Rag,
-                ),
-                ChatServiceMessageModel(
-                    role=ChatServiceMessageRoleEnum.USER,
-                    content=chunks[start],
-                ),
-            ]
-            chunksRelationsResponse = (
-                await self.ExtarctRelationsAndQuestionFromChunk_Rag(
-                    messages=LLMChunkRelationMessages,
-                    retryLoopIndex=0,
+        start = 0
+
+        while start < len(chunks):
+            chunksRelationsResponse: (
+                ExtarctRelationsAndQuestionFromChunkResponseModel_Rag | None
+            ) = None
+            chunkImageResponse: ExatrctImageIndexFromChunkResponseModel_Rag | None = (
+                None
+            )
+
+            try:
+                time.sleep(1)
+                LLMChunkRelationMessages: list[ChatServiceMessageModel] = [
+                    ChatServiceMessageModel(
+                        role=ChatServiceMessageRoleEnum.SYSTEM,
+                        content=ExtractRealtionsAndQuestionsFromChunkSystemPrompt_Rag,
+                    ),
+                    ChatServiceMessageModel(
+                        role=ChatServiceMessageRoleEnum.USER,
+                        content=chunks[start],
+                    ),
+                ]
+                chunksRelationsResponse = (
+                    await self.ExtarctRelationsAndQuestionFromChunk_Rag(
+                        messages=LLMChunkRelationMessages,
+                        retryLoopIndex=0,
+                    )
                 )
-            )
-            time.sleep(1)
-            LLMChunkImagesMessages: list[ChatServiceMessageModel] = [
-                ChatServiceMessageModel(
-                    role=ChatServiceMessageRoleEnum.SYSTEM,
-                    content=ExtractImageIndexFromChunkSystemPrompt_Rag,
-                ),
-                ChatServiceMessageModel(
-                    role=ChatServiceMessageRoleEnum.USER,
-                    content=chunks[start],
-                ),
-            ]
-            chunkImageResponse = await self.ExatrctImageIndexFromChunk_Rag(
-                retryLoopIndex=0,
-                messages=LLMChunkImagesMessages,
-                chunkText=chunks[start],
-            )
+                time.sleep(1)
+                LLMChunkImagesMessages: list[ChatServiceMessageModel] = [
+                    ChatServiceMessageModel(
+                        role=ChatServiceMessageRoleEnum.SYSTEM,
+                        content=ExtractImageIndexFromChunkSystemPrompt_Rag,
+                    ),
+                    ChatServiceMessageModel(
+                        role=ChatServiceMessageRoleEnum.USER,
+                        content=chunks[start],
+                    ),
+                ]
+                chunkImageResponse = await self.ExatrctImageIndexFromChunk_Rag(
+                    retryLoopIndex=0,
+                    messages=LLMChunkImagesMessages,
+                    chunkText=chunks[start],
+                )
+            except:
+                print(f"Faild to process chunk at index {start}")
+                start = start
+                continue
 
             chunkId = uuid4()
             chunkTexts.append(
@@ -480,6 +494,8 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
             chunksRealtions.append(
                 ChunkRelationsModel_Rag(chunkId=chunkId, chunkRelations=chunkRelations)
             )
+
+            start += 1
 
         return GetGraphFromDocResponseModel_Rag(
             chunkTexts=chunkTexts, chunkRelations=chunksRealtions

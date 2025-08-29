@@ -120,38 +120,6 @@
         "documentation": {}
     },
     {
-        "label": "ABC",
-        "importPath": "abc",
-        "description": "abc",
-        "isExtraImport": true,
-        "detail": "abc",
-        "documentation": {}
-    },
-    {
-        "label": "abstractmethod",
-        "importPath": "abc",
-        "description": "abc",
-        "isExtraImport": true,
-        "detail": "abc",
-        "documentation": {}
-    },
-    {
-        "label": "ABC",
-        "importPath": "abc",
-        "description": "abc",
-        "isExtraImport": true,
-        "detail": "abc",
-        "documentation": {}
-    },
-    {
-        "label": "abstractmethod",
-        "importPath": "abc",
-        "description": "abc",
-        "isExtraImport": true,
-        "detail": "abc",
-        "documentation": {}
-    },
-    {
         "label": "StreamingResponse",
         "importPath": "fastapi.responses",
         "description": "fastapi.responses",
@@ -168,91 +136,67 @@
         "documentation": {}
     },
     {
-        "label": "JSONResponse",
-        "importPath": "fastapi.responses",
-        "description": "fastapi.responses",
-        "isExtraImport": true,
-        "detail": "fastapi.responses",
-        "documentation": {}
-    },
-    {
-        "label": "JSONResponse",
-        "importPath": "fastapi.responses",
-        "description": "fastapi.responses",
-        "isExtraImport": true,
-        "detail": "fastapi.responses",
-        "documentation": {}
-    },
-    {
-        "label": "JSONResponse",
-        "importPath": "fastapi.responses",
-        "description": "fastapi.responses",
-        "isExtraImport": true,
-        "detail": "fastapi.responses",
-        "documentation": {}
-    },
-    {
         "label": "ChatServiceRequestModel",
-        "importPath": "clientservices.chat.models",
-        "description": "clientservices.chat.models",
+        "importPath": "aiservices.chat.models",
+        "description": "aiservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.chat.models",
+        "detail": "aiservices.chat.models",
         "documentation": {}
     },
     {
         "label": "ChatServiceResponseModel",
-        "importPath": "clientservices.chat.models",
-        "description": "clientservices.chat.models",
+        "importPath": "aiservices.chat.models",
+        "description": "aiservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.chat.models",
+        "detail": "aiservices.chat.models",
         "documentation": {}
     },
     {
         "label": "ChatServiceRequestModel",
-        "importPath": "clientservices.chat.models",
-        "description": "clientservices.chat.models",
+        "importPath": "aiservices.chat.models",
+        "description": "aiservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.chat.models",
+        "detail": "aiservices.chat.models",
         "documentation": {}
     },
     {
         "label": "ChatServiceResponseModel",
-        "importPath": "clientservices.chat.models",
-        "description": "clientservices.chat.models",
+        "importPath": "aiservices.chat.models",
+        "description": "aiservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.chat.models",
+        "detail": "aiservices.chat.models",
         "documentation": {}
     },
     {
         "label": "ChatServiceDataResponseModel",
-        "importPath": "clientservices.chat.models",
-        "description": "clientservices.chat.models",
+        "importPath": "aiservices.chat.models",
+        "description": "aiservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.chat.models",
+        "detail": "aiservices.chat.models",
         "documentation": {}
     },
     {
         "label": "ChatServiceUsageModel",
-        "importPath": "clientservices.chat.models",
-        "description": "clientservices.chat.models",
+        "importPath": "aiservices.chat.models",
+        "description": "aiservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.chat.models",
+        "detail": "aiservices.chat.models",
         "documentation": {}
     },
     {
         "label": "ChatServiceChoiceModel",
-        "importPath": "clientservices.chat.models",
-        "description": "clientservices.chat.models",
+        "importPath": "aiservices.chat.models",
+        "description": "aiservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.chat.models",
+        "detail": "aiservices.chat.models",
         "documentation": {}
     },
     {
         "label": "ChatServiceChoiceMessageModel",
-        "importPath": "clientservices.chat.models",
-        "description": "clientservices.chat.models",
+        "importPath": "aiservices.chat.models",
+        "description": "aiservices.chat.models",
         "isExtraImport": true,
-        "detail": "clientservices.chat.models",
+        "detail": "aiservices.chat.models",
         "documentation": {}
     },
     {
@@ -360,6 +304,14 @@
         "documentation": {}
     },
     {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Tuple",
         "importPath": "typing",
         "description": "typing",
@@ -409,30 +361,6 @@
     },
     {
         "label": "cast",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -469,38 +397,6 @@
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
         "documentation": {}
     },
     {
@@ -545,42 +441,42 @@
     },
     {
         "label": "ChatServiceMessageRoleEnum",
-        "importPath": "clientservices.chat.enums",
-        "description": "clientservices.chat.enums",
+        "importPath": "aiservices.chat.enums",
+        "description": "aiservices.chat.enums",
         "isExtraImport": true,
-        "detail": "clientservices.chat.enums",
+        "detail": "aiservices.chat.enums",
         "documentation": {}
     },
     {
         "label": "ChatServiceResponseStatusEnum",
-        "importPath": "clientservices.chat.enums",
-        "description": "clientservices.chat.enums",
+        "importPath": "aiservices.chat.enums",
+        "description": "aiservices.chat.enums",
         "isExtraImport": true,
-        "detail": "clientservices.chat.enums",
+        "detail": "aiservices.chat.enums",
         "documentation": {}
     },
     {
         "label": "ChatServiceResponseStatusEnum",
-        "importPath": "clientservices.chat.enums",
-        "description": "clientservices.chat.enums",
+        "importPath": "aiservices.chat.enums",
+        "description": "aiservices.chat.enums",
         "isExtraImport": true,
-        "detail": "clientservices.chat.enums",
+        "detail": "aiservices.chat.enums",
         "documentation": {}
     },
     {
         "label": "ChatServiceResponseStatusEnum",
-        "importPath": "clientservices.chat.enums",
-        "description": "clientservices.chat.enums",
+        "importPath": "aiservices.chat.enums",
+        "description": "aiservices.chat.enums",
         "isExtraImport": true,
-        "detail": "clientservices.chat.enums",
+        "detail": "aiservices.chat.enums",
         "documentation": {}
     },
     {
         "label": "ChatServiceResponseStatusEnum",
-        "importPath": "clientservices.chat.enums",
-        "description": "clientservices.chat.enums",
+        "importPath": "aiservices.chat.enums",
+        "description": "aiservices.chat.enums",
         "isExtraImport": true,
-        "detail": "clientservices.chat.enums",
+        "detail": "aiservices.chat.enums",
         "documentation": {}
     },
     {
@@ -610,18 +506,18 @@
     },
     {
         "label": "ChatServiceImpl",
-        "importPath": "clientservices.chat.implementations",
-        "description": "clientservices.chat.implementations",
+        "importPath": "aiservices.chat.implementations",
+        "description": "aiservices.chat.implementations",
         "isExtraImport": true,
-        "detail": "clientservices.chat.implementations",
+        "detail": "aiservices.chat.implementations",
         "documentation": {}
     },
     {
         "label": "GetCerebrasApiKey",
-        "importPath": "clientservices.chat.workers",
-        "description": "clientservices.chat.workers",
+        "importPath": "aiservices.chat.workers",
+        "description": "aiservices.chat.workers",
         "isExtraImport": true,
-        "detail": "clientservices.chat.workers",
+        "detail": "aiservices.chat.workers",
         "documentation": {}
     },
     {
@@ -667,210 +563,210 @@
     },
     {
         "label": "EmbeddingResponseModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatRequestModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "RerankingRequestModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "RerankingResponseModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "FindTopKresultsFromVectorsRequestModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "FindTopKresultsFromVectorsResponseModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "EmbeddingResponseModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "EmbeddingDataModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "EmbeddingUsageModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseUsageModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseChoiceModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseMessageModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatRequestModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "RerankingRequestModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "RerankingResponseModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "RerankingResponseChoiseModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "RerankingUsageModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "FindTopKresultsFromVectorsRequestModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "FindTopKresultsFromVectorsResponseModel",
-        "importPath": "clientservices.embedding.models",
-        "description": "clientservices.embedding.models",
+        "importPath": "aiservices.embedding.models",
+        "description": "aiservices.embedding.models",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.models",
+        "detail": "aiservices.embedding.models",
         "documentation": {}
     },
     {
         "label": "MistralChatMessageRoleEnum",
-        "importPath": "clientservices.embedding.enums",
-        "description": "clientservices.embedding.enums",
+        "importPath": "aiservices.embedding.enums",
+        "description": "aiservices.embedding.enums",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.enums",
+        "detail": "aiservices.embedding.enums",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseStatusEnum",
-        "importPath": "clientservices.embedding.enums",
-        "description": "clientservices.embedding.enums",
+        "importPath": "aiservices.embedding.enums",
+        "description": "aiservices.embedding.enums",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.enums",
+        "detail": "aiservices.embedding.enums",
         "documentation": {}
     },
     {
         "label": "EmbeddingResponseEnum",
-        "importPath": "clientservices.embedding.enums",
-        "description": "clientservices.embedding.enums",
+        "importPath": "aiservices.embedding.enums",
+        "description": "aiservices.embedding.enums",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.enums",
+        "detail": "aiservices.embedding.enums",
         "documentation": {}
     },
     {
         "label": "EmbeddingResponseEnum",
-        "importPath": "clientservices.embedding.enums",
-        "description": "clientservices.embedding.enums",
+        "importPath": "aiservices.embedding.enums",
+        "description": "aiservices.embedding.enums",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.enums",
+        "detail": "aiservices.embedding.enums",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseStatusEnum",
-        "importPath": "clientservices.embedding.enums",
-        "description": "clientservices.embedding.enums",
+        "importPath": "aiservices.embedding.enums",
+        "description": "aiservices.embedding.enums",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.enums",
+        "detail": "aiservices.embedding.enums",
         "documentation": {}
     },
     {
@@ -915,50 +811,50 @@
     },
     {
         "label": "EmbeddingServiceImpl",
-        "importPath": "clientservices.embedding.implementations",
-        "description": "clientservices.embedding.implementations",
+        "importPath": "aiservices.embedding.implementations",
+        "description": "aiservices.embedding.implementations",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.implementations",
+        "detail": "aiservices.embedding.implementations",
         "documentation": {}
     },
     {
         "label": "MistralChatImpl",
-        "importPath": "clientservices.embedding.implementations",
-        "description": "clientservices.embedding.implementations",
+        "importPath": "aiservices.embedding.implementations",
+        "description": "aiservices.embedding.implementations",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.implementations",
+        "detail": "aiservices.embedding.implementations",
         "documentation": {}
     },
     {
         "label": "RerankingImpl",
-        "importPath": "clientservices.embedding.implementations",
-        "description": "clientservices.embedding.implementations",
+        "importPath": "aiservices.embedding.implementations",
+        "description": "aiservices.embedding.implementations",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.implementations",
+        "detail": "aiservices.embedding.implementations",
         "documentation": {}
     },
     {
         "label": "GetMistralApiKey",
-        "importPath": "clientservices.embedding.workers",
-        "description": "clientservices.embedding.workers",
+        "importPath": "aiservices.embedding.workers",
+        "description": "aiservices.embedding.workers",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.workers",
+        "detail": "aiservices.embedding.workers",
         "documentation": {}
     },
     {
         "label": "GetMistralApiKey",
-        "importPath": "clientservices.embedding.workers",
-        "description": "clientservices.embedding.workers",
+        "importPath": "aiservices.embedding.workers",
+        "description": "aiservices.embedding.workers",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.workers",
+        "detail": "aiservices.embedding.workers",
         "documentation": {}
     },
     {
         "label": "GetJinaApiKey",
-        "importPath": "clientservices.embedding.workers",
-        "description": "clientservices.embedding.workers",
+        "importPath": "aiservices.embedding.workers",
+        "description": "aiservices.embedding.workers",
         "isExtraImport": true,
-        "detail": "clientservices.embedding.workers",
+        "detail": "aiservices.embedding.workers",
         "documentation": {}
     },
     {
@@ -989,59 +885,260 @@
         "documentation": {}
     },
     {
-        "label": "GetGraphFromDocResponseModel_Rag",
-        "importPath": "graphrag.models",
-        "description": "graphrag.models",
+        "label": "asyncpg",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "graphrag.models",
+        "importPath": "asyncpg",
+        "description": "asyncpg",
+        "detail": "asyncpg",
+        "documentation": {}
+    },
+    {
+        "label": "register_vector",
+        "importPath": "pgvector.asyncpg",
+        "description": "pgvector.asyncpg",
+        "isExtraImport": true,
+        "detail": "pgvector.asyncpg",
+        "documentation": {}
+    },
+    {
+        "label": "GetGraphFromDocResponseModel_Rag",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
+        "isExtraImport": true,
+        "detail": "ragservices.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtarctRelationsAndQuestionFromChunkResponseModel_Rag",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
+        "isExtraImport": true,
+        "detail": "ragservices.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExatrctImageIndexFromChunkResponseModel_Rag",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
+        "isExtraImport": true,
+        "detail": "ragservices.models",
         "documentation": {}
     },
     {
         "label": "ChunkRelationsModel_Rag",
-        "importPath": "graphrag.models",
-        "description": "graphrag.models",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
         "isExtraImport": true,
-        "detail": "graphrag.models",
+        "detail": "ragservices.models",
         "documentation": {}
     },
     {
         "label": "CHunkTextsModel_Rag",
-        "importPath": "graphrag.models",
-        "description": "graphrag.models",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
         "isExtraImport": true,
-        "detail": "graphrag.models",
+        "detail": "ragservices.models",
         "documentation": {}
     },
     {
         "label": "ChunkRelationModel_Rag",
-        "importPath": "graphrag.models",
-        "description": "graphrag.models",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
         "isExtraImport": true,
-        "detail": "graphrag.models",
+        "detail": "ragservices.models",
         "documentation": {}
     },
     {
         "label": "GetGraphFromDocResponseModel_Rag",
-        "importPath": "graphrag.models",
-        "description": "graphrag.models",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
         "isExtraImport": true,
-        "detail": "graphrag.models",
+        "detail": "ragservices.models",
         "documentation": {}
     },
     {
         "label": "ChunkMatchedNodeModel_Rag",
-        "importPath": "graphrag.models",
-        "description": "graphrag.models",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
         "isExtraImport": true,
-        "detail": "graphrag.models",
+        "detail": "ragservices.models",
         "documentation": {}
     },
     {
         "label": "ChunkImagesModel_Rag",
-        "importPath": "graphrag.models",
-        "description": "graphrag.models",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
         "isExtraImport": true,
-        "detail": "graphrag.models",
+        "detail": "ragservices.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtarctRelationsAndQuestionFromChunkResponseModel_Rag",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
+        "isExtraImport": true,
+        "detail": "ragservices.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExatrctImageIndexFromChunkSectionModel_Rag",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
+        "isExtraImport": true,
+        "detail": "ragservices.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExatrctImageIndexFromChunkResponseModel_Rag",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
+        "isExtraImport": true,
+        "detail": "ragservices.models",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingResponseModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "ChatServiceMessageModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "ChatService",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "ChatServiceRequestModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "GetCerebrasApiKey",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "ChatServiceCerebrasFormatModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "ChatServiceCerebrasFormatJsonSchemaModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "ChatServiceMessageModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "ChatServiceMessageRoleEnum",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingService",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingService",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingRequestModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingResponseModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "FindTopKresultsFromVectorsRequestModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingResponseModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingService",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
         "documentation": {}
     },
     {
@@ -1062,30 +1159,6 @@
     },
     {
         "label": "uuid4",
-        "importPath": "uuid",
-        "description": "uuid",
-        "isExtraImport": true,
-        "detail": "uuid",
-        "documentation": {}
-    },
-    {
-        "label": "UUID",
-        "importPath": "uuid",
-        "description": "uuid",
-        "isExtraImport": true,
-        "detail": "uuid",
-        "documentation": {}
-    },
-    {
-        "label": "uuid4",
-        "importPath": "uuid",
-        "description": "uuid",
-        "isExtraImport": true,
-        "detail": "uuid",
-        "documentation": {}
-    },
-    {
-        "label": "UUID",
         "importPath": "uuid",
         "description": "uuid",
         "isExtraImport": true,
@@ -1111,299 +1184,11 @@
         "documentation": {}
     },
     {
-        "label": "ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
+        "label": "BuildGraphFromDocServiceImpl_Rag",
+        "importPath": "ragservices.implementations",
+        "description": "ragservices.implementations",
         "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatService",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceRequestModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "GetCerebrasApiKey",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceCerebrasFormatModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceCerebrasFormatJsonSchemaModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceMessageModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceMessageRoleEnum",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "EmbeddingService",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "RerankingService",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "RerankingRequestModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "RerankingResponseModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "FindTopKresultsFromVectorsRequestModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceResponseStatusEnum",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceResponseStatusEnum",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "EmbeddingResponseEnum",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatService",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceMessageModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceMessageRoleEnum",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceRequestModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "GetCerebrasApiKey",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceMessageModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceCerebrasFormatModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceCerebrasFormatJsonSchemaModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceRequestModel",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatService",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "EmbeddingService",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServiceMessageRoleEnum",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "GetCerebrasApiKey",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "EmbeddingService",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "EmbeddingService",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "RerankingService",
-        "importPath": "clientservices",
-        "description": "clientservices",
-        "isExtraImport": true,
-        "detail": "clientservices",
-        "documentation": {}
-    },
-    {
-        "label": "FileChunkGragImpl",
-        "importPath": "graphrag.implementations",
-        "description": "graphrag.implementations",
-        "isExtraImport": true,
-        "detail": "graphrag.implementations",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractTextFromDoc_Rag",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
+        "detail": "ragservices.implementations",
         "documentation": {}
     },
     {
@@ -1423,11 +1208,19 @@
         "documentation": {}
     },
     {
-        "label": "ExtractEntityGragSystemPrompt",
-        "importPath": "graphrag.utils.FileGragSystemPropts",
-        "description": "graphrag.utils.FileGragSystemPropts",
+        "label": "ExtractRealtionsAndQuestionsFromChunkSystemPrompt_Rag",
+        "importPath": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
+        "description": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
         "isExtraImport": true,
-        "detail": "graphrag.utils.FileGragSystemPropts",
+        "detail": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractImageIndexFromChunkSystemPrompt_Rag",
+        "importPath": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
+        "description": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
+        "isExtraImport": true,
+        "detail": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
         "documentation": {}
     },
     {
@@ -1440,143 +1233,50 @@
         "documentation": {}
     },
     {
-        "label": "QaAiAnswersResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
+        "label": "base64",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "rag.qa.models",
+        "importPath": "base64",
+        "description": "base64",
+        "detail": "base64",
         "documentation": {}
     },
     {
-        "label": "QaAiAnswersRequestModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
+        "label": "firebase_admin",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "rag.qa.models",
+        "importPath": "firebase_admin",
+        "description": "firebase_admin",
+        "detail": "firebase_admin",
         "documentation": {}
     },
     {
-        "label": "ExtarctQaFromTextResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
+        "label": "credentials",
+        "importPath": "firebase_admin",
+        "description": "firebase_admin",
         "isExtraImport": true,
-        "detail": "rag.qa.models",
+        "detail": "firebase_admin",
         "documentation": {}
     },
     {
-        "label": "ExtractQaResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
+        "label": "storage",
+        "importPath": "firebase_admin",
+        "description": "firebase_admin",
         "isExtraImport": true,
-        "detail": "rag.qa.models",
+        "detail": "firebase_admin",
         "documentation": {}
     },
     {
-        "label": "HandleQaExtractResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
+        "label": "time",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "QaAiAnswersRequestModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "QaAiAnswersResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "HandleQaExtractResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractQaEmbeddingVectorModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractQaVectorModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "ExtarctQaFromTextResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractQaResponseModel",
-        "importPath": "rag.qa.models",
-        "description": "rag.qa.models",
-        "isExtraImport": true,
-        "detail": "rag.qa.models",
-        "documentation": {}
-    },
-    {
-        "label": "QaAiAnswersImpl",
-        "importPath": "rag.qa.implementations",
-        "description": "rag.qa.implementations",
-        "isExtraImport": true,
-        "detail": "rag.qa.implementations",
-        "documentation": {}
-    },
-    {
-        "label": "QaDocImpl",
-        "importPath": "rag.qa.implementations",
-        "description": "rag.qa.implementations",
-        "isExtraImport": true,
-        "detail": "rag.qa.implementations",
-        "documentation": {}
-    },
-    {
-        "label": "QaAiAnswerPromptFromRagText",
-        "importPath": "rag.qa.utils.qaSystemPropts",
-        "description": "rag.qa.utils.qaSystemPropts",
-        "isExtraImport": true,
-        "detail": "rag.qa.utils.qaSystemPropts",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractQaPrompt",
-        "importPath": "rag.qa.utils.qaSystemPropts",
-        "description": "rag.qa.utils.qaSystemPropts",
-        "isExtraImport": true,
-        "detail": "rag.qa.utils.qaSystemPropts",
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
         "documentation": {}
     },
     {
         "label": "APIRouter",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "Request",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -1593,14 +1293,22 @@
     },
     {
         "label": "PsqlDb",
-        "importPath": "server.psqldb",
-        "description": "server.psqldb",
+        "importPath": "dbservices",
+        "description": "dbservices",
         "isExtraImport": true,
-        "detail": "server.psqldb",
+        "detail": "dbservices",
         "documentation": {}
     },
     {
-        "label": "QaRagControllerServices",
+        "label": "PsqlDb",
+        "importPath": "dbservices",
+        "description": "dbservices",
+        "isExtraImport": true,
+        "detail": "dbservices",
+        "documentation": {}
+    },
+    {
+        "label": "BuildGraphRagFromDocService_Server",
         "importPath": "server.services",
         "description": "server.services",
         "isExtraImport": true,
@@ -1608,101 +1316,35 @@
         "documentation": {}
     },
     {
-        "label": "QaRagAskRequestModel",
-        "importPath": "server.models",
-        "description": "server.models",
+        "label": "BuildGraphRagFromDocServiceImpl_Server",
+        "importPath": "server.serviceimplementations",
+        "description": "server.serviceimplementations",
         "isExtraImport": true,
-        "detail": "server.models",
+        "detail": "server.serviceimplementations",
         "documentation": {}
     },
     {
-        "label": "EmbeddingVectorModel",
-        "importPath": "server.models",
-        "description": "server.models",
+        "label": "BuildGraphFromDocService_Rag",
+        "importPath": "ragservices",
+        "description": "ragservices",
         "isExtraImport": true,
-        "detail": "server.models",
+        "detail": "ragservices",
         "documentation": {}
     },
     {
-        "label": "EmbeddingTextModel",
-        "importPath": "server.models",
-        "description": "server.models",
+        "label": "GetGraphFromDocResponseModel_Rag",
+        "importPath": "ragservices",
+        "description": "ragservices",
         "isExtraImport": true,
-        "detail": "server.models",
+        "detail": "ragservices",
         "documentation": {}
     },
     {
-        "label": "asyncpg",
-        "kind": 6,
+        "label": "BuildGraphFromDocService_Rag",
+        "importPath": "ragservices",
+        "description": "ragservices",
         "isExtraImport": true,
-        "importPath": "asyncpg",
-        "description": "asyncpg",
-        "detail": "asyncpg",
-        "documentation": {}
-    },
-    {
-        "label": "register_vector",
-        "importPath": "pgvector.asyncpg",
-        "description": "pgvector.asyncpg",
-        "isExtraImport": true,
-        "detail": "pgvector.asyncpg",
-        "documentation": {}
-    },
-    {
-        "label": "QaRagContollerImpl",
-        "importPath": "server.implementations",
-        "description": "server.implementations",
-        "isExtraImport": true,
-        "detail": "server.implementations",
-        "documentation": {}
-    },
-    {
-        "label": "QaDocService",
-        "importPath": "rag",
-        "description": "rag",
-        "isExtraImport": true,
-        "detail": "rag",
-        "documentation": {}
-    },
-    {
-        "label": "QaAiAnswersService",
-        "importPath": "rag",
-        "description": "rag",
-        "isExtraImport": true,
-        "detail": "rag",
-        "documentation": {}
-    },
-    {
-        "label": "QaAiAnswersRequestModel",
-        "importPath": "rag",
-        "description": "rag",
-        "isExtraImport": true,
-        "detail": "rag",
-        "documentation": {}
-    },
-    {
-        "label": "BaseHTTPMiddleware",
-        "importPath": "starlette.middleware.base",
-        "description": "starlette.middleware.base",
-        "isExtraImport": true,
-        "detail": "starlette.middleware.base",
-        "documentation": {}
-    },
-    {
-        "label": "RequestResponseEndpoint",
-        "importPath": "starlette.middleware.base",
-        "description": "starlette.middleware.base",
-        "isExtraImport": true,
-        "detail": "starlette.middleware.base",
-        "documentation": {}
-    },
-    {
-        "label": "base64",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "base64",
-        "description": "base64",
-        "detail": "base64",
+        "detail": "ragservices",
         "documentation": {}
     },
     {
@@ -1712,14 +1354,6 @@
         "importPath": "fitz",
         "description": "fitz",
         "detail": "fitz",
-        "documentation": {}
-    },
-    {
-        "label": "BuildGraphFromDocService_Rag",
-        "importPath": "graphrag",
-        "description": "graphrag",
-        "isExtraImport": true,
-        "detail": "graphrag",
         "documentation": {}
     },
     {
@@ -1739,23 +1373,7 @@
         "documentation": {}
     },
     {
-        "label": "PsqlDb",
-        "importPath": "server",
-        "description": "server",
-        "isExtraImport": true,
-        "detail": "server",
-        "documentation": {}
-    },
-    {
-        "label": "QaRag",
-        "importPath": "server",
-        "description": "server",
-        "isExtraImport": true,
-        "detail": "server",
-        "documentation": {}
-    },
-    {
-        "label": "CustomMidlleware",
+        "label": "GragDocRouter",
         "importPath": "server",
         "description": "server",
         "isExtraImport": true,
@@ -1765,883 +1383,676 @@
     {
         "label": "ChatServiceMessageRoleEnum",
         "kind": 6,
-        "importPath": "clientservices.chat.enums.ChatServiceEnums",
-        "description": "clientservices.chat.enums.ChatServiceEnums",
+        "importPath": "aiservices.chat.enums.ChatServiceEnums",
+        "description": "aiservices.chat.enums.ChatServiceEnums",
         "peekOfCode": "class ChatServiceMessageRoleEnum(Enum):\n    USER = \"user\"\n    SYSTEM = \"system\"\n    ASSISTANT = \"assistant\"\nclass ChatServiceResponseStatusEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")",
-        "detail": "clientservices.chat.enums.ChatServiceEnums",
+        "detail": "aiservices.chat.enums.ChatServiceEnums",
         "documentation": {}
     },
     {
         "label": "ChatServiceResponseStatusEnum",
         "kind": 6,
-        "importPath": "clientservices.chat.enums.ChatServiceEnums",
-        "description": "clientservices.chat.enums.ChatServiceEnums",
+        "importPath": "aiservices.chat.enums.ChatServiceEnums",
+        "description": "aiservices.chat.enums.ChatServiceEnums",
         "peekOfCode": "class ChatServiceResponseStatusEnum(Enum):\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")\n    REQUEST_TIMEOUT = (408, \"REQUEST_TIMEOUT\")\n    CONFLICT = (409, \"CONFLICT\")\n    ENTITY_ERROR = (422, \"ENTITY_ERROR\")\n    RATE_LIMIT = (429, \"RATE_LIMIT\")",
-        "detail": "clientservices.chat.enums.ChatServiceEnums",
+        "detail": "aiservices.chat.enums.ChatServiceEnums",
         "documentation": {}
     },
     {
         "label": "ChatServiceImpl",
         "kind": 6,
-        "importPath": "clientservices.chat.implementations.ChatServiceImplementation",
-        "description": "clientservices.chat.implementations.ChatServiceImplementation",
+        "importPath": "aiservices.chat.implementations.ChatServiceImplementation",
+        "description": "aiservices.chat.implementations.ChatServiceImplementation",
         "peekOfCode": "class ChatServiceImpl(ABC):\n    @abstractmethod\n    async def Chat(self, modelParams: ChatServiceRequestModel) -> ChatServiceResponseModel | StreamingResponse:\n        pass\n    @abstractmethod\n    def HandleApiStatusError(\n        self, statusCode: int\n    ) -> ChatServiceResponseModel :\n        pass",
-        "detail": "clientservices.chat.implementations.ChatServiceImplementation",
+        "detail": "aiservices.chat.implementations.ChatServiceImplementation",
         "documentation": {}
     },
     {
         "label": "ChatServiceMessageModel",
         "kind": 6,
-        "importPath": "clientservices.chat.models.ChatServiceModels",
-        "description": "clientservices.chat.models.ChatServiceModels",
+        "importPath": "aiservices.chat.models.ChatServiceModels",
+        "description": "aiservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceMessageModel(BaseModel):\n    role: Optional[ChatServiceMessageRoleEnum] = ChatServiceMessageRoleEnum.USER\n    content: str\nclass ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(BaseModel):\n    type: str | int | float | str\n    items: Optional[Any] = None\n    properties: Optional[Any] = None\n    required: Optional[Any] = None\n    additionalProperties: Optional[Any] = None\nclass ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel(BaseModel):",
-        "detail": "clientservices.chat.models.ChatServiceModels",
+        "detail": "aiservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel",
         "kind": 6,
-        "importPath": "clientservices.chat.models.ChatServiceModels",
-        "description": "clientservices.chat.models.ChatServiceModels",
+        "importPath": "aiservices.chat.models.ChatServiceModels",
+        "description": "aiservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(BaseModel):\n    type: str | int | float | str\n    items: Optional[Any] = None\n    properties: Optional[Any] = None\n    required: Optional[Any] = None\n    additionalProperties: Optional[Any] = None\nclass ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel(BaseModel):\n    type: str = \"object\"\n    properties: dict[str, ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel] = {}\n    required: List[str] = []",
-        "detail": "clientservices.chat.models.ChatServiceModels",
+        "detail": "aiservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel",
         "kind": 6,
-        "importPath": "clientservices.chat.models.ChatServiceModels",
-        "description": "clientservices.chat.models.ChatServiceModels",
+        "importPath": "aiservices.chat.models.ChatServiceModels",
+        "description": "aiservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel(BaseModel):\n    type: str = \"object\"\n    properties: dict[str, ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel] = {}\n    required: List[str] = []\n    additionalProperties: bool = False\nclass ChatServiceCerebrasFormatJsonSchemaModel(BaseModel):\n    name: str = \"schema\"\n    strict: bool = True\n    jsonSchema: ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel\nclass ChatServiceCerebrasFormatModel(BaseModel):",
-        "detail": "clientservices.chat.models.ChatServiceModels",
+        "detail": "aiservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceCerebrasFormatJsonSchemaModel",
         "kind": 6,
-        "importPath": "clientservices.chat.models.ChatServiceModels",
-        "description": "clientservices.chat.models.ChatServiceModels",
+        "importPath": "aiservices.chat.models.ChatServiceModels",
+        "description": "aiservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceCerebrasFormatJsonSchemaModel(BaseModel):\n    name: str = \"schema\"\n    strict: bool = True\n    jsonSchema: ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel\nclass ChatServiceCerebrasFormatModel(BaseModel):\n    type: str = \"json_schema\"\n    jsonSchema: ChatServiceCerebrasFormatJsonSchemaModel\nclass ChatServiceRequestModel(BaseModel):\n    model: str = \"gpt-oss-120b\"\n    messages: List[ChatServiceMessageModel]",
-        "detail": "clientservices.chat.models.ChatServiceModels",
+        "detail": "aiservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceCerebrasFormatModel",
         "kind": 6,
-        "importPath": "clientservices.chat.models.ChatServiceModels",
-        "description": "clientservices.chat.models.ChatServiceModels",
+        "importPath": "aiservices.chat.models.ChatServiceModels",
+        "description": "aiservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceCerebrasFormatModel(BaseModel):\n    type: str = \"json_schema\"\n    jsonSchema: ChatServiceCerebrasFormatJsonSchemaModel\nclass ChatServiceRequestModel(BaseModel):\n    model: str = \"gpt-oss-120b\"\n    messages: List[ChatServiceMessageModel]\n    maxCompletionTokens: Optional[int] = 20000\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7\n    apiKey: str",
-        "detail": "clientservices.chat.models.ChatServiceModels",
+        "detail": "aiservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceRequestModel",
         "kind": 6,
-        "importPath": "clientservices.chat.models.ChatServiceModels",
-        "description": "clientservices.chat.models.ChatServiceModels",
-        "peekOfCode": "class ChatServiceRequestModel(BaseModel):\n    model: str = \"gpt-oss-120b\"\n    messages: List[ChatServiceMessageModel]\n    maxCompletionTokens: Optional[int] = 20000\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7\n    apiKey: str\n    responseFormat: Optional[ChatServiceCerebrasFormatModel] = None\nclass ChatServiceChoiceMessageModel(BaseModel):\n    role: ChatServiceMessageRoleEnum = ChatServiceMessageRoleEnum.ASSISTANT",
-        "detail": "clientservices.chat.models.ChatServiceModels",
+        "importPath": "aiservices.chat.models.ChatServiceModels",
+        "description": "aiservices.chat.models.ChatServiceModels",
+        "peekOfCode": "class ChatServiceRequestModel(BaseModel):\n    model: str = \"gpt-oss-120b\"\n    messages: List[ChatServiceMessageModel]\n    maxCompletionTokens: Optional[int] = 20000\n    stream: Optional[bool] = False\n    temperature: Optional[float] = 0.7\n    apiKey: str\n    responseFormat: Optional[ChatServiceCerebrasFormatModel] = None\n    topP:float = 1.0\n    seed:int = 42",
+        "detail": "aiservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceChoiceMessageModel",
         "kind": 6,
-        "importPath": "clientservices.chat.models.ChatServiceModels",
-        "description": "clientservices.chat.models.ChatServiceModels",
+        "importPath": "aiservices.chat.models.ChatServiceModels",
+        "description": "aiservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceChoiceMessageModel(BaseModel):\n    role: ChatServiceMessageRoleEnum = ChatServiceMessageRoleEnum.ASSISTANT\n    content: str\nclass ChatServiceChoiceModel(BaseModel):\n    index: int = 0\n    message: ChatServiceChoiceMessageModel\nclass ChatServiceUsageModel(BaseModel):\n    promptTokens: int | None = None\n    completionTokens: int | None = None\n    totalTokens: int | None = None",
-        "detail": "clientservices.chat.models.ChatServiceModels",
+        "detail": "aiservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceChoiceModel",
         "kind": 6,
-        "importPath": "clientservices.chat.models.ChatServiceModels",
-        "description": "clientservices.chat.models.ChatServiceModels",
+        "importPath": "aiservices.chat.models.ChatServiceModels",
+        "description": "aiservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceChoiceModel(BaseModel):\n    index: int = 0\n    message: ChatServiceChoiceMessageModel\nclass ChatServiceUsageModel(BaseModel):\n    promptTokens: int | None = None\n    completionTokens: int | None = None\n    totalTokens: int | None = None\nclass ChatServiceDataResponseModel(BaseModel):  \n    id: str\n    choices: List[ChatServiceChoiceModel] = []",
-        "detail": "clientservices.chat.models.ChatServiceModels",
+        "detail": "aiservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceUsageModel",
         "kind": 6,
-        "importPath": "clientservices.chat.models.ChatServiceModels",
-        "description": "clientservices.chat.models.ChatServiceModels",
+        "importPath": "aiservices.chat.models.ChatServiceModels",
+        "description": "aiservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceUsageModel(BaseModel):\n    promptTokens: int | None = None\n    completionTokens: int | None = None\n    totalTokens: int | None = None\nclass ChatServiceDataResponseModel(BaseModel):  \n    id: str\n    choices: List[ChatServiceChoiceModel] = []\n    created: int\n    model: str = \"llama-3.3-70b\"\n    totalTime: float = 0.0",
-        "detail": "clientservices.chat.models.ChatServiceModels",
+        "detail": "aiservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceDataResponseModel",
         "kind": 6,
-        "importPath": "clientservices.chat.models.ChatServiceModels",
-        "description": "clientservices.chat.models.ChatServiceModels",
+        "importPath": "aiservices.chat.models.ChatServiceModels",
+        "description": "aiservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceDataResponseModel(BaseModel):  \n    id: str\n    choices: List[ChatServiceChoiceModel] = []\n    created: int\n    model: str = \"llama-3.3-70b\"\n    totalTime: float = 0.0\n    usage: ChatServiceUsageModel\nclass ChatServiceResponseModel(BaseModel):\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    LLMData: ChatServiceDataResponseModel | None = None",
-        "detail": "clientservices.chat.models.ChatServiceModels",
+        "detail": "aiservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatServiceResponseModel",
         "kind": 6,
-        "importPath": "clientservices.chat.models.ChatServiceModels",
-        "description": "clientservices.chat.models.ChatServiceModels",
+        "importPath": "aiservices.chat.models.ChatServiceModels",
+        "description": "aiservices.chat.models.ChatServiceModels",
         "peekOfCode": "class ChatServiceResponseModel(BaseModel):\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    LLMData: ChatServiceDataResponseModel | None = None",
-        "detail": "clientservices.chat.models.ChatServiceModels",
+        "detail": "aiservices.chat.models.ChatServiceModels",
         "documentation": {}
     },
     {
         "label": "ChatService",
         "kind": 6,
-        "importPath": "clientservices.chat.services.ChatServices",
-        "description": "clientservices.chat.services.ChatServices",
+        "importPath": "aiservices.chat.services.ChatServices",
+        "description": "aiservices.chat.services.ChatServices",
         "peekOfCode": "class ChatService(ChatServiceImpl):\n    def HandleApiStatusError(self, statusCode: int) -> ChatServiceResponseModel:\n        errorCodes = {\n            400: ChatServiceResponseStatusEnum.BAD_REQUEST,\n            401: ChatServiceResponseStatusEnum.UNAUTHROZIED,\n            403: ChatServiceResponseStatusEnum.PERMISSION_DENIED,\n            404: ChatServiceResponseStatusEnum.NOT_FOUND,\n        }\n        message = errorCodes.get(statusCode, ChatServiceResponseStatusEnum.SERVER_ERROR)\n        return ChatServiceResponseModel(status=message)",
-        "detail": "clientservices.chat.services.ChatServices",
+        "detail": "aiservices.chat.services.ChatServices",
         "documentation": {}
     },
     {
         "label": "client",
         "kind": 5,
-        "importPath": "clientservices.chat.services.ChatServices",
-        "description": "clientservices.chat.services.ChatServices",
+        "importPath": "aiservices.chat.services.ChatServices",
+        "description": "aiservices.chat.services.ChatServices",
         "peekOfCode": "client = AsyncCerebras(\n    api_key=GetCerebrasApiKey(),\n    http_client=DefaultAioHttpClient(),\n)\nclass ChatService(ChatServiceImpl):\n    def HandleApiStatusError(self, statusCode: int) -> ChatServiceResponseModel:\n        errorCodes = {\n            400: ChatServiceResponseStatusEnum.BAD_REQUEST,\n            401: ChatServiceResponseStatusEnum.UNAUTHROZIED,\n            403: ChatServiceResponseStatusEnum.PERMISSION_DENIED,",
-        "detail": "clientservices.chat.services.ChatServices",
+        "detail": "aiservices.chat.services.ChatServices",
         "documentation": {}
     },
     {
         "label": "GetCerebrasApiKey",
         "kind": 2,
-        "importPath": "clientservices.chat.workers.GetApiKey",
-        "description": "clientservices.chat.workers.GetApiKey",
+        "importPath": "aiservices.chat.workers.GetApiKey",
+        "description": "aiservices.chat.workers.GetApiKey",
         "peekOfCode": "def GetCerebrasApiKey() ->str:\n    return CEREBRAS_API_KEY",
-        "detail": "clientservices.chat.workers.GetApiKey",
+        "detail": "aiservices.chat.workers.GetApiKey",
         "documentation": {}
     },
     {
         "label": "CEREBRAS_API_KEY",
         "kind": 5,
-        "importPath": "clientservices.chat.workers.GetApiKey",
-        "description": "clientservices.chat.workers.GetApiKey",
+        "importPath": "aiservices.chat.workers.GetApiKey",
+        "description": "aiservices.chat.workers.GetApiKey",
         "peekOfCode": "CEREBRAS_API_KEY = cast(Any, os.getenv(\"CEREBRAS_API_KEY\"))\ndef GetCerebrasApiKey() ->str:\n    return CEREBRAS_API_KEY",
-        "detail": "clientservices.chat.workers.GetApiKey",
+        "detail": "aiservices.chat.workers.GetApiKey",
         "documentation": {}
     },
     {
         "label": "MistralChatMessageRoleEnum",
         "kind": 6,
-        "importPath": "clientservices.embedding.enums.ChatEnums",
-        "description": "clientservices.embedding.enums.ChatEnums",
+        "importPath": "aiservices.embedding.enums.ChatEnums",
+        "description": "aiservices.embedding.enums.ChatEnums",
         "peekOfCode": "class MistralChatMessageRoleEnum(Enum):\n    USER = \"user\"\n    SYSTEM = \"system\"\n    ASSISTENT = \"assistant\"\nclass MistralChatResponseStatusEnum(Enum):\n    ERROR  = (500,\"ERROR\")\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")",
-        "detail": "clientservices.embedding.enums.ChatEnums",
+        "detail": "aiservices.embedding.enums.ChatEnums",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseStatusEnum",
         "kind": 6,
-        "importPath": "clientservices.embedding.enums.ChatEnums",
-        "description": "clientservices.embedding.enums.ChatEnums",
+        "importPath": "aiservices.embedding.enums.ChatEnums",
+        "description": "aiservices.embedding.enums.ChatEnums",
         "peekOfCode": "class MistralChatResponseStatusEnum(Enum):\n    ERROR  = (500,\"ERROR\")\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")",
-        "detail": "clientservices.embedding.enums.ChatEnums",
+        "detail": "aiservices.embedding.enums.ChatEnums",
         "documentation": {}
     },
     {
         "label": "EmbeddingResponseEnum",
         "kind": 6,
-        "importPath": "clientservices.embedding.enums.EmbeddingEnums",
-        "description": "clientservices.embedding.enums.EmbeddingEnums",
+        "importPath": "aiservices.embedding.enums.EmbeddingEnums",
+        "description": "aiservices.embedding.enums.EmbeddingEnums",
         "peekOfCode": "class EmbeddingResponseEnum(Enum):\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")",
-        "detail": "clientservices.embedding.enums.EmbeddingEnums",
+        "detail": "aiservices.embedding.enums.EmbeddingEnums",
         "documentation": {}
     },
     {
         "label": "EmbeddingServiceImpl",
         "kind": 6,
-        "importPath": "clientservices.embedding.implementations.EmbeddingServiceimplementation",
-        "description": "clientservices.embedding.implementations.EmbeddingServiceimplementation",
+        "importPath": "aiservices.embedding.implementations.EmbeddingServiceimplementation",
+        "description": "aiservices.embedding.implementations.EmbeddingServiceimplementation",
         "peekOfCode": "class EmbeddingServiceImpl(ABC):\n    @abstractmethod\n    async def ConvertTextToEmbedding(self, text: list[str]) -> EmbeddingResponseModel:\n        pass\n    @abstractmethod\n    def FindSimilarity(self, vec1: list[float], vec2: list[float]) -> float:\n        pass",
-        "detail": "clientservices.embedding.implementations.EmbeddingServiceimplementation",
+        "detail": "aiservices.embedding.implementations.EmbeddingServiceimplementation",
         "documentation": {}
     },
     {
         "label": "MistralChatImpl",
         "kind": 6,
-        "importPath": "clientservices.embedding.implementations.MistralChatImpl",
-        "description": "clientservices.embedding.implementations.MistralChatImpl",
+        "importPath": "aiservices.embedding.implementations.MistralChatImpl",
+        "description": "aiservices.embedding.implementations.MistralChatImpl",
         "peekOfCode": "class MistralChatImpl(ABC):\n    @abstractmethod\n    async def Chat(\n        self, modelParams: MistralChatRequestModel\n    ) -> MistralChatResponseModel:\n        pass",
-        "detail": "clientservices.embedding.implementations.MistralChatImpl",
+        "detail": "aiservices.embedding.implementations.MistralChatImpl",
         "documentation": {}
     },
     {
         "label": "RerankingImpl",
         "kind": 6,
-        "importPath": "clientservices.embedding.implementations.RerankingImplementation",
-        "description": "clientservices.embedding.implementations.RerankingImplementation",
+        "importPath": "aiservices.embedding.implementations.RerankingImplementation",
+        "description": "aiservices.embedding.implementations.RerankingImplementation",
         "peekOfCode": "class RerankingImpl(ABC):\n    @abstractmethod\n    async def FindRankingScore(\n        self, modelParams: RerankingRequestModel\n    ) -> RerankingResponseModel:\n        pass\n    @abstractmethod\n    def FindTopKResultsFromVectors(self,request:FindTopKresultsFromVectorsRequestModel) -> FindTopKresultsFromVectorsResponseModel:\n        pass",
-        "detail": "clientservices.embedding.implementations.RerankingImplementation",
+        "detail": "aiservices.embedding.implementations.RerankingImplementation",
         "documentation": {}
     },
     {
         "label": "MistralChatRequestMessageModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.ChatModels",
-        "description": "clientservices.embedding.models.ChatModels",
+        "importPath": "aiservices.embedding.models.ChatModels",
+        "description": "aiservices.embedding.models.ChatModels",
         "peekOfCode": "class MistralChatRequestMessageModel(BaseModel):\n    role: MistralChatMessageRoleEnum = MistralChatMessageRoleEnum.USER\n    content: str | list[str]\nclass MistralChatRequestModel(BaseModel):\n    model: str = \"mistral-small-2506\"\n    temperature: float = 0.7\n    maxTokens: int = 30000\n    stream: bool = False\n    messages: list[MistralChatRequestMessageModel]\n    responseFormat: Any | None = None",
-        "detail": "clientservices.embedding.models.ChatModels",
+        "detail": "aiservices.embedding.models.ChatModels",
         "documentation": {}
     },
     {
         "label": "MistralChatRequestModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.ChatModels",
-        "description": "clientservices.embedding.models.ChatModels",
+        "importPath": "aiservices.embedding.models.ChatModels",
+        "description": "aiservices.embedding.models.ChatModels",
         "peekOfCode": "class MistralChatRequestModel(BaseModel):\n    model: str = \"mistral-small-2506\"\n    temperature: float = 0.7\n    maxTokens: int = 30000\n    stream: bool = False\n    messages: list[MistralChatRequestMessageModel]\n    responseFormat: Any | None = None\nclass MistralChatResponseUsageModel(BaseModel):\n    promptTokens: int\n    completionToken: int",
-        "detail": "clientservices.embedding.models.ChatModels",
+        "detail": "aiservices.embedding.models.ChatModels",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseUsageModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.ChatModels",
-        "description": "clientservices.embedding.models.ChatModels",
+        "importPath": "aiservices.embedding.models.ChatModels",
+        "description": "aiservices.embedding.models.ChatModels",
         "peekOfCode": "class MistralChatResponseUsageModel(BaseModel):\n    promptTokens: int\n    completionToken: int\n    totalTokens: int\nclass MistralChatResponseMessageModel(BaseModel):\n    content: str\n    role: str | None = None\nclass MistralChatResponseChoiceModel(BaseModel):\n    index: int\n    message: MistralChatResponseMessageModel",
-        "detail": "clientservices.embedding.models.ChatModels",
+        "detail": "aiservices.embedding.models.ChatModels",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseMessageModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.ChatModels",
-        "description": "clientservices.embedding.models.ChatModels",
+        "importPath": "aiservices.embedding.models.ChatModels",
+        "description": "aiservices.embedding.models.ChatModels",
         "peekOfCode": "class MistralChatResponseMessageModel(BaseModel):\n    content: str\n    role: str | None = None\nclass MistralChatResponseChoiceModel(BaseModel):\n    index: int\n    message: MistralChatResponseMessageModel\nclass MistralChatResponseModel(BaseModel):\n    id: str | None = None\n    model: str | None = None\n    usgae: MistralChatResponseUsageModel | None = None",
-        "detail": "clientservices.embedding.models.ChatModels",
+        "detail": "aiservices.embedding.models.ChatModels",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseChoiceModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.ChatModels",
-        "description": "clientservices.embedding.models.ChatModels",
+        "importPath": "aiservices.embedding.models.ChatModels",
+        "description": "aiservices.embedding.models.ChatModels",
         "peekOfCode": "class MistralChatResponseChoiceModel(BaseModel):\n    index: int\n    message: MistralChatResponseMessageModel\nclass MistralChatResponseModel(BaseModel):\n    id: str | None = None\n    model: str | None = None\n    usgae: MistralChatResponseUsageModel | None = None\n    created: int | None = None\n    choices: list[MistralChatResponseChoiceModel] | None = None\n    status:MistralChatResponseStatusEnum",
-        "detail": "clientservices.embedding.models.ChatModels",
+        "detail": "aiservices.embedding.models.ChatModels",
         "documentation": {}
     },
     {
         "label": "MistralChatResponseModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.ChatModels",
-        "description": "clientservices.embedding.models.ChatModels",
+        "importPath": "aiservices.embedding.models.ChatModels",
+        "description": "aiservices.embedding.models.ChatModels",
         "peekOfCode": "class MistralChatResponseModel(BaseModel):\n    id: str | None = None\n    model: str | None = None\n    usgae: MistralChatResponseUsageModel | None = None\n    created: int | None = None\n    choices: list[MistralChatResponseChoiceModel] | None = None\n    status:MistralChatResponseStatusEnum",
-        "detail": "clientservices.embedding.models.ChatModels",
+        "detail": "aiservices.embedding.models.ChatModels",
         "documentation": {}
     },
     {
         "label": "EmbeddingUsageModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.EmbeddingModels",
-        "description": "clientservices.embedding.models.EmbeddingModels",
+        "importPath": "aiservices.embedding.models.EmbeddingModels",
+        "description": "aiservices.embedding.models.EmbeddingModels",
         "peekOfCode": "class EmbeddingUsageModel(BaseModel):\n    promptTokens: int | None\n    completionTokens: int | None\n    totalTokens: int | None\nclass EmbeddingDataModel(BaseModel):\n    index: int | None\n    embedding: list[float] | None\nclass EmbeddingResponseModel(BaseModel):\n    status: EmbeddingResponseEnum = (\n        EmbeddingResponseEnum.VALIDATION_ERROR",
-        "detail": "clientservices.embedding.models.EmbeddingModels",
+        "detail": "aiservices.embedding.models.EmbeddingModels",
         "documentation": {}
     },
     {
         "label": "EmbeddingDataModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.EmbeddingModels",
-        "description": "clientservices.embedding.models.EmbeddingModels",
+        "importPath": "aiservices.embedding.models.EmbeddingModels",
+        "description": "aiservices.embedding.models.EmbeddingModels",
         "peekOfCode": "class EmbeddingDataModel(BaseModel):\n    index: int | None\n    embedding: list[float] | None\nclass EmbeddingResponseModel(BaseModel):\n    status: EmbeddingResponseEnum = (\n        EmbeddingResponseEnum.VALIDATION_ERROR\n    )\n    id: str | None = None\n    model: str  | None = None\n    usage: EmbeddingUsageModel | None = None",
-        "detail": "clientservices.embedding.models.EmbeddingModels",
+        "detail": "aiservices.embedding.models.EmbeddingModels",
         "documentation": {}
     },
     {
         "label": "EmbeddingResponseModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.EmbeddingModels",
-        "description": "clientservices.embedding.models.EmbeddingModels",
+        "importPath": "aiservices.embedding.models.EmbeddingModels",
+        "description": "aiservices.embedding.models.EmbeddingModels",
         "peekOfCode": "class EmbeddingResponseModel(BaseModel):\n    status: EmbeddingResponseEnum = (\n        EmbeddingResponseEnum.VALIDATION_ERROR\n    )\n    id: str | None = None\n    model: str  | None = None\n    usage: EmbeddingUsageModel | None = None\n    data: list[EmbeddingDataModel] | None = None",
-        "detail": "clientservices.embedding.models.EmbeddingModels",
+        "detail": "aiservices.embedding.models.EmbeddingModels",
         "documentation": {}
     },
     {
         "label": "RerankingRequestModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.RerankingModels",
-        "description": "clientservices.embedding.models.RerankingModels",
+        "importPath": "aiservices.embedding.models.RerankingModels",
+        "description": "aiservices.embedding.models.RerankingModels",
         "peekOfCode": "class RerankingRequestModel(BaseModel):\n    model: str = \"jina-reranker-m0\"\n    query: str\n    docs: list[str]\n    topN: int = 5\n    returnDocuments: bool = False\nclass RerankingResponseChoiseModel(BaseModel):\n    index: int\n    score: float\nclass RerankingUsageModel(BaseModel):",
-        "detail": "clientservices.embedding.models.RerankingModels",
+        "detail": "aiservices.embedding.models.RerankingModels",
         "documentation": {}
     },
     {
         "label": "RerankingResponseChoiseModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.RerankingModels",
-        "description": "clientservices.embedding.models.RerankingModels",
+        "importPath": "aiservices.embedding.models.RerankingModels",
+        "description": "aiservices.embedding.models.RerankingModels",
         "peekOfCode": "class RerankingResponseChoiseModel(BaseModel):\n    index: int\n    score: float\nclass RerankingUsageModel(BaseModel):\n    totalTokens: int\nclass RerankingResponseModel(BaseModel):\n    response: list[RerankingResponseChoiseModel] | None = None\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    usage: RerankingUsageModel | None = None\nclass FindTopKresultsFromVectorsRequestModel(BaseModel):",
-        "detail": "clientservices.embedding.models.RerankingModels",
+        "detail": "aiservices.embedding.models.RerankingModels",
         "documentation": {}
     },
     {
         "label": "RerankingUsageModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.RerankingModels",
-        "description": "clientservices.embedding.models.RerankingModels",
+        "importPath": "aiservices.embedding.models.RerankingModels",
+        "description": "aiservices.embedding.models.RerankingModels",
         "peekOfCode": "class RerankingUsageModel(BaseModel):\n    totalTokens: int\nclass RerankingResponseModel(BaseModel):\n    response: list[RerankingResponseChoiseModel] | None = None\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    usage: RerankingUsageModel | None = None\nclass FindTopKresultsFromVectorsRequestModel(BaseModel):\n    sourceVectors: list[list[float]]\n    queryVector: list[float]\n    topK: int = 20",
-        "detail": "clientservices.embedding.models.RerankingModels",
+        "detail": "aiservices.embedding.models.RerankingModels",
         "documentation": {}
     },
     {
         "label": "RerankingResponseModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.RerankingModels",
-        "description": "clientservices.embedding.models.RerankingModels",
+        "importPath": "aiservices.embedding.models.RerankingModels",
+        "description": "aiservices.embedding.models.RerankingModels",
         "peekOfCode": "class RerankingResponseModel(BaseModel):\n    response: list[RerankingResponseChoiseModel] | None = None\n    status: ChatServiceResponseStatusEnum = ChatServiceResponseStatusEnum.SUCCESS\n    usage: RerankingUsageModel | None = None\nclass FindTopKresultsFromVectorsRequestModel(BaseModel):\n    sourceVectors: list[list[float]]\n    queryVector: list[float]\n    topK: int = 20\nclass FindTopKresultsFromVectorsResponseModel(BaseModel):\n    distances:list[float] | None = None",
-        "detail": "clientservices.embedding.models.RerankingModels",
+        "detail": "aiservices.embedding.models.RerankingModels",
         "documentation": {}
     },
     {
         "label": "FindTopKresultsFromVectorsRequestModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.RerankingModels",
-        "description": "clientservices.embedding.models.RerankingModels",
+        "importPath": "aiservices.embedding.models.RerankingModels",
+        "description": "aiservices.embedding.models.RerankingModels",
         "peekOfCode": "class FindTopKresultsFromVectorsRequestModel(BaseModel):\n    sourceVectors: list[list[float]]\n    queryVector: list[float]\n    topK: int = 20\nclass FindTopKresultsFromVectorsResponseModel(BaseModel):\n    distances:list[float] | None = None\n    indeces:list[int] | None = None",
-        "detail": "clientservices.embedding.models.RerankingModels",
+        "detail": "aiservices.embedding.models.RerankingModels",
         "documentation": {}
     },
     {
         "label": "FindTopKresultsFromVectorsResponseModel",
         "kind": 6,
-        "importPath": "clientservices.embedding.models.RerankingModels",
-        "description": "clientservices.embedding.models.RerankingModels",
+        "importPath": "aiservices.embedding.models.RerankingModels",
+        "description": "aiservices.embedding.models.RerankingModels",
         "peekOfCode": "class FindTopKresultsFromVectorsResponseModel(BaseModel):\n    distances:list[float] | None = None\n    indeces:list[int] | None = None",
-        "detail": "clientservices.embedding.models.RerankingModels",
+        "detail": "aiservices.embedding.models.RerankingModels",
         "documentation": {}
     },
     {
         "label": "EmbeddingService",
         "kind": 6,
-        "importPath": "clientservices.embedding.services.EmbeddingService",
-        "description": "clientservices.embedding.services.EmbeddingService",
+        "importPath": "aiservices.embedding.services.EmbeddingService",
+        "description": "aiservices.embedding.services.EmbeddingService",
         "peekOfCode": "class EmbeddingService(EmbeddingServiceImpl):\n    async def ConvertTextToEmbedding(self, text: list[str]) -> EmbeddingResponseModel:\n        try:\n            res: EmbeddingResponse = await mistralClient.embeddings.create_async(\n                model=\"mistral-embed\",\n                inputs=text,\n            )\n            data = [\n                EmbeddingDataModel(\n                    embedding=obj.embedding,",
-        "detail": "clientservices.embedding.services.EmbeddingService",
+        "detail": "aiservices.embedding.services.EmbeddingService",
         "documentation": {}
     },
     {
         "label": "mistralClient",
         "kind": 5,
-        "importPath": "clientservices.embedding.services.EmbeddingService",
-        "description": "clientservices.embedding.services.EmbeddingService",
+        "importPath": "aiservices.embedding.services.EmbeddingService",
+        "description": "aiservices.embedding.services.EmbeddingService",
         "peekOfCode": "mistralClient = Mistral(api_key=GetMistralApiKey())\nclass EmbeddingService(EmbeddingServiceImpl):\n    async def ConvertTextToEmbedding(self, text: list[str]) -> EmbeddingResponseModel:\n        try:\n            res: EmbeddingResponse = await mistralClient.embeddings.create_async(\n                model=\"mistral-embed\",\n                inputs=text,\n            )\n            data = [\n                EmbeddingDataModel(",
-        "detail": "clientservices.embedding.services.EmbeddingService",
+        "detail": "aiservices.embedding.services.EmbeddingService",
         "documentation": {}
     },
     {
         "label": "MistralChatService",
         "kind": 6,
-        "importPath": "clientservices.embedding.services.MistralChatService",
-        "description": "clientservices.embedding.services.MistralChatService",
+        "importPath": "aiservices.embedding.services.MistralChatService",
+        "description": "aiservices.embedding.services.MistralChatService",
         "peekOfCode": "class MistralChatService(MistralChatImpl):\n    async def Chat(\n        self, modelParams: MistralChatRequestModel\n    ) -> MistralChatResponseModel:\n        try:\n            messages: Any = []\n            for message in modelParams.messages:\n                messages.append(\n                    {\"role\": message.role.value, \"content\": message.content}\n                )",
-        "detail": "clientservices.embedding.services.MistralChatService",
+        "detail": "aiservices.embedding.services.MistralChatService",
         "documentation": {}
     },
     {
         "label": "mistral",
         "kind": 5,
-        "importPath": "clientservices.embedding.services.MistralChatService",
-        "description": "clientservices.embedding.services.MistralChatService",
+        "importPath": "aiservices.embedding.services.MistralChatService",
+        "description": "aiservices.embedding.services.MistralChatService",
         "peekOfCode": "mistral = Mistral(api_key=GetMistralApiKey())\nclass MistralChatService(MistralChatImpl):\n    async def Chat(\n        self, modelParams: MistralChatRequestModel\n    ) -> MistralChatResponseModel:\n        try:\n            messages: Any = []\n            for message in modelParams.messages:\n                messages.append(\n                    {\"role\": message.role.value, \"content\": message.content}",
-        "detail": "clientservices.embedding.services.MistralChatService",
+        "detail": "aiservices.embedding.services.MistralChatService",
         "documentation": {}
     },
     {
         "label": "RerankingService",
         "kind": 6,
-        "importPath": "clientservices.embedding.services.RerankingService",
-        "description": "clientservices.embedding.services.RerankingService",
+        "importPath": "aiservices.embedding.services.RerankingService",
+        "description": "aiservices.embedding.services.RerankingService",
         "peekOfCode": "class RerankingService(RerankingImpl):\n    async def FindRankingScore(\n        self, modelParams: RerankingRequestModel\n    ) -> RerankingResponseModel:\n        try:\n            data: Any = {\n                \"model\": modelParams.model,\n                \"query\": modelParams.query,\n                \"documents\": modelParams.docs,\n                \"top_n\": modelParams.topN,",
-        "detail": "clientservices.embedding.services.RerankingService",
+        "detail": "aiservices.embedding.services.RerankingService",
         "documentation": {}
     },
     {
         "label": "jinaClient",
         "kind": 5,
-        "importPath": "clientservices.embedding.services.RerankingService",
-        "description": "clientservices.embedding.services.RerankingService",
+        "importPath": "aiservices.embedding.services.RerankingService",
+        "description": "aiservices.embedding.services.RerankingService",
         "peekOfCode": "jinaClient = requests.Session()\njinaClient.headers.update(\n    {\n        \"Authorization\": f\"Bearer {GetJinaApiKey()}\",\n        \"Content-Type\": \"application/json\",\n    }\n)\nclass RerankingService(RerankingImpl):\n    async def FindRankingScore(\n        self, modelParams: RerankingRequestModel",
-        "detail": "clientservices.embedding.services.RerankingService",
+        "detail": "aiservices.embedding.services.RerankingService",
         "documentation": {}
     },
     {
         "label": "GetMistralApiKey",
         "kind": 2,
-        "importPath": "clientservices.embedding.workers.GetApiKey",
-        "description": "clientservices.embedding.workers.GetApiKey",
-        "peekOfCode": "def GetMistralApiKey() -> str:\n    return MISTARL_API_KEY\ndef GetJinaApiKey() -> str:\n    return JINA_API_KEY",
-        "detail": "clientservices.embedding.workers.GetApiKey",
+        "importPath": "aiservices.embedding.workers.GetApiKey",
+        "description": "aiservices.embedding.workers.GetApiKey",
+        "peekOfCode": "def GetMistralApiKey() -> str:\n    return MISTRAL_API_KEY\ndef GetJinaApiKey() -> str:\n    return JINA_API_KEY",
+        "detail": "aiservices.embedding.workers.GetApiKey",
         "documentation": {}
     },
     {
         "label": "GetJinaApiKey",
         "kind": 2,
-        "importPath": "clientservices.embedding.workers.GetApiKey",
-        "description": "clientservices.embedding.workers.GetApiKey",
+        "importPath": "aiservices.embedding.workers.GetApiKey",
+        "description": "aiservices.embedding.workers.GetApiKey",
         "peekOfCode": "def GetJinaApiKey() -> str:\n    return JINA_API_KEY",
-        "detail": "clientservices.embedding.workers.GetApiKey",
+        "detail": "aiservices.embedding.workers.GetApiKey",
         "documentation": {}
     },
     {
-        "label": "MISTARL_API_KEY",
+        "label": "MISTRAL_API_KEY",
         "kind": 5,
-        "importPath": "clientservices.embedding.workers.GetApiKey",
-        "description": "clientservices.embedding.workers.GetApiKey",
-        "peekOfCode": "MISTARL_API_KEY = cast(Any, os.getenv(\"MISTRAL_API_KEY\"))\nJINA_API_KEY = cast(Any, os.getenv(\"JINA_API_KEY\"))\ndef GetMistralApiKey() -> str:\n    return MISTARL_API_KEY\ndef GetJinaApiKey() -> str:\n    return JINA_API_KEY",
-        "detail": "clientservices.embedding.workers.GetApiKey",
+        "importPath": "aiservices.embedding.workers.GetApiKey",
+        "description": "aiservices.embedding.workers.GetApiKey",
+        "peekOfCode": "MISTRAL_API_KEY = cast(Any, os.getenv(\"MISTRAL_API_KEY\"))\nJINA_API_KEY = cast(Any, os.getenv(\"JINA_API_KEY\"))\ndef GetMistralApiKey() -> str:\n    return MISTRAL_API_KEY\ndef GetJinaApiKey() -> str:\n    return JINA_API_KEY",
+        "detail": "aiservices.embedding.workers.GetApiKey",
         "documentation": {}
     },
     {
         "label": "JINA_API_KEY",
         "kind": 5,
-        "importPath": "clientservices.embedding.workers.GetApiKey",
-        "description": "clientservices.embedding.workers.GetApiKey",
-        "peekOfCode": "JINA_API_KEY = cast(Any, os.getenv(\"JINA_API_KEY\"))\ndef GetMistralApiKey() -> str:\n    return MISTARL_API_KEY\ndef GetJinaApiKey() -> str:\n    return JINA_API_KEY",
-        "detail": "clientservices.embedding.workers.GetApiKey",
-        "documentation": {}
-    },
-    {
-        "label": "FileChunkGragImpl",
-        "kind": 6,
-        "importPath": "graphrag.implementations.FileChunkGragImpl",
-        "description": "graphrag.implementations.FileChunkGragImpl",
-        "peekOfCode": "class FileChunkGragImpl(ABC):\n    @abstractmethod\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        pass\n    @abstractmethod\n    async def ExtractChunksAndRelationsFromDoc_Rag(\n        self, file: str\n    ) -> GetGraphFromDocResponseModel_Rag:",
-        "detail": "graphrag.implementations.FileChunkGragImpl",
-        "documentation": {}
-    },
-    {
-        "label": "LLMGragEntityResponseModel",
-        "kind": 6,
-        "importPath": "graphrag.models.FileChunkGragModels",
-        "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class LLMGragEntityResponseModel(BaseModel):\n    relations: list[list[str]]\n    relationshipsEntities: list[list[list[str]]]\n    chunk: list[str]\nclass ChunkMatchedNodeModel_Rag(BaseModel):\n    score: float\n    chunkId: UUID\nclass ChunkImagesModel_Rag(BaseModel):\n    sectionNumber: float\n    title: str",
-        "detail": "graphrag.models.FileChunkGragModels",
-        "documentation": {}
-    },
-    {
-        "label": "ChunkMatchedNodeModel_Rag",
-        "kind": 6,
-        "importPath": "graphrag.models.FileChunkGragModels",
-        "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkMatchedNodeModel_Rag(BaseModel):\n    score: float\n    chunkId: UUID\nclass ChunkImagesModel_Rag(BaseModel):\n    sectionNumber: float\n    title: str\n    image: str\n    description: str\nclass CHunkTextsModel_Rag(BaseModel):\n    id: UUID",
-        "detail": "graphrag.models.FileChunkGragModels",
-        "documentation": {}
-    },
-    {
-        "label": "ChunkImagesModel_Rag",
-        "kind": 6,
-        "importPath": "graphrag.models.FileChunkGragModels",
-        "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkImagesModel_Rag(BaseModel):\n    sectionNumber: float\n    title: str\n    image: str\n    description: str\nclass CHunkTextsModel_Rag(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None\n    entities: list[str]",
-        "detail": "graphrag.models.FileChunkGragModels",
-        "documentation": {}
-    },
-    {
-        "label": "CHunkTextsModel_Rag",
-        "kind": 6,
-        "importPath": "graphrag.models.FileChunkGragModels",
-        "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class CHunkTextsModel_Rag(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None\n    entities: list[str]\n    questions: list[str]\n    questionVectors: list[list[float]] | None = []\n    matchedNodes: list[ChunkMatchedNodeModel_Rag] | None = None\n    images: list[ChunkImagesModel_Rag] | None = None\nclass ChunkRelationModel_Rag(BaseModel):",
-        "detail": "graphrag.models.FileChunkGragModels",
-        "documentation": {}
-    },
-    {
-        "label": "ChunkRelationModel_Rag",
-        "kind": 6,
-        "importPath": "graphrag.models.FileChunkGragModels",
-        "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkRelationModel_Rag(BaseModel):\n    id: UUID\n    realtion: str\n    realtionEntites: list[str]\n    relationVector: list[float] | None = None\nclass ChunkRelationsModel_Rag(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel_Rag]\nclass GetGraphFromDocResponseModel_Rag(BaseModel):\n    chunkTexts: list[CHunkTextsModel_Rag]",
-        "detail": "graphrag.models.FileChunkGragModels",
-        "documentation": {}
-    },
-    {
-        "label": "ChunkRelationsModel_Rag",
-        "kind": 6,
-        "importPath": "graphrag.models.FileChunkGragModels",
-        "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class ChunkRelationsModel_Rag(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel_Rag]\nclass GetGraphFromDocResponseModel_Rag(BaseModel):\n    chunkTexts: list[CHunkTextsModel_Rag]\n    chunkRelations: list[ChunkRelationsModel_Rag]",
-        "detail": "graphrag.models.FileChunkGragModels",
-        "documentation": {}
-    },
-    {
-        "label": "GetGraphFromDocResponseModel_Rag",
-        "kind": 6,
-        "importPath": "graphrag.models.FileChunkGragModels",
-        "description": "graphrag.models.FileChunkGragModels",
-        "peekOfCode": "class GetGraphFromDocResponseModel_Rag(BaseModel):\n    chunkTexts: list[CHunkTextsModel_Rag]\n    chunkRelations: list[ChunkRelationsModel_Rag]",
-        "detail": "graphrag.models.FileChunkGragModels",
-        "documentation": {}
-    },
-    {
-        "label": "BuildGraphFromDocService_Rag",
-        "kind": 6,
-        "importPath": "graphrag.services.BuildGraphFromDocService_Rag",
-        "description": "graphrag.services.BuildGraphFromDocService_Rag",
-        "peekOfCode": "class BuildGraphFromDocService_Rag(FileChunkGragImpl):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")\n        _MULTI_NL_RE = re.compile(r\"\\n{3,}\")",
-        "detail": "graphrag.services.BuildGraphFromDocService_Rag",
-        "documentation": {}
-    },
-    {
-        "label": "chatService",
-        "kind": 5,
-        "importPath": "graphrag.services.BuildGraphFromDocService_Rag",
-        "description": "graphrag.services.BuildGraphFromDocService_Rag",
-        "peekOfCode": "chatService = ChatService()\nembeddingService = EmbeddingService()\nrerankingService = RerankingService()\nclass BuildGraphFromDocService_Rag(FileChunkGragImpl):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)",
-        "detail": "graphrag.services.BuildGraphFromDocService_Rag",
-        "documentation": {}
-    },
-    {
-        "label": "embeddingService",
-        "kind": 5,
-        "importPath": "graphrag.services.BuildGraphFromDocService_Rag",
-        "description": "graphrag.services.BuildGraphFromDocService_Rag",
-        "peekOfCode": "embeddingService = EmbeddingService()\nrerankingService = RerankingService()\nclass BuildGraphFromDocService_Rag(FileChunkGragImpl):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")",
-        "detail": "graphrag.services.BuildGraphFromDocService_Rag",
-        "documentation": {}
-    },
-    {
-        "label": "rerankingService",
-        "kind": 5,
-        "importPath": "graphrag.services.BuildGraphFromDocService_Rag",
-        "description": "graphrag.services.BuildGraphFromDocService_Rag",
-        "peekOfCode": "rerankingService = RerankingService()\nclass BuildGraphFromDocService_Rag(FileChunkGragImpl):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")",
-        "detail": "graphrag.services.BuildGraphFromDocService_Rag",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractEntityGragSystemPrompt",
-        "kind": 5,
-        "importPath": "graphrag.utils.FileGragSystemPropts",
-        "description": "graphrag.utils.FileGragSystemPropts",
-        "peekOfCode": "ExtractEntityGragSystemPrompt = r\"\"\"\nTASK\nReturn ONLY valid JSON per the schema for ONE input chunk.\nINPUT\n{ \"chunk\": \"...\" }\nOUTPUT (conceptual)\n{\n  \"response\": {\n    \"entities\": [\"...\"],\n    \"relations\": [\"...\"],",
-        "detail": "graphrag.utils.FileGragSystemPropts",
-        "documentation": {}
-    },
-    {
-        "label": "QaAiAnswersImpl",
-        "kind": 6,
-        "importPath": "rag.qa.implementations.QaAiAnswersImpl",
-        "description": "rag.qa.implementations.QaAiAnswersImpl",
-        "peekOfCode": "class QaAiAnswersImpl(ABC):\n    @abstractmethod\n    async def QaResponse(\n        self,\n        request: QaAiAnswersRequestModel,\n    ) ->  QaAiAnswersResponseModel:\n        pass",
-        "detail": "rag.qa.implementations.QaAiAnswersImpl",
-        "documentation": {}
-    },
-    {
-        "label": "QaDocImpl",
-        "kind": 6,
-        "importPath": "rag.qa.implementations.QaDocImpl",
-        "description": "rag.qa.implementations.QaDocImpl",
-        "peekOfCode": "class QaDocImpl(ABC):\n    @abstractmethod\n    async def ExtractQaFromText(\n        self, text: str\n    ) -> ExtarctQaFromTextResponseModel:\n        pass\n    @abstractmethod\n    async def ExtractQa(\n        self, file: str\n    ) -> ExtractQaResponseModel:",
-        "detail": "rag.qa.implementations.QaDocImpl",
-        "documentation": {}
-    },
-    {
-        "label": "QaAiAnswersRequestModel",
-        "kind": 6,
-        "importPath": "rag.qa.models.QaAiAnswersModels",
-        "description": "rag.qa.models.QaAiAnswersModels",
-        "peekOfCode": "class QaAiAnswersRequestModel(BaseModel):\n    ragResponseText: str\n    query: str\nclass QaAiAnswersResponseModel(BaseModel):\n    status: ChatServiceResponseStatusEnum\n    response: str | None",
-        "detail": "rag.qa.models.QaAiAnswersModels",
-        "documentation": {}
-    },
-    {
-        "label": "QaAiAnswersResponseModel",
-        "kind": 6,
-        "importPath": "rag.qa.models.QaAiAnswersModels",
-        "description": "rag.qa.models.QaAiAnswersModels",
-        "peekOfCode": "class QaAiAnswersResponseModel(BaseModel):\n    status: ChatServiceResponseStatusEnum\n    response: str | None",
-        "detail": "rag.qa.models.QaAiAnswersModels",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractQaEmbeddingTextModel",
-        "kind": 6,
-        "importPath": "rag.qa.models.QaDocModels",
-        "description": "rag.qa.models.QaDocModels",
-        "peekOfCode": "class ExtractQaEmbeddingTextModel(BaseModel):\n    question: str\n    answer: str\n    embeddingText: str\nclass ExtractQaVectorModel(BaseModel):\n    embeddingVector: list[float]\n    id: UUID\n    embeddingId: UUID\nclass ExtarctQaFromTextResponseModel(BaseModel):\n    response: list[ExtractQaEmbeddingTextModel] | None = None",
-        "detail": "rag.qa.models.QaDocModels",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractQaVectorModel",
-        "kind": 6,
-        "importPath": "rag.qa.models.QaDocModels",
-        "description": "rag.qa.models.QaDocModels",
-        "peekOfCode": "class ExtractQaVectorModel(BaseModel):\n    embeddingVector: list[float]\n    id: UUID\n    embeddingId: UUID\nclass ExtarctQaFromTextResponseModel(BaseModel):\n    response: list[ExtractQaEmbeddingTextModel] | None = None\n    status: ChatServiceResponseStatusEnum\nclass ExtractQaResponseModel(BaseModel):\n    response: list[ExtractQaEmbeddingTextModel] | None = None\n    status: ChatServiceResponseStatusEnum",
-        "detail": "rag.qa.models.QaDocModels",
-        "documentation": {}
-    },
-    {
-        "label": "ExtarctQaFromTextResponseModel",
-        "kind": 6,
-        "importPath": "rag.qa.models.QaDocModels",
-        "description": "rag.qa.models.QaDocModels",
-        "peekOfCode": "class ExtarctQaFromTextResponseModel(BaseModel):\n    response: list[ExtractQaEmbeddingTextModel] | None = None\n    status: ChatServiceResponseStatusEnum\nclass ExtractQaResponseModel(BaseModel):\n    response: list[ExtractQaEmbeddingTextModel] | None = None\n    status: ChatServiceResponseStatusEnum\nclass ExtractQaEmbeddingVectorModel(\n    ExtractQaEmbeddingTextModel\n):\n    id: UUID",
-        "detail": "rag.qa.models.QaDocModels",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractQaResponseModel",
-        "kind": 6,
-        "importPath": "rag.qa.models.QaDocModels",
-        "description": "rag.qa.models.QaDocModels",
-        "peekOfCode": "class ExtractQaResponseModel(BaseModel):\n    response: list[ExtractQaEmbeddingTextModel] | None = None\n    status: ChatServiceResponseStatusEnum\nclass ExtractQaEmbeddingVectorModel(\n    ExtractQaEmbeddingTextModel\n):\n    id: UUID\n    vectorId: UUID\nclass HandleQaExtractResponseModel(BaseModel):\n    questionAndAnsers: list[ExtractQaEmbeddingVectorModel] | None = None",
-        "detail": "rag.qa.models.QaDocModels",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractQaEmbeddingVectorModel",
-        "kind": 6,
-        "importPath": "rag.qa.models.QaDocModels",
-        "description": "rag.qa.models.QaDocModels",
-        "peekOfCode": "class ExtractQaEmbeddingVectorModel(\n    ExtractQaEmbeddingTextModel\n):\n    id: UUID\n    vectorId: UUID\nclass HandleQaExtractResponseModel(BaseModel):\n    questionAndAnsers: list[ExtractQaEmbeddingVectorModel] | None = None\n    status: ChatServiceResponseStatusEnum | EmbeddingResponseEnum\n    vectors: list[ExtractQaVectorModel] | None = None",
-        "detail": "rag.qa.models.QaDocModels",
-        "documentation": {}
-    },
-    {
-        "label": "HandleQaExtractResponseModel",
-        "kind": 6,
-        "importPath": "rag.qa.models.QaDocModels",
-        "description": "rag.qa.models.QaDocModels",
-        "peekOfCode": "class HandleQaExtractResponseModel(BaseModel):\n    questionAndAnsers: list[ExtractQaEmbeddingVectorModel] | None = None\n    status: ChatServiceResponseStatusEnum | EmbeddingResponseEnum\n    vectors: list[ExtractQaVectorModel] | None = None",
-        "detail": "rag.qa.models.QaDocModels",
-        "documentation": {}
-    },
-    {
-        "label": "QaAiAnswersService",
-        "kind": 6,
-        "importPath": "rag.qa.services.QaAiAnswersImplService",
-        "description": "rag.qa.services.QaAiAnswersImplService",
-        "peekOfCode": "class QaAiAnswersService(QaAiAnswersImpl):\n    async def QaResponse(\n        self, request: QaAiAnswersRequestModel\n    ) ->  QaAiAnswersResponseModel:\n        llmMessages: list[ChatServiceMessageModel] = []\n        llmMessages.append(\n            ChatServiceMessageModel(\n                role=ChatServiceMessageRoleEnum.SYSTEM,\n                content=QaAiAnswerPromptFromRagText,\n            )",
-        "detail": "rag.qa.services.QaAiAnswersImplService",
-        "documentation": {}
-    },
-    {
-        "label": "ChatServices",
-        "kind": 5,
-        "importPath": "rag.qa.services.QaAiAnswersImplService",
-        "description": "rag.qa.services.QaAiAnswersImplService",
-        "peekOfCode": "ChatServices = ChatService()\nclass QaAiAnswersService(QaAiAnswersImpl):\n    async def QaResponse(\n        self, request: QaAiAnswersRequestModel\n    ) ->  QaAiAnswersResponseModel:\n        llmMessages: list[ChatServiceMessageModel] = []\n        llmMessages.append(\n            ChatServiceMessageModel(\n                role=ChatServiceMessageRoleEnum.SYSTEM,\n                content=QaAiAnswerPromptFromRagText,",
-        "detail": "rag.qa.services.QaAiAnswersImplService",
-        "documentation": {}
-    },
-    {
-        "label": "QaDocService",
-        "kind": 6,
-        "importPath": "rag.qa.services.QaDocServices",
-        "description": "rag.qa.services.QaDocServices",
-        "peekOfCode": "class QaDocService(QaDocImpl):\n    async def ExtractQaFromText(self, text: str) -> ExtarctQaFromTextResponseModel:\n        systemPrompt = ExtractQaPrompt\n        messages = [\n            ChatServiceMessageModel(role=ChatServiceMessageRoleEnum.SYSTEM, content=systemPrompt),\n            ChatServiceMessageModel(\n                role=ChatServiceMessageRoleEnum.USER, content=text\n            ),  # your PDF-extracted text here\n        ]\n        LLMResponse: Any = await ChatService.Chat(",
-        "detail": "rag.qa.services.QaDocServices",
-        "documentation": {}
-    },
-    {
-        "label": "ChatService",
-        "kind": 5,
-        "importPath": "rag.qa.services.QaDocServices",
-        "description": "rag.qa.services.QaDocServices",
-        "peekOfCode": "ChatService = ChatService()\nembeddingService = EmbeddingService()\nclass QaDocService(QaDocImpl):\n    async def ExtractQaFromText(self, text: str) -> ExtarctQaFromTextResponseModel:\n        systemPrompt = ExtractQaPrompt\n        messages = [\n            ChatServiceMessageModel(role=ChatServiceMessageRoleEnum.SYSTEM, content=systemPrompt),\n            ChatServiceMessageModel(\n                role=ChatServiceMessageRoleEnum.USER, content=text\n            ),  # your PDF-extracted text here",
-        "detail": "rag.qa.services.QaDocServices",
-        "documentation": {}
-    },
-    {
-        "label": "embeddingService",
-        "kind": 5,
-        "importPath": "rag.qa.services.QaDocServices",
-        "description": "rag.qa.services.QaDocServices",
-        "peekOfCode": "embeddingService = EmbeddingService()\nclass QaDocService(QaDocImpl):\n    async def ExtractQaFromText(self, text: str) -> ExtarctQaFromTextResponseModel:\n        systemPrompt = ExtractQaPrompt\n        messages = [\n            ChatServiceMessageModel(role=ChatServiceMessageRoleEnum.SYSTEM, content=systemPrompt),\n            ChatServiceMessageModel(\n                role=ChatServiceMessageRoleEnum.USER, content=text\n            ),  # your PDF-extracted text here\n        ]",
-        "detail": "rag.qa.services.QaDocServices",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractQaPrompt",
-        "kind": 5,
-        "importPath": "rag.qa.utils.qaSystemPropts",
-        "description": "rag.qa.utils.qaSystemPropts",
-        "peekOfCode": "ExtractQaPrompt = \"\"\"\nYou are an expert information extraction assistant for building a vector-searchable QA knowledge base.\nYour task:\n- Read the given text (FAQ, documentation, or user guide).\n- For each question-answer pair in the text, extract:\n    1. `question`: Use the question text exactly as written in the text.\n    2. `answer`: Use the answer text exactly as written (verbatim, do not summarize or alter).\n    3. `embeddingText`: Create a concise, enriched version of the question for vector search.\n        - Start with the original question.\n        - Add related terms, synonyms, and key entities from the answer.",
-        "detail": "rag.qa.utils.qaSystemPropts",
-        "documentation": {}
-    },
-    {
-        "label": "QaAiAnswerPromptFromRagText",
-        "kind": 5,
-        "importPath": "rag.qa.utils.qaSystemPropts",
-        "description": "rag.qa.utils.qaSystemPropts",
-        "peekOfCode": "QaAiAnswerPromptFromRagText = \"\"\"\nYou are an AI assistant. I will provide you with some context from a database related to the user query.\n- If the context is relevant, answer ONLY based on that context.  \n- If the context does not contain relevant information, you may answer using your own knowledge.  \n- If the user’s query is unrelated to the context, ignore the context and respond normally.  \n⚠️ Important instructions for output:\n- Respond ONLY with the final answer.  \n- Do NOT use Markdown (**bold**, ## headings, bullet points, etc.).  \n- Do NOT add <think>, XML, JSON, or any other tags.  \n- Do NOT include quotes around the text.  ",
-        "detail": "rag.qa.utils.qaSystemPropts",
-        "documentation": {}
-    },
-    {
-        "label": "QaTestModel",
-        "kind": 6,
-        "importPath": "server.controllers.QaRagController",
-        "description": "server.controllers.QaRagController",
-        "peekOfCode": "class QaTestModel(BaseModel):\n    answer:str\n    question:str\nQaRag = APIRouter()\nQaRaServices = QaRagControllerServices()\nasync def getDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@QaRag.get(\"/rag/extarct\")\nasync def HandleQaRag():",
-        "detail": "server.controllers.QaRagController",
-        "documentation": {}
-    },
-    {
-        "label": "embeddingService",
-        "kind": 5,
-        "importPath": "server.controllers.QaRagController",
-        "description": "server.controllers.QaRagController",
-        "peekOfCode": "embeddingService = EmbeddingService()\nclass QaTestModel(BaseModel):\n    answer:str\n    question:str\nQaRag = APIRouter()\nQaRaServices = QaRagControllerServices()\nasync def getDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@QaRag.get(\"/rag/extarct\")",
-        "detail": "server.controllers.QaRagController",
-        "documentation": {}
-    },
-    {
-        "label": "QaRag",
-        "kind": 5,
-        "importPath": "server.controllers.QaRagController",
-        "description": "server.controllers.QaRagController",
-        "peekOfCode": "QaRag = APIRouter()\nQaRaServices = QaRagControllerServices()\nasync def getDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@QaRag.get(\"/rag/extarct\")\nasync def HandleQaRag():\n    response = await QaRaServices.QaRagExtract(await getDb())\n    return response\n@QaRag.post(\"/rag/ask\")",
-        "detail": "server.controllers.QaRagController",
-        "documentation": {}
-    },
-    {
-        "label": "QaRaServices",
-        "kind": 5,
-        "importPath": "server.controllers.QaRagController",
-        "description": "server.controllers.QaRagController",
-        "peekOfCode": "QaRaServices = QaRagControllerServices()\nasync def getDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@QaRag.get(\"/rag/extarct\")\nasync def HandleQaRag():\n    response = await QaRaServices.QaRagExtract(await getDb())\n    return response\n@QaRag.post(\"/rag/ask\")\nasync def HandleQaRagAsk(request: QaRagAskRequestModel):",
-        "detail": "server.controllers.QaRagController",
-        "documentation": {}
-    },
-    {
-        "label": "qa_embedding_texts_query",
-        "kind": 5,
-        "importPath": "server.controllers.QaRagQuerys",
-        "description": "server.controllers.QaRagQuerys",
-        "peekOfCode": "qa_embedding_texts_query = \"\"\"\nCREATE TABLE IF NOT EXISTS qa_embedding_texts (\n    id UUID PRIMARY KEY,\n    vector_id UUID NOT NULL,\n    question TEXT NOT NULL,\n    answer TEXT NOT NULL,\n    embedding_text TEXT NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW()\n);\n\"\"\"",
-        "detail": "server.controllers.QaRagQuerys",
-        "documentation": {}
-    },
-    {
-        "label": "qa_embedding_vectors_query",
-        "kind": 5,
-        "importPath": "server.controllers.QaRagQuerys",
-        "description": "server.controllers.QaRagQuerys",
-        "peekOfCode": "qa_embedding_vectors_query = \"\"\"\nCREATE TABLE IF NOT EXISTS qa_embedding_vectors (\n    id UUID PRIMARY KEY,\n    embedding_id UUID NOT NULL,  \n    embedding_vector vector(1024) NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW()\n);\n\"\"\"\nqa_embedding_vector_index_query = \"\"\"\nCREATE INDEX IF NOT EXISTS qa_embedding_vectors_embedding_idx",
-        "detail": "server.controllers.QaRagQuerys",
-        "documentation": {}
-    },
-    {
-        "label": "qa_embedding_vector_index_query",
-        "kind": 5,
-        "importPath": "server.controllers.QaRagQuerys",
-        "description": "server.controllers.QaRagQuerys",
-        "peekOfCode": "qa_embedding_vector_index_query = \"\"\"\nCREATE INDEX IF NOT EXISTS qa_embedding_vectors_embedding_idx\nON qa_embedding_vectors\nUSING hnsw (embedding_vector vector_cosine_ops);\n\"\"\"\n\"\"\"\nCREATE TABLE IF NOT EXISTS qa_embedding_texts (\n    id UUID PRIMARY KEY,\n    vector_id UUID NOT NULL,\n    question TEXT NOT NULL,",
-        "detail": "server.controllers.QaRagQuerys",
-        "documentation": {}
-    },
-    {
-        "label": "QaRagContollerImpl",
-        "kind": 6,
-        "importPath": "server.implementations.QaRagImpl",
-        "description": "server.implementations.QaRagImpl",
-        "peekOfCode": "class QaRagContollerImpl(ABC):\n    @abstractmethod\n    async def QaRagExtract(self,db:Any) -> JSONResponse:\n        pass\n    @abstractmethod\n    async def QaRagAsk(self,query:str,db:Any) -> JSONResponse:\n        pass",
-        "detail": "server.implementations.QaRagImpl",
-        "documentation": {}
-    },
-    {
-        "label": "EmbeddingTextModel",
-        "kind": 6,
-        "importPath": "server.models.QaRagServicesModels",
-        "description": "server.models.QaRagServicesModels",
-        "peekOfCode": "class EmbeddingTextModel(BaseModel):\n    id: UUID\n    vectorId: UUID\n    question: str\n    answer: str\n    embeddingText: str\nclass EmbeddingVectorModel(BaseModel):\n    id: UUID\n    embeddingId: UUID\n    embeddingVector: list[float]",
-        "detail": "server.models.QaRagServicesModels",
-        "documentation": {}
-    },
-    {
-        "label": "EmbeddingVectorModel",
-        "kind": 6,
-        "importPath": "server.models.QaRagServicesModels",
-        "description": "server.models.QaRagServicesModels",
-        "peekOfCode": "class EmbeddingVectorModel(BaseModel):\n    id: UUID\n    embeddingId: UUID\n    embeddingVector: list[float]\nclass QaRagAskRequestModel(BaseModel):\n    query: str",
-        "detail": "server.models.QaRagServicesModels",
-        "documentation": {}
-    },
-    {
-        "label": "QaRagAskRequestModel",
-        "kind": 6,
-        "importPath": "server.models.QaRagServicesModels",
-        "description": "server.models.QaRagServicesModels",
-        "peekOfCode": "class QaRagAskRequestModel(BaseModel):\n    query: str",
-        "detail": "server.models.QaRagServicesModels",
+        "importPath": "aiservices.embedding.workers.GetApiKey",
+        "description": "aiservices.embedding.workers.GetApiKey",
+        "peekOfCode": "JINA_API_KEY = cast(Any, os.getenv(\"JINA_API_KEY\"))\ndef GetMistralApiKey() -> str:\n    return MISTRAL_API_KEY\ndef GetJinaApiKey() -> str:\n    return JINA_API_KEY",
+        "detail": "aiservices.embedding.workers.GetApiKey",
         "documentation": {}
     },
     {
         "label": "PsqlDb",
         "kind": 6,
-        "importPath": "server.psqldb.PsqlDb",
-        "description": "server.psqldb.PsqlDb",
+        "importPath": "dbservices.PsqlDb",
+        "description": "dbservices.PsqlDb",
         "peekOfCode": "class PsqlDb:\n    def __init__(self, db_url: str):\n        self.db_url: str = db_url\n        self.pool: Any = None\n    async def connect(self) -> None:\n        async def _init(conn):\n            # enable the extension if not already\n            await conn.execute(\"CREATE EXTENSION IF NOT EXISTS vector\")\n            # register pgvector type with asyncpg\n            await register_vector(conn)",
-        "detail": "server.psqldb.PsqlDb",
+        "detail": "dbservices.PsqlDb",
         "documentation": {}
     },
     {
-        "label": "QaRagControllerServices",
+        "label": "BuildGraphFromDocServiceImpl_Rag",
         "kind": 6,
-        "importPath": "server.services.QaRagControllerServices",
-        "description": "server.services.QaRagControllerServices",
-        "peekOfCode": "class QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.xlsx\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):\n                embeddingTexts.append(\n                    EmbeddingTextModel(\n                        vectorId=qa.vectorId,",
-        "detail": "server.services.QaRagControllerServices",
+        "importPath": "ragservices.implementations.BuildGraphFromDocServiceImpl_Rag",
+        "description": "ragservices.implementations.BuildGraphFromDocServiceImpl_Rag",
+        "peekOfCode": "class BuildGraphFromDocServiceImpl_Rag(ABC):\n    @abstractmethod\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        pass\n    @abstractmethod\n    async def UploadImagesFromDocToFirebase_Rag(\n        self, base64Str: str, folder: str\n    ) -> str:",
+        "detail": "ragservices.implementations.BuildGraphFromDocServiceImpl_Rag",
         "documentation": {}
     },
     {
-        "label": "qaDocService",
-        "kind": 5,
-        "importPath": "server.services.QaRagControllerServices",
-        "description": "server.services.QaRagControllerServices",
-        "peekOfCode": "qaDocService = QaDocService()\nqaAiAnswers = QaAiAnswersService()\nembeddingService = EmbeddingService()\nclass QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.xlsx\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):",
-        "detail": "server.services.QaRagControllerServices",
+        "label": "ChunkMatchedNodeModel_Rag",
+        "kind": 6,
+        "importPath": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "description": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "peekOfCode": "class ChunkMatchedNodeModel_Rag(BaseModel):\n    score: float\n    chunkId: UUID\nclass ChunkImagesModel_Rag(BaseModel):\n    image: str\n    description: str\nclass CHunkTextsModel_Rag(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None",
+        "detail": "ragservices.models.BuildGraphFromDocModels_Rag",
         "documentation": {}
     },
     {
-        "label": "qaAiAnswers",
+        "label": "ChunkImagesModel_Rag",
+        "kind": 6,
+        "importPath": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "description": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "peekOfCode": "class ChunkImagesModel_Rag(BaseModel):\n    image: str\n    description: str\nclass CHunkTextsModel_Rag(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None\n    entities: list[str]\n    questions: list[str]\n    questionVectors: list[list[float]] | None = []",
+        "detail": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "CHunkTextsModel_Rag",
+        "kind": 6,
+        "importPath": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "description": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "peekOfCode": "class CHunkTextsModel_Rag(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None\n    entities: list[str]\n    questions: list[str]\n    questionVectors: list[list[float]] | None = []\n    matchedNodes: list[ChunkMatchedNodeModel_Rag] | None = None\n    images: list[ChunkImagesModel_Rag] | None = None\nclass ChunkRelationModel_Rag(BaseModel):",
+        "detail": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkRelationModel_Rag",
+        "kind": 6,
+        "importPath": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "description": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "peekOfCode": "class ChunkRelationModel_Rag(BaseModel):\n    id: UUID\n    realtion: str\n    realtionEntites: list[str]\n    relationVector: list[float] | None = None\nclass ChunkRelationsModel_Rag(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel_Rag]\nclass GetGraphFromDocResponseModel_Rag(BaseModel):\n    chunkTexts: list[CHunkTextsModel_Rag]",
+        "detail": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "ChunkRelationsModel_Rag",
+        "kind": 6,
+        "importPath": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "description": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "peekOfCode": "class ChunkRelationsModel_Rag(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel_Rag]\nclass GetGraphFromDocResponseModel_Rag(BaseModel):\n    chunkTexts: list[CHunkTextsModel_Rag]\n    chunkRelations: list[ChunkRelationsModel_Rag]\nclass ExtarctRelationsAndQuestionFromChunkResponseModel_Rag(BaseModel):\n    entities: list[str]\n    realtions: list[str]\n    questions: list[str]",
+        "detail": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "GetGraphFromDocResponseModel_Rag",
+        "kind": 6,
+        "importPath": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "description": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "peekOfCode": "class GetGraphFromDocResponseModel_Rag(BaseModel):\n    chunkTexts: list[CHunkTextsModel_Rag]\n    chunkRelations: list[ChunkRelationsModel_Rag]\nclass ExtarctRelationsAndQuestionFromChunkResponseModel_Rag(BaseModel):\n    entities: list[str]\n    realtions: list[str]\n    questions: list[str]\n    chunk: str\n    relationshipsEntities: list[list[str]]\nclass ExatrctImageIndexFromChunkSectionModel_Rag(BaseModel):",
+        "detail": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "ExtarctRelationsAndQuestionFromChunkResponseModel_Rag",
+        "kind": 6,
+        "importPath": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "description": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "peekOfCode": "class ExtarctRelationsAndQuestionFromChunkResponseModel_Rag(BaseModel):\n    entities: list[str]\n    realtions: list[str]\n    questions: list[str]\n    chunk: str\n    relationshipsEntities: list[list[str]]\nclass ExatrctImageIndexFromChunkSectionModel_Rag(BaseModel):\n    imageindex: int | None\n    description: str\nclass ExatrctImageIndexFromChunkResponseModel_Rag(BaseModel):",
+        "detail": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "ExatrctImageIndexFromChunkSectionModel_Rag",
+        "kind": 6,
+        "importPath": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "description": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "peekOfCode": "class ExatrctImageIndexFromChunkSectionModel_Rag(BaseModel):\n    imageindex: int | None\n    description: str\nclass ExatrctImageIndexFromChunkResponseModel_Rag(BaseModel):\n    sections: list[ExatrctImageIndexFromChunkSectionModel_Rag]",
+        "detail": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "ExatrctImageIndexFromChunkResponseModel_Rag",
+        "kind": 6,
+        "importPath": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "description": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "peekOfCode": "class ExatrctImageIndexFromChunkResponseModel_Rag(BaseModel):\n    sections: list[ExatrctImageIndexFromChunkSectionModel_Rag]",
+        "detail": "ragservices.models.BuildGraphFromDocModels_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "BuildGraphFromDocService_Rag",
+        "kind": 6,
+        "importPath": "ragservices.services.BuildGraphFromDocService_Rag",
+        "description": "ragservices.services.BuildGraphFromDocService_Rag",
+        "peekOfCode": "class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")\n        _MULTI_NL_RE = re.compile(r\"\\n{3,}\")",
+        "detail": "ragservices.services.BuildGraphFromDocService_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "chatService",
         "kind": 5,
-        "importPath": "server.services.QaRagControllerServices",
-        "description": "server.services.QaRagControllerServices",
-        "peekOfCode": "qaAiAnswers = QaAiAnswersService()\nembeddingService = EmbeddingService()\nclass QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.xlsx\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):\n                embeddingTexts.append(",
-        "detail": "server.services.QaRagControllerServices",
+        "importPath": "ragservices.services.BuildGraphFromDocService_Rag",
+        "description": "ragservices.services.BuildGraphFromDocService_Rag",
+        "peekOfCode": "chatService = ChatService()\nembeddingService = EmbeddingService()\nrerankingService = RerankingService()\ncred = credentials.Certificate(\"./others/firebaseCred.json\")\ncast(Any, firebase_admin).initialize_app(\n    cred, {\"storageBucket\": \"testproject-b1efd.appspot.com\"}\n)\nRetryLoopIndexLimit = 3\nclass BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def ExtractChunksFromDoc_Rag(",
+        "detail": "ragservices.services.BuildGraphFromDocService_Rag",
         "documentation": {}
     },
     {
         "label": "embeddingService",
         "kind": 5,
-        "importPath": "server.services.QaRagControllerServices",
-        "description": "server.services.QaRagControllerServices",
-        "peekOfCode": "embeddingService = EmbeddingService()\nclass QaRagControllerServices(QaRagContollerImpl):\n    async def QaRagExtract(self, db: Any) -> JSONResponse:\n        result = await qaDocService.HandleQaExtract(\"a.xlsx\")\n        embeddingTexts: list[EmbeddingTextModel] = []\n        embeddingVectors: list[EmbeddingVectorModel] = []\n        if result.questionAndAnsers is not None and result.vectors is not None:\n            for qa, vec in zip(result.questionAndAnsers, result.vectors):\n                embeddingTexts.append(\n                    EmbeddingTextModel(",
-        "detail": "server.services.QaRagControllerServices",
+        "importPath": "ragservices.services.BuildGraphFromDocService_Rag",
+        "description": "ragservices.services.BuildGraphFromDocService_Rag",
+        "peekOfCode": "embeddingService = EmbeddingService()\nrerankingService = RerankingService()\ncred = credentials.Certificate(\"./others/firebaseCred.json\")\ncast(Any, firebase_admin).initialize_app(\n    cred, {\"storageBucket\": \"testproject-b1efd.appspot.com\"}\n)\nRetryLoopIndexLimit = 3\nclass BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0",
+        "detail": "ragservices.services.BuildGraphFromDocService_Rag",
         "documentation": {}
     },
     {
-        "label": "CustomMidlleware",
+        "label": "rerankingService",
+        "kind": 5,
+        "importPath": "ragservices.services.BuildGraphFromDocService_Rag",
+        "description": "ragservices.services.BuildGraphFromDocService_Rag",
+        "peekOfCode": "rerankingService = RerankingService()\ncred = credentials.Certificate(\"./others/firebaseCred.json\")\ncast(Any, firebase_admin).initialize_app(\n    cred, {\"storageBucket\": \"testproject-b1efd.appspot.com\"}\n)\nRetryLoopIndexLimit = 3\nclass BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:",
+        "detail": "ragservices.services.BuildGraphFromDocService_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "cred",
+        "kind": 5,
+        "importPath": "ragservices.services.BuildGraphFromDocService_Rag",
+        "description": "ragservices.services.BuildGraphFromDocService_Rag",
+        "peekOfCode": "cred = credentials.Certificate(\"./others/firebaseCred.json\")\ncast(Any, firebase_admin).initialize_app(\n    cred, {\"storageBucket\": \"testproject-b1efd.appspot.com\"}\n)\nRetryLoopIndexLimit = 3\nclass BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)",
+        "detail": "ragservices.services.BuildGraphFromDocService_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "RetryLoopIndexLimit",
+        "kind": 5,
+        "importPath": "ragservices.services.BuildGraphFromDocService_Rag",
+        "description": "ragservices.services.BuildGraphFromDocService_Rag",
+        "peekOfCode": "RetryLoopIndexLimit = 3\nclass BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")",
+        "detail": "ragservices.services.BuildGraphFromDocService_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractRealtionsAndQuestionsFromChunkSystemPrompt_Rag",
+        "kind": 5,
+        "importPath": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
+        "description": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
+        "peekOfCode": "ExtractRealtionsAndQuestionsFromChunkSystemPrompt_Rag = r\"\"\"\nTASK\nReturn ONLY valid JSON per the schema for ONE input chunk.\nINPUT\n{ \"chunk\": \"...\" }\nOUTPUT (conceptual)\n{\n  \"response\": {\n    \"entities\": [\"...\"],\n    \"relations\": [\"...\"],",
+        "detail": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractImageIndexFromChunkSystemPrompt_Rag",
+        "kind": 5,
+        "importPath": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
+        "description": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
+        "peekOfCode": "ExtractImageIndexFromChunkSystemPrompt_Rag = r\"\"\"\nTASK\nReturn ONLY valid JSON per the schema for ONE input chunk.\nINPUT\n{ \"chunk\": \"...\" }\nOUTPUT (conceptual)\n{\n  \"response\": {\n    \"sections\": [\n      { \"imageindex\": \"7\", \"description\": \"One clear sentence (8–25 words) explaining why/how the image is used.\" }",
+        "detail": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "GragDocRouter",
+        "kind": 5,
+        "importPath": "server.controllers.BuildGraphRagFromDocController_Server",
+        "description": "server.controllers.BuildGraphRagFromDocController_Server",
+        "peekOfCode": "GragDocRouter = APIRouter()\nBuildGraphRagFromDocServiceServer = BuildGraphRagFromDocService_Server()\nasync def GetDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@GragDocRouter.get(\"/bgrfd\")\nasync def BuildGraphFromDoc():\n    return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(\n        \"./others/opd_manual.pdf\", await GetDb()\n    )",
+        "detail": "server.controllers.BuildGraphRagFromDocController_Server",
+        "documentation": {}
+    },
+    {
+        "label": "BuildGraphRagFromDocServiceServer",
+        "kind": 5,
+        "importPath": "server.controllers.BuildGraphRagFromDocController_Server",
+        "description": "server.controllers.BuildGraphRagFromDocController_Server",
+        "peekOfCode": "BuildGraphRagFromDocServiceServer = BuildGraphRagFromDocService_Server()\nasync def GetDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@GragDocRouter.get(\"/bgrfd\")\nasync def BuildGraphFromDoc():\n    return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(\n        \"./others/opd_manual.pdf\", await GetDb()\n    )",
+        "detail": "server.controllers.BuildGraphRagFromDocController_Server",
+        "documentation": {}
+    },
+    {
+        "label": "BuildGraphRagFromDocServiceImpl_Server",
         "kind": 6,
-        "importPath": "server.middleware",
-        "description": "server.middleware",
-        "peekOfCode": "class CustomMidlleware(BaseHTTPMiddleware):\n    async def dispatch(self, request: Request, call_next: RequestResponseEndpoint):\n        try:\n            response = await call_next(request)\n            if response.status_code == 404:\n                return JSONResponse(\n                    status_code=404,\n                    content={\"data\": \"INVALID_URL\"},\n                )\n            return response",
-        "detail": "server.middleware",
+        "importPath": "server.serviceimplementations.BuildGraphRagFromDocServiceImpl_Server",
+        "description": "server.serviceimplementations.BuildGraphRagFromDocServiceImpl_Server",
+        "peekOfCode": "class BuildGraphRagFromDocServiceImpl_Server(ABC):\n    @abstractmethod\n    async def BuildGraphFromDoc(self, file:str,db:Any):\n        pass",
+        "detail": "server.serviceimplementations.BuildGraphRagFromDocServiceImpl_Server",
         "documentation": {}
     },
     {
-        "label": "extractTextWithMetadata",
+        "label": "BuildGraphRagFromDocService_Server",
+        "kind": 6,
+        "importPath": "server.services.BuildGraphRagFromDocService_Server",
+        "description": "server.services.BuildGraphRagFromDocService_Server",
+        "peekOfCode": "class BuildGraphRagFromDocService_Server(BuildGraphRagFromDocServiceImpl_Server):\n    async def BuildGraphFromDoc(self, file: str, db: Any):\n        conn = await db.get_connection()\n        graph: GetGraphFromDocResponseModel_Rag = (\n            await BuildGraphRagFromDocService.BuildGraphFromDoc_Rag(file)\n        )\n        chunkTexts: list[Any] = []\n        chunkQuestions: list[Any] = []\n        chunkImages: list[Any] = []\n        chunkRelations: list[Any] = []",
+        "detail": "server.services.BuildGraphRagFromDocService_Server",
+        "documentation": {}
+    },
+    {
+        "label": "BuildGraphRagFromDocService",
+        "kind": 5,
+        "importPath": "server.services.BuildGraphRagFromDocService_Server",
+        "description": "server.services.BuildGraphRagFromDocService_Server",
+        "peekOfCode": "BuildGraphRagFromDocService = BuildGraphFromDocService_Rag()\nclass BuildGraphRagFromDocService_Server(BuildGraphRagFromDocServiceImpl_Server):\n    async def BuildGraphFromDoc(self, file: str, db: Any):\n        conn = await db.get_connection()\n        graph: GetGraphFromDocResponseModel_Rag = (\n            await BuildGraphRagFromDocService.BuildGraphFromDoc_Rag(file)\n        )\n        chunkTexts: list[Any] = []\n        chunkQuestions: list[Any] = []\n        chunkImages: list[Any] = []",
+        "detail": "server.services.BuildGraphRagFromDocService_Server",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractTextAndImagesFromDoc",
         "kind": 2,
-        "importPath": "utils.ExtarctTextFromFile",
-        "description": "utils.ExtarctTextFromFile",
-        "peekOfCode": "def extractTextWithMetadata(pdfPath: str) -> Tuple[str, List[str]]:\n    doc: Any = fitz.open(pdfPath)\n    imagesB64: List[str] = []\n    imageCounter: int = 1\n    finalTextParts: List[str] = []\n    for _, page in enumerate(doc, start=1):\n        blocks = page.get_text(\"dict\")[\"blocks\"]\n        pageItems: List[Tuple[str, float, str]] = []\n        for block in blocks:\n            if block[\"type\"] == 0:",
-        "detail": "utils.ExtarctTextFromFile",
+        "importPath": "utils.ExtarctTextFromDoc_Rag",
+        "description": "utils.ExtarctTextFromDoc_Rag",
+        "peekOfCode": "def ExtractTextAndImagesFromDoc(pdfPath: str) -> Tuple[str, List[str]]:\n    doc: Any = fitz.open(pdfPath)\n    imagesB64: List[str] = []\n    imageCounter: int = 1\n    finalTextParts: List[str] = []\n    for _, page in enumerate(doc, start=1):\n        blocks = page.get_text(\"dict\")[\"blocks\"]\n        pageItems: List[Tuple[str, float, str]] = []\n        for block in blocks:\n            if block[\"type\"] == 0:",
+        "detail": "utils.ExtarctTextFromDoc_Rag",
         "documentation": {}
     },
     {
         "label": "ExtractTextFromDoc_Rag",
         "kind": 2,
-        "importPath": "utils.ExtarctTextFromFile",
-        "description": "utils.ExtarctTextFromFile",
-        "peekOfCode": "def ExtractTextFromDoc_Rag(file: str) -> Tuple[str, List[str]]:\n    textWithImages, imagesB64 = extractTextWithMetadata(file)\n    return textWithImages, imagesB64",
-        "detail": "utils.ExtarctTextFromFile",
+        "importPath": "utils.ExtarctTextFromDoc_Rag",
+        "description": "utils.ExtarctTextFromDoc_Rag",
+        "peekOfCode": "def ExtractTextFromDoc_Rag(file: str) -> Tuple[str, List[str]]:\n    textWithImages, imagesB64 = ExtractTextAndImagesFromDoc(file)\n    return textWithImages, imagesB64",
+        "detail": "utils.ExtarctTextFromDoc_Rag",
         "documentation": {}
     },
     {
@@ -2649,7 +2060,7 @@
         "kind": 5,
         "importPath": "k",
         "description": "k",
-        "peekOfCode": "a = BuildGraphFromDocService_Rag()\nasync def main():\n    response = await a.BuildGraphFromDoc_Rag(\"opd_manual.pdf\")\n    for i in response.chunkTexts:\n        print(i.text)\n        print(i.images)\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
+        "peekOfCode": "a = BuildGraphFromDocService_Rag()\nasync def main():\n    response = await a.BuildGraphFromDoc_Rag(\"./others/opd_manual.pdf\")\n    for i in response.chunkTexts:\n        print(i.text)\n        print(i.images)\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
         "detail": "k",
         "documentation": {}
     },
@@ -2658,7 +2069,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "DATABASE_CONNECTION_STRING = os.getenv(\"DATABASE_CONNECTION_STRING\", \"\")\npsqlDb = PsqlDb(DATABASE_CONNECTION_STRING)\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    # await psqlDb.connect()\n    yield\n    # await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,",
+        "peekOfCode": "DATABASE_CONNECTION_STRING = os.getenv(\"DATABASE_CONNECTION_STRING\", \"\")\npsqlDb = PsqlDb(DATABASE_CONNECTION_STRING)\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    await psqlDb.connect()\n    yield\n    await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,",
         "detail": "main",
         "documentation": {}
     },
@@ -2667,7 +2078,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    # await psqlDb.connect()\n    yield\n    # await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],",
+        "peekOfCode": "psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    await psqlDb.connect()\n    yield\n    await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],",
         "detail": "main",
         "documentation": {}
     },
@@ -2676,7 +2087,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "server = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\nserver.add_middleware(CustomMidlleware)\nserver.include_router(QaRag, prefix=\"/api/v1/qa\")",
+        "peekOfCode": "server = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\nserver.include_router(GragDocRouter, prefix=\"/api/v1\")\nRerankingService()",
         "detail": "main",
         "documentation": {}
     }

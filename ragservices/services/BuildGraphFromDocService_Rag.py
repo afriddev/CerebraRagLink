@@ -418,7 +418,7 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                     chunkText=chunks[start],
                 )
             except Exception as e:
-                print(f"Error processing chunk at index {start}: {e}"
+                print(f"Error processing chunk at index {start}: {e}")
                 start = start
                 continue
 

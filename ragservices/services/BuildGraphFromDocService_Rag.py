@@ -316,6 +316,7 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                 ),
             )
         )
+        
         LLMResponse: Any = {}
         try:
             LLMResponse = json.loads(
@@ -371,6 +372,17 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                 None
             )
 
+        start = 0
+
+        while start < len(chunks):
+            chunksRelationsResponse: (
+                ExtarctRelationsAndQuestionFromChunkResponseModel_Rag | None
+            ) = None
+            chunkImageResponse: ExatrctImageIndexFromChunkResponseModel_Rag | None = (
+                None
+            )
+
+
             try:
                 time.sleep(1)
                 LLMChunkRelationMessages: list[ChatServiceMessageModel] = [
@@ -406,7 +418,7 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                     chunkText=chunks[start],
                 )
             except Exception as e:
-                print(f"Error processing chunk at index {start}: {e}")
+                print(f"Error processing chunk at index {start}: {e}"
                 start = start
                 continue
 
@@ -494,6 +506,8 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
             chunksRealtions.append(
                 ChunkRelationsModel_Rag(chunkId=chunkId, chunkRelations=chunkRelations)
             )
+            start += 1
+
             start += 1
 
         return GetGraphFromDocResponseModel_Rag(

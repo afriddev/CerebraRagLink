@@ -18,7 +18,6 @@ class BuildGraphRagFromDocService_Server(BuildGraphRagFromDocServiceImpl_Server)
         chunkQuestions: list[Any] = []
         chunkImages: list[Any] = []
         chunkRelations: list[Any] = []
-
         for ct in graph.chunkTexts:
             chunkTexts.append((ct.id, ct.text, ct.vector, ct.entities))
             for i, q in enumerate(ct.questions):
@@ -41,6 +40,7 @@ class BuildGraphRagFromDocService_Server(BuildGraphRagFromDocServiceImpl_Server)
                         rel.realtionEntites,
                     )
                 )
+
         await conn.executemany(
             """
             INSERT INTO grag.chunks (id, text, text_vector, entities)
@@ -62,6 +62,7 @@ class BuildGraphRagFromDocService_Server(BuildGraphRagFromDocServiceImpl_Server)
             """,
             chunkImages,
         )
+
         await conn.executemany(
             """
             INSERT INTO grag.chunk_relations (chunk_id, relation, relation_vector, relation_entities)

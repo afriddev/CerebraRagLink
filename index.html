@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FastAPI Streaming Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+      :root {
+        --bg: #0b1220;
+        --panel: #0f172a;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+          Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+          "Segoe UI Emoji";
+      }
+      .wrap {
+        max-width: 900px;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        padding: 14px 16px;
+        border-bottom: 1px solid #1f2937;
+        background: var(--panel);
+        position: sticky;
+        top: 0;
+        z-index: 5;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+      }
+      #chat {
+        flex: 1;
+        overflow: auto;
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .msg {
+        padding: 12px 14px;
+        border: 1px solid #223047;
+        border-radius: 12px;
+        background: #0c1a2e;
+        max-width: 85%;
+        white-space: pre-wrap;
+      }
+      .me {
+        align-self: flex-end;
+        background: #0e243f;
+        border-color: #1e3a5f;
+      }
+      .ai {
+        align-self: flex-start;
+      }
+      .meta {
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .controls {
+        display: flex;
+        gap: 8px;
+        padding: 12px;
+        border-top: 1px solid #1f2937;
+        background: var(--panel);
+      }
+      input[type="text"] {
+        flex: 1;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #334155;
+        background: #0b1b30;
+        color: var(--text);
+      }
+      button {
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid #334155;
+        background: #0b1b30;
+        color: var(--text);
+        cursor: pointer;
+      }
+      button[disabled] {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .toolbar {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .small {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      a {
+        color: var(--accent);
+      }
+
+      /* ChatGPT-style typing dots */
+      .typing {
+        display: inline-flex;
+        gap: 6px;
+        align-items: center;
+      }
+      .typing i {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--muted);
+        display: inline-block;
+        opacity: 0.4;
+        animation: blink 1.2s infinite;
+      }
+      .typing i:nth-child(2) {
+        animation-delay: 0.15s;
+      }
+      .typing i:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      @keyframes blink {
+        0%,
+        80%,
+        100% {
+          transform: translateY(0);
+          opacity: 0.3;
+        }
+        40% {
+          transform: translateY(-3px);
+          opacity: 1;
+        }
+      }
+
+      /* Markdown basics */
+      .body pre {
+        background: #0b1b30;
+        padding: 12px;
+        border-radius: 10px;
+        overflow: auto;
+        border: 1px solid #334155;
+      }
+      .body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        font-size: 13px;
+      }
+      .body h1,
+      .body h2,
+      .body h3 {
+        margin: 0.6em 0 0.3em;
+      }
+      .body p {
+        margin: 0.5em 0;
+      }
+      .body ul,
+      .body ol {
+        padding-left: 1.2em;
+      }
+      .body blockquote {
+        margin: 0.6em 0;
+        padding-left: 12px;
+        border-left: 3px solid #334155;
+        color: #cbd5e1;
+      }
+      .time-taken {
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>HMIS AI</h1>
+      </header>
+
+      <main id="chat" role="log" aria-live="polite"></main>
+
+      <div class="controls">
+        <input id="prompt" type="text" placeholder="Type your question..." />
+        <div class="toolbar">
+          <button id="send">Send</button>
+          <button id="stop" title="Abort stream">Stop</button>
+          <button id="clear" title="Clear chat">Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      marked.setOptions({ gfm: true, breaks: true });
+
+      const ENDPOINT = "http://192.168.167.160:8001/api/v1/ask/chat/public";
+      const chat = document.getElementById("chat");
+      const promptEl = document.getElementById("prompt");
+      const sendBtn = document.getElementById("send");
+      const stopBtn = document.getElementById("stop");
+      const clearBtn = document.getElementById("clear");
+      let controller = null;
+
+      function addMsg(role, text, isMarkdown = false) {
+        const wrap = document.createElement("div");
+        wrap.className = `msg ${role === "user" ? "me" : "ai"}`;
+
+        const meta = document.createElement("div");
+        meta.className = "meta";
+        meta.textContent = role === "user" ? "You" : "Server";
+
+        const body = document.createElement("div");
+        body.className = "body";
+        if (isMarkdown) {
+          body.innerHTML = marked.parse(text || "");
+        } else {
+          body.textContent = text || "";
+        }
+
+        const holder = document.createElement("div");
+        holder.appendChild(meta);
+        holder.appendChild(body);
+        wrap.appendChild(holder);
+        chat.appendChild(wrap);
+        chat.scrollTop = chat.scrollHeight;
+        return { wrap, body };
+      }
+
+      function showTyping(targetBody) {
+        targetBody.innerHTML = `<span class="typing"><i></i><i></i><i></i></span>`;
+      }
+
+      function setButtons(sending) {
+        sendBtn.disabled = sending;
+        stopBtn.disabled = !sending;
+      }
+
+      clearBtn.onclick = () => {
+        chat.innerHTML = "";
+      };
+
+      stopBtn.onclick = () => {
+        if (controller) {
+          controller.abort();
+          setButtons(false);
+        }
+      };
+
+      sendBtn.onclick = async () => {
+        const q = promptEl.value.trim();
+        if (!q) return;
+        promptEl.value = "";
+
+        addMsg("user", q, false);
+
+        const { wrap, body: aiBody } = addMsg("assistant", "", true);
+        showTyping(aiBody);
+
+        controller = new AbortController();
+        setButtons(true);
+
+        let gotFirstChunk = false;
+        const startTime = Date.now();
+
+        try {
+          const res = await fetch(ENDPOINT, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "text/event-stream",
+            },
+            body: JSON.stringify({ id: null, query: q }),
+            signal: controller.signal,
+          });
+
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const ctype = (res.headers.get("content-type") || "").toLowerCase();
+
+          const updateMD = (piece) => {
+            if (!gotFirstChunk) {
+              aiBody.innerHTML = "";
+              gotFirstChunk = true;
+            }
+            aiBody._md = (aiBody._md || "") + piece;
+            aiBody.innerHTML = marked.parse(aiBody._md);
+            chat.scrollTop = chat.scrollHeight;
+          };
+
+          if (ctype.includes("text/event-stream")) {
+            await streamSSE(res.body, updateMD);
+          } else {
+            await streamChunks(res.body, updateMD);
+          }
+
+          if (!gotFirstChunk) {
+            aiBody.innerHTML = `<em class="small">No content.</em>`;
+          }
+
+          // Show time taken
+          const endTime = Date.now();
+          const seconds = ((endTime - startTime) / 1000).toFixed(2);
+          const timeEl = document.createElement("div");
+          timeEl.className = "time-taken";
+          timeEl.textContent = `⏱ Response time: ${seconds} sec`;
+          // wrap.appendChild(timeEl);
+        } catch (err) {
+          aiBody.innerHTML = `<em class="small">Error: ${escapeHtml(
+            String(err.message || err)
+          )}</em>`;
+        } finally {
+          setButtons(false);
+          controller = null;
+        }
+      };
+
+      function escapeHtml(s) {
+        return s.replace(
+          /[&<>"]/g,
+          (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])
+        );
+      }
+
+      async function streamChunks(stream, onPiece) {
+        const reader = stream.getReader();
+        const decoder = new TextDecoder();
+        let buffer = "";
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+
+          let idx;
+          while ((idx = buffer.indexOf("\n")) !== -1) {
+            const line = buffer.slice(0, idx);
+            buffer = buffer.slice(idx + 1);
+            if (line === "") continue;
+
+            const extracted = extractTextFromPossibleJSON(line);
+            onPiece(extracted != null ? extracted : line);
+          }
+          if (!buffer.includes("\n") && buffer) {
+            onPiece(buffer);
+            buffer = "";
+          }
+        }
+        if (buffer) {
+          const extracted = extractTextFromPossibleJSON(buffer);
+          onPiece(extracted != null ? extracted : buffer);
+        }
+      }
+
+      async function streamSSE(stream, onPiece) {
+        const reader = stream.getReader();
+        const decoder = new TextDecoder();
+        let buf = "";
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          buf += decoder.decode(value, { stream: true });
+
+          let lineEnd;
+          while ((lineEnd = buf.indexOf("\n")) !== -1) {
+            const raw = buf.slice(0, lineEnd).replace(/\r$/, "");
+            buf = buf.slice(lineEnd + 1);
+
+            if (!raw || raw.startsWith(":")) continue;
+            if (raw.startsWith("data:")) {
+              const data = raw.slice(5);
+              if (data.trim() === "[DONE]") continue;
+              const extracted = extractTextFromPossibleJSON(data);
+              onPiece(extracted != null ? extracted : data);
+            }
+          }
+        }
+      }
+
+      function extractTextFromPossibleJSON(s) {
+        try {
+          const j = JSON.parse(s);
+          if (typeof j === "string") return j;
+          if (j == null) return "";
+          if (j.choices && j.choices[0]?.delta?.content)
+            return String(j.choices[0].delta.content);
+          if (typeof j.content === "string") return j.content;
+          if (typeof j.text === "string") return j.text;
+          if (typeof j.message === "string") return j.message;
+          if (typeof j.delta === "string") return j.delta;
+          if (j.event === "completed" || j.done === true) return "";
+        } catch {}
+        return null;
+      }
+
+      promptEl.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+          e.preventDefault();
+          sendBtn.click();
+        }
+      });
+    </script>
+  </body>
+</html>

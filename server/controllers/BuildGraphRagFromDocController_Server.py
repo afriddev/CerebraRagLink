@@ -17,3 +17,4 @@ async def BuildGraphFromDoc():
     return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(
         "./others/opd_manual.pdf", await GetDb()
     )
+

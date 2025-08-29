@@ -315,6 +315,7 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                 ),
             )
         )
+        
         LLMResponse: Any = {}
         try:
             LLMResponse = json.loads(

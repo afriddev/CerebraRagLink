@@ -55,7 +55,6 @@ class BuildGraphRagFromDocService_Server(BuildGraphRagFromDocServiceImpl_Server)
             """,
             chunkQuestions,
         )
-
         await conn.executemany(
             """
             INSERT INTO grag.chunk_images (chunk_id, image_url, description)

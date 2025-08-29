@@ -130,3 +130,6 @@ class ChatService(ChatServiceImpl):
         except cerebras.cloud.sdk.APIStatusError as e:
             print(e)
             return self.HandleApiStatusError(e.status_code)
+        except Exception as e:
+            print(e)
+            return ChatServiceResponseModel(status=ChatServiceResponseStatusEnum.ERROR)

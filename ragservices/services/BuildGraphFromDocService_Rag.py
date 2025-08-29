@@ -17,6 +17,7 @@ from aiservices import (
     RerankingResponseModel,
     FindTopKresultsFromVectorsRequestModel,
     EmbeddingResponseModel,
+    EmbeddingResponseEnum,
 )
 from ragservices.implementations import BuildGraphFromDocServiceImpl_Rag
 from utils import ExtractTextFromDoc_Rag
@@ -140,7 +141,7 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
         self, texts: list[str], retryLoopIndex: int
     ) -> EmbeddingResponseModel:
         if retryLoopIndex > RetryLoopIndexLimit:
-            raise Exception("Exception while converting texts to vector")
+            return EmbeddingResponseModel(status=EmbeddingResponseEnum.ERROR)
 
         embeddingResponse = await embeddingService.ConvertTextToEmbedding(text=texts)
         if embeddingResponse.data is None:
@@ -361,6 +362,15 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
         chunks, images = self.ExtractChunksFromDoc_Rag(file, 600)
         chunkTexts: list[CHunkTextsModel_Rag] = []
         chunksRealtions: list[ChunkRelationsModel_Rag] = []
+        start = 0
+
+        while start < len(chunks):
+            chunksRelationsResponse: (
+                ExtarctRelationsAndQuestionFromChunkResponseModel_Rag | None
+            ) = None
+            chunkImageResponse: ExatrctImageIndexFromChunkResponseModel_Rag | None = (
+                None
+            )
 
         start = 0
 
@@ -371,6 +381,7 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
             chunkImageResponse: ExatrctImageIndexFromChunkResponseModel_Rag | None = (
                 None
             )
+
 
             try:
                 time.sleep(1)
@@ -406,8 +417,8 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                     messages=LLMChunkImagesMessages,
                     chunkText=chunks[start],
                 )
-            except:
-                print(f"Faild to process chunk at index {start}")
+            except Exception as e:
+                print(f"Error processing chunk at index {start}: {e}"
                 start = start
                 continue
 
@@ -495,6 +506,7 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
             chunksRealtions.append(
                 ChunkRelationsModel_Rag(chunkId=chunkId, chunkRelations=chunkRelations)
             )
+            start += 1
 
             start += 1
 

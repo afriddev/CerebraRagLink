@@ -1206,6 +1206,14 @@
         "documentation": {}
     },
     {
+        "label": "EmbeddingResponseEnum",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
         "label": "ChatServiceMessageModel",
         "importPath": "aiservices",
         "description": "aiservices",
@@ -1867,7 +1875,7 @@
         "kind": 6,
         "importPath": "aiservices.embedding.enums.ChatEnums",
         "description": "aiservices.embedding.enums.ChatEnums",
-        "peekOfCode": "class MistralChatMessageRoleEnum(Enum):\n    USER = \"user\"\n    SYSTEM = \"system\"\n    ASSISTENT = \"assistant\"\nclass MistralChatResponseStatusEnum(Enum):\n    ERROR  = (500,\"ERROR\")\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")",
+        "peekOfCode": "class MistralChatMessageRoleEnum(Enum):\n    USER = \"user\"\n    SYSTEM = \"system\"\n    ASSISTENT = \"assistant\"\nclass MistralChatResponseStatusEnum(Enum):\n    ERROR = (200, \"ERROR\")\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")",
         "detail": "aiservices.embedding.enums.ChatEnums",
         "documentation": {}
     },
@@ -1876,7 +1884,7 @@
         "kind": 6,
         "importPath": "aiservices.embedding.enums.ChatEnums",
         "description": "aiservices.embedding.enums.ChatEnums",
-        "peekOfCode": "class MistralChatResponseStatusEnum(Enum):\n    ERROR  = (500,\"ERROR\")\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")",
+        "peekOfCode": "class MistralChatResponseStatusEnum(Enum):\n    ERROR = (200, \"ERROR\")\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")\n    REQUEST_TIMEOUT = (408, \"REQUEST_TIMEOUT\")",
         "detail": "aiservices.embedding.enums.ChatEnums",
         "documentation": {}
     },
@@ -1885,7 +1893,7 @@
         "kind": 6,
         "importPath": "aiservices.embedding.enums.EmbeddingEnums",
         "description": "aiservices.embedding.enums.EmbeddingEnums",
-        "peekOfCode": "class EmbeddingResponseEnum(Enum):\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")",
+        "peekOfCode": "class EmbeddingResponseEnum(Enum):\n    VALIDATION_ERROR = (422, \"VALIDATION_ERROR\")\n    SERVER_ERROR = (500, \"SERVER_ERROR\")\n    SUCCESS = (200, \"SUCCESS\")\n    ERROR = (200, \"ERROR\")\n    BAD_REQUEST = (400, \"BAD_REQUEST\")\n    UNAUTHROZIED = (401, \"UNAUTHROZIED\")\n    PERMISSION_DENIED = (403, \"PERMISSION_DENIED\")\n    NOT_FOUND = (404, \"NOT_FOUND\")\n    REQUEST_TIMEOUT = (408, \"REQUEST_TIMEOUT\")",
         "detail": "aiservices.embedding.enums.EmbeddingEnums",
         "documentation": {}
     },
@@ -2533,7 +2541,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "DATABASE_CONNECTION_STRING = os.getenv(\"DATABASE_CONNECTION_STRING\", \"\")\npsqlDb = PsqlDb(DATABASE_CONNECTION_STRING)\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    # await psqlDb.connect()\n    yield\n    # await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,",
+        "peekOfCode": "DATABASE_CONNECTION_STRING = os.getenv(\"DATABASE_CONNECTION_STRING\", \"\")\npsqlDb = PsqlDb(DATABASE_CONNECTION_STRING)\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    await psqlDb.connect()\n    yield\n    await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,",
         "detail": "main",
         "documentation": {}
     },
@@ -2542,7 +2550,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    # await psqlDb.connect()\n    yield\n    # await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],",
+        "peekOfCode": "psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    await psqlDb.connect()\n    yield\n    await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],",
         "detail": "main",
         "documentation": {}
     },

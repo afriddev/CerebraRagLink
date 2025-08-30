@@ -277,8 +277,8 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
         LLMImageExtractResponse: Any = await chatService.Chat(
             modelParams=ChatServiceRequestModel(
                 apiKey=GetCerebrasApiKey(),
-                model="qwen-3-32b",
-                maxCompletionTokens=3000,
+                model="llama-4-maverick-17b-128e-instruct",
+                maxCompletionTokens=1000,
                 messages=messages,
                 temperature=0.0,
                 responseFormat=ChatServiceCerebrasFormatModel(
@@ -364,15 +364,6 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
         chunksRealtions: list[ChunkRelationsModel_Rag] = []
         start = 0
 
-        while start < len(chunks):
-            chunksRelationsResponse: (
-                ExtarctRelationsAndQuestionFromChunkResponseModel_Rag | None
-            ) = None
-            chunkImageResponse: ExatrctImageIndexFromChunkResponseModel_Rag | None = (
-                None
-            )
-
-        start = 0
 
         while start < len(chunks):
             chunksRelationsResponse: (
@@ -418,7 +409,7 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                     chunkText=chunks[start],
                 )
             except Exception as e:
-                print(f"Error processing chunk at index {start}: {e}"
+                print(f"Error processing chunk at index {start}: {e}")
                 start = start
                 continue
 
@@ -445,6 +436,8 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                             base64Str=image, folder="opdImages"
                         )
                         image = imageUrl
+                        print(imageIndex)
+                        print(imgData.description)
                         imageData.append(
                             ChunkImagesModel_Rag(
                                 description=imgData.description,
@@ -506,8 +499,6 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
             chunksRealtions.append(
                 ChunkRelationsModel_Rag(chunkId=chunkId, chunkRelations=chunkRelations)
             )
-            start += 1
-
             start += 1
 
         return GetGraphFromDocResponseModel_Rag(

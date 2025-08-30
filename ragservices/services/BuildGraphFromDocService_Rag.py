@@ -277,8 +277,8 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
         LLMImageExtractResponse: Any = await chatService.Chat(
             modelParams=ChatServiceRequestModel(
                 apiKey=GetCerebrasApiKey(),
-                model="qwen-3-32b",
-                maxCompletionTokens=3000,
+                model="llama-4-maverick-17b-128e-instruct",
+                maxCompletionTokens=1000,
                 messages=messages,
                 temperature=0.0,
                 responseFormat=ChatServiceCerebrasFormatModel(
@@ -316,7 +316,7 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                 ),
             )
         )
-        
+
         LLMResponse: Any = {}
         try:
             LLMResponse = json.loads(
@@ -365,23 +365,13 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
         start = 0
 
         while start < len(chunks):
+            print(f"{start} of {len(chunks)}")
             chunksRelationsResponse: (
                 ExtarctRelationsAndQuestionFromChunkResponseModel_Rag | None
             ) = None
             chunkImageResponse: ExatrctImageIndexFromChunkResponseModel_Rag | None = (
                 None
             )
-
-        start = 0
-
-        while start < len(chunks):
-            chunksRelationsResponse: (
-                ExtarctRelationsAndQuestionFromChunkResponseModel_Rag | None
-            ) = None
-            chunkImageResponse: ExatrctImageIndexFromChunkResponseModel_Rag | None = (
-                None
-            )
-
 
             try:
                 time.sleep(1)
@@ -445,6 +435,8 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                             base64Str=image, folder="opdImages"
                         )
                         image = imageUrl
+                        print(imageIndex)
+                        print(imgData.description)
                         imageData.append(
                             ChunkImagesModel_Rag(
                                 description=imgData.description,
@@ -508,8 +500,6 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
             )
             start += 1
 
-            start += 1
-
         return GetGraphFromDocResponseModel_Rag(
             chunkTexts=chunkTexts, chunkRelations=chunksRealtions
         )
@@ -524,6 +514,8 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
         chunkVectors = [chunk.vector for chunk in chunksRelations.chunkTexts]
 
         for index, vector in enumerate(chunkVectors):
+            print(f"{index} of {len(chunkVectors)}")
+            
             sourceVectors: list[list[float]] = []
             for index1, vec in enumerate(chunkVectors):
                 if index != index1:

@@ -40,4 +40,4 @@ EmbeddingService = EmbeddingService()
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("main:server", host="0.0.0.0", port=8001, reload=True)
+    uvicorn.run("main:server", host="0.0.0.0", port=8001, reload=False)

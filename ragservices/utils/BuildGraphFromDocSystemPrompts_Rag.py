@@ -57,6 +57,8 @@ RULES
 - Do NOT infer from words like "image", "figure", bullets/icons (e.g., ), headings (e.g., 1.1), or any numbers near text.
 - If multiple tokens exist, output one item per token in original order; no duplicates, no inventions.
 - If NO token matches, return exactly: {"response":{"sections":[{"imageindex":"","description":""}]}} .
-- Description: one grammatical sentence (15–25 words), start with capital, end with period; allowed chars: letters, digits, spaces, . , ( ) - ; .
+- Description: one grammatical sentence (15–25 words), start with capital, end with period.
+- Must explain how the image helps the doctor/user in completing a task or understanding data, not just what it shows.
+- Prefer phrasing like “This image helps the doctor by …” or “This image allows the user to …”.
 - Never output null, None, or "null".
 """

@@ -255,18 +255,17 @@ class ChatService_Server(ChatServiceImpl_Server):
 
             ctx = "\n\n".join(f"[{k+1}] {t}" for k, t in enumerate(topDocs))
 
-            print(ctx)
             system_msg = f"""
 # Retrieved Context
 {ctx}
 
 # Instructions
 - Use ONLY the Retrieved Context above to answer the user's query.
-- If an image description in the context is relevant to the query, include its image URL in your answer.
-- If the user indirectly asks for something that the image illustrates, also provide the matching image URL.
-- If no relevant answer or image exists in the context, respond with: "I don't have enough information."
+- The answer must be written in plain text paragraph format without markdown or bullet points.
 - Keep the answer clear and concise.
+- No image urls
 """
+
 
             messages: list[ChatServiceMessageModel] = [
                 ChatServiceMessageModel(

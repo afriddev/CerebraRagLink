@@ -4,8 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from contextlib import asynccontextmanager
 from dbservices import PsqlDb
-from aiservices import RerankingService
-from server import GragDocRouter,ChatRouter
+from aiservices import RerankingService, EmbeddingService
+from server import GragDocRouter, ChatRouter
 from aiservices import ChatService
 
 load_dotenv()
@@ -32,11 +32,12 @@ server.add_middleware(
 )
 server.include_router(GragDocRouter, prefix="/api/v1")
 server.include_router(ChatRouter, prefix="/api/v1/ask")
-RerankingService()
+RerankingService = RerankingService()
 
 ChatLLmService = ChatService()
+EmbeddingService = EmbeddingService()
 
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("main:server", host="0.0.0.0", port=8001, reload=False)
+    uvicorn.run("main:server", host="0.0.0.0", port=8001, reload=True)

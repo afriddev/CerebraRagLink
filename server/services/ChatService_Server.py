@@ -4,7 +4,6 @@ from fastapi.responses import StreamingResponse
 
 from server.serviceimplementations import ChatServiceImpl_Server
 from aiservices import (
-    ChatService,
     ChatServiceMessageModel,
     ChatServiceMessageRoleEnum,
     GetCerebrasApiKey,
@@ -13,10 +12,11 @@ from aiservices import (
     ChatServiceCerebrasFormatJsonSchemaModel,
     ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel,
     ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel,
+    RerankingRequestModel,
+    RerankingResponseModel,
 )
 from server.models import (
     ChatServiceRequestModel_Server,
-    ChatServiceResponseModel_Server,
     ChatServicePreProcessUserQueryResponseModel_Server,
 )
 
@@ -24,6 +24,7 @@ from server.enums import (
     ChatServicePreProcessEnums_Server,
     ChatServicePreProcessRouteEnums_Server,
 )
+from server.services.GraphRagSearchService_Server import GraphRagSearchService_Server
 from server.utils.ChatServiceSystemPrompt_Server import (
     ChatServiceAbusiveUserQuerySystemPrompt_Server,
     ChatServiceConfidentialUserQuerySystemPrompt_Server,
@@ -33,14 +34,27 @@ from server.utils.ChatServiceSystemPrompt_Server import (
 import json
 
 
-
 RetryLoopIndexLimit = 3
-
+graphRagSearchService = GraphRagSearchService_Server()
 
 
 def getChatLLM():
     from main import ChatLLmService
+
     return ChatLLmService
+
+
+def getRankingService():
+    from main import RerankingService
+
+    return RerankingService
+
+
+def getDb():
+    from main import psqlDb
+
+    return psqlDb
+
 
 class ChatService_Server(ChatServiceImpl_Server):
 
@@ -60,8 +74,8 @@ class ChatService_Server(ChatServiceImpl_Server):
         LLMResponse: Any = await getChatLLM().Chat(
             modelParams=ChatServiceRequestModel(
                 apiKey=GetCerebrasApiKey(),
-                model="llama3.1-8b",
-                maxCompletionTokens=300,
+                model="llama-4-maverick-17b-128e-instruct",
+                maxCompletionTokens=500,
                 messages=messages,
                 temperature=0.0,
                 topP=1.0,
@@ -140,8 +154,8 @@ class ChatService_Server(ChatServiceImpl_Server):
             LLMResponse: Any = await getChatLLM().Chat(
                 modelParams=ChatServiceRequestModel(
                     apiKey=GetCerebrasApiKey(),
-                    model="llama-4-scout-17b-16e-instruct",
-                    maxCompletionTokens=1000,
+                    model="gpt-oss-120b",
+                    maxCompletionTokens=10000,
                     messages=messages,
                     stream=True,
                     temperature=0.8,
@@ -151,7 +165,6 @@ class ChatService_Server(ChatServiceImpl_Server):
             return LLMResponse
 
         except Exception as e:
-            print(e)
             return None
 
     async def ChatService_Server(
@@ -215,4 +228,56 @@ class ChatService_Server(ChatServiceImpl_Server):
             response = await self.LLMChat_Server(messages=messages)
             if response is not None:
                 return response
-            return StreamingResponse(iter([b"Sorry, I couldn't generate a reply. Try again?"]))
+            return StreamingResponse(
+                iter([b"Sorry, Something went wrong !. Please Try again?"])
+            )
+        else:
+            graphRagServiceResponse = await graphRagSearchService.SearchOnDb_Server(
+                query=request.query, db=getDb()
+            )
+
+            topRerankingResponse: (
+                RerankingResponseModel
+            ) = await getRankingService().FindRankingScore(
+                RerankingRequestModel(
+                    model="jina-reranker-m0",
+                    query=request.query,
+                    docs=graphRagServiceResponse,
+                    topN=10,
+                )
+            )
+
+            topDocs: list[str] = []
+
+            for i, doc in enumerate(topRerankingResponse.response):
+                index = doc.index
+                topDocs.append(graphRagServiceResponse[index])
+
+            ctx = "\n\n".join(f"[{k+1}] {t}" for k, t in enumerate(topDocs))
+
+            print(ctx)
+            system_msg = f"""
+# Retrieved Context
+{ctx}
+
+# Instructions
+- Use ONLY the Retrieved Context above to answer the user's query.
+- If an image description in the context is relevant to the query, include its image URL in your answer.
+- If the user indirectly asks for something that the image illustrates, also provide the matching image URL.
+- If no relevant answer or image exists in the context, respond with: "I don't have enough information."
+- Keep the answer clear and concise.
+"""
+
+            messages: list[ChatServiceMessageModel] = [
+                ChatServiceMessageModel(
+                    role=ChatServiceMessageRoleEnum.SYSTEM,
+                    content=system_msg,
+                ),
+                ChatServiceMessageModel(
+                    role=ChatServiceMessageRoleEnum.USER,
+                    content=request.query,
+                ),
+            ]
+
+            response = await self.LLMChat_Server(messages=messages)
+            return response

@@ -261,7 +261,7 @@ class ChatService_Server(ChatServiceImpl_Server):
 
 # Instructions
 - Use ONLY the Retrieved Context above to answer the user's query.
-- The answer must be written in plain text paragraph format without markdown or bullet points.
+- The answer must be written in  **markdown** and professional clean . 
 - Keep the answer clear and concise.
 - No image urls
 """

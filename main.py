@@ -7,6 +7,7 @@ from dbservices import PsqlDb
 from aiservices import RerankingService, EmbeddingService
 from server import GragDocRouter, ChatRouter
 from aiservices import ChatService
+import asyncio
 
 load_dotenv()
 
@@ -16,9 +17,12 @@ psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    await psqlDb.connect()
+    asyncio.create_task(psqlDb.connect())
     yield
-    await psqlDb.close()
+    try:
+        await asyncio.wait_for(psqlDb.close(), timeout=3)
+    except asyncio.TimeoutError:
+        print("⚠️ DB close timed out")
 
 
 server = FastAPI(lifespan=lifespan)
@@ -40,4 +44,4 @@ EmbeddingService = EmbeddingService()
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("main:server", host="0.0.0.0", port=8001, reload=False)
+    uvicorn.run("main:server", host="0.0.0.0", port=8001, reload=True)

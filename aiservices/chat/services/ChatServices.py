@@ -67,15 +67,22 @@ class ChatService(ChatServiceImpl):
                 chatCompletion: Any = await create_call
 
                 async def eventGenerator():
+                    buffer = ""
                     try:
                         async for chunk in chatCompletion:
                             if getattr(chunk, "choices", None):
                                 delta = getattr(chunk.choices[0], "delta", None)
                                 content = getattr(delta, "content", None)
                                 if content:
-                                    yield f"data: {content}\n\n" 
+                                    buffer += content
+                                    if "\n" in buffer:   # flush only on newline
+                                        yield f"data: {buffer}\n\n"
+                                        buffer = ""
+                        if buffer:  # flush leftover
+                            yield f"data: {buffer}\n\n"
                     except Exception as e:
                         yield f"event: error\ndata: {str(e)}\n\n"
+
 
                 return StreamingResponse(
                     eventGenerator(),

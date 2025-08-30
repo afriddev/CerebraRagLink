@@ -152,6 +152,22 @@
         "documentation": {}
     },
     {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
         "label": "StreamingResponse",
         "importPath": "fastapi.responses",
         "description": "fastapi.responses",
@@ -416,7 +432,23 @@
         "documentation": {}
     },
     {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -1222,14 +1254,6 @@
         "documentation": {}
     },
     {
-        "label": "ChatService",
-        "importPath": "aiservices",
-        "description": "aiservices",
-        "isExtraImport": true,
-        "detail": "aiservices",
-        "documentation": {}
-    },
-    {
         "label": "ChatServiceMessageModel",
         "importPath": "aiservices",
         "description": "aiservices",
@@ -1294,7 +1318,31 @@
         "documentation": {}
     },
     {
+        "label": "RerankingRequestModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "RerankingResponseModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
         "label": "RerankingService",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingService",
         "importPath": "aiservices",
         "description": "aiservices",
         "isExtraImport": true,
@@ -1540,14 +1588,6 @@
         "documentation": {}
     },
     {
-        "label": "ChatServiceResponseModel_Server",
-        "importPath": "server.models",
-        "description": "server.models",
-        "isExtraImport": true,
-        "detail": "server.models",
-        "documentation": {}
-    },
-    {
         "label": "ChatServicePreProcessUserQueryResponseModel_Server",
         "importPath": "server.models",
         "description": "server.models",
@@ -1612,6 +1652,14 @@
         "documentation": {}
     },
     {
+        "label": "GraphRagSearchServiceImpl_Server",
+        "importPath": "server.serviceimplementations",
+        "description": "server.serviceimplementations",
+        "isExtraImport": true,
+        "detail": "server.serviceimplementations",
+        "documentation": {}
+    },
+    {
         "label": "BuildGraphFromDocService_Rag",
         "importPath": "ragservices",
         "description": "ragservices",
@@ -1633,6 +1681,14 @@
         "description": "ragservices",
         "isExtraImport": true,
         "detail": "ragservices",
+        "documentation": {}
+    },
+    {
+        "label": "GraphRagSearchService_Server",
+        "importPath": "server.services.GraphRagSearchService_Server",
+        "description": "server.services.GraphRagSearchService_Server",
+        "isExtraImport": true,
+        "detail": "server.services.GraphRagSearchService_Server",
         "documentation": {}
     },
     {
@@ -2325,7 +2381,7 @@
         "kind": 5,
         "importPath": "server.controllers.BuildGraphRagFromDocController_Server",
         "description": "server.controllers.BuildGraphRagFromDocController_Server",
-        "peekOfCode": "GragDocRouter = APIRouter()\nBuildGraphRagFromDocServiceServer = BuildGraphRagFromDocService_Server()\nasync def GetDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@GragDocRouter.get(\"/bgrfd\")\nasync def BuildGraphFromDoc():\n    return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(\n        \"./others/opd_manual.pdf\", await GetDb()\n    )",
+        "peekOfCode": "GragDocRouter = APIRouter()\nBuildGraphRagFromDocServiceServer = BuildGraphRagFromDocService_Server()\nasync def GetDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@GragDocRouter.get(\"/bgrfd\")\nasync def BuildGraphFromDoc():\n    return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(\n        \"./others/a.xlsx\", await GetDb()\n    )",
         "detail": "server.controllers.BuildGraphRagFromDocController_Server",
         "documentation": {}
     },
@@ -2334,7 +2390,7 @@
         "kind": 5,
         "importPath": "server.controllers.BuildGraphRagFromDocController_Server",
         "description": "server.controllers.BuildGraphRagFromDocController_Server",
-        "peekOfCode": "BuildGraphRagFromDocServiceServer = BuildGraphRagFromDocService_Server()\nasync def GetDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@GragDocRouter.get(\"/bgrfd\")\nasync def BuildGraphFromDoc():\n    return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(\n        \"./others/opd_manual.pdf\", await GetDb()\n    )",
+        "peekOfCode": "BuildGraphRagFromDocServiceServer = BuildGraphRagFromDocService_Server()\nasync def GetDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@GragDocRouter.get(\"/bgrfd\")\nasync def BuildGraphFromDoc():\n    return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(\n        \"./others/a.xlsx\", await GetDb()\n    )",
         "detail": "server.controllers.BuildGraphRagFromDocController_Server",
         "documentation": {}
     },
@@ -2429,6 +2485,15 @@
         "documentation": {}
     },
     {
+        "label": "GraphRagSearchServiceImpl_Server",
+        "kind": 6,
+        "importPath": "server.serviceimplementations.GraphRagSearchServiceImpl_Server",
+        "description": "server.serviceimplementations.GraphRagSearchServiceImpl_Server",
+        "peekOfCode": "class GraphRagSearchServiceImpl_Server(ABC):\n    @abstractmethod\n    async def SearchOnDb_Server(self, query: str,db:Any):\n        pass",
+        "detail": "server.serviceimplementations.GraphRagSearchServiceImpl_Server",
+        "documentation": {}
+    },
+    {
         "label": "BuildGraphRagFromDocService_Server",
         "kind": 6,
         "importPath": "server.services.BuildGraphRagFromDocService_Server",
@@ -2460,7 +2525,25 @@
         "kind": 2,
         "importPath": "server.services.ChatService_Server",
         "description": "server.services.ChatService_Server",
-        "peekOfCode": "def getChatLLM():\n    from main import ChatLLmService\n    return ChatLLmService\nclass ChatService_Server(ChatServiceImpl_Server):\n    async def HandlePreProcessUserQuery_Server(\n        self, query: str, messages: list[ChatServiceMessageModel], loopIndex: int\n    ) -> ChatServicePreProcessUserQueryResponseModel_Server:\n        if loopIndex > RetryLoopIndexLimit:\n            return ChatServicePreProcessUserQueryResponseModel_Server(\n                status=ChatServicePreProcessEnums_Server.ERROR",
+        "peekOfCode": "def getChatLLM():\n    from main import ChatLLmService\n    return ChatLLmService\ndef getRankingService():\n    from main import RerankingService\n    return RerankingService\ndef getDb():\n    from main import psqlDb\n    return psqlDb\nclass ChatService_Server(ChatServiceImpl_Server):",
+        "detail": "server.services.ChatService_Server",
+        "documentation": {}
+    },
+    {
+        "label": "getRankingService",
+        "kind": 2,
+        "importPath": "server.services.ChatService_Server",
+        "description": "server.services.ChatService_Server",
+        "peekOfCode": "def getRankingService():\n    from main import RerankingService\n    return RerankingService\ndef getDb():\n    from main import psqlDb\n    return psqlDb\nclass ChatService_Server(ChatServiceImpl_Server):\n    async def HandlePreProcessUserQuery_Server(\n        self, query: str, messages: list[ChatServiceMessageModel], loopIndex: int\n    ) -> ChatServicePreProcessUserQueryResponseModel_Server:",
+        "detail": "server.services.ChatService_Server",
+        "documentation": {}
+    },
+    {
+        "label": "getDb",
+        "kind": 2,
+        "importPath": "server.services.ChatService_Server",
+        "description": "server.services.ChatService_Server",
+        "peekOfCode": "def getDb():\n    from main import psqlDb\n    return psqlDb\nclass ChatService_Server(ChatServiceImpl_Server):\n    async def HandlePreProcessUserQuery_Server(\n        self, query: str, messages: list[ChatServiceMessageModel], loopIndex: int\n    ) -> ChatServicePreProcessUserQueryResponseModel_Server:\n        if loopIndex > RetryLoopIndexLimit:\n            return ChatServicePreProcessUserQueryResponseModel_Server(\n                status=ChatServicePreProcessEnums_Server.ERROR",
         "detail": "server.services.ChatService_Server",
         "documentation": {}
     },
@@ -2469,8 +2552,35 @@
         "kind": 5,
         "importPath": "server.services.ChatService_Server",
         "description": "server.services.ChatService_Server",
-        "peekOfCode": "RetryLoopIndexLimit = 3\ndef getChatLLM():\n    from main import ChatLLmService\n    return ChatLLmService\nclass ChatService_Server(ChatServiceImpl_Server):\n    async def HandlePreProcessUserQuery_Server(\n        self, query: str, messages: list[ChatServiceMessageModel], loopIndex: int\n    ) -> ChatServicePreProcessUserQueryResponseModel_Server:\n        if loopIndex > RetryLoopIndexLimit:\n            return ChatServicePreProcessUserQueryResponseModel_Server(",
+        "peekOfCode": "RetryLoopIndexLimit = 3\ngraphRagSearchService = GraphRagSearchService_Server()\ndef getChatLLM():\n    from main import ChatLLmService\n    return ChatLLmService\ndef getRankingService():\n    from main import RerankingService\n    return RerankingService\ndef getDb():\n    from main import psqlDb",
         "detail": "server.services.ChatService_Server",
+        "documentation": {}
+    },
+    {
+        "label": "graphRagSearchService",
+        "kind": 5,
+        "importPath": "server.services.ChatService_Server",
+        "description": "server.services.ChatService_Server",
+        "peekOfCode": "graphRagSearchService = GraphRagSearchService_Server()\ndef getChatLLM():\n    from main import ChatLLmService\n    return ChatLLmService\ndef getRankingService():\n    from main import RerankingService\n    return RerankingService\ndef getDb():\n    from main import psqlDb\n    return psqlDb",
+        "detail": "server.services.ChatService_Server",
+        "documentation": {}
+    },
+    {
+        "label": "GraphRagSearchService_Server",
+        "kind": 6,
+        "importPath": "server.services.GraphRagSearchService_Server",
+        "description": "server.services.GraphRagSearchService_Server",
+        "peekOfCode": "class GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):\n    async def SearchOnDb_Server(self, query: str, db: Any):\n        conn = await db.get_connection()\n        # make jsonb fields come back as Python dict/list instead of str\n        await conn.set_type_codec('jsonb', encoder=json.dumps, decoder=json.loads, schema='pg_catalog')\n        embeddingService = await GetEmbeddingService().ConvertTextToEmbedding(text=[query])\n        queryVector = embeddingService.data[0].embedding\n        print(queryVector)\n        sql = \"\"\"\n        WITH q AS (SELECT $1::vector v), ids AS (",
+        "detail": "server.services.GraphRagSearchService_Server",
+        "documentation": {}
+    },
+    {
+        "label": "GetEmbeddingService",
+        "kind": 2,
+        "importPath": "server.services.GraphRagSearchService_Server",
+        "description": "server.services.GraphRagSearchService_Server",
+        "peekOfCode": "def GetEmbeddingService():\n    from main import EmbeddingService\n    return EmbeddingService\nclass GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):\n    async def SearchOnDb_Server(self, query: str, db: Any):\n        conn = await db.get_connection()\n        # make jsonb fields come back as Python dict/list instead of str\n        await conn.set_type_codec('jsonb', encoder=json.dumps, decoder=json.loads, schema='pg_catalog')\n        embeddingService = await GetEmbeddingService().ConvertTextToEmbedding(text=[query])\n        queryVector = embeddingService.data[0].embedding",
+        "detail": "server.services.GraphRagSearchService_Server",
         "documentation": {}
     },
     {
@@ -2487,7 +2597,7 @@
         "kind": 5,
         "importPath": "server.utils.ChatServiceSystemPrompt_Server",
         "description": "server.utils.ChatServiceSystemPrompt_Server",
-        "peekOfCode": "ChatServiceAbusiveUserQuerySystemPrompt_Server = \"\"\"\nYou are a company policy enforcement assistant.\nThe user query was flagged as abusive.\nYour task: Write a short warning message to the user.\n- Clearly state their query contained abusive language.\n- Say that using abusive or offensive words violates company policy.\n- Warn that repeated abuse may lead to account suspension or blocking.\n- Make the tone professional, strict, but not insulting.\n- Each response should vary wording naturally (not the same sentence every time).\n- Output only the message text. Do NOT include JSON.",
+        "peekOfCode": "ChatServiceAbusiveUserQuerySystemPrompt_Server = \"\"\"\nYou are a company policy enforcement assistant.\nThe user query was flagged as abusive.\nYour task: Write a short warning message to the user.\n- Say that using abusive or offensive words violates company policy.\n- Warn that repeated abuse may lead to account suspension or blocking.\n- Give response in 6-10 words\n\"\"\"\nChatServiceConfidentialUserQuerySystemPrompt_Server = \"\"\"\nYou are a company policy enforcement assistant.",
         "detail": "server.utils.ChatServiceSystemPrompt_Server",
         "documentation": {}
     },
@@ -2496,7 +2606,7 @@
         "kind": 5,
         "importPath": "server.utils.ChatServiceSystemPrompt_Server",
         "description": "server.utils.ChatServiceSystemPrompt_Server",
-        "peekOfCode": "ChatServiceConfidentialUserQuerySystemPrompt_Server = \"\"\"\nYou are a company policy enforcement assistant.\nThe user query was flagged for sharing confidential or contact information.\nYour task: Write a short warning message to the user.\n- Clearly state their query included sensitive or personal details (phone, email, Aadhaar, PAN, card, password, API key, etc.).\n- Say that sharing or requesting such information violates company policy and security guidelines.\n- Warn that this can risk their security and may result in account restrictions.\n- Make the tone professional, serious, but not harsh.\n- Each response should vary wording naturally.\n- Output only the message text. Do NOT include JSON.",
+        "peekOfCode": "ChatServiceConfidentialUserQuerySystemPrompt_Server = \"\"\"\nYou are a company policy enforcement assistant.\nThe user query was flagged for sharing confidential or contact information.\nYour task: Write a short warning message to the user.\n- Clearly state their query included sensitive or personal details (phone, email, Aadhaar, PAN, card, password, API key, etc.).\n- Say that sharing or requesting such information violates company policy and security guidelines.\n- Make the tone professional, serious, but not harsh.\n- Give response in 6-10 words\n\"\"\"\nChatServiceUserQueryLLMSystemPropt_Server = \"\"\"",
         "detail": "server.utils.ChatServiceSystemPrompt_Server",
         "documentation": {}
     },
@@ -2564,11 +2674,29 @@
         "documentation": {}
     },
     {
+        "label": "RerankingService",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "RerankingService = RerankingService()\nChatLLmService = ChatService()\nEmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=True)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
         "label": "ChatLLmService",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "ChatLLmService = ChatService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=False)",
+        "peekOfCode": "ChatLLmService = ChatService()\nEmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=True)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingService",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "EmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=True)",
         "detail": "main",
         "documentation": {}
     }

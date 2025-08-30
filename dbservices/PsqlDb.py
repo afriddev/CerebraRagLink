@@ -1,6 +1,7 @@
 from typing import Any
 from dotenv import load_dotenv
 import asyncpg
+import asyncio
 from pgvector.asyncpg import register_vector
 
 load_dotenv()
@@ -13,29 +14,30 @@ class PsqlDb:
 
     async def connect(self) -> None:
         async def _init(conn):
-            # enable the extension if not already
             await conn.execute("CREATE EXTENSION IF NOT EXISTS vector")
-            # register pgvector type with asyncpg
             await register_vector(conn)
 
-        self.pool = await asyncpg.create_pool(
-            dsn=self.db_url, statement_cache_size=0, init=_init
-        )
+        retries = 3
+        for i in range(retries):
+            try:
+                self.pool = await asyncpg.create_pool(
+                    dsn=self.db_url,
+                    min_size=1,
+                    max_size=10,
+                    statement_cache_size=0,
+                    init=_init
+                )
+                return
+            except Exception as e:
+                print(f"[DB] Connection failed: {e} (retry {i+1}/{retries})")
+                await asyncio.sleep(2)
+        raise RuntimeError("Failed to connect to PostgreSQL after retries")
 
     async def close(self) -> None:
         if self.pool is not None:
             await self.pool.close()
 
-    async def get_connection(self) -> asyncpg.Connection:
+    async def get_connection(self):
         if self.pool is None:
-            raise RuntimeError(
-                "Connection pool is not initialized. Call connect() first."
-            )
-        return await self.pool.acquire()
-
-    async def release_connection(self, conn: asyncpg.Connection) -> None:
-        if self.pool is None:
-            raise RuntimeError(
-                "Connection pool is not initialized. Call connect() first."
-            )
-        await self.pool.release(conn)
+            raise RuntimeError("Connection pool is not initialized. Call connect() first.")
+        return self.pool

@@ -998,6 +998,15 @@
         "documentation": {}
     },
     {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
         "label": "register_vector",
         "importPath": "pgvector.asyncpg",
         "description": "pgvector.asyncpg",
@@ -2210,7 +2219,7 @@
         "kind": 6,
         "importPath": "dbservices.PsqlDb",
         "description": "dbservices.PsqlDb",
-        "peekOfCode": "class PsqlDb:\n    def __init__(self, db_url: str):\n        self.db_url: str = db_url\n        self.pool: Any = None\n    async def connect(self) -> None:\n        async def _init(conn):\n            # enable the extension if not already\n            await conn.execute(\"CREATE EXTENSION IF NOT EXISTS vector\")\n            # register pgvector type with asyncpg\n            await register_vector(conn)",
+        "peekOfCode": "class PsqlDb:\n    def __init__(self, db_url: str):\n        self.db_url: str = db_url\n        self.pool: Any = None\n    async def connect(self) -> None:\n        async def _init(conn):\n            await conn.execute(\"CREATE EXTENSION IF NOT EXISTS vector\")\n            await register_vector(conn)\n        retries = 3\n        for i in range(retries):",
         "detail": "dbservices.PsqlDb",
         "documentation": {}
     },
@@ -2498,7 +2507,7 @@
         "kind": 6,
         "importPath": "server.services.BuildGraphRagFromDocService_Server",
         "description": "server.services.BuildGraphRagFromDocService_Server",
-        "peekOfCode": "class BuildGraphRagFromDocService_Server(BuildGraphRagFromDocServiceImpl_Server):\n    async def BuildGraphFromDoc(self, file: str, db: Any):\n        conn = await db.get_connection()\n        graph: GetGraphFromDocResponseModel_Rag = (\n            await BuildGraphRagFromDocService.BuildGraphFromDoc_Rag(file)\n        )\n        chunkTexts: list[Any] = []\n        chunkQuestions: list[Any] = []\n        chunkImages: list[Any] = []\n        chunkRelations: list[Any] = []",
+        "peekOfCode": "class BuildGraphRagFromDocService_Server(BuildGraphRagFromDocServiceImpl_Server):\n    async def BuildGraphFromDoc(self, file: str, db: Any):\n        graph: GetGraphFromDocResponseModel_Rag = (\n            await BuildGraphRagFromDocService.BuildGraphFromDoc_Rag(file)\n        )\n        chunkTexts: list[Any] = [] \n        chunkQuestions: list[Any] = []\n        chunkImages: list[Any] = [] \n        chunkRelations: list[Any] = [] \n        chunkMatchedNodes: list[Any] = []",
         "detail": "server.services.BuildGraphRagFromDocService_Server",
         "documentation": {}
     },
@@ -2507,7 +2516,7 @@
         "kind": 5,
         "importPath": "server.services.BuildGraphRagFromDocService_Server",
         "description": "server.services.BuildGraphRagFromDocService_Server",
-        "peekOfCode": "BuildGraphRagFromDocService = BuildGraphFromDocService_Rag()\nclass BuildGraphRagFromDocService_Server(BuildGraphRagFromDocServiceImpl_Server):\n    async def BuildGraphFromDoc(self, file: str, db: Any):\n        conn = await db.get_connection()\n        graph: GetGraphFromDocResponseModel_Rag = (\n            await BuildGraphRagFromDocService.BuildGraphFromDoc_Rag(file)\n        )\n        chunkTexts: list[Any] = []\n        chunkQuestions: list[Any] = []\n        chunkImages: list[Any] = []",
+        "peekOfCode": "BuildGraphRagFromDocService = BuildGraphFromDocService_Rag()\nclass BuildGraphRagFromDocService_Server(BuildGraphRagFromDocServiceImpl_Server):\n    async def BuildGraphFromDoc(self, file: str, db: Any):\n        graph: GetGraphFromDocResponseModel_Rag = (\n            await BuildGraphRagFromDocService.BuildGraphFromDoc_Rag(file)\n        )\n        chunkTexts: list[Any] = [] \n        chunkQuestions: list[Any] = []\n        chunkImages: list[Any] = [] \n        chunkRelations: list[Any] = [] ",
         "detail": "server.services.BuildGraphRagFromDocService_Server",
         "documentation": {}
     },
@@ -2570,7 +2579,7 @@
         "kind": 6,
         "importPath": "server.services.GraphRagSearchService_Server",
         "description": "server.services.GraphRagSearchService_Server",
-        "peekOfCode": "class GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):\n    async def SearchOnDb_Server(self, query: str, db: Any):\n        conn = await db.get_connection()\n        # make jsonb fields come back as Python dict/list instead of str\n        await conn.set_type_codec('jsonb', encoder=json.dumps, decoder=json.loads, schema='pg_catalog')\n        embeddingService = await GetEmbeddingService().ConvertTextToEmbedding(text=[query])\n        queryVector = embeddingService.data[0].embedding\n        print(queryVector)\n        sql = \"\"\"\n        WITH q AS (SELECT $1::vector v), ids AS (",
+        "peekOfCode": "class GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):\n    async def SearchOnDb_Server(self, query: str, db: Any):\n        async with db.pool.acquire() as conn:\n            await conn.set_type_codec(\n                \"jsonb\", encoder=json.dumps, decoder=json.loads, schema=\"pg_catalog\"\n            )\n            embeddingService = await GetEmbeddingService().ConvertTextToEmbedding(\n                text=[query]\n            )\n            queryVector = embeddingService.data[0].embedding",
         "detail": "server.services.GraphRagSearchService_Server",
         "documentation": {}
     },
@@ -2579,7 +2588,7 @@
         "kind": 2,
         "importPath": "server.services.GraphRagSearchService_Server",
         "description": "server.services.GraphRagSearchService_Server",
-        "peekOfCode": "def GetEmbeddingService():\n    from main import EmbeddingService\n    return EmbeddingService\nclass GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):\n    async def SearchOnDb_Server(self, query: str, db: Any):\n        conn = await db.get_connection()\n        # make jsonb fields come back as Python dict/list instead of str\n        await conn.set_type_codec('jsonb', encoder=json.dumps, decoder=json.loads, schema='pg_catalog')\n        embeddingService = await GetEmbeddingService().ConvertTextToEmbedding(text=[query])\n        queryVector = embeddingService.data[0].embedding",
+        "peekOfCode": "def GetEmbeddingService():\n    from main import EmbeddingService\n    return EmbeddingService\nclass GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):\n    async def SearchOnDb_Server(self, query: str, db: Any):\n        async with db.pool.acquire() as conn:\n            await conn.set_type_codec(\n                \"jsonb\", encoder=json.dumps, decoder=json.loads, schema=\"pg_catalog\"\n            )\n            embeddingService = await GetEmbeddingService().ConvertTextToEmbedding(",
         "detail": "server.services.GraphRagSearchService_Server",
         "documentation": {}
     },
@@ -2678,7 +2687,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "RerankingService = RerankingService()\nChatLLmService = ChatService()\nEmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=True)",
+        "peekOfCode": "RerankingService = RerankingService()\nChatLLmService = ChatService()\nEmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=False)",
         "detail": "main",
         "documentation": {}
     },
@@ -2687,7 +2696,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "ChatLLmService = ChatService()\nEmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=True)",
+        "peekOfCode": "ChatLLmService = ChatService()\nEmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=False)",
         "detail": "main",
         "documentation": {}
     },
@@ -2696,7 +2705,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "EmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=True)",
+        "peekOfCode": "EmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=False)",
         "detail": "main",
         "documentation": {}
     }

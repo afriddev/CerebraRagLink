@@ -23,6 +23,13 @@ CREATE TABLE grag.chunk_images (
   description TEXT NOT NULL
 );
 
+CREATE TABLE grag.chunk_matched_nodes (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  chunk_id UUID NOT NULL,
+  matched_chunk_id UUID NOT NULL,
+  score FLOAT8 NOT NULL
+);
+
 
 CREATE TABLE grag.chunk_relations (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),

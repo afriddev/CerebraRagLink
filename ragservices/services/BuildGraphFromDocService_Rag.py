@@ -316,7 +316,7 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                 ),
             )
         )
-        
+
         LLMResponse: Any = {}
         try:
             LLMResponse = json.loads(
@@ -364,15 +364,14 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
         chunksRealtions: list[ChunkRelationsModel_Rag] = []
         start = 0
 
-
         while start < len(chunks):
+            print(f"{start} of {len(chunks)}")
             chunksRelationsResponse: (
                 ExtarctRelationsAndQuestionFromChunkResponseModel_Rag | None
             ) = None
             chunkImageResponse: ExatrctImageIndexFromChunkResponseModel_Rag | None = (
                 None
             )
-
 
             try:
                 time.sleep(1)
@@ -515,6 +514,8 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
         chunkVectors = [chunk.vector for chunk in chunksRelations.chunkTexts]
 
         for index, vector in enumerate(chunkVectors):
+            print(f"{index} of {len(chunkVectors)}")
+            
             sourceVectors: list[list[float]] = []
             for index1, vec in enumerate(chunkVectors):
                 if index != index1:

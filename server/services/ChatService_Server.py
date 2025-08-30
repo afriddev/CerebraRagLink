@@ -154,11 +154,11 @@ class ChatService_Server(ChatServiceImpl_Server):
             LLMResponse: Any = await getChatLLM().Chat(
                 modelParams=ChatServiceRequestModel(
                     apiKey=GetCerebrasApiKey(),
-                    model="gpt-oss-120b",
-                    maxCompletionTokens=10000,
+                    model="qwen-3-235b-a22b-instruct-2507",
+                    maxCompletionTokens=40000,
                     messages=messages,
                     stream=True,
-                    temperature=0.8,
+                    temperature=0.4,
                     topP=0.9,
                 )
             )
@@ -260,12 +260,19 @@ class ChatService_Server(ChatServiceImpl_Server):
 {ctx}
 
 # Instructions
-- Use ONLY the Retrieved Context above to answer the user's query.
-- The answer must be written in  **markdown** and professional clean . 
-- Keep the answer clear and concise.
-- No image urls
+- Always answer concisely, proportional to the query:
+  - If the query is short/fact-based (2–3 marks), give a short, direct answer (2–3 lines).
+  - If the query requires explanation (10 marks), give a detailed but clear structured answer.
+- Use **Markdown** for formatting (headings, tables, lists).
+- Images:
+  - Include at most **1 highly relevant image** if it directly supports the answer.
+  - Never put images inside tables.
+  - Always embed with direct Markdown: ![](url)
+  - If the image is large, render with HTML: <img src="URL" width="600"/>
+- Do not add unnecessary text, context, or multiple images.
+- **If the provided context does not contain information relevant to the user’s query, reply exactly with:**
+  "We don’t have information about this. Please contact the helpdesk for further assistance."
 """
-
 
             messages: list[ChatServiceMessageModel] = [
                 ChatServiceMessageModel(

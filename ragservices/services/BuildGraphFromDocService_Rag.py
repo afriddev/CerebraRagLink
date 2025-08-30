@@ -58,6 +58,12 @@ cast(Any, firebase_admin).initialize_app(
 RetryLoopIndexLimit = 3
 
 
+async def getDB():
+    from main import psqlDb
+
+    return psqlDb
+
+
 class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
 
     def ExtractChunksFromDoc_Rag(
@@ -278,7 +284,7 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
             modelParams=ChatServiceRequestModel(
                 apiKey=GetCerebrasApiKey(),
                 model="llama-4-maverick-17b-128e-instruct",
-                maxCompletionTokens=1000,
+                maxCompletionTokens=3000,
                 messages=messages,
                 temperature=0.0,
                 responseFormat=ChatServiceCerebrasFormatModel(
@@ -392,6 +398,16 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                     )
                 )
                 time.sleep(1)
+                _IMAGE_TOKEN_RE = re.compile(r"<<\s*image-\d+\s*>>", re.IGNORECASE)
+                prevChunk = (
+                    "" if start == 0 else _IMAGE_TOKEN_RE.sub("", chunks[start - 1])
+                )
+                nextChunk = (
+                    ""
+                    if start == len(chunks) - 1
+                    else _IMAGE_TOKEN_RE.sub("", chunks[start + 1])
+                )
+
                 LLMChunkImagesMessages: list[ChatServiceMessageModel] = [
                     ChatServiceMessageModel(
                         role=ChatServiceMessageRoleEnum.SYSTEM,
@@ -399,9 +415,16 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
                     ),
                     ChatServiceMessageModel(
                         role=ChatServiceMessageRoleEnum.USER,
-                        content=chunks[start],
+                        content=json.dumps(
+                            {
+                                "mainchunk": chunks[start],
+                                "previouschunk": prevChunk,
+                                "nextchunk": nextChunk,
+                            }
+                        ),
                     ),
                 ]
+
                 chunkImageResponse = await self.ExatrctImageIndexFromChunk_Rag(
                     retryLoopIndex=0,
                     messages=LLMChunkImagesMessages,
@@ -511,49 +534,86 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
             await self.ExtractChunksAndRelationsFromDoc_Rag(file)
         )
 
-        chunkVectors = [chunk.vector for chunk in chunksRelations.chunkTexts]
+        chunkVectors: list[list[float]] = [
+            cast(list[float], chunk.vector) for chunk in chunksRelations.chunkTexts
+        ]
 
-        for index, vector in enumerate(chunkVectors):
-            print(f"{index} of {len(chunkVectors)}")
-            
-            sourceVectors: list[list[float]] = []
-            for index1, vec in enumerate(chunkVectors):
-                if index != index1:
-                    sourceVectors.append(cast(list[float], vec))
+        for chunkIndex, queryVector in enumerate(chunkVectors):
+            print(f"{chunkIndex} of {len(chunkVectors)}")
 
-            topResultsFromFaiss = rerankingService.FindTopKResultsFromVectors(
+            localSourceVectors: list[list[float]] = [
+                vec for i, vec in enumerate(chunkVectors) if i != chunkIndex
+            ]
+            localDocs: list[str] = [
+                chunksRelations.chunkTexts[i].text
+                for i in range(len(chunkVectors))
+                if i != chunkIndex
+            ]
+            localDocIds: list[UUID] = [
+                chunksRelations.chunkTexts[i].id
+                for i in range(len(chunkVectors))
+                if i != chunkIndex
+            ]
+
+            db = await getDB()
+            async with db.pool.acquire() as conn:
+                rows: list[dict[str, Any]] = await conn.fetch(
+                    """
+                    SELECT id, text, text_vector
+                    FROM grag.chunks
+                    ORDER BY text_vector <=> $1
+                    LIMIT 15
+                    """,
+                    queryVector,
+                )
+
+            globalSourceVectors: list[list[float]] = [
+                cast(list[float], row["text_vector"]) for row in rows
+            ]
+            globalDocs: list[str] = [cast(str, row["text"]) for row in rows]
+            globalDocIds: list[UUID] = [(cast(UUID, row["id"])) for row in rows]
+
+            sourceVectors: list[list[float]] = localSourceVectors + globalSourceVectors
+            docs: list[str] = localDocs + globalDocs
+            docIds: list[UUID] = localDocIds + globalDocIds
+
+            topResults = rerankingService.FindTopKResultsFromVectors(
                 request=FindTopKresultsFromVectorsRequestModel(
-                    queryVector=cast(list[float], vector),
-                    topK=20,
+                    queryVector=queryVector,
+                    topK=25,
                     sourceVectors=sourceVectors,
                 )
             )
-            docs: list[str] = []
-            docsIds: list[UUID] = []
-            if topResultsFromFaiss.indeces is not None:
-                for index2 in topResultsFromFaiss.indeces:
-                    if index2 != -1 and index2 != index:
-                        docs.append(chunksRelations.chunkTexts[index2].text)
-                        docsIds.append(chunksRelations.chunkTexts[index2].id)
+
+            candidateDocs: list[str] = []
+            candidateIds: list[UUID] = []
+            if topResults.indeces is not None:
+                for resultIndex in topResults.indeces:
+                    if resultIndex != -1:
+                        candidateDocs.append(docs[resultIndex])
+                        candidateIds.append(docIds[resultIndex])
 
             response: RerankingResponseModel = await rerankingService.FindRankingScore(
                 RerankingRequestModel(
                     model="jina-reranker-m0",
-                    query=chunksRelations.chunkTexts[index].text,
-                    docs=docs,
-                    topN=10,
+                    query=chunksRelations.chunkTexts[chunkIndex].text,
+                    docs=candidateDocs,
+                    topN=15,
                 )
             )
+
             matchedNodes: list[ChunkMatchedNodeModel_Rag] = []
             if response.response is not None:
                 for res in response.response:
                     if res.score > 0.9:
                         matchedNodes.append(
                             ChunkMatchedNodeModel_Rag(
-                                chunkId=docsIds[res.index],
+                                chunkId=candidateIds[res.index],
                                 score=res.score,
                             )
                         )
-            if len(matchedNodes) > 0:
-                chunksRelations.chunkTexts[index].matchedNodes = matchedNodes
+
+            if matchedNodes:
+                chunksRelations.chunkTexts[chunkIndex].matchedNodes = matchedNodes
+
         return chunksRelations

@@ -15,6 +15,6 @@ async def GetDb() -> PsqlDb:
 @GragDocRouter.get("/bgrfd")
 async def BuildGraphFromDoc():
     return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(
-        "./others/a.xlsx", await GetDb()
+        "./others/opd_manual.pdf", await GetDb()
     )
 

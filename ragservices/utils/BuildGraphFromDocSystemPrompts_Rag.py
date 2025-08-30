@@ -1,4 +1,3 @@
-
 ExtractRealtionsAndQuestionsFromChunkSystemPrompt_Rag = r"""
 TASK
 Return ONLY valid JSON per the schema for ONE input chunk.
@@ -34,19 +33,18 @@ RULES
 """
 
 
-
 ExtractImageIndexFromChunkSystemPrompt_Rag = r"""
 TASK
-Return ONLY valid JSON per the schema for ONE input chunk.
+Return ONLY valid JSON per the schema for ONE mainchunk (with optional previouschunk and nextchunk for context).
 
 INPUT
-{ "chunk": "..." }
+{ "mainchunk": "...", "previouschunk": "...", "nextchunk": "..." }
 
 OUTPUT (conceptual)
 {
   "response": {
     "sections": [
-      { "imageindex": "7", "description": "One clear sentence (8–25 words) explaining why/how the image is used." }
+      { "imageindex": "7", "description": "One clear sentence (25–40 words) explaining why the image is important and which content it relates to." }
     ]
   }
 }
@@ -54,11 +52,14 @@ OUTPUT (conceptual)
 RULES
 - JSON only. Double quotes only. No markdown, no extra text, no \n or escapes.
 - Detect tokens STRICTLY by regex: (?i)<<\s*image-(\d+)\s*>> . Extract only the digit group as imageindex.
-- Do NOT infer from words like "image", "figure", bullets/icons (e.g., ), headings (e.g., 1.1), or any numbers near text.
-- If multiple tokens exist, output one item per token in original order; no duplicates, no inventions.
+- Use ONLY tokens from mainchunk. Ignore any tokens in previouschunk or nextchunk (they will already be removed).
+- Description must come from text immediately after the image token in mainchunk.
+- If no text follows the token in mainchunk, use:
+  • previouschunk for short heading/context.  
+  • nextchunk for continuation text.  
+- If multiple tokens exist in mainchunk, output one item per token in original order; no duplicates, no inventions.
 - If NO token matches, return exactly: {"response":{"sections":[{"imageindex":"","description":""}]}} .
-- Description: one grammatical sentence (15–25 words), start with capital, end with period.
-- Must explain how the image helps the doctor/user in completing a task or understanding data, not just what it shows.
-- Prefer phrasing like “This image helps the doctor by …” or “This image allows the user to …”.
-- Never output null, None, or "null".
+- Description: one grammatical sentence (25–40 words). Must explain why the image is important and which related content it supports. Start with capital, end with period.
+- Use phrasing like “This image helps the doctor by …” or “This image relates to … and allows the user to …”.
+- Never output null, None, or "null".
 """

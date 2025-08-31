@@ -158,7 +158,7 @@ class ChatService_Server(ChatServiceImpl_Server):
             LLMResponse: Any = await getChatLLM().Chat(
                 modelParams=ChatServiceRequestModel(
                     apiKey=GetCerebrasApiKey(),
-                    model="llama-4-maverick-17b-128e-instruct",
+                    model="gpt-oss-120b",
                     maxCompletionTokens=5000,
                     messages=messages,
                     stream=True,
@@ -190,6 +190,7 @@ class ChatService_Server(ChatServiceImpl_Server):
                 messages=preProcessMessages, loopIndex=0, query=request.query
             )
         )
+        print(preProcessResponse.cleanquery)
 
         if preProcessResponse.route != ChatServicePreProcessRouteEnums_Server.HMIS:
             messages: list[ChatServiceMessageModel] = []
@@ -214,6 +215,7 @@ class ChatService_Server(ChatServiceImpl_Server):
                         content=ChatServiceConfidentialUserQuerySystemPrompt_Server,
                     )
                 )
+            
 
             if preProcessResponse.status == ChatServicePreProcessEnums_Server.OK:
                 messages.append(
@@ -271,7 +273,7 @@ class ChatService_Server(ChatServiceImpl_Server):
                         doc += f"\nImage:\n- Description: {img.description}\n- URL: {img.url}"
 
                     topDocs.append(doc)
-            print(topDocs)
+            
 
             systemInst = f"""
                 # Retrieved docs

@@ -75,14 +75,13 @@ class ChatService(ChatServiceImpl):
                                 content = getattr(delta, "content", None)
                                 if content:
                                     buffer += content
-                                    if "\n" in buffer:   # flush only on newline
+                                    if "\n" in buffer:
                                         yield f"data: {buffer}\n\n"
                                         buffer = ""
-                        if buffer:  # flush leftover
+                        if buffer:
                             yield f"data: {buffer}\n\n"
                     except Exception as e:
                         yield f"event: error\ndata: {str(e)}\n\n"
-
 
                 return StreamingResponse(
                     eventGenerator(),

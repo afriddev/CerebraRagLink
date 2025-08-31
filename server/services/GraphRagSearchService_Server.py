@@ -30,11 +30,9 @@ class GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):
             sql = """ 
 
             WITH q AS (
-              -- Input query vector
               SELECT $1::vector v
             ),
             ids AS (
-              -- Collect matches from chunks, questions, relations
               SELECT c.id AS chunk_id, 1 - (c.text_vector <=> q.v) AS score
               FROM grag.chunks c, q
               UNION ALL
@@ -45,19 +43,15 @@ class GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):
               FROM grag.chunk_relations cr, q
             ),
             base AS (
-              -- Keep the highest score per chunk_id
               SELECT i.chunk_id, MAX(i.score) AS score
               FROM ids i
               GROUP BY i.chunk_id
             ),
             with_matched AS (
-              -- Direct matches
               SELECT b.chunk_id, b.score
               FROM base b
 
               UNION ALL
-
-              -- All matched nodes (already >=0.9 when stored)
               SELECT mn.matched_chunk_id AS chunk_id, mn.score
               FROM grag.chunk_matched_nodes mn
               JOIN base b ON b.chunk_id = mn.chunk_id
@@ -76,7 +70,7 @@ class GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):
             LEFT JOIN grag.chunk_images ci ON ci.chunk_id = c.id
             GROUP BY c.id, c.text
             ORDER BY best_score DESC
-            LIMIT 3;
+            LIMIT $2;
 
 """
 

@@ -1,8 +1,13 @@
 ChatServicePreProcessUserQuerySystemPropt_Server = """
 TASK
-Return ONLY JSON:
+Step 1: Normalize the input query into a clean English sentence 
+        (fix spelling mistakes, grammar, and incoherent words while 
+         preserving original meaning). Output it under "cleanquery".
+
+Step 2: Classify the query and return ONLY JSON:
 {
   "response": {
+  "cleanquery": "<clean sentence>",
     "error": "OK" | "ABUSE_LANG_ERROR" | "CONTACT_INFO_ERROR",
     "route": "HMIS" | "LLM"
   }
@@ -13,22 +18,20 @@ Rules
    - error = "ABUSE_LANG_ERROR"
    - route = "LLM"
 
-2) If the query shares or asks for contact/confidential info (phone, email, IDs, tokens, passwords, OTPs, Aadhaar/PAN, card numbers, API keys, etc.):
+2) If the query shares or asks for contact/confidential info 
+   (phone, email, IDs, tokens, passwords, OTPs, Aadhaar/PAN, 
+    card numbers, API keys, etc.):
    - error = "CONTACT_INFO_ERROR"
    - route = "LLM"
 
 3) Otherwise → error = "OK".
-   - If the query is CLEARLY and SPECIFICALLY about HMIS (Hospital Management Information System) modules/features:
-     Examples: patient registration, OPD/appointments/queues, EMR/encounters, diagnostics (lab/radiology), pharmacy/inventory, billing/claims, discharge, referrals, reports/dashboards, user/role admin, audit, RailTel/Indian Railways/C-DAC/CRIS HMIS.
+   - If the query is specifically about Hospital Management Information System (HMIS) 
+     modules/features (e.g., patient registration, OPD/appointments, EMR/encounters, 
+     diagnostics, pharmacy/inventory, billing/claims, discharge, referrals, 
+     reports/dashboards, user/role admin, audit, RailTel/Indian Railways/C-DAC/CRIS HMIS):
      → route = "HMIS"
-   - If the query is irrelevant, random text, gibberish, or about general knowledge/AI/programming/other topics:
-     → route = "LLM"
-
-Constraints
-- Do NOT classify gibberish or irrelevant queries as HMIS.
-- Output valid JSON only. No extra text.
+   - Otherwise → route = "LLM"
 """
-
 
 
 ChatServiceAbusiveUserQuerySystemPrompt_Server = """

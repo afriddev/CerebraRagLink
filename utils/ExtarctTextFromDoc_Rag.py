@@ -1,6 +1,36 @@
 import base64
 import fitz
-from typing import Any, List, Tuple, Optional
+from typing import Any, List, Tuple, Optional, cast
+import pandas as pd
+import os
+
+
+def ExtractTextAndImagesFromXlsx(filePath: str) -> Tuple[str, List[str]]:
+    xls = pd.ExcelFile(filePath)
+    allText: list[str] = []
+
+    for sheetName in xls.sheet_names:
+        df = cast(Any, pd).read_excel(filePath, sheet_name=sheetName, header=None)
+
+        for row in df.itertuples(index=False):
+            rowText = "  ".join("" if pd.isna(cell) else str(cell) for cell in row)
+            if rowText.strip():
+                allText.append(rowText)
+
+    return "\n".join(allText), []
+
+
+def ExtractTextAndImagesFromCsv(filePath: str) -> Tuple[str, List[str]]:
+    df = cast(Any, pd).read_csv(filePath, header=None)
+    allText: list[str] = []
+
+    for row in df.itertuples(index=False):
+        rowText = "  ".join("" if pd.isna(cell) else str(cell) for cell in row)
+        if rowText.strip():
+            allText.append(rowText)
+
+    return "\n".join(allText), []
+
 
 def ExtractTextAndImagesFromDoc(pdfPath: str) -> Tuple[str, List[str]]:
     doc: Any = fitz.open(pdfPath)
@@ -13,7 +43,7 @@ def ExtractTextAndImagesFromDoc(pdfPath: str) -> Tuple[str, List[str]]:
         pageItems: List[Tuple[str, float, str]] = []
 
         for block in blocks:
-            if block["type"] == 0:
+            if block["type"] == 0:  # text block
                 for line in block.get("lines", []):
                     y0 = line["bbox"][1]
                     lineText = " ".join(
@@ -23,7 +53,7 @@ def ExtractTextAndImagesFromDoc(pdfPath: str) -> Tuple[str, List[str]]:
                     ).strip()
                     if lineText:
                         pageItems.append(("text", y0, lineText))
-            elif block["type"] == 1:
+            elif block["type"] == 1:  # image block
                 y0 = block["bbox"][1]
                 imgId = f"image-{imageCounter}"
                 placeholder = f"<<{imgId}>>"
@@ -41,7 +71,9 @@ def ExtractTextAndImagesFromDoc(pdfPath: str) -> Tuple[str, List[str]]:
                 else:
                     try:
                         rect = fitz.Rect(block["bbox"])
-                        pix = page.get_pixmap(matrix=fitz.Matrix(2, 2), clip=rect, alpha=False)
+                        pix = page.get_pixmap(
+                            matrix=fitz.Matrix(2, 2), clip=rect, alpha=False
+                        )
                         data = pix.tobytes("png")
                     except Exception:
                         data = b""
@@ -62,5 +94,12 @@ def ExtractTextAndImagesFromDoc(pdfPath: str) -> Tuple[str, List[str]]:
 
 
 def ExtractTextFromDoc_Rag(file: str) -> Tuple[str, List[str]]:
-    textWithImages, imagesB64 = ExtractTextAndImagesFromDoc(file)
-    return textWithImages, imagesB64
+    ext = os.path.splitext(file)[1].lower()
+    if ext == ".pdf":
+        return ExtractTextAndImagesFromDoc(file)
+    elif ext in [".xlsx", ".xls"]:
+        return ExtractTextAndImagesFromXlsx(file)
+    elif ext == ".csv":
+        return ExtractTextAndImagesFromCsv(file)
+    else:
+        raise ValueError(f"Unsupported file format: {ext}")

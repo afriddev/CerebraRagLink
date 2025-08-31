@@ -24,12 +24,11 @@ RULES
 - Echo the input "chunk" with whitespace normalized.
 - Do NOT invent entities.
 - Entities: concise (≤15 chars), lowercase unless proper noun; deduplicate.
-- Relations: Form ≥12 natural language sentences that clearly express how the entities are related. Each relation must read as a proper sentence including the entities.
+- Relations: Form ≥6 natural language sentences that clearly express how the entities are related. Each relation must read as a proper sentence including the entities.
 - relationshipsEntities MUST be the same length as relations; for the i-th relation, relationshipsEntities[i] MUST be a two-item array [subject, object] using exact strings from entities.
 - If a relation cannot be mapped to a [subject, object], DROP that relation so lengths stay equal.
-- Questions: Form 3–7 questions per chunk, all answerable from chunk.
+- Questions: Form possible  questions per chunk, all are answerable from chunk only.
 - relations length and relationshipsEntities must be equal 
-
 """
 
 
@@ -44,7 +43,7 @@ OUTPUT (conceptual)
 {
   "response": {
     "sections": [
-      { "imageindex": "7", "description": "One clear sentence (25–40 words) explaining why the image is important and which content it relates to." }
+      { "imageindex": "7", "description": "One clear sentence (15–30 words) explaining why the image is important and which content it relates to." }
     ]
   }
 }
@@ -59,7 +58,7 @@ RULES
   • nextchunk for continuation text.  
 - If multiple tokens exist in mainchunk, output one item per token in original order; no duplicates, no inventions.
 - If NO token matches, return exactly: {"response":{"sections":[{"imageindex":"","description":""}]}} .
-- Description: one grammatical sentence (25–40 words). Must explain why the image is important and which related content it supports. Start with capital, end with period.
-- Use phrasing like “This image helps the doctor by …” or “This image relates to … and allows the user to …”.
+- Description: one grammatical sentence (15–30 words). Must explain why the image is important and which related content it supports. Start with capital, end with period.
+- Use phrasing like “This image helps ..” or “This image relates to ..”.
 - Never output null, None, or "null".
 """

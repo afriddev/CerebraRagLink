@@ -369,7 +369,6 @@ class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):
         chunkTexts: list[CHunkTextsModel_Rag] = []
         chunksRealtions: list[ChunkRelationsModel_Rag] = []
         start = 0
-
         while start < len(chunks):
             print(f"{start} of {len(chunks)}")
             chunksRelationsResponse: (

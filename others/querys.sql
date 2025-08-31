@@ -40,6 +40,6 @@ CREATE TABLE grag.chunk_relations (
 );
 
 
-CREATE INDEX idx_chunks_vec_hnsw        ON grag.chunks          USING hnsw (text_vector      vector_cosine_ops)   WITH (m=16, ef_construction=300);
-CREATE INDEX idx_chunkq_vec_hnsw        ON grag.chunk_questions USING hnsw (question_vector  vector_cosine_ops)   WITH (m=16, ef_construction=300);
-CREATE INDEX idx_chunkrel_vec_hnsw      ON grag.chunk_relations USING hnsw (relation_vector  vector_cosine_ops)   WITH (m=16, ef_construction=300);
+-- CREATE INDEX idx_chunks_vec_hnsw        ON grag.chunks          USING hnsw (text_vector      vector_cosine_ops)   WITH (m=16, ef_construction=300);
+-- CREATE INDEX idx_chunkq_vec_hnsw        ON grag.chunk_questions USING hnsw (question_vector  vector_cosine_ops)   WITH (m=16, ef_construction=300);
+-- CREATE INDEX idx_chunkrel_vec_hnsw      ON grag.chunk_relations USING hnsw (relation_vector  vector_cosine_ops)   WITH (m=16, ef_construction=300);

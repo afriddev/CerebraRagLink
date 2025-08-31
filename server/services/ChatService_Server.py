@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, cast
 
 from fastapi.responses import StreamingResponse
 
@@ -13,13 +13,11 @@ from aiservices import (
     ChatServiceCerebrasFormatJsonSchemaJsonSchemaModel,
     ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel,
     RerankingRequestModel,
-    RerankingResponseModel,
 )
 from server.models import (
     ChatServiceRequestModel_Server,
     ChatServicePreProcessUserQueryResponseModel_Server,
 )
-
 from server.enums import (
     ChatServicePreProcessEnums_Server,
     ChatServicePreProcessRouteEnums_Server,
@@ -31,6 +29,7 @@ from server.utils.ChatServiceSystemPrompt_Server import (
     ChatServicePreProcessUserQuerySystemPropt_Server,
     ChatServiceUserQueryLLMSystemPropt_Server,
 )
+from server.models import SearchOnDbResponseModel
 import json
 
 
@@ -90,6 +89,7 @@ class ChatService_Server(ChatServiceImpl_Server):
                                 "response": ChatServiceCerebrasFormatJsonSchemaJsonSchemaPropertyModel(
                                     type="object",
                                     properties={
+                                        "cleanquery": {"type": "string"},
                                         "error": {
                                             "type": "string",
                                             "enum": [
@@ -124,16 +124,20 @@ class ChatService_Server(ChatServiceImpl_Server):
                 response.status = ChatServicePreProcessEnums_Server.OK
                 if LLMResponse.get("route") == "HMIS":
                     response.route = ChatServicePreProcessRouteEnums_Server.HMIS
+                    response.cleanquery = LLMResponse.get("cleanquery")
                 else:
                     response.route = ChatServicePreProcessRouteEnums_Server.LLM
+                    response.cleanquery = LLMResponse.get("cleanquery")
 
             elif LLMResponse.get("error") == "ABUSE_LANG_ERROR":
                 response.status = ChatServicePreProcessEnums_Server.ABUSE_LANGUAGE
                 response.route = ChatServicePreProcessRouteEnums_Server.LLM
+                response.cleanquery = LLMResponse.get("cleanquery")
 
             elif LLMResponse.get("error") == "CONTACT_INFO_ERROR":
                 response.status = ChatServicePreProcessEnums_Server.CONTACT_INFORMATION
                 response.route = ChatServicePreProcessRouteEnums_Server.LLM
+                response.cleanquery = LLMResponse.get("cleanquery")
 
         except Exception as _:
             messages.append(
@@ -154,17 +158,17 @@ class ChatService_Server(ChatServiceImpl_Server):
             LLMResponse: Any = await getChatLLM().Chat(
                 modelParams=ChatServiceRequestModel(
                     apiKey=GetCerebrasApiKey(),
-                    model="qwen-3-235b-a22b-instruct-2507",
-                    maxCompletionTokens=40000,
+                    model="llama-4-maverick-17b-128e-instruct",
+                    maxCompletionTokens=5000,
                     messages=messages,
                     stream=True,
-                    temperature=0.4,
+                    temperature=0.3,
                     topP=0.9,
                 )
             )
             return LLMResponse
 
-        except Exception as e:
+        except Exception as _:
             return None
 
     async def ChatService_Server(
@@ -221,7 +225,7 @@ class ChatService_Server(ChatServiceImpl_Server):
             messages.append(
                 ChatServiceMessageModel(
                     role=ChatServiceMessageRoleEnum.USER,
-                    content=request.query,
+                    content=cast(Any, preProcessResponse.cleanquery),
                 )
             )
 
@@ -232,58 +236,83 @@ class ChatService_Server(ChatServiceImpl_Server):
                 iter([b"Sorry, Something went wrong !. Please Try again?"])
             )
         else:
-            graphRagServiceResponse = await graphRagSearchService.SearchOnDb_Server(
-                query=request.query, db=getDb()
+            graphRagServiceResponse: SearchOnDbResponseModel = (
+                await graphRagSearchService.SearchOnDb_Server(
+                    query=cast(Any, preProcessResponse.cleanquery), db=getDb()
+                )
             )
+            docs = [doc.doc for doc in graphRagServiceResponse.docs]
 
-            topRerankingResponse: (
-                RerankingResponseModel
-            ) = await getRankingService().FindRankingScore(
+            topRerankingDocsResponse = await getRankingService().FindRankingScore(
                 RerankingRequestModel(
                     model="jina-reranker-m0",
-                    query=request.query,
-                    docs=graphRagServiceResponse,
-                    topN=10,
+                    query=cast(Any, preProcessResponse.cleanquery),
+                    docs=docs,
+                    topN=20,
                 )
             )
 
             topDocs: list[str] = []
 
-            for i, doc in enumerate(topRerankingResponse.response):
-                index = doc.index
-                topDocs.append(graphRagServiceResponse[index])
+            if topRerankingDocsResponse.response is not None:
+                reranked = sorted(
+                    topRerankingDocsResponse.response,
+                    key=lambda x: x.score,
+                    reverse=True,
+                )
 
-            ctx = "\n\n".join(f"[{k+1}] {t}" for k, t in enumerate(topDocs))
+                topK = reranked[:7]
 
-            system_msg = f"""
-# Retrieved Context
-{ctx}
+                for item in topK:
+                    index = item.index
+                    doc = docs[index]
 
-# Instructions
-- Always answer concisely, proportional to the query:
-  - If the query is short/fact-based (2–3 marks), give a short, direct answer (2–3 lines).
-  - If the query requires explanation (10 marks), give a detailed but clear structured answer.
-- Use **Markdown** for formatting (headings, tables, lists).
-- Images:
-  - Include at most **1 highly relevant image** if it directly supports the answer.
-  - Never put images inside tables.
-  - Always embed with direct Markdown: ![](url)
-  - If the image is large, render with HTML: <img src="URL" width="600"/>
-- Do not add unnecessary text, context, or multiple images.
-- **If the provided context does not contain information relevant to the user’s query, reply exactly with:**
-  "We don’t have information about this. Please contact the helpdesk for further assistance."
-"""
+                    for img in graphRagServiceResponse.docs[index].images:
+                        doc += f"\nImage:\n- Description: {img.description}\n- URL: {img.url}"
+
+                    topDocs.append(doc)
+            print(topDocs)
+
+            systemInst = f"""
+                # Retrieved docs
+                {json.dumps(topDocs, indent=2)}
+
+                # Instructions
+                - Write answers concisely and proportional to the query:
+                - Short/fact-based (2–3 marks): answer in 2–3 sentences.
+                - Explanation (10 marks): answer in clear, structured detail (use headings, bullet points, or numbered lists).
+                - Formatting rules:
+                - Use clean **Markdown** only (no tables unless explicitly requested).
+                - Always use headings (###) for clarity in longer answers.
+                - Keep answers professional, without unnecessary filler text.
+                - Images:
+                - By default, include only **one most relevant image**.
+                - If the user explicitly asks for multiple images, include all relevant ones.
+                - Show each image as:
+                    **Description**  
+                    ![alt text](URL)
+                - If the image is too large or detailed, use:
+                    <img src="URL" width="600"/>
+                - Never embed images inside tables.
+                - If no relevant info exists in the retrieved docs, reply with exactly:
+                "We don’t have information about this. Please contact the helpdesk for further assistance."
+                    """
 
             messages: list[ChatServiceMessageModel] = [
                 ChatServiceMessageModel(
                     role=ChatServiceMessageRoleEnum.SYSTEM,
-                    content=system_msg,
+                    content=systemInst,
                 ),
                 ChatServiceMessageModel(
                     role=ChatServiceMessageRoleEnum.USER,
-                    content=request.query,
+                    content=cast(Any, preProcessResponse.cleanquery),
                 ),
             ]
 
             response = await self.LLMChat_Server(messages=messages)
-            return response
+            if response is not None:
+                return response
+            else:
+                return StreamingResponse(
+                    iter([b"Sorry, Something went wrong !. Please Try again?"])
+                )

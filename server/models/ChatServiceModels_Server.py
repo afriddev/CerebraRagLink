@@ -12,12 +12,11 @@ class ChatServiceRequestModel_Server(BaseModel):
 
 
 class ChatServicePreProcessUserQueryResponseModel_Server(BaseModel):
-    status: ChatServicePreProcessEnums_Server = (
-        ChatServicePreProcessEnums_Server.OK
-    )
+    status: ChatServicePreProcessEnums_Server = ChatServicePreProcessEnums_Server.OK
     route: ChatServicePreProcessRouteEnums_Server = (
         ChatServicePreProcessRouteEnums_Server.LLM
     )
+    cleanquery: str | None = None
 
 
 class ChatServiceResponseModel_Server(BaseModel):

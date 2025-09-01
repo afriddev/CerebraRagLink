@@ -1,8 +1,12 @@
 ChatServicePreProcessUserQuerySystemPropt_Server = """
 TASK
-Step 1: Normalize the input query into a clean English sentence 
-        (fix spelling mistakes, grammar, and incoherent words while 
-         preserving original meaning). Output it under "cleanquery".
+Step 1: Normalize the input query into a clear and meaningful English sentence. 
+        - Correct spelling mistakes, grammar, and incoherent words.
+        - If the query is incomplete or vague, rewrite it into a 
+          well-formed question by inferring the most likely intended meaning.
+        - Preserve the original intent while making it professional and clear.
+        - Example: "who to add new drug which is not in hmis" → 
+          "How to add a new drug in HMIS if it is not already available?"
 
 Step 2: Classify the query and return ONLY JSON:
 {

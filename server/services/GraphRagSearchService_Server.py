@@ -6,23 +6,22 @@ from server.models import (
     SearchOnDbResponseModel,
     SearchOnDbDocModel_Server,
 )
+from config.PsqlDbConfig import psqlDb
+from aiservices import EmbeddingService
 
 
-def GetEmbeddingService():
-    from main import EmbeddingService
-
-    return EmbeddingService
+EmbeddingService_Rag = EmbeddingService()
 
 
 class GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):
 
-    async def SearchOnDb_Server(self, query: str, db: Any) -> SearchOnDbResponseModel:
-        async with db.pool.acquire() as conn:
+    async def SearchOnDb_Server(self, query: str) -> SearchOnDbResponseModel:
+        async with psqlDb.pool.acquire() as conn:
             await conn.set_type_codec(
                 "jsonb", encoder=json.dumps, decoder=json.loads, schema="pg_catalog"
             )
 
-            embeddingService: Any = await GetEmbeddingService().ConvertTextToEmbedding(
+            embeddingService: Any = await EmbeddingService_Rag.ConvertTextToEmbedding(
                 text=[query]
             )
             queryVector = embeddingService.data[0].embedding
@@ -74,7 +73,7 @@ class GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):
 
 """
 
-            rows = await conn.fetch(sql, queryVector, 100)
+            rows = await conn.fetch(sql, queryVector, 50)
 
         docs: list[SearchOnDbDocModel_Server] = []
 

@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from typing import Tuple
 from ragservices.models import (
     GetGraphFromDocResponseModel_Rag,
     ExtarctRelationsAndQuestionFromChunkResponseModel_Rag,
@@ -11,17 +10,7 @@ from aiservices import EmbeddingResponseModel, ChatServiceMessageModel
 
 class BuildGraphFromDocServiceImpl_Rag(ABC):
 
-    @abstractmethod
-    def ExtractChunksFromDoc_Rag(
-        self, file: str, chunkSize: int, chunkOLSize: int | None = 0
-    ) -> Tuple[list[str], list[str]]:
-        pass
 
-    @abstractmethod
-    async def UploadImagesFromDocToFirebase_Rag(
-        self, base64Str: str, folder: str
-    ) -> str:
-        pass
 
     @abstractmethod
     async def ExtarctRelationsAndQuestionFromChunk_Rag(

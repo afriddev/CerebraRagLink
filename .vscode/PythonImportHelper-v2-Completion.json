@@ -168,11 +168,51 @@
         "documentation": {}
     },
     {
-        "label": "StreamingResponse",
-        "importPath": "fastapi.responses",
-        "description": "fastapi.responses",
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
         "isExtraImport": true,
-        "detail": "fastapi.responses",
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
         "documentation": {}
     },
     {
@@ -184,7 +224,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONResponse",
+        "label": "StreamingResponse",
         "importPath": "fastapi.responses",
         "description": "fastapi.responses",
         "isExtraImport": true,
@@ -384,6 +424,22 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Tuple",
         "importPath": "typing",
         "description": "typing",
@@ -400,63 +456,7 @@
         "documentation": {}
     },
     {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "cast",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "cast",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -493,6 +493,102 @@
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
         "documentation": {}
     },
     {
@@ -631,6 +727,14 @@
         "importPath": "os",
         "description": "os",
         "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
         "documentation": {}
     },
     {
@@ -989,6 +1093,22 @@
         "documentation": {}
     },
     {
+        "label": "PsqlDb",
+        "importPath": "dbservices",
+        "description": "dbservices",
+        "isExtraImport": true,
+        "detail": "dbservices",
+        "documentation": {}
+    },
+    {
+        "label": "PsqlDb",
+        "importPath": "dbservices",
+        "description": "dbservices",
+        "isExtraImport": true,
+        "detail": "dbservices",
+        "documentation": {}
+    },
+    {
         "label": "asyncpg",
         "kind": 6,
         "isExtraImport": true,
@@ -1032,6 +1152,14 @@
     },
     {
         "label": "ExatrctImageIndexFromChunkResponseModel_Rag",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
+        "isExtraImport": true,
+        "detail": "ragservices.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtarctQuestionAndAnswersFromDocResponse_Rag",
         "importPath": "ragservices.models",
         "description": "ragservices.models",
         "isExtraImport": true,
@@ -1104,6 +1232,14 @@
     },
     {
         "label": "ExatrctImageIndexFromChunkResponseModel_Rag",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
+        "isExtraImport": true,
+        "detail": "ragservices.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtarctQuestionAndAnswersFromDocResponse_Rag",
         "importPath": "ragservices.models",
         "description": "ragservices.models",
         "isExtraImport": true,
@@ -1335,7 +1471,7 @@
         "documentation": {}
     },
     {
-        "label": "RerankingResponseModel",
+        "label": "EmbeddingService",
         "importPath": "aiservices",
         "description": "aiservices",
         "isExtraImport": true,
@@ -1391,21 +1527,20 @@
         "documentation": {}
     },
     {
+        "label": "uuid4",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
         "label": "re",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "re",
         "description": "re",
         "detail": "re",
-        "documentation": {}
-    },
-    {
-        "label": "unicodedata",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "unicodedata",
-        "description": "unicodedata",
-        "detail": "unicodedata",
         "documentation": {}
     },
     {
@@ -1417,19 +1552,27 @@
         "documentation": {}
     },
     {
-        "label": "ExtractTextFromDoc_Rag",
-        "importPath": "utils",
-        "description": "utils",
+        "label": "BuildQaRagFromDocImpl_Rag",
+        "importPath": "ragservices.implementations",
+        "description": "ragservices.implementations",
         "isExtraImport": true,
-        "detail": "utils",
+        "detail": "ragservices.implementations",
         "documentation": {}
     },
     {
-        "label": "RecursiveCharacterTextSplitter",
-        "importPath": "langchain.text_splitter",
-        "description": "langchain.text_splitter",
+        "label": "ExtractTextFromDocServiceImpl_Rag",
+        "importPath": "ragservices.implementations",
+        "description": "ragservices.implementations",
         "isExtraImport": true,
-        "detail": "langchain.text_splitter",
+        "detail": "ragservices.implementations",
+        "documentation": {}
+    },
+    {
+        "label": "RagUtilServiceImpl_Rag",
+        "importPath": "ragservices.implementations",
+        "description": "ragservices.implementations",
+        "isExtraImport": true,
+        "detail": "ragservices.implementations",
         "documentation": {}
     },
     {
@@ -1458,12 +1601,72 @@
         "documentation": {}
     },
     {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "RagUtilService_Rag",
+        "importPath": "ragservices.services.RagUtilServcies_Rag",
+        "description": "ragservices.services.RagUtilServcies_Rag",
+        "isExtraImport": true,
+        "detail": "ragservices.services.RagUtilServcies_Rag",
+        "documentation": {}
+    },
+    {
         "label": "base64",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "base64",
         "description": "base64",
         "detail": "base64",
+        "documentation": {}
+    },
+    {
+        "label": "fitz",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "fitz",
+        "description": "fitz",
+        "detail": "fitz",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "unicodedata",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "unicodedata",
+        "description": "unicodedata",
+        "detail": "unicodedata",
+        "documentation": {}
+    },
+    {
+        "label": "RecursiveCharacterTextSplitter",
+        "importPath": "langchain_text_splitters",
+        "description": "langchain_text_splitters",
+        "isExtraImport": true,
+        "detail": "langchain_text_splitters",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractTextFromDocService",
+        "importPath": "ragservices.services.ExtractTextFromDocService_Rag",
+        "description": "ragservices.services.ExtractTextFromDocService_Rag",
+        "isExtraImport": true,
+        "detail": "ragservices.services.ExtractTextFromDocService_Rag",
         "documentation": {}
     },
     {
@@ -1492,15 +1695,6 @@
         "documentation": {}
     },
     {
-        "label": "time",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "time",
-        "description": "time",
-        "detail": "time",
-        "documentation": {}
-    },
-    {
         "label": "APIRouter",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -1522,22 +1716,6 @@
         "description": "fastapi",
         "isExtraImport": true,
         "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "PsqlDb",
-        "importPath": "dbservices",
-        "description": "dbservices",
-        "isExtraImport": true,
-        "detail": "dbservices",
-        "documentation": {}
-    },
-    {
-        "label": "PsqlDb",
-        "importPath": "dbservices",
-        "description": "dbservices",
-        "isExtraImport": true,
-        "detail": "dbservices",
         "documentation": {}
     },
     {
@@ -1589,6 +1767,14 @@
         "documentation": {}
     },
     {
+        "label": "SearchOnDbResponseModel",
+        "importPath": "server.models",
+        "description": "server.models",
+        "isExtraImport": true,
+        "detail": "server.models",
+        "documentation": {}
+    },
+    {
         "label": "ChatServiceRequestModel_Server",
         "importPath": "server.models",
         "description": "server.models",
@@ -1598,6 +1784,38 @@
     },
     {
         "label": "ChatServicePreProcessUserQueryResponseModel_Server",
+        "importPath": "server.models",
+        "description": "server.models",
+        "isExtraImport": true,
+        "detail": "server.models",
+        "documentation": {}
+    },
+    {
+        "label": "SearchOnDbResponseModel",
+        "importPath": "server.models",
+        "description": "server.models",
+        "isExtraImport": true,
+        "detail": "server.models",
+        "documentation": {}
+    },
+    {
+        "label": "SearchOnDbImageModel_Server",
+        "importPath": "server.models",
+        "description": "server.models",
+        "isExtraImport": true,
+        "detail": "server.models",
+        "documentation": {}
+    },
+    {
+        "label": "SearchOnDbResponseModel",
+        "importPath": "server.models",
+        "description": "server.models",
+        "isExtraImport": true,
+        "detail": "server.models",
+        "documentation": {}
+    },
+    {
+        "label": "SearchOnDbDocModel_Server",
         "importPath": "server.models",
         "description": "server.models",
         "isExtraImport": true,
@@ -1733,12 +1951,19 @@
         "documentation": {}
     },
     {
-        "label": "fitz",
-        "kind": 6,
+        "label": "psqlDb",
+        "importPath": "config.PsqlDbConfig",
+        "description": "config.PsqlDbConfig",
         "isExtraImport": true,
-        "importPath": "fitz",
-        "description": "fitz",
-        "detail": "fitz",
+        "detail": "config.PsqlDbConfig",
+        "documentation": {}
+    },
+    {
+        "label": "psqlDb",
+        "importPath": "config.PsqlDbConfig",
+        "description": "config.PsqlDbConfig",
+        "isExtraImport": true,
+        "detail": "config.PsqlDbConfig",
         "documentation": {}
     },
     {
@@ -2215,6 +2440,24 @@
         "documentation": {}
     },
     {
+        "label": "DATABASE_CONNECTION_STRING",
+        "kind": 5,
+        "importPath": "config.PsqlDbConfig",
+        "description": "config.PsqlDbConfig",
+        "peekOfCode": "DATABASE_CONNECTION_STRING = os.getenv(\"DATABASE_CONNECTION_STRING\", \"\")\npsqlDb = PsqlDb(DATABASE_CONNECTION_STRING)",
+        "detail": "config.PsqlDbConfig",
+        "documentation": {}
+    },
+    {
+        "label": "psqlDb",
+        "kind": 5,
+        "importPath": "config.PsqlDbConfig",
+        "description": "config.PsqlDbConfig",
+        "peekOfCode": "psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)",
+        "detail": "config.PsqlDbConfig",
+        "documentation": {}
+    },
+    {
         "label": "PsqlDb",
         "kind": 6,
         "importPath": "dbservices.PsqlDb",
@@ -2228,8 +2471,35 @@
         "kind": 6,
         "importPath": "ragservices.implementations.BuildGraphFromDocServiceImpl_Rag",
         "description": "ragservices.implementations.BuildGraphFromDocServiceImpl_Rag",
-        "peekOfCode": "class BuildGraphFromDocServiceImpl_Rag(ABC):\n    @abstractmethod\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        pass\n    @abstractmethod\n    async def UploadImagesFromDocToFirebase_Rag(\n        self, base64Str: str, folder: str\n    ) -> str:",
+        "peekOfCode": "class BuildGraphFromDocServiceImpl_Rag(ABC):\n    @abstractmethod\n    async def ExtarctRelationsAndQuestionFromChunk_Rag(\n        self,\n        messages: list[ChatServiceMessageModel],\n        retryLoopIndex: int,\n    ) -> ExtarctRelationsAndQuestionFromChunkResponseModel_Rag:\n        pass\n    @abstractmethod\n    async def ConvertTextsToVectorsFromChunk_Rag(",
         "detail": "ragservices.implementations.BuildGraphFromDocServiceImpl_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "BuildQaRagFromDocImpl_Rag",
+        "kind": 6,
+        "importPath": "ragservices.implementations.BuildQaRagFromDocServiceImpl_Rag",
+        "description": "ragservices.implementations.BuildQaRagFromDocServiceImpl_Rag",
+        "peekOfCode": "class BuildQaRagFromDocImpl_Rag(ABC):\n    @abstractmethod\n    def ExtarctQuesionAndAnsersFromDocText_Rag(\n        self, text: str\n    ) -> ExtarctQuestionAndAnswersFromDocResponse_Rag:\n        pass\n    @abstractmethod\n    async def HandleQaRagBuildingProcess_Rag(self, docPath: str):\n        pass",
+        "detail": "ragservices.implementations.BuildQaRagFromDocServiceImpl_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractTextFromDocServiceImpl_Rag",
+        "kind": 6,
+        "importPath": "ragservices.implementations.ExtractTextFromDocServiceImpl_Rag",
+        "description": "ragservices.implementations.ExtractTextFromDocServiceImpl_Rag",
+        "peekOfCode": "class ExtractTextFromDocServiceImpl_Rag(ABC):\n    @abstractmethod\n    def ExtractTextAndImagesFromXlsx_Rag(self, docPath: str) -> Tuple[str, List[str]]:\n        pass\n    @abstractmethod\n    def ExtractTextAndImagesFromCsv_Rag(self, docPath: str) -> Tuple[str, List[str]]:\n        pass\n    @abstractmethod\n    def ExtractTextAndImagesFromDoc_Rag(self, docPath: str) -> Tuple[str, List[str]]:\n        pass",
+        "detail": "ragservices.implementations.ExtractTextFromDocServiceImpl_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "RagUtilServiceImpl_Rag",
+        "kind": 6,
+        "importPath": "ragservices.implementations.RagUtilServiceImpl_Rag",
+        "description": "ragservices.implementations.RagUtilServiceImpl_Rag",
+        "peekOfCode": "class RagUtilServiceImpl_Rag(ABC):\n    @abstractmethod\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        pass\n    @abstractmethod\n    async def UploadImagesFromDocToFirebase_Rag(\n        self, base64Str: str, folder: str\n    ) -> str:",
+        "detail": "ragservices.implementations.RagUtilServiceImpl_Rag",
         "documentation": {}
     },
     {
@@ -2314,11 +2584,20 @@
         "documentation": {}
     },
     {
+        "label": "ExtarctQuestionAndAnswersFromDocResponse_Rag",
+        "kind": 6,
+        "importPath": "ragservices.models.BuildQaRagFromDocModels_Rag",
+        "description": "ragservices.models.BuildQaRagFromDocModels_Rag",
+        "peekOfCode": "class ExtarctQuestionAndAnswersFromDocResponse_Rag(BaseModel):\n    questions: list[str]\n    response: list[str]",
+        "detail": "ragservices.models.BuildQaRagFromDocModels_Rag",
+        "documentation": {}
+    },
+    {
         "label": "BuildGraphFromDocService_Rag",
         "kind": 6,
         "importPath": "ragservices.services.BuildGraphFromDocService_Rag",
         "description": "ragservices.services.BuildGraphFromDocService_Rag",
-        "peekOfCode": "class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")\n        _MULTI_NL_RE = re.compile(r\"\\n{3,}\")",
+        "peekOfCode": "class BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def __init__(self):\n        self.RetryLoopIndexLimit = 3\n    async def ConvertTextsToVectorsFromChunk_Rag(\n        self, texts: list[str], retryLoopIndex: int\n    ) -> EmbeddingResponseModel:\n        if retryLoopIndex > self.RetryLoopIndexLimit:\n            return EmbeddingResponseModel(status=EmbeddingResponseEnum.ERROR)\n        embeddingResponse = await embeddingService.ConvertTextToEmbedding(text=texts)\n        if embeddingResponse.data is None:",
         "detail": "ragservices.services.BuildGraphFromDocService_Rag",
         "documentation": {}
     },
@@ -2327,7 +2606,7 @@
         "kind": 5,
         "importPath": "ragservices.services.BuildGraphFromDocService_Rag",
         "description": "ragservices.services.BuildGraphFromDocService_Rag",
-        "peekOfCode": "chatService = ChatService()\nembeddingService = EmbeddingService()\nrerankingService = RerankingService()\ncred = credentials.Certificate(\"./others/firebaseCred.json\")\ncast(Any, firebase_admin).initialize_app(\n    cred, {\"storageBucket\": \"testproject-b1efd.appspot.com\"}\n)\nRetryLoopIndexLimit = 3\nclass BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def ExtractChunksFromDoc_Rag(",
+        "peekOfCode": "chatService = ChatService()\nembeddingService = EmbeddingService()\nrerankingService = RerankingService()\nRagUtilService = RagUtilService_Rag()\nclass BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def __init__(self):\n        self.RetryLoopIndexLimit = 3\n    async def ConvertTextsToVectorsFromChunk_Rag(\n        self, texts: list[str], retryLoopIndex: int\n    ) -> EmbeddingResponseModel:",
         "detail": "ragservices.services.BuildGraphFromDocService_Rag",
         "documentation": {}
     },
@@ -2336,7 +2615,7 @@
         "kind": 5,
         "importPath": "ragservices.services.BuildGraphFromDocService_Rag",
         "description": "ragservices.services.BuildGraphFromDocService_Rag",
-        "peekOfCode": "embeddingService = EmbeddingService()\nrerankingService = RerankingService()\ncred = credentials.Certificate(\"./others/firebaseCred.json\")\ncast(Any, firebase_admin).initialize_app(\n    cred, {\"storageBucket\": \"testproject-b1efd.appspot.com\"}\n)\nRetryLoopIndexLimit = 3\nclass BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0",
+        "peekOfCode": "embeddingService = EmbeddingService()\nrerankingService = RerankingService()\nRagUtilService = RagUtilService_Rag()\nclass BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def __init__(self):\n        self.RetryLoopIndexLimit = 3\n    async def ConvertTextsToVectorsFromChunk_Rag(\n        self, texts: list[str], retryLoopIndex: int\n    ) -> EmbeddingResponseModel:\n        if retryLoopIndex > self.RetryLoopIndexLimit:",
         "detail": "ragservices.services.BuildGraphFromDocService_Rag",
         "documentation": {}
     },
@@ -2345,26 +2624,53 @@
         "kind": 5,
         "importPath": "ragservices.services.BuildGraphFromDocService_Rag",
         "description": "ragservices.services.BuildGraphFromDocService_Rag",
-        "peekOfCode": "rerankingService = RerankingService()\ncred = credentials.Certificate(\"./others/firebaseCred.json\")\ncast(Any, firebase_admin).initialize_app(\n    cred, {\"storageBucket\": \"testproject-b1efd.appspot.com\"}\n)\nRetryLoopIndexLimit = 3\nclass BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:",
+        "peekOfCode": "rerankingService = RerankingService()\nRagUtilService = RagUtilService_Rag()\nclass BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def __init__(self):\n        self.RetryLoopIndexLimit = 3\n    async def ConvertTextsToVectorsFromChunk_Rag(\n        self, texts: list[str], retryLoopIndex: int\n    ) -> EmbeddingResponseModel:\n        if retryLoopIndex > self.RetryLoopIndexLimit:\n            return EmbeddingResponseModel(status=EmbeddingResponseEnum.ERROR)",
         "detail": "ragservices.services.BuildGraphFromDocService_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "RagUtilService",
+        "kind": 5,
+        "importPath": "ragservices.services.BuildGraphFromDocService_Rag",
+        "description": "ragservices.services.BuildGraphFromDocService_Rag",
+        "peekOfCode": "RagUtilService = RagUtilService_Rag()\nclass BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def __init__(self):\n        self.RetryLoopIndexLimit = 3\n    async def ConvertTextsToVectorsFromChunk_Rag(\n        self, texts: list[str], retryLoopIndex: int\n    ) -> EmbeddingResponseModel:\n        if retryLoopIndex > self.RetryLoopIndexLimit:\n            return EmbeddingResponseModel(status=EmbeddingResponseEnum.ERROR)\n        embeddingResponse = await embeddingService.ConvertTextToEmbedding(text=texts)",
+        "detail": "ragservices.services.BuildGraphFromDocService_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "BuildQaRagFromDocService_Rag",
+        "kind": 6,
+        "importPath": "ragservices.services.BuildQaRagFromDocService_Rag",
+        "description": "ragservices.services.BuildQaRagFromDocService_Rag",
+        "peekOfCode": "class BuildQaRagFromDocService_Rag(BuildQaRagFromDocImpl_Rag):\n    def ExtarctQuesionAndAnsersFromDocText_Rag(\n        self, text: str\n    ) -> ExtarctQuestionAndAnswersFromDocResponse_Rag:\n        questionList = re.findall(r\"<<R1-START>>(.*?)<<R1-END>>\", text, re.DOTALL)\n        answersList = re.findall(r\"<<R2-START>>(.*?)<<R2-END>>\", text, re.DOTALL)",
+        "detail": "ragservices.services.BuildQaRagFromDocService_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractTextFromDocService",
+        "kind": 6,
+        "importPath": "ragservices.services.ExtractTextFromDocService_Rag",
+        "description": "ragservices.services.ExtractTextFromDocService_Rag",
+        "peekOfCode": "class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):\n    def ExtractTextAndImagesFromXlsx_Rag(self, docPath: str) -> Tuple[str, List[str]]:\n        xls = pd.ExcelFile(docPath)\n        allText: list[str] = []\n        rowIndex = 1  # start row counter\n        for sheetName in xls.sheet_names:\n            df = cast(Any, pd).read_excel(docPath, sheet_name=sheetName, header=None)\n            for row in df.itertuples(index=False):\n                rowText = \"  \".join(\n                    \"\" if cast(Any, pd).isna(cell) else str(cell) for cell in row",
+        "detail": "ragservices.services.ExtractTextFromDocService_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "RagUtilService_Rag",
+        "kind": 6,
+        "importPath": "ragservices.services.RagUtilServcies_Rag",
+        "description": "ragservices.services.RagUtilServcies_Rag",
+        "peekOfCode": "class RagUtilService_Rag(RagUtilServiceImpl_Rag):\n    def __init__(self):\n        self.ExtarctTextFromDoc = ExtractTextFromDocService()\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")",
+        "detail": "ragservices.services.RagUtilServcies_Rag",
         "documentation": {}
     },
     {
         "label": "cred",
         "kind": 5,
-        "importPath": "ragservices.services.BuildGraphFromDocService_Rag",
-        "description": "ragservices.services.BuildGraphFromDocService_Rag",
-        "peekOfCode": "cred = credentials.Certificate(\"./others/firebaseCred.json\")\ncast(Any, firebase_admin).initialize_app(\n    cred, {\"storageBucket\": \"testproject-b1efd.appspot.com\"}\n)\nRetryLoopIndexLimit = 3\nclass BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)",
-        "detail": "ragservices.services.BuildGraphFromDocService_Rag",
-        "documentation": {}
-    },
-    {
-        "label": "RetryLoopIndexLimit",
-        "kind": 5,
-        "importPath": "ragservices.services.BuildGraphFromDocService_Rag",
-        "description": "ragservices.services.BuildGraphFromDocService_Rag",
-        "peekOfCode": "RetryLoopIndexLimit = 3\nclass BuildGraphFromDocService_Rag(BuildGraphFromDocServiceImpl_Rag):\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:\n        _PAGE_RE = re.compile(r\"\\bpage\\s+\\d+\\s+of\\s+\\d+\\b\", re.IGNORECASE)\n        _IMAGE_RE = re.compile(r\"\\s*(<<IMAGE-\\d+>>)\\s*\", re.IGNORECASE)\n        _BULLET_LINE_RE = re.compile(r\"^[\\s•\\-\\*\\u2022\\uf0b7FÞ]+(?=\\S)\", re.MULTILINE)\n        _SOFT_HYPHEN_RE = re.compile(r\"\\u00AD\")\n        _HYPHEN_BREAK_RE = re.compile(r\"(\\w)-\\n(\\w)\")",
-        "detail": "ragservices.services.BuildGraphFromDocService_Rag",
+        "importPath": "ragservices.services.RagUtilServcies_Rag",
+        "description": "ragservices.services.RagUtilServcies_Rag",
+        "peekOfCode": "cred = credentials.Certificate(\"./others/firebaseCred.json\")\ncast(Any, firebase_admin).initialize_app(\n    cred, {\"storageBucket\": \"testproject-b1efd.appspot.com\"}\n)\nclass RagUtilService_Rag(RagUtilServiceImpl_Rag):\n    def __init__(self):\n        self.ExtarctTextFromDoc = ExtractTextFromDocService()\n    def ExtractChunksFromDoc_Rag(\n        self, file: str, chunkSize: int, chunkOLSize: int | None = 0\n    ) -> Tuple[list[str], list[str]]:",
+        "detail": "ragservices.services.RagUtilServcies_Rag",
         "documentation": {}
     },
     {
@@ -2381,7 +2687,7 @@
         "kind": 5,
         "importPath": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
         "description": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
-        "peekOfCode": "ExtractImageIndexFromChunkSystemPrompt_Rag = r\"\"\"\nTASK\nReturn ONLY valid JSON per the schema for ONE input chunk.\nINPUT\n{ \"chunk\": \"...\" }\nOUTPUT (conceptual)\n{\n  \"response\": {\n    \"sections\": [\n      { \"imageindex\": \"7\", \"description\": \"One clear sentence (8–25 words) explaining why/how the image is used.\" }",
+        "peekOfCode": "ExtractImageIndexFromChunkSystemPrompt_Rag = r\"\"\"\nTASK\nReturn ONLY valid JSON per the schema for ONE mainchunk (with optional previouschunk and nextchunk for context).\nINPUT\n{ \"mainchunk\": \"...\", \"previouschunk\": \"...\", \"nextchunk\": \"...\" }\nOUTPUT (conceptual)\n{\n  \"response\": {\n    \"sections\": [\n      { \"imageindex\": \"7\", \"description\": \"One clear sentence (15–30 words) explaining why the image is important and which content it relates to.\" }",
         "detail": "ragservices.utils.BuildGraphFromDocSystemPrompts_Rag",
         "documentation": {}
     },
@@ -2390,7 +2696,7 @@
         "kind": 5,
         "importPath": "server.controllers.BuildGraphRagFromDocController_Server",
         "description": "server.controllers.BuildGraphRagFromDocController_Server",
-        "peekOfCode": "GragDocRouter = APIRouter()\nBuildGraphRagFromDocServiceServer = BuildGraphRagFromDocService_Server()\nasync def GetDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@GragDocRouter.get(\"/bgrfd\")\nasync def BuildGraphFromDoc():\n    return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(\n        \"./others/a.xlsx\", await GetDb()\n    )",
+        "peekOfCode": "GragDocRouter = APIRouter()\nBuildGraphRagFromDocServiceServer = BuildGraphRagFromDocService_Server()\nasync def GetDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@GragDocRouter.get(\"/bgrfd\")\nasync def BuildGraphFromDoc():\n    return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(\n        \"./others/opd_manual.pdf\", await GetDb()\n    )",
         "detail": "server.controllers.BuildGraphRagFromDocController_Server",
         "documentation": {}
     },
@@ -2399,7 +2705,7 @@
         "kind": 5,
         "importPath": "server.controllers.BuildGraphRagFromDocController_Server",
         "description": "server.controllers.BuildGraphRagFromDocController_Server",
-        "peekOfCode": "BuildGraphRagFromDocServiceServer = BuildGraphRagFromDocService_Server()\nasync def GetDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@GragDocRouter.get(\"/bgrfd\")\nasync def BuildGraphFromDoc():\n    return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(\n        \"./others/a.xlsx\", await GetDb()\n    )",
+        "peekOfCode": "BuildGraphRagFromDocServiceServer = BuildGraphRagFromDocService_Server()\nasync def GetDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@GragDocRouter.get(\"/bgrfd\")\nasync def BuildGraphFromDoc():\n    return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(\n        \"./others/opd_manual.pdf\", await GetDb()\n    )",
         "detail": "server.controllers.BuildGraphRagFromDocController_Server",
         "documentation": {}
     },
@@ -2453,7 +2759,7 @@
         "kind": 6,
         "importPath": "server.models.ChatServiceModels_Server",
         "description": "server.models.ChatServiceModels_Server",
-        "peekOfCode": "class ChatServiceRequestModel_Server(BaseModel):\n    id: str | None = None\n    query: str\nclass ChatServicePreProcessUserQueryResponseModel_Server(BaseModel):\n    status: ChatServicePreProcessEnums_Server = (\n        ChatServicePreProcessEnums_Server.OK\n    )\n    route: ChatServicePreProcessRouteEnums_Server = (\n        ChatServicePreProcessRouteEnums_Server.LLM\n    )",
+        "peekOfCode": "class ChatServiceRequestModel_Server(BaseModel):\n    id: str | None = None\n    query: str\nclass ChatServicePreProcessUserQueryResponseModel_Server(BaseModel):\n    status: ChatServicePreProcessEnums_Server = ChatServicePreProcessEnums_Server.OK\n    route: ChatServicePreProcessRouteEnums_Server = (\n        ChatServicePreProcessRouteEnums_Server.LLM\n    )\n    cleanquery: str | None = None\nclass ChatServiceResponseModel_Server(BaseModel):",
         "detail": "server.models.ChatServiceModels_Server",
         "documentation": {}
     },
@@ -2462,7 +2768,7 @@
         "kind": 6,
         "importPath": "server.models.ChatServiceModels_Server",
         "description": "server.models.ChatServiceModels_Server",
-        "peekOfCode": "class ChatServicePreProcessUserQueryResponseModel_Server(BaseModel):\n    status: ChatServicePreProcessEnums_Server = (\n        ChatServicePreProcessEnums_Server.OK\n    )\n    route: ChatServicePreProcessRouteEnums_Server = (\n        ChatServicePreProcessRouteEnums_Server.LLM\n    )\nclass ChatServiceResponseModel_Server(BaseModel):\n    status: ResponseEnum_Server = ResponseEnum_Server.SUCCESS\n    content: str | None = None",
+        "peekOfCode": "class ChatServicePreProcessUserQueryResponseModel_Server(BaseModel):\n    status: ChatServicePreProcessEnums_Server = ChatServicePreProcessEnums_Server.OK\n    route: ChatServicePreProcessRouteEnums_Server = (\n        ChatServicePreProcessRouteEnums_Server.LLM\n    )\n    cleanquery: str | None = None\nclass ChatServiceResponseModel_Server(BaseModel):\n    status: ResponseEnum_Server = ResponseEnum_Server.SUCCESS\n    content: str | None = None",
         "detail": "server.models.ChatServiceModels_Server",
         "documentation": {}
     },
@@ -2473,6 +2779,37 @@
         "description": "server.models.ChatServiceModels_Server",
         "peekOfCode": "class ChatServiceResponseModel_Server(BaseModel):\n    status: ResponseEnum_Server = ResponseEnum_Server.SUCCESS\n    content: str | None = None",
         "detail": "server.models.ChatServiceModels_Server",
+        "documentation": {}
+    },
+    {
+        "label": "SearchOnDbImageModel_Server",
+        "kind": 6,
+        "importPath": "server.models.GraphRagSearchServiceModel_Server",
+        "description": "server.models.GraphRagSearchServiceModel_Server",
+        "peekOfCode": "class SearchOnDbImageModel_Server(BaseModel):\n    url: str\n    description: str\nclass  SearchOnDbDocModel_Server(BaseModel):\n    doc:str\n    images:list[SearchOnDbImageModel_Server]\nclass SearchOnDbResponseModel(BaseModel):\n    docs: list[SearchOnDbDocModel_Server]",
+        "detail": "server.models.GraphRagSearchServiceModel_Server",
+        "documentation": {}
+    },
+    {
+        "label": {
+            "name": "",
+            "kind": 6,
+            "peekOfCode": "class  SearchOnDbDocModel_Server(BaseModel):\n    doc:str\n    images:list[SearchOnDbImageModel_Server]\nclass SearchOnDbResponseModel(BaseModel):\n    docs: list[SearchOnDbDocModel_Server]"
+        },
+        "kind": 6,
+        "importPath": "server.models.GraphRagSearchServiceModel_Server",
+        "description": "server.models.GraphRagSearchServiceModel_Server",
+        "peekOfCode": "class  SearchOnDbDocModel_Server(BaseModel):\n    doc:str\n    images:list[SearchOnDbImageModel_Server]\nclass SearchOnDbResponseModel(BaseModel):\n    docs: list[SearchOnDbDocModel_Server]",
+        "detail": "server.models.GraphRagSearchServiceModel_Server",
+        "documentation": {}
+    },
+    {
+        "label": "SearchOnDbResponseModel",
+        "kind": 6,
+        "importPath": "server.models.GraphRagSearchServiceModel_Server",
+        "description": "server.models.GraphRagSearchServiceModel_Server",
+        "peekOfCode": "class SearchOnDbResponseModel(BaseModel):\n    docs: list[SearchOnDbDocModel_Server]",
+        "detail": "server.models.GraphRagSearchServiceModel_Server",
         "documentation": {}
     },
     {
@@ -2498,7 +2835,7 @@
         "kind": 6,
         "importPath": "server.serviceimplementations.GraphRagSearchServiceImpl_Server",
         "description": "server.serviceimplementations.GraphRagSearchServiceImpl_Server",
-        "peekOfCode": "class GraphRagSearchServiceImpl_Server(ABC):\n    @abstractmethod\n    async def SearchOnDb_Server(self, query: str,db:Any):\n        pass",
+        "peekOfCode": "class GraphRagSearchServiceImpl_Server(ABC):\n    @abstractmethod\n    async def SearchOnDb_Server(self, query: str) -> SearchOnDbResponseModel:\n        pass",
         "detail": "server.serviceimplementations.GraphRagSearchServiceImpl_Server",
         "documentation": {}
     },
@@ -2579,16 +2916,16 @@
         "kind": 6,
         "importPath": "server.services.GraphRagSearchService_Server",
         "description": "server.services.GraphRagSearchService_Server",
-        "peekOfCode": "class GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):\n    async def SearchOnDb_Server(self, query: str, db: Any):\n        async with db.pool.acquire() as conn:\n            await conn.set_type_codec(\n                \"jsonb\", encoder=json.dumps, decoder=json.loads, schema=\"pg_catalog\"\n            )\n            embeddingService = await GetEmbeddingService().ConvertTextToEmbedding(\n                text=[query]\n            )\n            queryVector = embeddingService.data[0].embedding",
+        "peekOfCode": "class GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):\n    async def SearchOnDb_Server(self, query: str) -> SearchOnDbResponseModel:\n        async with psqlDb.pool.acquire() as conn:\n            await conn.set_type_codec(\n                \"jsonb\", encoder=json.dumps, decoder=json.loads, schema=\"pg_catalog\"\n            )\n            embeddingService: Any = await EmbeddingService_Rag.ConvertTextToEmbedding(\n                text=[query]\n            )\n            queryVector = embeddingService.data[0].embedding",
         "detail": "server.services.GraphRagSearchService_Server",
         "documentation": {}
     },
     {
-        "label": "GetEmbeddingService",
-        "kind": 2,
+        "label": "EmbeddingService_Rag",
+        "kind": 5,
         "importPath": "server.services.GraphRagSearchService_Server",
         "description": "server.services.GraphRagSearchService_Server",
-        "peekOfCode": "def GetEmbeddingService():\n    from main import EmbeddingService\n    return EmbeddingService\nclass GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):\n    async def SearchOnDb_Server(self, query: str, db: Any):\n        async with db.pool.acquire() as conn:\n            await conn.set_type_codec(\n                \"jsonb\", encoder=json.dumps, decoder=json.loads, schema=\"pg_catalog\"\n            )\n            embeddingService = await GetEmbeddingService().ConvertTextToEmbedding(",
+        "peekOfCode": "EmbeddingService_Rag = EmbeddingService()\nclass GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):\n    async def SearchOnDb_Server(self, query: str) -> SearchOnDbResponseModel:\n        async with psqlDb.pool.acquire() as conn:\n            await conn.set_type_codec(\n                \"jsonb\", encoder=json.dumps, decoder=json.loads, schema=\"pg_catalog\"\n            )\n            embeddingService: Any = await EmbeddingService_Rag.ConvertTextToEmbedding(\n                text=[query]\n            )",
         "detail": "server.services.GraphRagSearchService_Server",
         "documentation": {}
     },
@@ -2597,7 +2934,7 @@
         "kind": 5,
         "importPath": "server.utils.ChatServiceSystemPrompt_Server",
         "description": "server.utils.ChatServiceSystemPrompt_Server",
-        "peekOfCode": "ChatServicePreProcessUserQuerySystemPropt_Server = \"\"\"\nTASK\nReturn ONLY JSON:\n{\n  \"response\": {\n    \"error\": \"OK\" | \"ABUSE_LANG_ERROR\" | \"CONTACT_INFO_ERROR\",\n    \"route\": \"HMIS\" | \"LLM\"\n  }\n}\nRules",
+        "peekOfCode": "ChatServicePreProcessUserQuerySystemPropt_Server = \"\"\"\nTASK\nStep 1: Normalize the input query into a clear and meaningful English sentence. \n        - Correct spelling mistakes, grammar, and incoherent words.\n        - If the query is incomplete or vague, rewrite it into a \n          well-formed question by inferring the most likely intended meaning.\n        - Preserve the original intent while making it professional and clear.\n        - Example: \"who to add new drug which is not in hmis\" → \n          \"How to add a new drug in HMIS if it is not already available?\"\nStep 2: Classify the query and return ONLY JSON:",
         "detail": "server.utils.ChatServiceSystemPrompt_Server",
         "documentation": {}
     },
@@ -2606,7 +2943,7 @@
         "kind": 5,
         "importPath": "server.utils.ChatServiceSystemPrompt_Server",
         "description": "server.utils.ChatServiceSystemPrompt_Server",
-        "peekOfCode": "ChatServiceAbusiveUserQuerySystemPrompt_Server = \"\"\"\nYou are a company policy enforcement assistant.\nThe user query was flagged as abusive.\nYour task: Write a short warning message to the user.\n- Say that using abusive or offensive words violates company policy.\n- Warn that repeated abuse may lead to account suspension or blocking.\n- Give response in 6-10 words\n\"\"\"\nChatServiceConfidentialUserQuerySystemPrompt_Server = \"\"\"\nYou are a company policy enforcement assistant.",
+        "peekOfCode": "ChatServiceAbusiveUserQuerySystemPrompt_Server = \"\"\"\nYou are a company policy enforcement assistant.\nThe user query was flagged as abusive.\nYour task: Write a short warning message to the user.\nRULES\n- Always return in **Markdown** format and preofessional clean.\n- The warning must be 6–10 words.\n- Clearly say that abusive or offensive words violate company policy.\n- Warn that repeated abuse may lead to account suspension or blocking.\n\"\"\"",
         "detail": "server.utils.ChatServiceSystemPrompt_Server",
         "documentation": {}
     },
@@ -2615,7 +2952,7 @@
         "kind": 5,
         "importPath": "server.utils.ChatServiceSystemPrompt_Server",
         "description": "server.utils.ChatServiceSystemPrompt_Server",
-        "peekOfCode": "ChatServiceConfidentialUserQuerySystemPrompt_Server = \"\"\"\nYou are a company policy enforcement assistant.\nThe user query was flagged for sharing confidential or contact information.\nYour task: Write a short warning message to the user.\n- Clearly state their query included sensitive or personal details (phone, email, Aadhaar, PAN, card, password, API key, etc.).\n- Say that sharing or requesting such information violates company policy and security guidelines.\n- Make the tone professional, serious, but not harsh.\n- Give response in 6-10 words\n\"\"\"\nChatServiceUserQueryLLMSystemPropt_Server = \"\"\"",
+        "peekOfCode": "ChatServiceConfidentialUserQuerySystemPrompt_Server = \"\"\"\nYou are a company policy enforcement assistant.\nThe user query was flagged for sharing confidential or contact information.\nYour task: Write a short warning message to the user.\nRULES\n- Always return in **Markdown** format and preofessional clean.\n- The warning must be 6–10 words.\n- Clearly state their query included sensitive or personal details\n  (phone, email, Aadhaar, PAN, card, password, API key, etc.).\n- Say that sharing or requesting such information violates company policy and security guidelines.",
         "detail": "server.utils.ChatServiceSystemPrompt_Server",
         "documentation": {}
     },
@@ -2624,26 +2961,8 @@
         "kind": 5,
         "importPath": "server.utils.ChatServiceSystemPrompt_Server",
         "description": "server.utils.ChatServiceSystemPrompt_Server",
-        "peekOfCode": "ChatServiceUserQueryLLMSystemPropt_Server = \"\"\"\nYou are a helpful, concise assistant.\nGOAL\n- Answer the user's question directly and helpfully.\nSTYLE\n- Be clear and brief.\n- Use Markdown for formatting when it improves readability.\n- If you need to show code, use fenced code blocks.\nDO NOT\n- Do not add boilerplate or disclaimers unless safety requires it.",
+        "peekOfCode": "ChatServiceUserQueryLLMSystemPropt_Server = \"\"\"\nYou are a helpful, concise assistant.\nGOAL\n- Answer the user's question directly and helpfully.\nSTYLE\n- Always respond in **Markdown** format.\n- Be clear and brief.\n- Use Markdown formatting (headings, lists, tables) when it improves readability and preofessional clean.\n- Use fenced code blocks for code.\nDO NOT",
         "detail": "server.utils.ChatServiceSystemPrompt_Server",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractTextAndImagesFromDoc",
-        "kind": 2,
-        "importPath": "utils.ExtarctTextFromDoc_Rag",
-        "description": "utils.ExtarctTextFromDoc_Rag",
-        "peekOfCode": "def ExtractTextAndImagesFromDoc(pdfPath: str) -> Tuple[str, List[str]]:\n    doc: Any = fitz.open(pdfPath)\n    imagesB64: List[str] = []\n    imageCounter: int = 1\n    finalTextParts: List[str] = []\n    for _, page in enumerate(doc, start=1):\n        blocks = page.get_text(\"dict\")[\"blocks\"]\n        pageItems: List[Tuple[str, float, str]] = []\n        for block in blocks:\n            if block[\"type\"] == 0:",
-        "detail": "utils.ExtarctTextFromDoc_Rag",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractTextFromDoc_Rag",
-        "kind": 2,
-        "importPath": "utils.ExtarctTextFromDoc_Rag",
-        "description": "utils.ExtarctTextFromDoc_Rag",
-        "peekOfCode": "def ExtractTextFromDoc_Rag(file: str) -> Tuple[str, List[str]]:\n    textWithImages, imagesB64 = ExtractTextAndImagesFromDoc(file)\n    return textWithImages, imagesB64",
-        "detail": "utils.ExtarctTextFromDoc_Rag",
         "documentation": {}
     },
     {
@@ -2653,24 +2972,6 @@
         "description": "k",
         "peekOfCode": "a = BuildGraphFromDocService_Rag()\nasync def main():\n    response = await a.BuildGraphFromDoc_Rag(\"./others/opd_manual.pdf\")\n    for i in response.chunkTexts:\n        print(i.text)\n        print(i.images)\nif __name__ == \"__main__\":\n    import asyncio\n    asyncio.run(main())",
         "detail": "k",
-        "documentation": {}
-    },
-    {
-        "label": "DATABASE_CONNECTION_STRING",
-        "kind": 5,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "DATABASE_CONNECTION_STRING = os.getenv(\"DATABASE_CONNECTION_STRING\", \"\")\npsqlDb = PsqlDb(DATABASE_CONNECTION_STRING)\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    await psqlDb.connect()\n    yield\n    await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "psqlDb",
-        "kind": 5,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    await psqlDb.connect()\n    yield\n    await psqlDb.close()\nserver = FastAPI(lifespan=lifespan)\nserver.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],",
-        "detail": "main",
         "documentation": {}
     },
     {

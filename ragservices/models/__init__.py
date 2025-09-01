@@ -7,9 +7,11 @@ from .BuildGraphFromDocModels_Rag import (
     ChunkImagesModel_Rag,
     ExtarctRelationsAndQuestionFromChunkResponseModel_Rag,
     ExatrctImageIndexFromChunkResponseModel_Rag,
-    ExatrctImageIndexFromChunkSectionModel_Rag
+    ExatrctImageIndexFromChunkSectionModel_Rag,
 )
 
+
+from .BuildQaRagFromDocModels_Rag import ExtarctQuestionAndAnswersFromDocResponse_Rag
 
 __all__ = [
     "CHunkTextsModel_Rag",
@@ -20,5 +22,6 @@ __all__ = [
     "ChunkImagesModel_Rag",
     "ExtarctRelationsAndQuestionFromChunkResponseModel_Rag",
     "ExatrctImageIndexFromChunkResponseModel_Rag",
-    "ExatrctImageIndexFromChunkSectionModel_Rag"
+    "ExatrctImageIndexFromChunkSectionModel_Rag",
+    "ExtarctQuestionAndAnswersFromDocResponse_Rag",
 ]

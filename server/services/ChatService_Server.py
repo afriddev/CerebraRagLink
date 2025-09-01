@@ -73,11 +73,11 @@ class ChatService_Server(ChatServiceImpl_Server):
         LLMResponse: Any = await getChatLLM().Chat(
             modelParams=ChatServiceRequestModel(
                 apiKey=GetCerebrasApiKey(),
-                model="llama-4-maverick-17b-128e-instruct",
-                maxCompletionTokens=500,
+                model="llama-3.3-70b",
+                maxCompletionTokens=1000,
                 messages=messages,
-                temperature=0.0,
-                topP=1.0,
+                temperature=0.4,
+                topP=0.9,
                 responseFormat=ChatServiceCerebrasFormatModel(
                     type="json_schema",
                     jsonSchema=ChatServiceCerebrasFormatJsonSchemaModel(
@@ -240,7 +240,7 @@ class ChatService_Server(ChatServiceImpl_Server):
         else:
             graphRagServiceResponse: SearchOnDbResponseModel = (
                 await graphRagSearchService.SearchOnDb_Server(
-                    query=cast(Any, preProcessResponse.cleanquery), db=getDb()
+                    query=cast(Any, preProcessResponse.cleanquery)
                 )
             )
             docs = [doc.doc for doc in graphRagServiceResponse.docs]
@@ -250,7 +250,7 @@ class ChatService_Server(ChatServiceImpl_Server):
                     model="jina-reranker-m0",
                     query=cast(Any, preProcessResponse.cleanquery),
                     docs=docs,
-                    topN=20,
+                    topN=10,
                 )
             )
 

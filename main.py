@@ -1,18 +1,15 @@
-import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from contextlib import asynccontextmanager
-from dbservices import PsqlDb
 from aiservices import RerankingService, EmbeddingService
 from server import GragDocRouter, ChatRouter
 from aiservices import ChatService
 import asyncio
 
-load_dotenv()
+from config.PsqlDbConfig import psqlDb
 
-DATABASE_CONNECTION_STRING = os.getenv("DATABASE_CONNECTION_STRING", "")
-psqlDb = PsqlDb(DATABASE_CONNECTION_STRING)
+load_dotenv()
 
 
 @asynccontextmanager
@@ -44,4 +41,4 @@ EmbeddingService = EmbeddingService()
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("main:server", host="0.0.0.0", port=8001, reload=True)
+    uvicorn.run("main:server", host="0.0.0.0", port=8001, reload=False)

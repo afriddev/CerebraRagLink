@@ -632,6 +632,14 @@
         "documentation": {}
     },
     {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "ChatServiceMessageRoleEnum",
         "importPath": "aiservices.chat.enums",
         "description": "aiservices.chat.enums",
@@ -1151,6 +1159,14 @@
         "documentation": {}
     },
     {
+        "label": "ExtarctQuestionAndAnswersFromDocResponse_Rag",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
+        "isExtraImport": true,
+        "detail": "ragservices.models",
+        "documentation": {}
+    },
+    {
         "label": "ChunkRelationsModel_Rag",
         "importPath": "ragservices.models",
         "description": "ragservices.models",
@@ -1216,6 +1232,14 @@
     },
     {
         "label": "ExatrctImageIndexFromChunkResponseModel_Rag",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
+        "isExtraImport": true,
+        "detail": "ragservices.models",
+        "documentation": {}
+    },
+    {
+        "label": "ExtarctQuestionAndAnswersFromDocResponse_Rag",
         "importPath": "ragservices.models",
         "description": "ragservices.models",
         "isExtraImport": true,
@@ -1521,6 +1545,14 @@
     },
     {
         "label": "BuildGraphFromDocServiceImpl_Rag",
+        "importPath": "ragservices.implementations",
+        "description": "ragservices.implementations",
+        "isExtraImport": true,
+        "detail": "ragservices.implementations",
+        "documentation": {}
+    },
+    {
+        "label": "BuildQaRagFromDocImpl_Rag",
         "importPath": "ragservices.implementations",
         "description": "ragservices.implementations",
         "isExtraImport": true,
@@ -2448,7 +2480,7 @@
         "kind": 6,
         "importPath": "ragservices.implementations.BuildQaRagFromDocServiceImpl_Rag",
         "description": "ragservices.implementations.BuildQaRagFromDocServiceImpl_Rag",
-        "peekOfCode": "class BuildQaRagFromDocImpl_Rag(ABC):\n    @abstractmethod\n    def",
+        "peekOfCode": "class BuildQaRagFromDocImpl_Rag(ABC):\n    @abstractmethod\n    def ExtarctQuesionAndAnsersFromDocText_Rag(\n        self, text: str\n    ) -> ExtarctQuestionAndAnswersFromDocResponse_Rag:\n        pass\n    @abstractmethod\n    async def HandleQaRagBuildingProcess_Rag(self, docPath: str):\n        pass",
         "detail": "ragservices.implementations.BuildQaRagFromDocServiceImpl_Rag",
         "documentation": {}
     },
@@ -2552,6 +2584,15 @@
         "documentation": {}
     },
     {
+        "label": "ExtarctQuestionAndAnswersFromDocResponse_Rag",
+        "kind": 6,
+        "importPath": "ragservices.models.BuildQaRagFromDocModels_Rag",
+        "description": "ragservices.models.BuildQaRagFromDocModels_Rag",
+        "peekOfCode": "class ExtarctQuestionAndAnswersFromDocResponse_Rag(BaseModel):\n    questions: list[str]\n    response: list[str]",
+        "detail": "ragservices.models.BuildQaRagFromDocModels_Rag",
+        "documentation": {}
+    },
+    {
         "label": "BuildGraphFromDocService_Rag",
         "kind": 6,
         "importPath": "ragservices.services.BuildGraphFromDocService_Rag",
@@ -2597,11 +2638,20 @@
         "documentation": {}
     },
     {
+        "label": "BuildQaRagFromDocService_Rag",
+        "kind": 6,
+        "importPath": "ragservices.services.BuildQaRagFromDocService_Rag",
+        "description": "ragservices.services.BuildQaRagFromDocService_Rag",
+        "peekOfCode": "class BuildQaRagFromDocService_Rag(BuildQaRagFromDocImpl_Rag):\n    def ExtarctQuesionAndAnsersFromDocText_Rag(\n        self, text: str\n    ) -> ExtarctQuestionAndAnswersFromDocResponse_Rag:\n        questionList = re.findall(r\"<<R1-START>>(.*?)<<R1-END>>\", text, re.DOTALL)\n        answersList = re.findall(r\"<<R2-START>>(.*?)<<R2-END>>\", text, re.DOTALL)",
+        "detail": "ragservices.services.BuildQaRagFromDocService_Rag",
+        "documentation": {}
+    },
+    {
         "label": "ExtractTextFromDocService",
         "kind": 6,
         "importPath": "ragservices.services.ExtractTextFromDocService_Rag",
         "description": "ragservices.services.ExtractTextFromDocService_Rag",
-        "peekOfCode": "class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):\n    def ExtractTextAndImagesFromXlsx_Rag(self, docPath: str) -> Tuple[str, List[str]]:\n        xls = pd.ExcelFile(docPath)\n        allText: list[str] = []\n        for sheetName in xls.sheet_names:\n            df = cast(Any, pd).read_excel(docPath, sheet_name=sheetName, header=None)\n            for row in df.itertuples(index=False):\n                rowText = \"  \".join(\n                    \"\" if cast(Any, pd).isna(cell) else str(cell) for cell in row\n                )",
+        "peekOfCode": "class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):\n    def ExtractTextAndImagesFromXlsx_Rag(self, docPath: str) -> Tuple[str, List[str]]:\n        xls = pd.ExcelFile(docPath)\n        allText: list[str] = []\n        rowIndex = 1  # start row counter\n        for sheetName in xls.sheet_names:\n            df = cast(Any, pd).read_excel(docPath, sheet_name=sheetName, header=None)\n            for row in df.itertuples(index=False):\n                rowText = \"  \".join(\n                    \"\" if cast(Any, pd).isna(cell) else str(cell) for cell in row",
         "detail": "ragservices.services.ExtractTextFromDocService_Rag",
         "documentation": {}
     },

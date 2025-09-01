@@ -1,3 +1,5 @@
+-- KGRag
+
 CREATE SCHEMA IF NOT EXISTS grag;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE EXTENSION IF NOT EXISTS vector;
@@ -43,3 +45,34 @@ CREATE TABLE grag.chunk_relations (
 -- CREATE INDEX idx_chunks_vec_hnsw        ON grag.chunks          USING hnsw (text_vector      vector_cosine_ops)   WITH (m=16, ef_construction=300);
 -- CREATE INDEX idx_chunkq_vec_hnsw        ON grag.chunk_questions USING hnsw (question_vector  vector_cosine_ops)   WITH (m=16, ef_construction=300);
 -- CREATE INDEX idx_chunkrel_vec_hnsw      ON grag.chunk_relations USING hnsw (relation_vector  vector_cosine_ops)   WITH (m=16, ef_construction=300);
+
+-- KGRag
+
+-- QaRag
+
+CREATE SCHEMA IF NOT EXISTS qa;
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS vector;
+
+CREATE TABLE IF NOT EXISTS qa.answers (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  text TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS qa.questions (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  answer_id UUID NOT NULL,
+  question_text TEXT NOT NULL,
+  question_vector VECTOR(1024) NOT NULL
+);
+
+ANALYZE qa.questions;
+
+CREATE INDEX IF NOT EXISTS idx_questions_vector
+ON qa.questions
+USING ivfflat (question_vector vector_l2_ops)
+WITH (lists = 100);
+
+
+-- QaRag

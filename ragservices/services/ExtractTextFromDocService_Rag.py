@@ -14,15 +14,20 @@ class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):
         xls = pd.ExcelFile(docPath)
         allText: list[str] = []
 
+        rowIndex = 1  # start row counter
+
         for sheetName in xls.sheet_names:
             df = cast(Any, pd).read_excel(docPath, sheet_name=sheetName, header=None)
 
             for row in df.itertuples(index=False):
                 rowText = "  ".join(
                     "" if cast(Any, pd).isna(cell) else str(cell) for cell in row
-                )
-                if rowText.strip():
-                    allText.append(rowText)
+                ).strip()
+
+                if rowText:
+                    wrapped = f"<<R{rowIndex}-START>> {rowText} <<R{rowIndex}-END>>"
+                    allText.append(wrapped)
+                    rowIndex += 1
 
         return "\n".join(allText), []
 
@@ -39,9 +44,7 @@ class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):
 
         return "\n".join(allText), []
 
-    def ExtractTextAndImagesFromDoc_Rag(
-        self, docPath: str
-    ) -> Tuple[str, List[str]]:
+    def ExtractTextAndImagesFromDoc_Rag(self, docPath: str) -> Tuple[str, List[str]]:
         doc: Any = fitz.open(docPath)
         imagesB64: List[str] = []
         imageCounter: int = 1

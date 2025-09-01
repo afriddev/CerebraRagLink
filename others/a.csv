@@ -1,0 +1,143 @@
+What is OPD Desk Lite,OPD Desk Lite is a Outpatient Department where patients visit doctors for treatment and regular medication.
+"Can doctors register patients in OPD, or must users switch to the Registration Module?","Doctors have the option to register patients directly within the OPD interface. They can utilize the ""Patient acceptance by QR"" feature through the button located at the upper right corner of the OPD desk interface, denoted by three lines."
+"What does the background color signify in the ""Registered Patient"" row within the patients list?",Doctors can find detailed explanations in the legends provided on the footer of the OPD desk page.
+"What is the purpose of the ""Status"" column in the OPD desk?","The status indicates whether patients have been attended by the doctor or not. The options include ""Attended"" for those seen by the doctor, ""Waiting"" for those awaiting their turn, and ""Skipped"" for patients who were passed over in the queue if not attended to when called as per their turn."
+How to switch Department in OPD doctor desk?,"When you open the OPD doctor desk screen, the list of patients loaded corresponds to the first department assigned to the current user, sorted in ascending order. To switch to another department, you can typically find a dropdown menu  labeled ""Department/Unit"" or similar, allowing you to select the desired department from a list."
+Can I view a list of all patients registered in a single department in the desk?,"No, HMIS is designed as department and unit-wise. Each department comprises different units, and doctors can only view the list of patients registered in a single unit of the department at a time."
+Is there any option to register a patient in different units of the same department?,"No, a patient can only register once for each department, and they are not allowed to register in multiple units of the same department."
+How to change the registration of a patient from one unit to another unit of the same department?,"There is no direct option to change or transfer a patient from one unit to another unit within the same department. However, the registration clerk can cancel the existing registration and perform a new registration for the required department/unit. This option is available only when the patient's prescription has not been completed. If the prescription has already been done, this option will not be accessible."
+Can a patient register for multiple departments on the same day?,"Yes, a patient can indeed register for multiple departments on the same day. There are no restrictions on this."
+How to view the number of patients registered and attended for the Department/Unit?,"On the OPD doctor desk, you can find the statistics displayed on the upper left corner, showing the total number of patients registered and attended."
+Can I attend to patients simultaneously for different departments and units without switching each time?,"Yes, on the OPD doctor's desk, breside the ""DEPT/UNIT"" label, there is a responsive view button. Clicking on this button opens a new tab with the currently selected department/unit. By utilizing this feature, doctors can switch departments/units and click on the responsive view button to open multiple departments simultaneously in different tabs. This allows them to attend to patients across different departments without the need to switch back and forth constantly."
+Is there any option to attend patients registered for OPD on previous days?,"No, prescriptions can only be done for patients registered on the current date. However, there is an option to view the list of patients from previous days by adjusting the date in the OPD desk."
+How to view the list of patients registered on past dates?,"A report called ""Department Unit Wise Opd Listing"" is available in the OPD module. Within this report, you can select the desired department/unit and date,  the list of patients registered along with their status for the selected unit and date  can be viewed."
+How to identify the gender of patients from the list?,"In the list of patients, there is an infographic provided in the first column indicating the gender. Additionally, the gender is displayed in the gender column along with the age, category, and mobile number of the patients."
+Is there any option to sort the list in the OPD desk?,"Yes, by default, the list is displayed in ascending order based on the queue number of patients in the waiting status, followed by those who have been attended to. Additionally, users can sort the list based on any column in ascending or descending order by clicking on the up/down arrow provided next to each column header."
+Is there any option to search for a patient from the list?,"Yes, there is a search box provided above the list of patients where doctors can search using any free text from the identifiers of the columns available in the list."
+"How to change the status of patients who are not attended from ""Waiting"" to ""Skipped"" from the list?","In the action column of the patient list, there is a button with '>>' that can be clicked to change the status of the patient to ""Skipped""."
+"Is there any option to change the status from ""Skipped"" to ""Waiting""?","No, once a patient's status has been changed to ""Skipped,"" it cannot be reverted back to ""Waiting."""
+"Is there any option to change a patient from ""Waiting"" to ""Attended"" without attending the patient?","No, the status is changed to ""Attended"" only when a prescription is generated. Once a prescription is generated, the ""Attended"" status cannot be reverted back."
+Is there any option to enter vitals by Nursing staff before patient visiting to doctor in OPD?,"Yes, there is an option for nursing staff to enter vitals before the patient visits the doctor in the OPD. Nurses can enter the patient's vitals through the OPD Bay Area."
+How to view vitals recorded by para-medical users for patients registered in OPD from the OPD doctor desk list?,"In the action column of the patient list, click on the second button with the heart symbol to view the vitals recorded by para-medical users."
+Can a doctor record vitals from the list directly without opening the RX page of the patient?,"Yes, the doctor can record vitals directly from the action column of the patient list. They need to click on the second button with the heart symbol, enter the details, and then click on save to record the vitals without opening the RX page."
+How to write a prescription for a patient from the list of patients in the OPD doctor desk?,"In the action column of the patient list, simply click on the ""Rx"" button to begin writing prescriptions for the patient."
+How to verify demographics and identity of a patient from the Rx page?,"On the top of the Rx page, there is a logo of the patient image provided. Click on the logo to expand and view the patient's photo uploaded and approved in the UMID portal. Additionally, you can verify further details such as the patient's name, age, gender, category, mobile number, CR Number, UMID number, health unit opted, and primary card holder details including EMP/PPO number and designation."
+Is there any option to open another department / unit list when viewing Rx page of any patient in another tab?,"Yes, click on Resposive view button on top right of the Rx page to open a new tab for OPD desk."
+How can I switch to the next patient from the Rx page of OPD desk?,"Once the prescription for the current patient is completed and saved, the details of the next patient will be automatically loaded. If the doctor wishes to switch to the next patient without completing a prescription, they can do so by utilizing the arrow marks located in front of the patient's demographics. Clicking on the forward arrow will navigate to the next patient in the queue, while clicking on the backward arrow will navigate to the previous patient based on the queue number."
+Can I switch to a patient by selecting something other than the queue number from Rx page of OPD desk?,"Yes, you can directly switch to another patient irrespective of the queue number. There is an icon located on the right top corner ""Patient List"". Click on the patient list and search for the patient's name. Once you find the patient's name, click on it to view and prescribe for the selected patient."
+"How can I view the patient summary including previous diagnoses, medication usage, demographic details, etc., in the Rx page?","To access the patient summary:
+1. Go to the Rx page.
+2. Navigate to the ""Vitals and General Examination"" tab.
+3. Click on the ""OPD EMR"" button. Here, you'll find all the summarized details of the patient from past prescriptions categorized for easy reference.
+
+Additionally:
+1. Look for the option labeled ""Patient Summary"" in the top right corner of the Rx page.
+2. Click on this button to access a comprehensive overview of the patient's last visit, complaints, diagnoses, current medication, last investigations performed, and demographic details."
+Are there any keyboard shortcuts to be used in the Rx page?,"Yes, there is a button labeled as ""I"" located on the top right corner of the Rx page. Clicking on that button to view list of shortcuts and utilize the available keyboard shortcuts on the Rx page."
+How to view vitals entered by paramedical staff in the RX page?,"1. Navigate to the ""Vitals and General Examination"" tab on the RX page.
+2. Look for the button labeled ""Modify Vitals / GE"". Click on this button to access the details of vitals already entered by the paramedical staff.
+3. Here, you can view the vitals and make any necessary edits if required."
+How to enter vitals in the RX page if paramedical staff have not entered the vitals?,"1. Go to the ""Vitals and General Examination"" tab on the RX page.
+2. Look for a button labeled ""Modify Vitals/GE"" or similar. Click on this button.
+3. Enter the vitals data as required.
+4. Once you have entered the vitals, click on the ""Save"" button to record the vitals on the OPD RX page."
+How to view past prescriptions for the patient from the OPD RX page?,"1. In the ""Vitals and General Examination"" tab, there is a button labeled ""Past RX."" Click on this button to view all previous prescriptions made for the patient. You can click on the  department and date to access specific prescriptions.
+
+2. Alternatively, you can access the patient's complete Electronic Medical Record (EMR) by clicking on the ""EMR"" button next to the patient's name on the top of the RX page. In the EMR, navigate to the ""Encounters"" section, where you can find a complete list of encounters the patient has had across all hospitals in the HMIS network. If a prescription is available for a specific encounter, you will see a PDF icon. Click on this icon to view the prescription. You can also scroll down on the encounters page to view IPD encounters, discharge summaries, and prescriptions from the patient's admissions to hospital wards."
+Is there any option to repeat the treatment of the patient as similar to the past prescription done?,"In the ""Vitals and General Examination"" tab, there is a dropdown box labeled ""Load Past RX."" Click on this dropdown and select the past prescription you wish to repeat. The prescription with the selected date will be automatically loaded onto the current RX page. You can then verify the past RX loaded, make any necessary edits or additions, and remove any unwanted entries. Once you have made the modifications, save the prescription."
+Unable to load past RX of other department.,"The loading of past RX is restricted to within the department. This decision was made by higher officials to ensure that when a doctor from another department repeats a prescription, it is done with oversight or examination by the doctor within that department."
+How can we create Bookmark?,"During the prescription process for any patient, if doctors believe that the prescription should be saved as a Bookmark for future use with similar diagnoses and treatments, they can click on the ""Bookmark this RX"" button after completing the prescription. There is also a checkbox option to allow the bookmark to be accessible within the same department or across all departments.  Also doctor can specify a Name to bookmark to identify."
+How to load bookmarked prescriptions in OPD prescription?,"In the Vitals and General Examination tab of the OPD desk, there is a ""search bookmarks"" text box. Doctors can type the name of the bookmark they want to load and then select it to load the bookmarked prescription."
+"Bookmarks are missing after some days, why?","Bookmarks are limited to 25 per department, following a first-in-first-out basis. If a doctor creates new bookmarks beyond this limit, the first ones created will no longer be displayed."
+Can I view a bookmark before loading it into the prescription?,"Yes, in the Vitals and General Examination tab of the OPD desk, click on the green button next to the ""search bookmarks"" text box. Here, you'll find a list of bookmarks saved for that particular department, showing the name of the bookmark along with its description and creator. Click on the ""+"" button next to the bookmark name to view the details of the prescription saved for that bookmark."
+How to delete bookmark?,"Bookmarks can only be deleted by the user who created them. Other users are not permitted to delete bookmarks created by different doctors. To delete a bookmark, click on the green button next to the ""search bookmarks"" text box. A list of bookmarks will be displayed. In the list, a ""delete"" button will be visible in the action column for the bookmarks created by the current user. Click on the delete button to remove the bookmark."
+Is there any option to restore deleted bookmark?,"No, once bookmark is deleted, no option to restore."
+How to add data in a standard template based on the department and diagnosis in OPD desk?,Templates can be configured according to the requirements shared to the Support team
+Where does the data recorded in OPD templates can be viewed? ,"The printout of templates can be taken at the time saved, later it is visible in OPD EMR available in the Rx Page"
+Lab Reports of the patient are visible in Rx Page,An Option with Lab Reports is available in Investigation/Radiology Column
+PAC can be raised by OPD Doctor in Rx,PAC's can be raised by Doctor by suggesting the Anaesthesia and the proposed operation to the patient
+What does  Referral/Cross Consultation mean,"It refers to the Internal,external Railway Hospitals and private Empanelled Hospitals based on the Condition of the patient"
+Where to find the Patient complete medical record ,"There is a option like ""EMR desk "" in OPD module and also EMR can access directly through opd desk lite."
+What is the meaning of ONLY FOR CHRONIC DISEASE .,The Patient beneficiaries available for only chronic disease as he will opted out for FMA option in UMID and he is not applicable for opd eligilbe
+Is there any option to see test results  before report generated,"Doctor can see test results in  ""Sample wise lab reports""  in opd desk lite even though test is in inprocess."
+Can we see the list of patients registered for a department a week apart,"Due to feasibility of OPD patient list viewing is restricted to two days i.e, today and the day before."
+Doctor wants to change the medicine dosages after prescribed ,Doctor can revoke the medicine and rewrite the medicine before  drugs are issued to patient
+If we wants to write standard diagnosis to the patient which one is use ICD code or SNOMED CT,"Doctor can use either of the option between ICD Code or SNOMED CT, however the data will be stored as code in the Backend"
+After raising test by the doctor from the health unit to perform the test in external railway hospital but those test are not reflected in sample collection in reffered hospital,"Cross referral of Investigations are not attainable, this may keep more load on the page"
+Is there any option to view/load the medicine advised on discharge in OPD ,"Doctor can  view drugs advised on  last discharge in ""last prescribed"" option available in Drugs/Advices"
+What indicates to doctor whether patient has taken medicine or not,"There is a option like ""Current medication"" in opd desk lite to view the cuurent active medication of the patinet"
+Unale to prescribe the items and consumables to the patients,"There are Vast number of drugs and Items available, due to page constraints the committee has restricted to View the Drugs in Rx Page"
+Can  I get the patient count with diagnosis wise,"There is a report like ""diagnosis wise  patient count"" in reports under opd module"
+Can I get the  count  how many prescripitons done in a day,Report with name Dr Wise Prescription Done Stats is avilable in OPD Module so as to Doctor can view the number of patients they have attended
+How QMS display works ,"QMS refer to Queue Management System, where the list of patients being attended in the department are shown and unless the patient is skipped the least number of the unattended patient will be shown in the Display"
+where does the patient reffered from  another department to current department reflect,"After opening the opd desk lite ,an option of Referral acceptance is availble beside the Dept/Unit and the doctor can view and accept the patient"
+Regarding to enable the Microphone option in OPD desk lite.,Explained to the user that the Microphone option is under configuration it will be enabling shortly.
+Regarding drugs issued to the patient is not displaying in EMR desk lite.,"In EMR Desk Lite, presently the Medication (Drugs issued to the patients) is not displaying & this issue is forwarded to concerned team."
+Regarding provision of all  the Items/ consumables for the patients is to be provided as same the drugs prescribing for the patients in OPD desk lite.,"Explained to the user that, main usage of items/consumable are been added apart from all the items/cosumable, it will be available shortly."
+Regarding the list of patient as per the queue numbers should be stable in ascending order format only.,"Explained to the user, in OPD desk lite that the queue number can able to arrange as FIFO & also as well as LIFO. The adjustment of the queue number can be done by using dropdown arrow."
+Regarding the list of prescriptions are not stable as per the dating (OLD Date to NEW Date) order format in EMR DESK LITE.,"Explained to the user, in EMR desk lite that the precriptions dates can be adjustable by using the drop down arrow."
+What is the typical loading time for Opd Desk Lite?,"The typical loading time for Opd Desk Lite is approximately 5-10 seconds, depending on the performance of the device and the internet connection speed."
+Have users encountered situations in Opd Desk Lite where past prescriptions shown within the patient's record for a specific date do not appear in the dropdown menu for loading past prescriptions?,in Opd Desk Lite occurs only when the patient visits the same hospital and the same unit.
+How to identify patient is with FMA or not ?,"if patient is FMA, after patient information , left corner displays: ""OPD Eligible - Only for chronic diseases."" in opd desk lite"
+How to check lab reports ?,"In the Opd desk, you'll find the ""Lab Reports"" option conveniently located within the investigation column. This feature allows to review all generated lab reports for a specific patient,"
+Required to create test profile in opd desk  for easy access,"all test profiles created in admin portal only, required a mail confirmation from Respected Nodal officer/Hospital admin"
+Is there a way to determine if the drugs prescribed during the last visit are currently available in the pharmacy for prescribing today?,"After loading the past prescription at the OPD desk, you'll find an option labeled ""Check Availability"" in the drugs section. This feature allows you to verify whether the drugs prescribed during the last visit are currently available in the Hospital, streamlining the process of prescribing medications for today's visit"
+What is the process for checking whether a patient has taken the last prescribed medicine from the pharmacy ?,"Within the drugs section of the OPD desk Lite, you'll find the ""Current Medication"" option. From there, you can check the issued quantity of the prescribed medication, providing essential information regarding the amount dispensed to the patient from the pharmacy."
+How to prescribe consumable items to patient in opd module ?,"When prescribing consumable items in the OPD module, clicking on the ""Non Listed Drugs/Consumables"" option under the drugs section allows for the prescription of these items. However, it's noteworthy that this information might not be directly visible in the pharmacist module. Instead, it typically appears under treatment details. Therefore, pharmacists need to refer to the treatment details section to identify any prescribed consumable items and ensure they are appropriately dispensed to the patient."
+How to remove prescribed drug from prescription ?,"To remove a prescribed drug from a prescription within the OPD module, you can reopen the patient's prescription and locate the ""Revoke"" option under the drugs section. Clicking on this option allows you to remove the prescribed drug from the prescription. After removing the drug, remember to save the updated prescription again to ensure that the changes are applied and recorded accurately."
+How to give admission advice in opd ?,"In the Opd desk Lite, you can provide admission advice by accessing the Admission Advice section. Here, you'll select the corresponding department and ward for admission. After making these selections, ensure to save the prescription to complete the admission advice process."
+How can I check the availability of free beds in the OPD module?,"To check the availability of vacant beds in the OPD desk Lite under the admission advice section, follow these steps:
+
+Select the corresponding department.
+Choose the unit.
+Select the specific ward.
+Click on the ""Bed Status"" option.
+This action will provide you with information on the availability of beds in the selected ward, helping to facilitate the admission process effectively."
+What steps should be taken to refer a patient to another department within the OPD module?,"To refer a patient to another department within the OPD module, follow these steps:
+
+Navigate to the referral section.
+Click on the ""Routine"" option.
+Select the desired department to which the patient is being referred.
+Click on the ""Add"" button to confirm the referral.
+Save the prescription to finalize the referral process."
+What steps should be taken to refer a patient to pvt Hospital within the OPD module?,"To refer a patient to a private hospital within the OPD module, follow these steps:
+
+Navigate to the referral section.
+Click on the ""Pvt Empanelled Hospital"" option.
+Select the specific department.
+Choose the institute where the patient will be referred.
+Enter the number of days for the referral, if applicable.
+Select the reason for the referral.
+Choose the referral type.
+Click on the ""Add"" button to confirm the referral.
+Save the prescription to finalize the referral process.
+Following these steps ensures a smooth process for referring patients to private hospitals for further treatment or consultation.
+
+
+
+"
+How do I add tests for a referral to a private diagnosis/hospital within the OPD module?,"In the OPD module, under the referral section, you'll find the option to add referral tests located after the referral note box. This feature allows you to include any necessary tests or investigations that need to be conducted as part of the referral process to a private diagnosis or hospital."
+How to check drug availability in OPD Dr desk,In there one option is available show all and show available there we can check the drugs
+How to register the patient by doctor,"Click on patient acceptance by QR and enter the patient cr number and then submit,then the patient has registered for particular department"
+"If a doctor mistakenly prescribes any medicine, how can it be deleted?", one option is available to revoke the medicine before it is issued.
+How to check patient overview in OPD desk? ,Patient details all are available in EMR(Electronically Medical Record) desk.
+How to cancel or modify the prescribed medicines in OPD desk?,"There is Revoke option. But, we can reovke the drugs before issuing the medicines to patient from Pharmacy."
+How to register the patient by the Doctor?,"Doctor have two options i.e, 
+1.Patient Revisit service
+2.Patient Acceptane by QR option in OPD desk lite."
+How to raise investigations for Radiology department?,Doctors can raise the Radiological Investigations from Rx Page by entering the name from the dropdown
+Why sometimes its taking more time to open Patient prescription in OPD desk?,"The amount of time it takes to open the subscription page is determined by the load on the server; if more users are pushed to the limit to open at the same time, the loading time increases."
+How to refer the pateint to Railway Hospital or Empanelled hospital?,"To Railway Hospital:
+In Referral/Cross consultation tab, select Refer type as External Hospital and fill other details like Zone, division, Hospital Name and Department, click on add and save the prescription.
+To Empanelled Hospital:
+In Referral/Cross consultation tab, select Refer type as PVT Empanelled Hospital and fill other details like Refer type, Hospital Name and Department, click on add and save the prescription."
+Is there any Disease wise report available in OPD?,Reports can be configured as per the requirement recevied to the support team
+What is meant by Pen with FMA?,Its an eligible Category selected by the Pensioner for Fixed Medical allowances and are elgible only for chronic disease in OPD
+What is the difference between Emp and Emp (General) in Patient Category?,Employee (General) can avail the Diet Charges for free of cost in Railway Hospital where in the Employee has to pay the Diet Charges as per the Category allotted
+Why items/Consumables are not refelecting in OPD desk lite to prescribe to patient?,"There are Vast number of drugs and Items available, due to page constraints the committee has restricted to View the Drugs in Rx Page"
+Why some patients are coming to again raise LP eventhough the same drug is already raised?,If the raised LP Medicines is not taken by the patient with in 7 days of the prescribed then the LP must be raised again Hence he has to visit again
+How to do admission the paitent from OPD desk?,An admission advice can be raised by selecting department unit and ward in Rx Page based on the availbility pf vacant beda available in Bed status popup
+How to check drug availablitiy from OPD desk?,Option named- Check availability is shown in Drugs/Advices and User can select the Drugs available in HMIS
+What all store quantity is shown in Rx Page,The Quantity shown in OPD desk Lite are the cumulative data of the stores available in Hospital except the ward stores
+Can we write Multiple tests at a time?,Profiles can be configured wherein the tests from diiferednt labs can be added
+For some patients unable to raise sick from OPD desk?,"Only working employees are eligile to take the sick and Fit Certificates, the dependants cannot be issued"

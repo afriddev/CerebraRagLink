@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
-from ragservices.models import ExtarctQuestionAndAnswersFromDocResponse_Rag
+from ragservices.models import ExtarctQuestionAndAnswersFromDocResponse_Rag,HandleQaRagBuildingProcessResponseModel_Rag
+from aiservices import EmbeddingResponseModel
 
 
 class BuildQaRagFromDocImpl_Rag(ABC):
@@ -11,5 +12,11 @@ class BuildQaRagFromDocImpl_Rag(ABC):
         pass
 
     @abstractmethod
-    async def HandleQaRagBuildingProcess_Rag(self, docPath: str):
+    async def ConvertTextsToVectorsFrom_Rag(
+        self, texts: list[str], retryLoopIndex: int
+    ) -> EmbeddingResponseModel:
+        pass
+
+    @abstractmethod
+    async def HandleQaRagBuildingProcess_Rag(self, docPath: str) -> HandleQaRagBuildingProcessResponseModel_Rag:
         pass

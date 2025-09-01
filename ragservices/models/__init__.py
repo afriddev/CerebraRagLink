@@ -11,7 +11,8 @@ from .BuildGraphFromDocModels_Rag import (
 )
 
 
-from .BuildQaRagFromDocModels_Rag import ExtarctQuestionAndAnswersFromDocResponse_Rag
+from .BuildQaRagFromDocModels_Rag import ExtarctQuestionAndAnswersFromDocResponse_Rag,HandleQaRagBuildingProcessResponseModel_Rag
+
 
 __all__ = [
     "CHunkTextsModel_Rag",
@@ -24,4 +25,5 @@ __all__ = [
     "ExatrctImageIndexFromChunkResponseModel_Rag",
     "ExatrctImageIndexFromChunkSectionModel_Rag",
     "ExtarctQuestionAndAnswersFromDocResponse_Rag",
+    "HandleQaRagBuildingProcessResponseModel_Rag"
 ]

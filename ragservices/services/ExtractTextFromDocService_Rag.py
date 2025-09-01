@@ -11,17 +11,19 @@ from ragservices.implementations import ExtractTextFromDocServiceImpl_Rag
 class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):
 
     def ExtractTextAndImagesFromXlsx_Rag(self, docPath: str) -> Tuple[str, List[str]]:
-        xls = pd.ExcelFile(docPath)
+        xls = pd.ExcelFile(docPath, engine="openpyxl")  # specify engine
         allText: list[str] = []
 
         rowIndex = 1  # start row counter
 
         for sheetName in xls.sheet_names:
-            df = cast(Any, pd).read_excel(docPath, sheet_name=sheetName, header=None)
+            df = cast(Any, pd).read_excel(
+                docPath, sheet_name=sheetName, header=None, engine="openpyxl"
+            )
 
             for row in df.itertuples(index=False):
                 rowText = "  ".join(
-                    "" if cast(Any, pd).isna(cell) else str(cell) for cell in row
+                    "" if pd.isna(cell) else str(cell) for cell in row
                 ).strip()
 
                 if rowText:
@@ -36,11 +38,13 @@ class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):
         allText: list[str] = []
 
         for row in df.itertuples(index=False):
-            rowText = "  ".join(
-                "" if cast(Any, pd).isna(cell) else str(cell) for cell in row
-            )
-            if rowText.strip():
-                allText.append(rowText)
+            question = "" if pd.isna(row[0]) else str(row[0]).strip()
+            answer = "" if pd.isna(row[1]) else str(row[1]).strip()
+
+            if question:
+                allText.append(f"<<R1-START>> {question} <<R1-END>>")
+            if answer:
+                allText.append(f"<<R2-START>> {answer} <<R2-END>>")
 
         return "\n".join(allText), []
 

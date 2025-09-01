@@ -1,7 +1,9 @@
 from .BuildGraphFromDocService_Rag import BuildGraphFromDocService_Rag
 from .ExtractTextFromDocService_Rag import ExtractTextFromDocService
+from .BuildQaRagFromDocService_Rag import BuildQaRagFromDocService_Rag
 
-__all__ =  [
+__all__ = [
     "BuildGraphFromDocService_Rag",
-    "ExtractTextFromDocService"
+    "ExtractTextFromDocService",
+    "BuildQaRagFromDocService_Rag",
 ]

@@ -49,11 +49,6 @@ def getRankingService():
     return RerankingService
 
 
-def getDb():
-    from main import psqlDb
-
-    return psqlDb
-
 
 class ChatService_Server(ChatServiceImpl_Server):
 

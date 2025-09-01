@@ -2446,10 +2446,10 @@
     {
         "label": "BuildQaRagFromDocImpl_Rag",
         "kind": 6,
-        "importPath": "ragservices.implementations.BuildQaRagFromDocImpl_Rag",
-        "description": "ragservices.implementations.BuildQaRagFromDocImpl_Rag",
-        "peekOfCode": "class BuildQaRagFromDocImpl_Rag(ABC):",
-        "detail": "ragservices.implementations.BuildQaRagFromDocImpl_Rag",
+        "importPath": "ragservices.implementations.BuildQaRagFromDocServiceImpl_Rag",
+        "description": "ragservices.implementations.BuildQaRagFromDocServiceImpl_Rag",
+        "peekOfCode": "class BuildQaRagFromDocImpl_Rag(ABC):\n    @abstractmethod\n    def",
+        "detail": "ragservices.implementations.BuildQaRagFromDocServiceImpl_Rag",
         "documentation": {}
     },
     {

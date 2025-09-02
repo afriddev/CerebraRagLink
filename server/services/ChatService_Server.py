@@ -22,7 +22,7 @@ from server.enums import (
     ChatServicePreProcessEnums_Server,
     ChatServicePreProcessRouteEnums_Server,
 )
-from server.services.GraphRagSearchService_Server import GraphRagSearchService_Server
+from server.services.RagSearchService_Server import RagSearchService_Server
 from server.utils.ChatServiceSystemPrompt_Server import (
     ChatServiceAbusiveUserQuerySystemPrompt_Server,
     ChatServiceConfidentialUserQuerySystemPrompt_Server,
@@ -34,7 +34,7 @@ import json
 
 
 RetryLoopIndexLimit = 3
-graphRagSearchService = GraphRagSearchService_Server()
+RagSearchService = RagSearchService_Server()
 
 
 def getChatLLM():
@@ -47,7 +47,6 @@ def getRankingService():
     from main import RerankingService
 
     return RerankingService
-
 
 
 class ChatService_Server(ChatServiceImpl_Server):
@@ -68,10 +67,10 @@ class ChatService_Server(ChatServiceImpl_Server):
         LLMResponse: Any = await getChatLLM().Chat(
             modelParams=ChatServiceRequestModel(
                 apiKey=GetCerebrasApiKey(),
-                model="llama-3.3-70b",
+                model="llama-4-scout-17b-16e-instruct",
                 maxCompletionTokens=1000,
                 messages=messages,
-                temperature=0.4,
+                temperature=0.2,
                 topP=0.9,
                 responseFormat=ChatServiceCerebrasFormatModel(
                     type="json_schema",
@@ -157,7 +156,7 @@ class ChatService_Server(ChatServiceImpl_Server):
                     maxCompletionTokens=5000,
                     messages=messages,
                     stream=True,
-                    temperature=0.3,
+                    temperature=0.8,
                     topP=0.9,
                 )
             )
@@ -210,7 +209,6 @@ class ChatService_Server(ChatServiceImpl_Server):
                         content=ChatServiceConfidentialUserQuerySystemPrompt_Server,
                     )
                 )
-            
 
             if preProcessResponse.status == ChatServicePreProcessEnums_Server.OK:
                 messages.append(
@@ -233,12 +231,12 @@ class ChatService_Server(ChatServiceImpl_Server):
                 iter([b"Sorry, Something went wrong !. Please Try again?"])
             )
         else:
-            graphRagServiceResponse: SearchOnDbResponseModel = (
-                await graphRagSearchService.SearchOnDb_Server(
+            ragServiceResponse: SearchOnDbResponseModel = (
+                await RagSearchService.SearchOnDb_Server(
                     query=cast(Any, preProcessResponse.cleanquery)
                 )
             )
-            docs = [doc.doc for doc in graphRagServiceResponse.docs]
+            docs = [doc.matchedText for doc in ragServiceResponse.docs]
 
             topRerankingDocsResponse = await getRankingService().FindRankingScore(
                 RerankingRequestModel(
@@ -262,13 +260,13 @@ class ChatService_Server(ChatServiceImpl_Server):
 
                 for item in topK:
                     index = item.index
-                    doc = docs[index]
+                    doc = ""
+                    doc += f"Matched Text: {ragServiceResponse.docs[index].matchedText}\nContext: {ragServiceResponse.docs[index].contextText}"
 
-                    for img in graphRagServiceResponse.docs[index].images:
+                    for img in ragServiceResponse.docs[index].images:
                         doc += f"\nImage:\n- Description: {img.description}\n- URL: {img.url}"
 
                     topDocs.append(doc)
-            
 
             systemInst = f"""
                 # Retrieved docs

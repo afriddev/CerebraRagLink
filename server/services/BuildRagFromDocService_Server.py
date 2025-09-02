@@ -37,7 +37,7 @@ class BuildRagFromDocService_Server(BuildRagFromDocServiceImpl_Server):
 
                 await conn.executemany(
                     "INSERT INTO qa.questions (answer_id,question_text,question_vector) VALUES ($1, $2, $3)",
-                    answers,
+                    questions,
                 )
         except Exception as e:
             print(e)

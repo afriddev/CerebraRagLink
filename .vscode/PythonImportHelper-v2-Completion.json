@@ -472,6 +472,22 @@
         "documentation": {}
     },
     {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "List",
         "importPath": "typing",
         "description": "typing",
@@ -521,14 +537,6 @@
     },
     {
         "label": "cast",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -1101,14 +1109,6 @@
         "documentation": {}
     },
     {
-        "label": "PsqlDb",
-        "importPath": "dbservices",
-        "description": "dbservices",
-        "isExtraImport": true,
-        "detail": "dbservices",
-        "documentation": {}
-    },
-    {
         "label": "asyncpg",
         "kind": 6,
         "isExtraImport": true,
@@ -1160,6 +1160,14 @@
     },
     {
         "label": "ExtarctQuestionAndAnswersFromDocResponse_Rag",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
+        "isExtraImport": true,
+        "detail": "ragservices.models",
+        "documentation": {}
+    },
+    {
+        "label": "HandleQaRagBuildingProcessResponseModel_Rag",
         "importPath": "ragservices.models",
         "description": "ragservices.models",
         "isExtraImport": true,
@@ -1247,6 +1255,14 @@
         "documentation": {}
     },
     {
+        "label": "HandleQaRagBuildingProcessResponseModel_Rag",
+        "importPath": "ragservices.models",
+        "description": "ragservices.models",
+        "isExtraImport": true,
+        "detail": "ragservices.models",
+        "documentation": {}
+    },
+    {
         "label": "EmbeddingResponseModel",
         "importPath": "aiservices",
         "description": "aiservices",
@@ -1256,6 +1272,14 @@
     },
     {
         "label": "ChatServiceMessageModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingResponseModel",
         "importPath": "aiservices",
         "description": "aiservices",
         "isExtraImport": true,
@@ -1376,6 +1400,30 @@
     },
     {
         "label": "EmbeddingResponseModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingResponseEnum",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingResponseModel",
+        "importPath": "aiservices",
+        "description": "aiservices",
+        "isExtraImport": true,
+        "detail": "aiservices",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingService",
         "importPath": "aiservices",
         "description": "aiservices",
         "isExtraImport": true,
@@ -1535,6 +1583,22 @@
         "documentation": {}
     },
     {
+        "label": "uuid4",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "UUID",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
         "label": "re",
         "kind": 6,
         "isExtraImport": true,
@@ -1618,6 +1682,22 @@
         "documentation": {}
     },
     {
+        "label": "ExtractTextFromDocService",
+        "importPath": "ragservices.services.ExtractTextFromDocService_Rag",
+        "description": "ragservices.services.ExtractTextFromDocService_Rag",
+        "isExtraImport": true,
+        "detail": "ragservices.services.ExtractTextFromDocService_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractTextFromDocService",
+        "importPath": "ragservices.services.ExtractTextFromDocService_Rag",
+        "description": "ragservices.services.ExtractTextFromDocService_Rag",
+        "isExtraImport": true,
+        "detail": "ragservices.services.ExtractTextFromDocService_Rag",
+        "documentation": {}
+    },
+    {
         "label": "base64",
         "kind": 6,
         "isExtraImport": true,
@@ -1659,14 +1739,6 @@
         "description": "langchain_text_splitters",
         "isExtraImport": true,
         "detail": "langchain_text_splitters",
-        "documentation": {}
-    },
-    {
-        "label": "ExtractTextFromDocService",
-        "importPath": "ragservices.services.ExtractTextFromDocService_Rag",
-        "description": "ragservices.services.ExtractTextFromDocService_Rag",
-        "isExtraImport": true,
-        "detail": "ragservices.services.ExtractTextFromDocService_Rag",
         "documentation": {}
     },
     {
@@ -1719,7 +1791,7 @@
         "documentation": {}
     },
     {
-        "label": "BuildGraphRagFromDocService_Server",
+        "label": "BuildRagFromDocService_Server",
         "importPath": "server.services",
         "description": "server.services",
         "isExtraImport": true,
@@ -1863,7 +1935,7 @@
         "documentation": {}
     },
     {
-        "label": "BuildGraphRagFromDocServiceImpl_Server",
+        "label": "BuildRagFromDocServiceImpl_Server",
         "importPath": "server.serviceimplementations",
         "description": "server.serviceimplementations",
         "isExtraImport": true,
@@ -1879,7 +1951,7 @@
         "documentation": {}
     },
     {
-        "label": "GraphRagSearchServiceImpl_Server",
+        "label": "RagSearchServiceImpl_Server",
         "importPath": "server.serviceimplementations",
         "description": "server.serviceimplementations",
         "isExtraImport": true,
@@ -1903,6 +1975,22 @@
         "documentation": {}
     },
     {
+        "label": "BuildQaRagFromDocService_Rag",
+        "importPath": "ragservices",
+        "description": "ragservices",
+        "isExtraImport": true,
+        "detail": "ragservices",
+        "documentation": {}
+    },
+    {
+        "label": "HandleQaRagBuildingProcessResponseModel_Rag",
+        "importPath": "ragservices",
+        "description": "ragservices",
+        "isExtraImport": true,
+        "detail": "ragservices",
+        "documentation": {}
+    },
+    {
         "label": "BuildGraphFromDocService_Rag",
         "importPath": "ragservices",
         "description": "ragservices",
@@ -1911,11 +1999,35 @@
         "documentation": {}
     },
     {
-        "label": "GraphRagSearchService_Server",
-        "importPath": "server.services.GraphRagSearchService_Server",
-        "description": "server.services.GraphRagSearchService_Server",
+        "label": "psqlDb",
+        "importPath": "config.PsqlDbConfig",
+        "description": "config.PsqlDbConfig",
         "isExtraImport": true,
-        "detail": "server.services.GraphRagSearchService_Server",
+        "detail": "config.PsqlDbConfig",
+        "documentation": {}
+    },
+    {
+        "label": "psqlDb",
+        "importPath": "config.PsqlDbConfig",
+        "description": "config.PsqlDbConfig",
+        "isExtraImport": true,
+        "detail": "config.PsqlDbConfig",
+        "documentation": {}
+    },
+    {
+        "label": "psqlDb",
+        "importPath": "config.PsqlDbConfig",
+        "description": "config.PsqlDbConfig",
+        "isExtraImport": true,
+        "detail": "config.PsqlDbConfig",
+        "documentation": {}
+    },
+    {
+        "label": "RagSearchService_Server",
+        "importPath": "server.services.RagSearchService_Server",
+        "description": "server.services.RagSearchService_Server",
+        "isExtraImport": true,
+        "detail": "server.services.RagSearchService_Server",
         "documentation": {}
     },
     {
@@ -1948,22 +2060,6 @@
         "description": "server.utils.ChatServiceSystemPrompt_Server",
         "isExtraImport": true,
         "detail": "server.utils.ChatServiceSystemPrompt_Server",
-        "documentation": {}
-    },
-    {
-        "label": "psqlDb",
-        "importPath": "config.PsqlDbConfig",
-        "description": "config.PsqlDbConfig",
-        "isExtraImport": true,
-        "detail": "config.PsqlDbConfig",
-        "documentation": {}
-    },
-    {
-        "label": "psqlDb",
-        "importPath": "config.PsqlDbConfig",
-        "description": "config.PsqlDbConfig",
-        "isExtraImport": true,
-        "detail": "config.PsqlDbConfig",
         "documentation": {}
     },
     {
@@ -2480,7 +2576,7 @@
         "kind": 6,
         "importPath": "ragservices.implementations.BuildQaRagFromDocServiceImpl_Rag",
         "description": "ragservices.implementations.BuildQaRagFromDocServiceImpl_Rag",
-        "peekOfCode": "class BuildQaRagFromDocImpl_Rag(ABC):\n    @abstractmethod\n    def ExtarctQuesionAndAnsersFromDocText_Rag(\n        self, text: str\n    ) -> ExtarctQuestionAndAnswersFromDocResponse_Rag:\n        pass\n    @abstractmethod\n    async def HandleQaRagBuildingProcess_Rag(self, docPath: str):\n        pass",
+        "peekOfCode": "class BuildQaRagFromDocImpl_Rag(ABC):\n    @abstractmethod\n    def ExtarctQuesionAndAnsersFromDocText_Rag(\n        self, text: str\n    ) -> ExtarctQuestionAndAnswersFromDocResponse_Rag:\n        pass\n    @abstractmethod\n    async def ConvertTextsToVectorsFrom_Rag(\n        self, texts: list[str], retryLoopIndex: int\n    ) -> EmbeddingResponseModel:",
         "detail": "ragservices.implementations.BuildQaRagFromDocServiceImpl_Rag",
         "documentation": {}
     },
@@ -2588,7 +2684,16 @@
         "kind": 6,
         "importPath": "ragservices.models.BuildQaRagFromDocModels_Rag",
         "description": "ragservices.models.BuildQaRagFromDocModels_Rag",
-        "peekOfCode": "class ExtarctQuestionAndAnswersFromDocResponse_Rag(BaseModel):\n    questions: list[str]\n    response: list[str]",
+        "peekOfCode": "class ExtarctQuestionAndAnswersFromDocResponse_Rag(BaseModel):\n    questions: list[str]\n    answers: list[str]\nclass HandleQaRagBuildingProcessResponseModel_Rag(\n    ExtarctQuestionAndAnswersFromDocResponse_Rag\n):\n    questionVectors: list[list[float]]",
+        "detail": "ragservices.models.BuildQaRagFromDocModels_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "HandleQaRagBuildingProcessResponseModel_Rag",
+        "kind": 6,
+        "importPath": "ragservices.models.BuildQaRagFromDocModels_Rag",
+        "description": "ragservices.models.BuildQaRagFromDocModels_Rag",
+        "peekOfCode": "class HandleQaRagBuildingProcessResponseModel_Rag(\n    ExtarctQuestionAndAnswersFromDocResponse_Rag\n):\n    questionVectors: list[list[float]]",
         "detail": "ragservices.models.BuildQaRagFromDocModels_Rag",
         "documentation": {}
     },
@@ -2642,7 +2747,25 @@
         "kind": 6,
         "importPath": "ragservices.services.BuildQaRagFromDocService_Rag",
         "description": "ragservices.services.BuildQaRagFromDocService_Rag",
-        "peekOfCode": "class BuildQaRagFromDocService_Rag(BuildQaRagFromDocImpl_Rag):\n    def ExtarctQuesionAndAnsersFromDocText_Rag(\n        self, text: str\n    ) -> ExtarctQuestionAndAnswersFromDocResponse_Rag:\n        questionList = re.findall(r\"<<R1-START>>(.*?)<<R1-END>>\", text, re.DOTALL)\n        answersList = re.findall(r\"<<R2-START>>(.*?)<<R2-END>>\", text, re.DOTALL)",
+        "peekOfCode": "class BuildQaRagFromDocService_Rag(BuildQaRagFromDocImpl_Rag):\n    def __init__(self):\n        self.RetryLoopIndexLimit = 3\n        self.batchLength = 50\n    def ExtarctQuesionAndAnsersFromDocText_Rag(\n        self, text: str\n    ) -> ExtarctQuestionAndAnswersFromDocResponse_Rag:\n        questionList = re.findall(r\"<<C1-START>>(.*?)<<C1-END>>\", text, re.DOTALL)\n        answersList = re.findall(r\"<<C2-START>>(.*?)<<C2-END>>\", text, re.DOTALL)\n        additionalAnswer = re.findall(r\"<<C3-START>>(.*?)<<C3-END>>\", text, re.DOTALL)",
+        "detail": "ragservices.services.BuildQaRagFromDocService_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "EmbeddingService_Rag",
+        "kind": 5,
+        "importPath": "ragservices.services.BuildQaRagFromDocService_Rag",
+        "description": "ragservices.services.BuildQaRagFromDocService_Rag",
+        "peekOfCode": "EmbeddingService_Rag = EmbeddingService()\nExtractedTextFromDocService_rag = ExtractTextFromDocService()\nclass BuildQaRagFromDocService_Rag(BuildQaRagFromDocImpl_Rag):\n    def __init__(self):\n        self.RetryLoopIndexLimit = 3\n        self.batchLength = 50\n    def ExtarctQuesionAndAnsersFromDocText_Rag(\n        self, text: str\n    ) -> ExtarctQuestionAndAnswersFromDocResponse_Rag:\n        questionList = re.findall(r\"<<C1-START>>(.*?)<<C1-END>>\", text, re.DOTALL)",
+        "detail": "ragservices.services.BuildQaRagFromDocService_Rag",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractedTextFromDocService_rag",
+        "kind": 5,
+        "importPath": "ragservices.services.BuildQaRagFromDocService_Rag",
+        "description": "ragservices.services.BuildQaRagFromDocService_Rag",
+        "peekOfCode": "ExtractedTextFromDocService_rag = ExtractTextFromDocService()\nclass BuildQaRagFromDocService_Rag(BuildQaRagFromDocImpl_Rag):\n    def __init__(self):\n        self.RetryLoopIndexLimit = 3\n        self.batchLength = 50\n    def ExtarctQuesionAndAnsersFromDocText_Rag(\n        self, text: str\n    ) -> ExtarctQuestionAndAnswersFromDocResponse_Rag:\n        questionList = re.findall(r\"<<C1-START>>(.*?)<<C1-END>>\", text, re.DOTALL)\n        answersList = re.findall(r\"<<C2-START>>(.*?)<<C2-END>>\", text, re.DOTALL)",
         "detail": "ragservices.services.BuildQaRagFromDocService_Rag",
         "documentation": {}
     },
@@ -2651,7 +2774,7 @@
         "kind": 6,
         "importPath": "ragservices.services.ExtractTextFromDocService_Rag",
         "description": "ragservices.services.ExtractTextFromDocService_Rag",
-        "peekOfCode": "class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):\n    def ExtractTextAndImagesFromXlsx_Rag(self, docPath: str) -> Tuple[str, List[str]]:\n        xls = pd.ExcelFile(docPath)\n        allText: list[str] = []\n        rowIndex = 1  # start row counter\n        for sheetName in xls.sheet_names:\n            df = cast(Any, pd).read_excel(docPath, sheet_name=sheetName, header=None)\n            for row in df.itertuples(index=False):\n                rowText = \"  \".join(\n                    \"\" if cast(Any, pd).isna(cell) else str(cell) for cell in row",
+        "peekOfCode": "class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):\n    def ExtractTextAndImagesFromXlsx_Rag(self, docPath: str) -> Tuple[str, List[str]]:\n        xls = pd.ExcelFile(docPath, engine=\"openpyxl\")\n        allText: list[str] = []\n        for sheetName in xls.sheet_names:\n            df = cast(Any, pd).read_excel(\n                docPath, sheet_name=sheetName, header=None, engine=\"openpyxl\"\n            )\n            for row in df.itertuples(index=False):\n                for colIndex, cell in enumerate(row, start=1):",
         "detail": "ragservices.services.ExtractTextFromDocService_Rag",
         "documentation": {}
     },
@@ -2694,19 +2817,19 @@
     {
         "label": "GragDocRouter",
         "kind": 5,
-        "importPath": "server.controllers.BuildGraphRagFromDocController_Server",
-        "description": "server.controllers.BuildGraphRagFromDocController_Server",
-        "peekOfCode": "GragDocRouter = APIRouter()\nBuildGraphRagFromDocServiceServer = BuildGraphRagFromDocService_Server()\nasync def GetDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@GragDocRouter.get(\"/bgrfd\")\nasync def BuildGraphFromDoc():\n    return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(\n        \"./others/opd_manual.pdf\", await GetDb()\n    )",
-        "detail": "server.controllers.BuildGraphRagFromDocController_Server",
+        "importPath": "server.controllers.BuildRagFromDocController_Server",
+        "description": "server.controllers.BuildRagFromDocController_Server",
+        "peekOfCode": "GragDocRouter = APIRouter()\nBuildRagFromDocServiceServer = BuildRagFromDocService_Server()\n@GragDocRouter.get(\"/brfd\")\nasync def BuildRagFromDoc():\n    return await BuildRagFromDocServiceServer.BuildRagFromDoc(\"./others/a.xlsx\")",
+        "detail": "server.controllers.BuildRagFromDocController_Server",
         "documentation": {}
     },
     {
-        "label": "BuildGraphRagFromDocServiceServer",
+        "label": "BuildRagFromDocServiceServer",
         "kind": 5,
-        "importPath": "server.controllers.BuildGraphRagFromDocController_Server",
-        "description": "server.controllers.BuildGraphRagFromDocController_Server",
-        "peekOfCode": "BuildGraphRagFromDocServiceServer = BuildGraphRagFromDocService_Server()\nasync def GetDb() -> PsqlDb:\n    from main import psqlDb\n    return psqlDb\n@GragDocRouter.get(\"/bgrfd\")\nasync def BuildGraphFromDoc():\n    return await BuildGraphRagFromDocServiceServer.BuildGraphFromDoc(\n        \"./others/opd_manual.pdf\", await GetDb()\n    )",
-        "detail": "server.controllers.BuildGraphRagFromDocController_Server",
+        "importPath": "server.controllers.BuildRagFromDocController_Server",
+        "description": "server.controllers.BuildRagFromDocController_Server",
+        "peekOfCode": "BuildRagFromDocServiceServer = BuildRagFromDocService_Server()\n@GragDocRouter.get(\"/brfd\")\nasync def BuildRagFromDoc():\n    return await BuildRagFromDocServiceServer.BuildRagFromDoc(\"./others/a.xlsx\")",
+        "detail": "server.controllers.BuildRagFromDocController_Server",
         "documentation": {}
     },
     {
@@ -2786,20 +2909,16 @@
         "kind": 6,
         "importPath": "server.models.GraphRagSearchServiceModel_Server",
         "description": "server.models.GraphRagSearchServiceModel_Server",
-        "peekOfCode": "class SearchOnDbImageModel_Server(BaseModel):\n    url: str\n    description: str\nclass  SearchOnDbDocModel_Server(BaseModel):\n    doc:str\n    images:list[SearchOnDbImageModel_Server]\nclass SearchOnDbResponseModel(BaseModel):\n    docs: list[SearchOnDbDocModel_Server]",
+        "peekOfCode": "class SearchOnDbImageModel_Server(BaseModel):\n    url: str\n    description: str\nclass SearchOnDbDocModel_Server(BaseModel):\n    matchedText: str\n    contextText: str\n    images: list[SearchOnDbImageModel_Server]\nclass SearchOnDbResponseModel(BaseModel):\n    docs: list[SearchOnDbDocModel_Server]",
         "detail": "server.models.GraphRagSearchServiceModel_Server",
         "documentation": {}
     },
     {
-        "label": {
-            "name": "",
-            "kind": 6,
-            "peekOfCode": "class  SearchOnDbDocModel_Server(BaseModel):\n    doc:str\n    images:list[SearchOnDbImageModel_Server]\nclass SearchOnDbResponseModel(BaseModel):\n    docs: list[SearchOnDbDocModel_Server]"
-        },
+        "label": "SearchOnDbDocModel_Server",
         "kind": 6,
         "importPath": "server.models.GraphRagSearchServiceModel_Server",
         "description": "server.models.GraphRagSearchServiceModel_Server",
-        "peekOfCode": "class  SearchOnDbDocModel_Server(BaseModel):\n    doc:str\n    images:list[SearchOnDbImageModel_Server]\nclass SearchOnDbResponseModel(BaseModel):\n    docs: list[SearchOnDbDocModel_Server]",
+        "peekOfCode": "class SearchOnDbDocModel_Server(BaseModel):\n    matchedText: str\n    contextText: str\n    images: list[SearchOnDbImageModel_Server]\nclass SearchOnDbResponseModel(BaseModel):\n    docs: list[SearchOnDbDocModel_Server]",
         "detail": "server.models.GraphRagSearchServiceModel_Server",
         "documentation": {}
     },
@@ -2813,12 +2932,12 @@
         "documentation": {}
     },
     {
-        "label": "BuildGraphRagFromDocServiceImpl_Server",
+        "label": "BuildRagFromDocServiceImpl_Server",
         "kind": 6,
-        "importPath": "server.serviceimplementations.BuildGraphRagFromDocServiceImpl_Server",
-        "description": "server.serviceimplementations.BuildGraphRagFromDocServiceImpl_Server",
-        "peekOfCode": "class BuildGraphRagFromDocServiceImpl_Server(ABC):\n    @abstractmethod\n    async def BuildGraphFromDoc(self, file:str,db:Any):\n        pass",
-        "detail": "server.serviceimplementations.BuildGraphRagFromDocServiceImpl_Server",
+        "importPath": "server.serviceimplementations.BuildRagFromDocServiceImpl_Server",
+        "description": "server.serviceimplementations.BuildRagFromDocServiceImpl_Server",
+        "peekOfCode": "class BuildRagFromDocServiceImpl_Server(ABC):\n    @abstractmethod\n    async def BuildGraphRagFromDoc(self, file:str):\n        pass\n    @abstractmethod\n    async def BuildRagFromDoc(self, file:str):\n        pass",
+        "detail": "server.serviceimplementations.BuildRagFromDocServiceImpl_Server",
         "documentation": {}
     },
     {
@@ -2831,30 +2950,39 @@
         "documentation": {}
     },
     {
-        "label": "GraphRagSearchServiceImpl_Server",
+        "label": "RagSearchServiceImpl_Server",
         "kind": 6,
-        "importPath": "server.serviceimplementations.GraphRagSearchServiceImpl_Server",
-        "description": "server.serviceimplementations.GraphRagSearchServiceImpl_Server",
-        "peekOfCode": "class GraphRagSearchServiceImpl_Server(ABC):\n    @abstractmethod\n    async def SearchOnDb_Server(self, query: str) -> SearchOnDbResponseModel:\n        pass",
-        "detail": "server.serviceimplementations.GraphRagSearchServiceImpl_Server",
+        "importPath": "server.serviceimplementations.RagSearchServiceImpl_Server",
+        "description": "server.serviceimplementations.RagSearchServiceImpl_Server",
+        "peekOfCode": "class RagSearchServiceImpl_Server(ABC):\n    @abstractmethod\n    async def SearchOnDb_Server(self, query: str) -> SearchOnDbResponseModel:\n        pass",
+        "detail": "server.serviceimplementations.RagSearchServiceImpl_Server",
         "documentation": {}
     },
     {
-        "label": "BuildGraphRagFromDocService_Server",
+        "label": "BuildRagFromDocService_Server",
         "kind": 6,
-        "importPath": "server.services.BuildGraphRagFromDocService_Server",
-        "description": "server.services.BuildGraphRagFromDocService_Server",
-        "peekOfCode": "class BuildGraphRagFromDocService_Server(BuildGraphRagFromDocServiceImpl_Server):\n    async def BuildGraphFromDoc(self, file: str, db: Any):\n        graph: GetGraphFromDocResponseModel_Rag = (\n            await BuildGraphRagFromDocService.BuildGraphFromDoc_Rag(file)\n        )\n        chunkTexts: list[Any] = [] \n        chunkQuestions: list[Any] = []\n        chunkImages: list[Any] = [] \n        chunkRelations: list[Any] = [] \n        chunkMatchedNodes: list[Any] = []",
-        "detail": "server.services.BuildGraphRagFromDocService_Server",
+        "importPath": "server.services.BuildRagFromDocService_Server",
+        "description": "server.services.BuildRagFromDocService_Server",
+        "peekOfCode": "class BuildRagFromDocService_Server(BuildRagFromDocServiceImpl_Server):\n    async def BuildRagFromDoc(self, file: str):\n        qa: HandleQaRagBuildingProcessResponseModel_Rag = (\n            await BuildQaRagFromDocService.HandleQaRagBuildingProcess_Rag(docPath=file)\n        )\n        questions: Any = []\n        answers: Any = []\n        for i, _ in enumerate(qa.questions):\n            answerId: UUID = uuid4()\n            answers.append((answerId, qa.answers[i]))",
+        "detail": "server.services.BuildRagFromDocService_Server",
         "documentation": {}
     },
     {
         "label": "BuildGraphRagFromDocService",
         "kind": 5,
-        "importPath": "server.services.BuildGraphRagFromDocService_Server",
-        "description": "server.services.BuildGraphRagFromDocService_Server",
-        "peekOfCode": "BuildGraphRagFromDocService = BuildGraphFromDocService_Rag()\nclass BuildGraphRagFromDocService_Server(BuildGraphRagFromDocServiceImpl_Server):\n    async def BuildGraphFromDoc(self, file: str, db: Any):\n        graph: GetGraphFromDocResponseModel_Rag = (\n            await BuildGraphRagFromDocService.BuildGraphFromDoc_Rag(file)\n        )\n        chunkTexts: list[Any] = [] \n        chunkQuestions: list[Any] = []\n        chunkImages: list[Any] = [] \n        chunkRelations: list[Any] = [] ",
-        "detail": "server.services.BuildGraphRagFromDocService_Server",
+        "importPath": "server.services.BuildRagFromDocService_Server",
+        "description": "server.services.BuildRagFromDocService_Server",
+        "peekOfCode": "BuildGraphRagFromDocService = BuildGraphFromDocService_Rag()\nBuildQaRagFromDocService = BuildQaRagFromDocService_Rag()\nclass BuildRagFromDocService_Server(BuildRagFromDocServiceImpl_Server):\n    async def BuildRagFromDoc(self, file: str):\n        qa: HandleQaRagBuildingProcessResponseModel_Rag = (\n            await BuildQaRagFromDocService.HandleQaRagBuildingProcess_Rag(docPath=file)\n        )\n        questions: Any = []\n        answers: Any = []\n        for i, _ in enumerate(qa.questions):",
+        "detail": "server.services.BuildRagFromDocService_Server",
+        "documentation": {}
+    },
+    {
+        "label": "BuildQaRagFromDocService",
+        "kind": 5,
+        "importPath": "server.services.BuildRagFromDocService_Server",
+        "description": "server.services.BuildRagFromDocService_Server",
+        "peekOfCode": "BuildQaRagFromDocService = BuildQaRagFromDocService_Rag()\nclass BuildRagFromDocService_Server(BuildRagFromDocServiceImpl_Server):\n    async def BuildRagFromDoc(self, file: str):\n        qa: HandleQaRagBuildingProcessResponseModel_Rag = (\n            await BuildQaRagFromDocService.HandleQaRagBuildingProcess_Rag(docPath=file)\n        )\n        questions: Any = []\n        answers: Any = []\n        for i, _ in enumerate(qa.questions):\n            answerId: UUID = uuid4()",
+        "detail": "server.services.BuildRagFromDocService_Server",
         "documentation": {}
     },
     {
@@ -2871,7 +2999,7 @@
         "kind": 2,
         "importPath": "server.services.ChatService_Server",
         "description": "server.services.ChatService_Server",
-        "peekOfCode": "def getChatLLM():\n    from main import ChatLLmService\n    return ChatLLmService\ndef getRankingService():\n    from main import RerankingService\n    return RerankingService\ndef getDb():\n    from main import psqlDb\n    return psqlDb\nclass ChatService_Server(ChatServiceImpl_Server):",
+        "peekOfCode": "def getChatLLM():\n    from main import ChatLLmService\n    return ChatLLmService\ndef getRankingService():\n    from main import RerankingService\n    return RerankingService\nclass ChatService_Server(ChatServiceImpl_Server):\n    async def HandlePreProcessUserQuery_Server(\n        self, query: str, messages: list[ChatServiceMessageModel], loopIndex: int\n    ) -> ChatServicePreProcessUserQueryResponseModel_Server:",
         "detail": "server.services.ChatService_Server",
         "documentation": {}
     },
@@ -2880,16 +3008,7 @@
         "kind": 2,
         "importPath": "server.services.ChatService_Server",
         "description": "server.services.ChatService_Server",
-        "peekOfCode": "def getRankingService():\n    from main import RerankingService\n    return RerankingService\ndef getDb():\n    from main import psqlDb\n    return psqlDb\nclass ChatService_Server(ChatServiceImpl_Server):\n    async def HandlePreProcessUserQuery_Server(\n        self, query: str, messages: list[ChatServiceMessageModel], loopIndex: int\n    ) -> ChatServicePreProcessUserQueryResponseModel_Server:",
-        "detail": "server.services.ChatService_Server",
-        "documentation": {}
-    },
-    {
-        "label": "getDb",
-        "kind": 2,
-        "importPath": "server.services.ChatService_Server",
-        "description": "server.services.ChatService_Server",
-        "peekOfCode": "def getDb():\n    from main import psqlDb\n    return psqlDb\nclass ChatService_Server(ChatServiceImpl_Server):\n    async def HandlePreProcessUserQuery_Server(\n        self, query: str, messages: list[ChatServiceMessageModel], loopIndex: int\n    ) -> ChatServicePreProcessUserQueryResponseModel_Server:\n        if loopIndex > RetryLoopIndexLimit:\n            return ChatServicePreProcessUserQueryResponseModel_Server(\n                status=ChatServicePreProcessEnums_Server.ERROR",
+        "peekOfCode": "def getRankingService():\n    from main import RerankingService\n    return RerankingService\nclass ChatService_Server(ChatServiceImpl_Server):\n    async def HandlePreProcessUserQuery_Server(\n        self, query: str, messages: list[ChatServiceMessageModel], loopIndex: int\n    ) -> ChatServicePreProcessUserQueryResponseModel_Server:\n        if loopIndex > RetryLoopIndexLimit:\n            return ChatServicePreProcessUserQueryResponseModel_Server(\n                status=ChatServicePreProcessEnums_Server.ERROR",
         "detail": "server.services.ChatService_Server",
         "documentation": {}
     },
@@ -2898,35 +3017,35 @@
         "kind": 5,
         "importPath": "server.services.ChatService_Server",
         "description": "server.services.ChatService_Server",
-        "peekOfCode": "RetryLoopIndexLimit = 3\ngraphRagSearchService = GraphRagSearchService_Server()\ndef getChatLLM():\n    from main import ChatLLmService\n    return ChatLLmService\ndef getRankingService():\n    from main import RerankingService\n    return RerankingService\ndef getDb():\n    from main import psqlDb",
+        "peekOfCode": "RetryLoopIndexLimit = 3\nRagSearchService = RagSearchService_Server()\ndef getChatLLM():\n    from main import ChatLLmService\n    return ChatLLmService\ndef getRankingService():\n    from main import RerankingService\n    return RerankingService\nclass ChatService_Server(ChatServiceImpl_Server):\n    async def HandlePreProcessUserQuery_Server(",
         "detail": "server.services.ChatService_Server",
         "documentation": {}
     },
     {
-        "label": "graphRagSearchService",
+        "label": "RagSearchService",
         "kind": 5,
         "importPath": "server.services.ChatService_Server",
         "description": "server.services.ChatService_Server",
-        "peekOfCode": "graphRagSearchService = GraphRagSearchService_Server()\ndef getChatLLM():\n    from main import ChatLLmService\n    return ChatLLmService\ndef getRankingService():\n    from main import RerankingService\n    return RerankingService\ndef getDb():\n    from main import psqlDb\n    return psqlDb",
+        "peekOfCode": "RagSearchService = RagSearchService_Server()\ndef getChatLLM():\n    from main import ChatLLmService\n    return ChatLLmService\ndef getRankingService():\n    from main import RerankingService\n    return RerankingService\nclass ChatService_Server(ChatServiceImpl_Server):\n    async def HandlePreProcessUserQuery_Server(\n        self, query: str, messages: list[ChatServiceMessageModel], loopIndex: int",
         "detail": "server.services.ChatService_Server",
         "documentation": {}
     },
     {
-        "label": "GraphRagSearchService_Server",
+        "label": "RagSearchService_Server",
         "kind": 6,
-        "importPath": "server.services.GraphRagSearchService_Server",
-        "description": "server.services.GraphRagSearchService_Server",
-        "peekOfCode": "class GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):\n    async def SearchOnDb_Server(self, query: str) -> SearchOnDbResponseModel:\n        async with psqlDb.pool.acquire() as conn:\n            await conn.set_type_codec(\n                \"jsonb\", encoder=json.dumps, decoder=json.loads, schema=\"pg_catalog\"\n            )\n            embeddingService: Any = await EmbeddingService_Rag.ConvertTextToEmbedding(\n                text=[query]\n            )\n            queryVector = embeddingService.data[0].embedding",
-        "detail": "server.services.GraphRagSearchService_Server",
+        "importPath": "server.services.RagSearchService_Server",
+        "description": "server.services.RagSearchService_Server",
+        "peekOfCode": "class RagSearchService_Server(RagSearchServiceImpl_Server):\n    async def SearchOnDb_Server(self, query: str) -> SearchOnDbResponseModel:\n        async with psqlDb.pool.acquire() as conn:\n            await conn.set_type_codec(\n                \"jsonb\", encoder=json.dumps, decoder=json.loads, schema=\"pg_catalog\"\n            )\n            embeddingService: Any = await EmbeddingService_Rag.ConvertTextToEmbedding(\n                text=[query]\n            )\n            queryVector = embeddingService.data[0].embedding",
+        "detail": "server.services.RagSearchService_Server",
         "documentation": {}
     },
     {
         "label": "EmbeddingService_Rag",
         "kind": 5,
-        "importPath": "server.services.GraphRagSearchService_Server",
-        "description": "server.services.GraphRagSearchService_Server",
-        "peekOfCode": "EmbeddingService_Rag = EmbeddingService()\nclass GraphRagSearchService_Server(GraphRagSearchServiceImpl_Server):\n    async def SearchOnDb_Server(self, query: str) -> SearchOnDbResponseModel:\n        async with psqlDb.pool.acquire() as conn:\n            await conn.set_type_codec(\n                \"jsonb\", encoder=json.dumps, decoder=json.loads, schema=\"pg_catalog\"\n            )\n            embeddingService: Any = await EmbeddingService_Rag.ConvertTextToEmbedding(\n                text=[query]\n            )",
-        "detail": "server.services.GraphRagSearchService_Server",
+        "importPath": "server.services.RagSearchService_Server",
+        "description": "server.services.RagSearchService_Server",
+        "peekOfCode": "EmbeddingService_Rag = EmbeddingService()\nclass RagSearchService_Server(RagSearchServiceImpl_Server):\n    async def SearchOnDb_Server(self, query: str) -> SearchOnDbResponseModel:\n        async with psqlDb.pool.acquire() as conn:\n            await conn.set_type_codec(\n                \"jsonb\", encoder=json.dumps, decoder=json.loads, schema=\"pg_catalog\"\n            )\n            embeddingService: Any = await EmbeddingService_Rag.ConvertTextToEmbedding(\n                text=[query]\n            )",
+        "detail": "server.services.RagSearchService_Server",
         "documentation": {}
     },
     {
@@ -2934,7 +3053,7 @@
         "kind": 5,
         "importPath": "server.utils.ChatServiceSystemPrompt_Server",
         "description": "server.utils.ChatServiceSystemPrompt_Server",
-        "peekOfCode": "ChatServicePreProcessUserQuerySystemPropt_Server = \"\"\"\nTASK\nStep 1: Normalize the input query into a clear and meaningful English sentence. \n        - Correct spelling mistakes, grammar, and incoherent words.\n        - If the query is incomplete or vague, rewrite it into a \n          well-formed question by inferring the most likely intended meaning.\n        - Preserve the original intent while making it professional and clear.\n        - Example: \"who to add new drug which is not in hmis\" → \n          \"How to add a new drug in HMIS if it is not already available?\"\nStep 2: Classify the query and return ONLY JSON:",
+        "peekOfCode": "ChatServicePreProcessUserQuerySystemPropt_Server = \"\"\"\nTASK\n1. Normalize the query into clear English (fix spelling/grammar, make it a proper question).\n   Example: \"who to add new drug which is not in hmis\" → \n   \"How to add a new drug in HMIS if it is not already available?\"\n2. Classify and return ONLY JSON:\n{\n  \"response\": {\n    \"cleanquery\": \"<clean sentence>\",\n    \"error\": \"OK\" | \"ABUSE_LANG_ERROR\" | \"CONTACT_INFO_ERROR\",",
         "detail": "server.utils.ChatServiceSystemPrompt_Server",
         "documentation": {}
     },
@@ -2988,7 +3107,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "RerankingService = RerankingService()\nChatLLmService = ChatService()\nEmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=False)",
+        "peekOfCode": "RerankingService = RerankingService()\nChatLLmService = ChatService()\nEmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=True)",
         "detail": "main",
         "documentation": {}
     },
@@ -2997,7 +3116,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "ChatLLmService = ChatService()\nEmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=False)",
+        "peekOfCode": "ChatLLmService = ChatService()\nEmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=True)",
         "detail": "main",
         "documentation": {}
     },
@@ -3006,7 +3125,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "EmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=False)",
+        "peekOfCode": "EmbeddingService = EmbeddingService()\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:server\", host=\"0.0.0.0\", port=8001, reload=True)",
         "detail": "main",
         "documentation": {}
     }

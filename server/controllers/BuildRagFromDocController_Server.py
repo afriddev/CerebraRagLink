@@ -7,4 +7,4 @@ BuildRagFromDocServiceServer = BuildRagFromDocService_Server()
 
 @GragDocRouter.get("/brfd")
 async def BuildRagFromDoc():
-    return await BuildRagFromDocServiceServer.BuildRagFromDoc("./others/a.csv")
+    return await BuildRagFromDocServiceServer.BuildRagFromDoc("./others/a.xlsx")

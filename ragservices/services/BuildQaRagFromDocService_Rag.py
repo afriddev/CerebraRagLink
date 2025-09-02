@@ -20,8 +20,16 @@ class BuildQaRagFromDocService_Rag(BuildQaRagFromDocImpl_Rag):
     def ExtarctQuesionAndAnsersFromDocText_Rag(
         self, text: str
     ) -> ExtarctQuestionAndAnswersFromDocResponse_Rag:
-        questionList = re.findall(r"<<R1-START>>(.*?)<<R1-END>>", text, re.DOTALL)
-        answersList = re.findall(r"<<R2-START>>(.*?)<<R2-END>>", text, re.DOTALL)
+        questionList = re.findall(r"<<C1-START>>(.*?)<<C1-END>>", text, re.DOTALL)
+        answersList = re.findall(r"<<C2-START>>(.*?)<<C2-END>>", text, re.DOTALL)
+        additionalAnswer = re.findall(r"<<C3-START>>(.*?)<<C3-END>>", text, re.DOTALL)
+
+        finalAnswers: list[str] = []
+        for ans, addAns in zip(answersList, additionalAnswer):
+            if addAns != "None":
+                finalAnswers.append(f"{ans} Alternative solution is {addAns}")
+            else:
+                finalAnswers.append(ans)
         return ExtarctQuestionAndAnswersFromDocResponse_Rag(
             questions=questionList, answers=answersList
         )
@@ -49,7 +57,6 @@ class BuildQaRagFromDocService_Rag(BuildQaRagFromDocImpl_Rag):
         questionAndAnswers = self.ExtarctQuesionAndAnsersFromDocText_Rag(
             text=extractedText
         )
-        print(questionAndAnswers)
         questionVectors: list[list[float]] = []
 
         for index in range(0, len(questionAndAnswers.questions), self.batchLength):

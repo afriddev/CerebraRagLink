@@ -1,13 +1,13 @@
-from .BuildRagFromDocServiceImpl_Rag import BuildRagFromDocServiceImpl_Rag
-from .ExtractTextFromDocServiceImpl_Rag import ExtractTextFromDocServiceImpl_Rag
-from .RagUtilServiceImpl_Rag import RagUtilServiceImpl_Rag
-from .BuildQaRagFromDocServiceImpl_Rag import BuildQaRagFromDocImpl_Rag
+from .BuildRagFromDocImpl import BuildRagFromDocImpl
+from .ExtractTextServiceImpl import ExtractTextImpl
+from .RagUtilServiceImpl_Rag import RagUtilServiceImpl
+from .BuildQaRagFromDocImpl import BuildQaRagFromDocImpl
 
 
 
 __all__ = [
-    "BuildRagFromDocServiceImpl_Rag",
-    "ExtractTextFromDocServiceImpl_Rag",
-    "RagUtilServiceImpl_Rag",
-    "BuildQaRagFromDocImpl_Rag"
+    "BuildRagFromDocImpl",
+    "BuildQaRagFromDocImpl",
+    "ExtractTextImpl",
+    "RagUtilServiceImpl"
 ]

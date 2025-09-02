@@ -1,29 +1,18 @@
 import re
-from typing import Any, Tuple, cast
+from typing import Tuple
 import unicodedata
-from uuid import uuid4
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from ragservices.implementations import RagUtilServiceImpl_Rag
-from ragservices.services.ExtractTextFromDocService_Rag import ExtractTextFromDocService
+from ragservices.implementations import RagUtilServiceImpl
+from ragservices.services.ExtractText import ExtractText
 
 
-import base64
-import firebase_admin
-from firebase_admin import credentials, storage
-
-cred = credentials.Certificate("./others/firebaseCred.json")
-cast(Any, firebase_admin).initialize_app(
-    cred, {"storageBucket": "testproject-b1efd.appspot.com"}
-)
-
-
-class RagUtilService_Rag(RagUtilServiceImpl_Rag):
+class RagUtilS(RagUtilServiceImpl):
 
     def __init__(self):
-        self.ExtarctTextFromDoc = ExtractTextFromDocService()
+        self.ExtarctTextFromDoc = ExtractText()
 
-    def ExtractChunksFromDoc_Rag(
+    def ExtractChunksFromText(
         self, file: str, chunkSize: int, chunkOLSize: int | None = 0
     ) -> Tuple[list[str], list[str]]:
         _PAGE_RE = re.compile(r"\bpage\s+\d+\s+of\s+\d+\b", re.IGNORECASE)
@@ -72,7 +61,7 @@ class RagUtilService_Rag(RagUtilServiceImpl_Rag):
                     merged = [carry]
             return merged
 
-        text, images = self.ExtarctTextFromDoc.ExtractTextFromDoc_Rag(file)
+        text, images = self.ExtarctTextFromDoc.ExtractTextFromDoc(file)
         text = _normalizeText(text)
         splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunkSize,
@@ -87,15 +76,3 @@ class RagUtilService_Rag(RagUtilServiceImpl_Rag):
             chunks,
             images,
         )
-
-    async def UploadImagesFromDocToFirebase_Rag(
-        self, base64Str: str, folder: str
-    ) -> str:
-        imageBytes: bytes = base64.b64decode(base64Str)
-        filename: str = f"{folder}/{uuid4()}.png"
-        bucket: Any = cast(Any, storage).bucket()
-        blob: Any = bucket.blob(filename)
-        blob.upload_from_string(imageBytes, content_type="image/png")
-        blob.make_public()
-        publicUrl: str = cast(str, blob.public_url)
-        return publicUrl

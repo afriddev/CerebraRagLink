@@ -1191,7 +1191,7 @@
         "documentation": {}
     },
     {
-        "label": "ChunkRelationsModel_Rag",
+        "label": "ChunkClaimsModel",
         "importPath": "ragservices.models",
         "description": "ragservices.models",
         "isExtraImport": true,
@@ -1199,7 +1199,7 @@
         "documentation": {}
     },
     {
-        "label": "CHunkTextsModel_Rag",
+        "label": "ChunkTextsModel",
         "importPath": "ragservices.models",
         "description": "ragservices.models",
         "isExtraImport": true,
@@ -2581,7 +2581,7 @@
         "kind": 6,
         "importPath": "ragservices.models.BuildRagFromDocModels_Rag",
         "description": "ragservices.models.BuildRagFromDocModels_Rag",
-        "peekOfCode": "class ChunkMatchedNodeModel_Rag(BaseModel):\n    score: float\n    chunkId: UUID\nclass ChunkImagesModel_Rag(BaseModel):\n    image: str\n    description: str\nclass CHunkTextsModel_Rag(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None",
+        "peekOfCode": "class ChunkMatchedNodeModel_Rag(BaseModel):\n    score: float\n    chunkId: UUID\nclass ChunkImagesModel_Rag(BaseModel):\n    image: str\n    description: str\nclass ChunkTextsModel(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None",
         "detail": "ragservices.models.BuildRagFromDocModels_Rag",
         "documentation": {}
     },
@@ -2590,16 +2590,16 @@
         "kind": 6,
         "importPath": "ragservices.models.BuildRagFromDocModels_Rag",
         "description": "ragservices.models.BuildRagFromDocModels_Rag",
-        "peekOfCode": "class ChunkImagesModel_Rag(BaseModel):\n    image: str\n    description: str\nclass CHunkTextsModel_Rag(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None\n    questions: list[str]\n    questionVectors: list[list[float]] | None = []\n    images: list[ChunkImagesModel_Rag] | None = None",
+        "peekOfCode": "class ChunkImagesModel_Rag(BaseModel):\n    image: str\n    description: str\nclass ChunkTextsModel(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None\n    questions: list[str]\n    questionVectors: list[list[float]] | None = []\n    images: list[ChunkImagesModel_Rag] | None = None",
         "detail": "ragservices.models.BuildRagFromDocModels_Rag",
         "documentation": {}
     },
     {
-        "label": "CHunkTextsModel_Rag",
+        "label": "ChunkTextsModel",
         "kind": 6,
         "importPath": "ragservices.models.BuildRagFromDocModels_Rag",
         "description": "ragservices.models.BuildRagFromDocModels_Rag",
-        "peekOfCode": "class CHunkTextsModel_Rag(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None\n    questions: list[str]\n    questionVectors: list[list[float]] | None = []\n    images: list[ChunkImagesModel_Rag] | None = None\nclass ChunkRelationModel_Rag(BaseModel):\n    id: UUID\n    realtion: str",
+        "peekOfCode": "class ChunkTextsModel(BaseModel):\n    id: UUID\n    text: str\n    vector: list[float] | None = None\n    questions: list[str]\n    questionVectors: list[list[float]] | None = []\n    images: list[ChunkImagesModel_Rag] | None = None\nclass ChunkRelationModel_Rag(BaseModel):\n    id: UUID\n    realtion: str",
         "detail": "ragservices.models.BuildRagFromDocModels_Rag",
         "documentation": {}
     },
@@ -2608,16 +2608,16 @@
         "kind": 6,
         "importPath": "ragservices.models.BuildRagFromDocModels_Rag",
         "description": "ragservices.models.BuildRagFromDocModels_Rag",
-        "peekOfCode": "class ChunkRelationModel_Rag(BaseModel):\n    id: UUID\n    realtion: str\n    relationVector: list[float] | None = None\nclass ChunkRelationsModel_Rag(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel_Rag]\nclass GetRagFromDocResponseModel_Rag(BaseModel):\n    chunkTexts: list[CHunkTextsModel_Rag]\n    chunkRelations: list[ChunkRelationsModel_Rag]",
+        "peekOfCode": "class ChunkRelationModel_Rag(BaseModel):\n    id: UUID\n    realtion: str\n    relationVector: list[float] | None = None\nclass ChunkClaimsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel_Rag]\nclass GetRagFromDocResponseModel_Rag(BaseModel):\n    chunkTexts: list[ChunkTextsModel]\n    chunkRelations: list[ChunkClaimsModel]",
         "detail": "ragservices.models.BuildRagFromDocModels_Rag",
         "documentation": {}
     },
     {
-        "label": "ChunkRelationsModel_Rag",
+        "label": "ChunkClaimsModel",
         "kind": 6,
         "importPath": "ragservices.models.BuildRagFromDocModels_Rag",
         "description": "ragservices.models.BuildRagFromDocModels_Rag",
-        "peekOfCode": "class ChunkRelationsModel_Rag(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel_Rag]\nclass GetRagFromDocResponseModel_Rag(BaseModel):\n    chunkTexts: list[CHunkTextsModel_Rag]\n    chunkRelations: list[ChunkRelationsModel_Rag]\nclass ExtarctRelationsAndQuestionFromChunkResponseModel_Rag(BaseModel):\n    realtions: list[str]\n    questions: list[str]\n    chunk: str",
+        "peekOfCode": "class ChunkClaimsModel(BaseModel):\n    chunkId: UUID\n    chunkRelations: list[ChunkRelationModel_Rag]\nclass GetRagFromDocResponseModel_Rag(BaseModel):\n    chunkTexts: list[ChunkTextsModel]\n    chunkRelations: list[ChunkClaimsModel]\nclass ExtarctRelationsAndQuestionFromChunkResponseModel_Rag(BaseModel):\n    realtions: list[str]\n    questions: list[str]\n    chunk: str",
         "detail": "ragservices.models.BuildRagFromDocModels_Rag",
         "documentation": {}
     },
@@ -2626,7 +2626,7 @@
         "kind": 6,
         "importPath": "ragservices.models.BuildRagFromDocModels_Rag",
         "description": "ragservices.models.BuildRagFromDocModels_Rag",
-        "peekOfCode": "class GetRagFromDocResponseModel_Rag(BaseModel):\n    chunkTexts: list[CHunkTextsModel_Rag]\n    chunkRelations: list[ChunkRelationsModel_Rag]\nclass ExtarctRelationsAndQuestionFromChunkResponseModel_Rag(BaseModel):\n    realtions: list[str]\n    questions: list[str]\n    chunk: str\nclass ExatrctImageIndexFromChunkSectionModel_Rag(BaseModel):\n    imageindex: int | None\n    description: str",
+        "peekOfCode": "class GetRagFromDocResponseModel_Rag(BaseModel):\n    chunkTexts: list[ChunkTextsModel]\n    chunkRelations: list[ChunkClaimsModel]\nclass ExtarctRelationsAndQuestionFromChunkResponseModel_Rag(BaseModel):\n    realtions: list[str]\n    questions: list[str]\n    chunk: str\nclass ExatrctImageIndexFromChunkSectionModel_Rag(BaseModel):\n    imageindex: int | None\n    description: str",
         "detail": "ragservices.models.BuildRagFromDocModels_Rag",
         "documentation": {}
     },

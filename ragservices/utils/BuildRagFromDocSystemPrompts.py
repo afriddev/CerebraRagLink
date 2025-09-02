@@ -1,4 +1,4 @@
-ExtractRealtionsAndQuestionsFromChunkSystemPrompt_Rag = r"""
+ExtractClaimsAndQuestionsFromChunkSystemPrompt = r"""
 TASK
 Return ONLY valid JSON per the schema for ONE input chunk.
 
@@ -8,7 +8,7 @@ INPUT
 OUTPUT (conceptual)
 {
   "response": {
-    "relations": ["..."],
+    "claims": ["..."],
     "questions": ["..."],
     "chunk": "..."
   }
@@ -18,13 +18,12 @@ RULES
 - JSON only. No markdown, no comments, no extra keys.
 - Use DOUBLE QUOTES " for all keys and string values (never single quotes).
 - Output must be a valid JSON object without line breaks \n or escape sequences.
-- No special characters outside valid JSON.
 - Echo the input "chunk" with whitespace normalized.
 - Do NOT invent entities.
-- Relations: Form ≥9 natural language sentences that clearly express how the entities are related. Each relation must read as a proper sentence including the entities.
-- If a relation cannot be mapped to a [subject, object], DROP that relation so lengths stay equal.
-- Questions: Form possible questions per chunk, all are answerable from chunk only form more then 4 per chunk which has a clear answer in the current chunk.
+- Claims: Form ≥9 atomic, factual, standalone sentences derived from the chunk. Each claim must read as a proper statement with clear meaning, not fragments.
+- Questions: Form ≥5 natural language questions that can be answered using only the current chunk.
 """
+
 
 
 ExtractImageIndexFromChunkSystemPrompt_Rag = r"""

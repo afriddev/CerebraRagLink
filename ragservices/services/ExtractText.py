@@ -5,12 +5,12 @@ import pandas as pd
 import os
 
 
-from ragservices.implementations import ExtractTextFromDocServiceImpl_Rag
+from ragservices.implementations import ExtractTextImpl
 
 
-class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):
+class ExtractText(ExtractTextImpl):
 
-    def ExtractTextAndImagesFromXlsx_Rag(self, docPath: str) -> Tuple[str, List[str]]:
+    def ExtractTextAndImagesFromXlsx(self, docPath: str) -> Tuple[str, List[str]]:
         xls = pd.ExcelFile(docPath, engine="openpyxl")
         allText: list[str] = []
 
@@ -32,7 +32,7 @@ class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):
 
         return "\n".join(allText), []
 
-    def ExtractTextAndImagesFromCsv_Rag(self, docPath: str) -> Tuple[str, List[str]]:
+    def ExtractTextAndImagesFromCsv(self, docPath: str) -> Tuple[str, List[str]]:
         df = cast(Any, pd).read_csv(docPath, header=None)
         allText: list[str] = []
 
@@ -47,7 +47,7 @@ class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):
 
         return "\n".join(allText), []
 
-    def ExtractTextAndImagesFromDoc_Rag(self, docPath: str) -> Tuple[str, List[str]]:
+    def ExtractTextAndImagesFromDoc(self, docPath: str) -> Tuple[str, List[str]]:
         doc: Any = fitz.open(docPath)
         imagesB64: List[str] = []
         imageCounter: int = 1
@@ -107,13 +107,13 @@ class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):
 
         return "\n".join(finalTextParts), imagesB64
 
-    def ExtractTextFromDoc_Rag(self, docPath: str) -> Tuple[str, List[str]]:
+    def ExtractTextFromDoc(self, docPath: str) -> Tuple[str, List[str]]:
         ext = os.path.splitext(docPath)[1].lower()
         if ext == ".pdf":
-            return self.ExtractTextAndImagesFromDoc_Rag(docPath)
+            return self.ExtractTextAndImagesFromDoc(docPath)
         elif ext in [".xlsx", ".xls"]:
-            return self.ExtractTextAndImagesFromXlsx_Rag(docPath)
+            return self.ExtractTextAndImagesFromXlsx(docPath)
         elif ext == ".csv":
-            return self.ExtractTextAndImagesFromCsv_Rag(docPath)
+            return self.ExtractTextAndImagesFromCsv(docPath)
         else:
             raise ValueError(f"Unsupported file format: {ext}")

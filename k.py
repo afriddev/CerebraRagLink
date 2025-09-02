@@ -1,11 +1,11 @@
-from ragservices import BuildGraphFromDocService_Rag
+from ragservices import BuildRagFromDocService_Rag
 
-a = BuildGraphFromDocService_Rag()
+a = BuildRagFromDocService_Rag()
 
 
 async def main():
 
-    response = await a.BuildGraphFromDoc_Rag("./others/opd_manual.pdf")
+    response = await a.BuildRagFromDoc_Rag("./others/opd_manual.pdf")
     for i in response.chunkTexts:
         print(i.text)
         print(i.images)

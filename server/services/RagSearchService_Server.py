@@ -25,22 +25,68 @@ class RagSearchService_Server(RagSearchServiceImpl_Server):
                 text=[query]
             )
             queryVector = embeddingService.data[0].embedding
-
             sql = """
-                WITH q AS (
-                SELECT $1::vector v
-                )
-                SELECT qs.question_text AS "matchedText",
-                    ans.answer AS "contextText",
-                    1 - (qs.question_vector <=> q.v) AS score
-                FROM qa.questions qs
-                JOIN qa.answers ans ON qs.answer_id = ans.id
-                JOIN q ON true
-                ORDER BY qs.question_vector <-> q.v
-                LIMIT $2;
+SELECT qs.text AS "matchedText",
+       ck.text AS "contextText",
+       COALESCE(
+         (json_agg(
+           json_build_object('url', im.image_url, 'description', im.description)
+         ) FILTER (WHERE im.id IS NOT NULL))::jsonb,
+         '[]'::jsonb
+       ) AS images,
+       qs.embedding <-> $1::vector AS dist
+FROM ragmaster.userman_ck_questions qs
+JOIN ragmaster.userman_cks ck ON qs.chunk_id = ck.id
+LEFT JOIN ragmaster.userman_ck_images im ON im.chunk_id = ck.id
+GROUP BY qs.id, ck.id
+
+UNION ALL
+
+SELECT rl.text AS "matchedText",
+       ck.text AS "contextText",
+       COALESCE(
+         (json_agg(
+           json_build_object('url', im.image_url, 'description', im.description)
+         ) FILTER (WHERE im.id IS NOT NULL))::jsonb,
+         '[]'::jsonb
+       ) AS images,
+       rl.embedding <-> $1::vector AS dist
+FROM ragmaster.userman_ck_relations rl
+JOIN ragmaster.userman_cks ck ON rl.chunk_id = ck.id
+LEFT JOIN ragmaster.userman_ck_images im ON im.chunk_id = ck.id
+GROUP BY rl.id, ck.id
+
+UNION ALL
+
+SELECT ck.text AS "matchedText",
+       ck.text AS "contextText",
+       COALESCE(
+         (json_agg(
+           json_build_object('url', im.image_url, 'description', im.description)
+         ) FILTER (WHERE im.id IS NOT NULL))::jsonb,
+         '[]'::jsonb
+       ) AS images,
+       ck.embedding <-> $1::vector AS dist
+FROM ragmaster.userman_cks ck
+LEFT JOIN ragmaster.userman_ck_images im ON im.chunk_id = ck.id
+GROUP BY ck.id
+
+UNION ALL
+
+SELECT qq.text AS "matchedText",
+       ans.text AS "contextText",
+       '[]'::jsonb AS images,
+       qq.embedding <-> $1::vector AS dist
+FROM ragmaster.qa_ques qq
+JOIN ragmaster.qa_answers ans ON qq.answer_id = ans.id
+
+ORDER BY dist
+LIMIT $2;
+
+
                 """
 
-            rows = await conn.fetch(sql, queryVector, 20)
+            rows = await conn.fetch(sql, queryVector, 100)
 
         docs: list[SearchOnDbDocModel_Server] = []
 
@@ -53,9 +99,9 @@ class RagSearchService_Server(RagSearchServiceImpl_Server):
                 imgs = r["images"]
             except:
                 imgs = []
-                
+
             images: list[SearchOnDbImageModel_Server] = []
-            
+
             if imgs:
                 for img in imgs:
                     if (

@@ -1,8 +1,8 @@
-from .BuildGraphFromDocModels_Rag import (
+from .BuildRagFromDocModels_Rag import (
     ChunkRelationsModel_Rag,
     CHunkTextsModel_Rag,
     ChunkRelationModel_Rag,
-    GetGraphFromDocResponseModel_Rag,
+    GetRagFromDocResponseModel_Rag,
     ChunkMatchedNodeModel_Rag,
     ChunkImagesModel_Rag,
     ExtarctRelationsAndQuestionFromChunkResponseModel_Rag,
@@ -18,7 +18,7 @@ __all__ = [
     "CHunkTextsModel_Rag",
     "ChunkRelationsModel_Rag",
     "ChunkRelationModel_Rag",
-    "GetGraphFromDocResponseModel_Rag",
+    "GetRagFromDocResponseModel_Rag",
     "ChunkMatchedNodeModel_Rag",
     "ChunkImagesModel_Rag",
     "ExtarctRelationsAndQuestionFromChunkResponseModel_Rag",

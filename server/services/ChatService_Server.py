@@ -156,7 +156,7 @@ class ChatService_Server(ChatServiceImpl_Server):
                     maxCompletionTokens=5000,
                     messages=messages,
                     stream=True,
-                    temperature=0.8,
+                    temperature=0.3,
                     topP=0.9,
                 )
             )
@@ -243,7 +243,7 @@ class ChatService_Server(ChatServiceImpl_Server):
                     model="jina-reranker-m0",
                     query=cast(Any, preProcessResponse.cleanquery),
                     docs=docs,
-                    topN=10,
+                    topN=20,
                 )
             )
 
@@ -256,7 +256,7 @@ class ChatService_Server(ChatServiceImpl_Server):
                     reverse=True,
                 )
 
-                topK = reranked[:7]
+                topK = reranked[:20]
 
                 for item in topK:
                     index = item.index
@@ -281,7 +281,8 @@ class ChatService_Server(ChatServiceImpl_Server):
                 - Always use headings (###) for clarity in longer answers.
                 - Keep answers professional, without unnecessary filler text.
                 - Images:
-                - By default, include only **one most relevant image**.
+                - By default, include only **one most relevant image** to user query not according to content.
+                - Image descrption must be most relevent to user query else dont give any images
                 - If the user explicitly asks for multiple images, include all relevant ones.
                 - Show each image as:
                     **Description**  

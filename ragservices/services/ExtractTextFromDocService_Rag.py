@@ -11,10 +11,8 @@ from ragservices.implementations import ExtractTextFromDocServiceImpl_Rag
 class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):
 
     def ExtractTextAndImagesFromXlsx_Rag(self, docPath: str) -> Tuple[str, List[str]]:
-        xls = pd.ExcelFile(docPath, engine="openpyxl")  # specify engine
+        xls = pd.ExcelFile(docPath, engine="openpyxl")
         allText: list[str] = []
-
-        rowIndex = 1  # start row counter
 
         for sheetName in xls.sheet_names:
             df = cast(Any, pd).read_excel(
@@ -22,14 +20,15 @@ class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):
             )
 
             for row in df.itertuples(index=False):
-                rowText = "  ".join(
-                    "" if pd.isna(cell) else str(cell) for cell in row
-                ).strip()
+                for colIndex, cell in enumerate(row, start=1):
+                    if cast(Any, pd).isna(cell):
+                        value = None
+                    else:
+                        text = str(cell).strip()
+                        value = text if text else "None"
 
-                if rowText:
-                    wrapped = f"<<R{rowIndex}-START>> {rowText} <<R{rowIndex}-END>>"
+                    wrapped = f"<<C{colIndex}-START>>{value}<<C{colIndex}-END>>"
                     allText.append(wrapped)
-                    rowIndex += 1
 
         return "\n".join(allText), []
 
@@ -38,13 +37,13 @@ class ExtractTextFromDocService(ExtractTextFromDocServiceImpl_Rag):
         allText: list[str] = []
 
         for row in df.itertuples(index=False):
-            question = "" if pd.isna(row[0]) else str(row[0]).strip()
-            answer = "" if pd.isna(row[1]) else str(row[1]).strip()
-
-            if question:
-                allText.append(f"<<R1-START>> {question} <<R1-END>>")
-            if answer:
-                allText.append(f"<<R2-START>> {answer} <<R2-END>>")
+            for col_index, value in enumerate(row):
+                if cast(Any, pd).isna(value):
+                    value = None
+                else:
+                    text = str(value).strip()
+                    value = text if text else "None"
+                allText.append(f"<<C{col_index+1}-START>>{value}<<C{col_index+1}-END>>")
 
         return "\n".join(allText), []
 

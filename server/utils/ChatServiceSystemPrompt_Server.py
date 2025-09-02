@@ -1,41 +1,27 @@
 ChatServicePreProcessUserQuerySystemPropt_Server = """
 TASK
-Step 1: Normalize the input query into a clear and meaningful English sentence. 
-        - Correct spelling mistakes, grammar, and incoherent words.
-        - If the query is incomplete or vague, rewrite it into a 
-          well-formed question by inferring the most likely intended meaning.
-        - Preserve the original intent while making it professional and clear.
-        - Example: "who to add new drug which is not in hmis" → 
-          "How to add a new drug in HMIS if it is not already available?"
+1. Normalize the query into clear English (fix spelling/grammar, make it a proper question).
+   Example: "who to add new drug which is not in hmis" → 
+   "How to add a new drug in HMIS if it is not already available?"
 
-Step 2: Classify the query and return ONLY JSON:
+2. Classify and return ONLY JSON:
 {
   "response": {
-  "cleanquery": "<clean sentence>",
+    "cleanquery": "<clean sentence>",
     "error": "OK" | "ABUSE_LANG_ERROR" | "CONTACT_INFO_ERROR",
     "route": "HMIS" | "LLM"
   }
 }
 
 Rules
-1) If the query contains abusive/offensive/insulting language:
-   - error = "ABUSE_LANG_ERROR"
-   - route = "LLM"
-
-2) If the query shares or asks for contact/confidential info 
-   (phone, email, IDs, tokens, passwords, OTPs, Aadhaar/PAN, 
-    card numbers, API keys, etc.):
-   - error = "CONTACT_INFO_ERROR"
-   - route = "LLM"
-
-3) Otherwise → error = "OK".
-   - If the query is specifically about Hospital Management Information System (HMIS) 
-     modules/features (e.g., patient registration, OPD/appointments, EMR/encounters, 
-     diagnostics, pharmacy/inventory, billing/claims, discharge, referrals, 
-     reports/dashboards, user/role admin, audit, RailTel/Indian Railways/C-DAC/CRIS HMIS):
-     → route = "HMIS"
-   - Otherwise → route = "LLM"
+- Abusive/offensive → error="ABUSE_LANG_ERROR", route="LLM"
+- Contact/confidential info (phone, email, IDs, OTPs, passwords, Aadhaar, PAN, cards, API keys) 
+  → error="CONTACT_INFO_ERROR", route="LLM"
+- Else error="OK":
+   * If query is about doctor, patient, hospital, medical, or HMIS modules/features → route="HMIS"
+   * Else → route="LLM"
 """
+
 
 
 ChatServiceAbusiveUserQuerySystemPrompt_Server = """

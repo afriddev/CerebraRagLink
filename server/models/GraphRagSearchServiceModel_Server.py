@@ -6,10 +6,11 @@ class SearchOnDbImageModel_Server(BaseModel):
     description: str
 
 
+class SearchOnDbDocModel_Server(BaseModel):
+    matchedText: str
+    contextText: str
+    images: list[SearchOnDbImageModel_Server]
 
-class  SearchOnDbDocModel_Server(BaseModel):
-    doc:str
-    images:list[SearchOnDbImageModel_Server]
 
 class SearchOnDbResponseModel(BaseModel):
     docs: list[SearchOnDbDocModel_Server]

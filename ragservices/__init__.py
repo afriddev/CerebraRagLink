@@ -1,14 +1,14 @@
-from .services import BuildGraphFromDocService_Rag,BuildQaRagFromDocService_Rag
+from .services import BuildRagFromDocService_Rag,BuildQaRagFromDocService_Rag
 from .models import (
-    GetGraphFromDocResponseModel_Rag,
+    GetRagFromDocResponseModel_Rag,
     ExatrctImageIndexFromChunkSectionModel_Rag,
     HandleQaRagBuildingProcessResponseModel_Rag
 )
 
 
 __all__ = [
-    "BuildGraphFromDocService_Rag",
-    "GetGraphFromDocResponseModel_Rag",
+    "BuildRagFromDocService_Rag",
+    "GetRagFromDocResponseModel_Rag",
     "BuildQaRagFromDocService_Rag",
     "ExatrctImageIndexFromChunkSectionModel_Rag",
     "HandleQaRagBuildingProcessResponseModel_Rag"

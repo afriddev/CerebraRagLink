@@ -156,8 +156,8 @@ class ChatService_Server(ChatServiceImpl_Server):
                     maxCompletionTokens=1000,
                     messages=messages,
                     stream=True,
-                    temperature=0.1,
-                    topP=0.9,
+                    temperature=0.0,
+                    topP=1.0,
                 )
             )
             return LLMResponse

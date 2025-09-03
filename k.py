@@ -5,12 +5,12 @@ from sentence_transformers import CrossEncoder
 import torch
 import os
 
-EVAL_FILE = "eval_data.json"     # your 500+ Q&A test set
+EVAL_FILE = "eval.json"     # your 500+ Q&A test set
 RESULT_FILE = "eval_results.json"   # constant filename
 ENDPOINT = "http://127.0.0.1:8001/api/v1/ask/chat/public"
 
 # Load cross-encoder model
-model = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-12-v2")
+model = CrossEncoder("cross-encoder/nli-deberta-v3-base", num_labels=3)
 
 async def fetch_answer(session, query):
     async with session.post(ENDPOINT, json={"id": None, "query": query}) as resp:
@@ -50,8 +50,8 @@ async def evaluate():
             answer = await fetch_answer(session, q)
 
             # Cross-encoder similarity
-            score = model.predict([(expected, answer)])[0]
-            similarity = torch.sigmoid(torch.tensor(score)).item()
+            probs = model.predict([(expected, answer)], apply_softmax=True)[0]
+            similarity = float(probs[1] + probs[2])
 
             result = {
                 "id": idx,

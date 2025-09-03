@@ -1,0 +1,742 @@
+[
+  {
+    "question": "How does the OPD module in HMIS integrate with other hospital services to improve patient care?",
+    "expected": "The OPD module integrates with laboratory, pharmacy, and diagnostic services, allowing doctors to order tests, prescribe drugs, and request procedures directly from the doctor\u2019s desk. This integration ensures seamless communication between departments, reduces duplication of work, and speeds up service delivery. Patients benefit from timely access to care and a more coordinated treatment plan."
+  },
+  {
+    "question": "What role does patient registration play in the OPD system, and how does it enhance efficiency?",
+    "expected": "Patient registration in the OPD system captures essential demographic and medical history information at the time of entry. This reduces redundancy in data collection and ensures that doctors have accurate, up-to-date information during consultations. By digitizing this process, it eliminates manual paperwork, minimizes errors, and speeds up patient flow."
+  },
+  {
+    "question": "In what ways does the OPD Doctor Desk help reduce medical errors?",
+    "expected": "The OPD Doctor Desk reduces errors by standardizing digital entry of patient information, prescriptions, and test orders. Doctors can review historical records and prescriptions, ensuring continuity of care without duplications or missed treatments. Automated alerts, integration with pharmacy inventory, and lab result tracking further minimize the chances of mistakes."
+  },
+  {
+    "question": "How does the OPD desk handle referrals, and what impact does this have on continuity of care?",
+    "expected": "The OPD desk allows doctors to refer patients to other departments within the hospital, to other railway hospitals, or to private empanelled hospitals. These referrals are recorded digitally, ensuring accurate documentation and communication across facilities. This process ensures that patients receive timely specialized care while maintaining a traceable history for continuity."
+  },
+  {
+    "question": "Why is teleconsultation integration in the OPD module significant?",
+    "expected": "Teleconsultation integration enables doctors to attend patients remotely, approving or rejecting requests digitally. This expands access to healthcare services, particularly for patients in remote areas or those unable to travel. It also helps manage hospital loads effectively by balancing in-person and virtual visits while maintaining proper documentation."
+  },
+  {
+    "question": "What are the advantages of the responsive view option in the OPD module?",
+    "expected": "The responsive view allows doctors to open OPD desk lists in separate tabs, enabling them to manage multiple departments simultaneously. It enhances usability on both desktops and mobile devices, giving flexibility to healthcare staff. This improves workflow efficiency by reducing the need to log in or switch screens repeatedly."
+  },
+  {
+    "question": "How does the patient list functionality improve doctor-patient interaction in OPD?",
+    "expected": "The patient list provides doctors with real-time data on registered, waiting, attended, or skipped patients. It includes demographic details, queue numbers, and visit statuses, helping doctors manage their schedules efficiently. The ability to search and sort the list ensures quick retrieval of patient details, enhancing personalized care."
+  },
+  {
+    "question": "What is the role of the Rx page in the OPD Doctor Desk, and how does it improve clinical workflows?",
+    "expected": "The Rx page serves as the central workbench where doctors record vitals, complaints, diagnosis, treatment plans, and prescriptions. It streamlines clinical workflows by consolidating all essential tasks into a single interface. Integration with lab, pharmacy, and radiology ensures that treatment orders are executed without delays."
+  },
+  {
+    "question": "How does the OPD system ensure that chronic conditions are managed effectively?",
+    "expected": "The OPD system allows doctors to record and flag chronic conditions in the patient\u2019s profile. Once entered, chronic diseases are permanently displayed on future visits, ensuring doctors are immediately aware of long-term conditions. This continuity supports better care management and prevents oversight of critical health issues."
+  },
+  {
+    "question": "In what ways does the vitals recording feature enhance patient monitoring?",
+    "expected": "The vitals feature lets doctors and nurses record and update patient vitals, which are then visible on the Rx page. Doctors can review these records alongside other clinical details, allowing for informed decisions. Since vitals remain stored in the patient\u2019s electronic record, trends over time can be monitored for improved care."
+  },
+  {
+    "question": "Why is the integration of ICD-10 and SNOMED CT standards important in the diagnosis tab?",
+    "expected": "Using both ICD-10 and SNOMED CT standards ensures standardized diagnosis entry, making medical records interoperable and universally understandable. Doctors can record precise diagnoses while maintaining compliance with global medical coding standards. This dual system supports both clinical accuracy and administrative reporting requirements."
+  },
+  {
+    "question": "How does the lab report analyzer support clinical decision-making?",
+    "expected": "The lab report analyzer displays detailed test results with parameter-specific data and reference ranges. Doctors can track trends over multiple tests and even visualize them graphically, aiding quick interpretation. This tool provides real-time insights, allowing for timely adjustments in patient treatment plans."
+  },
+  {
+    "question": "What functionalities does the Treatment Advice tab provide, and how do they support long-term care?",
+    "expected": "The Treatment Advice tab allows doctors to prescribe drugs, check availability in pharmacies, review past prescriptions, and record allergies. It also supports guidelines on lifestyle, diet, and physical activity. This combination ensures patients receive comprehensive instructions that go beyond medication, improving adherence and long-term outcomes."
+  },
+  {
+    "question": "How does the OPD module manage drug prescriptions and availability?",
+    "expected": "When doctors prescribe medications, the system automatically checks stock availability and raises indents to the pharmacy. It allows substitution in case of shortages and provides visibility of current medications. This integration minimizes delays in drug delivery, ensures rational use of medicines, and improves supply chain management."
+  },
+  {
+    "question": "What role does the Admission Advice tab play in bridging outpatient and inpatient care?",
+    "expected": "The Admission Advice tab lets doctors schedule inpatient treatments directly from the OPD system. It includes details about proposed wards, units, bed availability, and remarks on patient condition. This feature ensures a smooth transition from outpatient to inpatient care, reducing administrative delays."
+  },
+  {
+    "question": "How does the OPD module handle emergencies through the Triage function?",
+    "expected": "The Triage feature allows doctors to categorize and monitor emergency patients in real time. It records detailed observation data, including start and end times, patient condition, and treatment provided. This ensures critical cases are tracked closely, prioritizing care for the most urgent patients."
+  },
+  {
+    "question": "What is the significance of follow-up and visit summary management in OPD?",
+    "expected": "Follow-up and visit summary management ensures continuity of care by linking visits through episode codes. Doctors can end treatments, plan future visits, and record notes for ongoing conditions. This structured approach ensures that every patient\u2019s care is traceable and systematically managed across visits."
+  },
+  {
+    "question": "How does the OPD desk utilize bookmarks and templates for efficiency?",
+    "expected": "Bookmarks and templates allow doctors to save frequently used prescriptions, complaints, or examination details for reuse. This saves time, ensures consistency in recording, and reduces repetitive data entry. As a result, doctors can focus more on patient interaction while maintaining accuracy in records."
+  },
+  {
+    "question": "What mechanisms does the OPD module use to ensure secure handling of patient information?",
+    "expected": "The OPD module incorporates user access controls, ensuring that only authorized staff can access specific departments or patient records. Patient data, including EMRs, referrals, and prescriptions, are digitally recorded and protected. These measures help maintain confidentiality, prevent impersonation, and comply with medical data standards."
+  },
+  {
+    "question": "How does integration with the UMID card enhance patient identification and service delivery?",
+    "expected": "The UMID card integration fetches patient details directly from the UMID portal, ensuring accurate identification and preventing impersonation. It links demographic data, past records, and eligibility details into the OPD system. This strengthens data accuracy and supports smoother service delivery across different healthcare units."
+  },
+  {
+    "question": "What is the functional difference between the 'Refresh OPD List Button' and the 'Refresh OPD Desk button' on the main dashboard?",
+    "expected": "The 'Refresh OPD List Button' specifically updates the patient queue only for the department the doctor is currently viewing, as the list does not update automatically with new registrations[cite: 96, 97]. In contrast, the 'Refresh OPD Desk button' performs a complete refresh of the entire screen and interface[cite: 100]. This action resets the view back to the default department's patient list, regardless of which department the doctor was previously viewing, ensuring the most current information for that specific default department is displayed[cite: 100, 101]."
+  },
+  {
+    "question": "Describe the workflow for recording and saving a patient's vitals, highlighting the roles of both nursing staff and the doctor.",
+    "expected": "Both doctors and OPD nursing staff can record patient vitals using the 'Vitals Button'[cite: 141, 143]. After the nursing staff saves the vitals, they become viewable by the doctor within the Rx (prescription) page[cite: 143, 144]. The doctor then has the option to edit these vitals on the prescription page if needed[cite: 145]. Crucially, the vitals are only permanently recorded in the patient's file after the doctor saves the entire prescription page; otherwise, they remain in a draft state[cite: 146]."
+  },
+  {
+    "question": "Explain the procedure for recording a chronic disease and the long-term impact this has on the patient's record within the OPD desk.",
+    "expected": "A doctor records a chronic disease in the 'Chief Complaint' tab by clicking the 'Chronic Disease' button and searching for a diagnosis using SNOMED CT standards[cite: 365, 366]. They must also specify the duration the condition has existed[cite: 367]. Once added, this chronic disease is permanently stored in the patient's record[cite: 369]. Consequently, in all future visits, a 'Chronic Patient' indicator label will appear at the top of the information bar, immediately alerting any treating doctor of the patient's chronic condition[cite: 282, 369]."
+  },
+  {
+    "question": "How does the OPD module handle and display pre-existing data from a previous prescription when a patient returns for a follow-up visit?",
+    "expected": "During a follow-up visit, the system displays all the data from the previous prescription on each respective tab, exactly as it was recorded before[cite: 209]. However, the checkboxes next to each recorded parameter, such as a specific medication or diagnosis, are left unchecked[cite: 209]. This allows the doctor to review the past treatment plan efficiently. If the doctor intends to record the same parameter value again, they simply need to check the corresponding checkbox next to that item to include it in the new prescription[cite: 209]."
+  },
+  {
+    "question": "What are the two diagnostic standards available in the Diagnosis Tab, and how can a doctor add a diagnosis that is not found in either standard list?",
+    "expected": "The system provides doctors the option to record diagnoses using either ICD-10 or SNOMED CT standards, and they can toggle between them[cite: 388, 389]. Doctors can search for ICD-10 codes by the code itself or the disease name, and search for SNOMED CT by the diagnosis name[cite: 390, 395]. If a specific diagnosis cannot be found in either standard list, the doctor can use the 'Other Diagnosis' button, which opens a text box where they can manually type and record the required diagnosis[cite: 399, 400]."
+  },
+  {
+    "question": "Describe the process of creating a prescription bookmark. What are the accessibility options and the primary limitation for deleting a saved bookmark?",
+    "expected": "A doctor saves a prescription as a bookmark by clicking the 'Bookmark this Rx' button and providing a name and description[cite: 586, 587]. By default, the bookmark is only accessible within the current department, but this can be changed by unchecking a box to make it available to all departments in the hospital[cite: 588, 589]. The most significant limitation is that only the original creator of the bookmark is authorized to delete it[cite: 342]. If deletion is required and the owner is unavailable, a request must be sent to the Helpdesk team[cite: 343]."
+  },
+  {
+    "question": "In which department is the Triage button available, and what is its two-part function in managing a patient's observation status?",
+    "expected": "The Triage button is exclusively available in the casualty or emergency department to manage patient observation[cite: 374, 375]. Its first function is to place a patient under observation by recording 'Day Care Entry Details,' including the start time and patient condition[cite: 376]. To conclude the observation, the doctor uses the button again to record 'Day Care Out Details,' such as the end time and a treatment summary[cite: 379]. This second action updates the patient's status on the OPD list to 'triage completed'[cite: 380]."
+  },
+  {
+    "question": "How does the 'Load past RX' feature streamline treatment, and what are its main limitations regarding time and departmental access?",
+    "expected": "The 'Load past RX' feature streamlines care by allowing a doctor to quickly access and reload a patient's complete previous prescriptions, which is ideal for repeated treatments[cite: 345, 348]. Selecting a past prescription from the dropdown list populates all its details into the current session[cite: 348]. However, its functionality is limited, as it only displays prescriptions generated within the last 120 days[cite: 347]. Furthermore, it exclusively shows prescriptions that were originally created within the same department the doctor is currently using[cite: 346]."
+  },
+  {
+    "question": "Explain the complete process for referring a patient to a Private Empanelled Hospital, including the approval workflow after the prescription is saved.",
+    "expected": "To refer a patient to a private hospital, a doctor selects 'PVT Empanelled Hospitals' as the referral type, chooses the appropriate department and institute, and specifies the reason for the referral[cite: 531, 532, 533, 535]. They can add specific tests or procedures to be performed[cite: 538, 543]. After the doctor saves the prescription, the referral is not sent immediately; it is first forwarded to designated clerical staff for verification[cite: 551]. Following this, it goes to an approving authority, and only after approval is the final referral letter generated[cite: 552]."
+  },
+  {
+    "question": "What is the purpose of the 'Non-Listed Drugs / Consumables' feature, and how does the system handle these items in terms of pharmacy requests?",
+    "expected": "This feature enables a doctor to add drugs, items, or consumables to a prescription that are not officially configured in the HMIS portal[cite: 483]. The doctor manually enters the item name, type, dosage, and other details[cite: 484]. While these items will be correctly printed on the patient's prescription for their record, they do not raise an automatic indent or request to the pharmacy[cite: 486]. Therefore, the pharmacy will not be prompted to issue these non-listed items as they are outside the standard inventory system[cite: 486]."
+  },
+  {
+    "question": "What is an 'episode code' in HMIS, and under what two conditions is a new episode created instead of continuing an existing one?",
+    "expected": "An episode code is a unique identifier for a patient's entire course of treatment within a specific OPD department at a hospital[cite: 567, 570]. If a patient revisits the same department for the same issue, the existing episode continues[cite: 568]. A new episode is created only under two circumstances: either the doctor formally closes the current treatment by selecting 'Yes' for 'End Treatment for Current Diagnosis,' or if there is no open registration available for that department when the patient is being registered for their visit[cite: 568, 569]."
+  },
+  {
+    "question": "How can a doctor record sensitive information using the 'Confidential Info' feature, and what are the restrictions on its visibility?",
+    "expected": "Within the 'Diagnosis' tab, a doctor can click the 'Confidential Info' button to open a text box specifically for recording sensitive details[cite: 402]. This feature ensures privacy for delicate information that should not be widely accessible. The information entered here has strict viewing restrictions and can only be seen by other doctors[cite: 403]. Most importantly, any text recorded in this confidential field will not be printed on the patient's final prescription output[cite: 403]."
+  },
+  {
+    "question": "Describe the process a doctor uses to manage and accept patients who have registered for a teleconsultation.",
+    "expected": "A doctor manages teleconsultation patients by clicking the 'View Teleconsultation Registrants' button on the main OPD desk[cite: 54, 55]. This action displays a list of patients registered for an online consultation for that day[cite: 55]. The doctor can then approve these consultation requests, either all at once or individually[cite: 56]. Once approved, the patient's registration is officially stamped for that department, and their name is added to the main patient list to be attended, integrating them into the standard workflow[cite: 57]."
+  },
+  {
+    "question": "What are the two mandatory fields that must be completed to save any prescription, and what happens if a doctor tries to save without them?",
+    "expected": "The two fields that are absolutely mandatory for saving any prescription in the OPD module are 'Chief Complaints' and 'Diagnosis'[cite: 595]. A doctor cannot save a prescription if either or both of these fields are left blank[cite: 595]. If they attempt to do so, the system will display an error message. This error prompts the doctor to add at least one chief complaint or diagnosis, ensuring a minimum standard of clinical information is recorded for every patient encounter before it can be saved[cite: 595]."
+  },
+  {
+    "question": "When ordering a procedure that requires multiple sessions, how does a doctor set and adjust the schedule?",
+    "expected": "To schedule a multi-session procedure, the doctor first clicks the 'Sitting' button in the 'Procedure(s) Advice' tab[cite: 435]. This opens a popup where they can set the priority. The system automatically generates default dates for each required session[cite: 435, 436]. The doctor can then review this proposed schedule and has the flexibility to make alterations, adjusting the dates for the sessions as needed to fit the patient's treatment plan before adding it to the prescription[cite: 437]."
+  },
+  {
+    "question": "Explain the function of the 'Skip Button' on the main OPD Doctor Desk list. What happens to the patient's status and the doctor's ability to prescribe?",
+    "expected": "The 'Skip Button' is used when a patient doesn't appear for their appointment in the correct order of the queue[cite: 150]. Clicking it changes the patient's status from 'waiting' to 'skipped' on the list, which removes their name from the active queue display system outside the doctor's room[cite: 148, 149]. This helps manage patient flow for those who are present[cite: 150]. However, despite the 'skipped' status, the doctor retains the full ability to select that patient and record a prescription for them if they arrive later[cite: 151]."
+  },
+  {
+    "question": "How can a doctor accept a patient directly from the OPD desk, and what is the key limitation of this feature?",
+    "expected": "A doctor can directly accept a patient into the department by clicking the 'Patient Acceptance' button[cite: 91]. This opens a window to register the patient by entering their CR number or searching with other demographics like a mobile number or UMID[cite: 91]. A major benefit is that this method is not restricted by OPD roster timings, making it useful for emergencies[cite: 93, 94]. The primary limitation is that this function only works for patients who are already registered at that specific hospital; new patients must still visit the main registration counter[cite: 91, 92]."
+  },
+  {
+    "question": "What is the purpose of the Lab Report Analyzer, and what unique feature does it offer for test results that appear multiple times?",
+    "expected": "The Lab Report Analyzer, accessed by clicking the 'Lab Reports' button, allows a doctor to view all of a patient's completed test results in a popup window[cite: 424]. On this screen, they can click a test name to see the detailed results on the right side[cite: 425]. A unique feature is that when a specific test component has been measured more than once for a patient, the system generates a 'Trend'[cite: 426]. Clicking the trend button displays these repeated test results in a graphical representation, allowing for easy comparison over time[cite: 427]."
+  },
+  {
+    "question": "Explain how the 'Check Availability' and 'Drugs Toggle' buttons in the Treatment Advice tab help doctors manage drug prescriptions based on hospital stock.",
+    "expected": "The 'Check Availability' button is used after drugs have been loaded into a prescription from a bookmark or past record[cite: 448]. It verifies the current stock of those specific drugs, marking available ones in green and unavailable ones in red[cite: 450]. The 'Drugs Toggle' button is a proactive filter used during the search process itself; doctors can select 'Show Available' to only search for drugs that are in stock[cite: 457, 458]. Together, these tools help doctors avoid prescribing out-of-stock medication, ensuring the patient can receive what is prescribed[cite: 461]."
+  },
+  {
+    "question": "How does the system handle prescriptions written by a visiting consultant whose credentials are not in HMIS?",
+    "expected": "The system accommodates this situation through a checkbox labeled 'Prescription/Surgery done by HVS' in the Follow-Up tab[cite: 572]. When a doctor checks this box, a new text field appears[cite: 572]. In this field, the prescribing doctor can manually enter the name of the visiting consultant (Honorary Visiting Specialist)[cite: 572]. This option is specifically provided for cases where specialty doctors visit on a case-by-case basis, allowing their treatment advice to be officially recorded in the HMIS portal under their name[cite: 573]."
+  },
+  {
+    "question": "How does the OPD module facilitate the management of patient registration and consultation processes in healthcare facilities?",
+    "expected": "The OPD module streamlines patient registration by capturing essential demographic and medical history information quickly and efficiently. It allows doctors to document consultation details, diagnoses, and prescribed treatments in a structured manner. The module supports real-time data updates, ensuring accurate patient records. Integration with other services like laboratories and pharmacies enhances the consultation process, improving overall efficiency."
+  },
+  {
+    "question": "What role does the laboratory and diagnostic integration feature play in enhancing patient care within the OPD module?",
+    "expected": "The laboratory and diagnostic integration feature enables doctors to order tests directly from the OPD desk and retrieve results promptly. This facilitates timely diagnosis and treatment, reducing patient wait times. The integration ensures seamless communication between departments, minimizing errors in test ordering. It also supports better clinical decision-making by providing quick access to accurate diagnostic data."
+  },
+  {
+    "question": "How does the inventory integration feature in the OPD module assist doctors in managing prescriptions effectively?",
+    "expected": "The inventory integration feature allows doctors to order drugs directly from the pharmacy through the OPD desk. It provides real-time visibility into current stock levels, helping doctors make informed prescribing decisions. This feature reduces the risk of prescribing unavailable medications, streamlining the process. It also supports raising indents for drugs, ensuring efficient inventory management."
+  },
+  {
+    "question": "What are the benefits of the reporting and analytics tools in the OPD module for healthcare providers?",
+    "expected": "The reporting and analytics tools in the OPD module generate detailed reports on service delivery and patient outcomes. These tools help doctors monitor performance metrics and identify areas for improvement in outpatient care. They provide insights into patient trends, enabling data-driven decisions. Additionally, the analytics support hospital administrators in optimizing resource allocation and improving operational efficiency."
+  },
+  {
+    "question": "How does the OPD module support the referral process to other departments or hospitals?",
+    "expected": "The OPD module allows doctors to refer patients to other departments or hospitals directly from the doctor’s desk. It provides a list of referral patients, enabling doctors to accept or approve them individually or collectively. The system stamps accepted referrals, ensuring seamless integration into the patient list. This feature enhances coordination between departments and external facilities, improving patient care continuity."
+  },
+  {
+    "question": "What is the significance of the responsive view button in the OPD Doctor Desk interface?",
+    "expected": "The responsive view button opens a new browser tab, allowing doctors to view patient lists for different departments simultaneously. This feature supports parallel management of multiple departments, enhancing workflow efficiency. It provides a full-page view optimized for both PC and mobile browsers, improving accessibility. This functionality ensures doctors can monitor and attend to patients across units without constant switching."
+  },
+  {
+    "question": "How does the OPD module handle teleconsultation registrations and approvals?",
+    "expected": "The OPD module displays a list of patients registered for teleconsultation on the current date, accessible via a dedicated button. Doctors can approve consultation requests individually or all at once, stamping approved registrations for the department. Approved patients appear in the list of patients to attend, streamlining the teleconsultation process. This feature supports remote healthcare delivery, enhancing patient access to care."
+  },
+  {
+    "question": "What mechanisms are in place to ensure accurate patient identification in the OPD module?",
+    "expected": "The OPD module includes features like patient photograph display and UMID card verification to ensure accurate identification. Doctors can view approved patient photos on the Rx page, preventing impersonation. Demographic details such as CR number, UMID, and mobile number are used for registration and verification. These measures reduce errors and enhance the security of patient interactions."
+  },
+  {
+    "question": "How does the OPD module manage patient queue and status updates effectively?",
+    "expected": "The OPD module displays patient status as 'Waiting,' 'Attended,' or 'Skipped' in the patient list, with a queue number for prioritization. Doctors can use the Skip button to update a patient’s status to 'Skipped' if they miss their turn, managing the queue display system. The Refresh OPD List button ensures the list reflects new registrations manually. This system maintains an organized and efficient patient flow."
+  },
+  {
+    "question": "What is the functionality of the vitals recording feature in the OPD Doctor Desk?",
+    "expected": "The vitals recording feature allows doctors and nursing staff to record patient vitals directly from the OPD desk or Rx page. Vitals entered by paramedical staff are accessible and editable on the Rx page, ensuring flexibility. These vitals are saved permanently only when the prescription is finalized, maintaining data accuracy. The feature supports efficient clinical assessments and reduces manual errors."
+  },
+  {
+    "question": "How does the OPD module support the management of chronic disease records?",
+    "expected": "The OPD module allows doctors to record chronic diseases in the Chief Complaint tab using SNOMED CT standards or custom diagnoses. Once added, chronic conditions are permanently stored and displayed prominently on future visits. Doctors can specify the duration and remarks for each condition, aiding in long-term care planning. A delete option is available for correcting or updating chronic disease records."
+  },
+  {
+    "question": "What is the purpose of the bookmark feature in the OPD Doctor Desk, and how is it managed?",
+    "expected": "The bookmark feature allows doctors to save frequently used prescriptions for quick access in future treatments. Doctors can create bookmarks during the prescription process, specifying accessibility within or across departments. Bookmarks are managed via a dedicated button, allowing viewing and deletion by the creator only. The system limits bookmarks to 25 per department, removing the oldest when the limit is exceeded."
+  },
+  {
+    "question": "How does the OPD module ensure efficient navigation between patients on the Rx page?",
+    "expected": "The OPD module provides Previous and Next Patient buttons on the Rx page to switch between patients in the queue seamlessly. Doctors can also access a patient list to select any patient, regardless of queue order, for prescribing. The responsive view button opens additional department lists in new tabs, enhancing multitasking. These features streamline navigation and improve workflow efficiency."
+  },
+  {
+    "question": "What is the role of the Electronic Medical Record (EMR) button in the OPD module?",
+    "expected": "The EMR button opens a pop-up window displaying a patient’s complete medical history, categorized for easy access. It includes past prescriptions, examinations, and advice, sorted by date and department. This feature allows doctors to review comprehensive patient data, supporting informed clinical decisions. The EMR integrates with the Rx page for seamless access during consultations."
+  },
+  {
+    "question": "How does the OPD module handle past prescription loading for repeated treatments?",
+    "expected": "The Load Past Rx feature in the Vitals and General Examination tab allows doctors to retrieve prescriptions from the last 120 days within the same department. A dropdown lists prescriptions by date, enabling quick loading of previous treatments. Doctors can edit or remove entries before saving, streamlining care for returning patients. This feature ensures continuity while maintaining department-specific restrictions."
+  },
+  {
+    "question": "What are the key functionalities of the Chief Complaint tab in the OPD Rx page?",
+    "expected": "The Chief Complaint tab allows doctors to record patient complaints using SNOMED CT standards or custom entries. It supports specifying the side, duration, and remarks for each complaint, ensuring detailed documentation. Additional sections like History of Present Illness and Complete History expand for comprehensive recording. The tab’s structured format enhances the accuracy of patient complaint records."
+  },
+  {
+    "question": "How does the OPD module support pagination and sorting of patient lists?",
+    "expected": "The OPD module offers pagination at the bottom of the patient list, allowing navigation via page numbers or previous/next buttons. Users can customize the number of patients displayed per page or view the entire list. Sorting is enabled via up/down arrows on column headers, supporting ascending or descending order. These features enhance usability and data management efficiency."
+  },
+  {
+    "question": "What measures does the OPD module take to reduce errors in prescription generation?",
+    "expected": "The OPD module minimizes errors by integrating predefined text macros and speech-to-text for accurate data entry. It ensures permanent vital recording only upon prescription finalization, reducing draft errors. The system restricts past prescription loading to the same department, ensuring oversight. Features like patient photo verification and UMID checks further enhance prescription accuracy."
+  },
+  {
+    "question": "How does the OPD module accommodate emergency patient registrations outside roster timings?",
+    "expected": "The OPD module allows doctors to register patients at any time using the Patient Acceptance button, bypassing roster timing restrictions. This feature supports emergency visits by enabling registration via CR number or other demographics. It ensures flexibility for urgent care needs while maintaining integration with existing hospital records. Only patients already registered in the hospital can use this option."
+  },
+  {
+    "question": "What is the process for viewing and printing prescriptions in the OPD module?",
+    "expected": "The Print button, available after prescription completion, allows doctors to preview the prescription. From the preview screen, doctors can print a hard copy for the patient. Past prescriptions can be accessed via the Past Rx button, with an option to print specific ones. This ensures easy access to prescription records for both clinical and patient use."
+  },
+  {
+    "question": "How does the OPD module ensure seamless integration with the pharmacy for drug prescribing?",
+    "expected": "The OPD module’s inventory integration allows doctors to check drug availability in real-time via the 'Check Availability' option in the Drugs section. Doctors can select drugs from a dropdown after entering three letters, ensuring only available medications are prescribed. The system restricts prescribing to listed drugs, reducing errors. This integration streamlines the process from prescription to dispensing, enhancing patient care efficiency."
+  },
+  {
+    "question": "What is the significance of the Patient Summary button on the Rx page in the OPD module?",
+    "expected": "The Patient Summary button displays a comprehensive overview of a patient’s recent details, including visit summaries, complaints, diagnoses, and medications. It pulls data from the UMID portal, ensuring up-to-date information. This feature helps doctors quickly review critical patient information during consultations. It can be toggled to show or hide details, improving usability on the Rx page."
+  },
+  {
+    "question": "How does the OPD module support the management of patient vitals by nursing staff?",
+    "expected": "The OPD module allows nursing staff to record patient vitals through the OPD Bay Area before a doctor’s consultation. These vitals are accessible via the Vitals button in the patient list’s action column or the Modify Vitals/GE button on the Rx page. Doctors can view and edit these entries, ensuring accurate clinical data. This collaborative feature enhances efficiency and reduces redundant data entry."
+  },
+  {
+    "question": "What is the process for handling skipped patients in the OPD queue system?",
+    "expected": "Doctors can mark a patient as 'Skipped' using the Skip button if they miss their turn, updating their status in the patient list. This action removes the patient from the queue display system but retains their record for potential consultation. Doctors can still generate prescriptions for skipped patients, ensuring flexibility. The status cannot be reverted to 'Waiting,' maintaining queue integrity."
+  },
+  {
+    "question": "How does the OPD module facilitate the creation and use of predefined text templates?",
+    "expected": "The OPD module provides a Macro/Predefined Text feature that allows doctors to select preconfigured text for description boxes, streamlining documentation. By clicking the macro icon, doctors can choose from a list of predefined titles to populate text fields. These templates can be customized via the Support team based on department needs. This feature reduces manual entry time and ensures consistency in clinical records."
+  },
+  {
+    "question": "What is the role of the Queue Management System (QMS) in the OPD module?",
+    "expected": "The Queue Management System (QMS) displays the list of patients being attended in a department, prioritizing the least-numbered unattended patient. It updates dynamically unless a patient is marked as 'Skipped,' ensuring an organized flow. The system supports efficient queue management outside the doctor’s room, reducing wait times. Doctors can interact with the QMS via the patient list’s action buttons."
+  },
+  {
+    "question": "How does the OPD module handle cross-referral investigations to external hospitals?",
+    "expected": "Cross-referral investigations are not directly supported due to system load concerns, requiring samples to be collected at the health unit and sent to the referred hospital. Doctors can raise new investigations at the receiving hospital for further processing. This ensures accurate test management while maintaining system performance. The Sample Wise Lab Report feature allows tracking of investigation results."
+  },
+  {
+    "question": "What are the limitations of viewing patient lists across multiple days in the OPD module?",
+    "expected": "The OPD module restricts patient list viewing to the current and previous day for operational feasibility. Doctors can access older records via the 'Department Unit Wise OPD Listing' report, selecting specific dates and departments. This limitation ensures system efficiency while still providing access to historical data. The report includes patient statuses for comprehensive review."
+  },
+  {
+    "question": "How does the OPD module indicate and manage patients with Fixed Medical Allowance (FMA) status?",
+    "expected": "Patients with FMA status are marked with a label 'OPD Eligible - Only for Chronic Diseases' on the OPD desk. This indicates they are pensioners eligible for treatment only for chronic conditions, per Railway Board guidelines. The system displays this information prominently in the patient information bar. Doctors can record chronic diseases to align with these restrictions, ensuring compliance."
+  },
+  {
+    "question": "What is the process for prescribing consumable items in the OPD module?",
+    "expected": "Doctors can prescribe consumable items via the 'Non Listed Drugs/Consumables' option in the Drugs section of the Rx page. These items appear in the treatment details section rather than the pharmacist module, requiring pharmacists to check there. The system limits visible items due to page constraints, as decided by the committee. This ensures controlled prescribing while maintaining system performance."
+  },
+  {
+    "question": "How does the OPD module support the verification of drug availability for past prescriptions?",
+    "expected": "The 'Check Availability' option in the Drugs section allows doctors to verify if drugs from past prescriptions are available in the hospital pharmacy. After loading a past prescription, doctors can use this feature to ensure continuity of treatment. The system displays cumulative drug quantities available across hospital stores, excluding ward stores. This helps avoid prescribing unavailable medications."
+  },
+  {
+    "question": "What steps are involved in referring a patient to a private empanelled hospital in the OPD module?",
+    "expected": "To refer a patient to a private empanelled hospital, doctors navigate to the referral section, select 'Pvt Empanelled Hospital,' and choose the department and institute. They specify the referral duration, reason, and type before clicking 'Add' and saving the prescription. Additional tests can be included in the referral note box. This structured process ensures clear documentation and coordination with external facilities."
+  },
+  {
+    "question": "How does the OPD module handle the recording of standard diagnoses using coding systems?",
+    "expected": "Doctors can record diagnoses using either ICD codes or SNOMED CT standards in the Chief Complaint tab, with data stored as codes in the backend. Typing three or more letters in the search box displays standard diagnoses for selection. Custom diagnoses can be entered manually if not listed. This flexibility ensures accurate and standardized clinical documentation."
+  },
+  {
+    "question": "What is the functionality of the Sample Wise Lab Report feature in the OPD module?",
+    "expected": "The Sample Wise Lab Report feature allows doctors to view detailed investigation results by sample number, including parameter-specific results and reference ranges. It supports both emergency and regular clinical use, providing results before full PDF generation. Results are also accessible via the patient’s EMR desk once the PDF is generated. This feature enhances decision-making by offering timely access to lab data."
+  },
+  {
+    "question": "How does the OPD module support the issuance of sick and fit certificates?",
+    "expected": "The OPD module allows doctors to issue sick and fit certificates for working employees only, excluding dependents, via the Sick and Fit button. This feature is accessible on the Rx page, ensuring proper documentation for employee health status. The restriction ensures compliance with eligibility criteria. Certificates are recorded as part of the patient’s medical record."
+  },
+  {
+    "question": "What is the process for raising admission advice in the OPD module?",
+    "expected": "Doctors can raise admission advice in the OPD module by selecting the department, unit, and ward in the Admission Advice section of the Rx page. The Bed Status option displays available beds, aiding in the decision-making process. After confirming selections, the prescription must be saved to finalize the advice. This streamlined process ensures efficient hospital admission planning."
+  },
+  {
+    "question": "How does the OPD module handle the revocation of prescribed medications?",
+    "expected": "Doctors can revoke prescribed medications before issuance from the pharmacy using the 'Revoke' option in the Drugs section of the Rx page. After reopening the prescription, doctors select the drug to remove and save the updated prescription. This feature ensures flexibility in correcting errors. Revocation is not possible once drugs are issued, maintaining system integrity."
+  },
+  {
+    "question": "What are the benefits of the speech-to-text feature in the OPD module’s Rx page?",
+    "expected": "The speech-to-text feature allows doctors to dictate text directly into description boxes, reducing manual typing and saving time. It is available in compatible browsers, enhancing usability during consultations. This feature minimizes errors associated with manual data entry. It supports efficient documentation, especially for detailed clinical notes."
+  },
+  {
+    "question": "How does the OPD module ensure efficient management of patient lists across departments?",
+    "expected": "The OPD module restricts patient lists to one department/unit at a time, ensuring focused management. Doctors can switch departments via the Dept/Unit dropdown, which lists assigned departments alphabetically. The responsive view button allows simultaneous viewing of multiple department lists in separate tabs. This structure balances system performance with multitasking needs."
+  },
+  {
+    "question": "What is the significance of the legend on the footer of the patient list in the OPD module?",
+    "expected": "The legend on the footer of the patient list explains categories and visit types, such as patient status and background colors. It provides a quick reference for doctors to understand patient classifications at a glance. This feature enhances usability by clarifying complex data. It supports efficient decision-making during patient management."
+  },
+  {
+    "question": "How does the OPD module handle the display of patient gender and pediatric indicators?",
+    "expected": "The OPD module displays gender and pediatric indicators as infographics before each patient’s queue number in the patient list. The gender column also explicitly states male, female, or children, alongside age and other details. These visual cues enable quick identification during consultations. This feature enhances efficiency and reduces errors in patient handling."
+  },
+  {
+    "question": "What is the process for accessing past medical records through the EMR desk in the OPD module?",
+    "expected": "The EMR desk, accessible via the OPD module or directly from the OPD desk lite, provides a comprehensive view of a patient’s medical history. Doctors can navigate to the Encounters section to view past prescriptions, discharge summaries, and IPD records. A PDF icon indicates available prescriptions, which can be viewed or printed. This feature ensures easy access to historical data across the HMIS network."
+  },
+  {
+    "question": "How does the OPD module support the creation of test profiles for investigations?",
+    "expected": "Test profiles for investigations can be created in the admin portal, requiring confirmation from a nodal officer or hospital admin via email. These profiles allow grouping of tests from different labs for easy access. Once configured, profiles streamline the ordering of multiple tests. This feature enhances efficiency in managing complex diagnostic needs."
+  },
+  {
+    "question": "What challenges are associated with the loading time of the OPD Desk Lite, and how are they addressed?",
+    "expected": "The OPD Desk Lite typically loads in 5-10 seconds, but high server load from multiple users can increase this time. The system is optimized to handle standard usage, with performance dependent on device and internet speed. Issues like delayed prescription page loading are acknowledged and monitored by the support team. Users are advised to report persistent issues for resolution."
+  },
+  {
+    "question": "How does the OPD module differentiate between employee and employee (general) patient categories?",
+    "expected": "The OPD module distinguishes between Employee and Employee (General) categories based on diet charge eligibility. Employee (General) patients receive free diet charges in Railway Hospitals, while regular Employees must pay as per their category. This information is displayed in the patient details header. The distinction ensures accurate billing and compliance with hospital policies."
+  },
+  {
+    "question": "What is the purpose of the Current Medication option in the OPD module?",
+    "expected": "The Current Medication option in the OPD Desk Lite allows doctors to view the active medications a patient is taking. It displays the issued quantity of prescribed drugs, helping doctors assess adherence. This feature supports informed prescribing decisions by providing medication history. It enhances continuity of care during follow-up visits."
+  },
+  {
+    "question": "How does the OPD module handle the registration of patients for multiple departments on the same day?",
+    "expected": "The OPD module allows patients to register for multiple departments on the same day without restrictions. Each registration is department-specific, and patients cannot register in multiple units within the same department. Doctors can view and manage these registrations via the Dept/Unit dropdown. This flexibility supports comprehensive care across specialties."
+  },
+  {
+    "question": "What is the process for raising radiological investigations in the OPD module?",
+    "expected": "Doctors can raise radiological investigations from the Rx page by selecting the desired test from a dropdown menu. The system supports entering test names for quick selection, streamlining the process. These investigations are then processed by the radiology department. This feature ensures efficient ordering and tracking of diagnostic procedures."
+  },
+  {
+    "question": "How does the OPD module support the management of patient referrals within the same hospital?",
+    "expected": "For internal referrals, doctors access the referral section, select the 'Routine' option, and choose the target department. After clicking 'Add' and saving the prescription, the patient appears in the referred department’s list for acceptance. This process ensures seamless coordination within the hospital. It supports efficient patient flow across departments."
+  },
+  {
+    "question": "What are the implications of the bookmark limit in the OPD module, and how is it managed?",
+    "expected": "The OPD module limits bookmarks to 25 per department, operating on a first-in-first-out basis, where new bookmarks replace the oldest ones. Doctors can manage bookmarks via the Manage Bookmarks button, viewing or deleting their own entries. This limit maintains system performance while allowing reusable prescriptions. Doctors must contact the Helpdesk to delete unavailable creators’ bookmarks."
+  },
+  {
+    "question": "How does the OPD module ensure data consistency when recording patient history?",
+    "expected": "The OPD module uses structured tabs like Complete History and History of Present Illness to record patient history systematically. Previous data is displayed unchanged during follow-ups, with checkboxes for re-recording relevant parameters. SNOMED CT standards ensure consistent terminology for complaints and diagnoses. This approach maintains data integrity and supports longitudinal patient care."
+  },
+  {
+    "question": "What is the role of the Patient Acceptance by QR feature in the OPD module?",
+    "expected": "The Patient Acceptance by QR feature allows doctors to register patients directly in the OPD interface by entering their CR number. This option, located in the upper right corner, supports quick registration for existing hospital patients. It bypasses the need for the registration module, enhancing efficiency for emergency or revisit cases. The feature ensures seamless integration into the department’s patient list."
+  },
+  {
+    "question": "How does the OPD module handle the display of lab reports before full report generation?",
+    "expected": "The Sample Wise Lab Report feature allows doctors to view test results by sample number before the full PDF report is generated. This is accessible in the Vitals and General Examination tab, providing parameter-specific results and reference ranges. It supports both emergency and routine clinical decisions. Once generated, full reports are available via the EMR desk."
+  },
+  {
+    "question": "What is the process for modifying a patient’s prescription after initial completion in the OPD module?",
+    "expected": "Doctors can reopen a patient’s prescription on the Rx page and use the Revoke option to remove or modify drugs before pharmacy issuance. Changes are saved to update the prescription, ensuring accuracy. This feature is restricted to pre-issuance modifications to maintain system integrity. It allows flexibility in correcting errors or adjusting treatments."
+  },
+  {
+    "question": "How does the OPD module’s search functionality enhance patient management within a department?",
+    "expected": "The OPD module’s search function allows doctors to locate patients quickly using criteria like queue number, name, CR number, or UMID number. This feature, available in the patient list and Rx page, streamlines access to specific patient records within the current department. It reduces time spent navigating large patient lists, improving efficiency. The search ensures accurate patient selection, minimizing errors during consultations."
+  },
+  {
+    "question": "What is the significance of the Clear Text Box feature in the OPD module’s Rx page?",
+    "expected": "The Clear Text Box feature, activated by clicking the ‘X’ button, allows doctors to erase all text entered in a description box on the Rx page. This functionality is critical for correcting errors or resetting entries during documentation. It saves time by avoiding manual deletion of text, enhancing workflow efficiency. The feature is available across all tabs, ensuring flexibility in data entry."
+  },
+  {
+    "question": "How does the OPD module support the management of patient appointments booked via the mobile app?",
+    "expected": "The OPD module displays a list of patients who booked appointments for the current date through the mobile app, accessible via the View Appointments button. Doctors can approve these requests individually or collectively, stamping them for the department. Approved patients appear in the patient list for consultation, streamlining the process. This feature enhances accessibility for patients using digital platforms."
+  },
+  {
+    "question": "What role does the Resize Text Box feature play in improving documentation in the OPD module?",
+    "expected": "The Resize Text Box feature allows doctors to drag and expand text boxes on the Rx page for easier entry of detailed clinical notes. By default, text boxes are set to two lines, but resizing accommodates more extensive data, such as history or examination details. This functionality improves usability and ensures comprehensive documentation. It supports efficient recording without compromising system performance."
+  },
+  {
+    "question": "How does the OPD module handle the display of patient demographics on the Rx page?",
+    "expected": "The OPD module displays patient demographics, including name, age, gender, category, mobile number, CR number, and UMID number, in the patient details header on the Rx page. This centralized view provides doctors with immediate access to critical identification data. Clicking the UMID number fetches the approved ID card from the UMID portal for verification. This feature ensures accurate patient identification and supports clinical decision-making."
+  },
+  {
+    "question": "What is the purpose of the Chronic Patient Indicator in the OPD module, and how is it used?",
+    "expected": "The Chronic Patient Indicator labels patients diagnosed with chronic diseases, recorded in the Chief Complaint tab, and displays prominently on the OPD desk. It alerts doctors to long-term conditions during consultations, ensuring focused care. The indicator is updated when chronic diseases are added or deleted, maintaining accuracy. This feature supports continuity of care for patients with ongoing medical needs."
+  },
+  {
+    "question": "How does the OPD module facilitate the review of uploaded patient images during teleconsultations?",
+    "expected": "The OPD module allows doctors to view images uploaded by patients during teleconsultation registration via the Images button in the Vitals and General Examination tab. These images aid in visual assessments, enhancing remote diagnosis accuracy. The feature ensures secure access to patient-provided data, supporting teleconsultation workflows. It integrates seamlessly with the Rx page for comprehensive consultation."
+  },
+  {
+    "question": "What is the process for accessing detailed examination parameters in the OPD module?",
+    "expected": "The Examination button in the Chief Complaint tab expands a section where doctors can record detailed parameters, such as CVS, RS, P/A General, Muscular, and Local Examinations. Each parameter is logged systematically, ensuring comprehensive documentation. Previously recorded data is displayed for reference during follow-ups, with checkboxes for re-recording. This structured approach enhances the accuracy of clinical assessments."
+  },
+  {
+    "question": "How does the OPD module support the management of referral patients from other hospitals?",
+    "expected": "The View Referral Patients button displays a list of patients referred from other hospitals or departments, allowing doctors to accept them individually or collectively. A search function by name, CR number, or UMID card number aids in locating specific patients. Accepted patients are stamped for the department and added to the patient list. This feature ensures seamless integration of external referrals into the OPD workflow."
+  },
+  {
+    "question": "What is the functionality of the Close View Button on the Rx page in the OPD module?",
+    "expected": "The Close View Button on the Rx page allows doctors to exit the prescription page and return to the department’s patient list. This feature ensures smooth navigation between patient-specific tasks and the broader OPD desk interface. It helps maintain workflow efficiency by enabling quick transitions. The button is strategically placed for easy access during consultations."
+  },
+  {
+    "question": "How does the OPD module ensure flexibility in viewing patient lists across different dates?",
+    "expected": "The OPD module restricts patient list viewing to the current and previous day, with the current day’s list editable for prescriptions and the previous day’s list view-only. Doctors can access older records via the ‘Department Unit Wise OPD Listing’ report, selecting specific dates and departments. This limitation balances system performance with historical data access. The feature supports both immediate and retrospective patient management."
+  },
+  {
+    "question": "What is the significance of the shortcut keys provided in the OPD module’s Rx page?",
+    "expected": "Shortcut keys, accessible via the ‘I’ button on the Rx page, provide quick navigation and functionality for doctors, enhancing efficiency. They allow rapid access to tabs and actions without mouse interaction, streamlining the prescription process. The list of shortcuts is displayed for easy reference, improving usability. This feature is particularly useful in high-volume OPD settings."
+  },
+  {
+    "question": "How does the OPD module handle the display of employee or pensioner information for patients?",
+    "expected": "The OPD module displays employee or pensioner details, such as primary card holder’s ID, designation, beneficiary type, and health unit, in the patient information tab. This information helps doctors verify patient eligibility and tailor treatments, especially for pensioners with FMA restrictions. The data is pulled from the UMID portal, ensuring accuracy. This feature supports compliance with hospital policies."
+  },
+  {
+    "question": "What is the process for managing past prescriptions across different departments in the OPD module?",
+    "expected": "Doctors can view all past prescriptions in their original format via the Past Rx button in the Vitals and General Examination tab, including same-day prescriptions from other departments. However, loading past prescriptions for reuse is restricted to the current department to ensure oversight. The EMR desk provides access to prescriptions across all HMIS network hospitals. This structure balances accessibility with clinical accountability."
+  },
+  {
+    "question": "How does the OPD module support the documentation of patient history in a structured manner?",
+    "expected": "The Complete History button in the Chief Complaint tab expands sections for Personal, Family, Treatment, and Surgical History, allowing detailed documentation. Previous entries are displayed unchanged during follow-ups, with checkboxes for re-recording relevant data. This structured format ensures comprehensive and consistent history records. It supports longitudinal care by maintaining historical data integrity."
+  },
+  {
+    "question": "What is the role of the Refresh OPD Desk button in maintaining system accuracy?",
+    "expected": "The Refresh OPD Desk button reloads the entire OPD Doctor Desk interface, resetting it to display the default department’s patient list. This ensures the screen reflects the most current patient information, regardless of the previously viewed department. It is particularly useful for syncing data after prolonged use or system delays. The feature enhances reliability in high-volume settings."
+  },
+  {
+    "question": "How does the OPD module handle the display of diagnosis-wise patient statistics?",
+    "expected": "The OPD module provides a ‘Diagnosis Wise Patient Count’ report, accessible under the reports section, to view patient statistics by diagnosis. This report allows doctors to analyze trends and prevalence of conditions within a department. It supports data-driven decision-making and resource planning. The report can be configured further via the Support team for specific needs."
+  },
+  {
+    "question": "What is the process for checking bed availability for patient admissions in the OPD module?",
+    "expected": "In the Admission Advice section, doctors select the department, unit, and ward, then click the Bed Status option to view available beds. This feature provides real-time information on bed availability, facilitating admission planning. The prescription must be saved to finalize the admission advice. This process ensures efficient coordination with hospital wards."
+  },
+  {
+    "question": "How does the OPD module support the integration of patient vitals entered via the mobile app?",
+    "expected": "Patients can enter vitals through the mobile app, which are integrated into the OPD module and accessible via the Vitals and General Examination tab. Doctors can view and edit these vitals using the Modify Vitals/GE button, ensuring accuracy. This feature enhances patient engagement and reduces in-clinic data entry time. It supports seamless data flow between patient and provider."
+  },
+  {
+    "question": "What is the significance of the pagination feature in the OPD module’s patient list?",
+    "expected": "The pagination feature allows doctors to navigate patient lists by selecting specific page numbers or using previous/next buttons. It displays the number of patients shown per page out of the total, such as ‘Showing 1 to 25 out of 257 entries.’ This feature enhances usability by organizing large patient lists. It supports efficient management in busy OPD settings."
+  },
+  {
+    "question": "How does the OPD module ensure compliance with FMA restrictions for pensioner patients?",
+    "expected": "The OPD module displays a label, ‘Eligible for OPD Services – Only for Chronic Diseases,’ for pensioners with Fixed Medical Allowance (FMA) status. This restricts their treatment to chronic conditions, per Railway Board guidelines. The label is shown in the patient information bar, alerting doctors to eligibility constraints. This ensures compliance while maintaining patient care quality."
+  },
+  {
+    "question": "What is the process for ordering services like surgeries or procedures from the OPD desk?",
+    "expected": "Doctors can order services like surgeries or procedures directly from the Rx page, integrating them into the prescription. The module supports seamless ordering to other hospital services, ensuring coordinated care. These orders are recorded and tracked within the patient’s record, enhancing workflow efficiency. The feature streamlines multidisciplinary treatment planning."
+  },
+  {
+    "question": "How does the OPD module handle the display of current medication status for patients?",
+    "expected": "The Current Medication option in the OPD Desk Lite displays active medications and their issued quantities for a patient. This allows doctors to verify medication adherence before prescribing new treatments. The feature pulls data from the pharmacy module, ensuring accuracy. It supports continuity of care by providing real-time medication insights."
+  },
+  {
+    "question": "What is the role of the Delete button in the OPD module’s Rx page tabs?",
+    "expected": "The Delete button in the Rx page tabs removes all data entered in a specific tab, including checked or unchecked items. This feature allows doctors to reset a tab if incorrect data is entered, ensuring accuracy. It is available across all tabs, providing flexibility in documentation. The action is irreversible, requiring careful use to avoid data loss."
+  },
+  {
+    "question": "How does the OPD module support the verification of patient identity using UMID cards?",
+    "expected": "Clicking the UMID number in the patient details header on the Rx page fetches the approved UMID card from the UMID portal in a pop-up. This feature allows doctors to verify patient identity, preventing unauthorized treatments. It integrates with the patient photograph display for added security. This ensures accurate and secure patient interactions."
+  },
+  {
+    "question": "What is the process for configuring templates for department-specific diagnoses in the OPD module?",
+    "expected": "Templates for department-specific diagnoses can be configured by submitting requirements to the Support team, who set them up in the admin portal. These templates allow standardized data entry for common conditions, streamlining documentation. Once configured, templates are accessible in the Rx page for quick use. This feature enhances efficiency and consistency in clinical records."
+  },
+  {
+    "question": "How does the OPD module handle the management of doctor-wise prescription statistics?",
+    "expected": "The ‘Dr Wise Prescription Done Stats’ report in the OPD module allows doctors to view the number of prescriptions they have completed daily. This report provides insights into individual performance and patient load. It supports administrative oversight and resource planning. The data is accessible within the OPD module’s reporting tools."
+  },
+  {
+    "question": "What is the significance of the queue number sorting options in the OPD module’s patient list?",
+    "expected": "The OPD module allows sorting of the patient list by queue number in ascending or descending order using up/down arrows. By default, the list prioritizes waiting patients in ascending queue order, followed by attended patients. This flexibility helps doctors manage patient flow based on priority or preference. It enhances efficiency in high-volume OPD settings."
+  },
+  {
+    "question": "How does the OPD module address issues with non-displayed drugs or consumables in the EMR desk?",
+    "expected": "The OPD module acknowledges that drugs issued to patients may not display in the EMR Desk Lite due to system limitations, with the issue escalated to the support team. Doctors can still view drug details in the Current Medication section of the OPD Desk Lite. This ensures access to medication history despite display constraints. The support team is working to resolve this for future updates."
+  },
+  {
+    "question": "What is the process for raising a new Local Purchase (LP) for medications not taken within seven days?",
+    "expected": "If a patient does not collect prescribed medications within seven days, the Local Purchase (LP) expires, requiring a new LP to be raised. Doctors can initiate this from the Rx page by prescribing the same or updated medications. The system ensures that expired LPs are flagged, prompting re-prescription. This process maintains medication availability while ensuring patient compliance."
+  },
+  {
+    "question": "How does the OPD module support the integration of radiological investigation results?",
+    "expected": "Doctors can raise radiological investigations from the Rx page, selecting tests from a dropdown menu for processing by the radiology department. Results are accessible via the Sample Wise Lab Report feature before full PDF generation. Once generated, reports are available in the patient’s EMR desk. This integration ensures timely access to diagnostic data for clinical decisions."
+  },
+  {
+    "question": "How does the OPD desk support doctors in managing teleconsultation patients effectively?",
+    "expected": "The OPD desk provides a dedicated option to view teleconsultation registrants for the current date. Doctors can approve requests individually or in bulk, and once approved, the patient’s details appear in the attended list. This workflow ensures that virtual patients are managed in the same streamlined way as in-person visits, improving accessibility and efficiency."
+  },
+  {
+    "question": "What functionality does the referral patients list provide to doctors in OPD?",
+    "expected": "The referral patients list displays individuals referred from other hospital departments or external facilities. Doctors can choose to accept all or select patients individually, after which their names appear in the consultation list. A built-in search option by name, CR number, or UMID ensures doctors can quickly locate and manage specific cases."
+  },
+  {
+    "question": "In what way does the appointments feature in OPD help manage scheduled visits?",
+    "expected": "The appointments feature displays patients who booked through the mobile app for a given date. Doctors can review and approve these requests, automatically stamping them into the department’s list. This integration ensures that pre-booked patients are seamlessly merged into the live OPD workflow, reducing scheduling conflicts."
+  },
+  {
+    "question": "How does the OPD module allow flexibility in patient registration timing?",
+    "expected": "The OPD desk enables doctors to register patients at any time using CR numbers, UMID, PAN, or mobile numbers, bypassing OPD roster restrictions. This is particularly useful for emergency cases requiring immediate attention outside standard registration hours. It ensures patients are not denied access due to administrative timing barriers."
+  },
+  {
+    "question": "Why is the manual refresh function important in the OPD desk?",
+    "expected": "Since the OPD patient list does not auto-update, the refresh option allows doctors to manually update their dashboard. This ensures newly registered patients appear in real time without requiring a system reload. It provides control to the doctor for updating information at their convenience."
+  },
+  {
+    "question": "How does the customizable patient list view support clinical workflow in OPD?",
+    "expected": "Doctors can configure how many patients are shown per page or opt to display the entire list at once. Sorting features on column headers allow ordering by queue number, CR number, or other patient attributes. This customization improves navigation and saves time when handling large patient volumes."
+  },
+  {
+    "question": "What role does the vitals button play in patient assessment?",
+    "expected": "The vitals button allows doctors or nursing staff to record essential clinical measurements like temperature, pulse, and blood pressure. These vitals appear within the Rx page and can be edited before being finalized with the prescription. This ensures accurate monitoring and continuity between nursing and medical staff inputs."
+  },
+  {
+    "question": "How does the skip button contribute to queue management in OPD?",
+    "expected": "By marking a patient as skipped, the doctor updates the queue to reflect that the patient did not arrive at their turn. This helps the system maintain real-time accuracy for waiting patients and prevents bottlenecks. However, skipped patients can still be prescribed if they later appear, ensuring care is not denied."
+  },
+  {
+    "question": "What is the significance of the legend at the footer of the patient list?",
+    "expected": "The legend summarizes patient categories and visit types, helping doctors quickly interpret the statuses displayed in the list. It provides visual cues for differentiating between attended, waiting, skipped, or chronic patients. This reduces confusion and supports better prioritization in a busy clinical setting."
+  },
+  {
+    "question": "How does the pagination feature support doctors managing large OPD volumes?",
+    "expected": "Pagination allows doctors to navigate patient records by page numbers or navigation buttons, reducing load times and clutter. It also displays how many entries are currently being viewed out of the total, offering a clear overview. This functionality ensures scalability even when hundreds of patients are registered in a single session."
+  },
+  {
+    "question": "What role does the macro/predefined text feature play in the prescription workflow?",
+    "expected": "Doctors can insert preloaded, standardized text into various fields such as diagnosis or advice by selecting from predefined options. This reduces repetitive typing, speeds up prescription writing, and ensures consistency across cases. It is particularly useful for recording common complaints or advice in a structured way."
+  },
+  {
+    "question": "Why is speech-to-text functionality valuable in OPD doctor workflows?",
+    "expected": "Speech-to-text allows doctors to dictate notes directly into prescription fields, reducing typing effort and saving time. It enhances usability, especially during high patient loads, and ensures data is still captured in digital format. This feature improves efficiency and supports accessibility in data entry."
+  },
+  {
+    "question": "How does the system help doctors identify patients correctly through photographs?",
+    "expected": "By clicking the photo icon in the information tab, doctors can view the patient’s photograph captured at registration. This ensures accurate identification, preventing impersonation or misattribution of medical records. It strengthens patient safety and trust in the clinical process."
+  },
+  {
+    "question": "What is the importance of integrating Electronic Medical Records (EMR) into OPD workflows?",
+    "expected": "The EMR button provides doctors with complete patient details categorized for easy access during consultations. This enables them to view past history, previous prescriptions, and investigation results within the same interface. It ensures decisions are based on a full understanding of the patient’s medical background."
+  },
+  {
+    "question": "How does the patient summary option benefit doctors during consultations?",
+    "expected": "The summary displays recent visit details, including complaints, diagnosis, medications, and demographics, in a concise view. Doctors can access this information without navigating away from the prescription page. This enhances speed and efficiency by providing essential context at a glance."
+  },
+  {
+    "question": "What role does the chronic patient indicator play in long-term care management?",
+    "expected": "The indicator alerts doctors when a patient has been previously diagnosed with chronic diseases. This ensures continuity of care, as doctors immediately know to consider chronic conditions during treatment planning. It also prevents duplication of diagnoses and supports targeted interventions for long-term management."
+  },
+  {
+    "question": "Why is pensioner FMA information displayed in the OPD desk?",
+    "expected": "FMA status indicates pensioners eligible only for chronic disease treatment under Railway Board guidelines. This ensures doctors do not prescribe unrelated services outside permitted coverage. It helps in compliance with policy while still ensuring chronic patients receive consistent care."
+  },
+  {
+    "question": "What advantage does the load past prescription function provide?",
+    "expected": "Doctors can quickly retrieve prescriptions from the past 120 days, ensuring repeated treatments are consistent. This feature saves time by avoiding re-entry of details for recurring medications or advice. It also ensures continuity in treatment, which is particularly useful for chronic patients requiring long-term therapy."
+  },
+  {
+    "question": "How does the lab report trend visualization assist doctors?",
+    "expected": "When test parameters recur across multiple reports, the system generates a graphical trend line. Doctors can visually assess changes over time, such as rising sugar or cholesterol levels. This enhances decision-making by identifying patterns that may not be obvious in isolated reports."
+  },
+  {
+    "question": "How does the investigations tab allow prioritization of diagnostic tests?",
+    "expected": "When placing test orders, doctors can select routine, urgent, or managed-in-baseline priorities. This ensures that critical tests are expedited while routine investigations follow normal scheduling. Such prioritization improves patient safety by aligning diagnostic urgency with clinical needs."
+  },
+  {
+    "question": "How does the OPD module ensure accurate tracking of patient statuses in the queue management system?",
+    "expected": "The OPD module tracks patient statuses as 'Waiting,' 'Attended,' or 'Skipped' in the patient list, with updates reflected in the Queue Management System (QMS) display outside the doctor’s room. The QMS prioritizes the lowest-numbered unattended patient unless marked as 'Skipped,' ensuring an organized flow. Doctors can manually refresh the list to include new registrations, maintaining accuracy. This system minimizes confusion and enhances patient flow efficiency."
+  },
+  {
+    "question": "What is the purpose of the Patient Revisit Service option in the OPD module for doctor-initiated registrations?",
+    "expected": "The Patient Revisit Service option allows doctors to register returning patients directly in the OPD module without using the registration counter. This feature supports quick re-entry for patients already in the hospital’s system, using identifiers like CR number or UMID. It bypasses roster timing restrictions, facilitating emergency or follow-up visits. The option ensures seamless integration into the department’s patient list."
+  },
+  {
+    "question": "How does the OPD module handle the cancellation of patient registrations within a department?",
+    "expected": "The OPD module allows registration clerks to cancel a patient’s registration and re-register them in another unit of the same department, provided the prescription is not yet completed. This process is restricted once a prescription is finalized, ensuring data integrity. It provides flexibility for correcting registration errors. Doctors must coordinate with clerks for such changes, maintaining system accuracy."
+  },
+  {
+    "question": "What role does the History of Present Illness section play in the OPD module’s documentation process?",
+    "expected": "The History of Present Illness section, accessible via a ‘+’ button in the Chief Complaint tab, allows doctors to record detailed patient histories in a dedicated text box. This feature supports comprehensive documentation beyond standard complaints, capturing nuanced clinical details. It integrates with other history sections for a complete patient profile. The section enhances diagnostic accuracy by providing space for thorough narrative entries."
+  },
+  {
+    "question": "How does the OPD module support the review of past prescriptions in their original printed format?",
+    "expected": "The Past Rx button in the Vitals and General Examination tab opens a pop-up displaying all previous prescriptions in their original printed format. Doctors can select and print specific prescriptions, including those from the same day across departments. This feature ensures easy access to historical treatment records. It supports continuity of care by preserving the exact layout of past prescriptions."
+  },
+  {
+    "question": "What is the significance of the ‘Show All’ and ‘Show Available’ options in the OPD module’s drug selection process?",
+    "expected": "The ‘Show All’ and ‘Show Available’ options in the Drugs section allow doctors to view either all drugs or only those currently in stock after entering three letters of the drug name. ‘Show Available’ ensures prescriptions align with pharmacy inventory, reducing errors. ‘Show All’ provides flexibility to explore all options, including potential indents. This feature enhances prescribing efficiency and inventory management."
+  },
+  {
+    "question": "How does the OPD module facilitate the review of patient encounters across the HMIS network?",
+    "expected": "The EMR desk, accessible via the OPD module, provides an Encounters section listing all patient interactions across HMIS network hospitals. Doctors can view prescriptions, discharge summaries, and IPD records by clicking PDF icons for specific encounters. This comprehensive view supports informed clinical decisions. It ensures continuity of care across different healthcare facilities."
+  },
+  {
+    "question": "What is the process for prescribing non-listed drugs or consumables in the OPD module?",
+    "expected": "Doctors can prescribe non-listed drugs or consumables using the ‘Non Listed Drugs/Consumables’ option in the Drugs section of the Rx page. These prescriptions appear in the treatment details section, requiring pharmacists to check there for dispensing. The committee restricts visible items to manage page load, but select consumables are included in the drug category. This process ensures flexibility while maintaining system performance."
+  },
+  {
+    "question": "How does the OPD module handle the display of patient categories like Employee and Pensioner?",
+    "expected": "The OPD module displays patient categories, such as Employee or Pensioner, in the patient details header and information tab, including details like primary card holder’s ID and designation. For pensioners with FMA, a label restricts treatment to chronic diseases. This categorization ensures compliance with eligibility rules and informs treatment decisions. It integrates data from the UMID portal for accuracy."
+  },
+  {
+    "question": "What is the role of the Referral/Cross Consultation tab in managing patient transfers?",
+    "expected": "The Referral/Cross Consultation tab allows doctors to refer patients to internal departments, external Railway Hospitals, or private empanelled hospitals. Doctors select the referral type, department, and hospital, adding details like duration or reason before saving the prescription. This feature streamlines patient transfers and ensures clear documentation. It supports coordinated care across healthcare facilities."
+  },
+  {
+    "question": "How does the OPD module ensure efficient access to lab reports for ongoing investigations?",
+    "expected": "The Sample Wise Lab Report button in the Vitals and General Examination tab provides access to ongoing investigation results before full PDF generation. Results are organized by sample number, including parameter-specific details and reference ranges. This feature supports timely clinical decisions, especially in emergencies. Full reports are later accessible via the EMR desk."
+  },
+  {
+    "question": "What is the process for switching between patient records without completing a prescription in the OPD module?",
+    "expected": "Doctors can switch between patient records on the Rx page using the Previous and Next Patient buttons or by selecting a patient from the Patient List icon. The Patient List displays both Waiting and Attended patients, allowing direct selection regardless of queue order. This flexibility ensures efficient navigation during busy OPD sessions. Changes are saved only when the prescription is finalized."
+  },
+  {
+    "question": "How does the OPD module support the creation of standardized clinical templates for departments?",
+    "expected": "The OPD module allows departments to configure standardized clinical templates by submitting requirements to the Support team via the admin portal. These templates streamline data entry for common diagnoses and treatments, ensuring consistency. Once configured, templates are accessible in the Rx page for quick use. This feature enhances efficiency and reduces documentation errors."
+  },
+  {
+    "question": "What is the significance of the ‘Attended’ status in the OPD module’s patient list?",
+    "expected": "The ‘Attended’ status indicates that a doctor has completed a prescription for a patient, automatically updated upon saving the Rx page. This status cannot be reverted, ensuring data integrity. It helps track consultation progress and informs the QMS display. The status supports efficient queue management and reporting."
+  },
+  {
+    "question": "How does the OPD module handle the display of patient visit types in the patient list?",
+    "expected": "The patient list’s footer legend indicates various visit types and categories, providing a quick reference for doctors. This includes details like teleconsultation, referral, or chronic disease status, displayed via background colors or labels. The feature helps doctors prioritize patients based on visit context. It enhances situational awareness during consultations."
+  },
+  {
+    "question": "What is the process for raising investigations for external hospitals in the OPD module?",
+    "expected": "The OPD module does not support direct cross-referral of investigations due to system load concerns. Samples are collected at the health unit and sent to the external hospital, where new investigations are raised. Doctors can use the Referral/Cross Consultation tab to document the referral, including test details. This ensures coordinated diagnostic processes across facilities."
+  },
+  {
+    "question": "How does the OPD module ensure security when accessing patient photographs?",
+    "expected": "The OPD module displays patient photographs via the Patient Photograph button, pulling approved images from the UMID portal to prevent impersonation. Access is restricted to authorized doctors within the department, ensuring data security. The feature integrates with other verification methods like UMID card checks. This enhances patient identification accuracy during consultations."
+  },
+  {
+    "question": "What is the role of the Manage Bookmarks button in the OPD module’s prescription process?",
+    "expected": "The Manage Bookmarks button in the Vitals and General Examination tab allows doctors to view and delete their own bookmarks, displaying details like name and creator. Clicking the ‘+’ button next to a bookmark shows its prescription details for assessment. Only the bookmark owner can delete it, ensuring control over shared templates. This feature streamlines reusable prescription management."
+  },
+  {
+    "question": "How does the OPD module support the review of patient medication adherence?",
+    "expected": "The Current Medication option in the OPD Desk Lite displays active medications and their issued quantities, allowing doctors to assess patient adherence. This data is pulled from the pharmacy module, ensuring real-time accuracy. Doctors can use this to adjust prescriptions or counsel patients on compliance. The feature supports continuity of care and informed prescribing."
+  },
+  {
+    "question": "What is the process for generating a hard copy of a prescription in the OPD module?",
+    "expected": "After completing a prescription, doctors can click the Print button to preview the document on the Rx page. From the preview screen, selecting the Print option generates a hard copy for the patient. This feature is only available for finalized prescriptions, ensuring accuracy. It provides patients with clear, printed treatment instructions."
+  },
+  {
+    "question": "How does the OPD desk support responsive viewing for parallel department management?",
+    "expected": "The responsive view option allows doctors to open the OPD desk in a new tab for the same or a different department. This makes it possible to manage multiple units at once without losing the original view. It improves multitasking capabilities and is especially useful when handling patients across several departments simultaneously."
+  },
+  {
+    "question": "Why is it important that the OPD system restricts new patient registration to the registration counter only?",
+    "expected": "The restriction ensures that demographic and identity information is verified and recorded properly by administrative staff. This reduces the risk of duplicate records, impersonation, or missing key details. It allows doctors to focus on clinical tasks while administrative accuracy is maintained."
+  },
+  {
+    "question": "How does the search functionality in the referral patients list enhance efficiency?",
+    "expected": "Doctors can search referral patients by name, CR number, or UMID card number. This makes it easy to filter and locate specific cases within potentially large referral lists. It improves speed and accuracy in handling referred patients, ensuring none are overlooked."
+  },
+  {
+    "question": "What value does the print button bring to the prescription process?",
+    "expected": "The print button allows doctors to preview completed prescriptions and generate a physical copy if required. This is useful for patients who may need a hard copy for pharmacy use or personal records. It bridges the gap between digital records and traditional paper-based workflows."
+  },
+  {
+    "question": "How does the system support continuity of care through the 'Past Rx' option?",
+    "expected": "The 'Past Rx' button displays all previous prescriptions for the patient in their original printed format. Doctors can review and re-prescribe past medications or modify them as needed. This ensures continuity and prevents unnecessary changes to stable treatments."
+  },
+  {
+    "question": "Why is the 'Sample Wise Lab Report' feature important in emergencies?",
+    "expected": "The feature allows doctors to view lab results as soon as individual samples are processed, even before the final PDF report is generated. This enables quicker decision-making in emergency cases where waiting for the final report could delay treatment. It supports timely and informed interventions."
+  },
+  {
+    "question": "What benefit does the 'Manage Bookmarks' function provide to doctors?",
+    "expected": "It gives doctors an overview of all bookmarks available in their department, showing detailed contents before use. While only the creator can delete a bookmark, this transparency helps others understand which bookmarks may be relevant. It ensures efficient sharing of clinical templates and avoids duplication."
+  },
+  {
+    "question": "How does the OPD module handle allergies within prescriptions?",
+    "expected": "Doctors can record allergies with details such as name, sensitivity, duration, affected side, and symptoms. Multiple allergies can be added, and each is stored as part of the patient’s ongoing record. This ensures safe prescribing by alerting doctors to potential adverse drug reactions."
+  },
+  {
+    "question": "Why is the option to revoke drugs significant in the OPD prescription system?",
+    "expected": "Revoking a drug order ensures that mistakes or unavailable prescriptions do not move forward to the pharmacy. The system records reasons for revocation, maintaining accountability. However, once a drug has been issued to the patient, it cannot be revoked, ensuring clarity in pharmacy operations."
+  },
+  {
+    "question": "How does the OPD desk differentiate between issued and non-issued drugs?",
+    "expected": "Issued drugs are highlighted with a green background, while non-issued ones remain white. This visual differentiation allows doctors to quickly confirm which medications the patient has received. It prevents duplication and ensures clarity in the patient's treatment history."
+  },
+  {
+    "question": "What purpose does the PAC Requisition tab serve in surgical planning?",
+    "expected": "The PAC Requisition tab allows doctors to request pre-anesthesia checkups before planned surgeries. It captures proposed anesthesia type, operation details, and scheduling requirements. This structured process ensures patient safety and proper preparation before surgical interventions."
+  },
+  {
+    "question": "How does the OPD referral process ensure accountability when referring to private hospitals?",
+    "expected": "Referrals to private empanelled hospitals require detailed justification, treatment type, and test or procedure requests. These referrals are reviewed by clerical staff and approving authorities before a referral letter is generated. This multi-step process ensures that referrals are justified, transparent, and properly authorized."
+  },
+  {
+    "question": "What role does the admission advice tab play in bed management?",
+    "expected": "The admission advice tab lets doctors view real-time bed availability in the proposed ward before confirming an admission. This prevents overbooking and ensures patients are admitted only when resources are available. It streamlines coordination between OPD doctors and inpatient staff."
+  },
+  {
+    "question": "Why is the 'End Treatment for Current Diagnosis' option necessary in follow-up management?",
+    "expected": "This option ensures that once a condition has been fully treated, the episode code is closed. It prevents new visits from being linked to outdated diagnoses, ensuring accurate tracking of patient episodes. It also allows for clean separation between different treatment cycles."
+  },
+  {
+    "question": "How does the 'Planned Visit Date' feature enhance structured follow-up care?",
+    "expected": "Doctors can schedule the next visit by specifying the number of days or a fixed date. This is especially useful for chronic disease patients who require routine monitoring. It ensures patients are guided clearly on when to return, supporting continuity and adherence to care plans."
+  },
+  {
+    "question": "What is the importance of uploading documents into a patient’s EMR through OPD?",
+    "expected": "The system allows uploading PDFs under 5 MB into the EMR, such as test reports or referral letters. This keeps all relevant documents centrally accessible within the patient’s record. It prevents loss of critical paperwork and supports comprehensive digital recordkeeping."
+  },
+  {
+    "question": "Why does the OPD module restrict prescription saving without complaints and diagnosis?",
+    "expected": "Chief complaints and diagnoses are mandatory fields for saving prescriptions. This prevents incomplete records and ensures that each prescription is clinically justified. The rule enforces good medical practice and ensures accountability in patient care."
+  },
+  {
+    "question": "How does the system allow doctors to mark confidential information in a diagnosis?",
+    "expected": "The diagnosis tab provides a section for confidential notes visible only to doctors. These notes are excluded from the patient’s printed prescription but remain part of the medical record. This ensures sensitive information is securely documented without compromising patient trust."
+  },
+  {
+    "question": "What flexibility does the investigations tab provide in ordering diagnostic tests?",
+    "expected": "Doctors can order tests by group, profile, or individual selection. They can also specify scheduling, priority, location, and remarks for each test. This flexibility ensures diagnostic orders are tailored to clinical needs and available resources."
+  },
+  {
+    "question": "Why is the 'Other Diagnosis' option useful in the OPD system?",
+    "expected": "If a doctor cannot find the required condition in ICD-10 or SNOMED CT lists, they can manually record it under 'Other Diagnosis.' This ensures that all clinical findings are captured, even if not part of standard taxonomies. It balances standardization with flexibility for unique or rare conditions."
+  }
+]

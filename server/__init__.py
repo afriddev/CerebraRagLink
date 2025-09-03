@@ -4,7 +4,7 @@ from .models import (
     ChatServiceResponseModel_Server,
     ChatServicePreProcessUserQueryResponseModel_Server
 )
-from .serviceimplementations import ChatServiceImpl_Server
+from .implementations import ChatServiceImpl_Server
 from .services import ChatService_Server
 from .enums import ResponseEnum_Server, ChatServicePreProcessEnums_Server
 

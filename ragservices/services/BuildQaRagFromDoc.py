@@ -41,8 +41,8 @@ class BuildQaRagFromDoc(BuildQaRagFromDocImpl):
             )
         return embeddingResponse
 
-    async def BuildQaRagFromDoc(self, docPath: str) -> BuildQaRagFromDocResponseModel:
-        text, _ = ExtractTextFromDoc.ExtractTextFromDoc(docPath=docPath)
+    async def BuildQaRagFromDoc(self, file: str) -> BuildQaRagFromDocResponseModel:
+        text, _ = ExtractTextFromDoc.ExtractTextFromDoc(docPath=file)
         qa = self.ExtarctQaFromText(text=text)
         questionVectors: list[list[float]] = []
 

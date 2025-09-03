@@ -2,7 +2,7 @@ from typing import Any, cast
 
 from fastapi.responses import StreamingResponse
 
-from server.serviceimplementations import ChatServiceImpl_Server
+from server.implementations import ChatServiceImpl_Server
 from aiservices import (
     ChatServiceMessageModel,
     ChatServiceMessageRoleEnum,
@@ -153,10 +153,10 @@ class ChatService_Server(ChatServiceImpl_Server):
                 modelParams=ChatServiceRequestModel(
                     apiKey=GetCerebrasApiKey(),
                     model="gpt-oss-120b",
-                    maxCompletionTokens=5000,
+                    maxCompletionTokens=1000,
                     messages=messages,
                     stream=True,
-                    temperature=0.3,
+                    temperature=0.1,
                     topP=0.9,
                 )
             )
@@ -186,7 +186,7 @@ class ChatService_Server(ChatServiceImpl_Server):
         )
         print(preProcessResponse.cleanquery)
 
-        if preProcessResponse.route != ChatServicePreProcessRouteEnums_Server.HMIS:
+        if False:
             messages: list[ChatServiceMessageModel] = []
             if (
                 preProcessResponse.status
@@ -243,7 +243,7 @@ class ChatService_Server(ChatServiceImpl_Server):
                     model="jina-reranker-m0",
                     query=cast(Any, preProcessResponse.cleanquery),
                     docs=docs,
-                    topN=20,
+                    topN=15,
                 )
             )
 
@@ -256,7 +256,7 @@ class ChatService_Server(ChatServiceImpl_Server):
                     reverse=True,
                 )
 
-                topK = reranked[:20]
+                topK = reranked[:7]
 
                 for item in topK:
                     index = item.index
@@ -271,28 +271,15 @@ class ChatService_Server(ChatServiceImpl_Server):
             systemInst = f"""
                 # Retrieved docs
                 {json.dumps(topDocs, indent=2)}
+# Instructions
+- You are an expert evaluation answer generator.
+- Your answer must closely match the expected dataset style.
+- Write 3–5 sentences, plain text, no markdown.
+- Output as a single paragraph.
 
-                # Instructions
-                - Write answers concisely and proportional to the query:
-                - Short/fact-based (2–3 marks): answer in 2–3 sentences.
-                - Explanation (10 marks): answer in clear, structured detail (use headings, bullet points, or numbered lists).
-                - Formatting rules:
-                - Use clean **Markdown** only (no tables unless explicitly requested).
-                - Always use headings (###) for clarity in longer answers.
-                - Keep answers professional, without unnecessary filler text.
-                - Images:
-                - By default, include only **one most relevant image** to user query not according to content.
-                - Image descrption must be most relevent to user query else dont give any images
-                - If the user explicitly asks for multiple images, include all relevant ones.
-                - Show each image as:
-                    **Description**  
-                    ![alt text](URL)
-                - If the image is too large or detailed, use:
-                    <img src="URL" width="600"/>
-                - Never embed images inside tables.
-                - If no relevant info exists in the retrieved docs, reply with exactly:
-                "We don’t have information about this. Please contact the helpdesk for further assistance."
-                    """
+- if no relevent data found from Retrieved docs
+return "Data Not FOund"
+                """
 
             messages: list[ChatServiceMessageModel] = [
                 ChatServiceMessageModel(
@@ -312,3 +299,4 @@ class ChatService_Server(ChatServiceImpl_Server):
                 return StreamingResponse(
                     iter([b"Sorry, Something went wrong !. Please Try again?"])
                 )
+            

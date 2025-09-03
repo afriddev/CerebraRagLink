@@ -16,5 +16,5 @@ class BuildQaRagFromDocImpl(ABC):
         pass
 
     @abstractmethod
-    async def BuildQaRagFromDoc(self, docPath: str) -> BuildQaRagFromDocResponseModel:
+    async def BuildQaRagFromDoc(self, file: str) -> BuildQaRagFromDocResponseModel:
         pass

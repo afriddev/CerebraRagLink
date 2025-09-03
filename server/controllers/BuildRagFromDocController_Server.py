@@ -1,10 +1,10 @@
 from fastapi import APIRouter
-from server.services import BuildRagFromDocService_Server
+from server.services import BuildRagService
 
 GragDocRouter = APIRouter()
-BuildRagFromDocServiceServer = BuildRagFromDocService_Server()
+BuildRag = BuildRagService()
 
 
 @GragDocRouter.get("/brfd")
 async def BuildRagFromDoc():
-    return await BuildRagFromDocServiceServer.BuildRagFromDoc("./others/opd_manual.pdf")
+    return await BuildRag.BuildRag("./others/a.xlsx")

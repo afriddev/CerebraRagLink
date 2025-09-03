@@ -56,9 +56,9 @@ class BuildRagFromDoc(BuildRagFromDocImpl):
             modelParams=ChatServiceRequestModel(
                 apiKey=GetCerebrasApiKey(),
                 model="qwen-3-235b-a22b-instruct-2507",
-                maxCompletionTokens=30000,
+                maxCompletionTokens=10000,
                 messages=messages,
-                temperature=0.0,
+                temperature=0.3,
                 responseFormat=ChatServiceCerebrasFormatModel(
                     type="json_schema",
                     jsonSchema=ChatServiceCerebrasFormatJsonSchemaModel(
@@ -220,6 +220,7 @@ class BuildRagFromDoc(BuildRagFromDocImpl):
                                 ]
                             ],
                         )
+            start += 1
 
         return BuildRagFromDocResponseModel(
             chunkClaims=chunkClaims,
